@@ -2,14 +2,14 @@
   {
     "title": "test",
     "author": "Hiroaki Yutani",
-    "date": "2015年7月4日",
+    "date": "2015<U+5E74>7<U+6708>4<U+65E5>",
     "output": "html_document",
     "url": "test.html"
   },
   {
     "title": "test2",
     "author": "Hiroaki Yutani",
-    "date": "2015年9月19日",
+    "date": "2015<U+5E74>9<U+6708>19<U+65E5>",
     "output": "html_document",
     "url": "test2.html"
   }
