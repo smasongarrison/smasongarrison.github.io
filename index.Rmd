@@ -1,23 +1,8 @@
 ---
 output: html_document
-title: "Index"
 ---
+### Welcome
 
-```{r child="children/chunk_options.Rmd"}
-```
+#### My name is Mason Garrison. I am a Nation Science Foundation Graduate Research Fellow and Quantitative Methods graduate student at Vanderbilt University, Peabody College in Nashville, Tennessee. Recently, I returned from being a visiting international researcher at the University of British Columbia, where I worked with Prof. Jeremy Biesanz and Prof. Anita DeLongis. 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r}
-summary(cars)
-```
-
-You can also embed plots, for example:
-
-```{r, echo=FALSE}
-plot(cars)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+#### My research uses kinship structure, such as married partners or siblings to infer causation about individual differences. I am particularly interested in developing kinship models to explore the relationship amoung personality, intelligence, and health.

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="author" content="SMasonGarrison" />
+
+
+<title>generateIndexPage.R</title>
+
+<script src="libs/jquery-1.11.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.1/shim/respond.min.js"></script>
+<link href='libs/fluidbox/css/fluidbox.css' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+<link href='include/css/style.css' rel='stylesheet' type='text/css'>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="libs/highlight/default.css"
+      type="text/css" />
+<script src="libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="./index.html">S. Mason Garrison</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><h1><a href="./index.html">Home</a></h1></li>
+        <li><a href="https://github.com/smasongarrison">Github</a></li>
+        <li class="dropdown">
+          <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">          <li><a href="test.html">test</a></li>
+          <li><a href="test2.html">test2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+<h1 class="title">generateIndexPage.R</h1>
+<h4 class="author"><em>SMasonGarrison</em></h4>
+<h4 class="date"><em>Sat Jan 02 16:11:57 2016</em></h4>
+</div>
+
+
+<pre class="r"><code># generate index.html
+#
+# 1) If index.md exists, knit it.
+# 2) Otherwise, generate index.html from an index file which contains the list of pages.
+
+local({
+  if(file.exists(&quot;index.Rmd&quot;)) {
+    rmarkdown::render(&quot;index.Rmd&quot;, output_file = &quot;index.html&quot;)
+    return()
+  }
+
+  md_tmp &lt;- tempfile(tmpdir = &quot;.&quot;, fileext = &quot;.md&quot;)
+  on.exit(file.remove(md_tmp))
+
+  cat(&#39;---
+title: &quot;Index&quot;
+output: html_document
+---
+&#39;, file = md_tmp)
+
+  index &lt;- jsonlite::fromJSON(&quot;index.json&quot;)
+  page_list  &lt;- sort(sprintf(&quot;* %s [%s](%s)&quot;, index$date, index$title, index$url))
+  cat(paste0(page_list, collapse = &quot;\n&quot;),
+      file = md_tmp, append = TRUE)
+
+  rmarkdown::render(md_tmp, output_file = &quot;index.html&quot;)
+})</code></pre>
+<pre><code>## 
+## 
+## processing file: index.Rmd</code></pre>
+<pre><code>## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |.........                                                        |  14%
+##   ordinary text without R code
+## 
+## 
+  |                                                                       
+  |...................                                              |  29%
+## label: unnamed-chunk-2 (with options) 
+## List of 1
+##  $ child: chr &quot;children/chunk_options.Rmd&quot;</code></pre>
+<pre><code>## 
+## 
+## processing file: ./children/chunk_options.Rmd</code></pre>
+<pre><code>## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |.................................................................| 100%
+## label: chunk_options (with options) 
+## List of 1
+##  $ include: logi FALSE
+## 
+## 
+## 
+  |                                                                       
+  |............................                                     |  43%
+##   ordinary text without R code
+## 
+## 
+  |                                                                       
+  |.....................................                            |  57%
+## label: unnamed-chunk-3
+## 
+  |                                                                       
+  |..............................................                   |  71%
+##   ordinary text without R code
+## 
+## 
+  |                                                                       
+  |........................................................         |  86%
+## label: unnamed-chunk-4 (with options) 
+## List of 1
+##  $ echo: logi FALSE</code></pre>
+<pre><code>## 
+  |                                                                       
+  |.................................................................| 100%
+##   ordinary text without R code</code></pre>
+<pre><code>## output file: index.knit.md</code></pre>
+<pre><code>## &quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS index.utf8.md --to html --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash-implicit_figures --output index.html --smart --email-obfuscation none --standalone --section-divs --template &quot;C:\Users\smaso_000\Documents\R\win-library\3.2\rmarkdown\rmd\h\default.html&quot; --variable &quot;theme:bootstrap&quot; --include-in-header &quot;C:\Users\SMASO_~1\AppData\Local\Temp\Rtmpgbl2sk\rmarkdown-str11e0eca774e.html&quot; --no-highlight --variable highlightjs=libs/highlight --include-in-header &quot;include\in_header.html&quot; --include-before-body &quot;include\before_body.html&quot; --include-after-body &quot;include\after_body.html&quot;</code></pre>
+<pre><code>## 
+## Output created: index.html</code></pre>
+<pre><code>## NULL</code></pre>
+
+<script type="text/javascript" src="libs/fluidbox/jquery.fluidbox.min.js"></script>
+<script type="text/javascript" src="include/js/enable-fluidbox.js"></script>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+
+</body>
+</html>
