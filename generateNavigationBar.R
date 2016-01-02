@@ -11,7 +11,7 @@ local({
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="./index.html">Home</a></li>
+        <li><h1><a href="./index.html">Home</a></h1></li>
         <li><a href="https://github.com/smasongarrison">Github</a></li>
         <li class="dropdown">
           <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages<span class="caret"></span></a>
