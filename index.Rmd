@@ -2,6 +2,9 @@
 title: "Welcome"
 output: html_document
 ---
+<!---
+Adapted from https://github.com/yutannihilation/rmarkdown-website-template
+-->
 ### This page is a work in progress. My current website is [www.smasongarrison.com](www.smasongarrison.com).
 My name is Mason Garrison. I am a [Nation Science Foundation Graduate Research Fellow](http://www.nsfgrfp.org/) and [Quantitative Methods](http://www.vanderbilt.edu/psychological_sciences/graduate/programs/quantitative-methods/index.php) graduate student in [Psychological Sciences](http://www.vanderbilt.edu/psychological_sciences/) at [Vanderbilt University](http://www.vanderbilt.edu/), [Peabody College](http://peabody.vanderbilt.edu/) in Nashville, Tennessee. Recently, I returned from a visiting international researcher position at the [University of British Columbia](http://psych.ubc.ca/), where I worked with [Prof. Jeremy Biesanz](http://psych.ubc.ca/persons/jeremy-biesanz/) and [Prof. Anita DeLongis](http://delongis.psych.ubc.ca/). 
 

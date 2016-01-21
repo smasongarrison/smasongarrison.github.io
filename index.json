@@ -1,15 +1,20 @@
 [
   {
+    "title": "Class",
     "output": "html_document",
-    "url": "index.html",
-    "title": "index",
-    "date": "2016-01-17 19:09:11"
+    "url": "Class.html",
+    "date": "2016-01-20 21:13:58"
   },
   {
+    "title": "DT: An R interface to the DataTables library",
+    "url": "DTtest.html",
+    "date": "2016-01-20 21:18:43"
+  },
+  {
+    "title": "Welcome",
     "output": "html_document",
-    "url": "index2.html",
-    "title": "index2",
-    "date": "2016-01-02 15:04:12"
+    "url": "index.html",
+    "date": "2016-01-20 21:08:52"
   },
   {
     "title": "test",
@@ -17,12 +22,5 @@
     "date": "2015<U+5E74>7<U+6708>4<U+65E5>",
     "output": "html_document",
     "url": "test.html"
-  },
-  {
-    "title": "test2",
-    "author": "Hiroaki Yutani",
-    "date": "2015<U+5E74>9<U+6708>19<U+65E5>",
-    "output": "html_document",
-    "url": "test2.html"
   }
 ]

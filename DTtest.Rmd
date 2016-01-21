@@ -1,0 +1,252 @@
+---
+title: 'DT: An R interface to the DataTables library'
+---
+
+---
+<!---
+Adapted from https://raw.githubusercontent.com/rstudio/DT/gh-pages/index.Rmd
+-->
+
+
+```{r message=FALSE}
+if (!require("DT")) install.packages('DT')
+sessionInfo()
+```
+
+
+# Usage
+
+The main function in this package is `datatable()`. It creates an HTML widget to display R data objects with **DataTables**.
+
+```{r code=formatR::usage(datatable), eval=FALSE}
+```
+
+Here is a "hello world" example with zero configuration:
+
+```{r}
+library(DT)
+datatable(iris)
+```
+
+# Arguments
+
+If you are familiar with **DataTables** already, you may use the `options` argument to customize the table. See the page [Options](options.html) for details. Here we explain the rest of the arguments of the `datatable()` function.
+
+## Table CSS Classes
+
+The `class` argument specifies the CSS classes of the table. The possible values can be found on the page of [default styling options](http://datatables.net/manual/styling/classes). The default value `display` basically enables row striping, row highlighting on mouse over, row borders, and highlighting ordered columns. You can choose a different combination of CSS classes, such as `cell-border` and `stripe`:
+
+```{r}
+datatable(head(iris), class = 'cell-border stripe')
+```
+
+## Styling
+
+Currently, **DT** only supports the Bootstrap style besides the default style. You can use the argument `style = 'bootstrap'` to enable the Bootstrap style, and adjust the table classes accordingly using [Bootstrap table class names](http://getbootstrap.com/css/#tables), such as `table-stripe` and `table-hover`. Actually, **DT** will automatically adjust the class names even if you provided the DataTables class names such as `stripe` and `hover`.
+
+```{r collapse = TRUE}
+DT:::DT2BSClass('display')
+DT:::DT2BSClass(c('compact', 'cell-border'))
+```
+
+Note you can only use one style for all tables on one page. Please see [this separate page](005-bootstrap.html) for examples using the Bootstrap style.
+
+## Display Row Names
+
+If the data object has row names, they will be displayed as the first column of the table by default. You can suppress row names via the argument `rownames = FALSE`, and you can also change row names by providing a different character vector to `rownames`.
+
+```{r}
+datatable(head(mtcars))
+datatable(head(mtcars), rownames = FALSE)  # no row names
+datatable(head(mtcars), rownames = head(LETTERS))  # new row names
+```
+
+<div class="panel panel-warning">
+<div class="panel-heading">Influence of Row Names on Column Indices in JavaScript</div>
+<div class="panel-body">
+
+Row names are essentialy a new column added to the original data (via `cbind(rownames(data), data)`). This has an important consequence in terms of the column indices. JavaScript indexes from 0 instead of 1, so the index of the _n_-th element is actually _n - 1_.^[By comparison, R indexes from 1.] When thinking of the column indices (which you will often have to do if you customize [options](options.html)), use
+
+- _n - 1_ as the index of the _n_-th column in the _original data_ if you do not display row names;
+- _n_ as the index of the _n_-th column in the _original data_ if you want to display row names, because the original index is _n - 1_ in JavaScript but we added the row names as the first column, and _(n - 1) + 1_ = _n_;
+
+It is very important to remember this when using DataTables [options](options.html).
+
+</div>
+</div>
+
+## Custom Column Names
+
+By default, `datatable()` shows the column names of the data in the table, and you can use a custom character vector for the table header. There are a few possibilities. The first one is, you provide a new character vector to completely replace the column names of the data, e.g.
+
+```{r}
+# colnames(iris) is a character vector of length 5, and we replace it
+datatable(head(iris), colnames = c('Here', 'Are', 'Some', 'New', 'Names'))
+```
+
+This can be cumbersome if you only want to replace one or two names, and you do not want to provide a whole vector of names. Then here is the second possibility: you can provide a shorter numeric or character vector as the index vector to replace a subset of the column names. For example, if you only want the 2nd name to be `'A Nicer Name'`, you can use `datatable(..., colnames = c('A Nicer Name' = 2))`; or if you want to replace the name `'X5'` with `'A Better Name'`, you can use `colnames = c('A Better Name' = 'X5')`.
+
+```{r}
+datatable(head(iris), colnames = c('A Better Name' = 'Sepal.Width'))
+datatable(head(iris), colnames = c('Another Better Name' = 2, 'Yet Another Name' = 4))
+```
+
+When you display row names of the data, its column name will be a white space by default. That is why you cannot see its column name. You can certainly choose to use a column name for rownames as well, e.g.
+
+```{r}
+# change the first column name to 'ID'
+datatable(head(iris), colnames = c('ID' = 1))
+```
+
+## Custom Table Container
+
+The `container` argument allows you to provide a different table container to hold the table cells. By default, the container is generated from the column names. Below is an example of a custom table header:
+
+```{r comment=''}
+# a custom table container
+sketch = htmltools::withTags(table(
+  class = 'display',
+  thead(
+    tr(
+      th(rowspan = 2, 'Species'),
+      th(colspan = 2, 'Sepal'),
+      th(colspan = 2, 'Petal')
+    ),
+    tr(
+      lapply(rep(c('Length', 'Width'), 2), th)
+    )
+  )
+))
+print(sketch)
+
+# use rownames = FALSE here because we did not generate a cell for row names in
+# the header, and the header only contains five columns
+datatable(iris[1:20, c(5, 1:4)], container = sketch, rownames = FALSE)
+```
+
+You can also add a footer to the table container, and here is an example:
+
+```{r comment=''}
+# a custom table with both header and footer
+sketch = htmltools::withTags(table(
+  tableHeader(iris),
+  tableFooter(iris)
+))
+print(sketch)
+
+datatable(
+  head(iris, 10),
+  container = sketch, options = list(pageLength = 5, dom = 'tip'), rownames = FALSE
+)
+```
+
+## Table Caption
+
+You can add a table caption via the `caption` argument. It can be either a character vector, or a tag object created from `htmltools::tags$caption()`. See this [blog post](http://datatables.net/blog/2014-11-07) for more information on table captions.
+
+```{r}
+datatable(
+  head(iris),
+  caption = 'Table 1: This is a simple caption for the table.'
+)
+# display the caption at the bottom, and <em> the caption
+datatable(
+  head(iris),
+  caption = htmltools::tags$caption(
+    style = 'caption-side: bottom; text-align: center;',
+    'Table 2: ', htmltools::em('This is a simple caption for the table.')
+  )
+)
+```
+
+## Column Filters
+
+**DataTables** does not provide column filters by default. There is only a global filter (the search box on the top-right). We added a `filter` argument in `datatable()` to automatically generate column filters. By default, the filters are not shown since `filter = 'none'`. You can enable these filters by `filter = 'top'` or `'bottom'`, depending on whether you want to put the filters on the top or bottom of the table.
+
+```{r}
+iris2 = iris[c(1:10, 51:60, 101:110), ]
+datatable(iris2, filter = 'top', options = list(
+  pageLength = 5, autoWidth = TRUE
+))
+```
+
+Depending on the type of a column, the filter control can be different. Initially, you see search boxes for all columns. When you click the search boxes, you may see different controls:
+
+- For numeric/date/time columns, [range sliders](http://refreshless.com/nouislider/) are used to filter rows within ranges;
+- For factor columns, [selectize inputs](http://brianreavis.github.io/selectize.js/) are used to display all possible categories, and you can select multiple categories there (note you can also type in the box to search in all categories);
+- For character columns, ordinary search boxes are used to match the values you typed in the boxes;
+
+When you leave the initial search boxes, the controls will be hidden and the filtering values (if there are any) are stored in the boxes:
+
+- For numeric/date/time columns, the values displayed in the boxes are of the form `low ... high`;
+- For factor columns, the values are serialized as a JSON array of the form `["value1", "value2", "value3"]`;
+
+When a column is filtered, there will be a clear button <span class="glyphicon glyphicon-remove-circle"></span> in its search box, and you can click the button to clear the filter. If you do not want to use the controls, you can actually type in the search boxes directly, e.g. you may type `2 ... 5` to filter a numeric column, and the range of its slider will automatically adjusted to `[2, 5]`. In case you find a search box too narrow and it is difficult to read the values in it, you may mouse over the box and its values will be displayed as a tooltip. See [this example](008-filter.html) for how to hide the clear buttons, and use plain text input styles instead of Bootstrap.
+
+Below is a simple example to demonstrate filters for character, date, and time columns:
+
+```{r collapse=TRUE}
+d = data.frame(
+  names = rownames(mtcars),
+  date = as.Date('2015-03-23') + 1:32,
+  time = as.POSIXct('2015-03-23 12:00:00', tz = 'UTC') + (1:32) * 5000,
+  stringsAsFactors = FALSE
+)
+str(d)
+datatable(d, filter = 'bottom', options = list(pageLength = 5))
+```
+
+Filtering in the above examples was done on the client side (using JavaScript in your web browser). Column filters also work in the [server-side processing](server.html) mode, in which case filtering will be processed on the server, and there may be some subtle differences (e.g. JavaScript regular expressions are different with R). See [here for an example](https://yihui.shinyapps.io/DT-filter/) of column filters working on the server side.
+
+<div class="panel panel-danger">
+<div class="panel-heading">Known Issues of Column Filters</div>
+<div class="panel-body">
+The position of column filters may be off when scrolling is enabled in the table, e.g. via the options `scrollX` and/or `scrollY`. The appearance may be affected by Shiny sliders, as reported in [#49](https://github.com/rstudio/DT/issues/49).
+</div>
+</div>
+
+## The `callback` argument
+
+The argument `callback` takes the body of a JavaScript function that will be applied to the **DataTables** object after initialization. Below is an example to show the next page after the table is initialized^[See the documentation for the [page()](http://datatables.net/reference/api/page()) API.]:
+
+```{r}
+datatable(head(iris, 30), callback = JS('table.page("next").draw(false);'))
+```
+
+In the above example, the actual callback function on the JavaScript side is this (`callback` is only the body of the function):
+
+```javascript
+function(table) {
+  table.page("next").draw(false);
+}
+```
+
+After we initialize the table via the `.DataTable()` method in DataTables, the DataTables instance is passed to this callback function. Below are a few more examples:
+
+- [Show extra information in child rows](002-rowdetails.html)
+
+Please note this `callback` argument is only an argument of the `datatable()` function, and do not confuse it with the callbacks in the **DataTables** [options](options.html). The purpose of this argument is to allow users to manipulate the **DataTables** object after its creation.
+
+## Escaping Table Content
+
+The argument `escape` determines whether the HTML entities in the table are escaped or not. There can be potential security problems when the table is rendered in dynamic web applications such as Shiny if you do not escape them. Here is a quick example:
+
+```{r}
+m = matrix(c(
+  '<b>Bold</b>', '<em>Emphasize</em>', '<a href="http://rstudio.com">RStudio</a>',
+  '<a href="#" onclick="alert(\'Hello World\');">Hello</a>'
+), 2)
+colnames(m) = c('<span style="color:red">Column 1</span>', '<em>Column 2</em>')
+datatable(m)  # escape = TRUE by default
+datatable(m, escape = FALSE)
+```
+
+Besides `TRUE` and `FALSE`, you can also specify which columns you want to escape, e.g.
+
+```{r eval=FALSE}
+datatable(m, escape = 1)  # escape the first column
+datatable(m, escape = 2)  # escape the second column
+datatable(m, escape = c(TRUE, FALSE))  # escape the first column
+colnames(m) = c('V1', 'V2')
+datatable(m, escape = 'V1')
+```

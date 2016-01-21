@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>DT: An R interface to the DataTables library</title>
+
+<script src="libs/jquery-1.11.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.1/shim/respond.min.js"></script>
+<script src="libs/htmlwidgets-0.5/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.1.40/datatables.js"></script>
+<script src="libs/datatables-1.10.7/jquery.dataTables.min.js"></script>
+<link href="libs/datatables-default-1.10.7/dataTables.extra.css" rel="stylesheet" />
+<link href="libs/datatables-default-1.10.7/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href='libs/fluidbox/css/fluidbox.css' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+<link href='include/css/style.css' rel='stylesheet' type='text/css'>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="libs/highlight/default.css"
+      type="text/css" />
+<script src="libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="./index.html">S. Mason Garrison</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="https://github.com/smasongarrison">Github</a></li>
+        <li><a href="https://github.com/smasongarrison">XTeaching</a></li>
+        <li class="dropdown">
+          <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">          <li><a href="index.html">index</a></li>
+          <li><a href="index2.html">index2</a></li>
+          <li><a href="test.html">test</a></li>
+          <li><a href="test2.html">test2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+<h1 class="title">DT: An R interface to the DataTables library</h1>
+</div>
+
+
+<hr />
+<!---
+Adapted from https://raw.githubusercontent.com/rstudio/DT/gh-pages/index.Rmd
+-->
+<pre class="r"><code>if (!require(&quot;DT&quot;)) install.packages(&#39;DT&#39;)
+sessionInfo()</code></pre>
+<pre><code>## R version 3.2.3 (2015-12-10)
+## Platform: x86_64-w64-mingw32/x64 (64-bit)
+## Running under: Windows 7 x64 (build 7601) Service Pack 1
+## 
+## locale:
+## [1] LC_COLLATE=English_United States.1252 
+## [2] LC_CTYPE=English_United States.1252   
+## [3] LC_MONETARY=English_United States.1252
+## [4] LC_NUMERIC=C                          
+## [5] LC_TIME=English_United States.1252    
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] DT_0.1.40
+## 
+## loaded via a namespace (and not attached):
+##  [1] htmlwidgets_0.5 magrittr_1.5    formatR_1.2.1   tools_3.2.3    
+##  [5] htmltools_0.3   yaml_2.1.13     stringi_1.0-1   rmarkdown_0.9.2
+##  [9] knitr_1.12      stringr_1.0.0   digest_0.6.9    evaluate_0.8</code></pre>
+<div id="usage" class="section level1">
+<h1>Usage</h1>
+<p>The main function in this package is <code>datatable()</code>. It creates an HTML widget to display R data objects with <strong>DataTables</strong>.</p>
+<pre class="r"><code>datatable(data, options = list(), class = &quot;display&quot;, callback = JS(&quot;return table;&quot;), 
+    rownames, colnames, container, caption = NULL, filter = c(&quot;none&quot;, &quot;bottom&quot;, 
+        &quot;top&quot;), escape = TRUE, style = &quot;default&quot;, width = &quot;100%&quot;, selection = c(&quot;multiple&quot;, 
+        &quot;single&quot;, &quot;none&quot;), extensions = list(), plugins = NULL)</code></pre>
+<p>Here is a “hello world” example with zero configuration:</p>
+<pre class="r"><code>library(DT)
+datatable(iris)</code></pre>
+<p><div id="htmlwidget-9230" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-9230">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5,7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7,6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3,3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8,3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.7,1.5,1,1.7,1.9,1.6,1.6,1.5,1.4,1.6,1.6,1.5,1.5,1.4,1.5,1.2,1.3,1.4,1.3,1.5,1.3,1.3,1.3,1.6,1.9,1.4,1.6,1.4,1.5,1.4,4.7,4.5,4.9,4,4.6,4.5,4.7,3.3,4.6,3.9,3.5,4.2,4,4.7,3.6,4.4,4.5,4.1,4.5,3.9,4.8,4,4.9,4.7,4.3,4.4,4.8,5,4.5,3.5,3.8,3.7,3.9,5.1,4.5,4.5,4.7,4.4,4.1,4,4.4,4.6,4,3.3,4.2,4.2,4.2,4.3,3,4.1,6,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1,5.1,5.3,5.5,5,5.1,5.3,5.5,6.7,6.9,5,5.7,4.9,6.7,4.9,5.7,6,4.8,4.9,5.6,5.8,6.1,6.4,5.6,5.1,5.6,6.1,5.6,5.5,4.8,5.4,5.6,5.1,5.1,5.9,5.7,5.2,5,5.2,5.4,5.1],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3,0.2,0.4,0.2,0.5,0.2,0.2,0.4,0.2,0.2,0.2,0.2,0.4,0.1,0.2,0.2,0.2,0.2,0.1,0.2,0.2,0.3,0.3,0.2,0.6,0.4,0.3,0.2,0.2,0.2,0.2,1.4,1.5,1.5,1.3,1.5,1.3,1.6,1,1.3,1.4,1,1.5,1,1.4,1.3,1.4,1.5,1,1.5,1.1,1.8,1.3,1.5,1.2,1.3,1.4,1.4,1.7,1.5,1,1.1,1,1.2,1.6,1.5,1.6,1.5,1.3,1.3,1.3,1.2,1.4,1.2,1,1.3,1.2,1.3,1.3,1.1,1.3,2.5,1.9,2.1,1.8,2.2,2.1,1.7,1.8,1.8,2.5,2,1.9,2.1,2,2.4,2.3,1.8,2.2,2.3,1.5,2.3,2,2,1.8,2.1,1.8,1.8,1.8,2.1,1.6,1.9,2,2.2,1.5,1.4,2.3,2.4,1.8,1.8,2.1,2.4,2.3,1.9,2.3,2.5,2.3,1.9,2,2.3,1.8],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>Sepal.Length</th>\n      <th>Sepal.Width</th>\n      <th>Petal.Length</th>\n      <th>Petal.Width</th>\n      <th>Species</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+</div>
+<div id="arguments" class="section level1">
+<h1>Arguments</h1>
+<p>If you are familiar with <strong>DataTables</strong> already, you may use the <code>options</code> argument to customize the table. See the page <a href="options.html">Options</a> for details. Here we explain the rest of the arguments of the <code>datatable()</code> function.</p>
+<div id="table-css-classes" class="section level2">
+<h2>Table CSS Classes</h2>
+<p>The <code>class</code> argument specifies the CSS classes of the table. The possible values can be found on the page of <a href="http://datatables.net/manual/styling/classes">default styling options</a>. The default value <code>display</code> basically enables row striping, row highlighting on mouse over, row borders, and highlighting ordered columns. You can choose a different combination of CSS classes, such as <code>cell-border</code> and <code>stripe</code>:</p>
+<pre class="r"><code>datatable(head(iris), class = &#39;cell-border stripe&#39;)</code></pre>
+<p><div id="htmlwidget-7004" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-7004">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[5.1,4.9,4.7,4.6,5,5.4],[3.5,3,3.2,3.1,3.6,3.9],[1.4,1.4,1.3,1.5,1.4,1.7],[0.2,0.2,0.2,0.2,0.2,0.4],["setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>Sepal.Length</th>\n      <th>Sepal.Width</th>\n      <th>Petal.Length</th>\n      <th>Petal.Width</th>\n      <th>Species</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+</div>
+<div id="styling" class="section level2">
+<h2>Styling</h2>
+<p>Currently, <strong>DT</strong> only supports the Bootstrap style besides the default style. You can use the argument <code>style = 'bootstrap'</code> to enable the Bootstrap style, and adjust the table classes accordingly using <a href="http://getbootstrap.com/css/#tables">Bootstrap table class names</a>, such as <code>table-stripe</code> and <code>table-hover</code>. Actually, <strong>DT</strong> will automatically adjust the class names even if you provided the DataTables class names such as <code>stripe</code> and <code>hover</code>.</p>
+<pre class="r"><code>DT:::DT2BSClass(&#39;display&#39;)
+## [1] &quot;table table-striped table-hover&quot;
+DT:::DT2BSClass(c(&#39;compact&#39;, &#39;cell-border&#39;))
+## [1] &quot;table table-condensed table-bordered&quot;</code></pre>
+<p>Note you can only use one style for all tables on one page. Please see <a href="005-bootstrap.html">this separate page</a> for examples using the Bootstrap style.</p>
+</div>
+<div id="display-row-names" class="section level2">
+<h2>Display Row Names</h2>
+<p>If the data object has row names, they will be displayed as the first column of the table by default. You can suppress row names via the argument <code>rownames = FALSE</code>, and you can also change row names by providing a different character vector to <code>rownames</code>.</p>
+<pre class="r"><code>datatable(head(mtcars))</code></pre>
+<p><div id="htmlwidget-9962" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-9962">{"x":{"filter":"none","data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76],[2.62,2.875,2.32,3.215,3.44,3.46],[16.46,17.02,18.61,19.44,17.02,20.22],[0,0,1,1,0,1],[1,1,1,0,0,0],[4,4,4,3,3,3],[4,4,1,1,2,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>mpg</th>\n      <th>cyl</th>\n      <th>disp</th>\n      <th>hp</th>\n      <th>drat</th>\n      <th>wt</th>\n      <th>qsec</th>\n      <th>vs</th>\n      <th>am</th>\n      <th>gear</th>\n      <th>carb</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+<pre class="r"><code>datatable(head(mtcars), rownames = FALSE)  # no row names</code></pre>
+<p><div id="htmlwidget-8768" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-8768">{"x":{"filter":"none","data":[[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76],[2.62,2.875,2.32,3.215,3.44,3.46],[16.46,17.02,18.61,19.44,17.02,20.22],[0,0,1,1,0,1],[1,1,1,0,0,0],[4,4,4,3,3,3],[4,4,1,1,2,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>mpg</th>\n      <th>cyl</th>\n      <th>disp</th>\n      <th>hp</th>\n      <th>drat</th>\n      <th>wt</th>\n      <th>qsec</th>\n      <th>vs</th>\n      <th>am</th>\n      <th>gear</th>\n      <th>carb</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[0,1,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+<pre class="r"><code>datatable(head(mtcars), rownames = head(LETTERS))  # new row names</code></pre>
+<p><div id="htmlwidget-5326" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-5326">{"x":{"filter":"none","data":[["A","B","C","D","E","F"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76],[2.62,2.875,2.32,3.215,3.44,3.46],[16.46,17.02,18.61,19.44,17.02,20.22],[0,0,1,1,0,1],[1,1,1,0,0,0],[4,4,4,3,3,3],[4,4,1,1,2,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>mpg</th>\n      <th>cyl</th>\n      <th>disp</th>\n      <th>hp</th>\n      <th>drat</th>\n      <th>wt</th>\n      <th>qsec</th>\n      <th>vs</th>\n      <th>am</th>\n      <th>gear</th>\n      <th>carb</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+<div class="panel panel-warning">
+<div class="panel-heading">
+Influence of Row Names on Column Indices in JavaScript
+</div>
+<div class="panel-body">
+<p>Row names are essentialy a new column added to the original data (via <code>cbind(rownames(data), data)</code>). This has an important consequence in terms of the column indices. JavaScript indexes from 0 instead of 1, so the index of the <em>n</em>-th element is actually <em>n - 1</em>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> When thinking of the column indices (which you will often have to do if you customize <a href="options.html">options</a>), use</p>
+<ul>
+<li><em>n - 1</em> as the index of the <em>n</em>-th column in the <em>original data</em> if you do not display row names;</li>
+<li><em>n</em> as the index of the <em>n</em>-th column in the <em>original data</em> if you want to display row names, because the original index is <em>n - 1</em> in JavaScript but we added the row names as the first column, and <em>(n - 1) + 1</em> = <em>n</em>;</li>
+</ul>
+<p>It is very important to remember this when using DataTables <a href="options.html">options</a>.</p>
+</div>
+</div>
+</div>
+<div id="custom-column-names" class="section level2">
+<h2>Custom Column Names</h2>
+<p>By default, <code>datatable()</code> shows the column names of the data in the table, and you can use a custom character vector for the table header. There are a few possibilities. The first one is, you provide a new character vector to completely replace the column names of the data, e.g.</p>
+<pre class="r"><code># colnames(iris) is a character vector of length 5, and we replace it
+datatable(head(iris), colnames = c(&#39;Here&#39;, &#39;Are&#39;, &#39;Some&#39;, &#39;New&#39;, &#39;Names&#39;))</code></pre>
+<p><div id="htmlwidget-5852" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-5852">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[5.1,4.9,4.7,4.6,5,5.4],[3.5,3,3.2,3.1,3.6,3.9],[1.4,1.4,1.3,1.5,1.4,1.7],[0.2,0.2,0.2,0.2,0.2,0.4],["setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>Here</th>\n      <th>Are</th>\n      <th>Some</th>\n      <th>New</th>\n      <th>Names</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+<p>This can be cumbersome if you only want to replace one or two names, and you do not want to provide a whole vector of names. Then here is the second possibility: you can provide a shorter numeric or character vector as the index vector to replace a subset of the column names. For example, if you only want the 2nd name to be <code>'A Nicer Name'</code>, you can use <code>datatable(..., colnames = c('A Nicer Name' = 2))</code>; or if you want to replace the name <code>'X5'</code> with <code>'A Better Name'</code>, you can use <code>colnames = c('A Better Name' = 'X5')</code>.</p>
+<pre class="r"><code>datatable(head(iris), colnames = c(&#39;A Better Name&#39; = &#39;Sepal.Width&#39;))</code></pre>
+<p><div id="htmlwidget-3578" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-3578">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[5.1,4.9,4.7,4.6,5,5.4],[3.5,3,3.2,3.1,3.6,3.9],[1.4,1.4,1.3,1.5,1.4,1.7],[0.2,0.2,0.2,0.2,0.2,0.4],["setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>Sepal.Length</th>\n      <th>A Better Name</th>\n      <th>Petal.Length</th>\n      <th>Petal.Width</th>\n      <th>Species</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+<pre class="r"><code>datatable(head(iris), colnames = c(&#39;Another Better Name&#39; = 2, &#39;Yet Another Name&#39; = 4))</code></pre>
+<p><div id="htmlwidget-5769" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-5769">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[5.1,4.9,4.7,4.6,5,5.4],[3.5,3,3.2,3.1,3.6,3.9],[1.4,1.4,1.3,1.5,1.4,1.7],[0.2,0.2,0.2,0.2,0.2,0.4],["setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>Another Better Name</th>\n      <th>Sepal.Width</th>\n      <th>Yet Another Name</th>\n      <th>Petal.Width</th>\n      <th>Species</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+<p>When you display row names of the data, its column name will be a white space by default. That is why you cannot see its column name. You can certainly choose to use a column name for rownames as well, e.g.</p>
+<pre class="r"><code># change the first column name to &#39;ID&#39;
+datatable(head(iris), colnames = c(&#39;ID&#39; = 1))</code></pre>
+<p><div id="htmlwidget-1615" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-1615">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[5.1,4.9,4.7,4.6,5,5.4],[3.5,3,3.2,3.1,3.6,3.9],[1.4,1.4,1.3,1.5,1.4,1.7],[0.2,0.2,0.2,0.2,0.2,0.4],["setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>ID</th>\n      <th>Sepal.Length</th>\n      <th>Sepal.Width</th>\n      <th>Petal.Length</th>\n      <th>Petal.Width</th>\n      <th>Species</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+</div>
+<div id="custom-table-container" class="section level2">
+<h2>Custom Table Container</h2>
+<p>The <code>container</code> argument allows you to provide a different table container to hold the table cells. By default, the container is generated from the column names. Below is an example of a custom table header:</p>
+<pre class="r"><code># a custom table container
+sketch = htmltools::withTags(table(
+  class = &#39;display&#39;,
+  thead(
+    tr(
+      th(rowspan = 2, &#39;Species&#39;),
+      th(colspan = 2, &#39;Sepal&#39;),
+      th(colspan = 2, &#39;Petal&#39;)
+    ),
+    tr(
+      lapply(rep(c(&#39;Length&#39;, &#39;Width&#39;), 2), th)
+    )
+  )
+))
+print(sketch)</code></pre>
+<pre><code>&lt;table class=&quot;display&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&quot;2&quot;&gt;Species&lt;/th&gt;
+      &lt;th colspan=&quot;2&quot;&gt;Sepal&lt;/th&gt;
+      &lt;th colspan=&quot;2&quot;&gt;Petal&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Length&lt;/th&gt;
+      &lt;th&gt;Width&lt;/th&gt;
+      &lt;th&gt;Length&lt;/th&gt;
+      &lt;th&gt;Width&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+&lt;/table&gt; </code></pre>
+<pre class="r"><code># use rownames = FALSE here because we did not generate a cell for row names in
+# the header, and the header only contains five columns
+datatable(iris[1:20, c(5, 1:4)], container = sketch, rownames = FALSE)</code></pre>
+<p><div id="htmlwidget-7219" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-7219">{"x":{"filter":"none","class":"display","data":[["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\">Species</th>\n      <th colspan=\"2\">Sepal</th>\n      <th colspan=\"2\">Petal</th>\n    </tr>\n    <tr>\n      <th>Length</th>\n      <th>Width</th>\n      <th>Length</th>\n      <th>Width</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+<p>You can also add a footer to the table container, and here is an example:</p>
+<pre class="r"><code># a custom table with both header and footer
+sketch = htmltools::withTags(table(
+  tableHeader(iris),
+  tableFooter(iris)
+))
+print(sketch)</code></pre>
+<pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Sepal.Length&lt;/th&gt;
+      &lt;th&gt;Sepal.Width&lt;/th&gt;
+      &lt;th&gt;Petal.Length&lt;/th&gt;
+      &lt;th&gt;Petal.Width&lt;/th&gt;
+      &lt;th&gt;Species&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Sepal.Length&lt;/th&gt;
+      &lt;th&gt;Sepal.Width&lt;/th&gt;
+      &lt;th&gt;Petal.Length&lt;/th&gt;
+      &lt;th&gt;Petal.Width&lt;/th&gt;
+      &lt;th&gt;Species&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt; </code></pre>
+<pre class="r"><code>datatable(
+  head(iris, 10),
+  container = sketch, options = list(pageLength = 5, dom = &#39;tip&#39;), rownames = FALSE
+)</code></pre>
+<p><div id="htmlwidget-1624" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-1624">{"x":{"filter":"none","class":"display","data":[[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table>\n  <thead>\n    <tr>\n      <th>Sepal.Length</th>\n      <th>Sepal.Width</th>\n      <th>Petal.Length</th>\n      <th>Petal.Width</th>\n      <th>Species</th>\n    </tr>\n  </thead>\n  <tfoot>\n    <tr>\n      <th>Sepal.Length</th>\n      <th>Sepal.Width</th>\n      <th>Petal.Length</th>\n      <th>Petal.Width</th>\n      <th>Species</th>\n    </tr>\n  </tfoot>\n</table>","options":{"pageLength":5,"dom":"tip","columnDefs":[{"className":"dt-right","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[]}</script></p>
+</div>
+<div id="table-caption" class="section level2">
+<h2>Table Caption</h2>
+<p>You can add a table caption via the <code>caption</code> argument. It can be either a character vector, or a tag object created from <code>htmltools::tags$caption()</code>. See this <a href="http://datatables.net/blog/2014-11-07">blog post</a> for more information on table captions.</p>
+<pre class="r"><code>datatable(
+  head(iris),
+  caption = &#39;Table 1: This is a simple caption for the table.&#39;
+)</code></pre>
+<p><div id="htmlwidget-7377" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-7377">{"x":{"filter":"none","caption":"<caption>Table 1: This is a simple caption for the table.</caption>","data":[["1","2","3","4","5","6"],[5.1,4.9,4.7,4.6,5,5.4],[3.5,3,3.2,3.1,3.6,3.9],[1.4,1.4,1.3,1.5,1.4,1.7],[0.2,0.2,0.2,0.2,0.2,0.4],["setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>Sepal.Length</th>\n      <th>Sepal.Width</th>\n      <th>Petal.Length</th>\n      <th>Petal.Width</th>\n      <th>Species</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+<pre class="r"><code># display the caption at the bottom, and &lt;em&gt; the caption
+datatable(
+  head(iris),
+  caption = htmltools::tags$caption(
+    style = &#39;caption-side: bottom; text-align: center;&#39;,
+    &#39;Table 2: &#39;, htmltools::em(&#39;This is a simple caption for the table.&#39;)
+  )
+)</code></pre>
+<p><div id="htmlwidget-7417" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-7417">{"x":{"filter":"none","caption":"<caption style=\"caption-side: bottom; text-align: center;\">\n  Table 2: \n  <em>This is a simple caption for the table.</em>\n</caption>","data":[["1","2","3","4","5","6"],[5.1,4.9,4.7,4.6,5,5.4],[3.5,3,3.2,3.1,3.6,3.9],[1.4,1.4,1.3,1.5,1.4,1.7],[0.2,0.2,0.2,0.2,0.2,0.4],["setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>Sepal.Length</th>\n      <th>Sepal.Width</th>\n      <th>Petal.Length</th>\n      <th>Petal.Width</th>\n      <th>Species</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+</div>
+<div id="column-filters" class="section level2">
+<h2>Column Filters</h2>
+<p><strong>DataTables</strong> does not provide column filters by default. There is only a global filter (the search box on the top-right). We added a <code>filter</code> argument in <code>datatable()</code> to automatically generate column filters. By default, the filters are not shown since <code>filter = 'none'</code>. You can enable these filters by <code>filter = 'top'</code> or <code>'bottom'</code>, depending on whether you want to put the filters on the top or bottom of the table.</p>
+<pre class="r"><code>iris2 = iris[c(1:10, 51:60, 101:110), ]
+datatable(iris2, filter = &#39;top&#39;, options = list(
+  pageLength = 5, autoWidth = TRUE
+))</code></pre>
+<p><div id="htmlwidget-442" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-442">{"x":{"filter":"top","filterHTML":"<tr>\n  <td></td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"></span>\n    </div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"4.4\" data-max=\"7.6\" data-scale=\"1\"></div>\n      <span style=\"float: left;\"></span>\n      <span style=\"float: right;\"></span>\n    </div>\n  </td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"></span>\n    </div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"2.3\" data-max=\"3.9\" data-scale=\"1\"></div>\n      <span style=\"float: left;\"></span>\n      <span style=\"float: right;\"></span>\n    </div>\n  </td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"></span>\n    </div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1.3\" data-max=\"6.6\" data-scale=\"1\"></div>\n      <span style=\"float: left;\"></span>\n      <span style=\"float: right;\"></span>\n    </div>\n  </td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"></span>\n    </div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0.1\" data-max=\"2.5\" data-scale=\"1\"></div>\n      <span style=\"float: left;\"></span>\n      <span style=\"float: right;\"></span>\n    </div>\n  </td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"></span>\n    </div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\">\n        <option value=\"setosa\">setosa</option>\n        <option value=\"versicolor\">versicolor</option>\n        <option value=\"virginica\">virginica</option>\n      </select>\n    </div>\n  </td>\n</tr>","data":[["1","2","3","4","5","6","7","8","9","10","51","52","53","54","55","56","57","58","59","60","101","102","103","104","105","106","107","108","109","110"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,4.7,4.5,4.9,4,4.6,4.5,4.7,3.3,4.6,3.9,6,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,1.4,1.5,1.5,1.3,1.5,1.3,1.6,1,1.3,1.4,2.5,1.9,2.1,1.8,2.2,2.1,1.7,1.8,1.8,2.5],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>Sepal.Length</th>\n      <th>Sepal.Width</th>\n      <th>Petal.Length</th>\n      <th>Petal.Width</th>\n      <th>Species</th>\n    </tr>\n  </thead>\n</table>","options":{"pageLength":5,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[]}</script></p>
+<p>Depending on the type of a column, the filter control can be different. Initially, you see search boxes for all columns. When you click the search boxes, you may see different controls:</p>
+<ul>
+<li>For numeric/date/time columns, <a href="http://refreshless.com/nouislider/">range sliders</a> are used to filter rows within ranges;</li>
+<li>For factor columns, <a href="http://brianreavis.github.io/selectize.js/">selectize inputs</a> are used to display all possible categories, and you can select multiple categories there (note you can also type in the box to search in all categories);</li>
+<li>For character columns, ordinary search boxes are used to match the values you typed in the boxes;</li>
+</ul>
+<p>When you leave the initial search boxes, the controls will be hidden and the filtering values (if there are any) are stored in the boxes:</p>
+<ul>
+<li>For numeric/date/time columns, the values displayed in the boxes are of the form <code>low ... high</code>;</li>
+<li>For factor columns, the values are serialized as a JSON array of the form <code>[&quot;value1&quot;, &quot;value2&quot;, &quot;value3&quot;]</code>;</li>
+</ul>
+<p>When a column is filtered, there will be a clear button <span class="glyphicon glyphicon-remove-circle"></span> in its search box, and you can click the button to clear the filter. If you do not want to use the controls, you can actually type in the search boxes directly, e.g. you may type <code>2 ... 5</code> to filter a numeric column, and the range of its slider will automatically adjusted to <code>[2, 5]</code>. In case you find a search box too narrow and it is difficult to read the values in it, you may mouse over the box and its values will be displayed as a tooltip. See <a href="008-filter.html">this example</a> for how to hide the clear buttons, and use plain text input styles instead of Bootstrap.</p>
+<p>Below is a simple example to demonstrate filters for character, date, and time columns:</p>
+<pre class="r"><code>d = data.frame(
+  names = rownames(mtcars),
+  date = as.Date(&#39;2015-03-23&#39;) + 1:32,
+  time = as.POSIXct(&#39;2015-03-23 12:00:00&#39;, tz = &#39;UTC&#39;) + (1:32) * 5000,
+  stringsAsFactors = FALSE
+)
+str(d)
+## &#39;data.frame&#39;:    32 obs. of  3 variables:
+##  $ names: chr  &quot;Mazda RX4&quot; &quot;Mazda RX4 Wag&quot; &quot;Datsun 710&quot; &quot;Hornet 4 Drive&quot; ...
+##  $ date : Date, format: &quot;2015-03-24&quot; &quot;2015-03-25&quot; ...
+##  $ time : POSIXct, format: &quot;2015-03-23 13:23:20&quot; &quot;2015-03-23 14:46:40&quot; ...
+datatable(d, filter = &#39;bottom&#39;, options = list(pageLength = 5))</code></pre>
+<p><div id="htmlwidget-7832" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-7832">{"x":{"filter":"bottom","filterHTML":"<tr>\n  <td></td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"></span>\n    </div>\n  </td>\n  <td data-type=\"date\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"></span>\n    </div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1427155200000\" data-max=\"1429833600000\"></div>\n      <span style=\"float: left;\"></span>\n      <span style=\"float: right;\"></span>\n    </div>\n  </td>\n  <td data-type=\"time\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"></span>\n    </div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1.427117e+12\" data-max=\"1.427272e+12\"></div>\n      <span style=\"float: left;\"></span>\n      <span style=\"float: right;\"></span>\n    </div>\n  </td>\n</tr>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32"],["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"],["2015-03-24","2015-03-25","2015-03-26","2015-03-27","2015-03-28","2015-03-29","2015-03-30","2015-03-31","2015-04-01","2015-04-02","2015-04-03","2015-04-04","2015-04-05","2015-04-06","2015-04-07","2015-04-08","2015-04-09","2015-04-10","2015-04-11","2015-04-12","2015-04-13","2015-04-14","2015-04-15","2015-04-16","2015-04-17","2015-04-18","2015-04-19","2015-04-20","2015-04-21","2015-04-22","2015-04-23","2015-04-24"],["2015-03-23T13:23:20Z","2015-03-23T14:46:40Z","2015-03-23T16:10:00Z","2015-03-23T17:33:20Z","2015-03-23T18:56:40Z","2015-03-23T20:20:00Z","2015-03-23T21:43:20Z","2015-03-23T23:06:40Z","2015-03-24T00:30:00Z","2015-03-24T01:53:20Z","2015-03-24T03:16:40Z","2015-03-24T04:40:00Z","2015-03-24T06:03:20Z","2015-03-24T07:26:40Z","2015-03-24T08:50:00Z","2015-03-24T10:13:20Z","2015-03-24T11:36:40Z","2015-03-24T13:00:00Z","2015-03-24T14:23:20Z","2015-03-24T15:46:40Z","2015-03-24T17:10:00Z","2015-03-24T18:33:20Z","2015-03-24T19:56:40Z","2015-03-24T21:20:00Z","2015-03-24T22:43:20Z","2015-03-25T00:06:40Z","2015-03-25T01:30:00Z","2015-03-25T02:53:20Z","2015-03-25T04:16:40Z","2015-03-25T05:40:00Z","2015-03-25T07:03:20Z","2015-03-25T08:26:40Z"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>names</th>\n      <th>date</th>\n      <th>time</th>\n    </tr>\n  </thead>\n</table>","options":{"pageLength":5,"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}],"lengthMenu":[5,10,25,50,100]}},"evals":[]}</script></p>
+<p>Filtering in the above examples was done on the client side (using JavaScript in your web browser). Column filters also work in the <a href="server.html">server-side processing</a> mode, in which case filtering will be processed on the server, and there may be some subtle differences (e.g. JavaScript regular expressions are different with R). See <a href="https://yihui.shinyapps.io/DT-filter/">here for an example</a> of column filters working on the server side.</p>
+<div class="panel panel-danger">
+<div class="panel-heading">
+Known Issues of Column Filters
+</div>
+<div class="panel-body">
+The position of column filters may be off when scrolling is enabled in the table, e.g. via the options <code>scrollX</code> and/or <code>scrollY</code>. The appearance may be affected by Shiny sliders, as reported in <a href="https://github.com/rstudio/DT/issues/49">#49</a>.
+</div>
+</div>
+</div>
+<div id="the-callback-argument" class="section level2">
+<h2>The <code>callback</code> argument</h2>
+<p>The argument <code>callback</code> takes the body of a JavaScript function that will be applied to the <strong>DataTables</strong> object after initialization. Below is an example to show the next page after the table is initialized<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>:</p>
+<pre class="r"><code>datatable(head(iris, 30), callback = JS(&#39;table.page(&quot;next&quot;).draw(false);&#39;))</code></pre>
+<p><div id="htmlwidget-2045" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-2045">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.7,1.5,1,1.7,1.9,1.6,1.6,1.5,1.4,1.6],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3,0.2,0.4,0.2,0.5,0.2,0.2,0.4,0.2,0.2,0.2],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>Sepal.Length</th>\n      <th>Sepal.Width</th>\n      <th>Petal.Length</th>\n      <th>Petal.Width</th>\n      <th>Species</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\ntable.page(\"next\").draw(false);\n}"},"evals":["callback"]}</script></p>
+<p>In the above example, the actual callback function on the JavaScript side is this (<code>callback</code> is only the body of the function):</p>
+<pre class="javascript"><code>function(table) {
+  table.page(&quot;next&quot;).draw(false);
+}</code></pre>
+<p>After we initialize the table via the <code>.DataTable()</code> method in DataTables, the DataTables instance is passed to this callback function. Below are a few more examples:</p>
+<ul>
+<li><a href="002-rowdetails.html">Show extra information in child rows</a></li>
+</ul>
+<p>Please note this <code>callback</code> argument is only an argument of the <code>datatable()</code> function, and do not confuse it with the callbacks in the <strong>DataTables</strong> <a href="options.html">options</a>. The purpose of this argument is to allow users to manipulate the <strong>DataTables</strong> object after its creation.</p>
+</div>
+<div id="escaping-table-content" class="section level2">
+<h2>Escaping Table Content</h2>
+<p>The argument <code>escape</code> determines whether the HTML entities in the table are escaped or not. There can be potential security problems when the table is rendered in dynamic web applications such as Shiny if you do not escape them. Here is a quick example:</p>
+<pre class="r"><code>m = matrix(c(
+  &#39;&lt;b&gt;Bold&lt;/b&gt;&#39;, &#39;&lt;em&gt;Emphasize&lt;/em&gt;&#39;, &#39;&lt;a href=&quot;http://rstudio.com&quot;&gt;RStudio&lt;/a&gt;&#39;,
+  &#39;&lt;a href=&quot;#&quot; onclick=&quot;alert(\&#39;Hello World\&#39;);&quot;&gt;Hello&lt;/a&gt;&#39;
+), 2)
+colnames(m) = c(&#39;&lt;span style=&quot;color:red&quot;&gt;Column 1&lt;/span&gt;&#39;, &#39;&lt;em&gt;Column 2&lt;/em&gt;&#39;)
+datatable(m)  # escape = TRUE by default</code></pre>
+<p><div id="htmlwidget-8471" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-8471">{"x":{"filter":"none","data":[["&lt;b&gt;Bold&lt;/b&gt;","&lt;em&gt;Emphasize&lt;/em&gt;"],["&lt;a href=\"http://rstudio.com\"&gt;RStudio&lt;/a&gt;","&lt;a href=\"#\" onclick=\"alert('Hello World');\"&gt;Hello&lt;/a&gt;"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>&lt;span style=\"color:red\"&gt;Column 1&lt;/span&gt;</th>\n      <th>&lt;em&gt;Column 2&lt;/em&gt;</th>\n    </tr>\n  </thead>\n</table>","options":{"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+<pre class="r"><code>datatable(m, escape = FALSE)</code></pre>
+<p><div id="htmlwidget-4772" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-4772">{"x":{"filter":"none","data":[["<b>Bold</b>","<em>Emphasize</em>"],["<a href=\"http://rstudio.com\">RStudio</a>","<a href=\"#\" onclick=\"alert('Hello World');\">Hello</a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><span style=\"color:red\">Column 1</span></th>\n      <th><em>Column 2</em></th>\n    </tr>\n  </thead>\n</table>","options":{"order":[],"autoWidth":false,"orderClasses":false}},"evals":[]}</script></p>
+<p>Besides <code>TRUE</code> and <code>FALSE</code>, you can also specify which columns you want to escape, e.g.</p>
+<pre class="r"><code>datatable(m, escape = 1)  # escape the first column
+datatable(m, escape = 2)  # escape the second column
+datatable(m, escape = c(TRUE, FALSE))  # escape the first column
+colnames(m) = c(&#39;V1&#39;, &#39;V2&#39;)
+datatable(m, escape = &#39;V1&#39;)</code></pre>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>By comparison, R indexes from 1.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>See the documentation for the <a href="http://datatables.net/reference/api/page()">page()</a> API.<a href="#fnref2">↩</a></p></li>
+</ol>
+</div>
+
+<script type="text/javascript" src="libs/fluidbox/jquery.fluidbox.min.js"></script>
+<script type="text/javascript" src="include/js/enable-fluidbox.js"></script>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+
+</body>
+</html>
