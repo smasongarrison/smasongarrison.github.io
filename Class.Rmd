@@ -1,23 +1,32 @@
 ---
-title: "Class"
+title: "Introduction to Applied Statistics: Course Page"
 output: html_document
 ---
 
-```{r child="children/chunk_options.Rmd"}
-```
+## Overview
+Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescents students. It is scheduled for Summer Session I (June 12-17).
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+### Description
+Media stories about ``the latest scientific findings'' can range from the plausible to the silly. This class will help you learn to separate truth from fiction by introducing you to the basic statistical methods and tools used in psychological research. You will learn to use R, a free and powerful statistical software package, to conduct and interpret basic scientific statistical tests. You will begin to recognize the difference between proper and improper use of data, especially the distinction between correlation and causation (e.g., why margarine consumption does not actually lead to more divorces in the state of Maine). For the final project, you will formulate and answer your own scientific research question using these new tools and real psychology data.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## Instructor Information
+### Instructor
+#### Name: S. Mason Garrison
+#### Email: s.mason.garrison@gmail.com
+#### Office Hours: TBA
 
-```{r}
-devtools::install_github('rstudio/DT')
-```
+### Teaching Assistant
+#### Name: TBA
+#### Email: TBA
+#### Office Hours: TBA
 
-You can also embed plots, for example:
-
-```{r, echo=FALSE}
-plot(cars)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Schedule
+#### How To Read This Schedule: 
+<!---
+All readings will be completed before class on the date on which they are assigned. Anything in bold is work to be completed before class and brought with you on the day listed. Paper due dates, also in bold, indicate that the completed manuscript of your paper must be in the correct dropbox on Blackboard before class starts on the day indicated.
+-->
+### Day 1 (June 13)
+### Day 2 (June 14)
+### Day 3 (June 15)
+### Day 4 (June 16)
+### Day 5 (June 17)
