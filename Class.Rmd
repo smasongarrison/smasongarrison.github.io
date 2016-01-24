@@ -3,30 +3,67 @@ title: "Introduction to Applied Statistics: Course Page"
 output: html_document
 ---
 
-## Overview
+*** 
+### Overview
 Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescents students. It is scheduled for Summer Session I (June 12-17).
 
-### Description
-Media stories about ``the latest scientific findings'' can range from the plausible to the silly. This class will help you learn to separate truth from fiction by introducing you to the basic statistical methods and tools used in psychological research. You will learn to use R, a free and powerful statistical software package, to conduct and interpret basic scientific statistical tests. You will begin to recognize the difference between proper and improper use of data, especially the distinction between correlation and causation (e.g., why margarine consumption does not actually lead to more divorces in the state of Maine). For the final project, you will formulate and answer your own scientific research question using these new tools and real psychology data.
+> Media stories about ``the latest scientific findings'' can range from the plausible to the silly. This class will help you learn to separate truth from fiction by introducing you to the basic statistical methods and tools used in psychological research. You will learn to use R, a free and powerful statistical software package, to conduct and interpret basic scientific statistical tests. You will begin to recognize the difference between proper and improper use of data, especially the distinction between correlation and causation (e.g., why margarine consumption does not actually lead to more divorces in the state of Maine). For the final project, you will formulate and answer your own scientific research question using these new tools and real psychology data.
+
+*** 
 
 ## Instructor Information
+
+*** 
+
 ### Instructor
-#### Name: S. Mason Garrison
-#### Email: s.mason.garrison@gmail.com
-#### Office Hours: TBA
+##### Name: S. Mason Garrison
+##### Email: s.mason.garrison@gmail.com
+##### Office Hours: TBA
+
+*** 
 
 ### Teaching Assistant
-#### Name: TBA
-#### Email: TBA
-#### Office Hours: TBA
+##### Name: TBA
+##### Email: TBA
+##### Office Hours: TBA
+
+*** 
 
 ## Schedule
-#### How To Read This Schedule: 
+
+*** 
+
+How To Read This Schedule: 
 <!---
 All readings will be completed before class on the date on which they are assigned. Anything in bold is work to be completed before class and brought with you on the day listed. Paper due dates, also in bold, indicate that the completed manuscript of your paper must be in the correct dropbox on Blackboard before class starts on the day indicated.
 -->
+
+*** 
+
 ### Day 1 (June 13)
+Learning Outcome:
+
 ### Day 2 (June 14)
+Learning Outcome:
+
 ### Day 3 (June 15)
+Learning Outcome:
+
 ### Day 4 (June 16)
+Learning Outcome:
+
 ### Day 5 (June 17)
+Learning Outcome:
+
+*** 
+
+## Data
+```{r message=FALSE,echo=FALSE}
+if (!require("DT")) install.packages('DT')
+m = matrix(c(
+  '<b>Bold</b>', '<em>Emphasize</em>', '<a href="http://rstudio.com">RStudio</a>',
+  '<a href="#" onclick="alert(\'Hello World\');">Hello</a>'
+), 2)
+colnames(m) = c('<span style="color:red">Column 1</span>', '<em>Column 2</em>')
+datatable(m, escape = FALSE)
+```
