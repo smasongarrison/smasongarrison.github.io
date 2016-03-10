@@ -61,9 +61,8 @@ All readings will be completed before class on the date on which they are assign
 ##### Afternoon: Research Project (students delve into examining relationships within their data), Select Readings from How to Lie with Statistics
 
 ### Day 5 (June 17)
-#### Learning Outcome: regression
-##### Morning:extend correlations into regression
-##### Afternoon: Research Project (prepare presentation), Present projects
+#### Learning Outcome: Presention
+##### Morning: Research Project (prepare presentation), Present projects
 *** 
 
 ## Data

@@ -7,19 +7,20 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
 <title>Introduction to Applied Statistics: Course Page</title>
 
-<script src="libs/jquery-1.11.1/jquery.min.js"></script>
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.1/css/bootstrap.min.css" rel="stylesheet" />
-<script src="libs/bootstrap-3.3.1/js/bootstrap.min.js"></script>
-<script src="libs/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
-<script src="libs/bootstrap-3.3.1/shim/respond.min.js"></script>
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/htmlwidgets-0.6/htmlwidgets.js"></script>
-<script src="libs/datatables-binding-0.1/datatables.js"></script>
+<script src="libs/datatables-binding-0.1.40/datatables.js"></script>
 <script src="libs/datatables-1.10.7/jquery.dataTables.min.js"></script>
 <link href="libs/datatables-default-1.10.7/dataTables.extra.css" rel="stylesheet" />
 <link href="libs/datatables-default-1.10.7/jquery.dataTables.min.css" rel="stylesheet" />
@@ -47,6 +48,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 
 
+
 </head>
 
 <body>
@@ -61,12 +63,55 @@ code {
   color: inherit;
   background-color: rgba(0, 0, 0, 0.04);
 }
-img { 
-  max-width:100%; 
-  height: auto; 
+img {
+  max-width:100%;
+  height: auto;
+}
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
 }
 </style>
+
+
 <div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="libs/navigation-1.0/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
 
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -78,13 +123,13 @@ img {
       <ul class="nav navbar-nav">
         <li><a href="./index.html">Home</a></li>
         <li><a href="https://github.com/smasongarrison">Github</a></li>
-        <li><a href="https://github.com/smasongarrison">XTeaching</a></li>
+        <li><a href="http://smasongarrison.github.io/Class.html">Teaching</a></li>
         <li class="dropdown">
           <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">          <li><a href="index.html">index</a></li>
-          <li><a href="index2.html">index2</a></li>
+          <ul class="dropdown-menu" role="menu">          <li><a href="Class.html">Class</a></li>
+          <li><a href="DTtest.html">DT: An R interface to the DataTables library</a></li>
+          <li><a href="index.html">Welcome</a></li>
           <li><a href="test.html">test</a></li>
-          <li><a href="test2.html">test2</a></li>
           </ul>
         </li>
       </ul>
@@ -92,8 +137,11 @@ img {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div id="header">
+<div class="fluid-row" id="header">
+
+
 <h1 class="title">Introduction to Applied Statistics: Course Page</h1>
+
 </div>
 
 
@@ -193,13 +241,10 @@ All readings will be completed before class on the date on which they are assign
 </div>
 <div id="day-5-june-17" class="section level3">
 <h3>Day 5 (June 17)</h3>
-<div id="learning-outcome-regression" class="section level4">
-<h4>Learning Outcome: regression</h4>
-<div id="morningextend-correlations-into-regression" class="section level5">
-<h5>Morning:extend correlations into regression</h5>
-</div>
-<div id="afternoon-research-project-prepare-presentation-present-projects" class="section level5">
-<h5>Afternoon: Research Project (prepare presentation), Present projects</h5>
+<div id="learning-outcome-presention" class="section level4">
+<h4>Learning Outcome: Presention</h4>
+<div id="morning-research-project-prepare-presentation-present-projects" class="section level5">
+<h5>Morning: Research Project (prepare presentation), Present projects</h5>
 <hr />
 </div>
 </div>
@@ -207,13 +252,14 @@ All readings will be completed before class on the date on which they are assign
 </div>
 <div id="data" class="section level2">
 <h2>Data</h2>
-<pre><code>## Warning: package &#39;DT&#39; was built under R version 3.2.3</code></pre>
-<p><div id="htmlwidget-3547" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3547">{"x":{"data":[["<b>Bold\u003c/b>","<em>Emphasize\u003c/em>"],["<a href=\"http://rstudio.com\">RStudio\u003c/a>","<a href=\"#\" onclick=\"alert('Hello World');\">Hello\u003c/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><span style=\"color:red\">Column 1\u003c/span>\u003c/th>\n      <th><em>Column 2\u003c/em>\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"order":[],"autoWidth":false,"orderClasses":false},"callback":null,"filter":"none"},"evals":[],"jsHooks":[]}</script></p>
+<p><div id="htmlwidget-2924" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2924">{"x":{"filter":"none","data":[["<b>Bold\u003c/b>","<em>Emphasize\u003c/em>"],["<a href=\"http://rstudio.com\">RStudio\u003c/a>","<a href=\"#\" onclick=\"alert('Hello World');\">Hello\u003c/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><span style=\"color:red\">Column 1\u003c/span>\u003c/th>\n      <th><em>Column 2\u003c/em>\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script></p>
 </div>
 
 <script type="text/javascript" src="libs/fluidbox/jquery.fluidbox.min.js"></script>
 <script type="text/javascript" src="include/js/enable-fluidbox.js"></script>
+
+
 
 </div>
 

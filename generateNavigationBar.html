@@ -9,9 +9,10 @@
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<meta name="author" content="Owner" />
 
 
-<title>Welcome</title>
+<title>generateNavigationBar.R</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -135,19 +136,47 @@ $(document).ready(function () {
 <div class="fluid-row" id="header">
 
 
-<h1 class="title">Welcome</h1>
+<h1 class="title">generateNavigationBar.R</h1>
+<h4 class="author"><em>Owner</em></h4>
+<h4 class="date"><em>Thu Mar 10 16:18:53 2016</em></h4>
 
 </div>
 
 
-<!---
-Adapted from https://github.com/yutannihilation/rmarkdown-website-template
--->
-<div id="this-page-is-a-work-in-progress.-my-current-website-is-www.smasongarrison.com." class="section level3">
-<h3>This page is a work in progress. My current website is <a href="www.smasongarrison.com" class="uri">www.smasongarrison.com</a>.</h3>
-<p>My name is Mason Garrison. I am a <a href="http://www.nsfgrfp.org/">Nation Science Foundation Graduate Research Fellow</a> and <a href="http://www.vanderbilt.edu/psychological_sciences/graduate/programs/quantitative-methods/index.php">Quantitative Methods</a> graduate student in <a href="http://www.vanderbilt.edu/psychological_sciences/">Psychological Sciences</a> at <a href="http://www.vanderbilt.edu/">Vanderbilt University</a>, <a href="http://peabody.vanderbilt.edu/">Peabody College</a> in Nashville, Tennessee. Recently, I returned from a visiting international researcher position at the <a href="http://psych.ubc.ca/">University of British Columbia</a>, where I worked with <a href="http://psych.ubc.ca/persons/jeremy-biesanz/">Prof. Jeremy Biesanz</a> and <a href="http://delongis.psych.ubc.ca/">Prof. Anita DeLongis</a>.</p>
-<p>At Vanderbilt, I work with <a href="http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers">Prof. Joe Rodgers</a> on my research related to kinship modeling. My research uses kinship structure, such as married partners or siblings to infer causation about individual differences. I am particularly interested in developing kinship models to explore the relationship amoung personality, intelligence, and health.</p>
-</div>
+<pre class="r"><code># generate before_body.html
+
+local({
+  before_body &lt;- &quot;include/before_body.html&quot;
+
+  cat(&#39;
+&lt;div class=&quot;navbar navbar-default navbar-fixed-top&quot; role=&quot;navigation&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;navbar-header&quot;&gt;
+      &lt;a class=&quot;navbar-brand&quot; href=&quot;./index.html&quot;&gt;S. Mason Garrison&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;navbar&quot; class=&quot;navbar-collapse collapse&quot;&gt;
+      &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;./index.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://github.com/smasongarrison&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;http://smasongarrison.github.io/Class.html&quot;&gt;Teaching&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;dropdown&quot;&gt;
+          &lt;a href=&quot;authoring&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; role=&quot;button&quot; aria-expanded=&quot;false&quot;&gt;Pages&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+          &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;&#39;, file = before_body)
+
+  index &lt;- jsonlite::fromJSON(&quot;index.json&quot;)
+  page_list  &lt;- sort(sprintf(&#39;          &lt;li&gt;&lt;a href=&quot;%s&quot;&gt;%s&lt;/a&gt;&lt;/li&gt;&#39;, index$url, index$title))
+  cat(paste0(page_list, collapse = &quot;\n&quot;),
+      file = before_body, append = TRUE)
+
+  cat(&#39;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;&lt;!--/.nav-collapse --&gt;
+  &lt;/div&gt;&lt;!--/.container --&gt;
+&lt;/div&gt;&lt;!--/.navbar --&gt;
+&#39;, file = before_body, append = TRUE)
+})</code></pre>
 
 <script type="text/javascript" src="libs/fluidbox/jquery.fluidbox.min.js"></script>
 <script type="text/javascript" src="include/js/enable-fluidbox.js"></script>
