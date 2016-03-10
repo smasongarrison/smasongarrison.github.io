@@ -1,9 +1,4 @@
----
-title: "Academic Advice Aggregator"
-output: 
-  html_document: 
-    keep_md: yes
----
+# Academic Advice Aggregator
 The following collection of articles is an aggregation of academic advice. This list was inspired by [Dr. Becca's](http://drbecca.scientopia.org/) post on aggregating [Tenure-Track search related-advice](http://drbecca.scientopia.org/tt-job-search-advice-aggregator/)
 
 ## General Advice
