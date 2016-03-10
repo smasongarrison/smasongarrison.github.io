@@ -7,17 +7,18 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
 <title>Academic Advice Aggregator</title>
 
-<script src="libs/jquery-1.11.0/jquery.min.js"></script>
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.1/css/bootstrap.min.css" rel="stylesheet" />
-<script src="libs/bootstrap-3.3.1/js/bootstrap.min.js"></script>
-<script src="libs/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
-<script src="libs/bootstrap-3.3.1/shim/respond.min.js"></script>
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <link href='libs/fluidbox/css/fluidbox.css' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 <link href='include/css/style.css' rel='stylesheet' type='text/css'>
@@ -42,6 +43,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 
 
+
 </head>
 
 <body>
@@ -56,12 +58,55 @@ code {
   color: inherit;
   background-color: rgba(0, 0, 0, 0.04);
 }
-img { 
-  max-width:100%; 
-  height: auto; 
+img {
+  max-width:100%;
+  height: auto;
+}
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
 }
 </style>
+
+
 <div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="libs/navigation-1.0/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
 
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -73,13 +118,12 @@ img {
       <ul class="nav navbar-nav">
         <li><a href="./index.html">Home</a></li>
         <li><a href="https://github.com/smasongarrison">Github</a></li>
-        <li><a href="https://github.com/smasongarrison">XTeaching</a></li>
+        <li><a href="http://smasongarrison.github.io/Class.html">Teaching</a></li>
         <li class="dropdown">
           <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">          <li><a href="index.html">index</a></li>
-          <li><a href="index2.html">index2</a></li>
-          <li><a href="test.html">test</a></li>
-          <li><a href="test2.html">test2</a></li>
+          <ul class="dropdown-menu" role="menu">          <li><a href="AAA.html">Academic Advice Aggregator</a></li>
+          <li><a href="Class.html">Introduction to Applied Statistics: Course Page</a></li>
+          <li><a href="index.html">Welcome</a></li>
           </ul>
         </li>
       </ul>
@@ -87,8 +131,11 @@ img {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div id="header">
+<div class="fluid-row" id="header">
+
+
 <h1 class="title">Academic Advice Aggregator</h1>
+
 </div>
 
 
@@ -96,6 +143,8 @@ img {
 
 <script type="text/javascript" src="libs/fluidbox/jquery.fluidbox.min.js"></script>
 <script type="text/javascript" src="include/js/enable-fluidbox.js"></script>
+
+
 
 </div>
 

@@ -1,9 +1,13 @@
 [
   {
     "title": "Academic Advice Aggregator",
-    "output": "html_document",
+    "output": {
+      "html_document": {
+        "keep_md": true
+      }
+    },
     "url": "AAA.html",
-    "date": "2016-02-23 15:52:12"
+    "date": "2016-03-10 16:29:33"
   },
   {
     "title": "Introduction to Applied Statistics: Course Page",
