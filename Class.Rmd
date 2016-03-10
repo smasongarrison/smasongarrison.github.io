@@ -41,20 +41,29 @@ All readings will be completed before class on the date on which they are assign
 *** 
 
 ### Day 1 (June 13)
-Learning Outcome:
+#### Learning Outcome: Describe data
+##### Morning: mean, median mode, sd, distributions
+##### Afternoon: Research Project Introduction (students pick data from topic list), Select Readings from How to Lie with Statistics
 
 ### Day 2 (June 14)
-Learning Outcome:
+#### Learning Outcome: Research Design, Selection Bias
+##### Morning: Kinds of designs -- experiments, quasi-experiments, observation. Causation, within this context
+##### Afternoon: Research Project (students delve into selection methods of their study; and basic demographics), Select Readings from How to Lie with Statistics
 
 ### Day 3 (June 15)
-Learning Outcome:
+#### Learning Outcome: hypothesis testing, t-tests
+##### Morning: null hypothesis testing; t-tests
+##### Afternoon: Research Project (students delve into basic hypotheses testing), Select Readings from How to Lie with Statistics
 
 ### Day 4 (June 16)
-Learning Outcome:
+#### Learning Outcome: Correlation
+##### Morning: correlation; third variables, causation etc
+##### Afternoon: Research Project (students delve into examining relationships within their data), Select Readings from How to Lie with Statistics
 
 ### Day 5 (June 17)
-Learning Outcome:
-
+#### Learning Outcome: regression
+##### Morning:extend correlations into regression
+##### Afternoon: Research Project (prepare presentation), Present projects
 *** 
 
 ## Data
