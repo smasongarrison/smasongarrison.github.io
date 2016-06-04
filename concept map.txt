@@ -1,0 +1,42 @@
+Story-telling and statistics
+
+distinguish between using statistics to tell a story AND telling the story of your statistics
+	first one can be problematic (is it exploratory OR is fantasy)
+	
+Correlation vs. Causation
+
+outliers
+median/mode/mean
+variance/standard deviation/spread
+
+hypothesis testing
+null hypothesis; alternative hypothesis
+
+fields that use stats -> psychology, sociology, linguists etc (ie all of them)
+
+R
+
+t-test; chi-squared?; significant testing?; geometric demonstration
+
+probability? 
+
+how to lie with statistics
+
+bias -- selection; measurement; third variable; 
+
+sampling techniques
+
+misleading graphs
+
+
+Course Objectives:
+describe data
+
+identify key elements of research design, and be able to identify weaknesses in design
+
+be able to set-up null hypothesis testing; identify the null and alternative
+
+ACTIVITY IDEAS:
+bad graphs;
+generate two stories from same data;
+concept map as a test of learning
