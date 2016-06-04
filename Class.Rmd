@@ -18,14 +18,14 @@ Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course d
 ### Instructor
 ##### Name: S. Mason Garrison
 ##### Email: s.mason.garrison@gmail.com
-##### Office Hours: TBA
+##### Office Hours: NA
 
 *** 
 
 ### Teaching Assistant
-##### Name: TBA
-##### Email: TBA
-##### Office Hours: TBA
+##### Name: Catalina Ordorica
+##### Email: catalina.ordorica@vanderbilt.edu
+##### Office Hours: NA
 
 *** 
 
@@ -51,7 +51,7 @@ All readings will be completed before class on the date on which they are assign
 ##### Afternoon: Research Project (students delve into selection methods of their study; and basic demographics), Select Readings from How to Lie with Statistics
 
 ### Day 3 (June 15)
-#### Learning Outcome: hypothesis testing, t-tests
+#### Learning Outcome: Hypothesis testing, t-tests
 ##### Morning: null hypothesis testing; t-tests
 ##### Afternoon: Research Project (students delve into basic hypotheses testing), Select Readings from How to Lie with Statistics
 
