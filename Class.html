@@ -19,6 +19,11 @@
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/htmlwidgets-0.6/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.1/datatables.js"></script>
+<script src="libs/datatables-1.10.7/jquery.dataTables.min.js"></script>
+<link href="libs/datatables-default-1.10.7/dataTables.extra.css" rel="stylesheet" />
+<link href="libs/datatables-default-1.10.7/jquery.dataTables.min.css" rel="stylesheet" />
 <link href='libs/fluidbox/css/fluidbox.css' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 <link href='include/css/style.css' rel='stylesheet' type='text/css'>
@@ -253,6 +258,17 @@ All readings will be completed before class on the date on which they are assign
 </div>
 <div id="data" class="section level2">
 <h2>Data</h2>
+<!---
+
+```
+## Warning in matrix(c("<b>Bold</b>", "<em>Emphasize</em>", "<a href=\"http://
+## rstudio.com\">RStudio</a>", : data length [4] is not a sub-multiple or
+## multiple of the number of columns [5]
+```
+
+<div id="htmlwidget-507" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-507">{"x":{"data":[["<b>Bold\u003c/b>"],["<em>Emphasize\u003c/em>"],["<a href=\"http://rstudio.com\">RStudio\u003c/a>"],["<a href=\"#\" onclick=\"alert('Hello World');\">Hello\u003c/a>"],["<b>Bold\u003c/b>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><span>Package\u003c/span>\u003c/th>\n      <th>Item\u003c/th>\n      <th>Title\u003c/th>\n      <th>csv\u003c/th>\n      <th>Doc\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"order":[],"autoWidth":false,"orderClasses":false},"callback":null,"filter":"none"},"evals":[],"jsHooks":[]}</script>
+-->
 <p align= center >
 <table cellspacing=0 border=1>
 <caption align="bottom" class="captiondataframe">

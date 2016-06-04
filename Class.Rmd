@@ -66,6 +66,17 @@ All readings will be completed before class on the date on which they are assign
 *** 
 
 ## Data
+<!---
+```{r message=FALSE,echo=FALSE}
+if (!require("DT")) install.packages('DT')
+m = matrix(c(
+  '<b>Bold</b>', '<em>Emphasize</em>', '<a href="http://rstudio.com">RStudio</a>',
+  '<a href="#" onclick="alert(\'Hello World\');">Hello</a>'
+), ncol=5,byrow=TRUE)
+colnames(m) = c('<span>Package</span>', 'Item','Title','csv','Doc')
+datatable(m, escape = FALSE)
+```
+-->
 <p align= center >
 <table cellspacing=0 border=1>
 <caption align=bottom class=captiondataframe></caption>
