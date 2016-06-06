@@ -45,9 +45,9 @@ for (i in 1:nrow(index)) {
 }
 
 # CSV index
-index_out$csv = paste('https://raw.github.com/vincentarelbundock/Rdatasets/master/csv/',
+index_out$csv = paste('https://raw.github.com/smasongarrison/smasongarrison.github.io/master/csv/',
                       index_out$Package, '/', index_out$Item, '.csv', sep='')
-index_out$doc = paste('https://raw.github.com/vincentarelbundock/Rdatasets/master/doc/',
+index_out$doc = paste('https://raw.github.com/smasongarrison/smasongarrison.github.io/master/doc/',
                       index_out$Package, '/', index_out$Item, '.html', sep='')
 write.csv(index_out, file='datasets.csv', row.names=FALSE)
 
