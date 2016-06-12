@@ -16,8 +16,17 @@ The following collection of articles is an aggregation of academic advice. This 
 
 [Prinstein, M. (2014). Mitch’s Uncensored Advice for Applying to Graduate School in Clinical Psychology](http://mitch.web.unc.edu/files/2013/10/MitchGradSchoolAdvice.pdf)
 
-#### Professional Development
+#### Lists of Programs
+##### Quantitative Psychology
+[Wikipedia. List of Quantitative Psychology Programs](http://en.wikipedia.org/wiki/List_of_schools_for_quantitative_psychology)
 
+[SMEP. Programs in Quantitative Psychology and Quantitative Methods](https://www.smep.org/resources/about-quantitative-psychology)
 
+##### Personality Psychology
+[Revelle, W. (2013). Graduate Departments of Psychology with Personality Programs](http://www.personality-project.org/org.html#gradpsych)
+
+### Professional Development
+#### R
+[Revelle, W. (2016). Using R for psychological research](http://www.personality-project.org/r/r.guide.html)
 
 ### Academic Job Market

@@ -18,14 +18,14 @@ Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course d
 ### Instructor
 ##### Name: S. Mason Garrison
 ##### Email: s.mason.garrison@gmail.com
-##### Office Hours: NA
+<!---##### Office Hours: NA-->
 
 *** 
 
 ### Teaching Assistant
 ##### Name: Catalina Ordorica
 ##### Email: catalina.ordorica@vanderbilt.edu
-##### Office Hours: NA
+<!---##### Office Hours: NA-->
 
 *** 
 
@@ -33,36 +33,33 @@ Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course d
 
 *** 
 
-How To Read This Schedule: 
-<!---
+<!---How To Read This Schedule: 
+
 All readings will be completed before class on the date on which they are assigned. Anything in bold is work to be completed before class and brought with you on the day listed. Paper due dates, also in bold, indicate that the completed manuscript of your paper must be in the correct dropbox on Blackboard before class starts on the day indicated.
 -->
 
 *** 
 
 ### Day 1 (June 13)
-#### Learning Outcome: Describe data
-##### Morning: mean, median mode, sd, distributions
-##### Afternoon: Research Project Introduction (students pick data from topic list), Select Readings from How to Lie with Statistics
+##### Topics: Research Design, Sampling, and Measurement
+##### Project: Select Dataset
+
 
 ### Day 2 (June 14)
-#### Learning Outcome: Research Design, Selection Bias
-##### Morning: Kinds of designs -- experiments, quasi-experiments, observation. Causation, within this context
-##### Afternoon: Research Project (students delve into selection methods of their study; and basic demographics), Select Readings from How to Lie with Statistics
+##### Topics: Summary Statistics
+##### Project: Describe Relevant Variables
 
 ### Day 3 (June 15)
-#### Learning Outcome: Hypothesis testing, t-tests
-##### Morning: null hypothesis testing; t-tests
-##### Afternoon: Research Project (students delve into basic hypotheses testing), Select Readings from How to Lie with Statistics
+##### Topics: Distributions and Hypothesis Testing
+##### Project: Formulate Hypothesis
 
 ### Day 4 (June 16)
-#### Learning Outcome: Correlation
-##### Morning: correlation; third variables, causation etc
-##### Afternoon: Research Project (students delve into examining relationships within their data), Select Readings from How to Lie with Statistics
+##### Topics: Correlation and Causation
+##### Project: Test and Interpret
 
 ### Day 5 (June 17)
-#### Learning Outcome: Presentation
-##### Morning: Research Project (prepare presentation), Present projects
+##### Topics: Presentation
+##### Project: Prepare and Share Project in Afternoon
 *** 
 
 ## Data
@@ -2375,7 +2372,7 @@ datatable(m, escape = FALSE)
 </td>
 <td class=cellinside>Burt
 </td>
-<td class=cellinside>Fraudulent Data on IQs of Twins Raised Apart
+<td class=cellinside>Possibly Fraudulent Data on IQs of Twins Raised Apart
 </td>
 <td class=cellinside><a href='csv/car/Burt.csv'> CSV </a>
 </td>
@@ -5033,7 +5030,7 @@ datatable(m, escape = FALSE)
 </td>
 <td class=cellinside><a href='doc/HistData/PolioTrials.html'> DOC </a>
 </td></tr>
- 
+ <!---
 <tr> 
 <td class=cellinside>HistData
 </td>
@@ -5045,7 +5042,7 @@ datatable(m, escape = FALSE)
 </td>
 <td class=cellinside><a href='doc/HistData/Prostitutes.html'> DOC </a>
 </td></tr>
- 
+ -->
 <tr> 
 <td class=cellinside>HistData
 </td>
@@ -7205,7 +7202,7 @@ datatable(m, escape = FALSE)
 </td>
 <td class=cellinside><a href='doc/vcd/OvaryCancer.html'> DOC </a>
 </td></tr>
- 
+<!---
 <tr> 
 <td class=cellinside>vcd
 </td>
@@ -7217,7 +7214,7 @@ datatable(m, escape = FALSE)
 </td>
 <td class=cellinside><a href='doc/vcd/PreSex.html'> DOC </a>
 </td></tr>
- 
+ -->
 <tr> 
 <td class=cellinside>vcd
 </td>
@@ -7253,7 +7250,7 @@ datatable(m, escape = FALSE)
 </td>
 <td class=cellinside><a href='doc/vcd/Saxony.html'> DOC </a>
 </td></tr>
- 
+<!--- 
 <tr> 
 <td class=cellinside>vcd
 </td>
@@ -7265,7 +7262,7 @@ datatable(m, escape = FALSE)
 </td>
 <td class=cellinside><a href='doc/vcd/SexualFun.html'> DOC </a>
 </td></tr>
- 
+-->
 <tr> 
 <td class=cellinside>vcd
 </td>
@@ -7781,7 +7778,7 @@ datatable(m, escape = FALSE)
 </td>
 <td class=cellinside><a href='doc/HSAUR/BCG.html'> DOC </a>
 </td></tr>
- 
+<!--- 
 <tr> 
 <td class=cellinside>HSAUR
 </td>
@@ -7793,7 +7790,7 @@ datatable(m, escape = FALSE)
 </td>
 <td class=cellinside><a href='doc/HSAUR/BtheB.html'> DOC </a>
 </td></tr>
- 
+-->
 <tr> 
 <td class=cellinside>HSAUR
 </td>
