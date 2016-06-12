@@ -43,19 +43,22 @@ All readings will be completed before class on the date on which they are assign
 ### Day 1 (June 13)
 ##### Topics: Research Design, Sampling, and Measurement
 ##### Project: Select Dataset
-
+##### Study Hall: Read selections from ``How to Lie with Statistics''
 
 ### Day 2 (June 14)
 ##### Topics: Summary Statistics
 ##### Project: Describe Relevant Variables
+##### Study Hall: TBD
 
 ### Day 3 (June 15)
 ##### Topics: Distributions and Hypothesis Testing
 ##### Project: Formulate Hypothesis
+##### Study Hall: Chance Magazine on Extrapolation
 
 ### Day 4 (June 16)
 ##### Topics: Correlation and Causation
 ##### Project: Test and Interpret
+
 
 ### Day 5 (June 17)
 ##### Topics: Presentation
