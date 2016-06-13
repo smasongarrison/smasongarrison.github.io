@@ -26,6 +26,12 @@ Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course d
 ##### Name: Catalina Ordorica
 ##### Email: catalina.ordorica@vanderbilt.edu
 <!---##### Office Hours: NA-->
+*** 
+
+## Materials
+[R Materials](https://www.dropbox.com/s/1wu3o9ftsmljqwb/Rmaterials.R?dl=1)
+
+[PowerPoint Slides will be available after the class](https://www.dropbox.com/s/fgtlnl6jhmegqed/Introduction%20to%20Applied%20Statistics.pptx?dl=1)
 
 *** 
 
@@ -48,7 +54,7 @@ All readings will be completed before class on the date on which they are assign
 ### Day 2 (June 14)
 ##### Topics: Summary Statistics
 ##### Project: Describe Relevant Variables
-##### Study Hall: TBD
+##### Study Hall: Graphs Tell Stories.
 
 ### Day 3 (June 15)
 ##### Topics: Distributions and Hypothesis Testing
