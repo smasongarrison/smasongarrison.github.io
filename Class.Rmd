@@ -31,11 +31,12 @@ Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course d
 ## Materials
 [R Materials](https://www.dropbox.com/s/1wu3o9ftsmljqwb/Rmaterials.R?dl=1)
 
-[PowerPoint Slides will be available after the class](https://www.dropbox.com/s/fgtlnl6jhmegqed/Introduction%20to%20Applied%20Statistics.pptx?dl=1)
+[PowerPoint Slides](https://www.dropbox.com/s/fgtlnl6jhmegqed/Introduction%20to%20Applied%20Statistics.pptx?dl=1)
 
 [Poster Template](https://www.dropbox.com/s/67wk8ftbdjxpnlz/Template.pptx?dl=1)
 
-[Poster Template Source](https://www.dropbox.com/s/d39vzjjx9x44ry3/spsp2014a.pptx?dl=1)
+[Poster Template Source](https://www.dropbox.com/s/d39vzjjx9x44ry3/spsp2014a.pptx?dl=1), which I presented at an academic conference in 2014.
+
 
 *** 
 
@@ -267,7 +268,17 @@ datatable(m, escape = FALSE)
 </td>
 <td class=cellinside><a href='doc/datasets/Titanic.html'> DOC </a>
 </td></tr>
- 
+ <tr> 
+<td class=cellinside>Mason
+</td>
+<td class=cellinside>Titanic Individual Data
+</td>
+<td class=cellinside>Survival of passengers on the Titanic
+</td>
+<td class=cellinside><a href='csv/Mason/titanic_indiv.csv'> CSV </a>
+</td>
+
+</td></tr>
 <tr> 
 <td class=cellinside>datasets
 </td>
