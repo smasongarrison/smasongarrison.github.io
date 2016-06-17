@@ -5,7 +5,7 @@ output: html_document
 
 *** 
 ### Overview
-Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescents students. It is scheduled for Summer Session I (June 12-17).
+Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescents students. It is scheduled for Summer Session I (June 12-17, 2016).
 
 > Media stories about ``the latest scientific findings'' can range from the plausible to the silly. This class will help you learn to separate truth from fiction by introducing you to the basic statistical methods and tools used in psychological research. You will learn to use R, a free and powerful statistical software package, to conduct and interpret basic scientific statistical tests. You will begin to recognize the difference between proper and improper use of data, especially the distinction between correlation and causation (e.g., why margarine consumption does not actually lead to more divorces in the state of Maine). For the final project, you will formulate and answer your own scientific research question using these new tools and real psychology data.
 
@@ -29,6 +29,16 @@ Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course d
 *** 
 
 ## Materials
+### Software
+[R](http://cran.us.r-project.org/)
+
+[RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+[How to install R and R Studio on PC / Windows](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
+
+[How to install R and R Studio on Mac / OSX](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
+
+### Course Materials
 [R Materials](https://www.dropbox.com/s/1wu3o9ftsmljqwb/Rmaterials.R?dl=1)
 
 [PowerPoint Slides](https://www.dropbox.com/s/fgtlnl6jhmegqed/Introduction%20to%20Applied%20Statistics.pptx?dl=1)
@@ -59,7 +69,7 @@ All readings will be completed before class on the date on which they are assign
 ### Day 2 (June 14)
 ##### Topics: Summary Statistics
 ##### Project: Describe Relevant Variables
-##### Study Hall: Graphs Tell Stories.
+##### Study Hall: Read selections from ``How to Lie with Statistics''
 
 ### Day 3 (June 15)
 ##### Topics: Distributions and Hypothesis Testing
@@ -73,7 +83,7 @@ All readings will be completed before class on the date on which they are assign
 
 ### Day 5 (June 17)
 ##### Topics: Presentation
-##### Project: Prepare and Share Project in Afternoon
+##### Project: Present Project to Class and Share During Open House.
 *** 
 
 ## Data
