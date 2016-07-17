@@ -1,0 +1,19 @@
+---
+title: "Collection of Datasets"
+output: html_document
+---
+
+*** 
+### Overview
+I initially developed this collection as part of my Introduction to Applied Statistics Class. A collection of datasets available in R can be found on [that page](smasongarrison.github.io/Class.html).
+
+*** 
+
+### Data Collections
+[Harvard Dataverse](https://dataverse.harvard.edu/)
+ 
+[Inter-university Consortium for Political and Social Research (ICPSR)](https://www.icpsr.umich.edu/icpsrweb/landing.jsp)
+
+
+
+
