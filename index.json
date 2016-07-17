@@ -7,18 +7,24 @@
       }
     },
     "url": "AAA.html",
-    "date": "2016-06-04 13:14:00"
+    "date": "2016-07-17 17:08:03"
   },
   {
     "title": "Introduction to Applied Statistics: Course Page",
     "output": "html_document",
     "url": "Class.html",
-    "date": "2016-06-04 13:11:52"
+    "date": "2016-06-17 12:52:46"
+  },
+  {
+    "title": "Collection of Datasets",
+    "output": "html_document",
+    "url": "Data.html",
+    "date": "2016-07-17 17:10:16"
   },
   {
     "title": "Welcome",
     "output": "html_document",
     "url": "index.html",
-    "date": "2016-06-04 13:15:43"
+    "date": "2016-06-17 12:51:17"
   }
 ]
