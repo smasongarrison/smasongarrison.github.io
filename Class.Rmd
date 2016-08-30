@@ -5,7 +5,7 @@ output: html_document
 
 *** 
 ### Overview
-Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescents students. It is scheduled for Summer Session I (June 12-17, 2016).
+Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescents students. It was taught during Summer Session I (June 12-17, 2016).
 
 > Media stories about ``the latest scientific findings'' can range from the plausible to the silly. This class will help you learn to separate truth from fiction by introducing you to the basic statistical methods and tools used in psychological research. You will learn to use R, a free and powerful statistical software package, to conduct and interpret basic scientific statistical tests. You will begin to recognize the difference between proper and improper use of data, especially the distinction between correlation and causation (e.g., why margarine consumption does not actually lead to more divorces in the state of Maine). For the final project, you will formulate and answer your own scientific research question using these new tools and real psychology data.
 
