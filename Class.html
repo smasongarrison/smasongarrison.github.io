@@ -7,23 +7,23 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 
 
 <title>Introduction to Applied Statistics: Course Page</title>
 
-<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="libs/htmlwidgets-0.6/htmlwidgets.js"></script>
-<script src="libs/datatables-binding-0.1/datatables.js"></script>
-<script src="libs/datatables-1.10.7/jquery.dataTables.min.js"></script>
-<link href="libs/datatables-default-1.10.7/dataTables.extra.css" rel="stylesheet" />
-<link href="libs/datatables-default-1.10.7/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-0.7/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
 <link href='libs/fluidbox/css/fluidbox.css' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 <link href='include/css/style.css' rel='stylesheet' type='text/css'>
@@ -48,25 +48,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 
 
-
-</head>
-
-<body>
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
+<style type="text/css">
 h1 {
   font-size: 34px;
 }
@@ -88,6 +70,30 @@ h5 {
 h6 {
   font-size: 12px;
 }
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
 .tabbed-pane {
   padding-top: 12px;
 }
@@ -100,7 +106,7 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="libs/navigation-1.0/tabsets.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -128,6 +134,7 @@ $(document).ready(function () {
           <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">          <li><a href="AAA.html">Academic Advice Aggregator</a></li>
           <li><a href="Class.html">Introduction to Applied Statistics: Course Page</a></li>
+          <li><a href="Data.html">Collection of Datasets</a></li>
           <li><a href="index.html">Welcome</a></li>
           </ul>
         </li>
@@ -139,7 +146,8 @@ $(document).ready(function () {
 <div class="fluid-row" id="header">
 
 
-<h1 class="title">Introduction to Applied Statistics: Course Page</h1>
+
+<h1 class="title toc-ignore">Introduction to Applied Statistics: Course Page</h1>
 
 </div>
 
@@ -147,7 +155,7 @@ $(document).ready(function () {
 <hr />
 <div id="overview" class="section level3">
 <h3>Overview</h3>
-<p>Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescents students. It is scheduled for Summer Session I (June 12-17, 2016).</p>
+<p>Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescents students. It was taught during Summer Session I (June 12-17, 2016).</p>
 <blockquote>
 <p>Media stories about ``the latest scientific findings’’ can range from the plausible to the silly. This class will help you learn to separate truth from fiction by introducing you to the basic statistical methods and tools used in psychological research. You will learn to use R, a free and powerful statistical software package, to conduct and interpret basic scientific statistical tests. You will begin to recognize the difference between proper and improper use of data, especially the distinction between correlation and causation (e.g., why margarine consumption does not actually lead to more divorces in the state of Maine). For the final project, you will formulate and answer your own scientific research question using these new tools and real psychology data.</p>
 </blockquote>
@@ -271,8 +279,8 @@ All readings will be completed before class on the date on which they are assign
 ## multiple of the number of columns [5]
 ```
 
-<div id="htmlwidget-8678" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8678">{"x":{"data":[["<b>Bold\u003c/b>"],["<em>Emphasize\u003c/em>"],["<a href=\"http://rstudio.com\">RStudio\u003c/a>"],["<a href=\"#\" onclick=\"alert('Hello World');\">Hello\u003c/a>"],["<b>Bold\u003c/b>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><span>Package\u003c/span>\u003c/th>\n      <th>Item\u003c/th>\n      <th>Title\u003c/th>\n      <th>csv\u003c/th>\n      <th>Doc\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"order":[],"autoWidth":false,"orderClasses":false},"callback":null,"filter":"none"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a678eaac3ecb563510f0" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a678eaac3ecb563510f0">{"x":{"filter":"none","data":[["<b>Bold\u003c/b>"],["<em>Emphasize\u003c/em>"],["<a href=\"http://rstudio.com\">RStudio\u003c/a>"],["<a href=\"#\" onclick=\"alert('Hello World');\">Hello\u003c/a>"],["<b>Bold\u003c/b>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><span>Package\u003c/span>\u003c/th>\n      <th>Item\u003c/th>\n      <th>Title\u003c/th>\n      <th>csv\u003c/th>\n      <th>Doc\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 -->
 <p align= center >
 <table cellspacing=0 border=1>

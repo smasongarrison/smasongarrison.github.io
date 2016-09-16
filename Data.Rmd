@@ -13,8 +13,10 @@ I initially developed this collection as part of my Introduction to Applied Stat
 
 ```{r message=FALSE,echo=FALSE,warning=FALSE}
 if (!require("DT")) install.packages('DT')
-d<-read.csv("data.csv", header=FALSE, stringsAsFactors=FALSE)
-m = matrix(as.matrix(d), ncol=2)
+if (!require("plyr")) install.packages('plyr')
+d<-read.csv("datalists/collections_data.csv", header=FALSE, stringsAsFactors=FALSE)
+x<-arrange(d,V1)
+m = matrix(as.matrix(x), ncol=2)
 colnames(m) = c('<span>Name</span>', 'Notes')
 datatable(m, escape = FALSE)
 ```
@@ -22,8 +24,12 @@ datatable(m, escape = FALSE)
 ### Datasets in R
 ```{r message=FALSE,echo=FALSE}
 if (!require("DT")) install.packages('DT')
-d<-read.csv("datasets.csv", stringsAsFactors=FALSE)
-m = matrix(as.matrix(d),ncol=5)
-colnames(m) = c('<span>Package</span>', 'Dataset','Title', 'csv','doc')
+if (!require("plyr")) install.packages('plyr')
+d<-read.csv("datalists/R_Packages_data.csv", stringsAsFactors=FALSE,header=FALSE)
+x<-arrange(d,V1,V2)
+m = matrix(as.matrix(x[1:4]),ncol=4)
+
+colnames(m) = c('<span>Package</span>','Dataset','Title', 'doc')
 datatable(m, escape = FALSE)
 ```
+
