@@ -3,3 +3,6 @@
 .RData
 .Rproj.user
 *_cache/
+*.laccdb
+datalists/Data.accdb
+*.Rmd
