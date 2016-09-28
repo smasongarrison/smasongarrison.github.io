@@ -5,7 +5,7 @@ output: html_document
 
 *** 
 ### Overview
-I initially developed this collection as part of my Introduction to Applied Statistics Class. A collection of datasets available in R can be found on [that page](smasongarrison.github.io/Class.html).
+I initially developed this collection as part of my Introduction to Applied Statistics Class. A collection of datasets available in R can be found on [that page](smasongarrison.github.io/Class_archive_2016.html).
 
 *** 
  
