@@ -16,8 +16,8 @@ if (!require("DT")) install.packages('DT')
 if (!require("plyr")) install.packages('plyr')
 d<-read.csv("datalists/collections_data.csv", header=FALSE, stringsAsFactors=FALSE)
 #x<-arrange(d,V1)
-m = matrix(as.matrix(d), ncol=2)
-colnames(m) = c('<span>Name</span>', 'Notes')
+m = matrix(as.matrix(d), ncol=1)
+colnames(m) = c('<span>Name</span>')
 datatable(m, escape = FALSE)
 ```
 
@@ -25,11 +25,78 @@ datatable(m, escape = FALSE)
 ```{r message=FALSE,echo=FALSE}
 if (!require("DT")) install.packages('DT')
 if (!require("plyr")) install.packages('plyr')
-d<-read.csv("datalists/R_Packages_data.csv", stringsAsFactors=FALSE,header=FALSE)
-x<-arrange(d,V1,V2)
-m = matrix(as.matrix(x[1:4]),ncol=4)
+if (!require("R2HTML")) install.packages('R2HTML')
+library(R2HTML)
 
-colnames(m) = c('<span>Package</span>','Dataset','Title', 'doc')
+packages = c("boot",'babynames',
+             "car", "cluster", "COUNT",
+             "datasets",
+             "Ecdat","evir",
+             'fueleconomy',
+             "gap", "ggplot2", "geepack",
+             "HistData","HSAUR",
+             "KMsurv",
+             "lattice", "lme4",
+             "MASS","multgee",
+             "nasaweather","nycflights13",
+             "plm", "plyr", "pscl","psych",
+             "quantreg",
+             "robustbase", "reshape2", "rpart",
+             "sandwich", "sem",  "survival",
+             "texmex",
+             "vcd",
+             "Zelig")
+
+# Installed only packages that are not pre-installed.
+# Credits: http://stackoverflow.com/a/9345167/756986
+new.packages <- packages[!(packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages, repos="http://cran.rstudio.com")
+index = data(package=packages)$results[,c(1,3,4)]
+index = data.frame(index, stringsAsFactors=FALSE)
+index_out = NULL
+
+# Load packages which store datasets
+for (i in packages) {
+        library(i, character.only=TRUE)
+}
+
+# Save datasets
+for (i in 1:nrow(index)) {
+    dataset = index$Item[i]
+    package = index$Package[i]
+    # Load data in new environment (very hackish)
+    e = new.env(hash = TRUE, parent = parent.frame(), size = 29L)
+    cmd = paste('data(', dataset, ', envir=e)', sep='')
+    eval(parse(text=cmd))
+    d = e[[dataset]]
+    if(class(d) %in% c('data.frame', 'matrix', 'numeric', 'table', 'ts')){
+        cat("Processing data set: ", dataset, "\n")
+        if(class(d)=='ts'){
+            d = data.frame(time(d), d)
+            colnames(d) = c('time', dataset)
+        }
+        try(dir.create(paste('datalists/csv/', package, sep='')))
+        try(dir.create(paste('datalists/doc/', package, sep='')))
+        dest_csv = paste('datalists/csv/', package, '/', dataset, '.csv', sep='')
+        dest_doc = paste('datalists/doc/', package, '/', dataset, '.html', sep='')
+        # Save data as CSV
+        write.csv(d, dest_csv)
+        # Save documentation as HTML
+        help.ref = help(eval(dataset), package=eval(package))
+        help.file = utils:::.getHelpFile(help.ref)
+        tools::Rd2HTML(help.file, out=dest_doc)
+        # Add entry to index out
+        index_out = rbind(index_out, index[i,])
+    }
+}
+index_out$unique<-paste0(index_out$Package,index_out$Item)
+write.csv(index_out, file='datalists/datasets_import.csv', row.names=FALSE)
+
+d<-read.csv("datalists/R_Packages_data.csv", stringsAsFactors=FALSE, header=FALSE)
+x<-arrange(d,V1,V2)
+m = matrix(as.matrix(x[1:5]),ncol=5)
+
+colnames(m) = c('<span>Package</span>','Dataset','Title','csv','doc')
 datatable(m, escape = FALSE)
 ```
 
