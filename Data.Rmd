@@ -22,12 +22,14 @@ datatable(m, escape = FALSE)
 ```
 
 ### Datasets in R
-```{r message=FALSE,echo=FALSE}
+```{r message=FALSE,echo=FALSE, warning=FALSE}
 if (!require("DT")) install.packages('DT')
 if (!require("plyr")) install.packages('plyr')
 if (!require("R2HTML")) install.packages('R2HTML')
 library(R2HTML)
-
+import=TRUE
+#import=FALSE
+if(import){
 packages = c("boot",'babynames',
              "car", "cluster", "COUNT",
              "datasets",
@@ -91,7 +93,7 @@ for (i in 1:nrow(index)) {
 }
 index_out$unique<-paste0(index_out$Package,index_out$Item)
 write.csv(index_out, file='datalists/datasets_import.csv', row.names=FALSE)
-
+}
 d<-read.csv("datalists/R_Packages_data.csv", stringsAsFactors=FALSE, header=FALSE)
 x<-arrange(d,V1,V2)
 m = matrix(as.matrix(x[1:5]),ncol=5)
