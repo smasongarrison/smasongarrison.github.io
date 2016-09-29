@@ -6,3 +6,4 @@
 *.laccdb
 datalists/Data.accdb
 *.Rmd
+*.dropbox
