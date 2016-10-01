@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Diastolic Blood Pressure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bloodp"><tr><td>bloodp</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Diastolic Blood Pressure </h2>
+
+<h3>Description</h3>
+
+<p>Diastolic blood pressure for a two groups of patients.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(bloodp)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 15 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt>bp</dt><dd><p>the diastolic blood pressure.</p>
+</dd>
+<dt>group</dt><dd><p>a factor with levels <code>group1</code> and <code>group2</code>.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The data is given in Table 9.6, page 227, of Metha and Pathel (2001). Note
+that there are some tied observations. The permutation test using the raw
+blood pressure values does not lead to a rejection of the null hypothesis of
+exchangeability: p-value = 0.1040 (two-sided) and p-value = 0.0564
+(one-sided). The asymptotic two-sided p-value is 0.1070.
+</p>
+<p>For the Wilcoxon-Mann-Whitney test,
+the one-sided p-value is 0.0542 and the two-sided one is 0.0989 (Metha &amp;
+Patel, 2001, page 229).
+</p>
+<p>The one-sided p-value for the v.d.Waeren test is 0.0462 (Metha &amp;
+Patel, 2001, page 241) and the two-sided p-value is 0.0799.
+</p>
+
+
+<h3>References</h3>
+
+<p>Cyrus R. Mehta &amp; Nitin R. Patel (2001),
+<em>StatXact-5 for Windows.</em>
+Manual, Cytel Software Cooperation, Cambridge, USA
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(bloodp)
+
+# Permutation test
+
+perm.test(bp ~ group, data=bloodp)
+perm.test(bp ~ group, data=bloodp, alternative="greater")
+perm.test(bp ~ group, data=bloodp, exact=FALSE)
+
+# Wilcoxon-Mann-Whitney test
+
+wilcox.exact(bp ~ group, data=bloodp, conf.int=TRUE, alternative="l")
+wilcox.exact(bp ~ group, data=bloodp, conf.int=TRUE)
+
+# compute the v.d. Waerden test
+
+sc &lt;- cscores(bloodp$bp, type="NormalQuantile")
+X &lt;- sum(sc[bloodp$group == "group2"])
+round(pperm(X, sc, 11), 4) 
+round(pperm(X, sc, 11, simulate=TRUE), 4)
+round(pperm(X, sc, 11, alternative="two.sided"), 4) 
+round(pperm(X, sc, 11, alternative="two.sided", simulate=TRUE), 4)
+
+# use scores mapped into integers (cf. dperm)
+
+sc &lt;- cscores(bloodp$bp, type="NormalQuantile", int=TRUE)
+X &lt;- sum(sc[bloodp$group == "group2"])
+round(pperm(X, sc, 11), 4)      
+round(pperm(X, sc, 11, alternative="two.sided"), 4)
+
+</pre>
+
+
+</body></html>

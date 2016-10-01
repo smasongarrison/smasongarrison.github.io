@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Population mortality rates for Denmark in 5-years age groups.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gmortDK"><tr><td>gmortDK</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Population mortality rates for Denmark in 5-years age groups.</h2>
+
+<h3>Description</h3>
+
+<p>The <code>gmortDK</code> data frame has 418 rows and 21 columns.
+</p>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+<code>agr</code>: </td><td style="text-align: left;"> Age group, 0:0--4, 5:5--9,..., 90:90+. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>per</code>: </td><td style="text-align: left;"> Calendar period, 38: 1938--42, 43: 1943--47, ..., 88:1988-92. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>sex</code>: </td><td style="text-align: left;"> Sex, 1: male, 2: female. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>risk</code>: </td><td style="text-align: left;"> Number of person-years in the Danish population. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>dt</code>: </td><td style="text-align: left;"> Number of deaths. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>rt</code>: </td><td style="text-align: left;"> Overall mortality rate in cases per 1000 person-years, i.e.
+<code>rt=1000*dt/risk</code> </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+           </td><td style="text-align: left;"> Cause-specific mortality rates in cases per 1000 person-years: </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r1</code>: </td><td style="text-align: left;"> Infections </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r2</code>: </td><td style="text-align: left;"> Cancer. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r3</code>: </td><td style="text-align: left;"> Tumors, benign, unspecific nature. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r4</code>: </td><td style="text-align: left;"> Endocrine, metabolic. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r5</code>: </td><td style="text-align: left;"> Blood. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r6</code>: </td><td style="text-align: left;"> Nervous system, psychiatric. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r7</code>: </td><td style="text-align: left;"> Cerebrovascular. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r8</code>: </td><td style="text-align: left;"> Cardiac. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r9</code>: </td><td style="text-align: left;"> Respiratory diseases, excl. cancer. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r10</code>: </td><td style="text-align: left;"> Liver, excl. cancer. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r11</code>: </td><td style="text-align: left;"> Digestive, other. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r12</code>: </td><td style="text-align: left;"> Genitourinary. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r13</code>: </td><td style="text-align: left;"> Ill-defined symptoms. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r14</code>: </td><td style="text-align: left;"> All other, natural. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>r15</code>: </td><td style="text-align: left;"> Violent. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+</td>
+</tr>
+
+</table>
+
+
+
+<h3>Source</h3>
+
+<p>Statistics Denmark, National board of health provided original data. 
+Michael Andersson grouped the causes of death.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>thoro</code>, <code>mortDK</code></p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(gmortDK)
+</pre>
+
+
+</body></html>

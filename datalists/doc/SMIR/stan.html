@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Stanford Heart Transplantation Programme</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for stan"><tr><td>stan</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Stanford Heart Transplantation Programme</h2>
+
+<h3>Description</h3>
+
+<p>The file  contains the data on 65 transplanted patients,
+consisting of the patient's age at transplantation, prior
+open-heart surgery  (1 = yes, 0 = no), a censoring indicator
+(1 = yes, 0 = no), the survival time in days after
+transplant , a score representing the mismatch
+between the patient's and the donor's tissue type (values range from
+0.00 to 3.05), and an indicator for death by rejection (1 =
+yes, 0 = no).  One zero survival time is recoded to 0.5.  There are 41
+deaths and 24 censored survivals, with 39 distinct death times.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(stan)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 65 observations on the following 12 variables.
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>za</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>zb</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>age</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>surg</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>acc</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>died</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>surv</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>nmm</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>hla</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>mm</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>rej</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Note</h3>
+
+<p>See p.422 in SMIR</p>
+
+
+<h3>Source</h3>
+
+<p>Crowley, J. and Hu, M. (1977), Covariance analysis of heart transplant
+survival data. <em>Journal of the American Statistical Association</em>,
+<b>72</b>, 27&ndash;36.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(stan)
+## maybe str(stan) 
+</pre>
+
+
+</body></html>

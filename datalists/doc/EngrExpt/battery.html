@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Battery lifetime in laptop computers</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for battery"><tr><td>battery</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Battery lifetime in laptop computers
+</h2>
+
+<h3>Description</h3>
+
+<p>Data from  a study on the effect of different processors on the
+battery lifetime in laptop computers.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 30 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>type</code></dt><dd><p>processor type - a factor with levels <code>A</code>,
+<code>B</code> and <code>C</code></p>
+</dd>
+<dt><code>lifetime</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(battery)
+densityplot(~ lifetime, battery, groups = type,
+            xlab = "Battery lifetime (hours)",
+            auto.key = list(columns = 3, lines = TRUE))
+densityplot(~ lifetime, battery, groups = type,
+            scales = list(x = list(log = 2)),
+            xlab = "Battery lifetime (hours) - logarithmic scale",
+            auto.key = list(columns = 3, lines = TRUE))
+dotplot(reorder(as.factor(type), lifetime) ~ lifetime, battery,
+        jitter.y = TRUE,
+        xlab = "Battery lifetime (hours)",
+        ylab = "Type", type = c("p", "a"))
+dotplot(reorder(as.factor(type), lifetime) ~ lifetime, battery,
+        jitter.y = TRUE, scales = list(x = list(log = 2)),
+        xlab = "Battery lifetime (hours) - logarithmic scale",
+        ylab = "Type", type = c("p", "a"))
+</pre>
+
+
+</body></html>

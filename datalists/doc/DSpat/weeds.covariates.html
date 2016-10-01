@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Covariate grid for Dubbo weed data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for weeds.covariates"><tr><td>weeds.covariates</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Covariate grid for Dubbo weed data</h2>
+
+<h3>Description</h3>
+
+<p>Grid (1 sq meter) of covariates for farm paddock in Dubbo weed data.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(weeds.covariates)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 120 x 120 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>x</code></dt><dd><p>x coordinate for mid-point of grid cell</p>
+</dd>
+<dt><code>y</code></dt><dd><p>y coordinate for mid-point of grid cell</p>
+</dd>
+<dt><code>sheep</code></dt><dd><p>0 if no sheep and 1 if sheep were present on the transect</p>
+</dd>
+<dt><code>strip</code></dt><dd><p>transect number 1 to 8</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>This is the constructed set of covariates for the farm paddock for the <code>weeds</code> data that were provided by Melville and Welsh (see reference below) that
+were used in the Biometrics paper on distance sampling.
+</p>
+<p>The code used to create the covariate grid was as follows:
+</p>
+<pre>
+xx=expand.grid(seq(5,1195,10),seq(5,1195,10))
+weeds.covariates=data.frame(x=xx$Var2,y=xx$Var1,
+                 sheep=rep(c(0,1),each= 120^2/2),
+                 strip=rep(c(1,2,3,4,5,6,7,8),each=120^2/8))
+save(weeds.covariates,file="weeds.covariates.rda")
+</pre>
+
+
+<h3>References</h3>
+
+<p>Melville, G. J., and A. H. Welsh. 2001. Line transect sampling in small regions. Biometrics 57:1130-1137.
+</p>
+
+
+</body></html>

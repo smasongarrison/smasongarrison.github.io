@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Insurance claims data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for claims"><tr><td>claims</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Insurance claims data</h2>
+
+<h3>Description</h3>
+
+<p>The file  gives the number of policyholders  of an
+insurance company who were &ldquo;exposed to risk&rdquo;, and the number 
+of car insurance claims made in the third quarter of 1973 by these
+policyholders, arranged as a contingency table cross-classified by
+three four-level factors:  <code>dist</code>, the district in which the
+policyholder lived (1: rural, 2: small towns, 3: large towns, 4: major
+cities), <code>car</code>, the engine capacity of the car (1: $&lt;$ 1 litre, 2:
+1 &ndash; 1.5 litres, 3: 1.5 &ndash; 2 litres, 4: $&gt;$ 2 litres), and <code>age</code>,
+the age of the policyholder (1: $&lt;$ 25, 2: 25 &ndash; 29, 3: 30 &ndash; 35, 4: $&gt;$
+35)
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(claims)</pre>
+
+
+<h3>Format</h3>
+
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+     [,1]</td><td style="text-align: left;"> n   </td><td style="text-align: left;"> integer, number of policy holders</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ [,2]</td><td style="text-align: left;"> c   </td><td style="text-align: left;"> integer, number of claims</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ [,3]</td><td style="text-align: left;"> age </td><td style="text-align: left;"> Factor w/ 4 levels "&lt;25","25-29","30-35","&gt;35"</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ [,4]</td><td style="text-align: left;"> dist</td><td style="text-align: left;"> Factor w/ 4 levels "rural","small towns","large towns",
+ "major cities"</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ [,5]</td><td style="text-align: left;"> car </td><td style="text-align: left;"> Factor w/ 4 levels "&lt;1","1-1.5","1.5-2","&gt;2"</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+</td>
+</tr>
+
+</table>
+
+
+
+<h3>Note</h3>
+
+<p>See p.271 in SMIR</p>
+
+
+<h3>Source</h3>
+
+<p>Baxter, L.A., Coutts, S.M. and Ross, G.A.F., 1980,
+&quot;Application of linear models in motor insurance&quot;, <em>Proceedings of
+the 21st International Congress of Actuaries</em>, Zurich, 11&ndash;29.
+</p>
+
+
+</body></html>

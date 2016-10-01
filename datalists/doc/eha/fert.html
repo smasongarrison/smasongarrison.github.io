@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Marital fertility nineteenth century</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fert"><tr><td>fert</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Marital fertility nineteenth century</h2>
+
+<h3>Description</h3>
+
+<p>Birth intervals for married women with at least one birth, 19th northern
+Sweden 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(fert)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 12169 observations the lengths (in years) of birth
+intervals for 1859 married women with at least one birth. The first
+interval (<code>parity = 0</code>) is the interval from marriage to first birth.
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>Personal identification number for mother.</p>
+</dd> 
+<dt><code>parity</code></dt><dd><p>Time order of birth interval for the present
+mother. The interval with <code>parity = 0</code> is the first, from
+marriage to first birth.</p>
+</dd>
+<dt><code>age</code></dt><dd><p>The age of mother at start of interval.</p>
+</dd>
+<dt><code>year</code></dt><dd><p>The calendar year at start of interval.</p>
+</dd>
+<dt><code>next.ivl</code></dt><dd><p>The length of the coming time interval.</p>
+</dd>
+<dt><code>event</code></dt><dd><p>An indicator for whether the <code>next.ivl</code>
+ends in a new birth (<code>event = 1</code>) or is right censored
+(<code>event = 0</code>). Censoring occurs when the woman ends her
+fertility period within her first marriage (marriage dissolution
+or reaching the age of 48).</p>
+</dd>
+<dt><code>prev.ivl</code></dt><dd><p>The length of the previous time interval. May
+be used as explanatory variable in a Cox regression of birth intervals.</p>
+</dd>
+<dt><code>ses</code></dt><dd><p>Socio-economic status, a factor with levels
+<code>lower</code>, <code>upper</code>, <code>farmer</code>, and <code>unknown</code>.</p>
+</dd>
+<dt><code>parish</code></dt><dd><p>The Skelleftea region consists of three
+parishes, Jorn, Norsjo, and Skelleftea.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The data set contain clusters of dependent observations defined by
+mother's id. 
+</p>
+
+
+<h3>Source</h3>
+
+<p>Data is coming from The Demographic Data Base, Umea University, Umea, Sweden.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.ddb.umu.se">http://www.ddb.umu.se</a>  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(fert)
+fit &lt;- coxreg(Surv(next.ivl, event) ~ ses + prev.ivl, data = fert, subset =
+(parity == 1))
+drop1(fit, test = "Chisq")
+</pre>
+
+
+</body></html>

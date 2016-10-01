@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Movement Example Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for transfers"><tr><td>transfers</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Movement Example Data</h2>
+
+<h3>Description</h3>
+
+<p>Movement data included in the package. The data contains fictitious
+example data of cattle movements during the period 2005-08-01 &ndash; 2005-10-31.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(transfers)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 70190 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt>source</dt><dd>
+<p>a numeric vector with the holding identifier of the source
+</p>
+</dd>
+<dt>destination</dt><dd>
+<p>a numeric vector with holding identifier of the destination.
+</p>
+</dd>
+<dt>id</dt><dd>
+<p>a character vector with the identity of the animal.
+In this dataset an 5 character hexadecimal vector.
+</p>
+</dd>
+<dt>t</dt><dd>
+<p>a Date of the transfers
+</p>
+</dd>
+<dt>n</dt><dd>
+<p>a numeric vector with the number of animals moved.
+Always 1 in this dataset.
+</p>
+</dd>
+<dt>category</dt><dd>
+<p>a factor describing the category of the animal.
+Always <code>Cattle</code> in this dataset.
+</p>
+</dd>
+</dl>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(transfers)
+
+contactTrace &lt;- Trace(movements=transfers,
+                      root=2645,
+                      tEnd='2005-10-31',
+                      days=90)
+
+show(contactTrace)
+
+## End(Not run)
+</pre>
+
+
+</body></html>

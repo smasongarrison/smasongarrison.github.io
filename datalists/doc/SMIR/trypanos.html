@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The trypanosome data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for trypanos"><tr><td>trypanos</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>The trypanosome data</h2>
+
+<h3>Description</h3>
+
+<p>Follman and Lambert (1989) gave an example of a logistic regression with a
+varying intercept term.
+The data consist of numbers $y$ of trypanosomes killed out
+of $n$ treated at a treatment dose $x$.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(trypanos)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 8 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>x</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>n</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>y</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Note</h3>
+
+<p>See p.500 in SMIR</p>
+
+
+<h3>Source</h3>
+
+<p>Follman, D.A. and Lambert, D. (1989). Generalizing logistic regression by nonparametric
+mixing. <em>Journal of the American Statistical Association</em>, <b>84</b>, 295&ndash;300.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+ data(trypanos)
+ library(npmlreg)
+ (trypanos.np1 &lt;-  alldist(cbind(y, (n - y)) ~ log(x),
+      random =  ~1, data = trypanos, family = binomial,
+      plot.opt = 0, verbose = FALSE,k=1))
+ (trypanos.np2 &lt;- update(trypanos.np1,k=2))
+</pre>
+
+
+</body></html>

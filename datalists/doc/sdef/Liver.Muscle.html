@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Diabetes susceptibility in liver and skeletal muscle of mice.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Liver.Muscle"><tr><td>Liver.Muscle</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Diabetes susceptibility in liver and skeletal muscle of mice.
+</h2>
+
+<h3>Description</h3>
+
+<p>This dataset contains two lists of p-values obtained from a publicly available experiment to evaluate differential expression between diabetes susceptibility in liver and skeletal muscle of obese and normal mice.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Liver.Muscle)</pre>
+
+
+<h3>Format</h3>
+
+<p>The format is: a matrix with 2912 rows and two columns. For each gene (row) it reports the p-values of being differentially expressed between obese and normal mice for the two tissues (columns).
+</p>
+
+
+<h3>Source</h3>
+
+<p><a href="http://www.ncbi.nlm.nih.gov/geo">http://www.ncbi.nlm.nih.gov/geo</a>, accession number GDS1443
+</p>
+
+
+<h3>References</h3>
+
+<p>Lan H, Rabaglia ME, Stoehr JP, Nadler ST et al. Gene expression profiles of non diabetic and diabetic obese mice suggest a role of hepatic lipogenic capacity in diabetes susceptibility. Diabetes 2003 Mar;52(3):688-700.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+#data(Liver.Muscle)
+#Th&lt;- ratio(data=Liver.Muscle)
+
+#Rh&lt;- baymod(iter=100,output.ratio=Th)
+
+#MC&lt;- Tmc(iter=100,output.ratio=Th)
+
+#The gene names can be obtained using the command dimnames:
+#feat.names = dimnames(Liver.Muscle)[[1]]
+#feat.lists &lt;- extractFeatures.R(output.ratio=Th,output.bay=Rh,feat.names=feat.names,h=NULL)
+#feat.lists.T &lt;- extractFeatures.T(output.ratio=Th,feat.names=feat.names)
+
+#output.table &lt;- createTable(output.ratio=Th,output.bay=Rh)
+
+</pre>
+
+
+</body></html>

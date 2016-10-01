@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Old age mortality, Scania, southern Sweden, 1813-1894.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for scania"><tr><td>scania</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Old age mortality, Scania, southern Sweden, 1813-1894.
+</h2>
+
+<h3>Description</h3>
+
+<p>The data consists of old age life histories from 1 January 1813 to 31 december
+1894. Only (parts of) life histories above age 50 is
+considered. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(scania)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1931 observations from 1931 persons on the following 9 variables.
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>Identification number (enumeration).</p>
+</dd>
+<dt><code>enter</code></dt><dd><p>Start age for the interval.</p>
+</dd>
+<dt><code>exit</code></dt><dd><p>Stop age for the interval.</p>
+</dd>
+<dt><code>event</code></dt><dd><p>Indicator of death;
+equals <code>TRUE</code> if the person died
+at the end of the interval, <code>FALSE</code> otherwise.</p>
+</dd>
+<dt><code>birthdate</code></dt><dd><p>Birthdate as a real number (i.e.,
+&quot;1765-06-27&quot; is 1765.490).</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>Gender, a factor with levels <code>male</code>
+<code>female</code>.</p>
+</dd>
+<dt><code>parish</code></dt><dd><p>One of five parishes in Scania, coded 1, 2, 3,
+4, 5. Factor.</p>
+</dd>
+<dt><code>ses</code></dt><dd><p>Socio-economic status at age 50, a factor with
+levels <code>upper</code> and <code>lower</code>.</p>
+</dd>
+<dt><code>immigrant</code></dt><dd><p>a factor with levels <code>no</code> <code>region</code>
+and <code>yes</code>.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The Scanian area in southern Sweden was during the 19th century a mainly
+rural area. 
+</p>
+
+
+<h3>Source</h3>
+
+<p>The Scanian Economic Demographic Database, Lund University, Sweden.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.ed.lu.se/databases">http://www.ed.lu.se/databases</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(scania)
+summary(scania)
+</pre>
+
+
+</body></html>

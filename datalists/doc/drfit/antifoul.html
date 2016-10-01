@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dose-Response data for TBT and Zink Pyrithione in IPC-81...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for antifoul"><tr><td>antifoul</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dose-Response data for TBT and Zink Pyrithione in IPC-81 cells</h2>
+
+<h3>Description</h3>
+
+<p>This data set shows the response of the rat leukaemic cell line IPC-81 to 
+dilution series of tributyltin chloride (TBT) and Zink Pyrithione as retrieved
+from the &quot;cytotox&quot; database of the UFT Department of Bioorganic Chemistry on 
+February 25, 2004
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(antifoul)</pre>
+
+
+<h3>Format</h3>
+
+<p>A dataframe containing 135 and 81 data points for concentrations and responses
+for TBT and Zink Pyrithione, respectively. Some additional columns from the
+database are also present.
+</p>
+
+
+<h3>Source</h3>
+
+<p><a href="http://www.uft.uni-bremen.de/chemie">http://www.uft.uni-bremen.de/chemie</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+rantifoul.ED50 &lt;- drfit(antifoul, 
+                        linlogit = TRUE, logit = TRUE, weibull = TRUE,
+                        chooseone = FALSE, 
+                        showED50 = TRUE, EDx = c(10))
+print(rantifoul.ED50, digits = 5)
+
+rantifoul.drc &lt;- drcfit(antifoul, 
+                        linlogit = TRUE, logit = TRUE, weibull = TRUE,
+                        chooseone = FALSE, 
+                        showED50 = TRUE, EDx = c(10))
+print(rantifoul.drc, digits = 5)
+</pre>
+
+
+</body></html>

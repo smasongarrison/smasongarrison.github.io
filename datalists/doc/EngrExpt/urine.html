@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mercury level in employee urine samples</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for urine"><tr><td>urine</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Mercury level in employee urine samples
+</h2>
+
+<h3>Description</h3>
+
+<p>Mercury level in employee urine samples
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 12 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>month</code></dt><dd><p>an ordered factor with levels from
+<code>January</code> to <code>December</code></p>
+</dd>
+<dt><code>person1</code></dt><dd><p>mercury concentration in person 1's urine</p>
+</dd>
+<dt><code>person2</code></dt><dd><p>mercury concentration in person 2's urine</p>
+</dd>
+<dt><code>person3</code></dt><dd><p>mercury concentration in person 3's urine</p>
+</dd>
+<dt><code>person4</code></dt><dd><p>mercury concentration in person 4's urine</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Employees who work in a high risk area of a chemical plant are
+monitored monthly for mercury exposure.
+</p>
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(urine)
+dotplot(month ~ person1 + person2 + person3 + person4, urine,
+        outer = FALSE, type = c("p","l"),
+        auto.key = list(columns = 2, lines = TRUE, points = FALSE),
+        xlab = "Mercury level in urine")
+</pre>
+
+
+</body></html>

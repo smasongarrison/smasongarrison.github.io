@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Application of powder coating</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for applicat"><tr><td>applicat</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Application of powder coating</h2>
+
+<h3>Description</h3>
+
+ 
+<p>As described in Nelson, Coffin and Copeland (2003),
+&ldquo;The application of powder coating (a type of paint used on
+appliances and, in limited settings, cars) is done by spraying the
+material through a &lsquo;gun&rsquo; that has an electrical charge on
+it. There are three factors to consider in setting up the
+application booth: the gun distance from the target item, the charge
+and the pressure (flow rate) of the material through the gun. This
+data set contains data from 18 runs.&rdquo;
+Note that there is no data for the high flow rate, high charges, and
+low distance as these combinations were infeasible from an operations
+standpoint (they were such that too much paint would be applied to the
+target).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 18 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>distance</code></dt><dd><p>distance of the gun from the target (inches) - an
+ordered factor with levels <code>11</code> &lt; <code>13</code> &lt; <code>15</code></p>
+</dd>
+<dt><code>charge</code></dt><dd><p>charge used (kvolts) - an ordered factor with
+levels <code>35</code> &lt; <code>45</code> &lt; <code>55</code></p>
+</dd>
+<dt><code>flowrate</code></dt><dd><p>flow rate in gm/min. - an ordered factor with
+levels <code>94</code> &lt; <code>124</code></p>
+</dd>
+<dt><code>gloss</code></dt><dd><p>a measure of the resulting gloss</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(applicat)
+dotplot(distance ~ gloss|flowrate, applicat, groups = charge,
+        type = c("p","a"), layout = c(1,2),
+        ylab = "Gun distance from target (in.)",
+        strip = FALSE, strip.left = TRUE,
+        auto.key = list(columns = 3, lines = TRUE), xlab =
+"Gloss for two flow rates (gm/min) and three charges (kvolts)")
+dotplot(charge ~ gloss|flowrate, applicat, groups = distance, 
+        type = c("p","a"), layout = c(1,2),
+        ylab = "Charge (kvolts)",
+        strip = FALSE, strip.left = TRUE,
+        auto.key = list(columns = 3, lines = TRUE), xlab =
+"Gloss for two flow rates (gm/min) and three distances from target (in)")
+</pre>
+
+
+</body></html>

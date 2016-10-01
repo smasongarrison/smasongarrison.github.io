@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Toxin concentrations in fish by site</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fish"><tr><td>fish</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Toxin concentrations in fish by site
+</h2>
+
+<h3>Description</h3>
+
+<p>Toxin concentrations in fish by site
+</p>
+
+
+<h3>Format</h3>
+
+<p><code>fish</code> is a data frame with 16 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>site</code></dt><dd><p>a factor with levels <code>A</code>, <code>B</code>, <code>C</code>
+and <code>D</code></p>
+</dd>
+<dt><code>toxin</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+<p><code>fish2</code> is a data frame with 16 observations on the following 2
+variables.
+</p>
+
+<dl>
+<dt><code>site</code></dt><dd><p>a factor with levels <code>E</code>, <code>F</code>, <code>G</code>
+and <code>H</code></p>
+</dd>
+<dt><code>toxin</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Prior to beginning mining operations a new precious metals mine had to
+run an extensive environmental study of the surrounding area,
+particularly down stream from their construction site.  Thus, a
+baseline of data was collected over many years so that any
+environmental impact of the facility could be quantified.  One step in
+the study was to collect fish along a stream and measure the amount of
+various toxins found in the fish.
+</p>
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(fish)
+dotplot(reorder(site, toxin) ~ toxin, fish, jitter.y = TRUE,
+        aspect = 0.3, xlab = "Amount of toxin (mg/kg wet weight)")
+str(fish2)
+dotplot(reorder(site, toxin) ~ toxin, fish2, jitter.y = TRUE,
+        aspect = 0.3, xlab = "Amount of toxin (mg/kg wet weight)")
+</pre>
+
+
+</body></html>

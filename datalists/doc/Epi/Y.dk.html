@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Population risk time in Denmark</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Y.dk"><tr><td>Y.dk</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Population risk time in Denmark</h2>
+
+<h3>Description</h3>
+
+<p>Risk time (person-years) in the Danish population, classified by sex, age, period and
+date of birth in 1-year classes. This corresponds to triangles in a Lexis diagram.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Y.dk)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 13860 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>sex</code></dt><dd><p>Sex. 1:males, 2:females</p>
+</dd>
+<dt><code>A</code></dt><dd><p>One-year age class</p>
+</dd>
+<dt><code>P</code></dt><dd><p>Period</p>
+</dd>
+<dt><code>C</code></dt><dd><p>Birth cohort</p>
+</dd>
+<dt><code>Y</code></dt><dd><p>Person-years</p>
+</dd>
+<dt><code>upper</code></dt><dd><p>Indicator of upper triangle in the Lexis diagram</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The risk time is computed from the population size figures in <code>N.dk</code>,
+using the formulae devised in B. Carstensen:
+&quot;Demography and epidemiology: Age-Period-Cohort models in the computer age&quot;,
+<a href="http://biostat.ku.dk/reports/2006/ResearchReport06-1.pdf/">http://biostat.ku.dk/reports/2006/ResearchReport06-1.pdf/</a>, later
+published as:
+B. Carstensen: Age-period-cohort models for the Lexis diagram.
+Statistics in Medicine, 10; 26(15):3018-45, 2007.
+</p>
+
+
+<h3>Source</h3>
+
+<p><a href="http://www.statistikbanken.dk/statbank5a/SelectTable/omrade0.asp?SubjectCode=02&amp;PLanguage=1&amp;ShowNews=OFF">http://www.statistikbanken.dk/statbank5a/SelectTable/omrade0.asp?SubjectCode=02&amp;PLanguage=1&amp;ShowNews=OFF</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Y.dk)
+str(Y.dk)
+# Compute mean age, period for the triangles
+attach( Y.dk )
+age &lt;- A + (1+upper)/3
+per &lt;- P + (2-upper)/3
+# Plot a Lexis diagram
+library( Epi )
+Lexis.diagram( age=c(0,10), date=c(1990,2000), coh.grid=TRUE, int=1 )
+box()
+# Print the person-years for males there
+text( per[sex==1], age[sex==1],
+      formatC( Y[sex==1]/1000, format="f", digits=1 ) )
+</pre>
+
+
+</body></html>

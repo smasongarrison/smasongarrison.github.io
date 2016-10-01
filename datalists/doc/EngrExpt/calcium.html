@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calcium levels before and after taking vitamin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calcium"><tr><td>calcium</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Calcium levels before and after taking vitamin
+</h2>
+
+<h3>Description</h3>
+
+<p>The serum calcium levels in 11 test subjects before taking a
+multi-vitamin containing calcium and three hours after taking the vitamin.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 11 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>hrs0</code></dt><dd><p>serum calcium level (mg/dl) at time zero</p>
+</dd>
+<dt><code>hrs3</code></dt><dd><p>serum calcium level (mg/dl) three hours after
+taking the multi-vitamin containing calcium</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>This was a small pilot study to test the effectiveness of the
+multi-vitamin with respect to calcium absorption.
+</p>
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(calcium)
+show(pl1 &lt;-
+     xyplot(hrs3 ~ hrs0, calcium, type = c("g","p"), aspect = "iso",
+            xlab = "Calcium level (mg/dl) before taking multi-vitamin",
+            ylab =
+            "Calcium level (mg/dl) 3 hours after taking multi-vitamin"))
+tmd(pl1)
+</pre>
+
+
+</body></html>

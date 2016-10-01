@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Marin Measure B Reported Results</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for marin"><tr><td>marin</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Marin Measure B Reported Results
+</h2>
+
+<h3>Description</h3>
+
+<p>These are the reported vote totals from the 2009 election in Marin, CA
+for Measure B.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(marin)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 544 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>PID</code></dt><dd><p>Batch ID</p>
+</dd>
+<dt><code>strata</code></dt><dd><p>There are two levels, <code>ST-IB</code>
+<code>ST-VBM</code> for in-precinct and Vote-by-Mail.</p>
+</dd>
+<dt><code>tot.votes</code></dt><dd><p>total ballots cast in the batch.</p>
+</dd>
+<dt><code>Yes</code></dt><dd><p>Number recorded for Yes</p>
+</dd>
+<dt><code>No</code></dt><dd><p>Number recorded for No</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Note the vote totals for the VBM strata are made up.  The batches are
+the &ldquo;Decks&rdquo;, which could not be individually tallied with ease.  The
+work-around
+was complex.  See the references, below.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Marin, CA 2009 reported election results.
+</p>
+
+
+<h3>References</h3>
+
+<p>See J. L. Hall, L. W. Miratrix, P. B. Stark, M. Briones, E. Ginnold, F. Oakley, M. Peaden, G. Pellerin, T. Stanionis, 
+and T. Webber.  Implementing risk-limiting audits in california.  USENIX EVT/WOTE in press, July 2009.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(marin)
+marin = elec.data( marin, C.names=c("Yes","No") )
+
+# Hand fixing error bound due to unknown
+# vote totals in the VBM decks
+marin$V$e.max = maximumMarginBound(marin)
+sum( marin$V$e.max )   # 7.128
+vbm = marin$V$strata=="ST-VBM"
+marin$V[ vbm, "e.max" ] = 2 * marin$V[ vbm, "tot.votes" ] / marin$margin
+
+sum( marin$V$e.max )   # 9.782
+
+</pre>
+
+
+</body></html>

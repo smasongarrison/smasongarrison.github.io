@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Internet SAS Database Resources</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sas7bdat.sources"><tr><td>sas7bdat.sources</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Internet SAS Database Resources
+</h2>
+
+<h3>Description</h3>
+
+<p>These data are a collection of internet resources for SAS database files in the sas7bdat format.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(sas7bdat.sources)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with records on the following fields:
+</p>
+
+<dl>
+<dt><code>filename</code></dt><dd><p>character, the SAS database filename</p>
+</dd>
+<dt><code>accessed</code></dt><dd><p>POSIXct, the date last retrieved</p>
+</dd>
+<dt><code>uncompressed</code></dt><dd><p>numeric, file size (bytes)</p>
+</dd>
+<dt><code>gzip</code></dt><dd><p>numeric, gzip compressed file size (bytes)</p>
+</dd>
+<dt><code>bzip2</code></dt><dd><p>numeric, bzip2 compressed file size (bytes)</p>
+</dd>
+<dt><code>xz</code></dt><dd><p>numeric, xz compressed file size (bytes)</p>
+</dd>
+<dt><code>url</code></dt><dd><p>character, the Universal Resource Locator</p>
+</dd>
+<dt><code>PKGversion</code></dt><dd><p>character, the <span class="pkg">sas7bdat</span> package version</p>
+</dd>
+<dt><code>message</code></dt><dd><p>character, message returned by <code>read.sas7bdat</code> (if any)</p>
+</dd>
+<dt><code>SASrelease</code></dt><dd><p>character, SAS release</p>
+</dd>
+<dt><code>SAShost</code></dt><dd><p>character, SAS host platform</p>
+</dd>
+<dt><code>OSversion</code></dt><dd><p>character, OS version</p>
+</dd>
+<dt><code>OSmaker</code></dt><dd><p>character, OS maker</p>
+</dd>
+<dt><code>OSname</code></dt><dd><p>character, OS name</p>
+</dd>
+<dt><code>endianness</code></dt><dd><p>character, endianness of header fields</p>
+</dd>
+<dt><code>winunix</code></dt><dd><p>character, platform type</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(sas7bdat.sources)
+</pre>
+
+
+</body></html>

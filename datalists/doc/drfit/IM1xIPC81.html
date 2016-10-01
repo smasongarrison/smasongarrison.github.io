@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dose-Response data for 1-methyl-3-alkylimidazolium...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for IM1xIPC81"><tr><td>IM1xIPC81</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dose-Response data for 1-methyl-3-alkylimidazolium tetrafluoroborates in IPC-81 cells</h2>
+
+<h3>Description</h3>
+
+<p>This is the raw data documenting the influence of the alkyl
+chain length in 3 position on the toxicity to the
+promyelocytic leukemia rat cell line IPC-81. The substances
+are named according to the UFT naming scheme of these
+substances. IM13 BF4 means 1-methyl-3-propylimidazolium
+tetrafluoroborate, IM14 BF4 means
+1-methyl-3-butylimidazolium tetrafluoroborate and IM1-10
+BF4 means 1-methyl-3-decylimidazolium tetrafluoroborate.
+This is a subset (only the BF4 anion) of the data
+shown in Figure 3 in Ranke et al. (2004).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(IM1xIPC81)</pre>
+
+
+<h3>Format</h3>
+
+<p>A dataframe containing the data as required for the
+<code>drfit</code> function. An additional column contains
+the tested organism (name of the cell line).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Ranke J, Mölter K, Stock F, Bottin-Weber U, Poczobutt J,
+Hoffmann J, Ondruschka B, Filser J, Jastorff B (2004)
+Biological effects of imidazolium ionic liquids with varying
+chain lenghts in acute Vibrio fischeri and WST-1 cell
+viability assays. Ecotoxicology and Environmental Safety
+58(3) 396-404
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  rIM1xIPC81 &lt;- drfit(IM1xIPC81, linlogit = TRUE, showED50 = TRUE, EDx = 10)
+
+  rIM1xIPC81.drc &lt;- drcfit(IM1xIPC81, linlogit = TRUE, showED50 = TRUE, EDx = 10)
+
+  print(rIM1xIPC81,digits=4)
+  print(rIM1xIPC81.drc,digits=4)
+</pre>
+
+
+</body></html>

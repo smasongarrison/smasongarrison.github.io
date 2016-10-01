@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rotating Rats Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for rotarod"><tr><td>rotarod</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Rotating Rats Data</h2>
+
+<h3>Description</h3>
+
+<p>The endurance time of 24 rats in two groups in a rotating cylinder.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(rotarod)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 24 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt>time</dt><dd><p>the endurance time</p>
+</dd>
+<dt>group</dt><dd><p>a factor with levels <code>control</code> and <code>treatment</code>.</p>
+</dd></dl>
+
+
+
+<h3>Details</h3>
+
+<p>The 24 rats received a fixed oral dose of a centrally acting muscle relaxant
+(treatment) or a saline solvent (control). They were placed on a rotating
+cylinder and the length of time each rat remains on the cylinder is
+measured, up to a maximum of 300 seconds.
+The rats were randomly assigned to the control and treatment group.
+</p>
+<p>Note that the empirical variance in the control group is 0 and that the
+group medians are identical.
+</p>
+<p>This dataset serves as the basis of an comparision of the results of the 
+Wilcoxon-Mann-Whitney test computed by 11 statistical packages in Bergmann
+et al. (2000). The exact conditional p-value is $0.0373$ (two-sided) and
+$0.0186$ (one-sided). The asymptotic two-sided 
+p-value (corrected for ties) is reported as $0.0147$.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Reinhard Bergmann, John Ludbrook &amp; Will P.J.M. Spooren (2000),
+Different outcomes of the Wilcoxon-Mann-Whitney test from different 
+statistics packages. <em>The American Statistician</em>, 
+<b>54</b>(1), 72&ndash;77.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(rotarod)
+wilcox.exact(time ~ group, data=rotarod, alternative="g")
+wilcox.exact(time ~ group, data=rotarod, conf.int=TRUE)
+wilcox.exact(time ~ group, data=rotarod, exact=FALSE)
+# the permutation test
+perm.test(time ~ group, data=rotarod)
+perm.test(time ~ group, data=rotarod, exact=FALSE)
+</pre>
+
+
+</body></html>

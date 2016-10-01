@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A small occupational cohort</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for occup"><tr><td>occup</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> A small occupational cohort </h2>
+
+<h3>Description</h3>
+
+<p>This is the data that is behind the illustrative Lexis
+diagram in Breslow &amp; Day's book on case-control studies.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(occup)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 13 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>AoE</code></dt><dd><p>a numeric vector, Age at Entry</p>
+</dd>
+<dt><code>DoE</code></dt><dd><p>a numeric vector, Date of entry</p>
+</dd>
+<dt><code>DoX</code></dt><dd><p>a numeric vector, Date of eXit</p>
+</dd>
+<dt><code>Xst</code></dt><dd><p>eXit status <code>D</code>-event, <code>W</code>-withdrawal,
+<code>X</code>-censoring</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Breslow &amp; Day: Statistical Methods in Cancer Research, vol 1:
+The analysis of case-control studies, figure 2.2, p. 48.</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(occup)
+lx &lt;- Lexis( entry = list( per=DoE, age=AoE ),
+              exit = list( per=DoX ),
+      entry.status = "W",
+       exit.status = Xst,
+              data = occup )
+plot( lx )
+# Split follow-up in 5-year classes
+sx &lt;- splitLexis( lx, seq(1940,1960,5), "per" )
+sx &lt;- splitLexis( sx, seq(  40,  60,5), "age" )
+plot( sx )
+
+# Plot with a bit more paraphernalia and a device to get
+# the years on the same physical scale on both axes
+ypi &lt;- 2.5 # Years per inch
+dev.new( height=15/ypi+1, width=20/ypi+1 ) # add an inch in each direction for
+par( mai=c(3,3,1,1)/4, mgp=c(3,1,0)/1.6 )  # the margins set in inches by mai=
+plot(sx,las=1,col="black",lty.grid=1,lwd=2,type="l",
+     xlim=c(1940,1960),ylim=c(40,55),xaxs="i",yaxs="i",yaxt="n",
+     xlab="Calendar year", ylab="Age (years)")
+axis( side=2, at=seq(40,55,5), las=1 )
+points(sx,pch=c(NA,16)[(sx$lex.Xst=="D")+1] )
+box()
+# Annotation with the person-years
+PY.ann.Lexis( sx, cex=0.8 )
+</pre>
+
+
+</body></html>

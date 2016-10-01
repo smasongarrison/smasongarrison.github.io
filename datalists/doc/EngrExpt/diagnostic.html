@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Consistency of diagnostic kits</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for diagnostic"><tr><td>diagnostic</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Consistency of diagnostic kits
+</h2>
+
+<h3>Description</h3>
+
+<p>Consistency of diagnostic kits
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 16 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>kit1</code></dt><dd><p>measurement using kit 1</p>
+</dd>
+<dt><code>kit2</code></dt><dd><p>measurement using kit 2</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Diagnostic kits are used in clinics or laboratories to test samples
+(e.g., blood) for some condition (i.e., illness).  One kit can often
+test many samples.  In this case one kit can test at least 16 samples.
+This study was to look the consistency between kits used to test the
+same set of samples.  The samples would have been divided such that both
+kits could be used to test the sample and then the results compared.
+</p>
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(diagnostic)
+show(plt1 &lt;-
+     xyplot(kit2 ~ kit1, diagnostic,
+            aspect = "iso", type = c("g", "p"),
+            xlab = "Measurement using kit 1",
+            ylab = "Measurement using kit 2"))
+tmd(plt1)
+show(plt2 &lt;-
+     xyplot(kit2 ~ kit1, diagnostic, aspect = "iso",
+            xlab = "Measurement using kit 1 - logarithmic axis",
+            ylab = "Measurement using kit 2 - logarithmic axis",
+            scales = list(log = 2)))
+tmd(plt2)
+</pre>
+
+
+</body></html>

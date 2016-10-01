@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dose-Response data for 1-methyl-3-alkylimidazolium...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for IM1xVibrio"><tr><td>IM1xVibrio</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dose-Response data for 1-methyl-3-alkylimidazolium tetrafluoroborates in V. fischeri</h2>
+
+<h3>Description</h3>
+
+<p>This is the raw data documenting the influence of the alkyl chain length in 3
+position on the toxicity to the marine luminescent bacteria <em>V.
+fischeri</em>. The substances are named according to the UFT naming scheme of
+these substances. 
+IM13 BF4 means 1-methyl-3-propylimidazolium tetrafluoroborate, 
+IM14 BF4 means 1-methyl-3-butylimidazolium tetrafluoroborate and 
+IM1-10 BF4 means 1-methyl-3-decylimidazolium tetrafluoroborate.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(IM1xVibrio)</pre>
+
+
+<h3>Format</h3>
+
+<p>A dataframe containing the data as required for the <code>drfit</code>
+function. Additional columns contain the species tested (luminescent bacteria
+Vibrio fischeri, <code>organism</code>), and a field specifying if the data is
+regarded valid (<code>ok</code>).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Ranke J, Mölter K, Stock F, Bottin-Weber U, Poczobutt J, Hoffmann J,
+Ondruschka B, Filser J, Jastorff B (2004) Biological effects of imidazolium
+ionic liquids with varying chain lenghts in acute Vibrio fischeri and WST-1
+cell viability assays. Ecotoxicology and Environmental Safety 58(3) 396-404
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  rIM1xVibrio &lt;- drfit(IM1xVibrio, logit = TRUE, chooseone = FALSE,
+                       showED50 = TRUE, EDx = c(10, 20))
+  print(rIM1xVibrio, digits = 4)
+
+  rIM1xVibrio.drc &lt;- drcfit(IM1xVibrio, logit = TRUE, chooseone = FALSE,
+                            showED50 = TRUE, EDx = c(10, 20))
+  print(rIM1xVibrio.drc, digits = 4)
+</pre>
+
+
+</body></html>

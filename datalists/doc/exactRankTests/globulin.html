@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Differences in Globulin Fraction in Two Groups</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for globulin"><tr><td>globulin</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Differences in Globulin Fraction in Two Groups </h2>
+
+<h3>Description</h3>
+
+<p>Globulin fraction of plasma (g/l) in two groups of 10 patients. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(globulin)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following variables:
+</p>
+
+<dl>
+<dt>gfrac</dt><dd><p>Globulin fraction of plasma</p>
+</dd>
+<dt>group</dt><dd><p>a factor with levels <code>group1</code> and <code>group2</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>See page 75 of Gardner &amp; Altman (1989).
+</p>
+
+
+<h3>Source</h3>
+
+<p>M. J. Gardner &amp; D. G. Altman (1989), 
+<em>Statistics with Confidence</em>.
+Published by the British Medical Journal.
+</p>
+
+
+<h3>References</h3>
+
+<p>Joachim R\&quot;ohmel (1996),
+Precision intervals for estimates of the difference in success 
+rates for binary  random variables based on the permutation principle.
+<em>Biometrical Journal</em>, <b>38</b>(8), 977&ndash;993.  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(globulin)
+perm.test(gfrac ~ group, data=globulin, conf.int=TRUE)
+</pre>
+
+
+</body></html>

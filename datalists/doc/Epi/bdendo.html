@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A case-control study of endometrial cancer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bdendo"><tr><td>bdendo</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>A case-control study of endometrial cancer</h2>
+
+<h3>Description</h3>
+
+<p>The <code>bdendo</code> data frame has 315 rows and 13 columns.
+These data concern a study in which each case of endometrial cancer was
+matched with 4 controls. Matching was by date of birth (within one
+year), marital status, and residence.
+</p>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+<code>set</code>: </td><td style="text-align: left;"> Case-control set: a numeric vector  </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>d</code>: </td><td style="text-align: left;"> Case or control: a numeric vector (1=case, 0=control) </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>gall</code>: </td><td style="text-align: left;"> Gall bladder disease: a factor with levels
+                  <code>No</code> 
+                  <code>Yes</code>. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>hyp</code>: </td><td style="text-align: left;"> Hypertension: a factor with levels
+                 <code>No</code> 
+                 <code>Yes</code>. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>ob</code>: </td><td style="text-align: left;"> Obesity: a factor with levels
+                <code>No</code> 
+                <code>Yes</code>. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>est</code>: </td><td style="text-align: left;"> A factor with levels
+                 <code>No</code> 
+                 <code>Yes</code>. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>dur</code>: </td><td style="text-align: left;"> Duration of conjugated oestrogen therapy: an ordered factor with levels
+                 <code>0</code> &lt; <code>1</code> &lt; <code>2</code> &lt; <code>3</code> &lt; <code>4</code>. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>non</code>: </td><td style="text-align: left;"> Use of non oestrogen drugs: a factor with levels
+                 <code>No</code> 
+                 <code>Yes</code>. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>duration</code>: </td><td style="text-align: left;"> Months of oestrogen therapy: a numeric vector.  </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>age</code>: </td><td style="text-align: left;"> A numeric vector. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>cest</code>: </td><td style="text-align: left;"> Conjugated oestrogen dose: an ordered factor with levels
+<code>0</code> &lt; <code>1</code> &lt; <code>2</code> &lt; <code>3</code>. </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>agegrp</code>: </td><td style="text-align: left;"> A factor with levels
+                    <code>55-59</code> 
+                    <code>60-64</code> 
+                    <code>65-69</code> 
+                    <code>70-74</code> 
+                    <code>75-79</code> 
+                    <code>80-84</code> </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+<code>age3</code>: </td><td style="text-align: left;"> a factor with levels
+                  <code>&lt;64</code> 
+                  <code>65-74</code> 
+                  <code>75+</code>  </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+</td>
+</tr>
+
+</table>
+
+
+
+<h3>Source</h3>
+
+<p>Breslow NE, and Day N, Statistical Methods in Cancer Research. Volume
+I: The Analysis of Case-Control Studies. IARC Scientific
+Publications, IARC:Lyon, 1980.  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(bdendo)
+</pre>
+
+
+</body></html>

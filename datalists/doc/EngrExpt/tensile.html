@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Tensile breaking strength of steel samples</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for tensile"><tr><td>tensile</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Tensile breaking strength of steel samples
+</h2>
+
+<h3>Description</h3>
+
+<p>The breaking strength of samples of steel that were stress tested.
+This data set is called <code>break</code> in Nelson, Coffin and Copeland
+(2003).  We changed the name because <code>break</code> is a reserved word
+in R.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 18 observations on the following variable.
+</p>
+
+<dl>
+<dt><code>bstrength</code></dt><dd><p>breaking strength (unknown units)</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(tensile)
+qqmath(~ bstrength, tensile, aspect = 1,
+       xlab = "Standard normal quantiles",
+       ylab = "Breaking strength of steel samples (unknown units)")
+</pre>
+
+
+</body></html>

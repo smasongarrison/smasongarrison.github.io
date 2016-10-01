@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Appearance of washed and unwashed panels</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for wash"><tr><td>wash</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Appearance of washed and unwashed panels
+</h2>
+
+<h3>Description</h3>
+
+<p>Appearance ratings of washed and unwashed panels
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 36 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>type</code></dt><dd><p>type of treatment - a factor with levels
+<code>NW</code> (not washed) and <code>W</code> (washed)</p>
+</dd>
+<dt><code>time1</code></dt><dd><p>initial rating</p>
+</dd>
+<dt><code>time2</code></dt><dd><p>rating after 2 weeks</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>A particular durability test of paint involves applying drops of acid
+on the panel. After a particular time point the panel is rated for its
+ability to withstand the acid.  This study involved washing (or not
+washing) panels and then storing them for two weeks to see if there
+was a residual effect of the acid on the panel.  This was important as
+panels are often stored and used in presentations so the researchers
+needed to know if they should wash the panels before storing them.
+</p>
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(wash)
+summary(wash)
+show(plt1 &lt;- xyplot(time2 ~ time1, wash, groups = type,
+       auto.key = list(columns = 2, lines = TRUE),
+       aspect = "iso",
+       type = c("g","p","smooth"),
+       xlab  = "Initial rating",
+       ylab = "Rating after 2 weeks",
+       jitter.x = TRUE, jitter.y = TRUE))
+tmd(plt1)
+densityplot(~ I(time2 - time1), wash, groups = type,
+            auto.key = list(columns = 2, lines = TRUE),
+            xlab = "Change in rating after two weeks")
+</pre>
+
+
+</body></html>

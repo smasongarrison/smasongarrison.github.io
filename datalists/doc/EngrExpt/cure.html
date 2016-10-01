@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Yield from a chemical curing process</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cure"><tr><td>cure</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Yield from a chemical curing process
+</h2>
+
+<h3>Description</h3>
+
+<p>Process engineers wish to determine a &ldquo;bake window&rdquo;, the
+combination of time and temperature in a curing process, that will
+maximize the yield of the product.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 18 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>time</code></dt><dd><p>time - an ordered factor with levels
+<code>20</code> &lt; <code>40</code></p>
+</dd>
+<dt><code>temp</code></dt><dd><p>temperature - an ordered factor with levels
+<code>Low</code> &lt; <code>Med</code> &lt; <code>High</code></p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield of parts</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(cure)
+dotplot(temp ~ yield, cure, groups = time, type = c("p","a"),
+        jitter.y = TRUE, xlab = "Yield of parts")
+summary(fm1 &lt;- lm(yield ~ time * temp, cure))
+</pre>
+
+
+</body></html>

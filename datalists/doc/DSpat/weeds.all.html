@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dubbo weed data with constructed y-coordinate</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for weeds.all"><tr><td>weeds.all</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dubbo weed data with constructed y-coordinate</h2>
+
+<h3>Description</h3>
+
+<p>Locations of devils claw in a farming paddock.  Locations to all weeds are given
+as x,y coordinates and are contained in one of eight 150m wide transects (75m each side). The
+weeds seen by observers are specified as Seen=1.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(weeds.all)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 742 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>label</code></dt><dd><p>label of the transect 1 to 8</p>
+</dd>
+<dt><code>x</code></dt><dd><p>x coordinate along horizontal (east-west) of 1200m x 1200m paddock</p>
+</dd>
+<dt><code>y</code></dt><dd><p>y coordinate along vertical (north-south) of 1200m x 1200m paddock</p>
+</dd>
+<dt><code>distance</code></dt><dd><p>absolute perpendicular distance from line</p>
+</dd>
+<dt><code>Seen</code></dt><dd><p>weed was seen if 1 and 0 if missed</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The data provided from Melville and Welsh did not have the y-coordinate.  We have constructed
+y-coordinates by drawing randomly from a uniform distribution in the y-direction such that no two weeds are at
+the exact same location.  The code used to create <code>weeds.all</code> was as follows:
+</p>
+<pre>
+data(weeds)
+# Fudge the data ever so slightly to appease spatstat so the transects don't abut
+# and all points are contained within the strips.
+weeds$SignedDistance[weeds$SignedDistance==75]=74.99
+weeds$SignedDistance[weeds$SignedDistance==-75]=-74.99
+weeds.all=data.frame(label=weeds$Transect, x=(weeds$Transect-1)*150+75
+               +weeds$SignedDistance, y=floor(runif(dim(weeds)[1])*1200),
+               distance=weeds$Distance, Seen=weeds$Seen)
+while(any(duplicated(data.frame(x=weeds.all$x,y=weeds.all$y))))
+{
+  npts=sum(as.numeric(any(duplicated(data.frame(x=weeds.all$x,y=weeds.all$y)))))
+  weeds.all$y[duplicated(data.frame(x=weeds.all$x,y=weeds.all$y))]=
+                                                               runif(npts)*1200
+}
+save(weeds.all,file="weeds.all.rda")
+</pre>
+<p>See <code>weeds</code> for more details.
+</p>
+
+
+<h3>References</h3>
+
+<p>Melville, G. J., and A. H. Welsh. 2001. Line transect sampling in small regions. Biometrics 57:1130-1137.
+</p>
+
+
+</body></html>

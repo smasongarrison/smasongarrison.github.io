@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Percentage fat in cheese</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cheese"><tr><td>cheese</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Percentage fat in cheese
+</h2>
+
+<h3>Description</h3>
+
+<p>A manufacturer of cheese supplies a major pizza chain from three
+different manufacturing locations.  Samples from 6 different batches
+at each of three different plants were assayed for the percentage fat
+content.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 90 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>plant</code></dt><dd><p>the plant where the cheese was manufactured - a
+factor with levels <code>A</code>, <code>B</code> and <code>C</code></p>
+</dd>
+<dt><code>batch</code></dt><dd><p>the batch of cheese - a factor with levels
+<code>a</code> to <code>f</code>.  Note that batch <code>a</code> from plant
+<code>A</code> is not related to batch <code>a</code> from plants
+<code>B</code> or <code>C</code></p>
+</dd>
+<dt><code>fat</code></dt><dd><p>fat content of the cheese (%)</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(cheese)
+bwplot(batch ~ fat|plant, cheese, layout = c(1,3), strip = FALSE,
+       strip.left = TRUE,
+       xlab = "Percentage fat content of batches from three plants")
+dotplot(reorder(reorder(plant:batch, fat), as.numeric(plant)) ~ fat |
+        reorder(plant, fat), cheese, strip = FALSE, strip.left = TRUE,
+        layout = c(1, 3), scales = list(y = list(relation = "free")),
+        aspect = 0.2, type = c("p", "a"), xlab =
+"Percentage fat content - lines join mean fat content per batch",
+        ylab = "Batch within plant", jitter.y = TRUE)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Measurement Instrument for the Mobile Phone Industry</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mobi"><tr><td>mobi</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Measurement Instrument for the Mobile Phone Industry
+</h2>
+
+<h3>Description</h3>
+
+<p>The data set is used as measurement instrument for the european customer
+satisfaction index (ECSI) adapted to the mobile phone market, see
+Tenenhaus et al. (2005).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(mobi)
+data(ECSImobi)
+data(ECSImm)
+data(ECSIsm)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>The data frame <code>mobi</code> has 250 observations on the following 24 items. All the
+items are scaled from <i>1</i> to <i>10</i>.
+</p>
+
+<dl>
+<dt><code>CUEX1</code></dt><dd><p>Expectations for the overall quality of &ldquo;your mobile phone provider&rdquo; at the moment you became customer of this provider</p>
+</dd>
+<dt><code>CUEX2</code></dt><dd><p>Expectations for &ldquo;your mobile phone provider&rdquo; to provide products and services to meet your personal need</p>
+</dd>
+<dt><code>CUEX3</code></dt><dd><p>How often did you expect that things could go wrong at &ldquo;your mobile phone provider&rdquo;</p>
+</dd>
+<dt><code>CUSA1</code></dt><dd><p>Overall satisfaction</p>
+</dd>
+<dt><code>CUSA2</code></dt><dd><p>Fulfillment of expectations</p>
+</dd>
+<dt><code>CUSA3</code></dt><dd><p>How well do you think &ldquo;your mobile phone provider&rdquo; compares with your ideal mobile phone provider?</p>
+</dd>
+<dt><code>CUSCO</code></dt><dd><p>You complained about &ldquo;your mobile phone provider&rdquo; last year. How well, or poorly, was your most recent complaint handled or You did not complain about &ldquo;your mobile phone provider&rdquo; last year. Imagine you have to complain to &ldquo;your mobile phone rovider&rdquo; because of a bad quality of service or product. To what extent do you think that &ldquo;your mobile phone provider&rdquo; will care about your complaint?</p>
+</dd>
+<dt><code>CUSL1</code></dt><dd><p>If you would need to choose a new mobile phone provider how likely is it that you would choose &ldquo;your provider&rdquo; again?</p>
+</dd>
+<dt><code>CUSL2</code></dt><dd><p>Let us now suppose that other mobile phone providers decide to lower their fees and prices, but &ldquo;your mobile phone provider&rdquo; stays at the same level as today. At which level of difference (in %) would you choose another mobile phone provider?</p>
+</dd>
+<dt><code>CUSL3</code></dt><dd><p>If a friend or colleague asks you for advice, how likely is it that you would recommend &ldquo;your mobile phone provider&rdquo;?</p>
+</dd>
+<dt><code>IMAG1</code></dt><dd><p>It can be trusted what it says and does</p>
+</dd>
+<dt><code>IMAG2</code></dt><dd><p>It is stable and firmly established</p>
+</dd>
+<dt><code>IMAG3</code></dt><dd><p>It has a social contribution to society</p>
+</dd>
+<dt><code>IMAG4</code></dt><dd><p>It is concerned with customers</p>
+</dd>
+<dt><code>IMAG5</code></dt><dd><p>It is innovative and forward looking</p>
+</dd>
+<dt><code>PERQ1</code></dt><dd><p>Overall perceived quality</p>
+</dd>
+<dt><code>PERQ2</code></dt><dd><p>Technical quality of the network</p>
+</dd>
+<dt><code>PERQ3</code></dt><dd><p>Customer service and personal advice offered</p>
+</dd>
+<dt><code>PERQ4</code></dt><dd><p>Quality of the services you use</p>
+</dd>
+<dt><code>PERQ5</code></dt><dd><p>Range of services and products offered</p>
+</dd>
+<dt><code>PERQ6</code></dt><dd><p>Reliability and accuracy of the products and services provided</p>
+</dd>
+<dt><code>PERQ7</code></dt><dd><p>Clarity and transparency of information provided</p>
+</dd>
+<dt><code>PERV1</code></dt><dd><p>Given the quality of the products and services offered by &ldquo;your mobile phone provider&rdquo; how would you rate the fees and prices that you pay for them?</p>
+</dd>
+<dt><code>PERV2</code></dt><dd><p>Given the fees and prices that you pay for &ldquo;your mobile phone provider&rdquo; how would you rate the quality of the products and services offered by &ldquo;your mobile phone provider&rdquo;?</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The data frame <code>mobi</code> contains the observed data for the model
+specified by <code>ECSImobi</code>.
+The from-to-matrizes <code>ECSImm</code> and codeECSIsm represent directed edges connecting the
+variables in outer/measurement and inner/structural model. They are
+needed for model specification by mean of the <code>plsm</code> method.
+</p>
+
+
+<h3>References</h3>
+
+<p>Tenenhaus, M., V. E. Vinzi, Y.-M. Chatelin, and C. Lauro (2005)
+PLS path modeling.
+Computational Statistics &amp; Data Analysis 48, 159-205.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>ECSImobi</code>, <code>ECSIsm</code>, <code>ECSImm</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(mobi)
+data(ECSImobi)
+ecsi &lt;- sempls(model=ECSImobi, data=mobi, E="C")
+ecsi
+</pre>
+
+
+</body></html>

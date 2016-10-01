@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data from a clinical study of three sets of extracorporeal...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for coagulation"><tr><td>coagulation</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Data from a clinical study of three sets of extracorporeal circulation
+in heart-lung machines
+</h2>
+
+<h3>Description</h3>
+
+<p>Three sets of extracorporeal circulation in heart-lung machines: treatments H and B, and
+standard S. Twelve (S and H each) and eleven (B) male adult patients have been considered.
+The analysis is based on a set of laboratory parameters restricted to the blood
+coagulation system, characterized by three primary endpoints (each as quotient from post-
+and pre-surgery values). Higher values indicate a better treatment effect. For more
+details, see Kropf et al. (2000).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(coagulation)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 35 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>Patient</code></dt><dd><p>a numeric vector, the patients' number</p>
+</dd>
+<dt><code>Thromb.count</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>ADP</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>TRAP</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Group</code></dt><dd><p>a factor with levels <code>B</code>, <code>H</code>, <code>S</code>
+specifying the treatments, where <code>S</code> is the standard</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Kropf, S. et al. (2000): Multiple comparisons of treatments with stable multivariate tests
+in a two-stage adaptive design, including a test for non-inferiority. <em>Biometrical
+Journal</em> 42, 951-965.
+</p>
+
+
+<h3>References</h3>
+
+<p>Hasler, M. and Hothorn, L.A. (2011): A Dunnett-type procedure for multiple endpoints.
+<em>The International Journal of Biostatistics</em> 7, Article 3.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(coagulation)
+str(coagulation)
+</pre>
+
+
+</body></html>

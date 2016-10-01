@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Veteran's Administration Lung Cancer Trial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for prentice"><tr><td>prentice</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Veteran's Administration Lung Cancer Trial</h2>
+
+<h3>Description</h3>
+
+<p>The file consists of survival times  in days of 137 lung cancer patients
+from a Veteran's Administration Lung Cancer trial, together with
+explanatory variables: performance status, a measure of
+general medical status on a continuous scale 1&ndash;9.9, with 1&ndash;3
+completely hospitalized, 4&ndash;6 partial confinement to hospital, 7&ndash;9.9
+able to care for self; age in years; time in months from
+diagnosis to starting on the study; a factor prior therapy
+(1 no, 2 yes); a factor treatment  (1 standard,
+2 test) and a factor tumour type (1 squamous, 2 small, 3
+adeno, 4 large).  There are three censored observations.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(prentice)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data.frame of 137 obs. of 8 variables:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    [,1] </td><td style="text-align: left;">  treat </td><td style="text-align: left;">  integer, 1= standard, 2= test</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ [,2] </td><td style="text-align: left;">  type  </td><td style="text-align: left;">  integer,  1= squamous, 2 =small, 3= adeno, 4= large</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ [,3] </td><td style="text-align: left;">  time  </td><td style="text-align: left;">  integer,  survival time in days </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ [,4] </td><td style="text-align: left;">  censor</td><td style="text-align: left;">  integer,  censoring indicator </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ [,5] </td><td style="text-align: left;">  status</td><td style="text-align: left;">  integer,  general medical status on a scale 1--9.9 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ [,6] </td><td style="text-align: left;">  mfd   </td><td style="text-align: left;">  integer,  time in months from diagnosis </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ [,7] </td><td style="text-align: left;">  age   </td><td style="text-align: left;">  integer,  age in years </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ [,8] </td><td style="text-align: left;">  prior </td><td style="text-align: left;">  integer,  prior therapy 1=no, 2=yes
+</td>
+</tr>
+
+</table>
+
+
+
+<h3>Note</h3>
+
+<p>See p.414 in SMIR</p>
+
+
+<h3>Source</h3>
+
+<p>Prentice, R. L. (1973), &quot;Exponential survivals with censoring
+and explanatory variables&quot;, <em>Biometrika</em>, <b>60</b>, 279&ndash;88.
+</p>
+
+
+</body></html>

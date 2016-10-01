@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: UV absorbance for lens cured in different ovens</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for uvoven"><tr><td>uvoven</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+UV absorbance for lens cured in different ovens
+</h2>
+
+<h3>Description</h3>
+
+<p>UV absorbance for lens cured in different ovens
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 60 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>oven</code></dt><dd><p>oven - a factor with levels <code>A</code> <code>B</code></p>
+</dd>
+<dt><code>uv</code></dt><dd><p>UV absorbance</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(uvoven)
+summary(uvoven)
+densityplot(~ uv, uvoven, groups = oven, auto.key = list(columns = 2),
+            xlab = "UV absorbance")
+qqmath(~ uv, uvoven, groups = oven,
+       auto.key = list(space = "right", title = "Oven"),
+       xlab = "Standard normal quantiles", type = c("p","g"),
+       ylab = "UV absorbance",
+       panel = function(...)
+    {
+       panel.qqmath(...)
+       panel.qqmathline(..., alpha = 0.5)
+    })
+</pre>
+
+
+</body></html>

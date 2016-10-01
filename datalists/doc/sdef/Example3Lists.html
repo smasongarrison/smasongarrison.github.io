@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Molecular Differences between Mammalian Sexes.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Example3Lists"><tr><td>Example3Lists</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Molecular Differences between Mammalian Sexes.
+</h2>
+
+<h3>Description</h3>
+
+<p>This dataset contains three lists of p-values obtained from a publicly available experiment to evaluate differential expression between mammalian sexes in three tissues (hypothalamus, kidney and liver).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Example3Lists)</pre>
+
+
+<h3>Format</h3>
+
+<p>The format is: a matrix with 6477 rows and 3 columns. For each gene (row) it reports the p-values of being differentially expressed between male and female mice for the three tissues.
+</p>
+
+
+<h3>Source</h3>
+
+<p><a href="http://www.ncbi.nlm.nih.gov/geo">http://www.ncbi.nlm.nih.gov/geo</a>, accession number GSE1147-GSE1148
+</p>
+
+
+<h3>References</h3>
+
+<p>Rinn J, Rozowsky J, Laurenzi I, Petersen P, Zou ZW K, Gerstein M, Snyder1 M: Major
+Molecular Differences between Mammalian Sexes Are Involved in Drug Metabolism and
+Renal Function.
+Developmental Cell 2004, 6:791-800
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+#data(Example3Lists)
+#Th&lt;- ratio(data=Example3Lists)
+
+#Rh&lt;- baymod(iter=100,output.ratio=Th)
+
+#MC&lt;- Tmc(iter=100,output.ratio=Th)
+
+#The gene names can be obtained using the command dimnames:
+#feat.names = dimnames(Example3Lists)[[1]]
+#feat.lists &lt;- extractFeatures.R(output.ratio=Th,output.bay=Rh,feat.names=feat.names,h=NULL)
+#feat.lists.T &lt;- extractFeatures.T(output.ratio=Th,feat.names=feat.names)
+
+#output.table &lt;- createTable(output.ratio=Th,output.bay=Rh)
+
+</pre>
+
+
+</body></html>

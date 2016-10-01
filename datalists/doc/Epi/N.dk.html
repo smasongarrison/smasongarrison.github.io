@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Population size in Denmark</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for N.dk"><tr><td>N.dk</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Population size in Denmark</h2>
+
+<h3>Description</h3>
+
+<p>The population size at 1st January in ages 0-99.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(N.dk)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 7200 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>sex</code></dt><dd><p>Sex, 1:males, 2:females</p>
+</dd>
+<dt><code>A</code></dt><dd><p>Age. 0:0, 1:1, ..., 98:98, 99:99+</p>
+</dd>
+<dt><code>P</code></dt><dd><p>Year</p>
+</dd>
+<dt><code>N</code></dt><dd><p>Number of persons alive at 1st January year <code>P</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><a href="http://www.statistikbanken.dk/statbank5a/SelectTable/omrade0.asp?SubjectCode=02&amp;PLanguage=1&amp;ShowNews=OFF">http://www.statistikbanken.dk/statbank5a/SelectTable/omrade0.asp?SubjectCode=02&amp;PLanguage=1&amp;ShowNews=OFF</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(N.dk)
+str(N.dk)
+with(N.dk,addmargins(tapply(N,list(P,sex),sum),2))
+with(subset(N.dk,P==max(P)),addmargins(tapply(N,list(A,sex),sum)))
+</pre>
+
+
+</body></html>

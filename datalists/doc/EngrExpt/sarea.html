@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Surface area of silica</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sarea"><tr><td>sarea</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Surface area of silica</h2>
+
+<h3>Description</h3>
+
+<p>Measurements of the surface area (<i>m^2/g</i>) of three batches of
+silica as performed by four different lab technicians.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 12 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>batch</code></dt><dd><p>a factor with levels <code>a</code>, <code>b</code> and <code>c</code></p>
+</dd>
+<dt><code>tech</code></dt><dd><p>a factor with levels <code>A</code>, <code>B</code>, <code>C</code>
+and <code>D</code></p>
+</dd>
+<dt><code>sarea</code></dt><dd><p>the surface area in <i>m^2/g</i> as measured by
+the lab technician on a sample from the batch</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(sarea)
+xtabs(sarea ~ batch + tech, sarea)
+dotplot(reorder(tech, sarea) ~ sarea, sarea,
+        groups = batch, type = c("p","a"), aspect = "xy",
+        ylab = "Technician",
+        xlab = expression("Measured surface area " * (m^2/g) *
+                          " of silica batches"),
+        auto.key = list(columns = 3, lines = TRUE)
+)
+</pre>
+
+
+</body></html>

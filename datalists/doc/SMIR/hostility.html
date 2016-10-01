@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bennett's hostility data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for hostility"><tr><td>hostility</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bennett's hostility data</h2>
+
+<h3>Description</h3>
+
+<p>A measure of hostility based on word use exhibiting hostility by
+husbands of wives who had been admitted to hospital after suicide
+attempts by taking drug overdoses compared to a &ldquo;control&rdquo; group of husbands.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(hostility)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 67 observations on the following 10 variables.
+</p>
+
+<dl>
+<dt><code>group</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>nationality</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>po</code></dt><dd><p>a factor with levels <code>none</code> <code>previous</code></p>
+</dd>
+<dt><code>in.host</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>amb.host</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>out.host</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>covert.host</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>positivity</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>g</code></dt><dd><p>a factor with levels <code>overdoses</code> <code>F controls</code> <code>T controls</code></p>
+</dd>
+<dt><code>nation</code></dt><dd><p>a factor with levels <code>Australian</code> <code>British</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Note</h3>
+
+<p>See p.168 of SMIR</p>
+
+
+<h3>Source</h3>
+
+<p>Bennett, M. D. (1974). <em>The Emotional Response of Husbands to Suicide
+Attempts by Their Wives</em>, Sydney University,
+Unpublished MD thesis.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(hostility)
+## maybe str(hostility)
+plot(hostility)
+</pre>
+
+
+</body></html>

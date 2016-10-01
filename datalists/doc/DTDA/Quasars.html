@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Quasars</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Quasars"><tr><td>Quasars</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Quasars
+</h2>
+
+<h3>Description</h3>
+
+<p>The original data set studied by <cite>Efron and Petrosian (1999)</cite>, comprised independently collected
+quadruplets <i>(z_i;m_i; a_i; b_i), i = 1, &hellip; n</i>, where <i>z_i</i> is the redshift of the ith quasar and
+<i>m_i</i> is the apparent magnitude. Due to experimental constraints, the distribution of each
+luminosity in the log-scale <i>(y_i = t(z_i, m_i))</i> is truncated to a known interval <i>[a_i; b_i]</i>, where <i>t</i>
+represents a transformation which depends on the cosmological model assumed (see <cite>Efron
+and Petrosian (1999)</cite> for details). Quasars with apparent magnitude above <i>b_i</i> were too dim to
+yield dependent redshifts, and hence they were excluded from the study. The lower limit <i>a_i</i>
+was used to avoid confusion with non quasar stellar objects.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Quasars)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 210 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>y (adj lum)</code></dt><dd><p>a numeric vector, the log lominosity values.</p>
+</dd>
+<dt><code>u (lower)</code></dt><dd><p>a numeric vector, lower truncation limits.</p>
+</dd>
+<dt><code>v (upper)</code></dt><dd><p>a numeric vector, upper truncation limits.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Vahé Petrosian and Bradley Efron.
+</p>
+
+
+<h3>References</h3>
+
+<p>Boyle, B.J. and Fong, R. and Shanks, T. and Peterson, B.A. (1990)  <em>Monograph National Royal Astronomical Society</em> <b>243</b>, 1.
+</p>
+<p>Efron, B. and Petrosian, V.(1999) Nonparametric methods for doubly truncated data. <em>Journal of the American Statistical Association</em> <b>94</b>, 824-834.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Quasars)
+ str(Quasars) 
+</pre>
+
+
+</body></html>

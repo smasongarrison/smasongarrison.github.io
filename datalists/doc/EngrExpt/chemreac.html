@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Yield of a chemical reaction</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for chemreac"><tr><td>chemreac</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Yield of a chemical reaction
+</h2>
+
+<h3>Description</h3>
+
+<p>The yield of a chemical reaction was determined in a replicated <i>2^3</i>
+factorial design.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 16 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>temp</code></dt><dd><p>temperature in degrees C - an ordered factor with levels
+<code>120</code> &lt; <code>140</code></p>
+</dd>
+<dt><code>cat</code></dt><dd><p>catalyst - a factor with levels <code>A</code> and <code>B</code></p>
+</dd>
+<dt><code>time</code></dt><dd><p>time reaction was run, in minutes - an ordered
+factor with levels <code>10</code> &lt; <code>30</code> </p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield of the reaction</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+str(chemreac)
+dotplot(temp ~ yield | time, chemreac, groups = cat,
+        strip = FALSE, strip.left = TRUE, type = c("p", "a"), layout = c(1,2),
+        auto.key = list(space = "right", title = "Catalyst", lines = TRUE))
+summary(fm1 &lt;- lm(yield ~ (time + temp + cat)^3, chemreac))
+summary(fm2 &lt;- lm(yield ~ time * temp + cat, chemreac))
+</pre>
+
+
+</body></html>

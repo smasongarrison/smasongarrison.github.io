@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Comparison of mixing processes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for whitearea"><tr><td>whitearea</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Comparison of mixing processes
+</h2>
+
+<h3>Description</h3>
+
+<p>The percentage of &ldquo;white area&rdquo; in a sample of a dark product
+is used to evaluate how well a white raw material has been mixed
+into the product.  Data are obtained from two processes.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 48 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>process</code></dt><dd><p>a factor with levels <code>A</code> <code>B</code></p>
+</dd>
+<dt><code>whitearea</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+str(whitearea)
+qqmath(~ whitearea, whitearea, groups = process, aspect = 1,
+       auto.key = list(space = "right", title = "Process"),
+       xlab = "Standard normal quantiles",
+       ylab = "White area")
+t.test(whitearea ~ process, whitearea)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bereavement in an elderly cohort</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for brv"><tr><td>brv</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bereavement in an elderly cohort</h2>
+
+<h3>Description</h3>
+
+<p>The <code>brv</code> data frame has 399 rows and 11 columns.
+The data concern the possible effect of marital bereavement on
+subsequent mortality. They arose from a survey of the physical and
+mental health of a cohort of 75-year-olds in one large general
+practice. These data concern mortality up to 1 January, 1990 (although
+further follow-up has now taken place).
+</p>
+<p>Subjects included all lived with a living spouse when they entered the
+study. There are three distinct groups of such subjects: (1) those in
+which both members of the couple were over 75 and therefore included in
+the cohort, (2) those whose spouse was below 75 (and was not, therefore,
+part of the main cohort study), and (3) those living in larger
+households (that is, not just with their spouse).
+</p>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+  
+<dl>
+<dt><code>id</code></dt><dd><p>subject identifier, a numeric vector</p>
+</dd>
+<dt><code>couple</code></dt><dd><p>couple identifier, a numeric vector</p>
+</dd>
+<dt><code>dob</code></dt><dd><p>date of birth, a date</p>
+</dd>
+<dt><code>doe</code></dt><dd><p>date of entry into follow-up study, a date</p>
+</dd>
+<dt><code>dox</code></dt><dd><p>date of exit from follow-up study, a date</p>
+</dd>
+<dt><code>dosp</code></dt><dd><p>date of death of spouse, a date (if the spouse was still alive
+at the end of follow-up,this was coded to January 1, 2000)</p>
+</dd>
+<dt><code>fail</code></dt><dd><p>status at end of follow-up,
+a numeric vector (0=alive,1=dead)</p>
+</dd>
+<dt><code>group</code></dt><dd><p>see Description, a numeric vector</p>
+</dd>
+<dt><code>disab</code></dt><dd><p>disability score, a numeric vector</p>
+</dd>
+<dt><code>health</code></dt><dd><p>perceived health status score, a numeric vector</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>a factor with levels
+<code>Male</code> and
+<code>Female</code> </p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Jagger C, and Sutton CJ, Death after Marital Bereavement. Statistics in
+Medicine, 10:395-404, 1991. (Data supplied by Carol Jagger).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(brv)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mortality in Denmark 1974 ff.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for M.dk"><tr><td>M.dk</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Mortality in Denmark 1974 ff.</h2>
+
+<h3>Description</h3>
+
+<p>Mortality in one-year classes of age (0-98,99+) and period (1974 ff.) in Denmark.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(M.dk)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 6400 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>A</code></dt><dd><p>Age-class, 0-98, 99:99+</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>Sex. 1:males, 2:females</p>
+</dd>
+<dt><code>P</code></dt><dd><p>Period (year) of death</p>
+</dd>
+<dt><code>D</code></dt><dd><p>Number of deaths</p>
+</dd>
+<dt><code>Y</code></dt><dd><p>Number of person-years</p>
+</dd>
+<dt><code>rate</code></dt><dd><p>Mortality rate per 1000 person-years</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Deaths in ages over 100 are in the class labelled 99. Risk time is
+computed by tabulation of the risk time in <code>Y.dk</code>, except
+for the class 99+ where the average of the population size in ages
+99+ at the first and last date of the year is used.</p>
+
+
+<h3>Source</h3>
+
+<p><a href="http://www.statistikbanken.dk/statbank5a/SelectTable/omrade0.asp?SubjectCode=02&amp;PLanguage=1&amp;ShowNews=OFF">http://www.statistikbanken.dk/statbank5a/SelectTable/omrade0.asp?SubjectCode=02&amp;PLanguage=1&amp;ShowNews=OFF</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(M.dk)
+str(M.dk)
+
+zz &lt;- xtabs( rate ~ sex+A+P, data=M.dk )
+zz[zz==0] &lt;- NA # 0s makes log-scale plots crash
+par(mfrow=c(1,2), mar=c(0,0,0,0), oma=c(3,3,1,1), mgp=c(3,1,0)/1.6 )
+for( i in 1:2 )
+{
+matplot( dimnames(zz)[[2]], zz[i,,],
+         lty=1, lwd=1, col=rev(heat.colors(37)),
+         log="y", type="l", ylim=range(zz,na.rm=TRUE),
+         ylab="", xlab="", yaxt="n" )
+text( 0, max(zz,na.rm=TRUE), c("M","F")[i], font=2, adj=0:1, cex=2, col="gray" )
+if( i==1 ) axis( side=2, las=1 )
+}
+mtext( side=1, "Age", line=2, outer=TRUE )
+mtext( side=2, "Mortality rate", line=2, outer=TRUE )
+</pre>
+
+
+</body></html>

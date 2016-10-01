@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Survival of Ventilating Tubes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ears"><tr><td>ears</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Survival of Ventilating Tubes </h2>
+
+<h3>Description</h3>
+
+<p>Survival times of ventilating tubes of left and right ears in 78 children
+with otitis media.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ears)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 78 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt>left</dt><dd><p>Survival time in month of tube in left ear.</p>
+</dd>
+<dt>lcens</dt><dd><p>Censoring indicator for left ear: <code>0</code> censored and
+<code>1</code> event.</p>
+</dd>
+<dt>right</dt><dd><p>Survival time in month of tube in right ear.</p>
+</dd>
+<dt>rcens</dt><dd><p>Censoring indicator for right ear: <code>0</code> censored and
+<code>1</code> event.</p>
+</dd>
+<dt>group</dt><dd><p>a factor with levels <code>control</code> and <code>treat</code>. </p>
+</dd></dl>
+
+
+
+<h3>Source</h3>
+
+<p>Sin-Ho Jung and Jong-Hyeon Jeong (2003). Rank tests for clustered survival
+data. <em>Lifetime Data Analysis</em>, <b>9</b>, 21-33.
+</p>
+
+
+<h3>References</h3>
+
+<p>V.M. Howie and R.H. Schwarz (1983). Acute otitis media: One year in
+general pediatric practice. <em>American Journal of Diseases in Children</em>,
+<b>137</b>, 155-158.
+</p>
+<p>D.W. Teele, J.O. Klein, B. Rosner et al. (1989). Epidemiology of otitis
+media during the first seven years of life in children in greater Boston.
+<em>Journal of Infectious Diseases</em>, <b>160</b>, 89-94.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(ears)
+if (require(survival, quietly=TRUE)) {
+  ls &lt;- cscores(Surv(ears$left, ears$lcens), int=TRUE)
+  perm.test(ls ~ group, data=ears)
+}
+
+</pre>
+
+
+</body></html>

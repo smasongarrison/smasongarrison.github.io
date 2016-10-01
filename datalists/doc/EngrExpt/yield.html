@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Yield of a chemical process</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for yield"><tr><td>yield</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Yield of a chemical process
+</h2>
+
+<h3>Description</h3>
+
+<p>Yield of a chemical process
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 20 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>temp</code></dt><dd><p>temperature of the slurry(degrees C)</p>
+</dd>
+<dt><code>pH</code></dt><dd><p>pH of the slurry</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield of the process (tons)</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(yield)
+xyplot(yield ~ temp|cut(pH, seq(6.25,6.85,len = 4), ordered = TRUE),
+       yield, type = c("g","p","r"),
+       xlab = "Temperature of the slurry (degrees C)",
+       ylab = "Yield (tons)")
+</pre>
+
+
+</body></html>

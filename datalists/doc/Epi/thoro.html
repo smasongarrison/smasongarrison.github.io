@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Thorotrast Study</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for thoro"><tr><td>thoro</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Thorotrast Study</h2>
+
+<h3>Description</h3>
+
+<p>The <code>thoro</code> data frame has 2470 rows and 14 columns.
+Each row represents one patient that have had cerebral angiography (X-ray of
+the brain) with an injected contrast medium, either Thorotrast or
+another one (the controls).
+</p>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>Identification of person.</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>Sex, 1: male / 2: female.</p>
+</dd>
+<dt><code>birthdat</code></dt><dd><p>Date of birth, <code>Date</code> variable.</p>
+</dd>
+<dt><code>contrast</code></dt><dd><p>Group, 1: Thorotrast / 2: Control.</p>
+</dd>
+<dt><code>injecdat</code></dt><dd><p>Date of contrast injection, <code>Date</code> variable.</p>
+</dd>
+<dt><code>volume</code></dt><dd><p>Injected volume of Thorotrast in ml. Control
+patients have a 0 in this variable.</p>
+</dd>
+<dt><code>exitdat</code></dt><dd><p>Date of exit from the study, <code>Date</code> variable.</p>
+</dd>
+<dt><code>exitstat</code></dt><dd><p>Status at exit, 1: dead / 2: alive,
+censored at closing of study, 20 February 1992 / 3:
+censored alive at some earlier date.</p>
+</dd>
+<dt><code>cause</code></dt><dd><p>Cause of death. See causes in the helpfile for
+<code>gmortDK</code>.</p>
+</dd>
+<dt><code>liverdat</code></dt><dd><p>Date of liver cancer diagnosis, <code>Date</code> variable.</p>
+</dd>
+<dt><code>liver</code></dt><dd><p>Indicator of liver cancer diagnosis. Not all livercancers
+are histologically verified, hence
+<code>liver &gt;= hepcc + chola + hmang</code></p>
+</dd>
+<dt><code>hepcc</code></dt><dd><p>Hepatocellular carcinoma at <code>liverdat</code>.</p>
+</dd>
+<dt><code>chola</code></dt><dd><p>Cholangiocellular carcinoma at <code>liverdat</code>.</p>
+</dd>
+<dt><code>hmang</code></dt><dd><p>Haemangisarcoma carcinoma at <code>liverdat</code>.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>M Andersson, M Vyberg, J Visfeldt, B Carstensen &amp; HH Storm:
+Primary liver tumours among Danish patients exposed to Thorotrast.
+Radiation Research, 137, pp. 262&ndash;273, 1994.
+</p>
+<p>M Andersson, B Carstensen HH Storm: Mortality and cancer
+incidence after cerebral angiography. Radiation Research, 142,
+pp. 305&ndash;320, 1995.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>mortDK</code>, <code>gmortDK</code></p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(thoro)
+str(thoro)
+</pre>
+
+
+</body></html>

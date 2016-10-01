@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Births in Denmark by year and month of birth and sex</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for B.dk"><tr><td>B.dk</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Births in Denmark by year and month of birth and sex</h2>
+
+<h3>Description</h3>
+
+<p>The number of live births as entered from printed publications from
+Statistics Denmark.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(B.dk)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1248 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>year</code></dt><dd><p>Year of birth</p>
+</dd>
+<dt><code>month</code></dt><dd><p>Month of birth</p>
+</dd>
+<dt><code>m</code></dt><dd><p>Number of male births</p>
+</dd>
+<dt><code>f</code></dt><dd><p>Number of female births</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Division of births by month and sex is only avaialble for the years 1957&ndash;69
+and 2002ff. For the remaining period, the total no. births in each month is
+divided between the sexes so that the fraction of boys is equal to the overall
+fraction for the years where the sex information is available.
+</p>
+<p>There is a break in the series at 1920, when Sonderjylland was joined to Denmark.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Statistiske Undersogelser nr. 19: Befolkningsudvikling og sundhedsforhold
+1901-60, Copenhagen 1966.
+Befolkningens bevaegelser 1957.
+Befolkningens bevaegelser 1958.
+...
+Befolkningens bevaegelser 2003.
+Befolkningens bevaegelser 2004.
+Vital Statistics 2005.
+Vital Statistics 2006.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data( B.dk )
+str( B.dk )
+attach( B.dk )
+# Plot the no of births and the M/F-ratio
+par( las=1, mar=c(4,4,2,4) )
+matplot( year+(month-0.5)/12,
+         cbind( m, f ),
+         bty="n", col=c("blue","red"), lty=1, lwd=1, type="l",
+         ylim=c(0,5000),
+         xlab="Date of birth", ylab="" )
+usr &lt;- par()$usr
+mtext( "Monthly no. births in Denmark", side=3, adj=0, at=usr[1], line=1/1.6 )
+text( usr[1:2] %*% cbind(c(19,1),c(19,1))/20,
+      usr[3:4] %*% cbind(c(1,19),c(2,18))/20, c("Boys","Girls"), col=c("blue","red"), adj=0 ) 
+lines( year+(month-0.5)/12, (m/(m+f)-0.5)*30000, lwd=1 )
+axis( side=4, at=(seq(0.505,0.525,0.005)-0.5)*30000, labels=c("","","","",""), tcl=-0.3 )
+axis( side=4, at=(50:53/100-0.5)*30000, labels=50:53, tcl=-0.5 )
+axis( side=4, at=(0.54-0.5)*30000, labels="% boys", tick=FALSE, mgp=c(3,0.1,0) )
+abline( v=1920, col=gray(0.8) )
+</pre>
+
+
+</body></html>

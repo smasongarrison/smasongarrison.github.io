@@ -1,0 +1,17 @@
+"","rate","type","response"
+"1","TUNNEL","FAST",63.3
+"2","BATCH","FAST",62.9
+"3","TUNNEL","SLOW",62.9
+"4","BATCH","SLOW",62
+"5","BATCH","FAST",63.3
+"6","TUNNEL","SLOW",61.9
+"7","TUNNEL","FAST",63
+"8","BATCH","SLOW",63
+"9","BATCH","FAST",62.7
+"10","TUNNEL","SLOW",62.8
+"11","TUNNEL","FAST",62.9
+"12","TUNNEL","FAST",62.7
+"13","BATCH","SLOW",60.9
+"14","BATCH","SLOW",63.6
+"15","BATCH","FAST",62.2
+"16","TUNNEL","SLOW",62.8

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Danish National Diabetes Register.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for DMlate"><tr><td>DMlate</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+The Danish National Diabetes Register.
+</h2>
+
+<h3>Description</h3>
+
+<p>These two datasets each contain a random sample of 10,000 persons from
+the Danish National Diabetes Register. <code>DMrand</code> is a random sample
+from the register, whereas <code>DMlate</code> is a random sample among those
+with date of diagnosis after 1.1.1995. All dates are radomly jittered by
+adding a U(-7,7) (days).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(DMrand)
+       data(DMlate)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 10000 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>sex</code></dt><dd><p>Sex, a factor with levels <code>M</code> <code>F</code></p>
+</dd>
+<dt><code>dobth</code></dt><dd><p>Date of birth</p>
+</dd>
+<dt><code>dodm</code></dt><dd><p>Date of inclusion in the register</p>
+</dd>
+<dt><code>dodth</code></dt><dd><p>Date of death</p>
+</dd>
+<dt><code>dooad</code></dt><dd><p>Date of 2nd prescription of OAD</p>
+</dd>
+<dt><code>doins</code></dt><dd><p>Date of 2nd insulin prescription</p>
+</dd>
+<dt><code>dox</code></dt><dd><p>Date of exit from follow-up.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>All dates are given in fractions of years, so 1997.00
+corresponds to 1 January 1997 and 1997.997 to 31 December 1997.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Danish National Board of Health.
+</p>
+
+
+<h3>References</h3>
+
+<p>B Carstensen, JK Kristensen, P Ottosen and K Borch-Johnsen:
+The Danish National Diabetes Register: Trends in incidence, prevalence and
+mortality, Diabetologia, 51, pp 2187&ndash;2196, 2008.
+</p>
+<p>In partucular see the appendix at the end of the paper.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(DMlate)
+str(DMlate)
+dml &lt;- Lexis( entry=list(Per=dodm, Age=dodm-dobth, DMdur=0 ),
+               exit=list(Per=dox),
+        exit.status=factor(!is.na(dodth),labels=c("DM","Dead")),
+               data=DMlate )
+
+# Cut the follow-up at insulin start, and introduce a new timescale,
+# and split non-precursor states
+system.time(
+dmi &lt;- cutLexis( dml, cut = dml$doins,
+                      pre = "DM",
+                new.state = "Ins",
+                new.scale = "t.Ins",
+             split.states = TRUE ) )
+summary( dmi )
+</pre>
+
+
+</body></html>

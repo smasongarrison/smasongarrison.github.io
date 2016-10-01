@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Swedish population and deaths in ages 61-80, 2007.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for swe07"><tr><td>swe07</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Swedish population and deaths in ages 61&ndash;80, 2007.</h2>
+
+<h3>Description</h3>
+
+<p>The Swedish population and No. of deaths by age and sex in
+the ages 61&ndash;80. Data from the year 2007. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(swe07)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 80 rows and five variables.
+</p>
+
+<dl>
+<dt><code>pop</code></dt><dd><p>Average population size during the year 2007 by
+age and sex.</p>
+</dd> 
+<dt><code>deaths</code></dt><dd><p>Number of deaths by age and sex during the year
+2007.</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>Sex.</p>
+</dd>
+<dt><code>age</code></dt><dd><p>Age.</p>
+</dd>
+<dt><code>log.pop</code></dt><dd><p>The logarithm of the first variable,
+<code>pop</code>. Included for convenience, may be used as an offset in
+a Poisson regression.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The average population is calculated as the mean of the population 1
+January 2007 and 1 January 2008.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Data is taken from Statistics Sweden.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.scb.se">http://www.scb.se</a>  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(swe07)
+fit &lt;- glm(deaths ~ offset(log.pop) + sex * as.factor(age), family = poisson, data = swe07)
+drop1(fit, test = "Chisq")  ## Proportional hazards?
+</pre>
+
+
+</body></html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Surface area of silica</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for surfarea"><tr><td>surfarea</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Surface area of silica</h2>
+
+<h3>Description</h3>
+
+<p>Measurements of the surface area, in <i>m^2/g</i>, of samples of
+silica, a chemical product with many applications, such as a filler in
+rubber products.  The surface area is a key property of the product.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 32 observations on the following variable.
+</p>
+
+<dl>
+<dt><code>area</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(surfarea)
+with(surfarea, summary(area))
+qqmath(~ area, surfarea, aspect = 1, type = c("g", "p"),
+       xlab = "Standard normal quantiles",
+       ylab = expression("Surface area " * (m^2/g) *
+           " of batches of silica"))
+print(qqmath(~ area, surfarea, aspect = 1, type = c("g", "p"),
+             xlab = "Standard normal quantiles",
+             ylab = expression("Surface area " * (m^2/g))),
+      pos = c(0,0,0.33,1), more = TRUE)
+print(densityplot(~ area, surfarea,
+                  xlab = expression("Surface area "*(m^2/g)*
+                      " of batches of silica")),
+      pos = c(0.3,0,1,1))
+</pre>
+
+
+</body></html>

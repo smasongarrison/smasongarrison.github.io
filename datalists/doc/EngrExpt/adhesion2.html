@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Adhesive qualities of a lens coating</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for adhesion"><tr><td>adhesion</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Adhesive qualities of a lens coating
+</h2>
+
+<h3>Description</h3>
+
+<p>These data are from two experiments to examine the effect of
+formulation changes on the adhesive properties of a eye glass
+lens coating.  If the coating would not adhere to the lens
+surface then the formulation would not be marketable.  The first
+experiment (<code>adhesion</code>) considered only pH (i.e., one
+factor).  In this experiemnt three formulations were made (one
+at each of three pH levles) and ten samples from each
+formulation were tested.  The test procedure for measuring
+adhesion is known to contain a large amount of test error.  In
+the second experiment ( <code>adhesion2</code> the effect of pH (3
+levels) and a catalyst (2 levels) were tested.  The data
+consists of five samples were taken from and tested from each of
+the six formulations.
+</p>
+
+
+<h3>Format</h3>
+
+ <p><code>adhesion</code> is a data frame with 30 observations on the
+following 2 variables. 
+</p>
+
+<dl>
+<dt><code>adhesion</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>pH</code></dt><dd><p>a numeric vector at three distinct levels</p>
+</dd>
+</dl>
+
+<p><code>adhesion2</code> is a data frame with 30 observations on the following
+3 variables.
+</p>
+
+<dl>
+<dt><code>cat</code></dt><dd><p>a factor with levels <code>A</code> and <code>B</code></p>
+</dd>
+<dt><code>pH</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>adhesion</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(adhesion)
+xtabs(~ pH, adhesion)
+xyplot(adhesion ~ pH, adhesion,
+       ylab = "Adhesion of a lens coating", xlab = "pH",
+       type = c("g", "p", "a"))
+dotplot(as.factor(pH) ~ adhesion, adhesion, ylab = "pH",
+        type = c("p","a"), xlab = "Adhesion of a lens coating")
+str(adhesion2)
+xtabs(~ cat + pH, adhesion2)
+dotplot(as.factor(pH) ~ adhesion, adhesion2, groups = cat,
+        type = c("p","a"), ylab = "pH",
+        auto.key = list(space = "right", lines = TRUE,
+                        title = "Catalyst"))
+</pre>
+
+
+</body></html>

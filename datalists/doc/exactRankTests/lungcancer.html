@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lung Cancer Clinical Trial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for lungcancer"><tr><td>lungcancer</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Lung Cancer Clinical Trial </h2>
+
+<h3>Description</h3>
+
+<p>Survival times for patients suffering lung cancer for a treatment and
+control group.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(lungcancer)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 14 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt>time</dt><dd><p>survival time in days.</p>
+</dd>
+<dt>cens</dt><dd><p>censoring indicator: 0 censored, 1 event.</p>
+</dd>
+<dt>group</dt><dd><p>a factor with levels <code>control</code> and <code>newdrug</code>.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The data is given in Table 9.19, page 293, of Metha and Pathel (2001). The
+two-sided p-value for the log-rank test is 0.001 (page 295).
+</p>
+
+
+<h3>References</h3>
+
+<p>Cyrus R. Mehta &amp; Nitin R. Patel (2001),
+<em>StatXact-5 for Windows.</em>
+Manual, Cytel Software Cooperation, Cambridge, USA
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(lungcancer)
+attach(lungcancer)
+
+# round logrank scores
+scores &lt;- cscores.Surv(cbind(time, cens))
+T &lt;- sum(scores[group=="newdrug"])
+mobs &lt;- sum(group=="newdrug")
+system.time(prob &lt;- pperm(T, scores, m=mobs, al="le"))
+prob
+pperm(T, scores, m=mobs, al="tw")
+pperm(T, scores, m=mobs, al="tw", simulate=TRUE)
+
+# map into integers, faster
+scores &lt;- cscores.Surv(cbind(time, cens), int=TRUE)
+T &lt;- sum(scores[group=="newdrug"])
+mobs &lt;- sum(group=="newdrug")
+system.time(prob &lt;- pperm(T, scores, m=mobs, al="le"))
+prob
+pperm(T, scores, m=mobs, al="tw")
+pperm(T, scores, m=mobs, al="tw", simulate=TRUE)
+
+detach(lungcancer)
+
+</pre>
+
+
+</body></html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Old age mortality, Sundsvall, Sweden, 1860-1880.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for oldmort"><tr><td>oldmort</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Old age mortality, Sundsvall, Sweden, 1860-1880.
+</h2>
+
+<h3>Description</h3>
+
+<p>The data consists of old age life histories from 1 January 1860 to 31 december
+1880, 21 years. Only (parts of) life histories above age 60 is
+considered. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(oldmort)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 6508 observations from 4603 persons on the following 13 variables.
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>Identification number.</p>
+</dd>
+<dt><code>enter</code></dt><dd><p>Start age for the interval.</p>
+</dd>
+<dt><code>exit</code></dt><dd><p>Stop age for the interval.</p>
+</dd>
+<dt><code>event</code></dt><dd><p>Indicator of death; equals <code>TRUE</code> if the person died
+at the end of the interval, <code>FALSE</code> otherwise.</p>
+</dd>
+<dt><code>birthdate</code></dt><dd><p>Birthdate as a real number (i.e.,
+&quot;1765-06-27&quot; is 1765.490).</p>
+</dd>
+<dt><code>m.id</code></dt><dd><p>Mother's identification number.</p>
+</dd>
+<dt><code>f.id</code></dt><dd><p>Father's identification number.</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>Gender, a factor with levels <code>male</code> <code>female</code></p>
+</dd>
+<dt><code>civ</code></dt><dd><p>Civil status, a factor with levels <code>unmarried</code> <code>married</code> <code>widow</code></p>
+</dd>
+<dt><code>ses.50</code></dt><dd><p>Socio-economic status at age 50, a factor with levels <code>middle</code> <code>unknown</code> <code>upper</code> <code>farmer</code> <code>lower</code></p>
+</dd>
+<dt><code>birthplace</code></dt><dd><p>a factor with levels <code>parish</code> <code>region</code> <code>remote</code></p>
+</dd>
+<dt><code>imr.birth</code></dt><dd><p>Infant mortality rate at birth in the region
+of birth</p>
+</dd>
+<dt><code>region</code></dt><dd><p>Subregion of Sundsvall, a factor with levels <code>town</code> <code>industry</code> <code>rural</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The Sundsvall area in mid-Sweden was during the 19th century a fast
+growing forest industry. At the end of the century, it was one of the
+largest sawmill area in Europe. The town Sundsvall is fast growing part
+of the region and center for the commerse.
+</p>
+
+
+<h3>Source</h3>
+
+<p>The Demographic Data Base, Umeå University, Sweden.
+</p>
+
+
+<h3>References</h3>
+
+<p>Edvinsson, S. (2000). The Demographic Data Base at Umeå University: A
+resource for historical studies. In Hall, McKaa, and Thorvaldsen (eds),
+&quot;Handbook of International Historical Microdata for Population
+Research&quot;, Minnesota Population Center, Minneapolis.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(oldmort)
+summary(oldmort)
+## maybe str(oldmort) ; plot(oldmort) ...
+</pre>
+
+
+</body></html>

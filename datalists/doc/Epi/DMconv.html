@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Conversion to diabetes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for DMconv"><tr><td>DMconv</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Conversion to diabetes</h2>
+
+<h3>Description</h3>
+
+<p>Data from a randomized intervention study (&quot;Addition&quot;) where persons with
+prediabetic conditions are followed up for conversion to diabetes (DM).
+Conversion dates are interval censored.
+Original data are not published yet, so id-numbers have been changed and
+all dates have been randomly perturbed.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(DMconv)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1519 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>Person identifier</p>
+</dd>
+<dt><code>doe</code></dt><dd><p>Date of entry, i.e. first visit.</p>
+</dd>
+<dt><code>dlw</code></dt><dd><p>Date last seen well, i.e. last visit without DM.</p>
+</dd>
+<dt><code>dfi</code></dt><dd><p>Date first seen ill, i.e. first visit with DM.</p>
+</dd>
+<dt><code>gtol</code></dt><dd><p>Glucose tolerance. Factor with levels:
+1=&quot;IFG&quot; (impaired fasting glucose), 2=&quot;IGT&quot; (impaired glucose tolerance).</p>
+</dd>
+<dt><code>grp</code></dt><dd><p>Randomization. Factor with levels:
+1=&quot;Intervention&quot;, 2=&quot;Control&quot;.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Signe Saetre Rasmussen, Steno Diabetes Center. The Addition Study.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(DMconv)
+str(DMconv)
+head(DMconv)
+</pre>
+
+
+</body></html>

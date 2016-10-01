@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Initial and 1 month color measure of coated lens</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for yellow"><tr><td>yellow</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Initial and 1 month color measure of coated lens 
+</h2>
+
+<h3>Description</h3>
+
+<p>Initial and 1 month color measure of coated lens 
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 23 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>b1</code></dt><dd><p>a numeric vector of initial color measurements</p>
+</dd>
+<dt><code>b2</code></dt><dd><p>a numeric vector of color measurements after one month</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>It is undesirable to see color changes in a lens over time.</p>
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(yellow)
+show(plt1 &lt;- xyplot(b2 ~ b1, yellow, aspect = 'iso', type = c("g","p"),
+                    xlab = "Initial color measure of lens",
+                    ylab = "Color measure after 1 month"))
+show(tmd(plt1))
+</pre>
+
+
+</body></html>

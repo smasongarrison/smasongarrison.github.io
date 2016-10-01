@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Time to nominal temperature</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for timetemp"><tr><td>timetemp</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Time to nominal temperature</h2>
+
+<h3>Description</h3>
+
+<p>The time for a painted panel to reach a nominal temperature of -10 C
+versus the temperature in a freezer to prepare the panel.  Two types
+of panels were used, original equipment manufacturer (OEM) panels and
+repair panels.  The repair panels have an extra coat of paint.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 24 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>time</code></dt><dd><p>time, in minutes, for the panel to reach the
+nominal temperature of -10 C</p>
+</dd>
+<dt><code>temp</code></dt><dd><p>temperature in the freezer from which the panel
+is extracted</p>
+</dd>
+<dt><code>type</code></dt><dd><p>a factor with levels <code>Repair</code> <code>OEM</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>A freezer is used to simulate exposure to cold on automotive paint
+test panels.  A durability test is to be conducted at -10 C.  The test
+is conducted on two types of panels (one type has an additional coat of
+paint) and there is some time needed to retrieve the panel from the
+freezer and to place it in the test equipment.  This study was run to
+determine the optimal freezer setting for running the durability test.
+</p>
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(timetemp)
+xyplot(time ~ temp, timetemp, groups = type,
+       type = c("g","p","r"), aspect = 'xy',
+       ylab = "Time to reach -10C (min.)",
+       xlab = "Temperature in freezer (degrees C)",
+       auto.key = list(columns = 2, lines = TRUE))
+</pre>
+
+
+</body></html>
