@@ -31,7 +31,11 @@ The following collection of articles is an aggregation of academic advice. This 
 [Revelle, W. (2013). Graduate Departments of Psychology with Personality Programs](http://www.personality-project.org/org.html#gradpsych)
 
 ### Professional Development
-#### R
+#### Statistics
+##### R
 [Revelle, W. (2016). Using R for psychological research](http://www.personality-project.org/r/r.guide.html)
+
+###  Not Otherwise Specified (NOS)
+[Google Scholar](https://scholar.google.com/?hl=en)
 
 ### Academic Job Market

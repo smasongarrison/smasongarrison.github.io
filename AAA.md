@@ -14,7 +14,7 @@ The following collection of articles is an aggregation of academic advice. This 
 
 [APA's Graduate school guides](http://www.apa.org/education/grad/applying.aspx)
 
-[Prinstein, M. (2014). Mitch’s Uncensored Advice for Applying to Graduate School in Clinical Psychology](http://mitch.web.unc.edu/files/2013/10/MitchGradSchoolAdvice.pdf)
+[Prinstein, M. (2014). Mitchâ€™s Uncensored Advice for Applying to Graduate School in Clinical Psychology](http://mitch.web.unc.edu/files/2013/10/MitchGradSchoolAdvice.pdf)
 
 #### Lists of Programs
 ##### Quantitative Psychology
@@ -26,7 +26,11 @@ The following collection of articles is an aggregation of academic advice. This 
 [Revelle, W. (2013). Graduate Departments of Psychology with Personality Programs](http://www.personality-project.org/org.html#gradpsych)
 
 ### Professional Development
-#### R
+#### Statistics
+##### R
 [Revelle, W. (2016). Using R for psychological research](http://www.personality-project.org/r/r.guide.html)
+
+###  Not Otherwise Specified (NOS)
+[Google Scholar](https://scholar.google.com/?hl=en)
 
 ### Academic Job Market

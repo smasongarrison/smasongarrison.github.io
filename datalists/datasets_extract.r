@@ -2,6 +2,12 @@
 if (!require("DT")) install.packages('DT')
 if (!require("plyr")) install.packages('plyr')
 if (!require("R2HTML")) install.packages('R2HTML')
+
+
+
+packages=c("mlbench","AppliedPredictiveModeling"
+           )
+
 unload_Namespaces<- function(try=1,loadedOnly=TRUE,otherPkgs=TRUE){
   ns<-NULL
   if(loadedOnly){
@@ -16,10 +22,7 @@ unload_Namespaces<- function(try=1,loadedOnly=TRUE,otherPkgs=TRUE){
   }
 }
 
-is.even <- function(x) x %% 2 == 0
-is.odd <- function(x) x %% 2 != 0
-is.10 <- function(x) x %% 10 == 0
-is.25 <- function(x) x %% 25 == 0
+is.even <- function(x) x %% 2 == 0;is.odd <- function(x) x %% 2 != 0;is.10 <- function(x) x %% 10 == 0; is.25 <- function(x) x %% 25 == 0
 detach_package <- function(pkg, character.only = FALSE)
 {
   if(!character.only)
@@ -49,7 +52,7 @@ paste(sQuote(ns), collapse=", "))
 } # unloadNamespaces()
 
 library(R2HTML)
-  A = c('abn',
+Full = c('abn',
                'Actigraphy',
                'AdaptFit',
                'adlift',
@@ -61,8 +64,7 @@ library(R2HTML)
                'aqp',
                'argosfilter',
                'aster',
-               'autopls'  )
-  B<-c(
+               'autopls'  ,
                'babynames',
                'BaM',
                'BaSTA',
@@ -83,9 +85,7 @@ library(R2HTML)
                'boot',
                'breakage',
                'bReeze',
-               'BSagri'
-  )
-  C<-c(
+               'BSagri',
 			   'C50',
               # 'CADStat',
                'car',
@@ -116,10 +116,8 @@ library(R2HTML)
                #'corrgram',
                'COUNT',
                'cumSeg',
-               'cvq2'
+               'cvq2',
 			   # 'cyclones',
-  )
-  D<-c(
 			   'datasets',
 			   'dblcens',
 			   'depthTools',
@@ -131,8 +129,7 @@ library(R2HTML)
 			#   'DSpat',
 			   'DTDA',
 			   'DynClust',
-			   'dynCorr')
-E<-c(
+			   'dynCorr',
 			   'Ecdat',
 			   'eha',
 			   #  'el.convex',
@@ -150,8 +147,7 @@ E<-c(
 			   # 'ExPD2D',
 			   'expoRkit',
 			   'expsmooth',
-			   'extRemes'  )
-FF<-c(
+			   'extRemes',
 			   'FAMT',
 			   'FAwR',
 			   'fda',
@@ -170,8 +166,7 @@ FF<-c(
 			   'frt',
 			   'fueleconomy',
 			   #  'FunNet',
-			   'fwi.fbp'  )
-G<-c(
+			   'fwi.fbp'  ,
 			   'GA4Stratification',
 			   'GAD',
 			   'gamclass',
@@ -378,8 +373,7 @@ G<-c(
 			   'rpart.plot',
 			   'rugarch',
 			   #  'Rvelslant',
-			   'rworldmap'  )
-S<-c(
+			   'rworldmap'  ,
 			   #   'sabreR',
 			   'samplingVarEst',
 			   'sandwich',
@@ -425,8 +419,7 @@ S<-c(
 			   'survPresmooth',
 			   'SwissAir',
 			   'sybil',
-			   'Synth')
-t<-c(
+			   'Synth',
 			   'tableplot',
 			   'TeachingSampling',
 			  # 'texmex',
@@ -460,10 +453,8 @@ t<-c(
 			   #   'WMBrukerParser',
 			   'xgobi',
 			   'xts',
-			   'YieldCurve',
-			   'Zelig',
-			   'ZeligChoice')
-packages=t
+			   'YieldCurve','Zelig','ZeligChoice')
+
   # Installed only packages that are not pre-installed.
   # Credits: http://stackoverflow.com/a/9345167/756986
   new.packages <- packages[!(packages %in% installed.packages()[,"Package"])]

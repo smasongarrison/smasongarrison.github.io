@@ -9,9 +9,10 @@ source("generateNavigationBar.R")
 ## Extract Datasets from R
 source("datalists/datasets_extract.r")
 
-## Render Markdown File
+## Render Markdown Files
 rmarkdown::render(input="Data.Rmd", output_file="Data.html")
 
+rmarkdown::render(input="AAA.Rmd", output_file="AAA.html")
 
 
 
