@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: AIDS Clinical Trials Group Study 175</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ACTG175"><tr><td>ACTG175</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>AIDS Clinical Trials Group Study 175</h2>
+
+<h3>Description</h3>
+
+<p>ACTG 175 was a randomized clinical trial to compare monotherapy with zidovudine or didanosine with 
+combination therapy with zidovudine and didanosine or zidovudine and zalcitabine in adults infected with the human 
+immunodeficiency virus type I whose CD4 T cell counts were between 200 and 500 per cubic millimeter.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ACTG175)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 2139 observations on the following 27 variables:
+</p>
+
+<dl>
+<dt><code>pidnum</code></dt><dd><p>patient's ID number</p>
+</dd>
+<dt><code>age</code></dt><dd><p>age in years at baseline</p>
+</dd>
+<dt><code>wtkg</code></dt><dd><p>weight in kg at baseline</p>
+</dd>
+<dt><code>hemo</code></dt><dd><p>hemophilia (0=no, 1=yes)</p>
+</dd>
+<dt><code>homo</code></dt><dd><p>homosexual activity (0=no, 1=yes)</p>
+</dd>
+<dt><code>drugs</code></dt><dd><p>history of intravenous drug use (0=no, 1=yes)</p>
+</dd>
+<dt><code>karnof</code></dt><dd><p>Karnofsky score (on a scale of 0-100)</p>
+</dd>
+<dt><code>oprior</code></dt><dd><p>non-zidovudine antiretroviral therapy prior to initiation of study treatment (0=no, 1=yes)</p>
+</dd>
+<dt><code>z30</code></dt><dd><p>zidovudine use in the 30 days prior to treatment initiation (0=no, 1=yes)</p>
+</dd>
+<dt><code>zprior</code></dt><dd><p>zidovudine use prior to treatment initiation (0=no, 1=yes)</p>
+</dd>
+<dt><code>preanti</code></dt><dd><p>number of days of previously received antiretroviral therapy</p>
+</dd>
+<dt><code>race</code></dt><dd><p>race (0=white, 1=non-white)</p>
+</dd>
+<dt><code>gender</code></dt><dd><p>gender (0=female, 1=male)</p>
+</dd>
+<dt><code>str2</code></dt><dd><p>antiretroviral history (0=naive, 1=experienced)</p>
+</dd>
+<dt><code>strat</code></dt><dd><p>antiretroviral history stratification (1='antiretroviral naive', 2='&gt; 1 but <i>&le;q</i> 52 weeks of prior
+antiretroviral therapy', 3='&gt; 52 weeks')</p>
+</dd>
+<dt><code>symptom</code></dt><dd><p>symptomatic indicator (0=asymptomatic, 1=symptomatic)</p>
+</dd>
+<dt><code>treat</code></dt><dd><p>treatment indicator (0=zidovudine only, 1=other therapies)</p>
+</dd>
+<dt><code>offtrt</code></dt><dd><p>indicator of off-treatment before 96<i>\pm</i>5 weeks (0=no,1=yes)</p>
+</dd>
+<dt><code>cd40</code></dt><dd><p>CD4 T cell count at baseline</p>
+</dd>
+<dt><code>cd420</code></dt><dd><p>CD4 T cell count at 20<i>\pm</i>5 weeks</p>
+</dd>
+<dt><code>cd496</code></dt><dd><p>CD4 T cell count at 96<i>\pm</i>5 weeks (=<code>NA</code> if missing)</p>
+</dd>
+<dt><code>r</code></dt><dd><p>missing CD4 T cell count at 96<i>\pm</i>5 weeks (0=missing, 1=observed)</p>
+</dd>
+<dt><code>cd80</code></dt><dd><p>CD8 T cell count at baseline</p>
+</dd>
+<dt><code>cd820</code></dt><dd><p>CD8 T cell count at 20<i>\pm</i>5 weeks</p>
+</dd>
+<dt><code>cens</code></dt><dd><p>indicator of observing the event in <code>days</code></p>
+</dd>
+<dt><code>days</code></dt><dd><p>number of days until the first occurrence of: (i) a decline in CD4 T cell count of at least 50
+(ii) an event indicating progression to AIDS, or (iii) death.</p>
+</dd>
+<dt><code>arms</code></dt><dd><p>treatment arm (0=zidovudine, 1=zidovudine and didanosine, 2=zidovudine and zalcitabine, 
+3=didanosine).</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The variable <code>days</code> contains right-censored time-to-event observations. The data set includes 
+the following post-randomization covariates: CD4 and CD8 T cell count at 20<i>\pm</i>5 
+weeks and the indicator of whether or not the patient was taken off-treatment before 96<i>\pm</i>5 weeks.</p>
+
+
+<h3>References</h3>
+
+<p>Hammer SM, et al. (1996), &quot;A trial comparing nucleoside monotherapy with combination therapy in 
+HIV-infected adults with CD4 cell counts from 200 to 500 per cubic millimeter.&quot;, <em>New England Journal of Medicine</em>, 
+335:1081&ndash;1090.</p>
+
+
+</body></html>

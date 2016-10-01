@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: US Sustaining Effects study</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for egsingle"><tr><td>egsingle</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>US Sustaining Effects study</h2>
+
+<h3>Description</h3>
+
+<p>A subset of the mathematics scores from the U.S. Sustaining Effects Study. 
+The subset consists of information on 1721 students from 60 schools. This 
+dataset is available in the <code>mlmRev</code> package.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(egsingle)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 7230 observations on the following 12 variables.
+</p>
+
+<dl>
+<dt><code>schoolid</code></dt><dd><p>a factor of school identifiers</p>
+</dd>
+<dt><code>childid</code></dt><dd><p>a factor of student identifiers</p>
+</dd>
+<dt><code>year</code></dt><dd><p>a numeric vector indicating the year of the test</p>
+</dd>
+<dt><code>grade</code></dt><dd><p>a numeric vector indicating the student's grade</p>
+</dd>
+<dt><code>math</code></dt><dd><p>a numeric vector of test scores on the IRT scale score 
+metric</p>
+</dd>
+<dt><code>retained</code></dt><dd><p>a factor with levels <code>0</code> <code>1</code> indicating if
+the student has been retained in a grade.</p>
+</dd>
+<dt><code>female</code></dt><dd><p>a factor with levels <code>Female</code> <code>Male</code></p>
+</dd>
+<dt><code>black</code></dt><dd><p>a factor with levels <code>0</code> <code>1</code> indicating if the student is Black</p>
+</dd>
+<dt><code>hispanic</code></dt><dd><p>a factor with levels <code>0</code> <code>1</code> indicating if the student is Hispanic</p>
+</dd>
+<dt><code>size</code></dt><dd><p>a numeric vector indicating the number of students enrolled in the school</p>
+</dd>
+<dt><code>lowinc</code></dt><dd><p>a numeric vector giving the percentage of low-income students in the school</p>
+</dd>
+<dt><code>mobility</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Reproduced from the<code>mlmRev</code> package for use in the
+section on nonresponse weighting in the <code>twang</code> package
+vignette. These data are distributed with the HLM software package
+(Bryk, Raudenbush, and Congdon, 1996). Conversion to the R format is
+described in Doran and Lockwood (2006).
+</p>
+
+
+<h3>References</h3>
+
+<p>Doran, H.C. and J.R. Lockwood (2006). &ldquo;Fitting value-added models in R,&rdquo;
+<em>Journal of Educational and Behavioral Statistics</em>, 31(1)
+</p>
+
+
+</body></html>

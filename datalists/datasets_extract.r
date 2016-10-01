@@ -425,16 +425,17 @@ S<-c(
 			   'survPresmooth',
 			   'SwissAir',
 			   'sybil',
-			   'Synth',
+			   'Synth')
+t<-c(
 			   'tableplot',
 			   'TeachingSampling',
-			   'texmex',
+			  # 'texmex',
 			   'tgp',
 			   'ThreeWay',
 			   'timeROC',
 			   'titan',
 			   'topicmodels',
-			   'TraMineR',
+			 #  'TraMineR',
 			   'TSA',
 			   'tsDyn',
 			   'twang',
@@ -462,7 +463,7 @@ S<-c(
 			   'YieldCurve',
 			   'Zelig',
 			   'ZeligChoice')
-packages=S
+packages=t
   # Installed only packages that are not pre-installed.
   # Credits: http://stackoverflow.com/a/9345167/756986
   new.packages <- packages[!(packages %in% installed.packages()[,"Package"])]

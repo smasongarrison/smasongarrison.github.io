@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data from the 2001 Survey of Household Spending (SHS),...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for SHS"><tr><td>SHS</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Data from the 2001 Survey of Household Spending (SHS), Statistics Canada </h2>
+
+<h3>Description</h3>
+
+<p>This data set contains some variables from the 2001 Survey of Household Spending (SHS) carried out by Statistics Canada. The main purpose of this survey is to obtain detailed information about household spending during the reference year.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(SHS)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 16057 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>CASEID</code></dt><dd><p>Identification number</p>
+</dd>
+<dt><code>WEIGHT</code></dt><dd><p>Weight at household level</p>
+</dd>
+<dt><code>PROVINCP</code></dt><dd><p>Province or territory code</p>
+</dd>
+<dt><code>URBRUR</code></dt><dd><p>Urban rural code</p>
+</dd>
+<dt><code>URBSIZEP</code></dt><dd><p>Size of area of residence code</p>
+</dd>
+<dt><code>HHINCTOT</code></dt><dd><p>Household income before taxes</p>
+</dd>
+<dt><code>M101</code></dt><dd><p>Household spending on recreation</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>In this package, <code>HHINCTOT</code> is used as a stratification variable and <code>M101</code> as a survey variable.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Income Statistics Division, Statistics Canada.
+</p>
+
+
+<h3>References</h3>
+
+<p>Information on Statistics Canada Survey of Household Spending: <a href="http://www.statcan.ca/cgi-bin/imdb/p2SV.pl?Function=getSurvey&amp;SDDS=3508&amp;lang=en&amp;db=IMDB&amp;dbg=f&amp;adm=8&amp;dis=2">http://www.statcan.ca/cgi-bin/imdb/p2SV.pl?Function=getSurvey&amp;SDDS=3508&amp;lang=en&amp;db=IMDB&amp;dbg=f&amp;adm=8&amp;dis=2</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(SHS)
+
+# Estimation of the response rate
+X &lt;- SHS$HHINCTOT[SHS$HHINCTOT&gt;0]
+Y &lt;- SHS$M101[SHS$HHINCTOT&gt;0]
+Y[Y&lt;0] &lt;- 0
+p&lt;-sum(Y&gt;0)/length(Y)
+
+# Study of the relationship between X and Y for the active units
+Xactive &lt;- SHS$HHINCTOT[SHS$HHINCTOT&gt;0&amp;SHS$M101&gt;0]
+Yactive &lt;- SHS$M101[SHS$HHINCTOT&gt;0&amp;SHS$M101&gt;0]
+plot(log(Xactive), log(Yactive))
+# Extreme values are omitted for a more robust estimation
+keep &lt;- Xactive/Yactive&gt;quantile(Xactive/Yactive,0.01)&amp;
+        Xactive/Yactive&lt;quantile(Xactive/Yactive,0.99)    
+plot(log(Xactive)[keep], log(Yactive)[keep])
+reg &lt;- lm( log(Yactive)[keep]~log(Xactive)[keep] )
+summary(reg)
+
+# Stratification assuming X=Y
+nomodel &lt;- strata.LH(x=X, CV=0.05, Ls=3, alloc=c(0.5,0,0.5), takeall=0, 
+           model="none", algo.control=list(trymany=FALSE, rep=3))
+nomodel
+var.strata(nomodel, y=Y) # The target CV is far from being reached
+
+# Stratification taking into account a loglinear model with mortality 
+# between X and Y, using the estimated parameters values
+model &lt;- strata.LH(x=X, CV=0.05, Ls=3, alloc=c(0.5,0,0.5), takeall=0,
+         model="loglinear", model.control=list(beta=reg$coef[2],
+         sig2=summary(reg)$sigma^2, ph=0.97), initbh=nomodel$bh,
+         algo.control=list(trymany=FALSE, rep=3))
+model
+var.strata(model,y=Y) # The target CV is reached
+</pre>
+
+
+</body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Example data set: Activity calendar from the Swiss Household...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for actcal.tse"><tr><td>actcal.tse</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Example data set: Activity calendar from the Swiss Household Panel (time stamped event format)</h2>
+
+<h3>Description</h3>
+
+<p>This data set contains events defined from the state sequences in the actcal data set. It was created with the code shown in the examples section. It is provided to symplify example of event sequence mining.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(actcal.tse)</pre>
+
+
+<h3>Format</h3>
+
+<p>Time stamped events derived from state sequences in the actcal data set.</p>
+
+
+<h3>Source</h3>
+
+<p>Swiss Household Panel</p>
+
+
+<h3>See Also</h3>
+
+<p><code>seqformat, actcal</code></p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(actcal)
+actcal.seq &lt;- seqdef(actcal[,13:24])
+
+## Defining the transition matrix
+transition &lt;- seqetm(actcal.seq, method="transition")
+transition[1,1:4] &lt;- c("FullTime"         , "Decrease,PartTime",
+     "Decrease,LowPartTime", "Stop")
+transition[2,1:4] &lt;- c("Increase,FullTime", "PartTime"         ,
+     "Decrease,LowPartTime", "Stop")
+transition[3,1:4] &lt;- c("Increase,FullTime", "Increase,PartTime",
+    "LowPartTime"         , "Stop")
+transition[4,1:4] &lt;- c("Start,FullTime"   , "Start,PartTime"   ,
+    "Start,LowPartTime"   , "NoActivity")
+transition
+
+## Converting STS data to TSE
+actcal.tse &lt;- seqformat(actcal,var=13:24, from='STS',to='TSE',
+	tevent=transition)
+
+## Defining the event sequence object
+actcal.seqe &lt;- seqecreate(id=actcal.tse$id,
+	time=actcal.tse$time, event=actcal.tse$event)
+</pre>
+
+
+</body></html>

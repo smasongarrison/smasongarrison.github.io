@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Traffic stop data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for raceprofiling"><tr><td>raceprofiling</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Traffic stop data</h2>
+
+<h3>Description</h3>
+
+<p>Simulated example data for assessing race bias in traffic stop outcomes
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(raceprofiling)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 5000 observations on the following 10 variables.
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>an ID for each traffic stop</p>
+</dd>
+<dt><code>nhood</code></dt><dd><p>a factor indicating the neighborhood in which the stop 
+occurred.</p>
+</dd>
+<dt><code>reason</code></dt><dd><p>The reason for the stop, mechanical/registration 
+violations, dangerous moving violation, non-dangerous moving violation</p>
+</dd>
+<dt><code>resident</code></dt><dd><p>an indicator whether the driver is a resident of the 
+city</p>
+</dd>
+<dt><code>age</code></dt><dd><p>driver's age</p>
+</dd>
+<dt><code>male</code></dt><dd><p>an indicator whether the driver was male</p>
+</dd>
+<dt><code>race</code></dt><dd><p>the race of the driver, with levels <code>A</code>, <code>B</code>, 
+<code>H</code>, <code>W</code></p>
+</dd>
+<dt><code>hour</code></dt><dd><p>the hour of the stop (24-hour clock)</p>
+</dd>
+<dt><code>month</code></dt><dd><p>and ordered factor indicating in which month the stop 
+took place</p>
+</dd>
+<dt><code>citation</code></dt><dd><p>an indicator of whether the driver received a citation</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>This is simulated data to demonstrate how to use <code>twang</code> to adjust 
+estimates of racial bias for important factors. This dataset does not represent
+real data from any real law enforcement agency.
+</p>
+
+
+<h3>References</h3>
+
+<p>G. Ridgeway (2006). &ldquo;Assessing the effect of race bias in 
+post-traffic stop outcomes using propensity scores,&rdquo; <em>Journal of 
+Quantitative Criminology</em> 22(1). 
+</p>
+<p><a href="http://www.i-pensieri.com/gregr/rp.shtml">http://www.i-pensieri.com/gregr/rp.shtml</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(raceprofiling)
+
+# the first five lines of the dataset
+raceprofiling[1:5,]
+</pre>
+
+
+</body></html>

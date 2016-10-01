@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Malignant melanoma data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Melano"><tr><td>Melano</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Malignant melanoma data
+</h2>
+
+<h3>Description</h3>
+
+<p>In the period 1962-77, 205 patients with malignant melanoma (skin cancer) had a radical operation performed at Odense University
+Hospital, Denmark. All patients were followed until the end of 1977 by 
+which time 134 were still alive while 71 had died (of out whom 57 had
+died from cancer and 14 from other causes).
+</p>
+<p>The object of the study was to assess the effect of risk factors on
+survival. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Melano)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 205 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>time</code></dt><dd><p> : time in days from operation.</p>
+</dd>
+<dt><code>status</code></dt><dd><p> : the status indicator :  <code>0</code> = censored, <code>1</code> = death from malignant melanoma and <code>2</code> = death from other causes. </p>
+</dd>
+<dt><code>thick</code></dt><dd><p> : tumour thickness (in 1/100 mm).</p>
+</dd>
+<dt><code>age</code></dt><dd><p> : age at operation (years).</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><a href="http://192.38.117.59/~linearpredictors/?page=datasets&amp;dataset=Melano">http://192.38.117.59/~linearpredictors/?page=datasets&amp;dataset=Melano</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Regression with linear predictors (2010)
+</p>
+<p>Andersen, P.K. and Skovgaard, L.T.
+</p>
+<p>Springer Verlag
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Melano)
+head(Melano)
+</pre>
+
+
+</body></html>

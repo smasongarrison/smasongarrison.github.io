@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Simulated point-transect data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for pointtran"><tr><td>pointtran</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Simulated point-transect data
+</h2>
+
+<h3>Description</h3>
+
+<p>Response matrix of animals detected in five distance classes plus two covariates.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(pointtran)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 30 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>dc1</code></dt><dd><p>Counts in distance class 1 [0-5 m)</p>
+</dd>
+<dt><code>dc2</code></dt><dd><p>Counts in distance class 2 [5-10 m)</p>
+</dd>
+<dt><code>dc3</code></dt><dd><p>Counts in distance class 3 [10-15 m)</p>
+</dd>
+<dt><code>dc4</code></dt><dd><p>Counts in distance class 4 [15-20 m)</p>
+</dd>
+<dt><code>dc5</code></dt><dd><p>Counts in distance class 5 [20-25 m)</p>
+</dd>
+<dt><code>area</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>habitat</code></dt><dd><p>a factor with levels <code>A</code> <code>B</code> <code>C</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(pointtran)
+pointtran
+
+# Format for distsamp()
+ptUMF &lt;- with(pointtran, {
+        unmarkedFrameDS(y = cbind(dc1, dc2, dc3, dc4, dc5), 
+        siteCovs = data.frame(area, habitat), 
+        dist.breaks = seq(0, 25, by=5), survey = "point", unitsIn = "m")
+        })
+</pre>
+
+
+</body></html>

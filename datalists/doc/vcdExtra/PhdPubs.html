@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Publications of PhD Candidates</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for PhdPubs"><tr><td>PhdPubs</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Publications of PhD Candidates
+</h2>
+
+<h3>Description</h3>
+
+<p>A data set giving the number of publications by doctoral candidates in biochemistry
+in relation to various predictors, originally from Long (1997).
+</p>
+<p>There is a large number of zero counts. Is there evidence for
+a separate group of non-publishers?
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(PhdPubs)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 915 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>articles</code></dt><dd><p>number of articles published in the final three years of PhD studies</p>
+</dd>
+<dt><code>female</code></dt><dd><p>dummy variable for gender, coded <code>1</code> for female</p>
+</dd>
+<dt><code>married</code></dt><dd><p>dummy variable for marital status, coded <code>1</code> for married</p>
+</dd>
+<dt><code>kid5</code></dt><dd><p>number of young children, age 5 and under</p>
+</dd>
+<dt><code>phdprestige</code></dt><dd><p>prestige of the PhD department</p>
+</dd>
+<dt><code>mentor</code></dt><dd><p>number of publications by the mentor in the preceeding three years</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Long, J. S. (1997) <em>Regression Models for Categorical and Limited Dependent Variables</em>,
+Sage.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(PhdPubs)
+# very uninformative
+hist(PhdPubs$articles, breaks=0:19, col="pink", xlim=c(0,20),
+     xlab="Number of Articles")
+
+library(vcd)
+rootogram(goodfit(PhdPubs$articles), xlab="Number of Articles")
+# compare with negative binomial
+rootogram(goodfit(PhdPubs$articles, type="nbinomial"), 
+	xlab="Number of Articles", main="Negative binomial")
+
+
+</pre>
+
+
+</body></html>

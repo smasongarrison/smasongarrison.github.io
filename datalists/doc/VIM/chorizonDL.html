@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: C-horizon of the Kola data with missing values</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for chorizonDL"><tr><td>chorizonDL</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>C-horizon of the Kola data with missing values</h2>
+
+<h3>Description</h3>
+
+<p>This data set is the same as the <code>chorizon</code> data set
+in package <code>mvoutlier</code>, except that values below the detection limit
+are coded as <code>NA</code>.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 606 observations on the following 110 variables.
+</p>
+ <dl>
+<dt>*ID</dt><dd><p>a numeric vector</p>
+</dd> <dt>XCOO</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>YCOO</dt><dd><p>a numeric vector</p>
+</dd> <dt>Ag</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Ag_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>Al</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Al2O3</dt><dd><p>a numeric vector</p>
+</dd> <dt>As</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>As_INAA</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Au_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>B</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Ba</dt><dd><p>a numeric vector</p>
+</dd> <dt>Ba_INAA</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Be</dt><dd><p>a numeric vector</p>
+</dd> <dt>Bi</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Br_IC</dt><dd><p>a numeric vector</p>
+</dd> <dt>Br_INAA</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>Ca</dt><dd><p>a numeric vector</p>
+</dd> <dt>Ca_INAA</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>CaO</dt><dd><p>a numeric vector</p>
+</dd> <dt>Cd</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>Ce_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>Cl_IC</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Co</dt><dd><p>a numeric vector</p>
+</dd> <dt>Co_INAA</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>EC</dt><dd><p>a numeric vector</p>
+</dd> <dt>Cr</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Cr_INAA</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Cs_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>Cu</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Eu_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>F_IC</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>Fe</dt><dd><p>a numeric vector</p>
+</dd> <dt>Fe_INAA</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>Fe2O3</dt><dd><p>a numeric vector</p>
+</dd> <dt>Hf_INAA</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Hg</dt><dd><p>a numeric vector</p>
+</dd> <dt>Hg_INAA</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Ir_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>K</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>K2O</dt><dd><p>a numeric vector</p>
+</dd> <dt>La</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>La_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>Li</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>LOI</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Lu_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>wt_INAA</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>Mg</dt><dd><p>a numeric vector</p>
+</dd> <dt>MgO</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>Mn</dt><dd><p>a numeric vector</p>
+</dd> <dt>MnO</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>Mo</dt><dd><p>a numeric vector</p>
+</dd> <dt>Mo_INAA</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>Na</dt><dd><p>a numeric vector</p>
+</dd> <dt>Na_INAA</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>Na2O</dt><dd><p>a numeric vector</p>
+</dd> <dt>Nd_INAA</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Ni</dt><dd><p>a numeric vector</p>
+</dd> <dt>Ni_INAA</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>NO3_IC</dt><dd><p>a numeric vector</p>
+</dd> <dt>P</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>P2O5</dt><dd><p>a numeric vector</p>
+</dd> <dt>Pb</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>pH</dt><dd><p>a numeric vector</p>
+</dd> <dt>PO4_IC</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Rb</dt><dd><p>a numeric vector</p>
+</dd> <dt>S</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Sb</dt><dd><p>a numeric vector</p>
+</dd> <dt>Sb_INAA</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Sc</dt><dd><p>a numeric vector</p>
+</dd> <dt>Sc_INAA</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Se</dt><dd><p>a numeric vector</p>
+</dd> <dt>Se_INAA</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Si</dt><dd><p>a numeric vector</p>
+</dd> <dt>SiO2</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Sm_INAA</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Sn_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>SO4_IC</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>Sr</dt><dd><p>a numeric vector</p>
+</dd> <dt>Sr_INAA</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>SUM_XRF</dt><dd><p>a numeric vector</p>
+</dd> <dt>Ta_INAA</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Tb_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>Te</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Th</dt><dd><p>a numeric vector</p>
+</dd> <dt>Th_INAA</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Ti</dt><dd><p>a numeric vector</p>
+</dd> <dt>TiO2</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>U_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>V</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>W_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>Y</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Yb_INAA</dt><dd><p>a numeric vector</p>
+</dd> <dt>Zn</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Zn_INAA</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>ELEV</dt><dd><p>a numeric vector</p>
+</dd> <dt>*COUN</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>*ASP</dt><dd><p>a numeric vector</p>
+</dd> <dt>TOPC</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>LITO</dt><dd><p>a numeric vector</p>
+</dd> <dt>Al_XRF</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>Ca_XRF</dt><dd><p>a numeric vector</p>
+</dd> <dt>Fe_XRF</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>K_XRF</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Mg_XRF</dt><dd><p>a numeric vector</p>
+</dd> <dt>Mn_XRF</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>Na_XRF</dt><dd><p>a numeric vector</p>
+</dd> <dt>P_XRF</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>Si_XRF</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Ti_XRF</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Note</h3>
+
+<p>For a more detailed description of this data set, see
+<code>chorizon</code> in package <code>mvoutlier</code>.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Kola Project (1993-1998)
+</p>
+
+
+<h3>References</h3>
+
+<p>Reimann, C., Filzmoser, P., Garrett, R.G. and Dutter, R. (2008)
+<em>Statistical Data Analysis Explained: Applied Environmental Statistics
+with R</em>. Wiley.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>chorizon</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(chorizonDL, package = "VIM")
+summary(chorizonDL)
+</pre>
+
+
+</body></html>

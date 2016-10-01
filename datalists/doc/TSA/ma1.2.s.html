@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A simulated MA(1) series / time series</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ma1.2.s"><tr><td>ma1.2.s</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>A simulated MA(1) series / time series</h2>
+
+<h3>Description</h3>
+
+<p>A simulated MA(1) series with the MA(1) coefficient equal to -0.9.  
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ma1.2.s)</pre>
+
+
+<h3>Format</h3>
+
+<p>The format is:
+Time-Series [1:120] from 1 to 120:  1.511  1.821  0.957 -1.538 -2.888 ...
+</p>
+
+
+<h3>Details</h3>
+
+<p>The model is <i>Y(t)=e(t)+0.9e(t-1)</i> where the e's are iid standard normal.  </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(ma1.2.s)
+## maybe str(ma1.2.s) ; plot(ma1.2.s) ...
+</pre>
+
+
+</body></html>

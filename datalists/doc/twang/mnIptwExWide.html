@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Example data for iptw function (wide version, more than two...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mnIptwExWide"><tr><td>mnIptwExWide</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Example data for iptw function (wide version, more than two treatments)</h2>
+
+<h3>Description</h3>
+
+<p>These data are simulated to demonstrate the <code>iptw</code> function in the &quot;wide&quot; data format.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(lindner)</pre>
+
+
+<h3>Format</h3>
+
+<p>A list with a covariate matrix and outcomes.
+</p>
+
+<dl>
+<dt>gender</dt><dd><p>Gender.</p>
+</dd>
+<dt>age</dt><dd><p>Age.</p>
+</dd>
+<dt>use0</dt><dd><p>Baseline substance use</p>
+</dd></dl>
+<p>.
+</p>
+<dl>
+<dt>use1</dt><dd><p>Use following first time period treatment.</p>
+</dd>
+<dt>use2</dt><dd><p>Use following second time period treatment.</p>
+</dd>
+<dt>tx1</dt><dd><p>Treatment indicator (first time period).</p>
+</dd>
+<dt>tx2</dt><dd><p>Treatment indicator (second time period).</p>
+</dd>
+<dt>tx3</dt><dd><p>Treatment indicator (third time period).</p>
+</dd>
+<dt>covariates</dt><dd><p>Time-invariant covariates are <code>gender</code> and <code>age</code>. The time-varying covariate is <code>use</code>. The reatment indicator is given by <code>tx</code>. An individual level identifier is given in <code>ID</code>, and the time period is <code>time</code>. </p>
+</dd>
+<dt>outcome</dt><dd><p>Post-treatment outcomes.</p>
+</dd>   
+</dl>
+
+
+
+</body></html>

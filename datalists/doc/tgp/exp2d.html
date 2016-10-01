@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 2-d Exponential Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for exp2d"><tr><td>exp2d</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> 2-d Exponential Data </h2>
+
+<h3>Description</h3>
+
+<p>A 2-dimensional data set that can be used to validate
+non-stationary models.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(exp2d)</pre>
+
+
+<h3>Format</h3>
+
+<p>A <code>data frame</code> with 441 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>X1</code></dt><dd><p>Numeric vector describing the first dimension of <code>X</code> inputs</p>
+</dd>
+<dt><code>X2</code></dt><dd><p>Numeric vector describing the second dimension of <code>X</code> inputs</p>
+</dd>
+<dt><code>Z</code></dt><dd><p>Numeric vector describing the response <code>Z(X)+N(0,sd=0.001)</code></p>
+</dd>
+<dt><code>Ztrue</code></dt><dd><p>Numeric vector describing the true response <code>Z(X)</code>,
+without noise</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The true response is evaluated as 
+</p>
+<p style="text-align: center;"><i>Z(X) = X1 * exp(-X1^2 -X2^2).</i></p>
+
+<p>Zero-mean normal noise
+with <code>sd=0.001</code> has been added to the true response
+</p>
+
+
+<h3>Note</h3>
+
+<p>This data is used in the examples of the functions listed below in
+the &ldquo;See Also&rdquo; section via the <code>exp2d.rand</code> function</p>
+
+
+<h3>Author(s)</h3>
+
+ 
+<p>Robert B. Gramacy, <a href="mailto:rbgramacy@chicagobooth.edu">rbgramacy@chicagobooth.edu</a>, and
+Matt Taddy, <a href="mailto:taddy@chicagobooth.edu">taddy@chicagobooth.edu</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Gramacy, R. B. (2007). <em><span class="pkg">tgp</span>: An <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> Package for
+Bayesian Nonstationary, Semiparametric Nonlinear Regression
+and Design by Treed Gaussian Process Models.</em>
+Journal of Statistical Software, <b>19</b>(9).
+<a href="http://www.jstatsoft.org/v19/i09">http://www.jstatsoft.org/v19/i09</a>
+</p>
+<p>Robert B. Gramacy, Matthew Taddy (2010). <em>Categorical Inputs,
+Sensitivity Analysis, Optimization and Importance Tempering with <span class="pkg">tgp</span>
+Version 2, an <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> Package for Treed Gaussian Process Models.</em>
+Journal of Statistical Software, <b>33</b>(6), 1&ndash;48.
+<a href="http://www.jstatsoft.org/v33/i06/">http://www.jstatsoft.org/v33/i06/</a>.
+</p>
+<p>Gramacy, R. B., Lee, H. K. H. (2007).
+<em>Bayesian treed Gaussian process models with an application to computer modeling</em>
+Journal of the American Statistical Association, <b>to appear</b>.
+Also available as ArXiv article 0710.4536
+<a href="http://arxiv.org/abs/0710.4536">http://arxiv.org/abs/0710.4536</a>
+</p>
+<p><a href="http://bobby.gramacy.com/r_packages/tgp">http://bobby.gramacy.com/r_packages/tgp</a>
+</p>
+
+
+<h3>See Also</h3>
+
+ <p><code>exp2d.rand</code>, <code>exp2d.Z</code>,
+<code>btgp</code>, and other <code>b*</code> functions</p>
+
+
+</body></html>

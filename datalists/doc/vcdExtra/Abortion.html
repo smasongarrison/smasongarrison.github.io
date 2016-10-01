@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Abortion Opinion Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Abortion"><tr><td>Abortion</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Abortion Opinion Data</h2>
+
+<h3>Description</h3>
+
+<p>Opinions about abortion classified by gender and SES</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(Abortion)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A     3-dimensional array resulting from cross-tabulating    3 variables for  1100 observations. The variable names and their levels are:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    1</td><td style="text-align: left;"> <code>Sex</code></td><td style="text-align: left;"> <code>"Female", "Male"</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    2</td><td style="text-align: left;"> <code>Status</code></td><td style="text-align: left;"> <code>"Lo", "Hi"</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    3</td><td style="text-align: left;"> <code>Support_Abortion</code></td><td style="text-align: left;"> <code>"Yes", "No"</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
+
+</table>
+
+
+
+<h3>Details</h3>
+
+<p>The combinations of <code>Sex</code> and <code>Status</code> represent four independent samples, having
+fixed <code>Sex</code>-<code>Status</code> marginal totals. 
+Thus the <code>Sex:Status</code> association must be included in any loglinear model.
+<code>Support_Abortion</code> is a natural response variable. </p>
+
+
+<h3>Source</h3>
+
+
+<p>Christensen, R. (1990).
+<em>Log-Linear Models</em>,
+New York, NY: Springer-Verlag, p. 92, Example 3.5.2.
+</p>
+<p>Christensen, R. (1997).
+<em>Log-Linear Models and Logistic Regression</em>,  
+New York, NY: Springer, p. 100, Example 3.5.2.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Abortion)
+
+# example goes here
+ftable(Abortion)
+mosaic(Abortion, shade=TRUE)
+
+# stratified by Sex
+fourfold(aperm(Abortion, 3:1))
+# stratified by Status
+fourfold(aperm(Abortion, c(3,1,2)))
+
+</pre>
+
+
+</body></html>

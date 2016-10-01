@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Daily US Dollar to Hong Kong Dollar Exchange Rates</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for usd.hkd"><tr><td>usd.hkd</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Daily US Dollar to Hong Kong Dollar Exchange Rates</h2>
+
+<h3>Description</h3>
+
+<p>Daily USD/HKD
+(US dollar to Hong Kong dollar) exchange rate from January 1, 2005 to March 7, 2006
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(usd.hkd)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 431 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>r</code></dt><dd><p>daily returns of USD/HKD exchange rates</p>
+</dd>
+<dt><code>v</code></dt><dd><p>estimated conditional variances based on an AR(1)+GARCH(3,1) model</p>
+</dd>
+<dt><code>hkrate</code></dt><dd><p>daily USD/HKD exchange rates</p>
+</dd>
+<dt><code>outlier1</code></dt><dd><p>dummy variable of day 203, corresponding to July 22, 2005</p>
+</dd>
+<dt><code>outlier2</code></dt><dd><p>dummy variable of day 290, another possible outlier</p>
+</dd>
+<dt><code>day</code></dt><dd><p>calendar day</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><code>http://www.oanda.com/convert/fxhistory</code>
+</p>
+
+
+<h3>References</h3>
+
+<p> &quot;Time Series Analysis, with Applications in R&quot; by J.D. Cryer and K.S. Chan</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(usd.hkd)
+## maybe str(usd.hkd) ; plot(usd.hkd) ...
+</pre>
+
+
+</body></html>

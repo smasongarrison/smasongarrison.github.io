@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Swiss landscape data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Switzerland"><tr><td>Switzerland</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Swiss landscape data
+</h2>
+
+<h3>Description</h3>
+
+<p>Spatially-referenced data on elevation, forest cover, and water at a
+1km-sq resolution.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Switzerland)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 42275 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>x</code></dt><dd><p>Easting (m)</p>
+</dd>
+<dt><code>y</code></dt><dd><p>Northing (m)</p>
+</dd>
+<dt><code>elevation</code></dt><dd><p>a numeric vector (m)</p>
+</dd>
+<dt><code>forest</code></dt><dd><p>a numeric vector (percent cover)</p>
+</dd>
+<dt><code>water</code></dt><dd><p>a numeric vector (percent cover)</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Forest and water coverage (in percent area) was computed using the
+1992-97 landcover dataset of the Swiss Federal Statistical Office
+(http://www.bfs.admin.ch). Median elevation (in metres) was computed
+using a median aggregation of the digital elevation model of the Swiss
+Federal Statistical Office.
+</p>
+<p>x and y are the coordinates of the center of each 1km2 pixel.
+</p>
+<p>The coordinate reference system is CH1903/LV03 (EPSG number: 21781).
+</p>
+<p>These data can only be used for non-profit projects. Otherwise, written
+permission must be obtained from the Swiss Federal Statistical Office
+</p>
+
+
+<h3>Source</h3>
+
+<p>Swiss Federal Statistical Office (http://www.bfs.admin.ch)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Switzerland)
+str(Switzerland)
+
+levelplot(elevation ~ x + y, Switzerland, aspect="iso",
+    col.regions=terrain.colors(100))
+
+## Not run: 
+library(raster)
+el.r &lt;- rasterFromXYZ(Switzerland[,c("x","y","elevation")], crs =
+"+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333
++k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel
++towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs")
+plot(el.r)
+spplot(el.r)
+
+## End(Not run)
+
+</pre>
+
+
+</body></html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Occurences of &quot;kai&quot; in 10 Epistels of Apostel Paul</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for PaulKAI"><tr><td>PaulKAI</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Occurences of &ldquo;kai&rdquo; in 10 Epistels of Apostel Paul</h2>
+
+<h3>Description</h3>
+
+<p>These are the numbers of sentences which have
+0, 1, 2, or 3 and more (<code>3+</code>) occurrences of the greek word
+&ldquo;kai&rdquo; (which means &ldquo;and&rdquo; and more) in 10 epistles of Apostel Paul,
+see the reference.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(PaulKAI)</pre>
+
+
+<h3>Format</h3>
+
+<p>A <i>10 x 4</i> matrix with proper <code>dimnames</code>,
+see the examples below.
+</p>
+
+
+<h3>Note</h3>
+
+<p>One theological question is about the authorship of &ldquo;Hebrews&rdquo; (the
+last epistle in our matrix), so one might be interested in its &ldquo;kai
+pattern&rdquo; compared to, e.g. &ldquo;Romans&rdquo;.
+</p>
+
+
+<h3>References</h3>
+
+<p>Morton, A. Q. (1965) <br />
+The authorship of Greek prose (with discussion).<br />
+Journal of the Royal Statistical Society, Series A, <b>128</b>, 169&ndash;233.
+</p>
+<p>Posted to S-news by Jim Ramsay, see <code>quadplot</code>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>quadplot</code> for which this data set was used as
+illustration.</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(PaulKAI)
+rownames(PaulKAI) # the ten epistles researched:
+##&gt;  [1] "Rom" "Co1" "Co2" "Gal" "Phi" "Col" "Th1" "Ti1" "Ti2" "Heb"
+PaulKAI # the 10 x 4 count table
+mosaicplot(PaulKAI)
+quadplot(PaulKAI)
+</pre>
+
+
+</body></html>

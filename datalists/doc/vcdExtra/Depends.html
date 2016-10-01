@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dependencies of R Packages</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Depends"><tr><td>Depends</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Dependencies of R Packages
+</h2>
+
+<h3>Description</h3>
+
+<p>This one-way table gives the type-token distribution of the number of
+dependencies declared in 4983 packages listed on CRAN on January 17, 2014.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Depends)</pre>
+
+
+<h3>Format</h3>
+
+<p>The format is:
+'table' int [1:15(1d)] 986 1347 993 685 375 298 155 65 32 19 ...
+- attr(*, &quot;dimnames&quot;)=List of 1
+..$ Depends: chr [1:15] &quot;0&quot; &quot;1&quot; &quot;2&quot; &quot;3&quot; ...
+</p>
+
+
+<h3>Source</h3>
+
+<p>Using code from
+<a href="http://blog.revolutionanalytics.com/2013/12/a-look-at-the-distribution-of-r-package-dependencies.html">http://blog.revolutionanalytics.com/2013/12/a-look-at-the-distribution-of-r-package-dependencies.html</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Depends)
+plot(Depends, xlab="Number of Dependencies", ylab="Number of R Packages", lwd=8)
+
+## Not run: 
+# The code below, from Joseph Rickert, downloads and tabulates the data
+p &lt;- as.data.frame(available.packages(),stringsAsFactors=FALSE)
+names(p)
+
+pkgs &lt;- data.frame(p[,c(1,4)])                  # Pick out Package names and Depends
+row.names(pkgs) &lt;- NULL                         # Get rid of row names
+pkgs &lt;- pkgs[complete.cases(pkgs[,2]),]         # Remove NAs
+
+pkgs$Depends2 &lt;-strsplit(pkgs$Depends,",")      # split list of Depends
+pkgs$numDepends &lt;- as.numeric(lapply(pkgs$Depends2,length)) # Count number of dependencies in list
+zeros &lt;- c(rep(0,dim(p)[1] - dim(pkgs)[1]))     # Account for packages with no dependencies
+Deps &lt;- as.vector(c(zeros,pkgs$numDepends))     # Set up to tablate
+Depends &lt;- table(Deps)
+
+
+## End(Not run)
+</pre>
+
+
+</body></html>

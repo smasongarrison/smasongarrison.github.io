@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Distance-sampling data for the Island Scrub Jay (_Aphelocoma...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for issj"><tr><td>issj</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Distance-sampling data for the Island Scrub Jay (<em>Aphelocoma
+insularis</em>)
+</h2>
+
+<h3>Description</h3>
+
+<p>Data were collected at 307 survey locations (&quot;point transects&quot;) on
+Santa Cruz Island, California during the Fall of 2008. The distance
+data are binned into 3 distance intervals
+[0-100], (100-200], and (200-300]. The coordinates of the survey
+locations as well as 3 habitat covariates are also included.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(issj)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 307 observations on the following 8 variables.
+</p>
+
+<dl>
+<dt><code>issj[0-100]</code></dt><dd><p>Number of individuals detected within 100m</p>
+</dd>
+<dt><code>issj(100-200]</code></dt><dd><p>Detections in the interval (100-200m]</p>
+</dd>
+<dt><code>issj(200-300]</code></dt><dd><p>Detections in the interval (200-300m]</p>
+</dd>
+<dt><code>x</code></dt><dd><p>Easting (meters)</p>
+</dd>
+<dt><code>y</code></dt><dd><p>Northing (meters)</p>
+</dd>
+<dt><code>elevation</code></dt><dd><p>Elevation in meters</p>
+</dd>
+<dt><code>forest</code></dt><dd><p>Forest cover</p>
+</dd>
+<dt><code>chaparral</code></dt><dd><p>Chaparral cover</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Sillett, S. and Chandler, R.B. and Royle, J.A. and Kery, M. and
+Morrison, S.A. In Press. Hierarchical distance sampling models to
+estimate population size and habitat-specific abundance of an island
+endemic. <em>Ecological Applications</em>
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Island-wide covariates are also available <code>cruz</code></p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(issj)
+str(issj)
+head(issj)
+
+umf &lt;- unmarkedFrameDS(y=as.matrix(issj[,1:3]), siteCovs=issj[,6:8],
+    dist.breaks=c(0,100,200,300), unitsIn="m", survey="point")
+summary(umf)
+
+</pre>
+
+
+</body></html>

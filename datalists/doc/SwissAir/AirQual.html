@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Air Quality Data of Switzerland</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for AirQual"><tr><td>AirQual</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Air Quality Data of Switzerland</h2>
+
+<h3>Description</h3>
+
+<p>Dataset contains Ozone (=O3), Sum of Nitrogenmonoxide and
+Nitrogendioxide (=NOx), Nitrogenmonoxid (=NO),
+ambient temperature (T), dew point (Td), wind speed (WS) and
+wind direction (WD) at 3 sites around lake of Lucerne in Central
+Switzerland in 30 min time resolution for the year 2004.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(AirQual)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 17568 observations on the following 22 variables.
+</p>
+
+<dl>
+<dt><code>start</code></dt><dd><p>start time of observation (GMT+1h, no day saving
+time)</p>
+</dd>
+<dt><code>ad.O3</code></dt><dd><p>Mean concentration [ppb] of O3 in ad</p>
+</dd>
+<dt><code>ad.NOx</code></dt><dd><p>Mean concentration [ppb] of NOx in ad</p>
+</dd>
+<dt><code>ad.NO</code></dt><dd><p>Mean concentration [ppb] of NO in ad</p>
+</dd>
+<dt><code>ad.WS</code></dt><dd><p>Wind speed [m/s] in ad</p>
+</dd>
+<dt><code>ad.WD</code></dt><dd><p>Wind direction in ad</p>
+</dd>
+<dt><code>ad.T</code></dt><dd><p>Mean ambient temperature [deg C] in ad</p>
+</dd>
+<dt><code>ad.Td</code></dt><dd><p>Mean dew point [deg C] in ad</p>
+</dd>
+<dt><code>lu.O3</code></dt><dd><p>Mean concentration [ppb] of O3 in sz</p>
+</dd>
+<dt><code>lu.NOx</code></dt><dd><p>Mean concentration [ppb] of NOx in sz</p>
+</dd>
+<dt><code>lu.NO</code></dt><dd><p>Mean concentration [ppb] of NO in sz</p>
+</dd>
+<dt><code>lu.WS</code></dt><dd><p>Wind speed [m/s] in sz</p>
+</dd>
+<dt><code>lu.WD</code></dt><dd><p>Wind direction in sz</p>
+</dd>
+<dt><code>lu.T</code></dt><dd><p>Mean ambient temperature [deg C] in sz</p>
+</dd>
+<dt><code>lu.Td</code></dt><dd><p>Mean dew point [deg C] in sz</p>
+</dd>
+<dt><code>sz.O3</code></dt><dd><p>Mean concentration [ppb] of O3 in sz</p>
+</dd>
+<dt><code>sz.NOx</code></dt><dd><p>Mean concentration [ppb] of NOx in sz</p>
+</dd>
+<dt><code>sz.NO</code></dt><dd><p>Mean concentration [ppb] of NO in sz</p>
+</dd>
+<dt><code>sz.WS</code></dt><dd><p>Wind speed [m/s] in sz</p>
+</dd>
+<dt><code>sz.WD</code></dt><dd><p>Wind direction in sz</p>
+</dd>
+<dt><code>sz.T</code></dt><dd><p>Mean ambient temperature [deg C] in sz</p>
+</dd>
+<dt><code>sz.Td</code></dt><dd><p>Mean dew point [deg C] in sz</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The 3 sites are
+</p>
+
+<dl>
+<dt>ad</dt><dd><p>Site in Altdorf is located 100 m east of motorway A2 from
+Bale to Chiasso, on an open field at the beginning of a more than
+2000 m deep valley, at 438 m altitude.</p>
+</dd>
+<dt>lu</dt><dd><p>Site is located in Sedel next to town of Lucerne 35m above
+and 250m south of motorway A14 on a small hill with free 360 degree
+panorama at 484 m altitude.</p>
+</dd>
+<dt>sz</dt><dd><p>Site is located in Schwyz in an aerea of medium density of
+buildings next to a shopping center.</p>
+</dd>
+</dl>
+
+<p>NO and O3 react in the atmosphere within seconds to NO2. The
+production and destruction of the sum of O3 and NO2 (=Ox) takes place
+on a much lower time scale, so that the spatial (cf. ipairs output)
+and temporal (cf. ilagplot) correlation of Ox is much more pronounced
+than the correlation of O3 or NO.
+</p>
+
+
+<h3>Note</h3>
+
+<p>Type of variable start has changed in Version 1.08 from factor to
+character to save memory.
+</p>
+
+
+<h3>Source</h3>
+
+<p>The data are collected by inNet corporation
+<a href="http://www.innetag.ch/">http://www.innetag.ch/</a> on behalf of in-Luft, an association for
+air quality controle, of the Swiss Cantons Aargau, Luzern, Nidwalden,
+Obwalden, Schwyz, Uri und Zug <a href="http://www.in-luft.ch/">http://www.in-luft.ch/</a>.
+</p>
+
+
+<h3>References</h3>
+
+<p>Rene Locher, Andreas Ruckstuhl; Plausibilisierung von Ozon, Stickoxiden
+und PM10: Statistische Methoden zur Effizienz- und Qualitaetssteigerung
+der Messdatenplausibilisierung; inLuft 2003
+</p>
+
+
+<h3>See Also</h3>
+
+<p>For viewing large datasets see <code>library(IDPmisc)</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(AirQual)
+sapply(AirQual,function(x) sum(is.na(x)))
+cbind(min=sapply(AirQual[,-1], min, na.rm=TRUE),
+      median=sapply(AirQual[,-1], median, na.rm=TRUE),
+      max=sapply(AirQual[,-1], max, na.rm=TRUE))
+
+if(require(IDPmisc)) {
+
+  ## low correlation, density on logarithmic scale
+  ipairs(AirQual[,c("ad.O3","lu.O3","sz.O3")],
+         ztrans=function(x){x[x&lt;1] &lt;- 1; log2(x)*10})
+  ipairs(AirQual[,c("ad.NOx","lu.NOx","sz.NOx")],
+         ztrans=function(x){x[x&lt;1] &lt;- 1; log2(x)*10})
+  ilagplot(AirQual[,c("ad.O3")],set.lags = 1:9,
+         ztrans=function(x){x[x&lt;1] &lt;- 1; log2(x)*10})
+
+  Ox &lt;- AirQual[,c("ad.O3","lu.O3","sz.O3")]+
+        AirQual[,c("ad.NOx","lu.NOx","sz.NOx")]-
+        AirQual[,c("ad.NO","lu.NO","sz.NO")]
+  names(Ox) &lt;- c("ad","lu","sz")
+
+  ## high correlation, density on logarithmic scale
+  ipairs(Ox,
+         ztrans=function(x){x[x&lt;1] &lt;- 1; log2(x)*10})
+  ilagplot(Ox$ad,set.lags = 1:9,
+         ztrans=function(x){x[x&lt;1] &lt;- 1; log2(x)*10})
+
+  dat &lt;-
+    data.frame(month =as.numeric(substr(AirQual$start,4,5)),
+               hour = as.numeric(substr(AirQual$start,12,13)),
+               WD = AirQual$ad.WD,
+               NOx = AirQual$ad.NOx,
+               O3  = AirQual$ad.O3,
+               Ox  = AirQual$ad.O3+AirQual$ad.NOx-AirQual$ad.NO)
+
+    med.dayrose &lt;- rose(dat[,c("NOx","O3","Ox")],
+                      subset= dat$month&gt;4 &amp; dat$month&lt;10,
+                      cyclVar=dat$hour, n.cyclVar=24, circle=24,
+                      FUN=median, na.rm=TRUE)
+
+  ## NOx (= NO+NO2) and ozone (O3) have a distinct diurnal variation of
+  ## concentration, whereas Ox (= NO2+O3) varies only very slightly
+  grid.newpage()
+  plot(med.dayrose,
+       general = general.control(lwd=2),
+       grid =
+       grid.control(ray.n = 12,
+                    circ.n =2,
+                    circ.sub.n = 2,
+                    cyclVar.lab = seq(0,by=2,to=22)),
+       title = title.control(text=
+         "Day Rose of Medians\nduring summer time"))
+  grid.newpage()
+  plot(med.dayrose,
+       general = general.control(lwd=3),
+       grid =
+       grid.control(ray.n = 12,
+                    circ.n =2,
+                    circ.sub.n = 2,
+                    cyclVar.lab = seq(0,by=2,to=22)),
+       title = title.control(text=
+         "Day Rose of Medians\nduring summer time"))
+
+  ## exploration of upslope (North) downslope (South) wind system
+  ## during summer time in the valley north of Gotthard
+  ncol &lt;- 4
+
+  if(interactive()) x11(16,12)
+  grid.newpage()
+  pushViewport(viewport(layout=grid.layout(nrow=3,ncol=ncol),
+                        width=0.98, height=0.98))
+
+  for (hour in seq(0,22,2)) {
+    windrose &lt;-
+      rose(dat$WD, cyclVar = dat$WD, circle = 360, n.cyclVar = 32,
+           subset = dat$hour&gt;=hour &amp; dat$hour&lt;hour+2 &amp;
+                    dat$month&gt;4 &amp; dat$month&lt;10,
+           FUN = function(x) sum(!is.na(x)),
+           warn = FALSE)
+
+    pushViewport(viewport(layout.pos.col=(hour/2)%%ncol+1,
+                          layout.pos.row=(hour/2)%/%ncol+1))
+    plot(windrose,
+         general=general.control(
+           lwd=3),
+         grid=grid.control(
+           circ.r = seq(0,150,50),
+           circ.sub.r = seq(25,150,25),
+           circ.between = 0,
+           circ.cex = 0.6,
+           cyclVar.cex = 1,
+           ray.lim=c(0,150)),
+         title=title.control(
+           text=paste(hour,"o'clock"),
+           between=0.3, cex = 1.5),
+         key=key.control(title="hour of day"))
+    print(hour)
+    popViewport()
+  } ## end for
+
+} else print("Package IDPmisc is not available")
+</pre>
+
+
+</body></html>

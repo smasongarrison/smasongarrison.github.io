@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Populations Analyzed in Gunning and Horgan (2004) and Cochran...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for CochranHorganData"><tr><td>CochranHorganData</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Populations Analyzed in Gunning and Horgan (2004) and Cochran (1961) </h2>
+
+<h3>Description</h3>
+
+<p>The first population <code>Debtors</code> is an accounting population of debtors in an Irish firm, detailed in Horgan (2003). The other populations are three of the skewed populations in Cochran (1961). These are:<br />
+<code>UScities</code>: the population in thousands of US cities in 1940;<br />
+<code>UScolleges</code>: the number of students in four-year US colleges in 1952-1953;<br />
+<code>USbanks</code>: the resources in millions of dollars of large commercial US banks.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(Debtors)
+data(UScities)
+data(UScolleges)
+data(USbanks)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>The formats of these data sets are, respectively:<br />
+num [1:3369] 40 40 40 40 40 40 40 40 40 40 ...<br />
+num [1:1038] 10 10 10 10 10 10 10 10 10 10 ...<br />
+num [1:677] 200 201 202 202 207 210 211 213 215 217 ...<br />
+num [1:357] 70 71 72 72 72 73 73 73 73 73 ...<br />
+</p>
+
+
+<h3>Source</h3>
+
+<p>Jane M. Horgan
+</p>
+
+
+<h3>References</h3>
+
+<p>Cochran, W.G. (1961). Comparison of methods for determining stratum boundaries. <em>Bulletin of the International Statistical Institute</em>, <b>32</b>(2), 345-358.
+</p>
+<p>Gunning, P. and Horgan, J.M. (2004). A new algorithm for the construction of stratum boundaries in skewed populations. <em>Survey Methodology</em>, <b>30</b>(2), 159-166.
+</p>
+<p>Horgan, J.M. (2003). A list sequential sampling scheme with applications in financial auditing. <em>IMA Journal of Management Mathematics</em>, <b>14</b>, 1-18.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+### Reproduction of the results in Table 4 and Table 7 part 3 (case L=5) of  
+### Gunning and Horgan (2004). The differences in the nh come from different  
+### rounding. The more important differences observed for the cumulative  
+### root frequency method are due to the use of different numbers of classes.
+data(Debtors)
+strata.geo(x=Debtors, n=100, Ls=5, alloc=c(0.5,0,0.5))
+strata.cumrootf(x=Debtors, n=100, Ls=5, alloc=c(0.5,0,0.5), nclass=40)
+strata.LH(x=Debtors, CV=0.0360, Ls=5, alloc=c(0.5,0,0.5), takeall=1, algo="Sethi")
+
+data(UScities)
+strata.geo(x=UScities, n=100, Ls=5, alloc=c(0.5,0,0.5))
+strata.cumrootf(x=UScities, n=100, Ls=5, alloc=c(0.5,0,0.5), nclass=40)
+strata.LH(x=UScities, CV=0.0144, Ls=5, alloc=c(0.5,0,0.5), takeall=1, algo="Sethi")
+
+data(UScolleges)
+strata.geo(x=UScolleges, n=100, Ls=5, alloc=c(0.5,0,0.5))
+strata.cumrootf(x=UScolleges, n=100, Ls=5, alloc=c(0.5,0,0.5), nclass=40)
+strata.LH(x=UScolleges, CV=0.0184, Ls=5, alloc=c(0.5,0,0.5), takeall=1, algo="Sethi")
+
+data(USbanks)
+strata.geo(x=USbanks, n=100, Ls=5, alloc=c(0.5,0,0.5))
+strata.cumrootf(x=USbanks, n=100, Ls=5, alloc=c(0.5,0,0.5), nclass=40)
+strata.LH(x=USbanks, CV=0.0110, Ls=5, alloc=c(0.5,0,0.5), takeall=1, algo="Sethi")
+</pre>
+
+
+</body></html>

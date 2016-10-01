@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Simulated Data from the Monthly Retail Trade Survey (MRTS) of...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for MRTS"><tr><td>MRTS</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Simulated Data from the Monthly Retail Trade Survey (MRTS) of Statistics Canada </h2>
+
+<h3>Description</h3>
+
+<p>This data set is a vector containing the simulated values of a realistic stratification variable: the size measure used for Canadian retailers in the Monthly Retail Trade Survey (MRTS) carried out by Statistics Canada. This size measure is created using a combination of independent survey data and three administrative variables from the corporation tax return. The MRTS aims at estimating sales from retailers, which are a key monthly indicator of consumer purchasing patterns in Canada.  
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(MRTS)</pre>
+
+
+<h3>Format</h3>
+
+<p>The format is:
+num [1:2000] 141 209 238 257 261 ...
+</p>
+
+
+<h3>Source</h3>
+
+<p>The data set has been simulated with the command:<br />
+<code>exp(rst(n=2000, location=9.7093354, scale=0.7885551,</code><br />
+<code>shape=-0.6384867, df=5.6243544))</code>.<br />
+The function <code>rst</code> comes from the package <span class="pkg">sn</span>. It generates random numbers for the skew-t distribution. The parameters of the distribution have been estimated with the assistance of Michel Ferland from Statistics Canada to be representative of the measure of size used in the MRTS.
+</p>
+
+
+<h3>References</h3>
+
+<p>Baillargeon, S., Rivest, L.-P., Ferland, M. (2007). Stratification en enquetes entreprises : Une revue et quelques avancees. <em>Proceedings of the Survey Methods Section, 2007 SSC Annual Meeting</em>. <a href="http://www.ssc.ca/survey/documents/SSC2007_S_Baillargeon.pdf">http://www.ssc.ca/survey/documents/SSC2007_S_Baillargeon.pdf</a>
+</p>
+<p>Information on Statistics Canada Monthly Retail Trade Survey: <a href="http://www.statcan.ca/cgi-bin/imdb/p2SV.pl?Function=getSurvey&amp;SDDS=2406&amp;lang=en&amp;db=IMDB&amp;dbg=f&amp;adm=8&amp;dis=2">http://www.statcan.ca/cgi-bin/imdb/p2SV.pl?Function=getSurvey&amp;SDDS=2406&amp;lang=en&amp;db=IMDB&amp;dbg=f&amp;adm=8&amp;dis=2</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# Production of results similar to those in Table 1 of Baillargeon, Rivest
+# and Ferland (2007). The results are not the same because calculations in
+# the paper were conducted on real data whereas, for confidentiality reason, 
+# the MRTS data included in the package is simulated.
+data(MRTS)
+geo &lt;- strata.geo(x=MRTS, CV=0.01, Ls=4, alloc=c(0.5,0,0.5))
+geo
+aRRMSE.geo &lt;- var.strata(geo, model="loglinear",
+              model.control=list(beta=0.9, sig2=0.015, ph=c(0.8,0.9,0.95,1)))
+aRRMSE.geo$RRMSE
+plot(geo, logscale=TRUE)
+# The geometric method does not perform well because of some small units
+
+cumrootf &lt;- strata.cumrootf(x=MRTS, nclass=500, CV=0.01, Ls=4, alloc=c(0.5,0,0.5))
+cumrootf
+aRRMSE.cum &lt;- var.strata(cumrootf, rh=c(0.85,0.9,0.9,1), model="loglinear",
+              model.control=list(beta=0.9, sig2=0.015, ph=c(0.8,0.9,0.95,1)))
+aRRMSE.cum$RRMSE
+
+LH &lt;- strata.LH(x=MRTS, CV=0.01, Ls=4, alloc=c(0.5,0,0.5), takeall=1, algo="Sethi")
+LH
+aRRMSE.LH &lt;- var.strata(LH, rh=c(0.85,0.9,0.9,1), model="loglinear",
+             model.control=list(beta=0.9, sig2=0.015, ph=c(0.8,0.9,0.95,1)))
+aRRMSE.LH$RRMSE
+
+LH.full &lt;- strata.LH(x=MRTS, CV=0.01, Ls=4, alloc=c(0.5,0,0.5), takeall=1,
+           algo="Sethi", rh=c(0.85,0.9,0.9,1), model="loglinear",
+           model.control=list(beta=0.9, sig2=0.015, ph=c(0.8,0.9,0.95,1)))
+LH.full
+aRRMSE.LH.full &lt;- var.strata(LH.full, rh=c(0.85,0.9,0.9,1), model="loglinear",
+                  model.control=list(beta=0.9, sig2=0.015, ph=c(0.8,0.9,0.95,1)))
+aRRMSE.LH.full$RRMSE
+</pre>
+
+
+</body></html>

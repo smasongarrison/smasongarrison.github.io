@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Some Business Population Database</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Lucy"><tr><td>Lucy</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Some Business Population Database</h2>
+
+<h3>Description</h3>
+
+<p>This data set corresponds to a random sample of BigLucy. It contains some financial variables of 2396 industrial companies of a city in a particular fiscal year.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>Lucy</pre>
+
+
+<h3>Format</h3>
+
+
+<dl>
+<dt>ID</dt><dd><p>The identifier of the company. It correspond to an alphanumeric sequence (two letters and three digits)</p>
+</dd>
+<dt>Ubication</dt><dd><p>The address of the principal office of the company in the city</p>
+</dd>
+<dt>Level</dt><dd><p>The industrial companies are discrimitnated according to the Taxes declared. 
+There are small, medium and big companies</p>
+</dd>
+<dt>Zone</dt><dd><p>The city is divided by geoghrafical zones. A company is classified in a particular zone according to its address</p>
+</dd>
+<dt>Income</dt><dd><p>The total ammount of a company's earnings (or profit) in the previuos fiscal year. It is calculated by taking 
+revenues and adjusting for the cost of doing business</p>
+</dd>
+<dt>Employees</dt><dd><p>The total number of persons working for the company in the previuos fiscal year</p>
+</dd>
+<dt>Taxes</dt><dd><p>The total ammount of a company's income Tax</p>
+</dd>
+<dt>SPAM</dt><dd><p>Indicates if the company uses the Internet and WEBmail options in order to make self-propaganda.</p>
+</dd>
+</dl>
+
+
+
+<h3>Author(s)</h3>
+
+<p>Hugo Andres Gutierrez Rojas <a href="mailto:hugogutierrez@usantotomas.edu.co">hugogutierrez@usantotomas.edu.co</a></p>
+
+
+<h3>References</h3>
+
+<p>Gutierrez, H. A. (2009), <em>Estrategias de muestreo: Diseno de encuestas y estimacion de parametros</em>.
+Editorial Universidad Santo Tomas.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>BigLucy</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Lucy)
+attach(Lucy)
+# The variables of interest are: Income, Employees and Taxes
+# This information is stored in a data frame called estima
+estima &lt;- data.frame(Income, Employees, Taxes)
+# The population totals
+colSums(estima)
+# Some parameters of interest
+table(SPAM,Level)
+xtabs(Income ~ Level+SPAM)
+# Correlations among characteristics of interest
+cor(estima)
+# Some useful histograms
+hist(Income)
+hist(Taxes)
+hist(Employees)
+# Some useful plots
+boxplot(Income ~ Level)
+barplot(table(Level))
+pie(table(SPAM))
+</pre>
+
+
+</body></html>

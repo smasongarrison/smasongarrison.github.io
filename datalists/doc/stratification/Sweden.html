@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The MU284 Population of Sweden Municipalities from Sarndal et...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Sweden"><tr><td>Sweden</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> The MU284 Population of Sweden Municipalities from Sarndal et al. (1992) </h2>
+
+<h3>Description</h3>
+
+<p>This data set comes from Sarndal et al.'s book (1992), Appendix B. It contains different variables that describe 284 municipalities in Sweden.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Sweden)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 284 observations on the following 11 variables.
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>Identifier running from 1 to 284</p>
+</dd>
+<dt><code>P85</code></dt><dd><p>1985 population (in thousands)</p>
+</dd>
+<dt><code>P75</code></dt><dd><p>1975 population (in thousands)</p>
+</dd>
+<dt><code>RMT85</code></dt><dd><p>Revenues from the 1985 municipal taxation (in millions of kronor)</p>
+</dd>
+<dt><code>CS82</code></dt><dd><p>Number of Conservative seats in municipal council</p>
+</dd>
+<dt><code>SS82</code></dt><dd><p>Number of Social-Democratic seats in municipal council</p>
+</dd>
+<dt><code>S82</code></dt><dd><p>Total number of seats in municipal council</p>
+</dd>
+<dt><code>ME84</code></dt><dd><p>Number of municipal employees in 1984</p>
+</dd>
+<dt><code>REV84</code></dt><dd><p>Real estate values according to 1984 assessment (in millions of kronor)</p>
+</dd>
+<dt><code>REG</code></dt><dd><p>Geographic region indicator</p>
+</dd>
+<dt><code>CL</code></dt><dd><p>Cluster indicator (a cluster consists of a set of neighboring municipalities)</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>In this package, <code>REV84</code> is used as a stratification variable and <code>RMT85</code> as a survey variable.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Sarndal, C. E., Swensson, B. and Wretman, J. (1992). <em>Model Assisted Survey Sampling</em>. Springer Verlag, New York.
+</p>
+
+
+<h3>References</h3>
+
+<p>Rivest, L.-P. (2002). A generalization of the Lavallee and Hidiroglou algorithm for stratification in business surveys. <em>Survey Methodology</em>, <b>28</b>(2), 191-198.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Sweden)
+X &lt;- Sweden$REV84
+Y &lt;- Sweden$RMT85
+
+# Study of the relationship between X and Y
+plot(log(X), log(Y))
+# Extreme values are omitted for a more robust estimation
+keep &lt;- X/Y&gt;quantile(X/Y,0.03)&amp;X/Y&lt;quantile(X/Y,0.97)
+plot(log(X)[keep], log(Y)[keep])
+reg&lt;-lm( log(Y)[keep]~log(X)[keep] )
+summary(reg)
+
+# Stratification assuming X=Y
+nomodel &lt;- strata.LH(x=X, CV=0.05, Ls=3, alloc=c(0.5,0,0.5), takeall=1, model="none")
+nomodel
+var.strata(nomodel, y=Y) # The target CV is not reached
+
+# Stratification taking into account a loglinear model between X and Y, 
+# using the estimated parameters values
+model &lt;- strata.LH(x=X, CV=0.05, Ls=3, alloc=c(0.5,0,0.5), takeall=1, model="loglinear",
+        model.control=list(beta=reg$coef[2], sig2=summary(reg)$sigma^2, ph=1))
+model
+var.strata(model, y=Y) # The target CV is reached
+</pre>
+
+
+</body></html>

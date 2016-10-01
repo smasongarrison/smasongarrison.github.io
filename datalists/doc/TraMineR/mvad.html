@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Example data set: Transition from school to work</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mvad"><tr><td>mvad</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Example data set: Transition from school to work</h2>
+
+<h3>Description</h3>
+
+<p> The data comes from a study by McVicar and Anyadike-Danes on
+transition from school to work. The data consist of static background
+characteristics and a time series sequence of 72 monthly labour market
+activities for each of 712 individuals in a cohort survey. The individuals
+were followed up from July 1993 to June 1999. The monthly states are recorded
+in columns 15 (<code>Jul.93</code>)  to 86 (<code>Jun.99</code>).
+</p>
+<p>States are:<br />
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+<code>employment</code>  </td><td style="text-align: left;"> (EM) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>FE</code>          </td><td style="text-align: left;"> further education (FE)</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>HE</code>          </td><td style="text-align: left;"> higher education (HE) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>joblessness</code> </td><td style="text-align: left;"> (JL) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>school</code>      </td><td style="text-align: left;"> (SC) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>training</code>    </td><td style="text-align: left;"> (TR)</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+
+</table>
+
+<p>The data set contains also ids (<code>id</code>) and sample weights (<code>weight</code>) as well as the following binary covariates:<br />
+<br />
+<code>male</code><br />
+<code>catholic</code><br />
+<code>Belfast</code>, <code>N.Eastern</code>, <code>Southern</code>, <code>S.Eastern</code>, <code>Western</code> (location of school, one of five Education and Library Board areas in Northern Ireland)<br />
+<code>Grammar</code> (type of secondary education, 1=grammar school)<br />
+<code>funemp</code> (father's employment status at time of survey, 1=father unemployed)<br />
+<code>gcse5eq</code> (qualifications gained by the end of compulsory education, 1=5+ GCSEs at grades A-C, or equivalent)<br />
+<code>fmpr</code> (SOC code of father's current or most recent job, 1=SOC1 (professional, managerial or related))<br />
+<code>livboth</code> (living arrangements at time of first sweep of survey (June 1995), 1=living with both parents)<br />
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(mvad)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame containing 712 rows, 72 state variables, 1 id variable and 13 covariates.</p>
+
+
+<h3>Source</h3>
+
+<p>McVicar and Anyadike-Danes (2002)</p>
+
+
+<h3>References</h3>
+
+<p>McVicar, Duncan and Anyadike-Danes, Michael (2002). Predicting Successful and Unsuccessful Transitions from School to Work by Using Sequence Methods,
+<em>Journal of the Royal Statistical Society. Series A (Statistics in Society)</em>, 165, 2, pp. 317&ndash;334.
+</p>
+
+
+</body></html>

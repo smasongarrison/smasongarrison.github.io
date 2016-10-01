@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bus data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Bus"><tr><td>Bus</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bus data</h2>
+
+<h3>Description</h3>
+
+<p>Three-way data about the process of learning to read of seven first-grade children tested weekly (from week 3 to 47, but weeks 10, 19, 20, 29, 35, 36, 39, 43 were holidays and, thus, data on 37 weeks) with five different tests. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Bus)</pre>
+
+
+<h3>Format</h3>
+
+<p>A matrix with 7 rows and 185 (5x37) columns.
+<br /> The rows refer to the pupils.
+<br /> The columns refer to the combinations of tests and weeks with the tests nested within the weeks.
+<br /> The matrix contains the frontal slices next to each other of the original array. 
+<br /> The meanings and the ranges of the tests are as follows:
+<br /> <code>L</code>: letter knowledge test (scores in 0-47);
+<br /> <code>P</code>: regular orthographic short words (scores in 0-10); 
+<br /> <code>Q</code>: regular orthographic long words (scores in 0-10);
+<br /> <code>S</code>: regular orthographic long and short words within context (scores in 0-15);
+<br /> <code>R</code>: irregular orthographic long and short words (scores in 0-15).
+</p>
+
+
+<h3>Details</h3>
+
+<p>In the literature the Bus data have been analyzed by Tucker3 (see Kroonenberg, 1983; Timmerman, 2001).
+There is consensus on normalizing the data so to eliminate artificial differences among ranges of tests.
+Different centering options and numbers of extracted components have been chosen. 
+Specifically, Kroonenberg (1983) suggests averaging over pupils and tests for each time occasions and extracting two components for every mode.
+Timmerman (2001) suggests to apply Tucker3 to the normalized data with two components for pupils and time occasions and one component for tests.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Maria Antonietta Del Ferraro <a href="mailto:mariaantonietta.delferraro@yahoo.it">mariaantonietta.delferraro@yahoo.it</a> <br /> Henk A.L. Kiers <a href="mailto:h.a.l.kiers@rug.nl">h.a.l.kiers@rug.nl</a> <br /> Paolo Giordani <a href="mailto:paolo.giordani@uniroma1.it">paolo.giordani@uniroma1.it</a></p>
+
+
+<h3>References</h3>
+
+<p>P.M. Kroonenberg (1983). <em>Three-mode Principal Component Analysis. Theory and Applications</em>. DSWO Press, Leiden.
+<br /> M.E. Timmerman (2001). <em>Component Analysis of Multisubject Multivariate Longitudinal Data</em>. Ph.D. Thesis, University of Groningen.</p>
+
+
+</body></html>
