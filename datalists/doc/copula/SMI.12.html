@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: SMI Data - 141 Days in Winter 2011/2012</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for SMI.12"><tr><td>SMI.12</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>SMI Data &ndash; 141 Days in Winter 2011/2012</h2>
+
+<h3>Description</h3>
+
+<p><code>SMI.12</code> contains the close prices of all 20 constituents of
+the Swiss Market Index (SMI) from 2011-09-09 to 2012-03-28.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(SMI.12)
+</pre>
+
+
+<h3>Format</h3>
+
+<p><code>SMI.12</code> is conceptually a multivariate time series,
+here simply stored as <code>numeric</code> <code>matrix</code>,
+where the <code>rownames</code> are dates (of week days).
+</p>
+<p>The format is:
+</p>
+<p>num [1:141, 1:20] 16.1 15.7 15.7 16.1 16.6 ...
+- attr(*, &quot;dimnames&quot;)=List of 2
+..$ : chr [1:141] &quot;2011-09-09&quot; &quot;2011-09-12&quot; &quot;2011-09-13&quot; &quot;2011-09-14&quot; ...
+..$ : chr [1:20] &quot;ABBN&quot; &quot;ATLN&quot; &quot;ADEN&quot; &quot;CSGN&quot; ...
+</p>
+<p>... from 2011-09-09 to 2012-03-28
+</p>
+<p><code>lSMI</code> is the list of the original data (<em>before</em> <code>NA</code>
+&ldquo;imputation&rdquo;).
+</p>
+
+
+<h3>Source</h3>
+
+<p>The data was drawn from Yahoo! Finance.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(SMI.12)
+## maybe
+head(SMI.12)
+
+str(D.12 &lt;- as.Date(rownames(SMI.12)))
+summary(D.12)
+
+matplot(D.12, SMI.12, type="l", log = "y",
+        main = "The 20 SMI constituents  (2011-09 -- 2012-03)",
+        xaxt="n", xlab = "2011  /  2012")
+Axis(D, side=1)
+
+
+
+if(FALSE) { ##--- This worked up to mid 2012, but no longer ---
+ begSMI &lt;- "2011-09-09"
+ endSMI &lt;- "2012-03-28"
+ ##-- read *public* data ------------------------------
+ stopifnot(require(zoo), # -&gt; to access all the zoo methods
+           require(tseries))
+ symSMI &lt;- c("ABBN.VX","ATLN.VX","ADEN.VX","CSGN.VX","GIVN.VX","HOLN.VX",
+	     "BAER.VX","NESN.VX","NOVN.VX","CFR.VX", "ROG.VX", "SGSN.VX",
+	     "UHR.VX", "SREN.VX","SCMN.VX","SYNN.VX","SYST.VX","RIGN.VX",
+	     "UBSN.VX","ZURN.VX")
+ lSMI &lt;- sapply(symSMI, function(sym)
+		get.hist.quote(instrument = sym, start= begSMI, end= endSMI,
+			       quote = "Close", provider = "yahoo",
+			       drop=TRUE))
+ ## check if stock data have the same length for each company.
+ sapply(lSMI, length)
+ ## "concatenate" all:
+ SMIo &lt;- do.call(cbind, lSMI)
+ ## and fill in the NAs :
+ SMI.12 &lt;- na.fill(SMIo, "extend")
+ colnames(SMI.12) &lt;- sub("\\.VX", "", colnames(SMI.12))
+ SMI.12 &lt;- as.matrix(SMI.12)
+}##----       --- original download
+
+if(require(zoo)) {
+  stopifnot(identical(SMI.12,
+     local({ S &lt;- as.matrix(na.fill(do.call(cbind, lSMI), "extend"))
+             colnames(S) &lt;- sub("\\.VX", "", colnames(S)); S })))
+}
+
+
+</pre>
+
+
+</body></html>

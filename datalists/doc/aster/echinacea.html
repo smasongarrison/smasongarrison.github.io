@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Life History Data on Echinacea angustifolia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for echinacea"><tr><td>echinacea</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Life History Data on Echinacea angustifolia</h2>
+
+<h3>Description</h3>
+
+<p>Data on life history traits for the purple coneflower
+<em>Echinacea angustifolia</em>
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>echinacea</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with records for 570 plants observed over three years.
+</p>
+
+<dl>
+<dt>ld02</dt><dd><p>Indicator of being alive in 2002.</p>
+</dd>
+<dt>ld03</dt><dd><p>Ditto for 2003.</p>
+</dd>
+<dt>ld04</dt><dd><p>Ditto for 2004.</p>
+</dd>
+<dt>fl02</dt><dd><p>Indicator of flowering 2002.</p>
+</dd>
+<dt>fl03</dt><dd><p>Ditto for 2003.</p>
+</dd>
+<dt>fl04</dt><dd><p>Ditto for 2004.</p>
+</dd>
+<dt>hdct02</dt><dd><p>Count of number of flower heads in 2002.</p>
+</dd>
+<dt>hdct03</dt><dd><p>Ditto for 2003.</p>
+</dd>
+<dt>hdct04</dt><dd><p>Ditto for 2004.</p>
+</dd>
+<dt>pop</dt><dd><p>the remnant population of origin of the plant
+(all plants were grown together, <code>pop</code> encodes ancestry).</p>
+</dd>
+<dt>ewloc</dt><dd><p>east-west location in plot.</p>
+</dd>
+<dt>nsloc</dt><dd><p>north-south location in plot.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Stuart Wagenius,
+<a href="http://www.chicagobotanic.org/research/staff/wagenius">http://www.chicagobotanic.org/research/staff/wagenius</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(aster)
+data(echinacea)
+vars &lt;- c("ld02", "ld03", "ld04", "fl02", "fl03", "fl04",
+    "hdct02", "hdct03", "hdct04")
+redata &lt;- reshape(echinacea, varying = list(vars), direction = "long",
+    timevar = "varb", times = as.factor(vars), v.names = "resp")
+names(echinacea)
+dim(echinacea)
+names(redata)
+dim(redata)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Simulated dataset to demonstrate Bayesian Survival Trajectory...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sim1"><tr><td>sim1</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Simulated dataset to demonstrate Bayesian Survival Trajectory Analysis (BaSTA)</h2>
+
+<h3>Description</h3>
+
+<p>This dataset was created by stochastically simulating a hypothetical population with different mortality patterns between males and females and with proportional decreases in mortality as a function of a hypothetical continuous covariate (e.g. birth weight, average adult weight, etc.). The population was simulated for 100 years, at each one of which 100 individuals were born. The number of females per generation was randomly drawn from a binomial distribution using function <code>rbinom</code> with probability of 0.5 (i.e. 1:1 sex ratio). The individual continuous covariate was randomly drawn from a random normal distribution (with function <code>rnorm</code>) with mean parameter equal to 0 (e.g. anomaly of weights) and standard deviation equal to 1.  The time of death for each individual was inversed sampled from a Gompertz CDF of ages at death. The Gompertz parameters for females were: <i>&alpha; = -4</i> and <i>&beta; = 0.15</i>; and for males at <i>&alpha; = -3</i> and <i>&beta; = 0.15</i>. The gamma parameter for the continuous covariate was <i>&gamma; = 0.2</i>.
+</p>
+<p>The study was assumed to start at year 51 and to finish at year 70. Recapture probability was set to 0.6 and thus each observation per individual was randomly drawn from a Bernoulli trial with parameter <i>p = 0.6</i>. Captures at birth and recoveries were randomly drawn from a Bernoulli trial with parameters <i>p = 0.5</i> and <i>p = 0.2</i>, respectively. 
+</p>
+<p>Therefore, the resulting dataset includes individuals where the data are left-truncated and/or right-censored. This is typical of capture mark recovery datasets.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>sim1</pre>
+
+
+<h3>Format</h3>
+
+<p>RData file, data frame.</p>
+
+
+</body></html>

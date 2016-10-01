@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Simulated example data following a Poisson distribution</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ExPCov"><tr><td>ExPCov</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Simulated example data following a Poisson distribution</h2>
+
+<h3>Description</h3>
+
+<p>Reponse follows a Poisson distribution, the covariables follow a multivariate normal on the log-scale.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ExPCov)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 32 observations on the following 12 variables.
+</p>
+
+<dl>
+<dt><code>resp</code></dt><dd><p>a response of counts</p>
+</dd>
+<dt><code>A</code></dt><dd><p>a factor with levels <code>A1</code> <code>A2</code> <code>A3</code> <code>A4</code>, e.g. varieties</p>
+</dd>
+<dt><code>C1</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>C2</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>C3</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>C4</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>C5</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>C6</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>C7</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>C8</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>C9</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>C10</code></dt><dd><p>a numeric covariable</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(ExPCov)
+
+boxplot(resp ~ A, data=ExPCov)
+
+pairs(ExPCov)
+
+</pre>
+
+
+</body></html>

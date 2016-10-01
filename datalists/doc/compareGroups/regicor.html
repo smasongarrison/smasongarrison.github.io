@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: REGICOR cross-sectional data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for regicor"><tr><td>regicor</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+REGICOR cross-sectional data
+</h2>
+
+<h3>Description</h3>
+
+<p>These data come from 3 different cross-sectional surveys of individuals representative of the population from a north-west Spanish province (Girona), REGICOR study.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(regicor)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 2294 observations on the following 21 variables:
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>Individual id</p>
+</dd>
+<dt><code>year</code></dt><dd><p>a factor with levels <code>1995</code> <code>2000</code> <code>2005</code>. Recruitment year</p>
+</dd>
+<dt><code>age</code></dt><dd><p>Patient age at recruitment date</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>a factor with levels <code>male</code> <code>female</code>. Sex</p>
+</dd>
+<dt><code>smoker</code></dt><dd><p>a factor with levels <code>Never smoker</code> <code>Current or former &lt; 1y</code> <code>Never or former &gt;= 1y</code>. Smoking status</p>
+</dd>
+<dt><code>sbp</code></dt><dd><p>Systolic blood pressure</p>
+</dd>
+<dt><code>dbp</code></dt><dd><p>Diastolic blood pressure</p>
+</dd>
+<dt><code>histhtn</code></dt><dd><p>a factor with levels <code>Yes</code> <code>No</code>. History of hypertension</p>
+</dd>
+<dt><code>txhtn</code></dt><dd><p>a factor with levels <code>No</code> <code>Yes</code>. Hypertension (HTN) treatment</p>
+</dd>
+<dt><code>chol</code></dt><dd><p>Total cholesterol (mg/dl)</p>
+</dd>
+<dt><code>hdl</code></dt><dd><p>HDL cholesterol (mg/dl)</p>
+</dd>
+<dt><code>triglyc</code></dt><dd><p>Triglycerides (mg/dl)</p>
+</dd>
+<dt><code>ldl</code></dt><dd><p>LDL cholesterol (mg/dl)</p>
+</dd>
+<dt><code>histchol</code></dt><dd><p>a factor with levels <code>Yes</code> <code>No</code>. History of hypercholesterolemia</p>
+</dd>
+<dt><code>txchol</code></dt><dd><p>a factor with levels <code>No</code> <code>Yes</code>. Cholesterol treatment</p>
+</dd>
+<dt><code>height</code></dt><dd><p>Height (cm)</p>
+</dd>
+<dt><code>weight</code></dt><dd><p>Weight (Kg)</p>
+</dd>
+<dt><code>bmi</code></dt><dd><p>Body mass index</p>
+</dd>
+<dt><code>phyact</code></dt><dd><p>Physical activity (Kcal/week)</p>
+</dd>
+<dt><code>pcs</code></dt><dd><p>Physical component summary</p>
+</dd>
+<dt><code>mcs</code></dt><dd><p>Mental component summary</p>
+</dd>
+<dt><code>death</code></dt><dd><p>a factor with levels <code>No</code> <code>Yes</code>. Overall death</p>
+</dd>
+<dt><code>todeath</code></dt><dd><p>Days to overall death or end of follow-up</p>
+</dd>
+<dt><code>cv</code></dt><dd><p>a factor with levels <code>No</code> <code>Yes</code>. Cardiovascular event</p>
+</dd>
+<dt><code>tocv</code></dt><dd><p>Days to cardiovascular event or end of follow-up</p>
+</dd>    
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The variables collected in the REGICOR study were mainly cardiovascular risk factors (hundreds of variables were collected in the different questionnaires and blood measurements), but the variables present in this data set are just a few of them. Also, for reasons of confidentiality, the individuals in this data set are a 30% approx. random subsample of the original one. <br /> <br />
+Each variable of this data.frame contains label describing them in the attribute &quot;label&quot;. <br /> <br />
+For more information, see the vignette.
+</p>
+
+
+<h3>Note</h3>
+
+<p>Variables <code>death</code>, <code>todeath</code>, <code>cv</code>, <code>tocv</code> are not real but they have been simulated at random to complete the data example with some time-to-event variables.
+</p>
+
+
+<h3>Source</h3>
+
+<p>For reasons of confidentiality, the whole data set is not publicly available. For more information about the study these data come from, visit <code>www.regicor.org</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(compareGroups)
+data(regicor)
+summary(regicor)
+</pre>
+
+
+</body></html>

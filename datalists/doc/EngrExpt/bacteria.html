@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bacteria count in water samples</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bacteria"><tr><td>bacteria</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Bacteria count in water samples
+</h2>
+
+<h3>Description</h3>
+
+<p>As described in Nelson, Coffin and Copeland (2003),
+&ldquo;Purified water is used in one step in the production of a
+medical device.  The water is tested daily for bacteria.  These data
+are the results from 50 days of testing.  They are the counts of a
+particular strain of bacteria in a 100 ml. sample of water.&rdquo;
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 50 observations on the following variable.
+</p>
+
+<dl>
+<dt><code>level</code></dt><dd><p>bacteria count</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(bacteria)
+qqmath(~ level, bacteria, aspect = 1,
+       xlab = "Standard normal quantiles",
+       ylab = "Bacteria count")
+</pre>
+
+
+</body></html>

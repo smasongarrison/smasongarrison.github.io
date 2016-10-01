@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Monthly Air traffic at Toulouse Blagnac Airport for the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for trafmensu"><tr><td>trafmensu</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Monthly Air traffic at Toulouse Blagnac Airport for the period 1993-2007</h2>
+
+<h3>Description</h3>
+
+<p>The file &quot;/import/trafquoti.txt&quot; contains daily Air traffic at Toulouse Blagnac Airport for the period 1993-2007
+</p>
+
+
+<h3>Format</h3>
+
+<p>The series is imported first as a data.frame with function <code>read.table</code>,
+aggregated by month and then transformed into a <code>ts</code> object. Is is then converted in 1,000 of people.</p>
+
+
+<h3>Source</h3>
+
+<p>Chambre de Commerce et d'Industrie de Toulouse (CCIT)</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(trafmensu)
+# The executed code is : 
+## Not run: 
+bb=read.table(file= system.file("/import/trafquoti.txt",package="caschrono"),
+header=FALSE,quote="",sep="", colClasses=c('numeric','character'),
+col.names =c('trafic','date'))
+mois.an= as.numeric(paste(substr(bb$date,1,4), substr(bb$date,6,7), sep=""))
+trafmens=aggregate(bb$traf, list(Mois.An = mois.an), sum)
+trafmensu=ts(trafmens$x/1000,start= c(1993,1),frequency= 12)
+## End(Not run)
+</pre>
+
+
+</body></html>

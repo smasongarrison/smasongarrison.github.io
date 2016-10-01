@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Eklektor counts of Brachycera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Brachycera"><tr><td>Brachycera</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Eklektor counts of Brachycera</h2>
+
+<h3>Description</h3>
+
+<p>In a field trial, 4 treatments were arranged in a randomized complete block design with 8 blocks
+and 32 plots. Soil eklektor traps were placed in each plot, on six dates
+from 2005-07-12 to 2005-09-25, the number of individuals of Brachycera (Flies, Order Diptera)
+hatching from soil were counted. The individuals were classified to the family level. Interest
+was in assessing potential effects of the novel treatment (Novum) on the abundance of Brachycera, compared to a 
+near standard (Standard) and two additional standard treatments, A and B.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Brachycera)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 192 observations on the following 15 variables.
+</p>
+
+<dl>
+<dt><code>Date</code></dt><dd><p>a POSIXt variable, the time of counting the individuals in the eklektor trap</p>
+</dd>
+<dt><code>Treatment</code></dt><dd><p>a factor with 4 levels <code>A</code> <code>B</code> <code>Standard</code> <code>Novum</code>,
+where <code>Novum</code> is the novel treatment of interest in safety assessment, and <code>Standard</code> is the nearest standard treatment which commonly accepted.
+<code>A</code> and <code>B</code> are two additional standard treatments.</p>
+</dd>
+<dt><code>Block</code></dt><dd><p>a numeric vector, specifying the eight blocks 1-8</p>
+</dd>
+<dt><code>Plot</code></dt><dd><p>a factor with levels <code>A1</code> <code>A2</code> to <code>Standard8</code>, indicator of the individuals plots</p>
+</dd>
+<dt><code>Agromy</code></dt><dd><p>a numeric vector, counts of individuals</p>
+</dd>
+<dt><code>Anthom</code></dt><dd><p>a numeric vector, counts of individuals</p>
+</dd>
+<dt><code>Callip</code></dt><dd><p>a numeric vector, counts of individuals</p>
+</dd>
+<dt><code>Chloro</code></dt><dd><p>a numeric vector, counts of individuals</p>
+</dd>
+<dt><code>Ephyd</code></dt><dd><p>a numeric vector, counts of individuals</p>
+</dd>
+<dt><code>Droso</code></dt><dd><p>a numeric vector, counts of individuals</p>
+</dd>
+<dt><code>Hybo</code></dt><dd><p>a numeric vector, counts of individuals</p>
+</dd>
+<dt><code>Musci</code></dt><dd><p>a numeric vector, counts of individuals</p>
+</dd>
+<dt><code>Phori</code></dt><dd><p>a numeric vector, counts of individuals</p>
+</dd>
+<dt><code>Sphaer</code></dt><dd><p>a numeric vector, counts of individuals</p>
+</dd>
+<dt><code>Total</code></dt><dd><p>a numeric vector, counts of individuals</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>...
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Brachycera)
+
+par(mar=c(11,5,3,1))
+
+boxplot(Total ~ Treatment*Date, data=Brachycera, las=2, 
+col=c("white","white","blue","green"))
+
+legend(x=15, y=80, legend=levels(Brachycera$Treatment),
+ fill=c("white","white","blue","green"))
+
+</pre>
+
+
+</body></html>

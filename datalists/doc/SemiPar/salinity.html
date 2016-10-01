@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Salinity data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for salinity"><tr><td>salinity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Salinity data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>salinity</code> data frame has 28 observations
+on hydrological measurements from Pamlico Sound,
+North Carolina, USA.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(salinity)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>salinity</dt><dd><p>salinity in Pamlico Sound.</p>
+</dd>
+<dt>lagged.salinity</dt><dd><p>salinity in Pamlico Sound during the previous
+six weeks.</p>
+</dd>
+<dt>trend</dt><dd><p>trend=1 if the data is the first six-week period of the
+spring, and so forth.  Used to detect possible effects of the seasonal
+warming trend.</p>
+</dd>
+<dt>discharge</dt><dd><p>discharge of fresh water from rivers into the sound.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Ruppert, D, and Carroll, R.J. (1980), Trimmed least squares estimation in
+the linear model, <em>Journal of the American Statistical Association</em>,
+<b>75</b>,  828-838.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ruppert, D., Wand, M.P. and Carroll, R.J. (2003)<br />
+<em>Semiparametric Regression</em> Cambridge University Press.<br />
+<a href="http//stat.tamu.edu/~carroll/semiregbook/">http//stat.tamu.edu/~carroll/semiregbook/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(salinity)
+pairs(salinity)
+</pre>
+
+
+</body></html>

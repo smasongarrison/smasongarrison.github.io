@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Tibia Length for One Baby</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for infantGrowth"><tr><td>infantGrowth</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Tibia Length for One Baby
+</h2>
+
+<h3>Description</h3>
+
+<p>Measurement of the length of the tibia for the first 40 days of life
+for one infant.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(infantGrowth)</pre>
+
+
+<h3>Format</h3>
+
+<p>A matrix with three columns:
+</p>
+
+<ul>
+<li><p>dayage in days
+</p>
+</li>
+<li><p>tibiaLength
+The average of five measurements of tibia length in millimeters
+
+</p>
+</li>
+<li><p>sd.length
+The standard deviation of five measurements of tibia length in
+millimeters
+
+</p>
+</li></ul>
+
+
+
+<h3>Source</h3>
+
+<p>Hermanussen, M., Thiel, C., von Bueren, E., de los Angeles Rol. de
+Lama, M., Perez Romero, A., Ariznavarreta Ruiz, C., Burmeister, J.,
+Tresguerras, J. A. F. (1998) Micro and macro perspectives in auxology:
+Findings and considerations upon the variability of short term and
+individual growth and the stability of population derived parameters,
+<em>Annals of Human Biology</em>, 25:  359-395.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ramsay, James O., and Silverman, Bernard W. (2006), <em>Functional
+Data Analysis, 2nd ed.</em>, Springer, New York.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(infantGrowth)
+plot(tibiaLength~day, infantGrowth)
+</pre>
+
+
+</body></html>

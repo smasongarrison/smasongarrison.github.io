@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A simulated data set of lognormal data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fakeln"><tr><td>fakeln</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>A simulated data set of lognormal data</h2>
+
+<h3>Description</h3>
+
+<p>A simulated data set of lognormal data, could be concentrations 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(fakeln)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 32 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>Concmug</code></dt><dd><p>a numeric vector, serving as response variable</p>
+</dd>
+<dt><code>Treat</code></dt><dd><p>a factor with levels <code>N</code> <code>S</code> <code>Sa</code> <code>Sb</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(fakeln)
+boxplot(Concmug ~ Treat, data=fakeln)
+</pre>
+
+
+</body></html>

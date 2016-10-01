@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: California air polution data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calif.air.poll"><tr><td>calif.air.poll</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>California air polution data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>calif.air.poll</code> data frame has 345 sets
+of observations ozone level and meteorological variables
+in Upland, California, U.S.A., in 1976.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(calif.air.poll)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>ozone.level</dt><dd><p>Ozone concentration (ppm) at Sandburg Air Force Base.</p>
+</dd>
+<dt>daggett.pressure.gradient</dt><dd><p>Pressure gradient at Daggett, California.</p>
+</dd>
+<dt>inversion.base.height</dt><dd><p>Inversion base height, feet.</p>
+</dd>
+<dt>inversion.base.temp</dt><dd><p>Inversion base temperature, degrees Fahrenheit.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Brieman, L. and Friedman, J. (1985). Estimating optimal
+transformations for multiple regression and correlation
+(with discussion).
+<em>Journal of the American Statistical Association</em>,
+<b>80</b>, 580&ndash;619.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(calif.air.poll)
+pairs(calif.air.poll)
+</pre>
+
+
+</body></html>

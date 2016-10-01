@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Taxonomic Classification and Phylogeny of Dune Meadow Species</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for dune.taxon"><tr><td>dune.taxon</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Taxonomic Classification and Phylogeny of Dune Meadow Species</h2>
+
+<h3>Description</h3>
+
+<p>Classification table of the species in the <code>dune</code> data
+set.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+  data(dune.taxon)
+  data(dune.phylodis)
+</pre>
+
+
+<h3>Format</h3>
+
+<p><code>dune.taxon</code> is data frame with 30 species (rows) classified
+into five taxonomic levels (columns). <code>dune.phylodis</code> is a
+<code>dist</code> object of estimated coalescence ages extracted
+from <a href="http://datadryad.org/resource/doi:10.5061/dryad.63q27">http://datadryad.org/resource/doi:10.5061/dryad.63q27</a>
+(Zanne et al. 2014) using tools in packages <span class="pkg">ape</span> and
+<span class="pkg">phylobase</span>.
+</p>
+
+
+<h3>Details</h3>
+
+<p>The classification of vascular plants is based on APG (2009), and
+that of mosses on Hill et al. (2006).
+</p>
+
+
+<h3>References</h3>
+
+<p>APG [Angiosperm Phylogeny Group] (2009) An update of the Angiosperm
+Phylogeny Group classification for the orders and families of flowering
+plants: APG III. <em>Bot. J. Linnean Soc.</em> <strong>161</strong>: 105&ndash;121.
+</p>
+<p>Hill, M.O et al. (2006) An annotated checklist of the mosses of Europe
+and Macaronesia. <em>J. Bryology</em> <strong>28</strong>: 198&ndash;267.
+</p>
+<p>Zanne A.E., Tank D.C., Cornwell, W.K., Eastman J.M., Smith, S.A.,
+FitzJohn, R.G., McGlinn, D.J., O’Meara, B.C., Moles, A.T., Reich,
+P.B., Royer, D.L., Soltis, D.E., Stevens, P.F., Westoby, M., Wright,
+I.J., Aarssen, L., Bertin, R.I., Calaminus, A., Govaerts, R.,
+Hemmings, F., Leishman, M.R., Oleksyn, J., Soltis, P.S., Swenson,
+N.G., Warman, L. &amp; Beaulieu, J.M. (2014) Three keys to the radiation
+of angiosperms into freezing environments. <em>Nature</em> 506, 89&ndash;92.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Functions <code>taxondive</code>, <code>treedive</code>,
+and <code>treedist</code> use these data sets. </p>
+
+
+<h3>Examples</h3>
+
+<pre> 
+  data(dune.taxon) 
+  data(dune.phylodis)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Sample recording of SICM pipette breakage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for break.data"><tr><td>break.data</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Sample recording of SICM pipette breakage
+</h2>
+
+<h3>Description</h3>
+
+<p>Position and current data recorded using a scanning ion conductance microscope
+in hopping mode. An elevated fall rate drove the pipette to overshoot its detection
+range and collide with the cover slip surface and break, altering its resistance.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(break.data)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 9999 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>s</code></dt><dd><p>The time of each data point, in milliseconds from the start of the recording.</p>
+</dd>
+<dt><code>pA</code></dt><dd><p>The ion current passing through the pipette, in picoamps.</p>
+</dd>
+<dt><code>Z</code></dt><dd><p>The pipette position, in microns, recorded within the frame of reference of the SICM piezo actuator.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Caldwell, M., Del Linz, S. J. L., Smart, T. G. S. and Moss, G. W. J. 2012
+Method for estimating the tip geometry of scanning ion conductance microscope pipets.
+<em>Anal. Chem.</em> (in press)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(break.data)
+plot(pA ~ s, data=break.data, type="l")
+plot(Z ~ s, data=break.data, type="l")
+</pre>
+
+
+</body></html>

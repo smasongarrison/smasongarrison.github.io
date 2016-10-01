@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: LIDAR data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for lidar"><tr><td>lidar</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>LIDAR data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>lidar</code> data frame has 221 observations
+from a light detection and ranging (LIDAR) experiment.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(lidar)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>range</dt><dd><p>distance travelled before the light is reflected
+back to its source.</p>
+</dd>
+<dt>logratio</dt><dd><p>logarithm of the ratio of received light
+from two laser sources.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Sigrist, M. (Ed.) (1994). <em>Air Monitoring by 
+Spectroscopic Techniques</em> (Chemical Analysis Series, vol. 197).
+New York: Wiley.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ruppert, D., Wand, M.P. and Carroll, R.J. (2003)<br />
+<em>Semiparametric Regression</em> Cambridge University Press.<br />
+<a href="http://stat.tamu.edu/~carroll/semiregbook/">http://stat.tamu.edu/~carroll/semiregbook/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(lidar)
+attach(lidar)
+plot(range,logratio)
+</pre>
+
+
+</body></html>

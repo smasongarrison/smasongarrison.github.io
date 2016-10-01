@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Waiting Times between Strong Earthquakes in the Appennino...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for earthquakes"><tr><td>earthquakes</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Waiting Times between Strong Earthquakes in the Appennino Abruzzese</h2>
+
+<h3>Description</h3>
+
+<p>This data set gives the waiting times (in years) between earthquakes with moment maginitude
+greater than 5.1, in the Italian seismogenic zone 923, from year 1650 to year 2002, as obtained by La Rocca (2005)
+based on the catalogue by Gruppo di Lavoro CPTI (2004).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(earthquakes)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 47 observations on the following 2 variables:
+</p>
+
+<dl>
+<dt><code>ti</code></dt><dd><p>earthquake inter-event times (years)</p>
+</dd>
+<dt><code>ob</code></dt><dd><p>censoring indicators (0 = right censored, 1 = exact)</p>
+</dd>
+</dl>
+
+
+
+<h3>Note</h3>
+
+<p>All observations are exact, except for the last one (a characteristic of this kind of data).</p>
+
+
+<h3>Source</h3>
+
+<p>Gruppo di Lavoro CPTI (2004). Catalogo Parametrico dei Terremoti Italiani, versione 2004 (CPTI04).
+INGV, Bologna, <a href="http://emidius.mi.ingv.it/CPTI">http://emidius.mi.ingv.it/CPTI</a>. In Italian. 
+</p>
+
+
+<h3>References</h3>
+
+<p>Luca La Rocca (2005). On Bayesian Nonparametric Estimation of Smooth Hazard Rates with a View to Seismic Hazard Assessment.
+<em>Research Report n. 38-05</em>, Department of Social, Cognitive and Quantitative Sciences, Reggio Emilia, Italy.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>BayHaz-package</code></p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# load data set
+data(earthquakes)
+
+# show data set structure
+str(earthquakes)
+</pre>
+
+
+</body></html>

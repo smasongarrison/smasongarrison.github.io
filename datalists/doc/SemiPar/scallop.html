@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Scallop abundance data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for scallop"><tr><td>scallop</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Scallop abundance data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>scallop</code> data frame has 148 triplets
+concerning scallop abundance; based
+on a 1990 survey cruise in the Atlantic continental
+shelf off Long Island, New York, U.S.A.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(scallop)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>latitude</dt><dd><p>degrees latitude (north of the Equator).</p>
+</dd>
+<dt>longitude</dt><dd><p>degrees longitude (west of Greenwich).</p>
+</dd>
+<dt>tot.catch</dt><dd><p>size of scallop catch at location specified
+by &quot;latitude&quot; and &quot;longitude&quot;.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Ecker, M.D. and Heltshe, J.F. (1994).
+Geostatistical estimates of scallop abundance.
+In <em>Case Studies in Biometry.</em> 
+Lange, N., Ryan, L., Billard, L., Brillinger, D.,
+Conquest, L. and Greenhouse, J. (eds.)
+New York: John Wiley &amp; Sons, 107-124.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ruppert, D., Wand, M.P. and Carroll, R.J. (2003)<br />
+<em>Semiparametric Regression</em> Cambridge University Press.<br />
+<a href="http://stat.tamu.edu/~carroll/semiregbook/">http://stat.tamu.edu/~carroll/semiregbook/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(scallop)
+pairs(scallop)
+</pre>
+
+
+</body></html>

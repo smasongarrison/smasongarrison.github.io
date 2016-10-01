@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Copper data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for copper"><tr><td>copper</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Copper data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>copper</code> data frame has 442 sets
+of observations from a simulation based on a stockpile
+of mined material in the former Soviet Union. Boreholes
+have been drilled into the dump. The drill core
+is cut every 5 metres and assayed for copper and cobalt
+content in percentage by weight.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(copper)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>sample.num</dt><dd><p>sample number.</p>
+</dd>
+<dt>id</dt><dd><p>sample identification number.</p>
+</dd>
+<dt>zone</dt><dd><p>zone code.</p>
+</dd>
+<dt>xcoord</dt><dd><p>x co-ordinate.</p>
+</dd>
+<dt>ycoord</dt><dd><p>y co-ordinate.</p>
+</dd>    
+<dt>zcoord</dt><dd><p>z co-ordinate.</p>
+</dd>    
+<dt>grade</dt><dd><p>grade measurement.</p>
+</dd>    
+<dt>core.length</dt><dd><p>percentage of copper.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Clark, I. and Harper, W.V. (2000). 
+<em>Practical Geostatistics 2000</em>.
+Columbus, Ohio: Ecosse North America Llc.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(copper)
+pairs(copper[,4:7])
+</pre>
+
+
+</body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Sitka spruce data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sitka"><tr><td>sitka</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Sitka spruce data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>sitka</code> data frame contains measurements
+of log-size for 79 Sitka spruce trees grown in normal
+or ozone-enriched environments. Within each year, the
+data are organised in four blocks, corresponding to
+four controlled environment chambers. The first
+two chambers, containing 27 trees each, have
+an ozone-enriched atmosphere, the remaining two,
+containing 12 and 13 trees respectively, have a normal
+(control) atmosphere.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(sitka)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>id.num</dt><dd><p>identification number of tree.</p>
+</dd>
+<dt>order</dt><dd><p>time order ranking within each tree.</p>
+</dd>
+<dt>days</dt><dd><p>time in days since 1st January, 1988.</p>
+</dd>
+<dt>log.size</dt><dd><p>tree size measured on a logarithmic scale.</p>
+</dd>
+<dt>ozone</dt><dd><p>indicator ozone treatment: 0=control,1=ozone.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Diggle, P.J., Heagerty, P., Liang, K.-Y. and Zeger, S.L. (2002).
+<em>Analysis of Longitudinal Data, Second Edition</em>, Oxord: Oxford
+University Press.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ruppert, D., Wand, M.P. and Carroll, R.J. (2003)<br />
+<em>Semiparametric Regression</em> Cambridge University Press.<br />
+<a href="http://stat.tamu.edu/~carroll/semiregbook/">http://stat.tamu.edu/~carroll/semiregbook/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(sitka)
+attach(sitka)
+library(lattice)
+ozone.char &lt;- rep("control",nrow(sitka))
+ozone.char[ozone==1] &lt;- "ozone"
+xyplot(log.size~days|ozone.char,data=sitka,groups=id.num,type="b")
+</pre>
+
+
+</body></html>

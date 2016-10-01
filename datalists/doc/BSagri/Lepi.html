@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Insect counts of 12 Species</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Lepi"><tr><td>Lepi</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Insect counts of 12 Species</h2>
+
+<h3>Description</h3>
+
+<p>Simulated data, inpired by a real field investigating the potential impact of genetically modified crop
+on several insect species belonging to the same order. The trial was designed as a randomized complete block design with 8 blocks
+(Block), and a total of 24 plots. In each block, three treatments (Treatment) were randomized:
+a conventional variety treated with insecticides (Ins), a genetically modified variety (GM) without insecticide treatment,
+and the near-isogenic variety (Iso) the to genetically modified variety, without insecticide treatment.
+Individuals were counted (after classification to the species level) in two different dates in each year of the trial, where the the second date
+was of higher importance for assessment of impacts of GM variety on non-target species. In total 12 Species were observed during the trial.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Lepi)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 144 observations on the following 17 variables.
+</p>
+
+<dl>
+<dt><code>Year</code></dt><dd><p>a numeric vector, the year 1, 2, 3</p>
+</dd>
+<dt><code>Date</code></dt><dd><p>a numeric vector, 1 and 2 separating the 2 sampling date in each year </p>
+</dd>
+<dt><code>Block</code></dt><dd><p>a numeric vector, with values 1-8, indicator variable for the 8 blocks</p>
+</dd>
+<dt><code>Treatment</code></dt><dd><p>a factor with three levels identifying the varieties: <code>GM</code> is the genetically modified variety,
+<code>Ins</code> the conventional variety with insecticide treatment and <code>Iso</code> the near isognic line without insecticide treatment</p>
+</dd>
+<dt><code>Plot</code></dt><dd><p>a factor with 24 levels, identifying the individual plots</p>
+</dd>
+<dt><code>Sp1</code></dt><dd><p>counts of taxon 1</p>
+</dd>
+<dt><code>Sp2</code></dt><dd><p>counts of taxon 2</p>
+</dd>
+<dt><code>Sp3</code></dt><dd><p>counts of taxon 3</p>
+</dd>
+<dt><code>Sp4</code></dt><dd><p>counts of taxon 4</p>
+</dd>
+<dt><code>Sp5</code></dt><dd><p>counts of taxon 5</p>
+</dd>
+<dt><code>Sp6</code></dt><dd><p>counts of taxon 6</p>
+</dd>
+<dt><code>Sp7</code></dt><dd><p>counts of taxon 7</p>
+</dd>
+<dt><code>Sp8</code></dt><dd><p>counts of taxon 8</p>
+</dd>
+<dt><code>Sp9</code></dt><dd><p>counts of taxon 9</p>
+</dd>
+<dt><code>Sp10</code></dt><dd><p>counts of taxon 10</p>
+</dd>
+<dt><code>Sp11</code></dt><dd><p>counts of taxon 11</p>
+</dd>
+<dt><code>Sp12</code></dt><dd><p>counts of taxon 12</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Simulated data.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(Lepi)
+
+str(Lepi)
+
+summary(Lepi)
+
+SPEC&lt;-names(Lepi)[-(1:5)]
+
+# Occurrence
+
+occur&lt;-lapply(X=Lepi[,SPEC], FUN=function(x){length(which(x&gt;0))})
+
+unlist(occur)
+
+# Species with reasonable occurence in the whole data:
+
+SPEC2&lt;-SPEC[c(1,2,3,6,8,9,11)]
+
+pairs(Lepi[,SPEC2])
+
+# 
+
+
+layout(matrix(1:2, ncol=1 ))
+par(mar=c(2,8,2,1))
+
+boxplot(Sp2 ~ Treatment*Year, data=Lepi, main="Species 2",
+ las=1, horizontal=TRUE, col=c("red","white","white"))
+
+boxplot(Sp3 ~ Treatment*Year, data=Lepi, main="Species 3",
+ las=1, horizontal=TRUE, col=c("red","white","white"))
+
+
+</pre>
+
+
+</body></html>

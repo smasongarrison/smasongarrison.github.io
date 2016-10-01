@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Alzheimer's disease neuropsychometric marker dataset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for AL"><tr><td>AL</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Alzheimer's disease neuropsychometric marker dataset
+</h2>
+
+<h3>Description</h3>
+
+<p>The dataset is a subset of the longitudinal cohort of Washington University (WU)
+Alzheimer's Disease Research Center (ADRC). In the AL dataset, measurements of 14 neuropsychological markers
+were collected on 118 independent individuals of age 75. The individuals were classified into 3 groups based on
+publsihed clinical demential rating (CDR).   
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(AL)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 118 observations on the following 15 variables.
+</p>
+
+<dl>
+<dt><code>group</code></dt><dd><p>a factor with levels <i>D^-</i>, <i>D^0</i>
+<i>D^+</i>, the <i>D^-</i> group has CDR (clinical demential
+rating)=0, i.e., no dementia group; the <i>D^0</i> group has
+CDR=0.5, i.e., mild dementia and the <i>D^+</i> group has CDR=1,
+Alzheimer's disease. 
+</p>
+</dd>
+<dt><code>FACTOR1</code></dt><dd><p>a numeric vector, measurements on the
+neuropsychometric test for &ldquo;global factor&rdquo;.</p>
+</dd> 
+<dt><code>ktemp</code></dt><dd><p>a numeric vector, measurements on the
+neuropsychometric test for &ldquo;temporal factor&rdquo;.</p>
+</dd>
+<dt><code>kpar</code></dt><dd><p>a numeric vector, measurements on the
+neuropsychometric test for &ldquo;parietal factor&rdquo;.</p>
+</dd>
+<dt><code>kfront</code></dt><dd><p>a numeric vector, measurements on the
+neuropsychometric test for &ldquo;frontal factor&rdquo;.</p>
+</dd> 
+<dt><code>zpsy004</code></dt><dd><p>a numeric vector, measurements on the
+neuropsychometric test for &ldquo;longical memory&rdquo;.</p>
+</dd>
+<dt><code>zpsy005</code></dt><dd><p>a numeric vector, measurements on the
+neuropsychometric test for &ldquo;digital span forward&rdquo;.</p>
+</dd>
+<dt><code>zpsy006</code></dt><dd><p>a numeric vector, measurements on the
+neuropsychometric test for &ldquo;digital span backward&rdquo;.</p>
+</dd> 
+<dt><code>zinfo</code></dt><dd><p>a numeric vector, measurements on the
+neuropsychometric test for &ldquo;information&rdquo;.</p>
+</dd> 
+<dt><code>zbentc</code></dt><dd><p>a numeric vector, measurements on the
+neuropsychometric test for &ldquo;visual retention (10s)&rdquo;.</p>
+</dd>
+<dt><code>zbentd</code></dt><dd><p>a numeric vector, measurements on the
+neuropsychometric test for &ldquo;visual retention (copy)&rdquo;.</p>
+</dd> 
+<dt><code>zboston</code></dt><dd><p>a numeric vector,a numeric vector,
+measurements on the neuropsychometric test for &ldquo;boston
+naming&rdquo;.</p>
+</dd> 
+<dt><code>zmentcon</code></dt><dd><p>a numeric vector,measurements on the
+neuropsychometric test for &ldquo;mental control&rdquo;.</p>
+</dd>
+<dt><code>zworflu</code></dt><dd><p>a numeric vector,measurements on the
+neuropsychometric test for &ldquo;word fluency&rdquo;.</p>
+</dd>
+<dt><code>zassc</code></dt><dd><p>a numeric vector,measurements on the
+neuropsychometric test for &ldquo;associate learning&rdquo;.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>See references for more details on the explanation of the 14 markers
+and scoring details.  
+</p>
+
+
+<h3>Source</h3>
+
+<p>Xiong, C. and van Belle, G. and Miller, J.P. and Morris, J.C. (2006)
+Measuring and Estimating Diagnostic Accuracy When There 
+Are Three Ordinal Diagnostic Groups. <em>Statistics In Medicine</em> <b>25</b>
+7 1251&ndash;1273.
+</p>
+<p>Sorandt M, Hill RD. (1989) Very mild snile dementia of the Alzheimer type. II
+Psychometric test performance. <em>Archives of Neurology</em> <b>46</b> 383&ndash;386. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+    data(AL)
+
+    ## maybe str(AL) ; plot(AL);  ...
+</pre>
+
+
+</body></html>

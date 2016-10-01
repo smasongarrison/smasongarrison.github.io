@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Daily Returns of Three Stocks in the Dow Jones</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for rdj"><tr><td>rdj</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Daily Returns of Three Stocks in the Dow Jones</h2>
+
+<h3>Description</h3>
+
+<p>Five years of daily log-returns (from 1996 to 2000) of Intel
+(INTC), Microsoft (MSFT) and General Electric (GE) stocks. These
+data were analysed in Chapter 5 of McNeil, Frey and
+Embrechts (2005).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(rdj)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame of 1262 daily log-returns from 1996 to 2000.
+</p>
+
+<dl>
+<dt><code>Date</code></dt><dd><p>the date, of class <code>"Date"</code>.</p>
+</dd>
+<dt><code>INTC</code></dt><dd><p>daily log-return of the Intel stock</p>
+</dd>
+<dt><code>MSFT</code></dt><dd><p>daily log-return of the Microsoft stock</p>
+</dd>
+<dt><code>GE</code></dt><dd><p>daily log-return of the General Electric</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>McNeil, A. J., Frey, R., and Embrechts, P. (2005).
+<em>Quantitative Risk Management: Concepts, Techniques, Tools</em>.
+Princeton University Press.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(rdj)
+str(rdj)# 'Date' is of class "Date"
+
+with(rdj, {
+   matplot(Date, rdj[,-1], type = "o", xaxt = "n", ylim = .15* c(-1,1),
+           main = paste("rdj - data;  n =", nrow(rdj)))
+   Axis(Date, side=1)
+})
+legend("top", paste(1:3, names(rdj[,-1])), col=1:3, lty=1:3, bty="n")
+
+
+x &lt;- rdj[, -1] # '-1' : not the Date
+## a t-copula (with a vague inital guess of Rho entries)
+tCop &lt;- tCopula(rep(.2, 3), dim=3, dispstr="un", df=10, df.fixed=TRUE)
+ft &lt;- fitCopula(tCop, data = pobs(x))
+ft
+ft@copula # the fitted t-copula as tCopula object
+system.time(
+g.C &lt;- gofCopula(claytonCopula(dim=3), as.matrix(x), simulation = "mult")
+) ## 5.3 sec
+system.time(
+g.t &lt;- gofCopula(ft@copula, as.matrix(x), simulation = "mult")
+) ## 8.1 sec
+
+
+</pre>
+
+
+</body></html>

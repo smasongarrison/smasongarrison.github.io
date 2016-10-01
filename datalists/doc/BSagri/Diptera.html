@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Soil eklektor data for some families of Diptera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Diptera"><tr><td>Diptera</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>  Soil eklektor data for some families of Diptera</h2>
+
+<h3>Description</h3>
+
+<p>Hatching of some families of Diptera was recorded in summer 2005 using eklektors covering 2 square meters
+of soil surface each. A total of 32 eklektors were arranged in a randomized field trial. Total counts of
+individuals over the whole season are reported. Aim was to assess the impact of a novel treatment on the abundance of
+Diptera with larval development in the soil, compared to three standard treatments.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Diptera)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 32 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>Callip</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Chloro</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Ephyd</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Droso</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Ges</code></dt><dd><p>a numeric vector, total number of species</p>
+</dd>
+<dt><code>Chiro</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Treatment</code></dt><dd><p>a factor, specifying the four different treatments,
+with levels <code>S1</code> <code>S2</code> for two standard treatments, <code>SNovum</code> for the standard treatment most similar to the novel treatment, and <code>Novum</code>, for the novel treatment</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>personal communications S. Prescher, JKI Braunschweig, Germany
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Diptera)
+
+
+layout(matrix(1:6, nrow=3))
+
+boxplot(Callip~Treatment, data=Diptera, horizontal=TRUE, las=1,
+ main="Abundanz Callip", col=c("white","white","blue","red"))
+
+boxplot(Chloro~Treatment, data=Diptera, horizontal=TRUE, las=1,
+ main="Abundanz Chloro", col=c("white","white","blue","red"))
+
+boxplot(Ephyd~Treatment, data=Diptera, horizontal=TRUE, las=1,
+ main="Abundanz Ephyd", col=c("white","white","blue","red"))
+
+boxplot(Droso~Treatment, data=Diptera, horizontal=TRUE, las=1,
+ main="Abundanz Droso", col=c("white","white","blue","red"))
+
+boxplot(Chiro~Treatment, data=Diptera, horizontal=TRUE, las=1,
+ main="Abundanz Chiro", col=c("white","white","blue","red"))
+
+boxplot(Ges~Treatment, data=Diptera, horizontal=TRUE, las=1,
+ main="Abundanz all Diptera", col=c("white","white","blue","red"))
+
+
+</pre>
+
+
+</body></html>

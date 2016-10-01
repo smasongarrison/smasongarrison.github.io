@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lip motion</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for lip"><tr><td>lip</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Lip motion
+</h2>
+
+<h3>Description</h3>
+
+<p>51 measurements of the position of the lower lip every 7 milliseconds
+for 20 repitions of the syllable 'bob'.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+lip
+lipmarks
+liptime
+</pre>
+
+
+<h3>Format</h3>
+
+
+<ul>
+<li><p>lip
+a matrix of dimension c(51, 20) giving the position of the lower
+lip every 7 milliseconds for 350 miliseconds.
+
+</p>
+</li>
+<li><p>lipmarks
+a matrix of dimension c(20, 2) giving the positions of the
+'leftElbow' and 'rightElbow' in each of the 20 repitions of the
+syllable 'bob'.
+
+</p>
+</li>
+<li><p>liptime
+time in seconds from the start = seq(0, 0.35, 51) = every 7
+milliseconds.
+
+</p>
+</li></ul>
+
+
+
+<h3>Details</h3>
+
+<p>These are rather simple data, involving the movement of the lower lip
+while saying &quot;bob&quot;.  There are 20 replications and 51 sampling points.
+The data are used to illustrate two techniques:  landmark registration
+and principal differental analysis.
+Principal differential analysis estimates a linear differential equation
+that can be used to describe not only the observed curves, but also a
+certain number of their derivatives.
+For a rather more elaborate example of principal differential analysis,
+see the handwriting data.
+</p>
+<p>See the <code>lip</code> <code>demo</code>.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Ramsay, James O., and Silverman, Bernard W. (2006), <em>Functional
+Data Analysis, 2nd ed.</em>, Springer, New York, sections 19.2 and
+19.3.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+#  See the lip demo.
+</pre>
+
+
+</body></html>

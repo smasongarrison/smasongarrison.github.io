@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: LOSS and ALAE Insurance Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for loss"><tr><td>loss</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>LOSS and ALAE Insurance Data</h2>
+
+<h3>Description</h3>
+
+<p>Indemnity payment and allocated loss adjustment expense from an insurance
+company.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(loss)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1500 observations of the following 4 variables:
+</p>
+
+<dl>
+<dt><code>loss</code></dt><dd><p>a numeric vector of loss amount up to the <code>limit</code>.</p>
+</dd>
+<dt><code>alae</code></dt><dd><p>a numeric vector of the corresponding allocated loss
+adjustment expense.</p>
+</dd>
+<dt><code>limit</code></dt><dd><p>a numeric vector of limit (-99 means no limit).</p>
+</dd>
+<dt><code>censored</code></dt><dd><p>1 means censored (limit reached) and 0 otherwise.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Frees, E. and Valdez, E. (1998). Understanding relationships using
+copulas. <em>North American Actuarial Journal</em> <b>2</b>, 1&ndash;25.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(loss)
+</pre>
+
+
+</body></html>

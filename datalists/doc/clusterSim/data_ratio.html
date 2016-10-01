@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ratio data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for data_ratio"><tr><td>data_ratio</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Ratio data</h2>
+
+<h3>Description</h3>
+
+<p>Artificially generated ratio data</p>
+
+
+<h3>Format</h3>
+
+<p>data.frame: 75 objects, 5 variables, 5-class structure</p>
+
+
+<h3>Source</h3>
+
+<p>Artificially generated data</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(clusterSim)
+data(data_ratio)
+c &lt;- pam(data_ratio,10)
+index.G1(data_ratio, c$clustering)
+</pre>
+
+
+</body></html>

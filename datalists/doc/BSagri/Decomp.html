@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A simulated data set</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Decomp"><tr><td>Decomp</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> A simulated data set</h2>
+
+<h3>Description</h3>
+
+<p>A simulated data set, resembling an experiment on the decomposition
+of plant material from four different varieties in soil.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Decomp)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1152 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>Block</code></dt><dd><p>a numeric vector, giving the names of the Blocks</p>
+</dd>
+<dt><code>PID</code></dt><dd><p>a numeric vector, giving the the number of the experimental unit</p>
+</dd>
+<dt><code>Variety</code></dt><dd><p>a factor with levels <code>N</code> <code>S1</code> <code>S2</code> <code>S3</code>, specifying the variety assigned to the experimental unit, randomized within each Block</p>
+</dd>
+<dt><code>Time</code></dt><dd><p>a factor with levels <code>t1</code> <code>t2</code> <code>t3</code> <code>t4</code> <code>t5</code> <code>t6</code>, specifying time points at which measurements were taken</p>
+</dd>
+<dt><code>Perc</code></dt><dd><p>a numeric vector, giving the percentage of material</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The experiment is a randomized complete block design, with repeated measurements within each experimental unit and additional subsamplings within each time point.
+Plant material from four different varieties was deposited in bags in soil of 32 experimental units (coded by the variable PID), where the varieties had been grown in the vegetation period before. A total number of 36 bags was placed in each experimental unit.
+At six different time points, plant material was excavated and the content of the bags was analysed concerning the percentage of decomposition relative to the content at the begin of the experiment.
+At each time point, six bags were excavated at each experimental unit. Some bags could not be found anymore (data missing).
+The objective was to assess whether properties of the varieties obstruct the decompostion of plant material in the soil. The variety <code>N</code> is of special interest, while the varieties <code>S1</code>, <code>S2</code>, <code>S3</code> are standard varieties.  
+</p>
+<p>Note, that this data set merely serves as an example to evaluate clustered data. Neither in the mean effects nor in the actual data points it does resemble a true experiment!
+</p>
+
+
+<h3>Source</h3>
+
+<p>Simulated.
+</p>
+
+
+<h3>References</h3>
+
+<p>Resembling the experimental structure of an experiment performed by Sabine Prescher (JKI Braunschweig).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Decomp)
+
+</pre>
+
+
+</body></html>

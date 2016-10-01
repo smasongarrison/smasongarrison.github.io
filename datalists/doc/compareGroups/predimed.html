@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: PREDIMED randomized trial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for predimed"><tr><td>predimed</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+PREDIMED randomized trial
+</h2>
+
+<h3>Description</h3>
+
+<p>The PREDIMED trial (Prevención con Dieta Mediterránea) is a randomized, parallel and multicentric cohort with more than 7,000 participants who were randomly assigned to three diet groups (olive oil + mediterranean diet, nuts + mediterranean diet, and low-fat diet -control group-) and followed-up during more than 7 years.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(predimed)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 6324 observations on the following 15 variables:
+</p>
+
+<dl>
+<dt><code>group</code></dt><dd><p>a factor with levels <code>Control</code> <code>MedDiet + Nuts</code> <code>MedDiet + VOO</code>. Intervention group.</p>
+</dd>             
+<dt><code>sex</code></dt><dd><p>a factor with levels <code>Male</code> <code>Female</code>.Sex.</p>
+</dd>                            
+<dt><code>age</code></dt><dd><p>Age.</p>
+</dd>                            
+<dt><code>smoke</code></dt><dd><p>a factor with levels <code>Never</code> <code>Current</code> <code>Former</code>.Smoking.</p>
+</dd>                        
+<dt><code>bmi</code></dt><dd><p>Body mass index.</p>
+</dd>                
+<dt><code>waist</code></dt><dd><p>Waist circumference.</p>
+</dd>            
+<dt><code>wth</code></dt><dd><p>Waist-to-height ratio.</p>
+</dd>          
+<dt><code>htn</code></dt><dd><p>a factor with levels <code>No</code> <code>Yes</code>.Hypertension.</p>
+</dd>                   
+<dt><code>diab</code></dt><dd><p>a factor with levels <code>No</code> <code>Yes</code> .Type-2 diabetes.</p>
+</dd>                
+<dt><code>hyperchol</code></dt><dd><p>a factor with levels <code>No</code> <code>Yes</code>.Dyslipidemia.</p>
+</dd>                   
+<dt><code>famhist</code></dt><dd><p>a factor with levels <code>No</code> <code>Yes</code>.Family history of premature CHD.</p>
+</dd>
+<dt><code>hormo</code></dt><dd><p>a factor with levels <code>No</code> <code>Yes</code>.Hormone-replacement therapy.</p>
+</dd>    
+<dt><code>p14</code></dt><dd><p>MeDiet Adherence score.</p>
+</dd>         
+<dt><code>toevent</code></dt><dd><p>follow-up to main event (years).</p>
+</dd>
+<dt><code>event</code></dt><dd><p>a factor with levels <code>No</code> <code>Yes</code>.AMI, stroke, or CV Death.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Participants of PREDIMED study were recruited in 2003 and were revisited anually until 2010. In each visit, a large variety of different information was collected: antropometric (body mass index, age, ...), blood samples (Total cholesterol, HDL cholesterol, ...), dietary pattern consumtion using validated questionaries, treatments, etc. Also, cardiovascular events were recorded during the follow-up period.
+At recruitment period, each participant was assigned to each of the three diet type group. Periodically (every 6-months approximately),  participants were advised to follow the diet corresponding to their group.
+To build this example data set approx 85% of original participants were randomly selected. For more information about this data set, see the vignette.
+</p>
+
+
+<h3>Source</h3>
+
+<p>For more information about the study these data come from, visit <code>http://predimed.onmedic.net/</code>.
+</p>
+
+
+<h3>References</h3>
+
+<p>Estruch R, Ros E, Salas-Salvadó J, Covas MI, Corella D, Arós F, Gómez-Gracia E, Ruiz-Gutiérrez V, Fiol M, Lapetra J, Lamuela-Raventos RM, Serra-Majem L, Pintó X, Basora J, Muñoz MA, Sorlí JV, Martínez JA, Martínez-González MA; PREDIMED Study Investigators (2013). Primary prevention of cardiovascular disease with a Mediterranean diet. New England Journal of Medicine 368(14): 1279-1290.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(compareGroups)
+data(predimed)
+summary(predimed)
+</pre>
+
+
+</body></html>

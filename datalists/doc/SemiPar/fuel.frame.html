@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Automobile data from consumer reports</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fuel.frame"><tr><td>fuel.frame</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Automobile data from consumer reports</h2>
+
+<h3>Description</h3>
+
+<p>The <code>fuel.frame</code> data frame contains data on 
+5 variables (columns) for 117 cars (rows).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(fuel.frame)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>car.name</dt><dd><p>character variable giving the name (make) of the car</p>
+</dd>
+<dt>Weight</dt><dd><p>the weight of the car in pounds.</p>
+</dd>
+<dt>Disp.</dt><dd><p>the engine displacement in litres.</p>
+</dd>
+<dt>Mileage</dt><dd><p>gas mileage in miles/gallon.</p>
+</dd>    
+<dt>Fuel</dt><dd><p>a derived variable concerning fuel efficiency.</p>
+</dd>
+<dt>Type</dt><dd><p>a factor giving the general type of car. 
+The levels are: Small ,Sporty , Compact , 
+Medium , Large , Van.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Consumer Reports, April, 1990, pp. 235-288.
+</p>
+
+
+<h3>References</h3>
+
+<p>Chambers, J.M. and Hastie, T.J. (eds.) (1992)<br />
+<em>Statistical Models in S</em>.<br />
+Wadsworth and Brooks, Pacific Grove, California.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(fuel.frame)
+pairs(fuel.frame)
+par(mfrow=c(2,2))
+fuel.fit &lt;- lm(Fuel ~ Weight + Disp.,fuel.frame)
+plot(fuel.fit,ask=FALSE)
+par(mfrow=c(1,1))
+</pre>
+
+
+</body></html>

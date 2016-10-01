@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Onions data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for onions"><tr><td>onions</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Onions data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>onions</code> data frame contains 84 sets of observations
+from an experiment involving the production of white Spanish onions
+in two South Australian locations.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(onions)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>dens</dt><dd><p>areal density of plants (plants per square metre)</p>
+</dd>
+<dt>yield</dt><dd><p>onion yield (grammes per plant).</p>
+</dd>
+<dt>location</dt><dd><p>indicator of location: 0=Purnong Landing, 1=Virginia.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Ratkowsky, D. A. (1983).
+<em>Nonlinear Regression Modeling: A Unified Practical Approach.</em>
+New York: Marcel Dekker.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ruppert, D., Wand, M.P. and Carroll, R.J. (2003)<br />
+<em>Semiparametric Regression</em> Cambridge University Press.<br />
+<a href="http://stat.tamu.edu/~carroll/semiregbook/">http://stat.tamu.edu/~carroll/semiregbook/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(onions)
+attach(onions)
+points.cols &lt;- c("red","blue")
+plot(dens,yield,col=points.cols[location+1],pch=16)
+legend(100,250,c("Purnong Landing","Virginia"),col=points.cols,pch=rep(16,2))
+</pre>
+
+
+</body></html>

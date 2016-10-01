@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Monthly shipments of bottles of champagne for the period...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for champa.ts"><tr><td>champa.ts</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Monthly shipments of bottles of champagne for the period 2001-2010</h2>
+
+<h3>Description</h3>
+
+<p>The file &quot;/import/champagne_2001.txt&quot; contains monthly total shipping of 75 cl bottles of Champagne wine, in the world. 2001-2010. 
+</p>
+
+
+<h3>Format</h3>
+
+<p>The series first is imported as a vector of numeric type with function <code>scan</code>
+and then transformed into a <code>ts</code> object. Is is then converted in 1,000 of bottles.</p>
+
+
+<h3>Source</h3>
+
+<p>SRISE-DRAAF Champagne-Ardenne</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data("champa.ts")
+# The executed code is : 
+## Not run: 
+aa &lt;- scan(system.file("/import/champagne_2001.txt", package = "caschrono"))
+champa.ts &lt;- ts(aa/1000, start = c(2001,1), frequency = 12)
+## End(Not run)
+</pre>
+
+
+</body></html>

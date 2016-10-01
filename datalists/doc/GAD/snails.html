@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dataset - Growth rates of snails on large boulders on...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for snails"><tr><td>snails</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Dataset - Growth rates of snails on large boulders on different rock shores.
+</h2>
+
+<h3>Description</h3>
+
+<p>This design was extracted from Underwood (1997) but data are artificial. Snails were transplanted from origin to different shores. Several boulders were used on each shore. Cages with snail of each origin on each boulder were replicated. All factors (origin, shore, boulder and cage) are random.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(snails)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 240 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>origin</code></dt><dd><p>a random factor with levels <code>O1</code> <code>O2</code></p>
+</dd>
+<dt><code>shore</code></dt><dd><p>a random factor with levels <code>S1</code> <code>S2</code> <code>S3</code> <code>S4</code> orthogonal to origin</p>
+</dd>
+<dt><code>boulder</code></dt><dd><p>a random factor with levels <code>B1</code> <code>B2</code> <code>B3</code> nested in shore</p>
+</dd>
+<dt><code>cage</code></dt><dd><p>a random factor with levels <code>C1</code> <code>C2</code> nested in the combination of boulder and origin</p>
+</dd>
+<dt><code>replicate</code></dt><dd><p>Sample size</p>
+</dd>
+<dt><code>growth</code></dt><dd><p>response variable</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Underwood, A.J. 1997. <em>Experiments in Ecology: Their Logical Design and Interpretation Using Analysis of Variance.</em> Cambridge University Press, Cambridge.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(snails)
+</pre>
+
+
+</body></html>

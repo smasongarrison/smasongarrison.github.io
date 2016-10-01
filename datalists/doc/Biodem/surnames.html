@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Surname frequency table</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for surnames"><tr><td>surnames</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Surname frequency table </h2>
+
+<h3>Description</h3>
+
+<p>A surname frequency table, with 3 populations and 5 surnames.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(surnames)</pre>
+
+
+<h3>Format</h3>
+
+<p>A 5 rows by 3 columns dataset 
+</p>
+
+
+<h3>Details</h3>
+
+<p>Surname frequency tables are the argument needed in all the surname-based inter-population analysis functions (e.g. &quot;lasker&quot;, &quot;hedrick&quot;, &quot;uri&quot;, etc.).
+Surname frequency tables can be generated from marriage and marriage-like data (e.g. data that contain couples of related surnames) using the &quot;sur.freq&quot; function. 
+In order to generate surname frequency tables from other surname sources (e.g. telephone directories, registers of voters, etc.) see the example in this help page.
+To import correctly surnames data bases in R see the &quot;valley&quot; dataset help page.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Alessio Boattini. Dummy dataset generated for testing and example purposes
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(surnames)
+
+# NB. How did we produce the "surnames" dataset?
+# the original data (an hypothetic list of surnames)
+# were arranged as:
+
+#  YEAR POP SURNAME
+#  1901   3  FABBRI
+#  1901   3  VITALI
+#  1901   2   LIPPI
+#  1901   2  FABBRI
+#  1901   2   NARDI
+#  1901   2   NARDI
+#  1901   1  ANGELI
+#  1902   1  ANGELI
+#  1902   2  VITALI
+#  1902   2   LIPPI
+#  1902   1   LIPPI
+#  1902   1   LIPPI
+#  1902   3  VITALI
+#  1902   3  FABBRI
+#  1902   2  FABBRI
+#  1904   2   NARDI
+#  1904   2   NARDI
+#  1904   2   LIPPI
+#  1905   1  VITALI
+#  1905   1  FABBRI
+#  1905   3  FABBRI
+#  1905   3  ANGELI
+#  1905   2   LIPPI
+#  1905   2   NARDI
+#  1905   3   NARDI
+#  1905   3   NARDI
+
+#       ..........
+
+# This arrangement does not necessarily reflect
+# the way other people would arrange their data. 
+# The "surnames" dataset was generated using
+# the "table" function as follows:
+
+# table(data$SURNAME,data$POP)
+</pre>
+
+
+</body></html>

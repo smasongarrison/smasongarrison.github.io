@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pig weight data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for pig.weights"><tr><td>pig.weights</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Pig weight data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>pig.weights</code> data frame has 9 repeated 
+weight measures on 48 pigs. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(pig.weights)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>id.num</dt><dd><p>identification number of pig.</p>
+</dd>
+<dt>num.weeks</dt><dd><p>number of weeks since measurements commenced.</p>
+</dd>
+<dt>weight</dt><dd><p>bodyweight of pig &quot;id.num&quot; after &quot;num.weeks&quot; weeks.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Diggle, P.J., Heagerty, P., Liang, K.-Y. and Zeger, S.L. (2002).
+<em>Analysis of Longitudinal Data, Second Edition</em>, Oxord: Oxford
+University Press.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ruppert, D., Wand, M.P. and Carroll, R.J. (2003)<br />
+<em>Semiparametric Regression</em> Cambridge University Press.<br />
+<a href="http://stat.tamu.edu/~carroll/semiregbook/">http://stat.tamu.edu/~carroll/semiregbook/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(pig.weights)
+library(lattice)
+xyplot(weight~num.weeks,data=pig.weights,groups=id.num,type="b")
+</pre>
+
+
+</body></html>

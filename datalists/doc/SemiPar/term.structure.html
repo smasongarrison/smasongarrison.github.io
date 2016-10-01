@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Term structure data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for term.structure"><tr><td>term.structure</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Term structure data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>term.structure</code> data frame has 117 
+observations on the prices of U.S. STRIPS 
+(Separate Trading on Registered Interest and 
+Principal of Securities) on December 31, 1995.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(term.structure)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>time.to.maturity</dt><dd><p>time in years between 31st December, 1995, 
+and the date on which the STRIPS matures.</p>
+</dd>
+<dt>price</dt><dd><p>price of the STRIPS as a percent of par.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>University of Houston Fixed Income Database.
+</p>
+
+
+<h3>References</h3>
+
+<p>Jarrow, R., Ruppert, D., and Yu, Y. (2004).
+Estimating the term structure of corporate debt 
+with a semiparametric penalized spline model, 
+<em>Journal of the American Statistical Association</em>,
+<b>99</b>, 57-66. 
+</p>
+<p>Ruppert, D., Wand, M.P. and Carroll, R.J. (2003)<br />
+<em>Semiparametric Regression</em> Cambridge University Press.<br />
+<a href="http//stat.tamu.edu/~carroll/semiregbook/">http//stat.tamu.edu/~carroll/semiregbook/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(term.structure)
+attach(term.structure)
+plot(time.to.maturity,price)
+</pre>
+
+
+</body></html>

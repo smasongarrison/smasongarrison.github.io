@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ragweed data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ragweed"><tr><td>ragweed</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Ragweed data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>ragweed</code> data frame has data on ragweed levels
+and meteorological variables for 335 days in Kalamazoo,
+Michigan, U.S.A.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ragweed)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>ragweed</dt><dd><p>ragweed level (grains per cubic metre).</p>
+</dd>
+<dt>year</dt><dd><p>one of 1991, 1992, 1993 or 1994.</p>
+</dd>
+<dt>day.in.seas</dt><dd><p>day number in the current ragweed pollen season.</p>
+</dd>
+<dt>temperature</dt><dd><p>temperature of following day (degrees Fahrenheit).</p>
+</dd>
+<dt>rain</dt><dd><p>indicator of significant rain the following day:
+1=at least 3 hours of steady or brief but intense rain,
+0=otherwise.</p>
+</dd>
+<dt>wind.speed</dt><dd><p>wind speed forecast for following day (knots).</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Stark, P. C., Ryan, L. M., McDonald, J. L. and Burge, H. A. (1997).
+Using meteorologic data to model and predict daily ragweed pollen levels.
+<em>Aerobiologia</em>, <b>13</b>, 177-184.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ruppert, D., Wand, M.P. and Carroll, R.J. (2003)<br />
+<em>Semiparametric Regression</em> Cambridge University Press.<br />
+<a href="http://stat.tamu.edu/~carroll/semiregbook/">http://stat.tamu.edu/~carroll/semiregbook/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(ragweed)
+pairs(ragweed,pch=".")
+</pre>
+
+
+</body></html>

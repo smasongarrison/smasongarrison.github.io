@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Trap counts of Nematocera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Nematocera"><tr><td>Nematocera</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Trap counts of Nematocera</h2>
+
+<h3>Description</h3>
+
+<p>In a field trial, 4 treatments (A,B, Standard, Novum) were arranged in a randomized complete block design with 8 blocks
+and 32 plots. In summer 2005 soil eklektor traps were placed in each plot, on six dates from
+2005-07-12 to 2005-09-25, the number of individuals of Nematocera (gnats, midges and others)
+hatching from soil were counted. The individuals were classified to the family level.
+Interest was in assessing potential effects of a novel agricultural practice (Novum)
+on the abundance of Nematocera.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Nematocera)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 192 observations on the following 14 variables.
+</p>
+
+<dl>
+<dt><code>Date</code></dt><dd><p>a POSIXt, the time of counting the individuals in the eklektor trap</p>
+</dd>
+<dt><code>Treatment</code></dt><dd><p>a factor with 4 levels, <code>A</code>, <code>B</code>, <code>Standard</code> and <code>Novum</code>, where <code>Novum</code> is the novel treatment, <code>Standard</code> is the standard treatment most similar to <code>Novum</code>, and <code>A</code> and <code>B</code> are additional standard treatments.</p>
+</dd>
+<dt><code>Block</code></dt><dd><p>a numeric vector, specifying the blocks 1-8</p>
+</dd>
+<dt><code>Plot</code></dt><dd><p>a factor with 32 levels <code>A1</code> to <code>Standard8</code>, indicator variables for the individual eklektors</p>
+</dd>
+<dt><code>Bibio</code></dt><dd><p>a numeric vector, counts of individuals, belonging to the family</p>
+</dd>
+<dt><code>Cecido</code></dt><dd><p>a numeric vector, counts of individuals, belonging to the family</p>
+</dd>
+<dt><code>Cerato</code></dt><dd><p>a numeric vector, counts of individuals, belonging to the family</p>
+</dd>
+<dt><code>Chiro</code></dt><dd><p>a numeric vector, counts of individuals, belonging to the family</p>
+</dd>
+<dt><code>Myceto</code></dt><dd><p>a numeric vector, counts of individuals, belonging to the family</p>
+</dd>
+<dt><code>Psycho</code></dt><dd><p>a numeric vector, counts of individuals, belonging to the family</p>
+</dd>
+<dt><code>Scato</code></dt><dd><p>a numeric vector, counts of individuals, belonging to the family</p>
+</dd>
+<dt><code>Sciari</code></dt><dd><p>a numeric vector, counts of individuals, belonging to the family</p>
+</dd>
+<dt><code>Tipuli</code></dt><dd><p>a numeric vector, counts of individuals, belonging to the family</p>
+</dd>
+<dt><code>Total</code></dt><dd><p>a numeric vector, total count of individuals belonging to the suborder Nematocera</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>personal communications, S.Prescher, JKI Braunschweig, Germany
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Nematocera)
+
+par(mar=c(11,5,3,1))
+
+boxplot(Total ~ Treatment*Date, data=Nematocera, las=2, col=c("white","white","blue","green"))
+legend(x=15, y=100, legend=levels(Nematocera$Treatment), fill=c("white","white","blue","green"))
+
+pairs(Nematocera[,c("Cecido","Cerato","Chiro","Myceto","Psycho","Sciari")])
+
+</pre>
+
+
+</body></html>

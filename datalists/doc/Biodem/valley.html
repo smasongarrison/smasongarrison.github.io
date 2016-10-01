@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Raw marriage data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for valley"><tr><td>valley</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Raw marriage data </h2>
+
+<h3>Description</h3>
+
+<p>A raw marriage data set, in which every row corresponds to a different marriage record. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(valley)</pre>
+
+
+<h3>Format</h3>
+
+<p>A 702 rows by 8 columns dataset. The columns of &quot;valley&quot; contain the following information:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+    
+PAR: </td><td style="text-align: left;"> (sub)population to which the marriage is referred.</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+YEAR: </td><td style="text-align: left;"> year in which the marriage was performed.</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+SURM: </td><td style="text-align: left;"> male surname.</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+NM: </td><td style="text-align: left;"> male birth (sub)population.</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+RM:  </td><td style="text-align: left;"> male residence (sub)population.</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+SURF: </td><td style="text-align: left;"> female surname.</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+NF: </td><td style="text-align: left;"> female birth (sub)population. </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+RF: </td><td style="text-align: left;"> female residence (sub)population.
+</td>
+</tr>
+
+</table>
+
+<p>For all columns the letter &quot;X&quot; indicates that the mate was born or resident outside of the study area.
+</p>
+
+
+<h3>Details</h3>
+
+<p>Marriage data, depending from the used sources, may contain more or less information than the &quot;valley&quot; example data set. Columns order in the dataset is not relevant. Information on (sub)population, male and female surnames are needed to perform surname-based analyses on marriage data.
+NB. Information on mates birthplace (or equivalent data) can be used to produce a migration matrix (see the &quot;raw.mig&quot; dataset).
+NB2. Given that surnames may contain spaces (e.g. &quot;DE IORIO&quot;), the best way to import surname data is to save the original data base as a .csv file, and then use the read.csv() or read.csv2() functions. Another option is to use GNUMERIC, because it has a text export feature that allows to put  brakets (&quot;&quot;) to the left and right of every cell content, so that composite surnames are read as a string. The resulting text file is easily imported by read.table().
+</p>
+
+
+<h3>Source</h3>
+
+<p>Paola Gueresi. Subset of a real marriage dataset
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(valley)
+
+</pre>
+
+
+</body></html>

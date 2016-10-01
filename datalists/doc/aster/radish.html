@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Life History Data on Raphanus sativus</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for radish"><tr><td>radish</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Life History Data on Raphanus sativus</h2>
+
+<h3>Description</h3>
+
+<p>Data on life history traits for the 
+invasive California wild radish <em>Raphanus sativus</em>
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>radish</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with records for 286 plants.
+Data are already in &ldquo;long&rdquo; format; no need to reshape.
+</p>
+
+<dl>
+<dt>resp</dt><dd><p>Response vector.</p>
+</dd>
+<dt>varb</dt><dd><p>Categorical.  Gives node of graphical model corresponding
+to each component of <code>resp</code>.  See details below.</p>
+</dd>
+<dt>root</dt><dd><p>All ones.  Root variables for graphical model.</p>
+</dd>
+<dt>id</dt><dd><p>Categorical.  Indicates individual plants.</p>
+</dd>
+<dt>Site</dt><dd><p>Categorical.  Experimental site where plant was grown.
+Two sites in this dataset.</p>
+</dd>
+<dt>Block</dt><dd><p>Categorical.  Block nested within site.</p>
+</dd>
+<dt>Region</dt><dd><p>Categorical.  Region from which individuals
+were obtained: northern, coastal California (N) or southern, inland
+California (S).</p>
+</dd>
+<dt>Pop</dt><dd><p>Categorical.  Wild population nested within region.</p>
+</dd>
+<dt>varbFlowering</dt><dd><p>Indicator (zero or one).  Shorthand
+for <code>as.numeric(radish$varb == "Flowering")</code>.</p>
+</dd>
+<dt>varbFlowers</dt><dd><p>Indicator (zero or one).  Shorthand
+for <code>as.numeric(radish$varb == "Flowers")</code>.</p>
+</dd>
+<dt>fit</dt><dd><p>Indicator (zero or one).  Shorthand
+for <code>as.numeric(radish$varb == "Fruits")</code>.  So-called because the
+components of <code>outcome</code> indicated are the best surrogate of
+Darwinian fitness in these data.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The levels of <code>varb</code> indicate nodes of the graphical model to which
+the corresponding elements of the response vector <code>resp</code> belong.
+This is the typical &ldquo;long&rdquo; format produced by the R <code>reshape</code>
+function.  For each individual, there are several response variables.
+All response variables are combined in one vector <code>resp</code>.
+The variable <code>varb</code> indicates which &ldquo;original&rdquo; variable
+the number was for.  The variable <code>id</code> indicates which individual
+the number was for.  The levels of <code>varb</code>, which are the names
+of the &ldquo;original&rdquo; variables are
+</p>
+
+<dl>
+<dt>Flowering</dt><dd><p>Indicator (zero or one).  Bernoulli, One if individual
+survived to produce flowers.</p>
+</dd>
+<dt>Flowers</dt><dd><p>Integer.  Zero-truncated Poisson, number of flowers observed.</p>
+</dd>
+<dt>Fruits</dt><dd><p>Integer.  Poisson, number of fruits observed.</p>
+</dd>
+</dl>
+
+<p>Graphical model is
+</p>
+<p style="text-align: center;"><i>1 -&gt; Flowering -&gt; Flowers -&gt; Fruits.</i></p>
+
+
+
+<h3>Source</h3>
+
+<p>Caroline Ridley
+</p>
+
+
+<h3>References</h3>
+
+<p>These data are a subset of data previously analyzed using aster methods
+in the following.
+</p>
+<p>Ridley, C. E. and Ellstrand, N. C. (2010).
+Rapid evolution of morphology and adaptive life history in
+the invasive California wild radish (<em>Raphanus sativus</em>) and
+the implications for management.
+<em>Evolutionary Applications</em>, <b>3</b>, 64&ndash;76.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>pickle</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(radish)
+</pre>
+
+
+</body></html>

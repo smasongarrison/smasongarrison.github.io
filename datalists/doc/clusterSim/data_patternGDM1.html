@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Metric data with 17 objects and 10 variables (8 stimulant...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for data_patternGDM1"><tr><td>data_patternGDM1</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Metric data with 17 objects and 10 variables (8 stimulant variables, 2 destimulant variables)</h2>
+
+<h3>Description</h3>
+
+<p>Metric data with 17 objects and 10 variables (8 stimulant variables, 2 destimulant variables)
+</p>
+<p>Data on the Polish voivodships, owing to the conditions of the population living in cities in 2007. The analysis includes the following variables:
+</p>
+<p>x1 - dwellings in per cent fitted with water-line system,
+</p>
+<p>x2 - dwellings in per cent fitted with lavatory,
+</p>
+<p>x3 - dwellings in per cent fitted with bathroom,
+</p>
+<p>x4 - dwellings in per cent fitted with gas-line system,
+</p>
+<p>x5 - dwellings in per cent fitted with central heating,
+</p>
+<p>x6 - average number of rooms per dwelling,
+</p>
+<p>x7 - average number of persons per dwelling,
+</p>
+<p>x8 - average number of persons per room,
+</p>
+<p>x9 - usable floor space in square meter per dwelling,
+</p>
+<p>x10 - usable floor space in square meter per person.
+</p>
+<p>Types of performance variables:
+</p>
+<p>x1 - x6, x9, x10 - stimulants,
+</p>
+<p>x7, x8 - destimulants.
+</p>
+
+
+<h3>Format</h3>
+
+<p>data.frame: 17 objects, 10 variables</p>
+
+
+<h3>Source</h3>
+
+<p>Voivodships Statistical Yearbook, Poland 2008.</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# Example 1
+library(clusterSim)
+data(data_patternGDM1)
+res&lt;-pattern.GDM1(data_patternGDM1,
+performanceVariable=c("s","s","s","s","s","s","d","d","s","s"),
+scaleType="r",nomOptValues=NULL,weightsType&lt;-"equal",weights=NULL,
+normalization&lt;-"n4",patternType&lt;-"lower",patternCoordinates&lt;-"manual",
+patternManual&lt;-c(0,0,0,0,0,"min","max","max","min","min"),
+nominalTransfMethod &lt;-NULL)
+print(res)
+gdm_p&lt;-res$distances
+plot(cbind(gdm_p,gdm_p),xlim=c(max(gdm_p),min(gdm_p)),
+ylim=c(min(gdm_p),max(gdm_p)),xaxt="n",
+xlab="Order of objects from the best to the worst", 
+ylab="GDM distances from pattern object",lwd=1.6)
+axis(1, at=gdm_p,labels=names(gdm_p), cex.axis=0.5)
+
+# Example 2
+library(clusterSim)
+data(data_patternGDM1)
+res&lt;-pattern.GDM1(data_patternGDM1,
+performanceVariable=c("s","s","s","s","s","s","d","d","s","s"),
+scaleType="r",nomOptValues=NULL,weightsType&lt;-"equal",weights=NULL,
+normalization&lt;-"n2",patternType&lt;-"upper",
+patternCoordinates&lt;-"dataBounds",patternManual&lt;-NULL,
+nominalTransfMethod &lt;-NULL)
+print(res)
+gdm_p&lt;-res$distances
+plot(cbind(gdm_p,gdm_p),xlim=c(min(gdm_p),max(gdm_p)),
+ylim=c(min(gdm_p),max(gdm_p)),xaxt="n",
+xlab="Order of objects from the best to the worst", 
+ylab="GDM distances from pattern object", lwd=1.6)
+axis(1, at=gdm_p,labels=names(gdm_p), cex.axis=0.5)
+</pre>
+
+
+</body></html>

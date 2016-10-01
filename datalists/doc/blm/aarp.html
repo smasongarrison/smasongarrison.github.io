@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Nested case-control data set of bladder cancer in the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for aarp"><tr><td>aarp</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Nested case-control data set of bladder cancer in the NIH-AARP Diet and Health Study</h2>
+
+<h3>Description</h3>
+
+<p>The <code>aarp</code> data set is a nested case-control study of bladder cancer outcomes in the NIH-AARP Diet and Health Study. The data set is intended for demonstration purposes only.</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+aarp
+</pre>
+
+
+<h3>Format</h3>
+
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+    bladder70:</td><td style="text-align: left;"> indicator of bladder cancer by age 70 years </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    female:</td><td style="text-align: left;"> indicator of female gender </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    smoke_status: </td><td style="text-align: left;"> factor of smoking status (four categories)  </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    w: </td><td style="text-align: left;"> inverse of sampling fraction</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    redmeat: </td><td style="text-align: left;"> total daily redmeat consumption (grams/day)</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    fiber.centered: </td><td style="text-align: left;"> total daily fiber consumption (grams), centered on sample median </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    educ: </td><td style="text-align: left;"> factor of education status (six categories)
+  </td>
+</tr>
+
+</table>
+
+
+
+<h3>Source</h3>
+
+<p>National Cancer Institute. National Institutes of Health AARP Diet and Health Study. <a href="http://dietandhealth.cancer.gov/">http://dietandhealth.cancer.gov/</a>. Accessed: 12/10/2012
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(aarp)
+
+# ABSOLUTE RISK OF BLADDER CANCER BY 70 YEARS
+# FOR DIFFERENT GENDER AND RISK GROUP
+
+fit &lt;- blm(bladder70~female * smoke_status, 
+			      data = aarp, 
+			      weight=aarp$w)
+
+# INTERCEPT IS BASELINE RISK
+# ALL OTHER COEFFICIENTS ARE RISK DIFFERENCES FROM BASELINE
+
+summary(fit)
+
+
+</pre>
+
+
+</body></html>

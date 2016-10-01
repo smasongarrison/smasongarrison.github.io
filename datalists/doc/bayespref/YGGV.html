@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Oviposition preference data from Yuba Gap, CA and...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for YGGV"><tr><td>YGGV</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Oviposition preference data from Yuba Gap, CA and Gardnerville, NV.
+</h2>
+
+<h3>Description</h3>
+
+<p>A data matrix of experimental host plant choice data from two population of Lycaeides.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(YGGV)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 26 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>Pop</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Ast</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Lotus</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Lupine</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Medicago</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Pop 1 is Yuba Gap, CA and Pop 2 is Gardnerville, NV.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Gompert, Z., J.A. Fordyce, M.L. Forister, A.M. Shapiro, &amp; C.C. Nice. 2006. Homoploid hybrid speciation in an extreme habitat. Science 314:1923-1925.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(YGGV)
+boxplot(YGGV[,2:5])
+str(YGGV)
+</pre>
+
+
+</body></html>

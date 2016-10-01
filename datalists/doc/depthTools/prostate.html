@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Gene Expression Data from Tumoral and Normal Prostate Samples...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for prostate"><tr><td>prostate</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Gene Expression Data from Tumoral and Normal Prostate Samples and Labels</h2>
+
+<h3>Description</h3>
+
+<p>Normalized subset from Singh et al. (2002) data included in the <code>prostate</code> dataset. The raw data comprise the expression of 52 tumoral and 50 non-tumoral prostate samples, obtained using the Affymetrix technology. The data were preprocessed by setting thresholds at 10 and 16000 units, excluding genes whose expression varied less than 5-fold relatively or less than 500 units absolutely between the sample, applying a base 10 logarithmic transformation, and standardising each experiment to zero mean and unit variance across the genes. The 100 most variable genes were selected following the B/W criterion (Dudoit et al. (2002)) and a random selection of 25 normal samples and 25 tumour samples was performed.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(prostate)</pre>
+
+
+<h3>Format</h3>
+
+<p>a 50x101 matrix containing in the first 100 columns the gene expression data of 25 plus 25 randomly selected tumor and normal prostate samples at the 100 most variable genes, selected by the B/W criterion; the last column contains the sample type: 0=normal, 1=tumor.
+</p>
+
+
+<h3>Source</h3>
+
+<p>The data are described in Singh et al. (2002).</p>
+
+
+<h3>References</h3>
+
+<p> Singh <em>et al</em>. (2002). Gene expression correlates of clinincal prostate cancer behavior, <em>Cancer cell</em>, 1 (2), 203-209.
+</p>
+<p>Dudoit <em>et al</em>. (2002). Comparison of discrimination methods for the classification of tumors using gene expression data, <em>Journal of the American Statistical Association</em>, 97 (457), 77-87.
+</p>
+
+
+</body></html>

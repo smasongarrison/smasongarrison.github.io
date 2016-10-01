@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A Cytoband Annotation Data Frame</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for annot.file"><tr><td>annot.file</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+A Cytoband Annotation Data Frame
+</h2>
+
+<h3>Description</h3>
+
+<p>This four-column data frame contains cytoband annotation data that is used by the <code>makeCytoband</code> function.  Each row corresponds to a distinct cytoband, and column 1 contains the chromosome 
+number, column 2 contains the start position (in base pairs), column 3 contains the end position (in base pairs), and column 4 contains the cytoband name (e.g. p21.3).  Additional columns 
+may be present, but they are not used.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(annot.file)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 811 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>Chr</code></dt><dd><p>The chromosome for the cytoband</p>
+</dd>
+<dt><code>Start</code></dt><dd><p>The start position (in base pairs) for the cytoband</p>
+</dd>
+<dt><code>End</code></dt><dd><p>The end position (in base pairs) for the cytoband</p>
+</dd>
+<dt><code>Band</code></dt><dd><p>The cytoband name (e.g. p13.1)</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>The file cytoBand.txt.gz for the hg19 build can be downloaded from the UCSC Genome Browser at <a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/">http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/</a>.  The format of cytoBand.txt differs from that
+of annot.file, but it can be used by the function <code>makeCytoband</code> if <code>reformat.cytoband = TRUE</code>.
+</p>
+
+
+<h3>References</h3>
+
+<p>Fujita P.A., Rhead B., Zweig A.S., et al., The UCSC Genome Browser database: update 2011, Nucleic Acids Res. (2010) 1 - 7 doi:10.1093/nar/gkq963.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(annot.file)
+annot.file[1:10,]
+#Produces the following output
+#Chr    Start      End   Band
+#1    1        0  2300000 p36.33
+#2    1  2300000  5300000 p36.32
+#3    1  5300000  7100000 p36.31
+#4    1  7100000  9200000 p36.23
+#5    1  9200000 12600000 p36.22
+#6    1 12600000 16100000 p36.21
+#7    1 16100000 20300000 p36.13
+#8    1 20300000 23800000 p36.12
+#9    1 23800000 27800000 p36.11
+#10   1 27800000 30000000  p35.3
+</pre>
+
+
+</body></html>

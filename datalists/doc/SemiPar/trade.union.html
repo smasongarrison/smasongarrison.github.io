@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Trade union data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for trade.union"><tr><td>trade.union</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Trade union data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>trade.union</code> data frame has data on 534 U.S. workers.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(trade.union)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>years.educ</dt><dd><p>number of years of education.</p>
+</dd>
+<dt>south</dt><dd><p>indicator of living in southern region of U.S.A.</p>
+</dd>
+<dt>female</dt><dd><p>gender indicator: 0=male,1=female.</p>
+</dd>
+<dt>years.experience</dt><dd><p>number of years of work experience</p>
+</dd>
+<dt>union.member</dt><dd><p>indicator of trade union membership: 
+0=non-member, 1=member.</p>
+</dd>
+<dt>wage</dt><dd><p>wages in dollars per hour.</p>
+</dd>
+<dt>age</dt><dd><p>age in years.</p>
+</dd>
+<dt>race</dt><dd><p>1=black, 2=Hispanic, 3=white.</p>
+</dd>
+<dt>occupation</dt><dd><p>1=management, 2=sales, 3=clerical, 4=service, 5=professional, 6=other.</p>
+</dd>
+<dt>sector</dt><dd><p>0=other, 1=manufacturing, 2=construction.</p>
+</dd>
+<dt>married</dt><dd><p>indicator of being married: 0=unmarried, 1=married.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Berndt, E.R. (1991)
+<em>The Practice of Econometrics.</em> New York: Addison-Wesley. 
+</p>
+
+
+<h3>References</h3>
+
+<p>Ruppert, D., Wand, M.P. and Carroll, R.J. (2003)<br />
+<em>Semiparametric Regression</em> Cambridge University Press.<br />
+<a href="http://stat.tamu.edu/~carroll/semiregbook/">http://stat.tamu.edu/~carroll/semiregbook/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(trade.union)
+pairs(trade.union,pch=".")
+</pre>
+
+
+</body></html>

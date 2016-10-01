@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Fibroblast Cell Line dataset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fibroblast"><tr><td>fibroblast</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Fibroblast Cell Line dataset
+</h2>
+
+<h3>Description</h3>
+
+<p>Genomic sequences of 15 fibroblast cell lines. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(fibroblast)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 2462 observations on the following 11 variables.
+</p>
+
+<dl>
+<dt><code>Chromosome</code></dt><dd><p>a numeric vector to identify the chromosome</p>
+</dd>
+<dt><code>Genome.Order</code></dt><dd><p>a numeric vector meaning the genome index</p>
+</dd>
+<dt><code>gm05296</code></dt><dd><p>cell line GM05296</p>
+</dd>
+<dt><code>gm03563</code></dt><dd><p>cell line GM03563</p>
+</dd>
+<dt><code>gm01535</code></dt><dd><p>cell line GM01535</p>
+</dd>
+<dt><code>gm07081</code></dt><dd><p>cell line GM07081</p>
+</dd>
+<dt><code>gm01750</code></dt><dd><p>cell line GM01750</p>
+</dd>
+<dt><code>gm03134</code></dt><dd><p>cell line GM03134</p>
+</dd>
+<dt><code>gm13330</code></dt><dd><p>cell line GM13330</p>
+</dd>
+<dt><code>gm13031</code></dt><dd><p>cell line GM13031</p>
+</dd>
+<dt><code>gm01524</code></dt><dd><p>cell line GM01524</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Data come from a single experiments on 15 fibroblast cell lines with each array
+containing over 2000 (mapped) BACs spotted in triplicate. The variable in the 
+dataset is the normalized average of the log base 2 test over reference ratio.</p>
+
+
+<h3>References</h3>
+
+<p>SNIJDERS, A. M., NOWAK, N., SEGRAVES, R., BLACKWOOD, S., BROWN, N., CONROY, J., HAMILTON, G.,
+HINDLE, A. K., HUEY, B., KIMURA, K. et al., (2001). Assembly of microarrays for genome-wide measurement
+of DNA copy number. Nature Genetics 29, 263-264.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(fibroblast)
+#select chromosome 1
+z&lt;-na.omit(fibroblast$gm03563[fibroblast$Chromosome==1]) 
+o&lt;-jumpoints(z,k=30,output="3")
+plot(z)
+plot(o,add=TRUE,y=FALSE,col=4)
+
+## End(Not run)
+</pre>
+
+
+</body></html>

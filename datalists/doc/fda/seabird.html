@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Sea Bird Counts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for seabird"><tr><td>seabird</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Sea Bird Counts</h2>
+
+<h3>Description</h3>
+
+<p>Numbers of sightings of different species of seabirds by year 1986 -
+2005 at E. Sitkalidak, Uganik, Uyak, and W. Sitkalidak by people
+affiliated with the Kodiak National Wildlife Refuge, Alaska.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(seabird)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 3793 observations on the following 22 variables.
+</p>
+
+<dl>
+<dt>BAGO, BLSC, COME, COMU, CORM, HADU, HOGR, LOON, MAMU, OLDS, PIGU, RBME, RNGR, SUSC, WWSC</dt><dd>
+<p>integer count of the numbers of sightings of each species by
+transect by year
+</p>
+</dd>
+<dt>Year</dt><dd><p>integer year, 1986 - 2005</p>
+</dd>
+<dt>Site</dt><dd>
+<p>Integer codes for <code>Bay</code>:  10 = Uyak, 20 = Uganik, 60 =
+E. Sitkalidak, 70 = W. Sitkalidak
+</p>
+</dd>
+<dt>Transect</dt><dd>
+<p>Integer code (101 - 749) for the specific plot of ground observed
+</p>
+</dd>
+<dt>Temp</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>ObservCond</dt><dd>
+<p>a factor with levels <code>Average</code>, <code>Excellent</code>,
+<code>Fair</code>, <code>Good</code>, and <code>Ideal</code>.  
+</p>
+</dd>
+<dt>Bay</dt><dd>
+<p>a factor with levels <code>E. Sitkalidak</code> <code>Uganik</code>
+<code>Uyak</code> <code>W. Sitkalidak</code>
+</p>
+</dd>
+<dt>ObservCondFactor3</dt><dd>
+<p>a factor with levels <code>ExcellentIdeal</code>, 
+<code>FairAverage</code>, and <code>Good</code>.  These combine levels 
+from <code>ObservCond</code>.
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Data provided by the Kodiak National Wildlife Refuge
+</p>
+
+
+<h3>Source</h3>
+
+<p>Zwiefelhofer, D., Reynolds, J. H., and Keim, M. (2008) Population
+trends and annual density estimates for select wintering seabird
+species on Kodiak Island, Alaska, <em>U.S. Fish and Wildlife
+Service, Kodiak National Wildlife Refuge</em>, Technical Report,
+no. 08-00x
+</p>
+
+
+<h3>References</h3>
+
+<p>Ramsay, James O., Hooker, Giles, and Graves, Spencer B. (2009)
+<em>Functional Data Analysis with R and Matlab</em>, Springer, New York
+(esp. ch. 10)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(seabird)
+## maybe str(seabird) ; plot(seabird) ...
+</pre>
+
+
+</body></html>

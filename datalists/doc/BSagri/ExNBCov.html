@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Simulated example data, drawn from a Negative Binomial...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ExNBCov"><tr><td>ExNBCov</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Simulated example data, drawn from a Negative Binomial Distribution</h2>
+
+<h3>Description</h3>
+
+<p>Simulated example data, response drawn from a Negative Binomial Distribution,
+Covariables follow a multivariate normal distribution.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ExNBCov)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 32 observations on the following 12 variables.
+</p>
+
+<dl>
+<dt><code>Resp</code></dt><dd><p>a numeric vector, a response of counts</p>
+</dd>
+<dt><code>Group</code></dt><dd><p>a factor with levels <code>A1</code> <code>A2</code> <code>A3</code> <code>A4</code>, e.g. varieties</p>
+</dd>
+<dt><code>X1</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>X2</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>X3</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>X4</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>X5</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>X6</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>X7</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>X8</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>X9</code></dt><dd><p>a numeric covariable</p>
+</dd>
+<dt><code>X10</code></dt><dd><p>a numeric covariable</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(ExNBCov)
+
+boxplot(Resp ~ Group, data=ExNBCov)
+
+pairs(ExNBCov)
+
+</pre>
+
+
+</body></html>

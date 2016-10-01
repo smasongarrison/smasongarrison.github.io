@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Drying times of concrete</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cement"><tr><td>cement</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Drying times of concrete
+</h2>
+
+<h3>Description</h3>
+
+<p>Drying times of different concrete mixes used in a sidewalk.  Mix
+&lsquo;<code>A</code>&rsquo; is the conventional mix.  Mixes &lsquo;<code>B</code>&rsquo;
+and &lsquo;<code>C</code>&rsquo; are experimental, and more expensive, mixes.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 19 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>type</code></dt><dd><p>concrete mix - a factor with levels <code>A</code>,
+<code>B</code> and <code>C</code></p>
+</dd>
+<dt><code>time</code></dt><dd><p>time (hr) until concrete is dry enough to walk
+on</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Peter R. Nelson, Marie Coffin and Karen A. F. Copeland (2003),
+<em>Introductory Statistics for Engineering Experimentation</em>,
+Elsevier. (Appendix A)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(cement)
+dotplot(reorder(type, time) ~ time, cement, type = c("p","a"),
+        jitter.y = TRUE, ylab = "Mix type",
+        xlab = "Time until concrete is dry enough to walk on (hours)")
+qqmath(~ time, cement, groups = type, aspect = 'xy',
+       xlab = "Standard normal quantiles",
+       type = c("g","p"),
+       panel=function(...)
+   {
+       panel.qqmathline(..., alpha = 0.5, lty = 2)
+       panel.qqmath(...)
+   },
+       ylab = "Time until concrete is dry enough to walk on (hours)",
+       auto.key = list(space = "right", title = "Type", lines = TRUE))
+summary(fm1 &lt;- aov(time ~ type, cement))
+TukeyHSD(fm1)
+</pre>
+
+
+</body></html>

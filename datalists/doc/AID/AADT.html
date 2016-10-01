@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Average Annual Daily Traffic Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for AADT"><tr><td>AADT</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Average Annual Daily Traffic Data
+</h2>
+
+<h3>Description</h3>
+
+<p>Average annual daily traffic data collected from the Minnesota Department of Transportation data base. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(AADT)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 121 observations on the following 8 variables.
+</p>
+
+<dl>
+<dt><code>aadt</code></dt><dd><p>average annual daily traffic for a section of road</p>
+</dd>
+<dt><code>ctypop</code></dt><dd><p>population of county</p>
+</dd>
+<dt><code>lanes</code></dt><dd><p>number of lanes in the section of road</p>
+</dd>
+<dt><code>width</code></dt><dd><p>width of the section of road (in feet)</p>
+</dd>
+<dt><code>control</code></dt><dd><p>a factor with levels: 1 = access control; 2 = no access control</p>
+</dd>
+<dt><code>class</code></dt><dd><p>a factor with levels: 1 = rural interstate; 2 = rural noninterstate; 3 = urban interstate; 4 = urban noninterstate</p>
+</dd>
+<dt><code>truck</code></dt><dd><p>availability situation of road section to trucks</p>
+</dd>
+<dt><code>locale</code></dt><dd><p>a factor with levels: 1 = rural; 2= urban, population &lt;= 50,000; 3= urban, population &gt; 50,000</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Cheng, C. (1992). Optimal Sampling for Traffic Volume Estimation, Unpublished Ph.D. dissertation, University of Minnesota, Carlson School of Management.
+</p>
+<p>Neter, J., Kutner, M.H., Nachtsheim, C.J.,Wasserman, W. (1996). <em>Applied Linear Statistical Models (4th ed.)</em>, Irwin, page 483.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(AADT)
+attach(AADT)
+hist(aadt)
+boxcoxfr(aadt, class)
+</pre>
+
+
+</body></html>

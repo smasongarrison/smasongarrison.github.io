@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Retirement plan data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for retire.plan"><tr><td>retire.plan</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Retirement plan data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>retire.plan</code> data frame has data on &quot;401(k)&quot; retirement
+plans for employees of 
+92 firms managed by a company code-named Best Retirement Inc. (BRI).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(retire.plan)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>contrib</dt><dd><p>contribution to retirement plan at end of first year</p>
+</dd>
+<dt>group</dt><dd><p>1=client has group life of group health insurance policy,
+0=otherwise.</p>
+</dd>
+<dt>turnover</dt><dd><p>employee turnover rate.</p>
+</dd>
+<dt>eligible</dt><dd><p>number of employees eligible to 
+participate in 401(k) plans.</p>
+</dd>
+<dt>vest</dt><dd><p>1=plan has immediate vesting of employer contributions,
+0=otherwise.</p>
+</dd>
+<dt>failsafe</dt><dd><p>1=plan has a fail-safe provision, 0=otherwise.</p>
+</dd>
+<dt>match</dt><dd><p>percentage of contributions matched by the employer.</p>
+</dd>
+<dt>salary</dt><dd><p>average annual employee salary in dollars</p>
+</dd></dl>
+<p>.
+</p>
+<dl>
+<dt>estimate</dt><dd><p>underwriter's estimate of
+end-of-year contributions in dollars.</p>
+</dd>
+<dt>susan</dt><dd><p>1=plan was sold by a sales representative 
+who has been specifically trained to deal 
+exclusively with 401(k) plans (code-named
+Susan Shepard).</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Bryant, P.G. and Smith, M.A. (1995).
+<em>Practical data analysis: case studies in business statistics.</em>
+Chicago: Irwin.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ruppert, D., Wand, M.P. and Carroll, R.J. (2003)<br />
+<em>Semiparametric Regression</em> Cambridge University Press.<br />
+<a href="http://stat.tamu.edu/~carroll/semiregbook/">http://stat.tamu.edu/~carroll/semiregbook/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(retire.plan)
+pairs(retire.plan)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Absenteeism data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for absent"><tr><td>absent</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Absenteeism data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>absent</code> contains data on the absenteeism of workers of a medium-sized industrial company in southern Germany observed between 01.01.1981 and 31.12.1998.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(absent)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>id</dt><dd><p>employee's ID</p>
+</dd>
+<dt>absent</dt><dd><p>number of days of absenteeism</p>
+</dd>
+<dt>status</dt><dd><p>1 for the uncensored last day of absenteeism</p>
+</dd>
+<dt>date</dt><dd><p>date of the first day of a sick leave</p>
+</dd>
+<dt>day</dt><dd><p>day of the week of the first day of a sick leave</p>
+</dd>
+<dt>month</dt><dd><p>month</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Kauermann, G and Ortlieb, R. (2004). Temporal pattern in number of staff on sick leave: the effect of downsizing. <em>Journal of Royal Statistical Society, Series C</em>,
+<b>53</b>, 353-367.
+</p>
+
+
+<h3>References</h3>
+
+<p>Krivobokova, T., Crainiceanu, C.M. and Kauermann, G. (2007)<br />
+Fast Adaptive Penalized Splines <br />
+<em>Journal of Computational and Graphical Statistics</em>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(AdaptFit)
+data(absent)
+attach(absent)
+</pre>
+
+
+</body></html>

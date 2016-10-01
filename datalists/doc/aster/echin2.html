@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Life History Data on Echinacea angustifolia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for echin2"><tr><td>echin2</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Life History Data on Echinacea angustifolia</h2>
+
+<h3>Description</h3>
+
+<p>Data on life history traits for the purple coneflower
+<em>Echinacea angustifolia</em>
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>echin2</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with records for 557 plants observed over five years.
+Data are already in &ldquo;long&rdquo; format; no need to reshape.
+</p>
+
+<dl>
+<dt>resp</dt><dd><p>Response vector.</p>
+</dd>
+<dt>varb</dt><dd><p>Categorical.  Gives node of graphical model corresponding
+to each component of <code>resp</code>.  See details below.</p>
+</dd>
+<dt>root</dt><dd><p>All ones.  Root variables for graphical model.</p>
+</dd>
+<dt>id</dt><dd><p>Categorical.  Indicates individual plants.</p>
+</dd>
+<dt>flat</dt><dd><p>Categorical.  Position in growth chamber.</p>
+</dd>
+<dt>row</dt><dd><p>Categorical.  Row in the field.</p>
+</dd>
+<dt>posi</dt><dd><p>Numerical.  Position within row in the field.</p>
+</dd>
+<dt>crosstype</dt><dd><p>Categorical.  See details.</p>
+</dd>
+<dt>yearcross</dt><dd><p>Categorical.  Year in which cross was done.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The levels of <code>varb</code> indicate nodes of the graphical model to which
+the corresponding elements of the response vector <code>resp</code> belong.
+This is the typical &ldquo;long&rdquo; format produced by the R <code>reshape</code>
+function.  For each individual, there are several response variables.
+All response variables are combined in one vector <code>resp</code>.
+The variable <code>varb</code> indicates which &ldquo;original&rdquo; variable
+the number was for.  The variable <code>id</code> indicates which individual
+the number was for.  The levels of <code>varb</code>, which are the names
+of the &ldquo;original&rdquo; variables are
+</p>
+
+<dl>
+<dt>lds1</dt><dd><p>Survival for the first month in the growth
+chamber.</p>
+</dd>
+<dt>lds2</dt><dd><p>Ditto for 2nd month in the growth chamber.</p>
+</dd>
+<dt>lds3</dt><dd><p>Ditto for 3rd month in the growth chamber.</p>
+</dd>
+<dt>ld01</dt><dd><p>Survival for first year in the field.</p>
+</dd>
+<dt>ld02</dt><dd><p>Ditto for 2nd year in the field.</p>
+</dd>
+<dt>ld03</dt><dd><p>Ditto for 3rd year in the field.</p>
+</dd>
+<dt>ld04</dt><dd><p>Ditto for 4th year in the field.</p>
+</dd>
+<dt>ld05</dt><dd><p>Ditto for 5th year in the field.</p>
+</dd>
+<dt>roct2003</dt><dd><p>Rosette count, measure of size and vigor,
+recorded for 3rd year in the field.</p>
+</dd>
+<dt>roct2004</dt><dd><p>Ditto for 4th year in the field.</p>
+</dd>
+<dt>roct2005</dt><dd><p>Ditto for 5th year in the field.</p>
+</dd>
+</dl>
+
+<p>These data are complicated by the experiment being done in two parts.
+Plants start their life indoors in a growth chamber.  The predictor
+variable <code>flat</code> only makes sense during this time in which three
+response variables <code>lds1</code>, <code>lds2</code>, and <code>lds3</code> are observed.
+After three months in the growth chamber, the plants (if they
+survived, i. e., if <code>lds3 == 1</code>) were planted in an experimental
+field plot outdoors.  The variables <code>row</code> and <code>posi</code> only make
+sense during this time in which all of the rest of the response variables
+are observed.  Because of certain predictor variables only making sense
+with respect to certain components of the response vector, the R formula
+mini-language is unable to cope, and model matrices must be constructed
+&quot;by hand&quot;.
+</p>
+<p><em>Echinacea angustifolia</em> is native to North American tallgrass prairie,
+which was once extensive but now exists only in isolated remnants.
+To evaluate the effects of different mating regimes on the fitness of
+resulting progeny, crosses were conducted to produce progeny of (a) mates
+from different remnants, (b) mates chosen at random from the same remnant,
+and (c) mates known to share maternal parent.  These three categories are
+the three levels of <code>crosstype</code>.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Stuart Wagenius,
+<a href="http://www.chicagobotanic.org/research/staff/wagenius">http://www.chicagobotanic.org/research/staff/wagenius</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>These data are analyzed in the following.                                     
+</p>
+<p>Shaw, R. G., Geyer, C. J., Wagenius, S., Hangelbroek, H. H.,
+and Etterson, J. R. (2008)
+Unifying life history analyses for inference of fitness and population growth.
+<em>American Naturalist</em>, <b>172</b>, E35-E47.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(echin2)
+</pre>
+
+
+</body></html>

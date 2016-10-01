@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: growth in height of one 10-year-old boy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for onechild"><tr><td>onechild</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+growth in height of one 10-year-old boy 
+</h2>
+
+<h3>Description</h3>
+
+<p>Heights of a boy of age approximately 10 collected during one school
+year.  The data were collected &quot;over one school year, with gaps
+corresponding to the school vacations&quot; (AFDA, p. 84)
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data.frame with two columns:  
+</p>
+
+<dl>
+<dt>day</dt><dd>
+<p>Integers counting the day into data collection with gaps
+indicating days during which data were not collected.  
+</p>
+</dd>
+<dt>height</dt><dd>
+<p>Height of the boy measured on the indicated day.  
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Ramsay, James O., and Silverman, Bernard W. (2002), <em>Applied
+Functional Data Analysis, 2nd ed.</em>, Springer, New York. 
+</p>
+<p>Tuddenham, R. D., and Snyder, M. M. (1954) &quot;Physical growth of
+California boys and girls from birth to age 18&quot;, <em>University of
+California Publications in Child Development</em>, 1, 183-364.  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+with(onechild, plot(day, height, type="b"))
+
+</pre>
+
+
+</body></html>

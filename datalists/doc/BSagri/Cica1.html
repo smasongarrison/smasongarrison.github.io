@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Catches of Planthoppers and Leafhoppers</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Cica1"><tr><td>Cica1</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Catches of Planthoppers and Leafhoppers </h2>
+
+<h3>Description</h3>
+
+<p>Data of a field trial concerning the impact of a genetically modified variety on the abundance of Planthoppers and Leafhoppers.
+The trial was designed as a randomized complete block design with 8 blocks (Row). In each block, three treatments
+were randomized: a conventional variety treated with insecticides (Insecticide), a genetically modified variety (GM),
+and the near-isogenic line (Iso) the to genetically modified line.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Cica1)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 24 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>Field</code></dt><dd><p>a factor with levels <code>1</code> <code>2</code>, separating the two major sites of the trial. On field 1, the blocks 1-5 were situated, on field 2, blocks 6-8 were situated. </p>
+</dd>
+<dt><code>Row</code></dt><dd><p>a factor with 8 levels, specifying the blocks:<code>R1</code> <code>R2</code> <code>R3</code> <code>R4</code> <code>R5</code> <code>R6</code> <code>R7</code> <code>R8</code></p>
+</dd>
+<dt><code>Year</code></dt><dd><p>a numeric vector, for year 1 of the trial</p>
+</dd>
+<dt><code>Treatment</code></dt><dd><p>a factor with 3 levels, specifying the genetically modified variety <code>GM</code>,
+the conventional variety treated with insecticides <code>Insecticide</code>,
+and the variety that was near-isogenic to the GM variety <code>Iso</code></p>
+</dd>
+<dt><code>Au_Bonitur</code></dt><dd><p>Counts of Auchenorryhncha by visual assessment</p>
+</dd>
+<dt><code>Zs_sweep_netting</code></dt><dd><p>Counts of the major species Zyginidia scutellaris, catched by sweep nets</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>...
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Cica1)
+
+layout(matrix(1:2,ncol=1))
+
+ylim&lt;-range(Cica1[,c("Au_Bonitur","Zs_sweep_netting")])
+
+boxplot(Au_Bonitur ~ Treatment, data=Cica1,
+ main= "Aucherrhyncha, visual assessment", ylim=ylim)
+
+boxplot(Zs_sweep_netting ~ Treatment, data=Cica1,
+ main="Z.scutellaris, sweep netting", ylim=ylim)
+
+
+</pre>
+
+
+</body></html>

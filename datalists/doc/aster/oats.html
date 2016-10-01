@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Life History Data on Avena barbata</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for oats"><tr><td>oats</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Life History Data on Avena barbata</h2>
+
+<h3>Description</h3>
+
+<p>Data on life history traits for the 
+invasive California wild oat <em>Avena barbata</em>
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>oats</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with records for 821 plants.
+Data are already in &ldquo;long&rdquo; format; no need to reshape.
+</p>
+
+<dl>
+<dt>resp</dt><dd><p>Response vector.</p>
+</dd>
+<dt>varb</dt><dd><p>Categorical.  Gives node of graphical model corresponding
+to each component of <code>resp</code>.  See details below.</p>
+</dd>
+<dt>root</dt><dd><p>All ones.  Root variables for graphical model.</p>
+</dd>
+<dt>id</dt><dd><p>Categorical.  Indicates individual plants.</p>
+</dd>
+<dt>Plant.id</dt><dd><p>Categorical.  Another indicator of individual plants.</p>
+</dd>
+<dt>Env</dt><dd><p>Categorical.  Environment in which plant was grown, a
+combination of experimental site and year.</p>
+</dd>
+<dt>Gen</dt><dd><p>Categorical.  Ecotype of plant: mesic (M) or xeric (X).</p>
+</dd>
+<dt>Fam</dt><dd><p>Categorical.  Accession, nested within ecotype.</p>
+</dd>
+<dt>Site</dt><dd><p>Categorical.  Experiment site.  Two sites in these data.</p>
+</dd>
+<dt>Year</dt><dd><p>Categorical.  Year in which data were collected.
+Four years in these data.</p>
+</dd>
+<dt>fit</dt><dd><p>Indicator (zero or one).  Shorthand
+for <code>as.numeric(oats$varb == "Spike")</code>.  So-called because the
+components of <code>outcome</code> indicated are the best surrogate of
+Darwinian fitness in these data.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The levels of <code>varb</code> indicate nodes of the graphical model to which
+the corresponding elements of the response vector <code>resp</code> belong.
+This is the typical &ldquo;long&rdquo; format produced by the R <code>reshape</code>
+function.  For each individual, there are several response variables.
+All response variables are combined in one vector <code>resp</code>.
+The variable <code>varb</code> indicates which &ldquo;original&rdquo; variable
+the number was for.  The variable <code>id</code> indicates which individual
+the number was for.  The levels of <code>varb</code>, which are the names
+of the &ldquo;original&rdquo; variables are
+</p>
+
+<dl>
+<dt>Surv</dt><dd><p>Indicator (zero or one).  Bernoulli, One if individual
+survived to produce flowers.</p>
+</dd>
+<dt>Spike</dt><dd><p>Integer.  Zero-truncated Poisson, number of spikelets
+(compound floral structures) observed.</p>
+</dd>
+</dl>
+
+<p>Graphical model is
+</p>
+<p style="text-align: center;"><i>1 -&gt; Surv -&gt; Spike.</i></p>
+
+
+
+<h3>Source</h3>
+
+<p>Robert Latta
+<a href="http://biology.dal.ca/People/faculty/latta/latta.htm">http://biology.dal.ca/People/faculty/latta/latta.htm</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>These data are a subset of data previously analyzed using non-aster methods
+in the following.
+</p>
+<p>Latta, R. G. (2009).
+Testing for local adaptation in <em>Avena barbata</em>,
+a classic example of ecotypic divergence.
+<em>Molecular Ecology</em>, <b>18</b>, 3781&ndash;3791.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(oats)
+</pre>
+
+
+</body></html>

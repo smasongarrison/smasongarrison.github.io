@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Satellite tracking data from a ringed seal</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for seal"><tr><td>seal</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Satellite tracking data from a ringed seal</h2>
+
+<h3>Description</h3>
+
+<p>Satellite tracking data from a ringed seal tagged in Svalbard, Norway.
+Data were provided by C. Lydersen and K. M. Kovacs (Norwegian Polar Institute).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(seal)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1561 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>dtime</code></dt><dd><p>a vector of class POSIXt with date and time for each location</p>
+</dd>
+<dt><code>lat</code></dt><dd><p>a numeric vector with latitudes, in decimal degrees</p>
+</dd>
+<dt><code>lon</code></dt><dd><p>a numeric vector with longitudes, in decimal degrees</p>
+</dd>
+<dt><code>lc</code></dt><dd><p>a numeric vector with location classes LC (-9 refers to LC Z, -2 to LC B and -1 to LC A)</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(seal)
+lat&lt;-seal$lat
+lon&lt;-seal$lon
+# plot unfiltered data
+plot(lon,lat)
+</pre>
+
+
+</body></html>

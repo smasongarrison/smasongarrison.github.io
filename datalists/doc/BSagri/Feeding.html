@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pupation and Hatching rate in a feeding experiment with four...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Feeding"><tr><td>Feeding</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Pupation and Hatching rate in a feeding experiment with four varieties</h2>
+
+<h3>Description</h3>
+
+<p>Larvae of a non-target organism were fed with plant material derived from a novel variety(Novum),
+material from three standard varieties (NStandard: the standard variety most similar to Novum,
+and two additional standard varieties S1 and S2). Objective was to assess the impact of Novum on the pupation and hatching rate of an animal that potentially feeds on plant material compared to accepted standard varieties.  
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Feeding)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 32 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>Rep</code></dt><dd><p>a factor with 32 levels indexing the 32 replications</p>
+</dd> 
+<dt><code>Variety</code></dt><dd><p>a factor with 4 levels: <code>S1</code> and <code>S2</code> are two standard varieties, <code>Novum</code> is a novel variety, and <code>NStandard</code> is the standard variety most similar to <code>Novum</code> </p>
+</dd>
+<dt><code>Total</code></dt><dd><p>the total number of animals in each experimental unit</p>
+</dd>
+<dt><code>Pupating</code></dt><dd><p>number of individuals pupating in each unit, the others died</p>
+</dd>
+<dt><code>Hatching</code></dt><dd><p>number of individuals hatching from the pupae</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Feeding)
+
+# Larval mortality:
+
+Feeding$Lmort &lt;- Feeding$Total - Feeding$Pupating
+
+fit1&lt;-glm(cbind(Pupating,Lmort)~Variety,data=Feeding, family=quasibinomial)
+anova(fit1, test="F")
+
+
+</pre>
+
+
+</body></html>

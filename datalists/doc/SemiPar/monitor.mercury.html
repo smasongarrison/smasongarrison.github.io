@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mercury biomonintoring data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for monitor.mercury"><tr><td>monitor.mercury</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Mercury biomonintoring data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>monitor.mercury</code> data frame has 22 observations 
+from sampling locations around a solid waste 
+incinerator in Warren County, New Jersey, USA</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(monitor.mercury)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>UTM.North</dt><dd><p>longitude of sampling location.</p>
+</dd>
+<dt>UTM.East</dt><dd><p>latitude of sampling location.</p>
+</dd>
+<dt>mercury.concentration</dt><dd><p>mercury concentration in dry sphagnum 
+moss grown at the sampling location.</p>
+</dd> 
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Opsomer, J.D., Agras, J., Carpi, A. and Rodrigues, G. (1995), 
+An application of locally weighted regression to airborne mercury 
+deposition around an incinerator site, <em>Environmetrics</em>, 
+<b>6</b>, 205-221.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ruppert, D., Wand, M.P. and Carroll, R.J. (2003)<br />
+<em>Semiparametric Regression</em> Cambridge University Press.<br />
+<a href="http//stat.tamu.edu/~carroll/semiregbook/">http//stat.tamu.edu/~carroll/semiregbook/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(monitor.mercury)
+pairs(monitor.mercury)
+</pre>
+
+
+</body></html>

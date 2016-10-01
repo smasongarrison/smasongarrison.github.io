@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Fossil data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fossil"><tr><td>fossil</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Fossil data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>fossil</code> data frame has 106 observations on fossil shells.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(fossil)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>age</dt><dd><p>age in millions of years</p>
+</dd>
+<dt>strontium.ratio</dt><dd><p>ratios of strontium isotopes</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Bralower, T.J., Fullagar, P.D., Paull, C.K., Dwyer, G.S.
+and Leckie, R.M. (1997).
+Mid-cretaceous strontium-isotope stratigraphy
+of deep-sea sections. <em>Geological Society
+of America Bulletin</em>, <b>109</b>, 1421-1442.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ruppert, D., Wand, M.P. and Carroll, R.J. (2003)<br />
+<em>Semiparametric Regression</em> Cambridge University Press.<br />
+<a href="http://stat.tamu.edu/~carroll/semiregbook/">http://stat.tamu.edu/~carroll/semiregbook/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SemiPar)
+data(fossil)
+attach(fossil)
+plot(age,strontium.ratio)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Daily Crude Oil and Natural Gas Prices from 2003 to 2006</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gasoil"><tr><td>gasoil</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Daily Crude Oil and Natural Gas Prices from 2003 to 2006</h2>
+
+<h3>Description</h3>
+
+<p>Three years of daily prices (from July 2003 to July 2006) of crude oil
+and natural gas. These data should be very close to those analysed in
+Grégoire, Genest and Gendron (2008).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(gasoil)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame of 762 daily prices from 2003 to 2006.
+</p>
+
+<dl>
+<dt><code>date</code></dt><dd><p>date (of class <code>Date</code>).</p>
+</dd>
+<dt><code>oil</code></dt><dd><p>daily price of crude oil</p>
+</dd>
+<dt><code>gas</code></dt><dd><p>daily price of natural gas</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Grégoire, V., Genest, C., and Gendron, M. (2008)
+Using copulas to model price dependence in energy markets.
+<em>Energy Risk</em> <b>5</b>(5), 58&ndash;64.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(gasoil)
+## Log Scaled  Oil &amp; Gas Prices :
+lattice :: xyplot(oil + gas ~ date, data = gasoil, auto.key=TRUE,
+                  type = c("l","r"),
+                  scales=list(y = list(log = TRUE), equispaced.log = FALSE))
+</pre>
+
+
+</body></html>

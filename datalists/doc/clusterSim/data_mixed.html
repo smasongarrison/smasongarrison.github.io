@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mixed data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for data_mixed"><tr><td>data_mixed</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Mixed data</h2>
+
+<h3>Description</h3>
+
+<p>Artificial mixed data</p>
+
+
+<h3>Format</h3>
+
+<p>data.frame: 25 objects, 4 variables (1, 3 - interval variables, 2 - ordinal variable, 4, nominal variable</p>
+
+
+<h3>Source</h3>
+
+<p>Artificial data</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(clusterSim)
+data(data_mixed)
+r3 &lt;- HINoV.Mod(data_mixed, type=c("m","n","m","n"), s=2, 3, distance="d1",
+     method="complete", Index="cRAND")
+print(r3$stopri)
+plot(r3$stopri[,2], xlab="Variable number", ylab="topri", xaxt="n")
+axis(1,at=c(1:max(r3$stopri[,1])),labels=r3$stopri[,1])
+</pre>
+
+
+</body></html>

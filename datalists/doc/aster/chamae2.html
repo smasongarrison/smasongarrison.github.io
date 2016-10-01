@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Life History Data on Chamaecrista fasciculata</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for chamae2"><tr><td>chamae2</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Life History Data on Chamaecrista fasciculata</h2>
+
+<h3>Description</h3>
+
+<p>Data on life history traits for the partridge pea
+<em>Chamaecrista fasciculata</em>
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>chamae2</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with records for 2239 plants.
+Data are already in &ldquo;long&rdquo; format; no need to reshape.
+</p>
+
+<dl>
+<dt>resp</dt><dd><p>Response vector.</p>
+</dd>
+<dt>varb</dt><dd><p>Categorical.  Gives node of graphical model corresponding
+to each component of <code>resp</code>.  See details below.</p>
+</dd>
+<dt>root</dt><dd><p>All ones.  Root variables for graphical model.</p>
+</dd>
+<dt>id</dt><dd><p>Categorical.  Indicates individual plants.</p>
+</dd>
+<dt>STG1N</dt><dd><p>Numerical.  Reproductive stage.  Integer with only 3 values
+in this dataset.</p>
+</dd>
+<dt>LOGLVS</dt><dd><p>Numerical.  Log leaf number.</p>
+</dd>
+<dt>LOGSLA</dt><dd><p>Numerical.  Log leaf thickness.</p>
+</dd>
+<dt>BLK</dt><dd><p>Categorical.  Block within experiment.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The levels of <code>varb</code> indicate nodes of the graphical model to which
+the corresponding elements of the response vector <code>resp</code> belong.
+This is the typical &ldquo;long&rdquo; format produced by the R <code>reshape</code>
+function.  For each individual, there are several response variables.
+All response variables are combined in one vector <code>resp</code>.
+The variable <code>varb</code> indicates which &ldquo;original&rdquo; variable
+the number was for.  The variable <code>id</code> indicates which individual
+the number was for.  The levels of <code>varb</code>, which are the names
+of the &ldquo;original&rdquo; variables are
+</p>
+
+<dl>
+<dt>fecund</dt><dd><p>Fecundity.  Bernoulli, One if any fruit, zero if no fruit.</p>
+</dd>
+<dt>fruit</dt><dd><p>Integer.  Number of fruits observed.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Julie Etterson
+<a href="http://www.d.umn.edu/~jetterso/">http://www.d.umn.edu/~jetterso/</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>These data are a subset of data previously analyzed by non-aster methods in the following.
+</p>
+<p>Etterson, J. R. (2004).
+Evolutionary potential of <em>Chamaecrista fasciculata</em> in
+relation to climate change.  I. Clinal patterns of selection along
+an environmental gradient in the great plains.
+<em>Evolution</em>, <b>58</b>, 1446-1458.
+</p>
+<p>Etterson, J. R., and Shaw, R. G. (2001).
+Constraint to adaptive evolution in response to global warming.
+<em>Science</em>, <b>294</b>, 151-154.
+</p>
+<p>These data are reanalyzed in the following.                                     
+Shaw, R. G., Geyer, C. J., Wagenius, S., Hangelbroek, H. H.,
+and Etterson, J. R. (2008)
+Unifying life history analyses for inference of fitness and population growth.
+<em>American Naturalist</em>, <b>172</b>, E35-E47.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(chamae2)
+### wide version
+chamae2w &lt;- reshape(chamae2, direction = "wide", timevar = "varb",
+    v.names = "resp", varying = list(levels(chamae2$varb)))
+</pre>
+
+
+</body></html>

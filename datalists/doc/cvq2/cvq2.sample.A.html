@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Small data set to demonstrate the difference between the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cvq2.sample.A"><tr><td>cvq2.sample.A</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Small data set to demonstrate the difference between the conventional and the predictive squared correlation coefficient.
+</h2>
+
+<h3>Description</h3>
+
+<p>Contains a small data set with four observations, the observation <em>y</em> depends on two parameters (<i>x_1</i>, <i>x_2</i>).
+
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(cvq2.sample.A)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with four observations. 
+Each row contains two parameters and the observed value.
+</p>
+
+
+<dl>
+<dt><code>x1</code></dt><dd><p>parameter 1</p>
+</dd>
+<dt><code>x2</code></dt><dd><p>parameter 2</p>
+</dd>
+<dt><code>y</code></dt><dd><p>observation</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>This data set can be used to demonstrate the differences between the model calibration and the prediction power.
+The prediction power can be determined either with cross-validation or the application of the model to the data set <code>cvq2.sample.A_pred</code>.
+</p>
+
+
+<h3>Note</h3>
+
+<p>This data set contains one outlier (row #2).
+If the prediction power is determined with cross-validation, this outlier leads to a considerably decreased prediction power, <i>q^2_cv</i>, in comparison to the model calibration, <i>r^2</i>.
+For this data set, one can perform a Leave-One-Out cross-validation only.
+
+
+</p>
+
+
+<h3>Source</h3>
+
+<p>Generic data set, created for this purpose only. 
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>cvq2</code>,
+<code>q2</code>
+</p>
+
+
+</body></html>
