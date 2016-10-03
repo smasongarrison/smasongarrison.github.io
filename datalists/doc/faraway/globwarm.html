@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Northern Hemisphere temperatures and climate proxies in the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for globwarm"><tr><td>globwarm</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Northern Hemisphere temperatures and climate proxies in the last millenia
+</h2>
+
+<h3>Description</h3>
+
+<p>Average Northen Hemisphere Temperature from 1856-2000 and eight climate
+proxies from 1000-2000AD. Data can be used to predict temperatures prior
+to 1856.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(globwarm)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1001 observations on the following 10 variables.
+</p>
+
+<dl>
+<dt><code>nhtemp</code></dt><dd><p>Northern hemisphere average temperature (C) provided by the UK Met Office (known as HadCRUT2)</p>
+</dd>
+<dt><code>wusa</code></dt><dd><p>Tree ring proxy information from the Western USA.</p>
+</dd>
+<dt><code>jasper</code></dt><dd><p>Tree ring proxy information from Canada.</p>
+</dd>
+<dt><code>westgreen</code></dt><dd><p>Ice core proxy information from west Greenland</p>
+</dd>
+<dt><code>chesapeake</code></dt><dd><p>Sea shell proxy information from Chesapeake Bay</p>
+</dd>
+<dt><code>tornetrask</code></dt><dd><p>Tree ring proxy information from Sweden</p>
+</dd>
+<dt><code>urals</code></dt><dd><p>Tree ring proxy information from the Urals</p>
+</dd>
+<dt><code>mongolia</code></dt><dd><p>Tree ring proxy information from Mongolia</p>
+</dd>
+<dt><code>tasman</code></dt><dd><p>Tree ring proxy information from Tasmania</p>
+</dd>
+<dt><code>year</code></dt><dd><p>Year 1000-2000AD</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>See the source and references below for the original data. Only some
+proxies have been included here. Some missing values have been imputed.
+The proxy data have been smoothed. This version of the data is intended
+only for demonstration purposes. If you are specifically interested in
+the subject matter, use the original data.
+</p>
+
+
+<h3>Source</h3>
+
+<p>P.D. Jones and M.E. Mann (2004) &quot;Climate Over Past Millennia&quot; Reviews of Geophysics, Vol. 42, No. 2, RG2002, doi:10.1029/2003RG000143
+</p>
+
+
+<h3>References</h3>
+
+<p>www.ncdc.noaa.gov/paleo/pubs/jones2004/jones2004.html
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(globwarm)
+## maybe str(globwarm) ; plot(globwarm) ...
+</pre>
+
+
+</body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Match pair study for AML and Xray link</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for amlxray"><tr><td>amlxray</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Match pair study for AML and Xray link</h2>
+
+<h3>Description</h3>
+
+<p>A matched case control study carried out to investigate the connection
+between X-ray usage and acute myeloid leukemia in childhood. The pairs
+are matched by age, race and county of residence.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(amlxray)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 238 observations on the following 11 variables.
+</p>
+
+<dl>
+<dt><code>ID</code></dt><dd><p>a factor denoting the matched pairs</p>
+</dd>
+<dt><code>disease</code></dt><dd><p>0=control, 1=case</p>
+</dd>
+<dt><code>Sex</code></dt><dd> <p><code>F</code> or <code>M</code></p>
+</dd>
+<dt><code>downs</code></dt><dd><p>Presence of Downs syndrome: <code>no</code> or <code>yes</code></p>
+</dd>
+<dt><code>age</code></dt><dd><p>Age in years</p>
+</dd>
+<dt><code>Mray</code></dt><dd><p>Did the mother ever have an Xray: <code>no</code> or <code>yes</code></p>
+</dd>
+<dt><code>MupRay</code></dt><dd><p>Did the mother have an Xray of the upper body
+during pregnancy: <code>no</code> or <code>yes</code></p>
+</dd>
+<dt><code>MlowRay</code></dt><dd><p>Did the mother have an Xray of the lower body
+during pregnancy: <code>no</code> or <code>yes</code></p>
+</dd>
+<dt><code>Fray</code></dt><dd><p>Did the father ever have an Xray: <code>no</code> or <code>yes</code></p>
+</dd>
+<dt><code>Cray</code></dt><dd><p>Did the child ever have an Xray: <code>no</code> or <code>yes</code></p>
+</dd>
+<dt><code>CnRay</code></dt><dd><p>Total number of Xrays of the child <code>1</code>=none
+&lt; <code>2</code>=1 or 2 &lt; <code>3</code>=3 or 4 &lt; <code>4</code>= 5 or more</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Chap T. Le (1998) &quot;Applied Categorical Data Analysis&quot; Wiley.
+</p>
+
+
+</body></html>

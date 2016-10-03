@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Doctor visits in Australia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for dvisits"><tr><td>dvisits</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Doctor visits in Australia</h2>
+
+<h3>Description</h3>
+
+<p>The data come
+from the Australian Health Survey of 1977-78 and consist of 5190
+single adults where young and old have been oversampled.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(dvisits)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 5190 observations on the following 19 variables.
+</p>
+
+<dl>
+<dt><code>sex</code></dt><dd><p>1 if female, 0 if male</p>
+</dd>
+<dt><code>age</code></dt><dd><p>Age in years divided by 100
+(measured as mid-point of 10 age groups from 15-19 years to
+65-69 with 70 or more coded treated as 72)</p>
+</dd>
+<dt><code>agesq</code></dt><dd><p>age squared</p>
+</dd>
+<dt><code>income</code></dt><dd><p>Annual income in Australian dollars divided by 1000
+(measured as mid-point of coded ranges Nil, less than 200, 200-1000,
+1001-, 2001-, 3001-, 4001-, 5001-, 6001-, 7001-, 8001-10000,
+10001-12000, 12001-14000, with 14001- treated as 15000 </p>
+</dd>
+<dt><code>levyplus</code></dt><dd><p>1 if covered by private health insurance fund for private
+patient in public hospital (with doctor of choice), 0 otherwise</p>
+</dd>
+<dt><code>freepoor</code></dt><dd><p>1 if covered by government because low income, recent immigrant,
+unemployed, 0 otherwise</p>
+</dd>
+<dt><code>freerepa</code></dt><dd><p>1 if covered free by government because of old-age or disability
+pension, or because invalid veteran or family of deceased 
+veteran, 0 otherwise</p>
+</dd>
+<dt><code>illness</code></dt><dd><p>Number of illnesses in past 2 weeks with 5 or more coded as 5</p>
+</dd>
+<dt><code>actdays</code></dt><dd><p>Number of days of reduced activity in past two weeks due to 
+illness or injury</p>
+</dd>
+<dt><code>hscore</code></dt><dd><p>General health questionnaire score using Goldberg's method.
+High score indicates bad health</p>
+</dd>
+<dt><code>chcond1</code></dt><dd><p>1 if chronic condition(s) but not limited in activity, 0 otherwise</p>
+</dd>
+<dt><code>chcond2</code></dt><dd><p>1 if chronic condition(s) and limited in activity, 0 otherwise</p>
+</dd>
+<dt><code>doctorco</code></dt><dd><p>Number of consultations with a doctor or specialist 
+in the past 2 weeks</p>
+</dd>
+<dt><code>nondocco</code></dt><dd><p>Number of consultations with non-doctor health professionals
+(chemist, optician, physiotherapist, social worker, 
+district community nurse, chiropodist or chiropractor)
+in the past 2 weeks</p>
+</dd>
+<dt><code>hospadmi</code></dt><dd><p>Number of admissions to a hospital, psychiatric hospital, 
+nursing or convalescent home in the past 12 months 
+(up to 5 or more admissions which is coded as 5)</p>
+</dd>
+<dt><code>hospdays</code></dt><dd><p>Number of nights in a hospital, etc. during most recent
+admission: taken, where appropriate, as the mid-point of the
+intervals 1, 2, 3, 4, 5, 6, 7, 8-14, 15-30, 31-60, 61-79
+with 80 or more admissions coded as 80. If no admission
+in past 12 months then equals zero</p>
+</dd>
+<dt><code>medicine</code></dt><dd><p>Total number of prescribed and nonprescribed medications used
+in past 2 days</p>
+</dd>
+<dt><code>prescrib</code></dt><dd><p>Total number of prescribed medications used in past 2 days</p>
+</dd>
+<dt><code>nonpresc</code></dt><dd><p>Total number of nonprescribed medications used in past 2 days</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Cameron A, Trivedi P, Milne F and Piggot J (1988) A Microeconometric
+model of the demand for health care and health insurance in Australia,
+Review of Economic Studies 55, 85-106
+</p>
+
+
+</body></html>

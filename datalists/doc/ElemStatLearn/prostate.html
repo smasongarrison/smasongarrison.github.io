@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Prostate Cancer Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for prostate"><tr><td>prostate</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Prostate Cancer Data </h2>
+
+<h3>Description</h3>
+
+<p>Data to examine the correlation between the level of prostate-specific
+antigen and a number of clinical measures in men who were about to 
+receive a radical prostatectomy.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(prostate)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 97 observations on the following 10 variables.
+</p>
+
+<dl>
+<dt>lcavol</dt><dd><p>log cancer volume</p>
+</dd>
+<dt>lweight</dt><dd><p>log prostate weight</p>
+</dd>
+<dt>age</dt><dd><p>in years</p>
+</dd>
+<dt>lbph</dt><dd><p>log of the amount of benign prostatic hyperplasia</p>
+</dd>
+<dt>svi</dt><dd><p>seminal vesicle invasion</p>
+</dd>
+<dt>lcp</dt><dd><p>log of capsular penetration</p>
+</dd>
+<dt>gleason</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>pgg45</dt><dd><p>percent of Gleason score 4 or 5</p>
+</dd>
+<dt>lpsa</dt><dd><p>response</p>
+</dd>
+<dt>train</dt><dd><p>a logical vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The last column indicates which 67 observations were used as the 
+&quot;training set&quot; and which 30 as the test set, as described on page 48
+in the book.
+</p>
+
+
+<h3>Note</h3>
+
+<p>There was an error in this dataset in earlier versions of the
+package, as indicated in a footnote on page 3 of the second edition of
+the book. As of version 2012.04-0 this was corrected.</p>
+
+
+<h3>Source</h3>
+
+<p> Stamey, T., Kabalin, J., McNeal, J., Johnstone, I.,
+Freiha, F., Redwine, E. and Yang, N (1989) Prostate specific antigen
+in the diagnosis and treatment of adenocarcinoma of the prostate
+II. Radical prostatectomy treted patients, Journall of Urology 16: 1076&ndash;1083.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+if(interactive())par(ask=TRUE)
+str( prostate )
+cor( prostate[,1:8] )
+pairs( prostate[,1:9], col="violet" )
+train &lt;- subset( prostate, train==TRUE )[,1:9]
+test  &lt;- subset( prostate, train=FALSE )[,1:9]
+#
+if( require(leaps)) {
+# The book (page 56) uses only train subset, so we the same:
+prostate.leaps &lt;- regsubsets( lpsa ~ . , data=train, nbest=70, #all!
+                     really.big=TRUE )
+prostate.leaps.sum &lt;- summary( prostate.leaps )
+prostate.models &lt;- prostate.leaps.sum$which
+prostate.models.size &lt;- as.numeric(attr(prostate.models, "dimnames")[[1]])
+hist( prostate.models.size )
+prostate.models.rss &lt;- prostate.leaps.sum$rss
+prostate.models.best.rss &lt;- 
+     tapply( prostate.models.rss, prostate.models.size, min )
+prostate.models.best.rss
+# Let us add results for the only intercept model
+prostate.dummy &lt;- lm( lpsa ~ 1, data=train )
+prostate.models.best.rss &lt;- c(
+         sum(resid(prostate.dummy)^2), 
+          prostate.models.best.rss)
+# Making a plot:
+plot( 0:8, prostate.models.best.rss, ylim=c(0, 100), 
+      type="b", xlab="subset size", ylab="Residual Sum Square", 
+      col="red2" )
+points( prostate.models.size, prostate.models.rss, pch=17, col="brown",cex=0.7 )
+}
+# For a better plot, should remove the best for each size from last call!
+# Now with ridge regression: 
+# Ridge regression in R is multiply implemented, at least:
+# MASS: lm.ridge
+# mda : gen.ridge
+#( survival: ridge)
+# Design: pentrace
+# mgcv: pcls (very general)
+# simple.ridge (in this package)
+#
+library(mda)
+#
+prostate.ridge.list &lt;- lapply(list(lambda=seq(0,8,by=0.4)), function(lambda) 
+    gen.ridge(train[,1:8], y=train[,9,drop=FALSE],   lambda=lambda))
+# Problems with this usage.
+# simpler usage:
+#
+prostate.ridge &lt;- gen.ridge(train[,1:8], y=train[,9,drop=FALSE], lambda=1)
+#
+# Since there is some problems with the mda functions, we use our own:
+#
+prostate.ridge &lt;- simple.ridge( train[,1:8], train[,9], df=1:8 )
+#
+# coefficient traces:
+#
+matplot( prostate.ridge$df, t(prostate.ridge$beta), type="b", 
+        col="blue", pch=17, ylab="coefficients" )
+# Calculations for the lasso:
+#
+if(require(lasso2))  {
+prostate.lasso &lt;- l1ce( lpsa ~ ., data=train, trace=TRUE, sweep.out=~1,  
+                     bound=seq(0,1,by=0.1) )
+prostate.lasso.coef &lt;- sapply(prostate.lasso, function(x) x$coef)
+colnames(prostate.lasso.coef) &lt;- seq( 0,1,by=0.1 )
+matplot( seq(0,1,by=0.1), t(prostate.lasso.coef[-1,]), type="b", 
+        xlab="shrinkage factor", ylab="coefficients", 
+        xlim=c(0, 1.2), col="blue", pch=17 )
+}
+#
+# lasso with lars:
+if (require(lars)) {
+#
+prostate.lasso.lars &lt;- lars( as.matrix(train[,1:8]), train[,9], 
+         type="lasso", trace=TRUE )
+cv.lars( as.matrix(train[,1:8]), train[,9], 
+         type="lasso", trace=TRUE, K=10 )
+}
+#
+# CV (cross-validation) using package boot:
+#
+library(boot)
+prostate.glm &lt;- glm( lpsa ~ ., data=train )
+# repeat this some times to make clear that cross-validation is
+# a random procedure
+#
+cv.glm( train, prostate.glm, K=10 )$delta                              
+#
+# This is a two-component vector, raw cross-validated estimate and
+#   adjusted cross-validated estimate.
+summary( prostate.glm )
+#
+</pre>
+
+
+</body></html>

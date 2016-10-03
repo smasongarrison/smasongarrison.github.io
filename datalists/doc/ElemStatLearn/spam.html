@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Email Spam Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for spam"><tr><td>spam</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Email Spam Data </h2>
+
+<h3>Description</h3>
+
+<p>SPAM E-mail Database. See Details below.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(spam)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 4601 observations on the following 58 variables.
+</p>
+
+<dl>
+<dt>A.1</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.2</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.3</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.4</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.5</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.6</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.7</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.8</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.9</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.10</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.11</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.12</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.13</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.14</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.15</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.16</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.17</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.18</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.19</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.20</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.21</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.22</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.23</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.24</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.25</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.26</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.27</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.28</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.29</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.30</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.31</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.32</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.33</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.34</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.35</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.36</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.37</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.38</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.39</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.40</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.41</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.42</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.43</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.44</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.45</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.46</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.47</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.48</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.49</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.50</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.51</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.52</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.53</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.54</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.55</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.56</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>A.57</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>spam</dt><dd><p>Factor w/ 2 levels &quot;email&quot;, &quot;spam&quot;</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The &quot;spam&quot; concept is diverse: advertisements for products/web
+sites, make money fast schemes, chain letters, pornography...
+Our collection of spam e-mails came from our postmaster and 
+individuals who had filed spam.  Our collection of non-spam 
+e-mails came from filed work and personal e-mails, and hence
+the word 'george' and the area code '650' are indicators of 
+non-spam.  These are useful when constructing a personalized 
+spam filter.  One would either have to blind such non-spam 
+indicators or get a very wide collection of non-spam to 
+generate a general purpose spam filter.
+</p>
+<p>For background on spam:
+Cranor, Lorrie F., LaMacchia, Brian A.  Spam! 
+Communications of the ACM, 41(8):74-83, 1998.
+</p>
+<p>Attribute Information:
+The last column of 'spambase.data' denotes whether the e-mail was 
+considered spam (1) or not (0), i.e. unsolicited commercial e-mail.  
+Most of the attributes indicate whether a particular word or
+character was frequently occuring in the e-mail.  The run-length
+attributes (55-57) measure the length of sequences of consecutive 
+capital letters.  For the statistical measures of each attribute, 
+see the end of this file.  Here are the definitions of the attributes:
+</p>
+<p>48 continuous real [0,100] attributes of type word\_freq\_WORD 
+= percentage of words in the e-mail that match WORD,
+i.e. 100 * (number of times the WORD appears in the e-mail) / 
+total number of words in e-mail.  A &quot;word&quot; in this case is any 
+string of alphanumeric characters bounded by non-alphanumeric 
+characters or end-of-string.
+</p>
+<p>6 continuous real [0,100] attributes of type char\_freq\_CHAR
+= percentage of characters in the e-mail that match CHAR,
+i.e. 100 * (number of CHAR occurences) / total characters in e-mail
+</p>
+<p>1 continuous real [1,...] attribute of type capital\_run\_length\_average
+= average length of uninterrupted sequences of capital letters
+</p>
+<p>1 continuous integer [1,...] attribute of type capital\_run\_length\_longest
+= length of longest uninterrupted sequence of capital letters
+</p>
+<p>1 continuous integer [1,...] attribute of type capital\_run\_length\_total
+= sum of length of uninterrupted sequences of capital letters
+= total number of capital letters in the e-mail
+</p>
+<p>1 nominal {0,1} class attribute of type spam
+= denotes whether the e-mail was considered spam (1) or not (0), 
+i.e. unsolicited commercial e-mail.  
+</p>
+
+
+<h3>Source</h3>
+
+<p>(a) Creators: Mark Hopkins, Erik Reeber, George Forman, Jaap Suermondt
+Hewlett-Packard Labs, 1501 Page Mill Rd., Palo Alto, CA 94304
+(b) Donor: George Forman (gforman at nospam hpl.hp.com)  650-857-7835
+(c) Generated: June-July 1999
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.ics.uci.edu/~mlearn/MLRepository.html">http://www.ics.uci.edu/~mlearn/MLRepository.html</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+head(str(spam))
+## Not run: 
+if(require(prim)){ # This uses too much time!
+   X &lt;- spam[,1:57]
+   Y &lt;- ifelse(spam$spam=="spam", 1, 0)
+   spam.prim1 &lt;- prim.box(X, Y, threshold.type=1,  verbose=TRUE)
+   summary(spam.prim1)
+} # use of prim package.
+
+## End(Not run)
+# The following example uses too much time and must be put inside a
+# dontrun construction. Also summary(spam.earth) killed the R process
+# ...
+## Not run: 
+if(require(earth)){
+   spam.earth &lt;- earth(spam[, 1:57], spam$spam,
+         glm=list(family=binomial),
+         trace=1, keepxy=TRUE, degree=1, nfold=10)
+   summary(spam.earth)
+} # use of earth package
+
+## End(Not run) # end of dontrun block
+if(require(mda)){
+ spam.mars &lt;- mars(spam[, 1:57],
+                   ifelse(spam$spam=="spam", 1, 0),
+                   degree=1, nk=50, trace.mars=TRUE)
+ summary(spam.mars)
+} # end require(mda) block
+</pre>
+
+
+</body></html>

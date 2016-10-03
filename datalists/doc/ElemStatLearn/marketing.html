@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Market Basket Analysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for marketing"><tr><td>marketing</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Market Basket Analysis  </h2>
+
+<h3>Description</h3>
+
+<p>The dataset is an extract from this survey. It consists of 
+14 demographic attributes. The dataset is a good mixture of categorical 
+and continuos variables with a lot of missing data. This is characteristic 
+for data mining applications. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(marketing)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 8993 observations on the following 14 variables.
+</p>
+
+<dl>
+<dt>Income</dt><dd><p>ANNUAL INCOME OF HOUSEHOLD (PERSONAL INCOME IF SINGLE)
+1. Less than \$10,000
+2. \$10,000 to \$14,999
+3. \$15,000 to \$19,999
+4. \$20,000 to \$24,999
+5. \$25,000 to \$29,999
+6. \$30,000 to \$39,999
+7. \$40,000 to \$49,999
+8. \$50,000 to \$74,999
+9. \$75,000 or more</p>
+</dd>
+<dt>Sex</dt><dd><p>1. Male
+2. Female</p>
+</dd>
+<dt>Marital</dt><dd><p>1. Married
+2. Living together, not married
+3. Divorced or separated
+4. Widowed
+5. Single, never married</p>
+</dd>
+<dt>Age</dt><dd><p>  1. 14 thru 17
+2. 18 thru 24
+3. 25 thru 34
+4. 35 thru 44
+5. 45 thru 54
+6. 55 thru 64
+7. 65 and Over</p>
+</dd>
+<dt>Edu</dt><dd><p> 1. Grade 8 or less
+2. Grades 9 to 11
+3. Graduated high school
+4. 1 to 3 years of college
+5. College graduate
+6. Grad Study</p>
+</dd>
+<dt>Occupation</dt><dd><p>1. Professional/Managerial
+2. Sales Worker
+3. Factory Worker/Laborer/Driver
+4. Clerical/Service Worker
+5. Homemaker
+6. Student, HS or College
+7. Military
+8. Retired
+9. Unemployed</p>
+</dd>
+<dt>Lived</dt><dd><p>HOW LONG HAVE YOU LIVED IN THE SAN FRAN./OAKLAND/SAN JOSE AREA?
+1. Less than one year
+2. One to three years
+3. Four to six years
+4. Seven to ten years
+5. More than ten years</p>
+</dd>
+<dt>Dual_Income</dt><dd><p>DUAL INCOMES (IF MARRIED)
+1. Not Married
+2. Yes
+3. No</p>
+</dd>
+<dt>Household</dt><dd><p>PERSONS IN YOUR HOUSEHOLD
+1. One
+2. Two
+3. Three
+4. Four
+5. Five
+6. Six
+7. Seven
+8. Eight
+9. Nine or more</p>
+</dd>
+<dt>Householdu18</dt><dd><p>PERSONS IN HOUSEHOLD UNDER 18
+0. None
+1. One
+2. Two
+3. Three
+4. Four
+5. Five
+6. Six
+7. Seven
+8. Eight
+9. Nine or more</p>
+</dd>
+<dt>Status</dt><dd><p>HOUSEHOLDER STATUS
+1. Own
+2. Rent
+3. Live with Parents/Family</p>
+</dd>
+<dt>Home_Type</dt><dd><p>1. House
+2. Condominium
+3. Apartment
+4. Mobile Home
+5. Other</p>
+</dd>
+<dt>Ethnic</dt><dd><p>1. American Indian
+2. Asian
+3. Black
+4. East Indian
+5. Hispanic
+6. Pacific Islander
+7. White
+8. Other</p>
+</dd>
+<dt>Language</dt><dd><p>WHAT LANGUAGE IS SPOKEN MOST OFTEN IN YOUR HOME?
+1. English
+2. Spanish
+3. Other</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The goal is to predict the Anual Income of Household from the other 13
+demographics  attributes.
+</p>
+<p>Number of instances: 8993.
+</p>
+<p>These are obtained from the original dataset with 9409 instances,
+by removing those observations with the response (Annual Income)
+missing.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Source: Impact Resources, Inc., Columbus, OH (1987). 
+A total of N=9409 questionnaires containg 502 questions were 
+filled out by shopping mall customers in the San Francisco Bay area. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(marketing)
+summary(marketing)
+</pre>
+
+
+</body></html>

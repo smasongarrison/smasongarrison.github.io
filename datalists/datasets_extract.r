@@ -5,8 +5,13 @@ if (!require("R2HTML")) install.packages('R2HTML')
 
 
 
-packages=c("mlbench","AppliedPredictiveModeling"
-           )
+packages=c("ISLR",
+"fueleconomy",
+"babynames",
+"nasaweather",
+"nycflights13",
+"qtlcharts",
+"faraway", "HistData", "HSAUR", "Ecdat", "learnEDA", "ElemStatLearn", "abc.data", "wpp2012", "astrodatR", "ocedata", "TH.data", "USAboundaries", "mapdata", "hglm.data", "MM2Sdata", "synbreedData", "usdanutrients","imudata")
 
 unload_Namespaces<- function(try=1,loadedOnly=TRUE,otherPkgs=TRUE){
   ns<-NULL

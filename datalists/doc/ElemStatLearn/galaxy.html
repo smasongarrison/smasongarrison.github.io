@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Galaxy Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for galaxy"><tr><td>galaxy</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Galaxy Data</h2>
+
+<h3>Description</h3>
+
+<p>Radial Velocity of Galaxy NGC7531
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(galaxy)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 323 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt>east.west</dt><dd><p>the east-west coordinate.  The origin,  (0,0),  is
+near  the  center of the galaxy, east is negative, west is
+positive.</p>
+</dd>
+<dt>north.south</dt><dd><p>the north-south coordinate.  The origin, (0,0), is
+near the center of the galaxy, south is negative, north is
+positive.</p>
+</dd>
+<dt>angle</dt><dd><p>degrees of counter-clockwise rotation from the horizon-
+tal of the slot within which the observation lies.</p>
+</dd>
+<dt>radial.position</dt><dd><p>signed  distance  from  origin;  negative  if
+east-west coordinate is negative.</p>
+</dd>
+<dt>velocity</dt><dd><p>radial velocity measured in km/sec.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The galaxy data frame records the  radial  velocity  of  a
+spiral  galaxy  measured  at 323 points in the area of sky
+which it covers.  All the measurements  lie  within  seven
+slots  crossing at the origin.  The positions of the meas-
+urements given by four variables (columns).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Buta, R. (1987)  The  Structure  and  Dynamics  of  Ringed
+Galaxies,  III:  Surface  Photometry and Kinematics of the
+Ringed Nonbarred Spiral NGC7531.    The  Astrophysical  J.
+Supplement Ser. Vol. 64, pp. 1&ndash;37.
+</p>
+<p>John M. Chambers and Trevor J. Hastie, (eds.)  Statistical
+Models in S, Wadsworth and Brooks, Pacific Grove, CA 1992,
+pg. 352.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(galaxy) 
+summary(galaxy)
+</pre>
+
+
+</body></html>

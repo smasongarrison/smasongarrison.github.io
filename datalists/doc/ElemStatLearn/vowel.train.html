@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Vowel Recognition (Deterding data)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for vowel.train"><tr><td>vowel.train</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Vowel Recognition (Deterding data)</h2>
+
+<h3>Description</h3>
+
+<p>Speaker independent recognition of the eleven steady state vowels
+of British English using a specified training set of lpc derived log area
+ratios.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(vowel.train)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 528 observations on the following 11 variables.
+</p>
+
+<dl>
+<dt>y</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>x.1</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>x.2</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>x.3</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>x.4</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>x.5</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>x.6</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>x.7</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>x.8</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>x.9</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>x.10</dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>For a more detailed explanation of the problem, see the excerpt from Tony
+Robinson's Ph.D. thesis in the COMMENTS section.  In Robinson's opinion,
+connectionist problems fall into two classes, the possible and the
+impossible.  He is interested in the latter, by which he means problems
+that have no exact solution.  Thus the problem here is not to see how fast
+a network can be trained (although this is important), but to maximise a
+less than perfect performance.
+</p>
+<p>METHODOLOGY:
+</p>
+<p>Report the number of test vowels classified correctly, (i.e. the number of
+occurences when distance of the correct output to the actual output was the
+smallest of the set of distances from the actual output to all possible
+target outputs).
+</p>
+<p>Though this is not the focus of Robinson's study, it would also be useful
+to report how long the training took (measured in pattern presentations or
+with a rough count of floating-point operations required) and what level of
+success was achieved on the training and testing data after various amounts
+of training.  Of course, the network topology and algorithm used should be
+precisely described as well.
+</p>
+<p>VARIATIONS:
+</p>
+<p>This benchmark is proposed to encourage the exploration of different node
+types.  Please theorise/experiment/hack.  The author (Robinson) will try to
+correspond by email if requested.  In particular there has been some
+discussion recently on the use of a cross-entropy distance measure, and it
+would be interesting to see results for that.
+</p>
+<p>RESULTS:
+</p>
+<p>Here is a summary of results obtained by Tony Robinson.  A more complete
+explanation of this data is given in the exceprt from his thesis in the
+COMMENTS section below.
+</p>
+<pre>
++-------------------------+--------+---------+---------+
+|			  | no. of | no.     | percent |
+| Classifier              | hidden | correct | correct |
+|			  | units  |         |         | 
++-------------------------+--------+---------+---------+
+| Single-layer perceptron |  -     | 154     | 33      | 
+| Multi-layer perceptron  | 88     | 234     | 51      |
+| Multi-layer perceptron  | 22     | 206     | 45      |
+| Multi-layer perceptron  | 11     | 203     | 44      | 
+| Modified Kanerva Model  | 528    | 231     | 50      |
+| Modified Kanerva Model  | 88     | 197     | 43      | 
+| Radial Basis Function   | 528    | 247     | 53      |
+| Radial Basis Function   | 88     | 220     | 48      | 
+| Gaussian node network   | 528    | 252     | 55      |
+| Gaussian node network   | 88     | 247     | 53      |
+| Gaussian node network   | 22     | 250     | 54      |
+| Gaussian node network   | 11     | 211     | 47      | 
+| Square node network     | 88     | 253     | 55      |
+| Square node network     | 22     | 236     | 51      |
+| Square node network     | 11     | 217     | 50      | 
+| Nearest neighbour       |  -     | 260     | 56      | 
++-------------------------+--------+---------+---------+
+</pre>
+<p>Notes: 
+</p>
+<p>1. Each of these numbers is based on a single trial with random starting
+weights.  More trials would of course be preferable, but the computational
+facilities available to Robinson were limited.
+</p>
+<p>2. Graphs are given in Robinson's thesis showing test-set performance vs.
+epoch count for some of the training runs.  In most cases, performance
+peaks at around 250 correct, after which performance decays to different
+degrees.  The numbers given above are final performance figures after about
+3000 trials, not the peak performance obtained during the run.
+</p>
+<p>REFERENCES:
+</p>
+<p>[Deterding89] D. H. Deterding, 1989, University of Cambridge, &quot;Speaker
+Normalisation for Automatic Speech Recognition&quot;, submitted for PhD.
+</p>
+<p>[NiranjanFallside88] M. Niranjan and F. Fallside, 1988, Cambridge University
+Engineering Department, &quot;Neural Networks and Radial Basis Functions in
+Classifying Static Speech Patterns&quot;, CUED/F-INFENG/TR.22.
+</p>
+<p>[RenalsRohwer89-ijcnn] Steve Renals and Richard Rohwer, &quot;Phoneme
+Classification Experiments Using Radial Basis Functions&quot;, Submitted to
+the International Joint Conference on Neural Networks, Washington,
+1989.
+</p>
+<p>[RabinerSchafer78] L. R. Rabiner and R. W. Schafer, Englewood Cliffs, New
+Jersey, 1978, Prentice Hall, &quot;Digital Processing of Speech Signals&quot;.
+</p>
+<p>[PragerFallside88] R. W. Prager and F. Fallside, 1988, Cambridge University
+Engineering Department, &quot;The Modified Kanerva Model for Automatic
+Speech Recognition&quot;, CUED/F-INFENG/TR.6.
+</p>
+<p>[BroomheadLowe88] D. Broomhead and D. Lowe, 1988, Royal Signals and Radar
+Establishment, Malvern, &quot;Multi-variable Interpolation and Adaptive
+Networks&quot;, RSRE memo, \#4148.
+</p>
+<p>[RobinsonNiranjanFallside88-tr] A. J. Robinson and M. Niranjan and F. 
+Fallside, 1988, Cambridge University Engineering Department,
+&quot;Generalising the Nodes of the Error Propagation Network&quot;,
+CUED/F-INFENG/TR.25.
+</p>
+<p>[Robinson89] A. J. Robinson, 1989, Cambridge University Engineering
+Department, &quot;Dynamic Error Propagation Networks&quot;.
+</p>
+<p>[McCullochAinsworth88] N. McCulloch and W. A. Ainsworth, Proceedings of
+Speech'88, Edinburgh, 1988, &quot;Speaker Independent Vowel Recognition
+using a Multi-Layer Perceptron&quot;.
+</p>
+<p>[RobinsonFallside88-neuro] A. J. Robinson and F. Fallside, 1988, Proceedings
+of nEuro'88, Paris, June, &quot;A Dynamic Connectionist Model for Phoneme
+Recognition.
+</p>
+<p>COMMENTS:
+</p>
+<p>(By Tony Robinson)
+</p>
+<p>The program supplied is slow.  I ran it on several MicroVaxII's for many
+nights.  I suspect that if I had spent more time on it, it would have been
+possible to get better results.  Indeed, my later code has a slightly
+better adaptive step size algotithm, but the old version is given here for
+comatability with the stated performance values.  It is interesting that,
+for this problem, the nearest neighbour clasification outperforms any of
+the connectionist models.  This can be seen as a challange to improve the
+connectionist performance.
+</p>
+<p>The following problem description results and discussion is taken from my
+PhD thesis.  The aim was to demonstrate that many types of node can be
+trained using gradient descent.  The full thesis will be available from me
+when it has been examined, say maybe July 1989.
+</p>
+<p>Application to Vowel Recognition
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+</p>
+<p>This chapter describes the application of a variety of feed-forward networks
+to the task of recognition of vowel sounds from multiple speakers.  Single
+speaker vowel recognition studies by Renals and Rohwer [RenalsRohwer89-ijcnn]
+show that feed-forward networks compare favourably with vector-quantised
+hidden Markov models.  The vowel data used in this chapter was collected by
+Deterding [Deterding89], who recorded examples of the eleven steady state
+vowels of English spoken by fifteen speakers for a speaker normalisation
+study.  A range of node types are used, as described in the previous section,
+and some of the problems of the error propagation algorithm are discussed.
+</p>
+<p>The Speech Data
+</p>
+<p>(An ascii approximation to) the International Phonetic Association (I.P.A.)
+symbol and the word in which the eleven vowel sounds were recorded is given in
+table 4.1.  The word was uttered once by each of the fifteen speakers.  Four
+male and four female speakers were used to train the networks, and the other
+four male and three female speakers were used for testing the performance.
+</p>
+<pre>
++-------+--------+-------+---------+
+| vowel |  word  | vowel |  word   | 
++-------+--------+-------+---------+
+|  i    |  heed  |  O    |  hod    |
+|  I    |  hid   |  C:   |  hoard  |
+|  E    |  head  |  U    |  hood   |
+|  A    |  had   |  u:   |  who'd  |
+|  a:   |  hard  |  3:   |  heard  |
+|  Y    |  hud   |       |         |
++-------+--------+-------+---------+
+</pre>
+<p>Table 4.1: Words used in Recording the Vowels
+</p>
+<p>Front End Analysis
+</p>
+<p>The speech signals were low pass filtered at 4.7kHz and then digitised to 12
+bits with a 10kHz sampling rate.  Twelfth order linear predictive analysis was
+carried out on six 512 sample Hamming windowed segments from the steady part
+of the vowel.  The reflection coefficients were used to calculate 10 log area
+parameters, giving a 10 dimensional input space.  For a general introduction
+to speech processing and an explanation of this technique see Rabiner and
+Schafer [RabinerSchafer78].
+</p>
+<p>Each speaker thus yielded six frames of speech from eleven vowels.  This gave
+528 frames from the eight speakers used to train the networks and 462 frames
+from the seven speakers used to test the networks.
+</p>
+<p>Details of the Models
+</p>
+<p>All the models had common structure of one layer of hidden units and two
+layers of weights.  Some of the models used fixed weights in the first layer
+to perform a dimensionality expansion [Robinson89:sect3.1], and the remainder
+modified the first layer of weights using the error propagation algorithm for
+general nodes described in [Robinson89:chap2].  In the second layer the hidden
+units were mapped onto the outputs using the conventional weighted-sum type
+nodes with a linear activation function.  When Gaussian nodes were used the
+range of influence of the nodes, <i>w_{ij1}</i>, was set to the standard deviation of
+the training data for the appropriate input dimension.  If the locations of
+these nodes, <i>w_{ij0}</i>, are placed randomly, then the model behaves like a
+continuous version of the modified Kanerva model [PragerFallside88].  If the
+locations are placed at the points defined by the input examples then the
+model implements a radial basis function [BroomheadLowe88].  The first layer
+of weights remains constant in both of these models, but can be also trained
+using the equations of [Robinson89:sect2.4].  Replacing the Gaussian nodes
+with the conventional type gives a multilayer perceptron and replacing them
+with conventional nodes with the activation function <i>f(x) = x^2</i> gives a
+network of square nodes.  Finally, dispensing with the first layer altogether
+yields a single layer perceptron.
+</p>
+<p>The scaling factor between gradient of the energy and the change made to the
+weights (the &lsquo;learning rate&rsquo;, &lsquo;eta&rsquo;) was dynamically varied during training,
+as described in [Robinson89:sect2.5].  If the energy decreased this factor was
+increased by 5%, if it increased the factor was halved.  The networks changed
+the weights in the direction of steepest descent which is susceptible to
+finding a local minimum.  A &lsquo;momentum&rsquo; term [RumelhartHintonWilliams86] is
+often used with error propagation networks to smooth the weight changes and
+&lsquo;ride over&rsquo; small local minima.  However, the optimal value of this term is
+likely to be problem dependent, and in order to provide a uniform framework,
+this additional term was not used.
+</p>
+<p>Recognition Results
+</p>
+<p>This experiment was originally carried out with only two frames of data from
+each word [RobinsonNiranjanFallside88-tr].  In the earlier experiment some
+problems were encountered with a phenomena termed &lsquo;overtraining&rsquo; whereby the
+recognition rate on the test data peaks part way through training then decays
+significantly.  The recognition rates for the six frames per word case are
+given in table 4.2 and are generally higher and show less variability than the
+previously presented results.  However, the recognition rate on the test set
+still displays large fluctuations during training, as shown by the plots in
+[Robinson89:fig3.2] Some fluctuations will arise from the fact that the
+minimum in weight space for the training set will not be coincident with the
+minima for the test set.  Thus, half the possible trajectories during learning
+will approach the test set minimum and then move away from it again on the way
+to the training set minima [Mark Plumbley, personal communication].  In
+addition, continued training sharpens the class boundaries which makes the
+energy insensitive to the class boundary position [Mahesan Niranjan, personal
+communiation].  For example, there are a large number planes defined with
+threshold units which will separate two points in the input space, but only
+one least squares solution for the case of linear units.
+</p>
+<pre>
++-------------------------+--------+---------+---------+
+|			  | no. of | no.     | percent |
+| Classifier              | hidden | correct | correct |
+|			  | units  |         |         | 
++-------------------------+--------+---------+---------+
+| Single-layer perceptron |  -     | 154     | 33      | 
+| Multi-layer perceptron  | 88     | 234     | 51      |
+| Multi-layer perceptron  | 22     | 206     | 45      |
+| Multi-layer perceptron  | 11     | 203     | 44      | 
+| Modified Kanerva Model  | 528    | 231     | 50      |
+| Modified Kanerva Model  | 88     | 197     | 43      | 
+| Radial Basis Function   | 528    | 247     | 53      |
+| Radial Basis Function   | 88     | 220     | 48      | 
+| Gaussian node network   | 528    | 252     | 55      |
+| Gaussian node network   | 88     | 247     | 53      |
+| Gaussian node network   | 22     | 250     | 54      |
+| Gaussian node network   | 11     | 211     | 47      | 
+| Square node network     | 88     | 253     | 55      |
+| Square node network     | 22     | 236     | 51      |
+| Square node network     | 11     | 217     | 50      | 
+| Nearest neighbour       |  -     | 260     | 56      | 
++-------------------------+--------+---------+---------+
+</pre>
+<p>Table 4.2: Vowel classification with different non-linear classifiers
+</p>
+<p>Discussion
+</p>
+<p>From these vowel classification results it can be seen that minimising the
+least mean square error over a training set does not guarantee good
+generalisation to the test set.  The best results were achieved with nearest
+neighbour analysis which classifies an item as the class of the closest
+example in the training set measured using the Euclidean distance.  It is
+expected that the problem of overtraining could be overcome by using a larger
+training set taking data from more speakers.  The performance of the Gaussian
+and square node network was generally better than that of the multilayer
+perceptron.  In other speech recognition problems which attempt to classify
+single frames of speech, such as those described by McCulloch and Ainsworth
+[McCullochAinsworth88] and that of [Robinson89:chap7 and
+RobinsonFallside88-neuro], the nearest neighbour algorithm does not perform as
+well as a multilayer perceptron.  It would be interesting to investigate this
+difference and apply a network of Gaussian or square nodes to these problems.
+</p>
+<p>The initial weights to the hidden units in the Gaussian network can be given a
+physical interpretation in terms of matching to a template for a set of
+features.  This gives an advantage both in shortening the training time and
+also because the network starts at a point in weight space near a likely
+solution, which avoids some possible local minima which represent poor
+solutions.
+</p>
+<p>The results of the experiments with Gaussian and square nodes are promising.
+However, it has not been the aim of this chapter to show that a particular
+type of node is necessarily &lsquo;better&rsquo; for error propagation networks than the
+weighted sum node, but that the error propagation algorithm can be applied
+successfully to many different types of node.
+</p>
+
+
+<h3>Source</h3>
+
+<p>David Deterding  (data and non-connectionist analysis)
+Mahesan Niranjan (first connectionist analysis)
+Tony Robinson    (description, program, data, and results)
+</p>
+
+
+<h3>References</h3>
+
+<p>neural-bench@cs.cmu.edu
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(vowel.train) 
+</pre>
+
+
+</body></html>

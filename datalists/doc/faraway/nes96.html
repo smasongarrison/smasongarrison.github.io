@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: US 1996 national election study</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for nes96"><tr><td>nes96</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>US 1996 national election study</h2>
+
+<h3>Description</h3>
+
+<p>10 variable subset of the 1996 American National Election
+Study. Missing values and &quot;don't know&quot; responses have been listwise
+deleted. Respondents expressing a voting preference other than Clinton
+or Dole have been removed.  </p>
+
+
+<h3>Usage</h3>
+
+<pre>data(nes96)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 944 observations on the following 10 variables.
+</p>
+
+<dl>
+<dt>popul</dt><dd><p>population of respondent's location in 1000s of people</p>
+</dd>
+<dt>TVnews</dt><dd><p>days in the past week spent watching news on TV</p>
+</dd>
+<dt>selfLR</dt><dd><p>Left-Right self-placement of respondent: an ordered
+factor with levels extremely liberal, <code>extLib</code> &lt;  liberal,
+<code>Lib</code> &lt; slightly liberal, <code>sliLib</code> &lt; moderate,
+<code>Mod</code> &lt; slightly conservative, <code>sliCon</code> &lt; conservative,
+<code>Con</code> &lt; extremely conservative, <code>extCon</code></p>
+</dd>
+<dt>ClinLR</dt><dd><p>Left-Right placement of Bill Clinton (same scale as
+selfLR): an ordered factor with levels <code>extLib</code> &lt; <code>Lib</code> &lt; <code>sliLib</code> &lt; <code>Mod</code> &lt; <code>sliCon</code> &lt; <code>Con</code> &lt; <code>extCon</code></p>
+</dd>
+<dt>DoleLR</dt><dd><p>Left-Right placement of Bob Dole (same scale as
+selfLR): an ordered factor with levels <code>extLib</code> &lt; <code>Lib</code> &lt; <code>sliLib</code> &lt; <code>Mod</code> &lt; <code>sliCon</code> &lt; <code>Con</code> &lt; <code>extCon</code></p>
+</dd>
+<dt>PID</dt><dd><p>Party identification: an ordered factor with levels
+strong Democrat, <code>strDem</code> &lt; weak Democrat, <code>weakDem</code> &lt;
+independent Democrat, <code>indDem</code> &lt; independent
+independent<code>indind</code> &lt; indepedent Republican, <code>indRep</code> &lt;
+waek Republican, <code>weakRep</code> &lt; strong Republican, <code>strRep</code></p>
+</dd>
+<dt>age</dt><dd><p>Respondent's age in years</p>
+</dd>
+<dt>educ</dt><dd><p>Respondent's education: an ordered factor with levels 8
+years or less, <code>MS</code> &lt; high school dropout, <code>HSdrop</code> &lt;
+high school diploma or GED, <code>HS</code> &lt; some College, <code>Coll</code>
+&lt; Community or junior College degree, <code>CCdeg</code> &lt; BA degree,
+<code>BAdeg</code> &lt; postgraduate degree, <code>MAdeg</code></p>
+</dd>
+<dt>income</dt><dd><p>Respondent's family income: an ordered factor with levels <code>$3Kminus</code> &lt; <code>$3K-$5K</code> &lt; <code>$5K-$7K</code> &lt; <code>$7K-$9K</code> &lt; <code>$9K-$10K</code> &lt; <code>$10K-$11K</code> &lt; <code>$11K-$12K</code> &lt; <code>$12K-$13K</code> &lt; <code>$13K-$14K</code> &lt; <code>$14K-$15K</code> &lt; <code>$15K-$17K</code> &lt; <code>$17K-$20K</code> &lt; <code>$20K-$22K</code> &lt; <code>$22K-$25K</code> &lt; <code>$25K-$30K</code> &lt; <code>$30K-$35K</code> &lt; <code>$35K-$40K</code> &lt; <code>$40K-$45K</code> &lt; <code>$45K-$50K</code> &lt; <code>$50K-$60K</code> &lt; <code>$60K-$75K</code> &lt; <code>$75K-$90K</code> &lt; <code>$90K-$105K</code> &lt; <code>$105Kplus</code></p>
+</dd>
+<dt>vote</dt><dd><p>Expected vote in 1996 presidential election: a factor
+with levels <code>Clinton</code> and <code>Dole</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Sapiro, Virginia, Steven J. Rosenstone, Donald R. Kinder, Warren
+E. Miller, and the National Election Studies. AMERICAN NATIONAL ELECTION
+STUDIES, 1992-1997: COMBINED FILE [Computer file]. 2nd ICPSR
+version. Ann Arbor, MI: University of Michigan, Center for Political
+Studies [producer], 1999. Ann Arbor, MI: Inter-university Consortium for
+Political and Social Research [distributor], 1999.</p>
+
+
+<h3>References</h3>
+
+<p>Found at <a href="http://www.stat.washington.edu/">http://www.stat.washington.edu/</a>
+</p>
+
+
+</body></html>

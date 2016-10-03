@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Epileptic seizures in clinical trial of drug</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for epilepsy"><tr><td>epilepsy</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Epileptic seizures in clinical trial of drug
+</h2>
+
+<h3>Description</h3>
+
+<p>Data from a clinical trial
+of 59 epileptics.  For a baseline, patients were observed for 8 weeks
+and the number of seizures recorded. The patients were then randomized
+to treatment by the drug Progabide (31 patients) or to the placebo
+group (28 patients).  They were observed for four 2-week periods and
+the number of seizures recorded.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(epilepsy)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 295 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>seizures</code></dt><dd><p>number of seizures</p>
+</dd>
+<dt><code>id</code></dt><dd><p>identifying number</p>
+</dd>
+<dt><code>treat</code></dt><dd><p>1=treated, 0=not</p>
+</dd>
+<dt><code>expind</code></dt><dd><p>0=baseline period, 1=treatment period</p>
+</dd>
+<dt><code>timeadj</code></dt><dd><p>weeks of period</p>
+</dd>
+<dt><code>age</code></dt><dd><p>in years</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Thall, P. F. and S. C. Vail (1990). Some covariance models for longitudinal count data with overdispersion. Biometrics 46, 657-671.
+</p>
+
+
+<h3>References</h3>
+
+<p>Breslow, N. E. and D. G. Clayton (1993). Approximate inference in generalized
+linear mixed models. Journal of the American Statistical Association 88,
+9-25.
+Diggle, P. J., P. Heagerty, K. Y. Liang, and S. L. Zeger (2002). Analysis of Longitudinal Data (2 ed.). Oxford: Oxford University Press.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(epilepsy)
+## maybe str(epilepsy) ; plot(epilepsy) ...
+</pre>
+
+
+</body></html>

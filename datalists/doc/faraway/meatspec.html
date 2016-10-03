@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Meat spectrometry to determine fat content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for meatspec"><tr><td>meatspec</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Meat spectrometry to determine fat content</h2>
+
+<h3>Description</h3>
+
+<p>A Tecator Infratec Food and Feed Analyzer working
+in the wavelength
+range 850 - 1050 nm by the Near Infrared Transmission (NIT) principle
+was used to collect data on samples of finely chopped pure meat. 215
+samples were measured. For each sample, the fat content was measured
+along with a 100 channel spectrum of absorbances. Since determining
+the fat content via analytical chemistry is time consuming we would
+like to build a model to predict the fat content of new samples using
+the 100 absorbances which can be measured more easily.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(meatspec)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>Dataset contains the following variables
+</p>
+
+<dl>
+<dt><code>V1-V100</code></dt><dd><p> absorbances across a range of 100 wavelengths
+</p>
+</dd>
+<dt><code>fat</code></dt><dd><p> fat content</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>H. H. Thodberg (1993) &quot;Ace of Bayes: Application of Neural
+Networks With Pruning&quot;, report no. 1132E, Maglegaardvej 2,
+DK-4000 Roskilde, Danmark</p>
+
+
+</body></html>

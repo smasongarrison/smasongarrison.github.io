@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Solder skips in printing circuit boards</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for solder"><tr><td>solder</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Solder skips in printing circuit boards
+</h2>
+
+<h3>Description</h3>
+
+<p>ATT ran an experiment varying five factors
+relevant to a wave-soldering procedure for mounting components on
+printed circuit boards.  The response variable, skips, is a count of
+how many solder skips appeared to a visual inspection.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(solder)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 900 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>Opening</code></dt><dd><p>a factor with levels <code>L</code> <code>M</code> <code>S</code></p>
+</dd>
+<dt><code>Solder</code></dt><dd><p>a factor with levels <code>Thick</code> <code>Thin</code></p>
+</dd>
+<dt><code>Mask</code></dt><dd><p>a factor with levels <code>A1.5</code> <code>A3</code> <code>A6</code> <code>B3</code> <code>B6</code></p>
+</dd>
+<dt><code>PadType</code></dt><dd><p>a factor with levels <code>D4</code> <code>D6</code> <code>D7</code> <code>L4</code> <code>L6</code> <code>L7</code> <code>L8</code> <code>L9</code> <code>W4</code> <code>W9</code></p>
+</dd>
+<dt><code>Panel</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>skips</code></dt><dd><p>count of how many solder skips appeared to a visual inspection</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Comizzoli, R. B., J. M. Landwehr, and J. D. Sinclair (1990). Robust materials and
+processes: Key to reliability. AT&amp;T Technical Journal 69(6), 113-128.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(solder)
+## maybe str(solder) ; plot(solder) ...
+</pre>
+
+
+</body></html>
