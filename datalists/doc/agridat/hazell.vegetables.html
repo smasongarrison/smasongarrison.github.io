@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Gross profit for four vegetable crops in six years</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for hazell.vegetables"><tr><td>hazell.vegetables</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Gross profit for four vegetable crops in six years
+</h2>
+
+<h3>Description</h3>
+
+<p>Gross profit for four vegetable crops in six years
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(hazell.vegetables)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 6 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>year</code></dt><dd><p>year factor, 6 levels</p>
+</dd>
+<dt><code>carrot</code></dt><dd><p>Carrot profit, dollars/acre</p>
+</dd>
+<dt><code>celery</code></dt><dd><p>Celery profit, dollars/acre</p>
+</dd>
+<dt><code>cucumber</code></dt><dd><p>Cucumber profit, dollars/acre</p>
+</dd>
+<dt><code>pepper</code></dt><dd><p>Pepper profit, dollars/acre</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The values in the table are gross profits (loss) in dollars per acre.
+The criteria in the example below are (1) total acres &lt; 200, (2) total
+labor &lt; 10000, (3) crop rotation.
+</p>
+
+
+<h3>Source</h3>
+
+<p>P.B.R. Hazell, (1971).
+A linear alternative to quadratic and semivariance programming for farm planning
+under uncertainty, <em>Am. J. Agric. Econ.</em>, 53, 53-62.
+</p>
+
+
+<h3>References</h3>
+
+<p>Carlos Romero, Tahir Rehman. (2003).
+<em>Multiple Criteria Analysis for Agricultural Decisions</em>. Elsevier.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(hazell.vegetables)
+dat &lt;- hazell.vegetables
+
+## Not run: 
+
+require(linprog)
+# colMeans(dat[ , -1])
+# 252.8333 442.6667 283.8333 515.8333
+
+# Maximize c'x for Ax=b
+A &lt;- rbind(c(1,1,1,1), c(25,36,27,87), c(-1,1,-1,1))
+cvec &lt;- c(253, 443, 284, 516) # avg profit per acre
+colnames(A) &lt;- names(cvec) &lt;- cc(carrot,celery,cucumber,pepper)
+rownames(A) &lt;- c('land','labor','rotation')
+bvec &lt;- c(200,10000,0)
+const.dir &lt;- c("&lt;=","&lt;=","&lt;=")
+
+m1 &lt;- solveLP(cvec, bvec, A, maximum=TRUE, const.dir=const.dir, lpSolve=TRUE)
+# m1$solution # optimal number of acres for each crop
+#   carrot    celery  cucumber    pepper
+#  0.00000  27.45098 100.00000  72.54902
+
+# Average income for this plan
+## sum(cvec * m1$solution)
+## [1] 77996.08
+
+# Year-to-year income for this plan
+## as.matrix(dat[,-1]) 
+##           [,1]
+## [1,]  80492.16
+## [2,]  80431.37
+## [3,]  81884.31
+## [4,] 106868.63
+## [5,]  37558.82
+## [6,]  80513.73
+
+# Brute-force search for optimum allocation that minimizes year-to-year
+# income variability.
+
+# For generality, assume we have unequal probabilities for each year.
+probs &lt;- c(.15, .20, .20, .15, .15, .15)
+# Randomly allocate crops to 200 acres, 100,000 times
+mat &lt;- matrix(runif(4*100000), ncol=4)
+mat &lt;- 200*sweep(mat, 1, rowSums(mat), "/")
+profit &lt;- mat 
+ix &lt;- apply(profit, 1, function(x) cov.wt(as.data.frame(x), wt=probs)$cov)
+ix &lt;- which.max(ix)
+mat[ix,] # Optimal planting allocation that minimizes the weighted variance
+## carrot celery cucumber pepper
+## 71.67002 27.90306 84.69966 15.72726
+
+
+## End(Not run)
+
+</pre>
+
+
+</body></html>

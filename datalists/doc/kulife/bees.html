@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bee data. Number of different types of bees caught.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bees"><tr><td>bees</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Bee data. Number of different types of bees caught.</h2>
+
+<h3>Description</h3>
+
+<p>Number of different types of bees caught in plates of different
+colours. There are four locations and within each location there are
+three replicates consisting of three plates of the three different
+colours (yellow, white and blue). Data are collected at 5 different
+dates over the summer season. Only data from one date available until
+data has been published.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(bees)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 72 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>Locality</code></dt><dd><p>a factor with levels <code>Havreholm</code> <code>Kragevig</code> <code>Saltrup</code> <code>Svaerdborg</code>. Four different localities in Denmark.</p>
+</dd>
+<dt><code>Replicate</code></dt><dd><p>a factor with levels <code>A</code> <code>B</code> <code>C</code></p>
+</dd>
+<dt><code>Color</code></dt><dd><p>a factor with levels <code>Blue</code> <code>White</code> <code>Yellow</code>. Colour of  plates</p>
+</dd>
+<dt><code>Time</code></dt><dd><p>a factor with levels <code>july1</code> <code>july14</code>
+<code>june17</code> <code>june3</code> <code>june6</code>. Data collected at
+different dates in summer season. Only one day is present in the
+current data frame until the full data has been released.</p>
+</dd>
+<dt><code>Type</code></dt><dd><p>a factor with levels <code>Bumblebees</code> <code>Solitary</code>. Type of bee.</p>
+</dd>
+<dt><code>Number</code></dt><dd><p>a numeric vector. The response variable with number of bees catched.</p>
+</dd>
+<dt><code>id</code></dt><dd><p>a numeric vector. The id of the clusters (each containg three plates).</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Data were kindly provided by Casper Ingerslev Henriksen, Department of
+Agricultural Sciences, KU-LIFE.
+Added by Torben Martinussen &lt;tma@life.ku.dk&gt;
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(bees)
+model &lt;- glm(Number ~ Locality + Type*Color,
+             family=poisson, data=bees)
+</pre>
+
+
+</body></html>

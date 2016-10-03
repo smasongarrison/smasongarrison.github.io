@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Home Range Size in Field Voles</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for VoleDispersal"><tr><td>VoleDispersal</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Home Range Size in Field Voles</h2>
+
+<h3>Description</h3>
+
+<p>Home range size size in field voles (<em>Microtus agrestis</em>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 5 observations on the following 3 variables.
+</p>
+ <dl>
+<dt>homeranges</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>count</dt><dd><p>a numeric vector</p>
+</dd> <dt>sex</dt><dd><p>a factor with
+levels <code>female</code> and <code>male</code></p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Sandell, M., J. Agrell, S. Erlinge, and J. Nelson. 1991. Adult
+philopatry and dispersal in the field vole <em>Microtus agrestis</em>.
+<em>Oecologia</em> 86: 153-158.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xtabs(count~sex+homeranges,VoleDispersal)
+barchart( xtabs(count~sex+homeranges,VoleDispersal), origin=0, auto.key=TRUE)
+barchart(count~sex+homeranges,VoleDispersal, origin=0)
+barchart(count~sex,groups=homeranges,VoleDispersal, origin=0)
+barchart(count~sex,groups=homeranges,VoleDispersal, origin=0,stack=TRUE)
+</pre>
+
+
+</body></html>

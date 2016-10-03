@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Row column design of a spring barley trial with many...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for durban.rowcol"><tr><td>durban.rowcol</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Row column design of a spring barley trial with many varieties
+</h2>
+
+<h3>Description</h3>
+
+<p>Row column design of a spring barley trial with many varieties
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 544 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>Row</p>
+</dd>
+<dt><code>bed</code></dt><dd><p>Bed (column)</p>
+</dd>
+<dt><code>rep</code></dt><dd><p>Rep factor, 2 levels</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>Genotype factor, 272 levels</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Yield, tonnes/ha</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Spring barley variety trial of 272 entries (260 new varieties, 12
+control). Grown at the Scottish Crop Research Institute in 1998.
+Row-column design with 2 reps, 16 rows (north/south) by 34 beds
+(east/west).
+The land sloped downward from row 16 to row 1.  Plot yields were
+converted to tonnes per hectare.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Durban, Maria and Hackett, Christine and McNicol, James and
+Newton, Adrian and Thomas, William and Currie, Iain. 2003.
+The practical use of semiparametric models in field trials,
+<em>Journal of Agric Biological and Envir Stats</em>, 8, 48-66.
+</p>
+<p>Retrieved from <a href="ftp://ftp.bioss.sari.ac.uk/pub/maria">ftp://ftp.bioss.sari.ac.uk/pub/maria</a>.
+</p>
+<p>Used with permission of Maria Durban.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(durban.rowcol)
+dat &lt;- durban.rowcol
+
+desplot(yield~bed*row, dat, out1=rep, main="durban.rowcol")
+
+# Durban 2003 Figure 1
+m10 &lt;- lm(yield~gen, data=dat)
+dat$resid &lt;- m10$resid
+require(lattice)
+# xyplot(resid~row, dat, type=c('p','smooth'), main="durban.rowcol")
+# xyplot(resid~bed, dat, type=c('p','smooth'), main="durban.rowcol")
+
+# Figure 3
+coplot(resid~bed|factor(row), data=dat, cex=.5,
+panel=function(x,y,...) panel.smooth(x,y,span=.75,...))
+title("durban.rowcol")
+
+## Not run: 
+# Figure 5 - field trend
+require(gam)
+m1lo &lt;- gam(yield ~ gen + lo(row, span=10/16) + lo(bed, span=9/34), data=dat)
+new1 &lt;- expand.grid(row=unique(dat$row),bed=unique(dat$bed))
+new1 &lt;- cbind(new1, gen="G001")
+p1lo &lt;- predict(m1lo, new=new1)
+wireframe(p1lo~row+bed, new1, aspect=c(1,.5), main="Field trend") # Figure 5
+
+require(asreml)
+dat &lt;- transform(dat, rowf=factor(row), bedf=factor(bed))
+dat &lt;- dat[order(dat$rowf, dat$bedf),]
+
+m1a1 &lt;- asreml(yield~gen + lin(rowf) + lin(bedf), data=dat,
+               random=~spl(rowf) + spl(bedf) + units,
+               family=asreml.gaussian(dispersion=1))
+m1a2 &lt;- asreml(yield~gen + lin(rowf) + lin(bedf), data=dat,
+               random=~spl(rowf) + spl(bedf) + units, rcov=~ar1(rowf):ar1(bedf))
+m1a3 &lt;- asreml(yield~gen, data=dat, random=~units, rcov=~ar1(rowf):ar1(bedf))
+
+# Figure 7
+v7a &lt;- asreml.variogram(x=dat$bedf, y=dat$rowf, z=resid(m1a3))
+wireframe(gamma ~ x*y, v7a, aspect=c(1,.5)) # Fig 7a
+
+v7b &lt;- asreml.variogram(x=dat$bedf, y=dat$rowf, z=resid(m1a2))
+wireframe(gamma ~ x*y, v7b, aspect=c(1,.5)) # Fig 7b
+
+v7c &lt;- asreml.variogram(x=dat$bedf, y=dat$rowf, z=resid(m1lo))
+wireframe(gamma ~ x*y, v7c, aspect=c(1,.5)) # Fig 7c
+
+## End(Not run)
+</pre>
+
+
+</body></html>

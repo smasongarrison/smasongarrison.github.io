@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hartigan (1975) Indian Caste Measurements</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for indian.caste.measures"><tr><td>indian.caste.measures</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Hartigan (1975) Indian Caste Measurements </h2>
+
+<h3>Description</h3>
+
+<p>The table contains the correlations multiplied by 10000 for 22
+caste groups each with 67 to 196 individuals.
+This is Table 17.6 in Chapter 17 of Hartigan (1975) on page 324.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(indian.caste.measures)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 9 observations on the following 9 variables.
+</p>
+
+<dl>
+<dt><code>st</code></dt><dd><p>a numeric vector for the correlations with stature</p>
+</dd>
+<dt><code>sh</code></dt><dd><p>a numeric vector for the correlations with sitting height</p>
+</dd>
+<dt><code>nd</code></dt><dd><p>a numeric vector for the correlations with basal depth</p>
+</dd>
+<dt><code>nh</code></dt><dd><p>a numeric vector for the correlations with nasal height</p>
+</dd>
+<dt><code>hl</code></dt><dd><p>a numeric vector for the correlations with head length</p>
+</dd>
+<dt><code>fb</code></dt><dd><p>a numeric vector for the correlations with frontal breadth</p>
+</dd>
+<dt><code>bb</code></dt><dd><p>a numeric vector for the correlations with bizygometic breadth</p>
+</dd>
+<dt><code>hb</code></dt><dd><p>a numeric vector for the correlations with head breadth</p>
+</dd>
+<dt><code>nb</code></dt><dd><p>a numeric vector for the correlations with nasal breadth</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The data frame has as row names the variable names.  The actual correlations are
+recovered by dividing the data frame by 10000.  Hartigan suggests performing a
+factor analysis on the data set as well as performing a joining algorithm.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Rao, C. R. (1948). The utilization of multiple measurements in problems of
+biological classification, <em>J. Royal Stat. Soc. B</em>, 10, 159 - 193.
+</p>
+<p>SPAETH2 Cluster Analysis Datasets <a href="http://people.sc.fsu.edu/~jburkardt/datasets/spaeth2/spaeth2.html">http://people.sc.fsu.edu/~jburkardt/datasets/spaeth2/spaeth2.html</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Hartigan, J. A. (1975). <em>Clustering Algorithms</em>, John Wiley, New York.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(indian.caste.measures)
+</pre>
+
+
+</body></html>

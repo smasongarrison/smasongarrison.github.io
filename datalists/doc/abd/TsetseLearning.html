@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dietary Learning in Tsetse Flies</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for TsetseLearning"><tr><td>TsetseLearning</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dietary Learning in Tsetse Flies</h2>
+
+<h3>Description</h3>
+
+<p>Dietary conditioning <code>treatment</code> and subsequent proportion of tsetse
+flies (<em>Glossina palpalis</em>) feeding on cow blood in each of 13 cohorts.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 13 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>treatment</dt><dd><p>a factor with levels <code>cow</code> and
+<code>lizard</code></p>
+</dd> <dt>proportion.cow</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p><em>inferred from</em> Bouyer, J., M. Pruvot, Z. Bengaly, P.M. Guerin,
+and R. Lancelot. 2007. Learning influences host choice in tsetse.
+<em>Biology Letters</em> 3: 113-116.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://rsbl.royalsocietypublishing.org/content/3/2/113.full">http://rsbl.royalsocietypublishing.org/content/3/2/113.full</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xyplot(proportion.cow ~ treatment, TsetseLearning)
+</pre>
+
+
+</body></html>

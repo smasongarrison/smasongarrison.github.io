@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Factorial experiment with missing values</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for yates.missing"><tr><td>yates.missing</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Factorial experiment with missing values
+</h2>
+
+<h3>Description</h3>
+
+<p>Potato factorial experiment with missing values
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 80 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>trt</code></dt><dd><p>Treatment factor with levels <code>0</code> <code>K</code>
+<code>N</code> <code>P</code> <code>NK</code> <code>KP</code> <code>NP</code> <code>NKP</code> </p>
+</dd>
+<dt><code>block</code></dt><dd><p>Block factor, 10 levels</p>
+</dd>
+<dt><code>y</code></dt><dd><p>Numeric, infection intensity</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The response variable <code>y</code> is the intensity of infection of potato
+tubers innoculated with <em>Phytophthora Erythroseptica</em>.
+</p>
+<p>Yates (1933) presents an iterative algorithm to estimate missing
+values in a matrix, using this data as an example.
+</p>
+
+
+<h3>Source</h3>
+
+<p>F. Yates, 1933. The analysis of replicated experiments when the field
+results are incomplete. <em>Emp. J. Exp. Agric.</em>, 1, 129&ndash;142.
+</p>
+
+
+<h3>References</h3>
+
+<p>Steel &amp; Torrie, 1980, Principles and Procedures of Statistics,
+2nd Edition, page 212.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(yates.missing)
+dat &lt;- yates.missing
+
+require("reshape2")
+mat0 &lt;- acast(dat[, c('trt','block','y')], trt~block,
+               id.var=c('trt','block'), value.var='y')
+
+# Use lm to estimate missing values.  The estimated missing values
+# are the same as in Yates (1933)
+m1 &lt;- lm(y~trt+block, dat)
+dat$pred &lt;- predict(m1, new=dat[, c('trt','block')])
+dat$filled &lt;- ifelse(is.na(dat$y), dat$pred, dat$y)
+mat1 &lt;- acast(dat[, c('trt','block','pred')], trt~block,
+               id.var=c('trt','block'), value.var='pred')
+
+## Not run: 
+# Another method to estimate missing values via PCA
+require("pcaMethods") # From Bioconductor, not CRAN
+m2 &lt;- pca(mat0, method="nipals", center=FALSE, nPcs=3)
+mat2 &lt;- m2@scores 
+
+# Compare
+ord &lt;- c("0","N","K","P","NK","NP","KP","NKP")
+print(mat0[ord,], na.print=".")
+round(mat1[ord,] ,2)
+round(mat2[ord,] ,2)
+
+# SVD with 3 components recovers original data better
+sum((mat0-mat1)^2, na.rm=TRUE)
+sum((mat0-mat2)^2, na.rm=TRUE) # Smaller SS =&gt; better fit
+
+## End(Not run)
+</pre>
+
+
+</body></html>

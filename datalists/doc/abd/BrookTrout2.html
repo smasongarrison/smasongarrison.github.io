@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Salmon Survival in the Presence of Brook Trout</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for BrookTrout"><tr><td>BrookTrout</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Salmon Survival in the Presence of Brook Trout</h2>
+
+<h3>Description</h3>
+
+<p>Total numbers of salmon released (<code>salmon.released</code>) and surviving
+(<code>salmon.surviving</code>) in 12 streams, 6 with brook trout <code>present</code>
+and 6 with brook trout <code>absent</code>. The proportion of salmon surviving
+(<code>proportion.surviving</code>) is given for each stream.
+</p>
+
+
+<h3>Format</h3>
+
+<p><code>BrookTrout</code> is a data frame with 12 observations on the
+following 4 variables.  <code>BrookTrout2</code> is a different summary of the
+same study and gives survival rates for chinook in different years.
+</p>
+ <dl>
+<dt>trout</dt><dd><p>a factor with levels <code>absent</code> and
+<code>present</code> indicating whether brook trout are absent or present in the
+stream</p>
+</dd> <dt>salmon.released</dt><dd><p>a numeric vector of the total number
+of salmon released</p>
+</dd> <dt>salmon.surviving</dt><dd><p>a numeric vector of the
+number of salmon surviving</p>
+</dd> <dt>proportion.surviving</dt><dd><p>a numeric
+vector of the proportion of salmon surviving</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Levin, P.S., S. Achord, B.E. Fiest, and R.W. Zabel. 2002.
+Non-indigenous brook trout and the demise of Pacific salmon: a forgotten
+threat? <em>Proceedings of the Royal Society of London, Series B,
+Biological Sciences</em> 269: 1663-1670.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(BrookTrout)
+str(BrookTrout2)
+
+bwplot(proportion.surviving ~ trout, BrookTrout)
+
+aggregate(proportion.surviving ~ trout, BrookTrout, FUN = favstats)
+summary(proportion.surviving ~ trout, BrookTrout, fun = favstats)
+</pre>
+
+
+</body></html>

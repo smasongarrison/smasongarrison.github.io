@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Leuschner harvest schedule yield data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for leuschner"><tr><td>leuschner</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Leuschner harvest schedule yield data </h2>
+
+<h3>Description</h3>
+
+<p>These data are used to present and study forest regulation using mathematical programming and R.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(leuschner)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 48 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt>stand</dt><dd><p>index variable identifying the type of forested area</p>
+</dd>
+<dt>period</dt><dd><p>cutting period of the forest harvest schedule</p>
+</dd>
+<dt>age</dt><dd><p>at harvest at cutting period midpoint of planning period</p>
+</dd>
+<dt>vol</dt><dd><p>the stand volume at age, in thousands of cubic feet per acre</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>This table contains example yields for an 84,000 acre (33993.93 ha)
+Douglas-fir forest. The yields span over six (6) planning periods and eight (8) age classes from age 25 
+to 95 years of age.
+</p>
+
+
+<h3>Source</h3>
+
+<p>The data were originally published in Leuschner (1990). 
+</p>
+
+
+<h3>References</h3>
+
+<p>Leuschner, William A. 1990. Forest Regulation, Harvest Scheduling, and Planning Techniques.
+John Wiley and Sons, Inc.
+</p>
+<p>Robinson, A.P., and J.D. Hamann. 2010.  Forest Analytics with R: an
+Introduction. Springer. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(leuschner)
+
+print( leuschner )
+</pre>
+
+
+</body></html>

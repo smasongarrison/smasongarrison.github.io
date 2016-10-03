@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Epileptic Seizure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for seizure"><tr><td>seizure</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Epileptic Seizure</h2>
+
+<h3>Description</h3>
+
+<p>The dataset has the number of epileptic seizures in each of four two-week intervals, 
+and in a baseline eight-week interval, for treatment and control groups with a total of 59 individuals.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(seizure)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 236 observations on the following 9 variables.
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>identifies de number of the individual profile. This vector contains observations of 59 individual profiles.</p>
+</dd>
+<dt><code>y</code></dt><dd><p>a numeric vector with the number of epileptic seizures in the four two-weeks intervals observed.</p>
+</dd>
+<dt><code>v4</code></dt><dd><p>a numeric vector indicating the fourth visit.</p>
+</dd>
+<dt><code>time</code></dt><dd><p>a numeric vector that identifies the number of the time points observed.</p>
+</dd>
+<dt><code>trt</code></dt><dd><p>a numeric vector indicator of treatment.</p>
+</dd>
+<dt><code>base</code></dt><dd><p>the number of epileptic seizures in a baseline 8-week interval.</p>
+</dd>
+<dt><code>age</code></dt><dd><p>a numeric vector of subject <code>age</code>.</p>
+</dd>
+<dt><code>lbase</code></dt><dd><p>recode the variable <code>base</code> by log(<code>base</code>/4).</p>
+</dd>
+<dt><code>lage</code></dt><dd><p>recode the variable <code>age</code> by log(<code>age</code>).</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Thall, P.F., and Vail, S.C. (1990). Some covariance models for longitudinal 
+count data with overdispersion. <em>Biometrics</em>, 46, 657&ndash;671.</p>
+
+
+<h3>References</h3>
+
+<p>Diggle, P.J., Liang, K.Y., and Zeger, S.L. (1994). Analysis of Longitudinal Data. Clarendon Press.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+#####  data= seizure
+ str(seizure) 
+
+### independence 
+seiz0&lt;-cold(y~lage+lbase+v4+trt+trt:lbase, data=seizure, 
+dependence="ind")
+summary (seiz0)
+
+### AR1
+seiz1&lt;-cold(y~lage+lbase+v4+trt+trt:lbase, data=seizure, 
+dependence="AR1")
+summary (seiz1)
+
+</pre>
+
+
+</body></html>

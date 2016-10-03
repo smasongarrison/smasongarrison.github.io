@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Simon Newcomb's Measurements for the Speed of Light</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for light"><tr><td>light</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Simon Newcomb's Measurements for the Speed of Light   </h2>
+
+<h3>Description</h3>
+
+<p>Simon Newcomb's measurements (1882) to measure the speed of light. 
+The data are recordes as deviations from 24800 nanoseconds.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(light)</pre>
+
+
+<h3>Format</h3>
+
+<p>The format is:
+atomic [1:66] 28 26 33 24 34 -44 27 16 40 -2 ...
+- attr(*, &quot;comment&quot;)= chr &quot;Units: deviations from 24800 nanoseconds&quot;
+</p>
+
+
+<h3>Details</h3>
+
+<p>The currently accepted value for the speed of light on this scale 
+is 33.0.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(light)
+comment(light)
+hist(light, breaks=40)
+abline(v=33.0, col="red")
+</pre>
+
+
+</body></html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Gene expression from real-time quantitative PCR</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for qpcr"><tr><td>qpcr</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Gene expression from real-time quantitative PCR</h2>
+
+<h3>Description</h3>
+
+<p>Gene expression levels from real-time quantitative polymerase chain
+reaction (qPCR) experiments on two different plant lines. Each line was used
+for 7 experiments each with 45 cycles. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(qpcr)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 630 observations on the following 4 variables.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+<code>flour</code>     </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Fluorescence level</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>line</code>      </td><td style="text-align: left;"> factor  </td><td style="text-align: left;"> Plant lines <code>rnt</code> (mutant) and <code>wt</code> (wildtype)</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>cycle</code>     </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Cycle number for the experiment</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code>transcript</code></td><td style="text-align: left;"> factor  </td><td style="text-align: left;"> Transcript used for the different runs</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+       </td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+<h3>Source</h3>
+
+<p>Data provided by Kirsten Jorgensen &lt;kij@life.ku.dk&gt;. <br />
+Added by Claus Ekstrom &lt;ekstrom@life.ku.dk&gt;
+</p>
+
+
+<h3>References</h3>
+
+<p>Morant, M. et al. (2010). Metabolomic, Transcriptional, Hormonal and
+Signaling Cross-Talk in Superroot2. <em>Molecular Plant</em>. 3, p.192&ndash;211.  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(qpcr)
+
+#
+# Analyze a single run for the wt line, transcript 1
+#
+run1 &lt;- subset(qpcr, transcript==1 &amp; line=="wt")
+
+model &lt;- nls(flour ~ fmax/(1+exp(-(cycle-c)/b))+fb, 
+             start=list(c=25, b=1, fmax=100, fb=0), data=run1)
+
+print(model)
+
+plot(run1$cycle, run1$flour, xlab="Cycle", ylab="Fluorescence")
+lines(run1$cycle, predict(model))
+</pre>
+
+
+</body></html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rice split-split plot experiment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gomez.splitsplit"><tr><td>gomez.splitsplit</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Rice split-split plot experiment
+</h2>
+
+<h3>Description</h3>
+
+<p>Grain yield of three varieties of rice grown in a split-split plot
+arrangement with 3 reps, nitrogen level as the main plot, management
+practice as the sub-plot, and rice variety as the sub-sub plot.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 135 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>rep</code></dt><dd><p>Blocking factor, 3 levels</p>
+</dd>
+<dt><code>nitro</code></dt><dd><p>Nitrogen fertilizer, in kilograms/hectare</p>
+</dd>
+<dt><code>management</code></dt><dd><p>Plot management</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>Variety of rice</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Yield of rice</p>
+</dd>
+<dt><code>x</code></dt><dd><p>Column position in the field</p>
+</dd>
+<dt><code>y</code></dt><dd><p>Row position in the field</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Gomez, K.A. and Gomez, A.A.. 1984,
+<em>Statistical Procedures for Agricultural Research</em>.
+Wiley-Interscience. Page 143.
+</p>
+<p>Used with permission of Kwanchai Gomez.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(gomez.splitsplit)
+dat &lt;- gomez.splitsplit
+dat$nf &lt;- factor(dat$nitro)
+
+desplot(nf~x*y, dat, out1=rep, col=management, num=gen, cex=1,
+        main="gomez.splitsplit")
+desplot(yield~x*y, dat, out1=rep, main="gomez.splitsplit")
+
+if(require(HH)){
+position(dat$nf) &lt;- c(0,50,80,110,140)
+interaction2wt(yield~rep+nf+management+gen, data=dat,
+               main="gomez.splitsplit",
+               relation=list(x="free", y="same"),
+               rot=c(90,0), xlab="",
+               par.strip.text.input=list(cex=.7))
+}
+
+# AOV.  Gomez page 144-153
+m0 &lt;- aov(yield~ nf * management * gen + Error(rep/nf/management),
+         data=dat)
+summary(m0) # Similar to Gomez, p. 153.
+
+</pre>
+
+
+</body></html>

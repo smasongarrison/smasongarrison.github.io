@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Uniformity trial of potatoes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for lyon.potato.uniformity"><tr><td>lyon.potato.uniformity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Uniformity trial of potatoes
+</h2>
+
+<h3>Description</h3>
+
+<p>Uniformity trial of potatoes
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 204 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>Row, numeric</p>
+</dd>
+<dt><code>section</code></dt><dd><p>Section, numeric</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Yield, in pounds</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>In 1909, potatoes were harvested from uniform land.  There were 34
+rows, 34 inches apart.  Each row was harvested in 6 sections, each
+being 72 feet, 7 inches long.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Lyon, T.L. (1911). Some experiments to estimate errors in field plat
+tests. <em>Proc. Amer. Soc. Agron</em>, 3, 89-114.
+<a href="https://www.crops.org/publications/aj/abstracts/3/1/AJ0030010089">https://www.crops.org/publications/aj/abstracts/3/1/AJ0030010089</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Harris, J.A. (1920). Practical universality of field heterogeneity as a factor
+influencing plot yields. <em>Journal of Agricultural Research</em>, 19, 279-314.
+<a href="http://books.google.com/books?id=jyEXAAAAYAAJ&amp;pg=PA279">http://books.google.com/books?id=jyEXAAAAYAAJ&amp;pg=PA279</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(lyon.potato.uniformity)
+dat &lt;- lyon.potato.uniformity
+
+desplot(yield ~ row*section, dat, tick=TRUE,
+        main="lyon.potato.uniformity")
+
+</pre>
+
+
+</body></html>

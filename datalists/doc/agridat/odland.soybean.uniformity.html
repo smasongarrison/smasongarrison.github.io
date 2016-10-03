@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Uniformity trials of soy hay and soybeans.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for odland.soybean.uniformity"><tr><td>odland.soybean.uniformity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Uniformity trials of soy hay and soybeans.
+</h2>
+
+<h3>Description</h3>
+
+<p>Uniformity trials of soy hay and soybeans.
+</p>
+
+
+<h3>Format</h3>
+
+<p>Data frames with 3 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>row ordinate</p>
+</dd>
+<dt><code>col</code></dt><dd><p>column ordinate</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Grown at West Virginia Experiment Station in 1925/1926.  Soybeans were
+planted in rows 30 inches apart.
+</p>
+<p>In 1925 the crop was harvested for forage, 42 rows, each 200 feet long.
+Yields of 8-foot plats recorded.
+</p>
+<p>In 1926 the crop was harvested for seed, 55 rows, each 232 feet
+long. Yields of 8-foot plats were recorded.
+</p>
+<p>In 1926, data for the last row seems to partially missing.
+</p>
+<p>Odland and Garber provide no agronomic context for the yield variation.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Odland, TE and Garber, RJ. 1928.
+Size of Plat and Number of Replications in Field Experiments with
+Soybeans.
+<em>Agronomy Journal</em>, 20, 93&ndash;108.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data( odland.soyhay.uniformity)
+dat1 &lt;- odland.soyhay.uniformity
+desplot(yield ~ col*row, dat1, flip=TRUE,
+        aspect=200/(42*30/12), # true aspect ratio
+        main="odland.soyhay.uniformity")
+
+
+data( odland.soybean.uniformity)
+dat2 &lt;- odland.soybean.uniformity
+desplot(yield ~ col*row, dat2, flip=TRUE,
+        aspect = 232/(55*30/12), # true aspect
+        main="odland.soybean.uniformity")
+
+</pre>
+
+
+</body></html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Population Cycles of Lynx in Canada 1752-1819</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Lynx"><tr><td>Lynx</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Population Cycles of Lynx in Canada 1752-1819</h2>
+
+<h3>Description</h3>
+
+<p>Number of lynx pelts (<code>pelts</code>) reported in Canada per year from 1752 to
+1819.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 68 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>year</dt><dd><p>a numeric vector</p>
+</dd> <dt>pelts</dt><dd><p>a
+numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Elton, C. and M. Nicholson. 1942. The ten-year cycle in numbers of
+the lynx in Canada. <em>Journal of Animal Ecology</em> 11: 215-244.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xyplot(pelts ~ year, Lynx, type=c('p','l'))
+</pre>
+
+
+</body></html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lint yield from a cotton uniformity trial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for williams.cotton.uniformity"><tr><td>williams.cotton.uniformity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Lint yield from a cotton uniformity trial
+</h2>
+
+<h3>Description</h3>
+
+<p>Lint yield from a cotton uniformity trial
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 288 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>Row position</p>
+</dd>
+<dt><code>col</code></dt><dd><p>Column position</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Cotton lint yield, kg/ha divided by 10</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Cotton uniformity trial grown at Narrabri, New South Wales, 1984-1985.
+Plots were 12m long, 1m apart, 12 rows by 24 columns, with an
+irrigation furrow between columns.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Williams, ER and Luckett, DJ. 1988. The use of uniformity data in the
+design and analysis of cotton and barley variety trials.
+<em>Australian Journal of Agricultural Research</em>, 39, 339-350.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(williams.cotton.uniformity)
+dat &lt;- williams.cotton.uniformity
+
+require("lattice")
+asp = (12*12)/(24*1) # true aspect
+desplot(yield ~ col*row, dat, aspect=asp, main="williams.cotton.uniformity")
+
+# Smoothed contour/persp plot like Williams 1988 Fig 1a, 2a
+dat$fit &lt;- fitted(loess(yield~col*row, dat, span=.5))
+contourplot(fit~col*row, data=dat, cuts=6, main="williams.cotton.uniformity")
+wireframe(fit~col*row, data=dat, zlim=c(100, 250), main="williams.cotton.uniformity")
+
+# Williams table 1
+anova(aov(yield ~ factor(row) + factor(col), dat))
+</pre>
+
+
+</body></html>

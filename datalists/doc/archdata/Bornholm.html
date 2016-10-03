@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Female Iron Age Graves, Bornholm, Denmark</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Bornholm"><tr><td>Bornholm</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Female Iron Age Graves, Bornholm, Denmark
+</h2>
+
+<h3>Description</h3>
+
+<p>Data on the occurrence of 39 different types of ornamentation in 77 female graves at Iron age sites in in Bornholm, Denmark.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data("Bornholm")</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 77 observations on the following 42 variables.
+</p>
+
+<dl>
+<dt><code>Number</code></dt><dd><p>Observation Number</p>
+</dd>
+<dt><code>Site</code></dt><dd><p>Site/Bural Number</p>
+</dd>
+<dt><code>Period</code></dt><dd><p>Chronological period: <code>1a</code>, <code>1b</code>, <code>2a</code>, <code>2b</code>, <code>2c</code>, <code>3a</code>, and <code>3b</code></p>
+</dd>
+<dt><code>N2c</code></dt><dd><p>count</p>
+</dd>
+<dt><code>R3d</code></dt><dd><p>count</p>
+</dd>
+<dt><code>N2a</code></dt><dd><p>count</p>
+</dd>
+<dt><code>Q3b</code></dt><dd><p>count</p>
+</dd>
+<dt><code>R3c</code></dt><dd><p>count</p>
+</dd>
+<dt><code>N1</code></dt><dd><p>count</p>
+</dd>
+<dt><code>Q3c</code></dt><dd><p>count</p>
+</dd>
+<dt><code>O1</code></dt><dd><p>count</p>
+</dd>
+<dt><code>O2</code></dt><dd><p>count</p>
+</dd>
+<dt><code>N2e</code></dt><dd><p>count</p>
+</dd>
+<dt><code>I3</code></dt><dd><p>count</p>
+</dd>
+<dt><code>R3b</code></dt><dd><p>count</p>
+</dd>
+<dt><code>K1a</code></dt><dd><p>count</p>
+</dd>
+<dt><code>Q3a</code></dt><dd><p>count</p>
+</dd>
+<dt><code>I2</code></dt><dd><p>count</p>
+</dd>
+<dt><code>K1c</code></dt><dd><p>count</p>
+</dd>
+<dt><code>K1b</code></dt><dd><p>count</p>
+</dd>
+<dt><code>H</code></dt><dd><p>count</p>
+</dd>
+<dt><code>Q3d</code></dt><dd><p>count</p>
+</dd>
+<dt><code>J1d</code></dt><dd><p>count</p>
+</dd>
+<dt><code>S1</code></dt><dd><p>count</p>
+</dd>
+<dt><code>D</code></dt><dd><p>count</p>
+</dd>
+<dt><code>Q2</code></dt><dd><p>count</p>
+</dd>
+<dt><code>S3</code></dt><dd><p>count</p>
+</dd>
+<dt><code>P2</code></dt><dd><p>count</p>
+</dd>
+<dt><code>P4</code></dt><dd><p>count</p>
+</dd>
+<dt><code>G3</code></dt><dd><p>count</p>
+</dd>
+<dt><code>E2a</code></dt><dd><p>count</p>
+</dd>
+<dt><code>P3</code></dt><dd><p>count</p>
+</dd>
+<dt><code>R3a</code></dt><dd><p>count</p>
+</dd>
+<dt><code>R1</code></dt><dd><p>count</p>
+</dd>
+<dt><code>E2b</code></dt><dd><p>count</p>
+</dd>
+<dt><code>G2</code></dt><dd><p>count</p>
+</dd>
+<dt><code>I1b</code></dt><dd><p>count</p>
+</dd>
+<dt><code>G1</code></dt><dd><p>count</p>
+</dd>
+<dt><code>F</code></dt><dd><p>count</p>
+</dd>
+<dt><code>P1</code></dt><dd><p>count</p>
+</dd>
+<dt><code>I1a</code></dt><dd><p>count</p>
+</dd>
+<dt><code>A2e</code></dt><dd><p>count</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Nielsen used data on 39 different types of ornaments from Ørsnes (1966) to seriate a series of 77 Germanic Iron Age graves from Bornholm, Denmark (1988, Table 4 and Figure 7). Baxter re-analyzed the data to illustrate correspondence analysis (1994: 104-107, Table A6). These data were taken from Nielsen's Table 4 showing her seriation. Baxter's version is scrambled in order to evaluate different seriation methods and does not include the ornament types (illustrated in Nielson's Figure 7). The data include Ørsnes's period designation (1966).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Baxter, M. J. 1994. <em>Exploratory Multivariate Analysis in Archaeology</em>. Edinburgh University Press. Edinburgh.
+</p>
+<p>Nielsen, D. H. 1988. Correspondence analysis applied to hords and graves of the Germanic Iron Age. In <em>Multivariate Archaeology: Numerical Approaches in Scandinavian Archaeology</em>, edited by Torsten Madsen, pp 37-54. Jutland Archaeological Society Publications XXI. Arahus University Press.
+</p>
+<p>Ørsnes, M. 1966.  <em>Form og stil i Sydskandinaviens yngre germanske jernalder</em>. Nationalmuseets skrifter. Arkæologisk-historisk række 11. Copenhagen.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Bornholm)
+library(MASS)
+Bornholm.ca &lt;- corresp(Bornholm[, 4:42], nf=2)
+plot(Bornholm.ca$rscore, pch=substring(Bornholm$Period, 1, 1), cex=.75)
+boxplot(Bornholm.ca$rscore[, 1]~Bornholm$Period, main="First CA Axis by Period")
+</pre>
+
+
+</body></html>

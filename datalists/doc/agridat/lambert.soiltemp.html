@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Average monthly soil temperature near Zurich</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for lambert.soiltemp"><tr><td>lambert.soiltemp</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Average monthly soil temperature near Zurich
+</h2>
+
+<h3>Description</h3>
+
+<p>Average monthly soil temperature near Zurich, at seven depths,
+averaged over four years.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 84 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>month</code></dt><dd><p>Month as a number</p>
+</dd>
+<dt><code>depth</code></dt><dd><p>Depth in soil (feet)</p>
+</dd>
+<dt><code>temp</code></dt><dd><p>Temperature (the units are &quot;du Crest&quot;)</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>This is one of the earliest time series in scientific literature.
+</p>
+<p>These data show the monthly soil temperature near Zurich, averaged
+over four years (beginning in 1762), at 7 different depths.
+</p>
+<p>The temperature measurements are related to the 'du Crest' scale.
+(The measurements do not seem to be exactly according to the du Crest
+scale.  If you can read German, use the Google books link to see if
+you can figure out why.)  Even the scale on Lambert's own graph
+doesn't match the data.
+</p>
+<p>Greater depths show less variation and a greater lag in temperature
+responsiveness to the air temperature.
+</p>
+<p>This data also appears in Pedometrics, issue 23, December 2007.  But,
+the formula for converting the temperature does not make sense and the
+data in Table 1 do not directly match the corresponding figure.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Johann Heinrich Lambert (1779), <em>Pyrometrie</em>.  Page 358.
+<a href="http://books.google.com/books?id=G5I_AAAAcAAJ&amp;pg=PA358">http://books.google.com/books?id=G5I_AAAAcAAJ&amp;pg=PA358</a>.
+Graph: <a href="http://www.fisme.science.uu.nl/wiskrant/artikelen/hist_grafieken/begin/images/pyrometrie.gif">http://www.fisme.science.uu.nl/wiskrant/artikelen/hist_grafieken/begin/images/pyrometrie.gif</a>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# Reproduce Lambert figure 39.
+
+data(lambert.soiltemp)
+dat &lt;- lambert.soiltemp
+
+# Make 3 cycles of the data so that the loess line bends back up at
+# month 1 and month 12
+dat &lt;- rbind(dat, transform(dat, month=month-12),
+             transform(dat, month=month+12))
+require(lattice)
+xyplot(temp ~ month, dat, group=depth, type=c('p','smooth'),
+       main="lambert.soiltemp",
+       xlim=c(-3,15), ylab="Soil temperature (du Crest) at depth (feet)",
+       span=.2, auto.key=list(columns=4))
+
+# To do: Find a good model for this data
+</pre>
+
+
+</body></html>

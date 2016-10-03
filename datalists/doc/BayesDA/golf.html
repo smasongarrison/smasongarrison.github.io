@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Number of Attempts and Successes at Golf Putts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for golf"><tr><td>golf</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Number of Attempts and Successes at Golf Putts    </h2>
+
+<h3>Description</h3>
+
+<p>Number of attempts and successes of golf putts, by distance from  
+the hole, for a sample of professional golfers.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(golf)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 19 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>distance</code></dt><dd><p> Distance from hole in feet</p>
+</dd>
+<dt><code>n</code></dt><dd><p>number of attempts</p>
+</dd>
+<dt><code>y</code></dt><dd><p>number of successes</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>This is used for an exercise on nonlinear modelling on page 515
+in the second edition.  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(golf)
+names(golf)
+comment(golf)
+with(golf, plot(distance, y/n))
+</pre>
+
+
+</body></html>

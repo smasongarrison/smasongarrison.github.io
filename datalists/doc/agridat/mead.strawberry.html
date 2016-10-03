@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Strawberry yields in RCB experiment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mead.strawberry"><tr><td>mead.strawberry</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Strawberry yields in RCB experiment
+</h2>
+
+<h3>Description</h3>
+
+<p>Strawberry yields in RCB experiment
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 32 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>Row</p>
+</dd>
+<dt><code>col</code></dt><dd><p>Column</p>
+</dd>
+<dt><code>block</code></dt><dd><p>Block factor, 4 levels</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>Genotype factor, 8 levels</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Yield, pounds</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>A hedge along the right side (column 8) caused shading and lower
+yields.
+</p>
+<p>R. Mead said (in a discussion of the Besag &amp; Higdon paper),
+&quot;the blocks defined (as given to me by the experimenter)
+are the entire horizontal rows...the design of the trial is actually
+(and unrecognized by me also) a checker-board of eight half-blocks
+with two groups of split-plot varieties&quot;.
+</p>
+<p>The two sub-groups of genotypes are G, V, R1, F and Re, M, E, P.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Unknown, but prior to 1968 according to Besag. Probably via R. Mead.
+</p>
+
+
+<h3>References</h3>
+
+<p>R. Mead, 1990, <em>The Design of Experiments</em>.
+</p>
+<p>Julian Besag and D Higdon, 1999.
+Bayesian Analysis of Agricultural Field Experiments,
+<em>Journal of the Royal Statistical Society: Series B (Statistical
+Methodology)</em>,61, 691&ndash;746. Table 4.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(mead.strawberry)
+dat &lt;- mead.strawberry
+dat$sub &lt;- ifelse(is.element(dat$gen, c('G', 'V', 'R1', 'F')),
+              "S1","S2")
+desplot(yield~col*row, dat, text=gen, cex=1, out1=block, out2=sub,
+        main="mead.strawberry")
+
+</pre>
+
+
+</body></html>

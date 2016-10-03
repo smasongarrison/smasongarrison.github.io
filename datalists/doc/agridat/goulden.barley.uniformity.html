@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Barley uniformity trial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for goulden.barley.uniformity"><tr><td>goulden.barley.uniformity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Barley uniformity trial
+</h2>
+
+<h3>Description</h3>
+
+<p>Barley uniformity trial
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 400 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>Row</p>
+</dd>
+<dt><code>col</code></dt><dd><p>Column</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Yield, grams per plot</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Yield in grams for 400 square-yard barley plots.
+</p>
+
+
+<h3>Source</h3>
+
+<p>C. H. Goulden, 1939. <em>Methods of statistical analysis</em>.
+Wiley. Page 18.
+<a href="http://archive.org/details/methodsofstatist031744mbp">http://archive.org/details/methodsofstatist031744mbp</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>See LeClerg, Leonard, Clark. <em>Field Plot Technique</em>. Page 27.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(goulden.barley.uniformity)
+dat &lt;- goulden.barley.uniformity
+
+desplot(yield ~ col*row, data=dat, main="goulden.barley.uniformity")
+
+# See LeClerg, Leonard, Clark
+hist(dat$yield, main="goulden.barley.uniformity",
+     breaks=c(21,40,59,78,97,116,135,154,173,192,211,230,249)+.5)
+
+</pre>
+
+
+</body></html>

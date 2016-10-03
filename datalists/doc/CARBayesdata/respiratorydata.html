@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Respiratory hospitalisation data for the Greater Glasgow and...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for respiratorydata"><tr><td>respiratorydata</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Respiratory hospitalisation data for the Greater Glasgow and Clyde health 
+board
+</h2>
+
+<h3>Description</h3>
+
+<p>A data.frame object containing purely spatial data on hospital admisssions due to 
+respiratory disease in 2010 for the 134 Intermediate Geographies (IG) to the north 
+of the river Clyde in the Greater Glasgow and Clyde health board. These data  are 
+used in a worked example in the vignette accompanying the CARBayes package.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(respiratorydata)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data.frame object containing 134 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>IG</code></dt><dd><p>The unique identifier for each IG.</p>
+</dd>
+<dt><code>observed</code></dt><dd><p>The observed numbers of hospitalisations due to 
+respiratory disease in each IG.</p>
+</dd>
+<dt><code>expected</code></dt><dd><p>The expected numbers of hospitalisations due to 
+respiratory disease in each IG computed using indirect standardisation from 
+Scotland-wide respiratory hospitalisation rates.</p>
+</dd>
+<dt><code>incomedep</code></dt><dd><p>The percentage of people in each IG who are 
+defined to be income deprived.</p>
+</dd>
+<dt><code>SMR</code></dt><dd><p>The standardised morbidity ratio (SMR, observed / expected) 
+for respiratory hospitalisation in each IG.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>These data were provided by the Scottish Government via http://statistics.gov.scot.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(respiratorydata)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hartigan (1975) Triads Based on Hardware</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for hardware.triads"><tr><td>hardware.triads</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Hartigan (1975) Triads Based on Hardware </h2>
+
+<h3>Description</h3>
+
+<p>The table defines pairs of hardware objects that are most similar along
+with a dissimilar object.  This is Table 10.1 in Chapter 10 of Hartigan (1975)
+on page 178.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(hardware.triads)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 20 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>case</code></dt><dd><p>a character vector</p>
+</dd>
+<dt><code>similar.1</code></dt><dd><p>a factor for the first object of similar pair with levels <code>B</code> <code>N</code> <code>P</code> <code>T</code></p>
+</dd>
+<dt><code>similar.2</code></dt><dd><p>a factor for the second object of similar pair with levels <code>B</code> <code>F</code> <code>S</code> <code>T</code></p>
+</dd>
+<dt><code>odd</code></dt><dd><p>a factor for the different object with levels <code>B</code> <code>F</code> <code>N</code> <code>P</code> <code>S</code> <code>T</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Six pieces of hardware were considered.
+Every possible set of three distinct pieces of hardware was examined,
+and a judgment was made about which two pieces were most similar.
+The results were reported by listing the closest pair with parentheses
+surrounding them, followed by the &quot;odd&quot; item.
+The hardware objects are identified as follows
+</p>
+
+<ol>
+<li><p> &quot;N&quot; is a nail
+</p>
+</li>
+<li><p> &quot;P&quot; is a Phillips head screw
+</p>
+</li>
+<li><p> &quot;B&quot; is a bolt
+</p>
+</li>
+<li><p> &quot;T&quot; is a tack
+</p>
+</li>
+<li><p> &quot;F&quot; is a finishing nail
+</p>
+</li>
+<li><p> &quot;S&quot; is a screw
+</p>
+</li></ol>
+  
+<p>These data are used to test the triads algorithm.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Hartigan, J. A. (1975). <em>Clustering Algorithms</em>, John Wiley, New York.
+</p>
+<p>SPAETH2 Cluster Analysis Datasets <a href="http://people.sc.fsu.edu/~jburkardt/datasets/spaeth2/spaeth2.html">http://people.sc.fsu.edu/~jburkardt/datasets/spaeth2/spaeth2.html</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Hartigan, J. A. (1975). <em>Clustering Algorithms</em>, John Wiley, New York.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(hardware.triads)
+</pre>
+
+
+</body></html>

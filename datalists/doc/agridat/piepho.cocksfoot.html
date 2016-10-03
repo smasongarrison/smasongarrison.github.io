@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Heading dates for cock's foot on 25 varieties in 7 years</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for piepho.cocksfoot"><tr><td>piepho.cocksfoot</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Heading dates for cock's foot on 25 varieties in 7 years
+</h2>
+
+<h3>Description</h3>
+
+<p>Heading dates for cock's foot on 25 varieties in 7 years
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(piepho.cocksfoot)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 111 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>gen</code></dt><dd><p>genotype factor, 25 levels</p>
+</dd>
+<dt><code>year</code></dt><dd><p>year, numeric</p>
+</dd>
+<dt><code>date</code></dt><dd><p>heading date (days from April 1)</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>These data are heading dates (days from April 1 to heading) of  25 cock's foot
+<em>Dactylis glomerata</em> varieties in trials at Hannover, Germany,
+repeated over seven years.  Values are means over replications.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Hans-Pieter Piepho. (1999).
+Fitting a Regression Model for Genotype-by-Environment Data on Heading
+Dates in Grasses by Methods for Nonlinear Mixed Models.
+<em>Biometrics</em>, 55, 1120-1128.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(piepho.cocksfoot)
+dat &lt;- piepho.cocksfoot
+dat$env &lt;- factor(dat$year)
+
+require(lattice)
+densityplot(~date|env, data=dat, main="piepho.cocksfoot - heading date") # Gaussian, not gamma distn
+
+if(require(lme4)){
+  # A simple mixed model gives results similar to Piepho, Table 2.
+  m1 &lt;- lmer(date ~ -1 + gen + (1|env), data=dat)
+  summary(m1)
+  ## Fixed effects:
+  ##        Estimate Std. Error t value
+  ## genG01   48.951      1.744   28.07
+  ## genG02   42.270      1.755   24.09
+  ## genG03   45.293      1.744   25.98
+  ## genG04   45.467      1.744   26.08
+  ## genG05   44.215      1.755   25.20
+}
+
+</pre>
+
+
+</body></html>

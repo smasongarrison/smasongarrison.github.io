@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Alarm Calls in Chickadees</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Chickadees"><tr><td>Chickadees</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Alarm Calls in Chickadees</h2>
+
+<h3>Description</h3>
+
+<p>Number of &quot;dee&quot; notes per call in Black-capped Chickadees (<em>Poecile
+atricapilla</em>) for 13 predator species with differing body masses.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 13 observations on the following 3 variables.
+</p>
+ <dl>
+<dt>species</dt><dd><p>a character vector</p>
+</dd> <dt>mass</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>dees</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Templeton, C.N., E. Greene, and K. Davis. 2005. Allometry of alarm
+calls: Black-capped Chickadees encode information about predator size.
+<em>Science</em> 308: 1934-1937.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.sciencemag.org/cgi/content/short/308/5730/1934">http://www.sciencemag.org/cgi/content/short/308/5730/1934</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Chickadees)
+Chickadees
+
+xyplot(dees ~ mass, data = Chickadees,
+   xlab = "Predator body mass (kg)",
+   ylab = "'Dees' per call", type=c('p','r')
+)
+</pre>
+
+
+</body></html>

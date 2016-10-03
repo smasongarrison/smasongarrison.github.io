@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Corn yield response to nitrogen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for hunter.corn"><tr><td>hunter.corn</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Corn yield response to nitrogen
+</h2>
+
+<h3>Description</h3>
+
+<p>Corn yield response to nitrogen
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 54 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>nitro</code></dt><dd><p>nitrogen fertilizer, pound/acre</p>
+</dd>
+<dt><code>year</code></dt><dd><p>year</p>
+</dd>
+<dt><code>loc</code></dt><dd><p>location factor</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield, bu/ac</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Experiments were conducted in eastern Oregon during the years
+1950-1952.
+</p>
+<p>Planting rates varied from 15,000 to 21,000 planter per acre.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Albert S. Hunter, John A. Yungen (1955).  The Influence of
+Variations in Fertility Levels Upon the Yield and Protein
+Content of Field Corn in Eastern Oregon.
+<em>Soil Science Society of America Journal</em>, 19, 214-218.
+</p>
+
+
+<h3>References</h3>
+
+<p>James Leo Paschal, Burton Leroy French (1956).
+A method of economic analysis applied to nitrogen fertilizer rate
+experiments on irrigated corn.
+Tech Bull 1141. United States Dept of Agriculture.
+<a href="books.google.com/books?id=gAdZtsEziCcC&amp;pg=PP1">books.google.com/books?id=gAdZtsEziCcC&amp;pg=PP1</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(hunter.corn)
+dat &lt;- hunter.corn
+
+dat &lt;- transform(dat, env=factor(paste(loc,year)))
+
+require(lattice)
+xyplot(yield~nitro|env, dat, type='b',
+main="hunter.corn - nitrogen response curves")
+
+</pre>
+
+
+</body></html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: GnRH Levels in Cichlids</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for CichlidsGnRH"><tr><td>CichlidsGnRH</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>GnRH Levels in Cichlids</h2>
+
+<h3>Description</h3>
+
+<p>Levels of mRNA for gonadotropin-releasing hormone in cichlids
+(<em>Haplochromis burtoni</em>) that are (<em>n</em> = 5) and are not (<em>n</em>
+= 6) territorial.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 11 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>territorial</dt><dd><p>a factor with levels <code>No</code> and
+<code>Yes</code></p>
+</dd> <dt>GnRH.mRNA</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>White, S.A., T. Nguyen, and R.D. Fernald. 2002. Social regulation of
+gonadotropin-releasing hormone. <em>Journal of Experimental Biology</em> 205:
+2567-2581.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://jeb.biologists.org/cgi/content/abstract/205/17/2567">http://jeb.biologists.org/cgi/content/abstract/205/17/2567</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xyplot(GnRH.mRNA ~ territorial, CichlidsGnRH, type=c('p','a'))
+</pre>
+
+
+</body></html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: RCB experiment of 50 varieties of wheat in 3 blocks with...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for besag.elbatan"><tr><td>besag.elbatan</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+RCB experiment of 50 varieties of wheat in 3 blocks with strong
+spatial trend.
+</h2>
+
+<h3>Description</h3>
+
+<p>RCB experiment of 50 varieties of wheat in 3 blocks with strong
+spatial trend.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 150 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>yield</code></dt><dd><p>Yield of wheat</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>Genetic variety, factor with 50 levels</p>
+</dd>
+<dt><code>block</code></dt><dd><p>Block/column (numeric)</p>
+</dd>
+<dt><code>row</code></dt><dd><p>Row (numeric)</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>RCB experiment on wheat at El Batan, Mexico.  There are three
+single-column replicates with 50 varieties in each replicate.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Julian Besag and D Higdon, 1999.
+Bayesian Analysis of Agricultural Field Experiments,
+<em>Journal of the Royal Statistical Society: Series B (Statistical
+Methodology)</em>,61, 691&ndash;746. Table 1.
+</p>
+<p>Retrieved from
+<a href="http://web.archive.org/web/19991008143232/www.stat.duke.edu/~higdon/trials/elbatan.dat">http://web.archive.org/web/19991008143232/www.stat.duke.edu/~higdon/trials/elbatan.dat</a>.
+</p>
+<p>Used with permission of David Higdon.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(besag.elbatan)
+dat &lt;- besag.elbatan
+
+desplot(yield~block*row, dat, main="besag.elbatan wheat yields",
+num=gen)
+
+# Besag figure 1
+# xyplot(yield~row|block, dat, groups=block, type=c('l'),
+#        layout=c(1,3), main="besag.elbatan wheat yields")
+
+# RCB
+m1 &lt;- lm(yield ~ 0 + gen + factor(block), dat)
+p1 &lt;- coef(m1)[1:50]
+
+# Add smooth trend with GAM
+if(require(mgcv)){
+  m3 &lt;- gam(yield ~ -1 + gen + factor(block) + s(row), data=dat)
+  plot(m3, residuals=TRUE, cex=3, main="besag.elbatan")
+  # pred &lt;- cbind(dat, predict(m3, data=dat, type="terms"))
+
+  # Compare estimates
+  p2 &lt;- coef(m3)[1:50]
+  lims &lt;- range(c(p1,p2))
+  plot(p1, p2, xlab="RCB prediction",
+       ylab="RCB with smooth trend (predicted)",
+       type='n', xlim=lims, ylim=lims,
+       main="besag.elbatan")
+  text(p1, p2, 1:50, cex=.5)
+  abline(0,1,col="gray")
+}
+
+# Formerly used gam package, but as of R 3.1, Rcmd check --as-cran
+# is complaining
+# Calls: plot.gam ... model.matrix.gam -&gt; predict -&gt; predict.gam -&gt; array
+# but it works perfectly in interactive mode !!!
+# Remove the FALSE to run the code below
+if(FALSE &amp; require(gam)){
+  m2 &lt;- gam(yield ~ -1 + gen + factor(block) + lo(row), data=dat)
+  plot.gam(m2)
+
+  plot(m2, residuals=TRUE, se=TRUE,
+       terms="lo(row)", main="besag.elbatan")
+  pred &lt;- cbind(dat, predict(m2, dat, type="terms"))
+  # Need to correct for the average loess effect, which is like
+  # an overall intercept term.
+  adjlo &lt;-  mean(pred$"lo(row)")
+  p2 &lt;- coef(m2)[1:50] + adjlo
+
+  # Compare estimates
+  lims &lt;- range(c(p1,p2))
+  plot(p1, p2, xlab="RCB prediction",
+       ylab="RCB with smooth trend (predicted)",
+       type='n', xlim=lims, ylim=lims,
+       main="besag.elbatan")
+  text(p1, p2, 1:50, cex=.5)
+  abline(0,1,col="gray")
+}
+
+</pre>
+
+
+</body></html>

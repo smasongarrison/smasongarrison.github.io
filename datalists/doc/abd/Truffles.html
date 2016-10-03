@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Truffle Distribution</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Truffles"><tr><td>Truffles</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Truffle Distribution</h2>
+
+<h3>Description</h3>
+
+<p>Number of truffles per plot for 288 plots in an old growth forest in
+northeastern California.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 5 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>truffles</dt><dd><p>a numeric vector</p>
+</dd> <dt>count</dt><dd><p>a
+numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Waters, J.R., K.S. McKelvey, D.L. Luoam, and C.J. Zabel. 1997.
+Truffle production in old-growth and mature fir stands in northeastern
+California. <em>Forest Ecology and Management</em> 96: 155-166.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.fs.fed.us/psw/publications/watersj/waters2.PDF">http://www.fs.fed.us/psw/publications/watersj/waters2.PDF</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+Truffles
+xyplot(count ~ truffles, Truffles, type='h', lwd=4)
+barchart(count ~ truffles, Truffles, origin=0, horizontal=FALSE)
+</pre>
+
+
+</body></html>

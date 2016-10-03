@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Uniformity trial of Spring Barley in 1978</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for kempton.barley.uniformity"><tr><td>kempton.barley.uniformity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Uniformity trial of Spring Barley in 1978
+</h2>
+
+<h3>Description</h3>
+
+<p>Uniformity trial of Spring Barley in 1978
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 196 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>Row position</p>
+</dd>
+<dt><code>col</code></dt><dd><p>Column position</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Grain yield, kg</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>A uniformity trial of spring barley planted in 1978.  Conducted by the
+Plant Breeding Institute in Cambridge, England.
+</p>
+<p>Each plot is 5 feet wide, 14 feet long.
+</p>
+
+
+<h3>Source</h3>
+
+<p>R. A. Kempton and C. W. Howes (1981). The use of neighbouring plot
+values in the analysis of variety trials. <em>Applied Statistics</em>,
+30, 59&ndash;70.
+</p>
+
+
+<h3>References</h3>
+
+<p>McCullagh, P. and Clifford, D., (2006).
+Evidence for conformal invariance of crop yields,
+Proceedings of the Royal Society A: Mathematical, Physical and
+Engineering Science. 462, 2119&ndash;2143.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(kempton.barley.uniformity)
+dat &lt;- kempton.barley.uniformity
+
+require(lattice)
+desplot(yield~col*row, dat, main="kempton.barley.uniformity")
+asp &lt;- (28*14)/(7*5) # aspect ratio (rows * ft)/(cols * ft)
+desplot(yield~col*row, dat, aspect=asp,
+        main="kempton.barley.uniformity (true aspect)") # true view
+
+dat &lt;- transform(dat, xf = factor(col), yf=factor(row))
+
+## Not run: 
+
+# Kempton estimated auto-regression coefficients b1=0.10, b2=0.91
+require(asreml)
+m1 &lt;- asreml(yield ~ 1, data=dat, rcov=~ar1(xf):ar1(yf))
+
+require(lucid)
+vc(m1)
+##      effect component std.error z.ratio constr
+##  R!variance    0.1044   0.022       4.7    pos
+##    R!xf.cor    0.2458   0.07484     3.3  uncon
+##    R!yf.cor    0.8186   0.03822    21    uncon
+
+# asreml estimates auto-regression correlations of 0.25, 0.82
+# Kempton estimated auto-regression coefficients b1=0.10, b2=0.91
+
+
+## End(Not run)
+
+# Kempton defines 4 blocks, randomly assigns variety codes 1-49 in each block, fits
+# RCB model, computes mean squares for variety and residual.  Repeat 40 times.
+# Kempton's estimate: variety = 1032, residual = 1013
+# Our estimate: variety = 825, residual = 1080
+fitfun &lt;- function(dat){
+  dat &lt;- transform(dat, block=factor(ceiling(row/7)),
+                   gen=factor(c(sample(1:49),sample(1:49),sample(1:49),sample(1:49))))
+  m2 &lt;- lm(yield*100 ~ block + gen, dat)
+  anova(m2)[2:3,'Mean Sq']
+}
+set.seed(251)
+out &lt;- replicate(50, fitfun(dat))
+rowMeans(out)
+
+</pre>
+
+
+</body></html>

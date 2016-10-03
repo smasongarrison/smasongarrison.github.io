@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Uniformity trials of oat hay and wheat</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for garber.multi.uniformity"><tr><td>garber.multi.uniformity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Uniformity trials of oat hay and wheat
+</h2>
+
+<h3>Description</h3>
+
+<p>Uniformity trials of oat straw and wheat
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 270 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>row ordinate</p>
+</dd>
+<dt><code>col</code></dt><dd><p>column ordinate</p>
+</dd>
+<dt><code>oats</code></dt><dd><p>yield of oat hay</p>
+</dd>
+<dt><code>wheat</code></dt><dd><p>yield of wheat grain</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>In 1923 the field was planted to oats and harvested as hay.  In 1924
+the field was planted to wheat and harvested for grain.
+</p>
+<p>Garber: &quot;Plots 211 to 214, and 261 to 264, [note, these are rows
+11-14, columns 5-6] inclusive, were eliminated from this study because
+of the fact that a few years ago a straw stack had stood on or in the
+vicinity...which undoubtedly accounts for the relatively high yields
+on plots 261 to 264, inclusive.&quot;
+</p>
+<p>Note: The source document contained mean-subtracted yields.  The oat
+yield in row 22, column 5 was given as +59.7.  This is obviously
+incorrect, since the negative yields all end in '.7' and positive
+yields all ended in '.3'.  We used -59.7 as the centered yield value
+and added the mean of 1883.7 to all centered yields to obtain absolute
+yields.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Garber, RJ and Mcllvaine, TC and Hoover, MM. 1926.
+A study of soil heterogeneity in experiment plots.
+<em>Jour. Agr. Res</em>, 33, 255-268.
+<a href="http://naldc.nal.usda.gov/download/IND43967148/PDF">http://naldc.nal.usda.gov/download/IND43967148/PDF</a>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(garber.multi.uniformity)
+dat &lt;- garber.multi.uniformity
+
+desplot(oats ~ col*row, data=dat, flip=TRUE, tick=TRUE,
+        main="garber.multi.uniformity oats")
+desplot(wheat ~ col*row, data=dat, flip=TRUE, tick=TRUE,
+        main="garber.multi.uniformity wheat")
+with(dat, cor(oats, wheat)) # = .37 matches Garber
+
+</pre>
+
+
+</body></html>

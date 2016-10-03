@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: World Speed Skiing Competition, Verbier 21st April, 2011</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for SpeedSki"><tr><td>SpeedSki</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+World Speed Skiing Competition, Verbier 21st April, 2011
+</h2>
+
+<h3>Description</h3>
+
+<p>There were separate Speed Skiing competitions for men (79 participants) and women (12 participants).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(SpeedSki)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 91 observations on the following 8 variables.
+</p>
+
+<dl>
+<dt><code>Rank</code></dt><dd><p>Finishing position by sex</p>
+</dd>
+<dt><code>Bib</code></dt><dd><p>Start number</p>
+</dd>
+<dt><code>FIS.Code</code></dt><dd><p>Skier's international skiing ID number</p>
+</dd>
+<dt><code>Name</code></dt><dd><p>Skier's name</p>
+</dd>
+<dt><code>Year</code></dt><dd><p>Skier's year of birth</p>
+</dd>
+<dt><code>Nation</code></dt><dd><p>Skier's nationality</p>
+</dd>
+<dt><code>Speed</code></dt><dd><p>Speed achieved in km/hr</p>
+</dd>
+<dt><code>Sex</code></dt><dd><p>Female or Male</p>
+</dd>
+<dt><code>Event</code></dt><dd><p>Speed Downhill, Speed Downhill Junior or Speed One</p>
+</dd>
+<dt><code>no.of.runs</code></dt><dd><p>No of runs</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><a href="http://www.fis-ski.com/de/606/612.html?sector=SS&amp;raceid=262">http://www.fis-ski.com/de/606/612.html?sector=SS&amp;raceid=262</a>  (men) <br />
+<a href="http://www.fis-ski.com/de/606/612.html?sector=SS&amp;raceid=263">http://www.fis-ski.com/de/606/612.html?sector=SS&amp;raceid=263</a>  (women)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(SpeedSki, package="GDAdata")
+with(SpeedSki, summary(Speed))
+library(ggplot2)
+ggplot(SpeedSki, aes(Speed)) + geom_histogram(binwidth=5)
+</pre>
+
+
+</body></html>

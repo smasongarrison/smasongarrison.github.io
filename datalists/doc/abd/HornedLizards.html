@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Horn Length and Predation Status of Horned Lizards</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for HornedLizards"><tr><td>HornedLizards</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Horn Length and Predation Status of Horned Lizards</h2>
+
+<h3>Description</h3>
+
+<p>Squamosal horn length (mm; <code>horn.length</code>) and predation status
+(<code>group</code>; living or killed) for 184 horned lizards (<em>Phrynosoma
+mcalli</em>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 184 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>horn.length</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>group</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Young, K.V., E.D. Brodie, Jr., and E.D. Brodie, III. 2004. How the
+horned lizard got its horns. <em>Science</em> 304: 65.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.sciencemag.org/cgi/pdf_extract/304/5667/65">http://www.sciencemag.org/cgi/pdf_extract/304/5667/65</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(HornedLizards)
+
+histogram(~horn.length | group, HornedLizards,
+  layout=c(1,2),
+  xlab="Horn Length (mm)")
+</pre>
+
+
+</body></html>

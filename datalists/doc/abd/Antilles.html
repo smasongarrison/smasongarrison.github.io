@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Antilles Bird Immigration Dates</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Antilles"><tr><td>Antilles</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Antilles Bird Immigration Dates</h2>
+
+<h3>Description</h3>
+
+<p>Approximate dates of immigration for 37 species of birds in the Lesser
+Antilles.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 37 observations of one variable. </p>
+
+<dl>
+<dt>immigration.date</dt><dd><p>approximate immigration date (in millions of
+years)</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p><em>inferred from</em> Ricklefs, R.E. and E. Bermingham. 2001.
+Nonequilibrium diversity dynamics of the Lesser Antillean avifauna.
+<em>Science</em> 294: 1522-1524.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.sciencemag.org/cgi/content/abstract/sci;294/5546/1522">http://www.sciencemag.org/cgi/content/abstract/sci;294/5546/1522</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+histogram(~immigration.date, Antilles,n=15)
+densityplot(~immigration.date, Antilles)
+</pre>
+
+
+</body></html>

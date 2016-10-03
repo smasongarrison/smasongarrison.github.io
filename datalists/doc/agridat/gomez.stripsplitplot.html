@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rice strip-split-plot experiment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gomez.stripsplitplot"><tr><td>gomez.stripsplitplot</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Rice strip-split-plot experiment
+</h2>
+
+<h3>Description</h3>
+
+<p>A strip-split-plot experiment with three reps, genotype as the horizontal
+strip, nitrogen fertilizer as the vertical strip, and planting method
+as the subplot factor.
+</p>
+
+
+<h3>Format</h3>
+
+
+<dl>
+<dt><code>yield</code></dt><dd><p>Grain yield in kg/ha</p>
+</dd>
+<dt><code>planting</code></dt><dd><p>Planting factor, P1=broadcast, P2=transplanted</p>
+</dd>
+<dt><code>rep</code></dt><dd><p>Rep factor, 3 levels</p>
+</dd>
+<dt><code>nitro</code></dt><dd><p>Nitrogen fertilizer in kg/ha</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>Genotype factor, G1 to G6</p>
+</dd>
+<dt><code>x</code></dt><dd><p>Ordinate in the field</p>
+</dd>
+<dt><code>y</code></dt><dd><p>Ordinate in the field</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Note, this is a superset of the the 'gomez.stripplot' data.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Gomez, K.A. and Gomez, A.A.. 1984,
+<em>Statistical Procedures for Agricultural Research</em>.
+Wiley-Interscience. Page 155.
+</p>
+<p>Used with permission of Kwanchai Gomez.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(gomez.stripsplitplot)
+dat &lt;- gomez.stripsplitplot
+
+# Layout
+desplot(gen~x+y, dat, out1=rep, col=nitro, text=planting, cex=1,
+        main="gomez.stripsplitplot")
+
+# Gomez table 4.19, ANOVA of strip-split-plot design
+dat &lt;- transform(dat, nf=factor(nitro))
+m1 &lt;- aov(yield ~ nf * gen * planting +
+          Error(rep + rep:nf + rep:gen + rep:nf:gen), data=dat)
+summary(m1)
+
+## Not run: 
+# There is a noticeable linear trend along the y coordinate which may be
+# an artifact that blocking will remove, or may need to be modeled.
+# Note the outside values in the high-nitro boxplot.
+require("HH")
+interaction2wt(yield ~ nitro + gen + planting + y, dat, x.relation="free")
+
+## End(Not run)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hartigan (1975) Correlation Between Physical Measuresments</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for physical.measure.correlations"><tr><td>physical.measure.correlations</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Hartigan (1975) Correlation Between Physical Measuresments </h2>
+
+<h3>Description</h3>
+
+<p>The table contains the correlations between various body parts.
+This is Table 17.1 in Chapter 17 of Hartigan (1975) on page 314.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(physical.measure.correlations)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 7 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>hl</code></dt><dd><p>a numeric vector for the correlations with head length</p>
+</dd>
+<dt><code>hb</code></dt><dd><p>a numeric vector for the correlations with head breadth</p>
+</dd>
+<dt><code>fb</code></dt><dd><p>a numeric vector for the correlations with face breadth</p>
+</dd>
+<dt><code>ft</code></dt><dd><p>a numeric vector for the correlations with foot</p>
+</dd>
+<dt><code>fm</code></dt><dd><p>a numeric vector for the correlations with forearm</p>
+</dd>
+<dt><code>ht</code></dt><dd><p>a numeric vector for the correlations with height</p>
+</dd>
+<dt><code>fl</code></dt><dd><p>a numeric vector for the correlations with finger length</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Hartigan suggests performing factor analysis on this data set to determine
+the minimum number of principal components.  In addition, a joining algorithm
+can be performed on the data set.  Note that the data frame has the variable
+names as row names.  It can be used directly by the <code>eigen</code> function.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Pearson, K. (1901). On lines and planes of closest fit to points in space.
+<em>Philosophical Magazine</em>, 559 - 572.
+</p>
+<p>SPAETH2 Cluster Analysis Datasets <a href="http://people.sc.fsu.edu/~jburkardt/datasets/spaeth2/spaeth2.html">http://people.sc.fsu.edu/~jburkardt/datasets/spaeth2/spaeth2.html</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Hartigan, J. A. (1975). <em>Clustering Algorithms</em>, John Wiley, New York.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(physical.measure.correlations)
+</pre>
+
+
+</body></html>

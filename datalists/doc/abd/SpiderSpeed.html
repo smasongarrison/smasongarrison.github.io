@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Spider Running Speeds after Amputation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for SpiderSpeed"><tr><td>SpiderSpeed</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Spider Running Speeds after Amputation</h2>
+
+<h3>Description</h3>
+
+<p>Data on speed before and after amputation of a pedipalp in the spider genus
+<em>Tidarren</em>.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 32 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>speed.before</dt><dd><p>speed (cm/s) before amputation </p>
+</dd>
+<dt>speed.after</dt><dd><p>speed (cm/s) after amputation </p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Ramos, M., D.J. Irschick, and T.E. Christenson. 2004. Overcoming an
+evolutionary conflict: Removal of a reproductive organ greatly increases
+locomotor performance. <em>Proceedings of the National Academy of Sciences
+(USA)</em> 101: 4883-4887.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/Pedipalp">http://en.wikipedia.org/wiki/Pedipalp</a>, <a href="http://en.wikipedia.org/wiki/Tidarren">http://en.wikipedia.org/wiki/Tidarren</a>, <a href="http://www.pnas.org/content/101/14/4883">http://www.pnas.org/content/101/14/4883</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xyplot(speed.after ~ speed.before, SpiderSpeed)
+favstats(SpiderSpeed$speed.before)
+favstats(SpiderSpeed$speed.after)
+favstats(SpiderSpeed$speed.after - SpiderSpeed$speed.before)
+</pre>
+
+
+</body></html>

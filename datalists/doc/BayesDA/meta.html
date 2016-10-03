@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Results of 22 Clinical Trials of beta-Blockers</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for meta"><tr><td>meta</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Results of 22 Clinical Trials of beta-Blockers    </h2>
+
+<h3>Description</h3>
+
+<p>Results of 22 clinical trials of beta-blockers for reducing mortality
+after myocardial infection. Used for meta-analysis.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(meta)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 22 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>study</code></dt><dd><p>id code of study</p>
+</dd>
+<dt><code>control.deaths</code></dt><dd><p>number of deaths in control group</p>
+</dd>
+<dt><code>control.total</code></dt><dd><p>total number of patients in control group</p>
+</dd>
+<dt><code>treated.deaths</code></dt><dd><p>number of deaths in treatment group</p>
+</dd>
+<dt><code>treated.total</code></dt><dd><p>total number of patients in treatment group</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The 22 clinical trials each consist of two groups of heart attack patients
+randomly allocated to receive or not receive  beta-blockers ( a family of 
+drugs
+that affect the central nervous system and can relax the 
+heart musckles).    
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(meta)
+names(meta)
+# Calculating empirical log-odds and its sampling variances:
+y &lt;- apply(meta, 1, function(x) log( (x[4]/(x[5]-x[4]))/(x[2]/(x[3]-x[2])) ) )
+s2 &lt;- apply(meta, 1, function(x) 1/(x[5]-x[4]) + 1/x[4] +1/(x[3]-x[2]) + 1/x[2] )  
+cbind("Study number"=meta[,1], "empirical log odds"=y, "empirical sampling variance of y"=s2)
+#if(require(meta)){
+#   funnel(y, sqrt(s2))
+#   radial(y, sqrt(s2))
+#}
+
+</pre>
+
+
+</body></html>

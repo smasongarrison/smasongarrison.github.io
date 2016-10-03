@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Numbers of Faults Found in Each of 32 Rolls of Fabric</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fabric"><tr><td>fabric</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Numbers of Faults Found in Each of 32 Rolls of Fabric   </h2>
+
+<h3>Description</h3>
+
+<p>Numbers of faults found in each of 32 rolls of fabric produced 
+in a particular factory.  Also given is the length of the roll. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(fabric)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 32 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>length</code></dt><dd><p>length of roll</p>
+</dd>
+<dt><code>faults</code></dt><dd><p>number of faults in roll</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The book uses this for exercise 5. page 441
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(fabric)
+str(fabric)
+names(fabric)
+# Identity link:
+with(fabric, plot(faults ~ length))
+# log link:
+with(fabric, plot(faults ~ length, log="y"))
+# Fitting poisson regression models:
+mod1 &lt;- glm(faults ~ length-1, data=fabric, family=poisson)
+OK &lt;- require(MCMCpack)
+if(OK) mod2 &lt;- MCMCpoisson(faults ~ length-1, data=fabric, b0=0, B0=0.0001)
+summary(mod1)
+confint(mod1)
+if(OK) summary(mod2)
+# The exercise is to investigate overdispersion ...
+</pre>
+
+
+</body></html>

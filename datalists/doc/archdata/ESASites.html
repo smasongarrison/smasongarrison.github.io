@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Early Stone Age Sites - Norway</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ESASites"><tr><td>ESASites</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Early Stone Age Sites - Norway
+</h2>
+
+<h3>Description</h3>
+
+<p>Data on 43 Early Stone Age assemblages in Norway come originally from Bølviken et al (1982).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data("ESASites")</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 43 observations on the following 16 variables.
+</p>
+
+<dl>
+<dt><code>TA</code></dt><dd><p>Tanged Arrows</p>
+</dd>
+<dt><code>BA</code></dt><dd><p>Blade Arrows</p>
+</dd>
+<dt><code>TOA</code></dt><dd><p>Transverse and Oblique Arrows</p>
+</dd>
+<dt><code>AA</code></dt><dd><p>Atypical Arrows</p>
+</dd>
+<dt><code>M</code></dt><dd><p>Microliths</p>
+</dd>
+<dt><code>FK</code></dt><dd><p>Flake Knives</p>
+</dd>
+<dt><code>BK</code></dt><dd><p>Blade Knives</p>
+</dd>
+<dt><code>NK</code></dt><dd><p>Notched Knives</p>
+</dd>
+<dt><code>CFS</code></dt><dd><p>Core and Flake Scrapers</p>
+</dd>
+<dt><code>BS</code></dt><dd><p>Blade Scrapers</p>
+</dd>
+<dt><code>DS</code></dt><dd><p>Disc Scrapers</p>
+</dd>
+<dt><code>Bu</code></dt><dd><p>Burins</p>
+</dd>
+<dt><code>Ax</code></dt><dd><p>Axes</p>
+</dd>
+<dt><code>Ch</code></dt><dd><p>Chisels</p>
+</dd>
+<dt><code>SAx</code></dt><dd><p>Slate Axes</p>
+</dd>
+<dt><code>Pf</code></dt><dd><p>Perforators</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Data on 43 Early Stone Age assemblages in Norway come originally from  Bølviken et al (1982). The data were scanned from Table A5 (Appendix A) in Baxter (1994).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Baxter, M. J. 1994. <em>Exploratory Multivariate Analysis in Archaeology</em>. Edinburgh University Press. Edinburgh.
+</p>
+<p>Bølviken, E., E. Helskog, K. Helskog, I. M. Holm-Olsen, L. Solheim, and R. Bertelsen. 1982. Correspondence Analysis: An Alternative to Principal Components. <em>World Archaeology</em> 14: 41-60.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(ESASites)
+NS &lt;- rowSums(ESASites)
+NT &lt;- rowSums(ESASites &gt; 0)
+plot(NS, NT, xlab="Number of Artifacts", ylab="Number of Types", main="Early Stone Age Sites",
+    las=1)
+</pre>
+
+
+</body></html>

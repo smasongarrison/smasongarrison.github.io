@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Yield of brussels sprouts, RCB with 9 fertilizer treatments</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for rothamsted.brussels"><tr><td>rothamsted.brussels</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Yield of brussels sprouts, RCB with 9 fertilizer treatments
+</h2>
+
+<h3>Description</h3>
+
+<p>Yield of brussels sprouts, RCB with 9 fertilizer treatments
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 48 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>Row</p>
+</dd>
+<dt><code>col</code></dt><dd><p>Column</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Yield of saleable sprouts, pounds</p>
+</dd>
+<dt><code>trt</code></dt><dd><p>Treatment factor, 9 levels</p>
+</dd>
+<dt><code>block</code></dt><dd><p>Block factor, 4 levels</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The block numbers are arbitrary, and may not match the orignal source.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Rothamsted Experimental Station Report 1934-36.
+Brussels sprouts: effect of sulphate of ammonia, poultry manure, soot
+and rape dust, pp. 191-192. Harpenden: Lawes Agricultural Trust.
+</p>
+
+
+<h3>References</h3>
+
+<p>McCullagh, P. and Clifford, D., (2006).
+Evidence for conformal invariance of crop yields,
+<em>Proceedings of the Royal Society A: Mathematical, Physical and
+Engineering Science</em>, 462, 2119&ndash;2143.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(rothamsted.brussels)
+dat &lt;- rothamsted.brussels
+
+require(lattice)
+bwplot(yield~trt, dat, main="rothamsted.brussels")
+desplot(yield~col*row, data=dat, num=trt, out1=block, cex=1,
+        main="rothamsted.brussels")
+
+</pre>
+
+
+</body></html>

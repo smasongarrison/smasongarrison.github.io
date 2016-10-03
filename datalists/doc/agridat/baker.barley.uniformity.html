@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ten years of barley uniformity trials on same ground</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for baker.barley.uniformity"><tr><td>baker.barley.uniformity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Ten years of barley uniformity trials on same ground
+</h2>
+
+<h3>Description</h3>
+
+<p>Ten years of barley uniformity trials on same ground
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 570 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>row</p>
+</dd>
+<dt><code>col</code></dt><dd><p>column</p>
+</dd>
+<dt><code>year</code></dt><dd><p>year, numeric</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield, (pound/acre)</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Ten years of uniformity trials were sown on the same ground.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Baker, GA and Huberty, MR and Veihmeyer, FJ.  (1952)
+A uniformity trial on unirrigated barley of ten years' duration.
+<em>Agronomy Journal</em>, 44, 267-270.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(baker.barley.uniformity)
+dat &lt;- baker.barley.uniformity
+
+asp &lt;- (161*3+30)/827 # True aspect ratio
+desplot(yield~col*row|year, data=dat,
+        main="baker.barley.uniformity heatmaps by year", aspect=asp)
+dat2 &lt;- aggregate(yield ~ row*col, data=dat, FUN=mean, na.rm=TRUE)
+desplot(yield~col*row, data=dat2, main="baker.barley.uniformity 10-year average", aspect=asp)
+# Note low yield in upper right, slanting to left a bit due to sandy soil.
+
+# Baker fig 2, stdev vs mean
+dat3 &lt;- aggregate(yield ~ row*col, data=dat, FUN=sd, na.rm=TRUE)
+plot(dat2$yield, dat3$yield, xlab="Mean yield", ylab="Std Dev yield",
+     main="baker.barley.uniformity")
+
+# Baker table 4, correlation of plots across years
+require(reshape2)
+mat &lt;- acast(dat, row+col~year)
+round(cor(mat, use='pair'),2)
+
+</pre>
+
+
+</body></html>

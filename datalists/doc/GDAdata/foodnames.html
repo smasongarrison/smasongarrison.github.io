@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Nutritional value of food.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for foodnames"><tr><td>foodnames</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Nutritional value of food.
+</h2>
+
+<h3>Description</h3>
+
+<p>Nutritional value of different foods based on standard serving sizes.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(foodnames)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 961 observations on the following 9 variables.
+</p>
+
+<dl>
+<dt><code>Name</code></dt><dd><p>name of food (not unique)</p>
+</dd>
+<dt><code>Measure</code></dt><dd><p>serving description</p>
+</dd>
+<dt><code>Fat.grams</code></dt><dd><p>grams of fat in a standard serving</p>
+</dd>
+<dt><code>Food.energy.calories</code></dt><dd><p>calories per serving</p>
+</dd>
+<dt><code>Carbohydrates.grams</code></dt><dd><p>grams of carbohydrates per serving</p>
+</dd>
+<dt><code>Protein.grams</code></dt><dd><p>grams of protein per serving</p>
+</dd>
+<dt><code>Cholesterol.mg</code></dt><dd><p>cholesterol in mg per serving</p>
+</dd>
+<dt><code>weight.grams</code></dt><dd><p>weight in grams of a standard serving</p>
+</dd>
+<dt><code>Saturated.fat.grams</code></dt><dd><p>grams of saturated fat per serving</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>The data are used in A. Izenman (2008), Modern Multivariate Statistical Techniques, Springer<br />
+and are available on the accompanying website
+<a href="http://astro.temple.edu/~alan/MMST/">http://astro.temple.edu/~alan/MMST/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(foodnames, package="GDAdata")
+summary(foodnames)
+library(ggplot2)
+ggplot(foodnames, aes(Fat.grams, Saturated.fat.grams)) + geom_point()
+</pre>
+
+
+</body></html>

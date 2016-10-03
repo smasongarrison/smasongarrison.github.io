@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Diallel cross of winter beans</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bond.diallel"><tr><td>bond.diallel</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Diallel cross of winter beans
+</h2>
+
+<h3>Description</h3>
+
+<p>Diallel cross of winter beans
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 36 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>female</code></dt><dd><p>Female parent factor</p>
+</dd>
+<dt><code>male</code></dt><dd><p>Male parent factor</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Yield, grams/plot</p>
+</dd>
+<dt><code>stems</code></dt><dd><p>Stems per plot</p>
+</dd>
+<dt><code>nodes</code></dt><dd><p>Podded nodes per stem</p>
+</dd>
+<dt><code>pods</code></dt><dd><p>Pods per podded node</p>
+</dd>
+<dt><code>seeds</code></dt><dd><p>Seeds per pod</p>
+</dd>
+<dt><code>weight</code></dt><dd><p>Weight (g) per 100 seeds</p>
+</dd>
+<dt><code>height</code></dt><dd><p>Height (cm) in April</p>
+</dd>
+<dt><code>width</code></dt><dd><p>Width (cm) in April</p>
+</dd>
+<dt><code>flower</code></dt><dd><p>Mean flowering date in May</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Yield in grams/plot for diallel crosses between inbred lines of winter
+beans.  Values are means over two years.
+</p>
+
+
+<h3>Source</h3>
+
+<p>D. A. Bond (1966). Yield and components of yield in diallel crosses
+between inbred lines of winter beans (Viciafaba).
+<em>The Journal of Agricultural Science</em>, 67, 325&ndash;336.
+</p>
+
+
+<h3>References</h3>
+
+<p>Peter John, <em>Statistical Design and Analysis of Experiments</em>, p. 85.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(bond.diallel)
+dat &lt;- bond.diallel
+
+require(lattice)
+splom(dat[,3:11], main="bond.diallel")
+
+# Needs an example.  Bond says yield heterosis of F1 hybrids over parent
+# means is 22.56, but I cannot match.
+</pre>
+
+
+</body></html>

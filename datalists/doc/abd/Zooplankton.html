@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Zooplankton Depredation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Zooplankton"><tr><td>Zooplankton</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Zooplankton Depredation</h2>
+
+<h3>Description</h3>
+
+<p>Diversity of zooplankton (<code>zooplankton</code>) prey in each of 5 replicate
+blocks (<code>block</code>) of three treatment levels (<code>treatment</code>). By
+default, <code>block</code> is not coded as a factor.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 15 observations on the following 3 variables.
+</p>
+ <dl>
+<dt>treatment</dt><dd><p>a factor with levels <code>control</code>,
+<code>high</code>, and <code>low</code></p>
+</dd> <dt>zooplankton</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>block</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p><em>inferred from</em> Svanbäck, R. and D.I. Bolnick. 2007.
+Intraspecific competition drives increased resource use diversity within a
+natural population. <em>Proceedings of the Royal Society of London Series
+B, Biological Sciences</em> 274: 839-844.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+Zooplankton
+
+Zooplankton$block &lt;- factor(Zooplankton$block)
+str(Zooplankton)
+
+aov.fit &lt;- aov(zooplankton ~ block + treatment,
+  data = Zooplankton)
+summary(aov.fit)
+</pre>
+
+
+</body></html>

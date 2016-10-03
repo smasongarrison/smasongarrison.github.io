@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Figures for the trade between England and the East Indies in...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for EastIndiesTrade"><tr><td>EastIndiesTrade</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Figures for the trade between England and the East Indies in the 18th century.
+</h2>
+
+<h3>Description</h3>
+
+<p>The data have been estimated from the graphic in the first edition of Playfair's <em>Commercial and Political Atlas</em> by the website 'Me, myself, and BI'.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(EastIndiesTrade)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 81 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>Year</code></dt><dd><p>the data go from 1700 to 1780</p>
+</dd>
+<dt><code>Exports</code></dt><dd><p>Exports from England to the East Indies (millions of pounds)</p>
+</dd>
+<dt><code>Imports</code></dt><dd><p>Imports to England from the East Indies (millions of pounds)</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><a href="http://blog.bissantz.com/vis-a-vis">http://blog.bissantz.com/vis-a-vis</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(EastIndiesTrade, package="GDAdata")
+library(ggplot2)
+ggplot(EastIndiesTrade, aes(x=Year, y=Exports-Imports)) + geom_line()
+</pre>
+
+
+</body></html>

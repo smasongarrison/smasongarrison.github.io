@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Human Body Temperature</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for HumanBodyTemp"><tr><td>HumanBodyTemp</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Human Body Temperature</h2>
+
+<h3>Description</h3>
+
+<p>Body temperature for 25 randomly chosen health people
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 25 observations of one variable. </p>
+
+<dl>
+<dt>temp</dt><dd><p>body temperature (degrees F)</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Shoemaker, A. L. 1996. What's normal? &ndash; Temperature, gender, and
+heart rate. <em>Journal of Statistics Education</em> 4(2).
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.amstat.org/publications/jse/v4n2/datasets.shoemaker.html">http://www.amstat.org/publications/jse/v4n2/datasets.shoemaker.html</a>
+</p>
+<p>Mackowiak, P.A., Wasserman, S.S., and Levine, M.M. 1992. A critical
+appraisal of 98.6 degrees F, the upper limit of the normal body temperature,
+and other legacies of Carl Reinhold August Wunderlich. <em>Journal of the
+American Medical Association</em> 268: 1578-1580.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+histogram(~temp, HumanBodyTemp)
+stem(HumanBodyTemp$temp, scale = 2)
+favstats(HumanBodyTemp$temp)
+</pre>
+
+
+</body></html>

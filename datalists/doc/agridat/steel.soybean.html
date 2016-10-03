@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Soybean yields in North Carolina</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for steel.soybean"><tr><td>steel.soybean</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Soybean yields in North Carolina
+</h2>
+
+<h3>Description</h3>
+
+<p>Soybean yields in a multi-environment trial in North Carolina.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 108 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>gen</code></dt><dd><p>Genotype factor, 12 levels</p>
+</dd>
+<dt><code>loc</code></dt><dd><p>Location factor, 3 levels</p>
+</dd>
+<dt><code>block</code></dt><dd><p>Block factor, 3 levels</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Yield, grams per plot</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The experiment was planted as an RCB with 3 blocks at each location.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Steel, R.G.D. and Torrie, J.H., 1980.
+<em>Principles and procedures of statistics: a biometrical approach</em>,
+McGraw-Hill.  Page 400.
+</p>
+
+
+<h3>References</h3>
+
+<p>Mick O'Neill, 2010.  Anova and REML: A Guide to Linear Mixed Models In
+An Experimental Design Context.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(steel.soybean)
+dat &lt;- steel.soybean
+require(lattice)
+dotplot(gen~yield|loc, dat, main="steele.soybean - yield by location")
+
+if(require(lme4)){
+# REML analysis as in O'Neill, p. 130.
+m1 &lt;- lmer(yield ~ loc + (1|gen) + (1|gen:loc) + (1|loc:block), data=dat)
+# Are gen:loc effects significant?  No.
+m2 &lt;- lmer(yield ~ loc + (1|gen) + (1|loc:block), data=dat)
+anova(m1,m2)
+# h^2 deviations
+ranef(m2)$gen
+}
+
+</pre>
+
+
+</body></html>

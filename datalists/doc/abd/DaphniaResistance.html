@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Daphnia Resistance to Cyanobacteria</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for DaphniaResistance"><tr><td>DaphniaResistance</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Daphnia Resistance to Cyanobacteria</h2>
+
+<h3>Description</h3>
+
+<p>Resistance of <em>Daphnia</em> eggs to different levels of cyanobacteria
+(<code>cyandensity</code>) from 1962-1997.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 32 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>density</dt><dd><p>a factor with levels: <code>high</code>,
+<code>low</code>, and <code>med</code></p>
+</dd> <dt>resistance</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p><em>inferred from</em> Hairston, N.G., Jr., W. Lampert, C.E. Cáceres,
+C.L. Holtmeier, L.J. Weider, U. Gaedke, J.M. Fischer, J.A. Fox, and D.M.
+Post. 1999. Dormant eggs record rapid evolution. <em>Nature</em> 401: 446.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(DaphniaResistance)
+
+
+bwplot(resistance ~ density, DaphniaResistance)
+# with such a small data set, we can display all the data
+# rather than a summary
+xyplot(resistance ~ density, DaphniaResistance)
+histogram( ~ resistance| density, DaphniaResistance,
+	strip=FALSE, strip.left = TRUE,
+	layout=c(1,3)
+	)
+</pre>
+
+
+</body></html>

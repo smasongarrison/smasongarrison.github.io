@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lenhart's sweetgum (Liquidambar styraciflua L.) tree...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sweetgum"><tr><td>sweetgum</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Lenhart's sweetgum (Liquidambar styraciflua L.) tree measurement data.
+</h2>
+
+<h3>Description</h3>
+
+<p>The original data, also supplied in the package, are measures of stem
+diameter and height at various locations on the bole of 39 sweetgum
+trees from Texas, USA. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(sweetgum)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 39 tree-level observations on the following 8 variables.
+</p>
+
+<dl>
+<dt><code>plot</code></dt><dd><p>Identifies the plot in which the tree was felled.</p>
+</dd>
+<dt><code>tree</code></dt><dd><p>A factor that identifies the tree.</p>
+</dd>
+<dt><code>dbh.in</code></dt><dd><p>The tree diameter (in.) at 1.37 m (4'6&rdquo;)</p>
+</dd>
+<dt><code>stump.ht.ft</code></dt><dd><p>The height of the stump after felling (ft).</p>
+</dd>
+<dt><code>height.ft</code></dt><dd><p>The height of the tree (ft).</p>
+</dd>
+<dt><code>height.m</code></dt><dd><p>The height of the tree (m).</p>
+</dd>
+<dt><code>dbh.cm</code></dt><dd><p>The tree diameter (cm.) at 1.37 m (4'6&rdquo;)</p>
+</dd>
+<dt><code>vol.m3</code></dt><dd><p>The estimated biological volume of the stem
+(cubic meters).</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The height measure is of the standing tree, so it includes the stump
+height.  The volume was computed by fitting a spline to the height and
+diameter measures, and integrating the solid that corresponds to the
+profile of the spline.  See Section 2.4.2 of Robinson and Hamann
+(2010) for more details.
+</p>
+
+
+<h3>Source</h3>
+
+<p>The data were kindly supplied by Professor Timothy Gregoire and
+were originally collected by David Lenhart.
+</p>
+
+
+<h3>References</h3>
+
+<p>Robinson, A.P., and J.D. Hamann. 2010.  Forest Analytics with R: an
+Introduction. Springer. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(sweetgum)
+str(sweetgum)
+</pre>
+
+
+</body></html>

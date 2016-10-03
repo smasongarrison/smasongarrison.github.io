@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Monthly weather at 6 sites in Minnesota 1927-1936.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for minnesota.barley.weather"><tr><td>minnesota.barley.weather</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Monthly weather at 6 sites in Minnesota 1927-1936.
+</h2>
+
+<h3>Description</h3>
+
+<p>This is monthly weather summaries for the 6 sites where barley yield
+trials were conducted.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 719 observations on the following 8 variables.
+</p>
+
+<dl>
+<dt><code>site</code></dt><dd><p>Site factor, 6 levels</p>
+</dd>
+<dt><code>year</code></dt><dd><p>Year, 1927-1936, numeric</p>
+</dd>
+<dt><code>mo</code></dt><dd><p>Month, 1-12, numeric</p>
+</dd>
+<dt><code>cdd</code></dt><dd><p>Monthly cooling degree days, Fahrenheit</p>
+</dd>
+<dt><code>hdd</code></dt><dd><p>Monthly heating degree days, Fahrenheit</p>
+</dd>
+<dt><code>precip</code></dt><dd><p>Monthly precipitation, inches</p>
+</dd>
+<dt><code>min</code></dt><dd><p>Monthly average daily minimum temp, Fahrenheit</p>
+</dd>
+<dt><code>max</code></dt><dd><p>Monthly average daily maximum temp, Fahrenheit</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>When the weather data was extracted from the National Climate Data
+Center, the following weather stations were chosen, based on
+availability of weather data in the given time frame (1927-1936)
+and the proximity to the town (site) for the barley data.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+    site</td><td style="text-align: left;"> station name</td><td style="text-align: left;"> station</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    Morris</td><td style="text-align: left;"> MORRIS WC EXPERIMENTAL STATION</td><td style="text-align: left;"> USC00215638</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    StPaul</td><td style="text-align: left;"> MINNEAPOLIS WEATHER BUREAU DOWNTOWN</td><td style="text-align: left;"> USC00215433</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    Crookston</td><td style="text-align: left;"> CROOKSTON NW EXPERIMENTAL STATION</td><td style="text-align: left;"> USC00211891</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    GrandRapids</td><td style="text-align: left;"> GRAND RAPIDS FRS LAB</td><td style="text-align: left;"> USC00213303</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    Waseca</td><td style="text-align: left;">  WASECA EXPERIMENTAL STATION</td><td style="text-align: left;"> USC00218692</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    Duluth</td><td style="text-align: left;">  SUPERIOR</td><td style="text-align: left;"> USC00478349</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  </td>
+</tr>
+
+</table>
+
+<p>'cdd' are cooling degree days, which is the number of degree days with
+a temperature _above_ 65 Fahrenheit.
+</p>
+<p>'hdd' are heating degree days, _below_ 65 Fahrenheit.
+</p>
+<p>No data is available for Duluth in Dec, 1931.
+</p>
+
+
+<h3>Source</h3>
+
+<p>National Climate Data Center, <a href="http://www.ncdc.noaa.gov/">http://www.ncdc.noaa.gov/</a>.
+</p>
+
+
+<h3>References</h3>
+
+<p>Kevin Wright. 2013.  Revisiting Immer's Barley Data.
+<em>The American Statistitician</em>, 67, 129-133.
+<a href="http://dx.doi.org/10.1080/00031305.2013.801783">http://dx.doi.org/10.1080/00031305.2013.801783</a>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(minnesota.barley.yield)
+dat &lt;- minnesota.barley.yield
+data( minnesota.barley.weather)
+datw &lt;- minnesota.barley.weather
+
+# Weather trends over time
+if(require(latticeExtra)){
+  useOuterStrips(xyplot(cdd~mo|year*site, datw, groups=year,
+                        main="minnesota.barley",
+                        xlab="month", ylab="Cooling degree days",
+                        subset=(mo &gt; 3 &amp; mo &lt; 10),
+                        scales=list(alternating=FALSE),
+                        type='l', auto.key=list(columns=5)))
+}
+
+# Total cooling/heating/precip in Apr-Aug for each site/yr
+ww &lt;- subset(datw, mo&gt;=4 &amp; mo&lt;=8)
+ww &lt;- aggregate(cbind(cdd,hdd,precip)~site+year, data=ww, sum)
+
+# Average yield per each site/env
+yy &lt;- aggregate(yield~site+year, dat, mean)
+
+minn &lt;- merge(ww, yy)
+
+
+# Higher yields generally associated with cooler temps, more precip
+require(reshape2)
+me &lt;- melt(minn, id.var=c('site','year'))
+mey &lt;- subset(me, variable=="yield")
+mey &lt;- mey[,c('site','year','value')]
+names(mey) &lt;- c('site','year','y')
+mec &lt;- subset(me, variable!="yield")
+names(mec) &lt;- c('site','year','covar','x')
+mecy &lt;- merge(mec, mey)
+mecy$yr &lt;- factor(mecy$year)
+oldpar &lt;- tpg &lt;- trellis.par.get()
+tpg$superpose.symbol$pch &lt;- substring(levels(mecy$yr),4) # Last digit of year
+trellis.par.set(tpg)
+foo &lt;- xyplot(y~x|covar*site, data=mecy, groups=yr, cex=1, ylim=c(5,65),
+              xlab="", ylab="yield", main="minnesota.barley",
+              panel=function(x,y,...) {
+                panel.lmline(x,y,..., col="gray")
+                panel.superpose(x,y,...)
+              },
+              scales=list(x=list(relation="free")))
+if(require(latticeExtra)){
+  foo &lt;- useOuterStrips(foo, strip.left = strip.custom(par.strip.text=list(cex=.7)))
+  combineLimits(foo, margin.x=2L) # Use a common x axis for all rows
+}
+
+</pre>
+
+
+</body></html>

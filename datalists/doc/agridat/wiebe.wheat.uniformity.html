@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Uniformity trial of wheat</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for wiebe.wheat.uniformity"><tr><td>wiebe.wheat.uniformity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Uniformity trial of wheat
+</h2>
+
+<h3>Description</h3>
+
+<p>A uniformity trial of 1500 plots of wheat conducted in Idaho in 1927.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1500 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>Row</p>
+</dd>
+<dt><code>col</code></dt><dd><p>Column (series)</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Yield in grams per plot</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Yield trial conducted in 1927 near Aberdeen, Idaho.  The crop was
+Federation wheat (C.I. no 4734). Plots were seeded
+on April 18 with a drill that sowed eight rows at a time.
+Individual rows were harvested in August and threshed with a small
+nursery thresher.
+</p>
+<p>Rows were 15 feet long, 1 foot apart.
+</p>
+<p>Some authors recommend analyzing the square root of the yields.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Wiebe, G.A. 1935. Variation and Correlation in Grain Yield among 1,500 Wheat
+Nursery Plots, <em>Journal of Agricultural Research</em>, 50, 331-357.
+<a href="http://naldc.nal.usda.gov/download/IND43968632/PDF">http://naldc.nal.usda.gov/download/IND43968632/PDF</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>D.A. Preece, 1981, Distributions of final digits in data,
+<em>The Statistician</em>, 30, 31&ndash;60.
+</p>
+<p>Wilkinson et al. (1983). Nearest Neighbour (NN) Analysis of Field
+Experiments. <em>J. R. Statist. Soc. B</em>, 45, 151-211.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(wiebe.wheat.uniformity)
+dat &lt;- wiebe.wheat.uniformity
+
+require("lattice")
+# 125 rows = 125 feet tall. 12 cols * 15 feet = 180 feet wide.
+desplot(yield~col+row, dat, aspect=125/180, flip=TRUE,
+  main="wiebe.wheat.uniformity: yield") # row 1 is at south
+
+# Preece (1981) found the last digits have an interesting distribution
+# with 0 and 5 much more common than other digits.
+dig &lt;- substring(dat$yield, nchar(dat$yield))
+dig &lt;- as.numeric(dig)
+hist(dig, breaks=0:10-.5, xlab="Last digit",
+     main="wiebe.wheat.uniformity - histogram of last digit")
+table(dat$col, dig) # Table 3 of Preece
+
+# Loess
+# m3 &lt;- loess(yield~row+col, dat)
+# plot(dat$row, resid(m3), ylim=c(-300,300),
+#      main="wiebe.wheat.uniformity")
+
+# Wilkinson (1983, p. 152) noted that an 8-row planter was used which
+# produced a recurring pattern of row effects on yield.  This can be seen
+# in the high autocorrelations of row means at lag 8 and lag 16
+rowm &lt;- tapply(dat$yield, dat$row, mean)
+acf(rowm, main="wiebe.wheat.uniformity row means")
+# Plot the row mean against the planter row unit 1-8
+xyplot(rowm~rep(1:8, length=125),
+       main="wiebe.wheat.uniformity",
+       xlab="Planter row unit", ylab="Row mean yield")
+
+</pre>
+
+
+</body></html>

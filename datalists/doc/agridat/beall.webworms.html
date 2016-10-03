@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Counts of webworms in a beet field, with insecticide...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for beall.webworms"><tr><td>beall.webworms</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Counts of webworms in a beet field, with insecticide treatments.
+</h2>
+
+<h3>Description</h3>
+
+<p>Counts of webworms in a beet field, with insecticide treatments.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(beall.webworms)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1300 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>row</p>
+</dd>
+<dt><code>col</code></dt><dd><p>column</p>
+</dd>
+<dt><code>y</code></dt><dd><p>count of webworms</p>
+</dd>
+<dt><code>block</code></dt><dd><p>block factor</p>
+</dd>
+<dt><code>trt</code></dt><dd><p>treatment factor</p>
+</dd>
+<dt><code>spray</code></dt><dd><p>spray treatment Yes/No</p>
+</dd>
+<dt><code>lead</code></dt><dd><p>lead treatment Yes/No</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The beet webworm lays egg masses as small as 1 egg, seldom exceeding 5
+eggs. The larvae can move freely, but usually mature on the plant on
+which they hatch.
+</p>
+<p>Each plot contained 25 unit areas, each 1 row by 3 feet long.
+</p>
+<p>Treatment 1 = None.  Treatment 2 = Contact spray. Treatment 3 = Lead
+arsenate. Treatment 4 = Both spray, lead arsenate.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Beall, Geoffrey (1940).
+The fit and significance of contagious distributions when applied to
+observations on larval insects.
+<em>Ecology</em>, 21, 460&ndash;474. Table 6.
+http://www.jstor.org/stable/1930285.  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(beall.webworms)
+dat &lt;- beall.webworms
+
+# Match Beall table 1
+with(dat, table(y,trt))
+# histogram(~y|trt, data=dat, layout=c(1,4), as.table=TRUE)
+
+# Visualize Beall tble 6.  Block effects may exist, but barely.
+desplot(y ~ col*row, data=dat, out1=block, out2=trt, num=trt, flip=TRUE,
+        main="beall.webworms (count of worms)",
+        col.regions=colorRampPalette(c("white","black"))(9))
+
+# Following plot suggests interaction is needed
+# with(dat, interaction.plot(spray, lead, y))
+
+# Just a simple model here...
+m1 &lt;- glm(y ~ block+spray*lead, data=dat, family="poisson")
+summary(m1)
+
+</pre>
+
+
+</body></html>

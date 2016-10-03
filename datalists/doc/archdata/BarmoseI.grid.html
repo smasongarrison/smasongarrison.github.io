@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Flakes per grid unit from Barmose I, South Zealand, Denmark</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for BarmoseI.grid"><tr><td>BarmoseI.grid</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Flakes per grid unit from Barmose I, South Zealand, Denmark
+</h2>
+
+<h3>Description</h3>
+
+<p>Flake counts for each of 107 contiguous grid units at the Barmose I Maglemosian site used by Blankholm (1991) to illustrate several spatial analysis methods.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(BarmoseI.grid)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 107 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>North</code></dt><dd><p>North coordinate of southwest corner of unit</p>
+</dd>
+<dt><code>East</code></dt><dd><p>East coordinate of southwest corner of unit</p>
+</dd>
+<dt><code>Debitage</code></dt><dd><p>Number of flakes</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Barmose I is an early Maglemosian (7500 - 6000 bc)  site located in Barmosen in South Zealand, Denmark. The site was excavated in 1967-1971 by Axel Johansson (Johansson 1971 and 1990). Flake counts and grid coordinates were taken from Figure 100 in Blankholm (1991) for <code>BarmoseI.grid</code>. <code>BarmoseI.pp</code> includes the locations of 473 artifacts from Appendix C of Blankholm's book.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Blankholm, Hans Peter. 1991. <em>Intrasite Spatial Analysis in Theory and Practice</em>. Aarhus University Press.
+</p>
+
+
+<h3>References</h3>
+
+<p>Johansson, Axel. 1971. Barmosegruppen. Præboreale Bopladsfund me Skiveøkser i Sydsjælland. Foreløbig Meddelelse. <em>Historisk Samfund for Præstø Amt</em>. Årbog 1968, pp. 101-170.
+</p>
+<p>Johansson, Axel. 1990. <em>Barmosegruppen. Præboreale Bopladsfund i Sydsjælland</em>. Årbog. Aarhus University Press.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(BarmoseI.grid)
+plot(North~East, BarmoseI.grid, xlim=c(0, 12), ylim=c(0, 14), type="n", asp=1)
+with(BarmoseI.grid, text(East+.5, North+.5, Debitage, cex=.8))
+</pre>
+
+
+</body></html>

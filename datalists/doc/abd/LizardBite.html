@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bite Force in Collard Lizards</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for LizardBite"><tr><td>LizardBite</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bite Force in Collard Lizards</h2>
+
+<h3>Description</h3>
+
+<p>Bite force (N) and territory area in 11 male collared lizards
+(<em>Crotaphytus collaris</em>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 11 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>bite</dt><dd><p>force of bite (N)</p>
+</dd>
+<dt>territory</dt><dd><p>area of territory</p>
+</dd> </dl>
+
+
+<h3>Note</h3>
+
+<p>In the original publication (Lappin and Husak,
+2005; Figure 3A), the data are presented in log-10 units. The
+data in <code>LizardBite</code> and in chapter 17, question 9 was
+back-transformed using <em>e</em> (i.e., <code>exp()</code>). To recover the data
+from the original publication, use <code>10^(log(LizardBite$territory))</code>
+and <code>10^(log(LizardBite$bite))</code>.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Lappin, A. K., and J. F. Husak. 2005. Weapon performance, not size,
+determines mating success and potential reproductive output in the collared
+lizard (<em>Crotaphytus collaris</em>). <em>The American Naturalist</em> 166:
+426-436.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(LizardBite)
+xyplot(territory ~ bite, LizardBite)
+</pre>
+
+
+</body></html>

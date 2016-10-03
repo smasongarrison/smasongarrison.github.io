@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Multi-environment trial of Winter Wheat in Ontario</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for yan.winterwheat"><tr><td>yan.winterwheat</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Multi-environment trial of Winter Wheat in Ontario
+</h2>
+
+<h3>Description</h3>
+
+<p>Yield of 18 varieties of winter wheat grown at 9 environments in
+Ontario in 1993.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 162 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>gen</code></dt><dd><p>Genotype factor</p>
+</dd>
+<dt><code>env</code></dt><dd><p>Environment factor</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Yield in metric tons per hectare</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The yield is the mean of several reps, measured in metric tons per hectare.
+</p>
+<p>This data has often been used to illustrate GGE biplots.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Weikai Yan and M.S. Kang.
+<em>GGE biplot analysis: A graphical tool for breeders, geneticists, and
+agronomists</em>, 2002. CRC. Page 59.
+</p>
+<p>Used with permission of Weikai Yan.
+</p>
+
+
+<h3>References</h3>
+
+<p>Weikai Yan and Manjit S. Kang and Baoluo Ma and Sheila Woods, 2007,
+GGE Biplot vs. AMMI Analysis of Genotype-by-Environment Data,
+<em>Crop Science</em>, 2007, 47, 641&ndash;653.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(yan.winterwheat)
+dat &lt;- yan.winterwheat
+
+require("reshape2")
+mat &lt;- melt(dat, id.var=c('gen','env'))
+mat &lt;- acast(mat, gen~env)
+
+mat.sc &lt;- scale(mat)
+
+# Environment-standardized GGE biplot
+# biplot(princomp(mat.sc), main="yan.winterwheat - GGE biplot")
+
+m1 &lt;- gge(yield ~ gen*env, data=dat)
+biplot(m1, flip=c(0,1), title="yan.winterwheat - GGE biplot")
+
+</pre>
+
+
+</body></html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Vasopressin Manipulation in the Meadow Vole</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for VasopressinVoles"><tr><td>VasopressinVoles</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Vasopressin Manipulation in the Meadow Vole</h2>
+
+<h3>Description</h3>
+
+<p>Time spent with a female (<code>percent</code>) in control and
+vasopressin-enhanced groups (<code>treatment</code>) of meadow voles
+(<em>Microtus pennsylvanicus</em>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 31 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>treatment</dt><dd><p>a factor with levels <code>control</code> and
+<code>enhanced</code></p>
+</dd> <dt>percent</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p><em>inferred from</em> Lim, M.M., Z. Wang, D.E.
+Olazabal, X. Ren, E.F. Terwilliger, and L.J. Young. 2004.
+Enhanced partner preference in a promiscuous species by manipulating the
+expression of a single gene. <em>Nature</em> 429: 754-757.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xyplot(percent ~ treatment, VasopressinVoles, type=c('p','a'))
+bwplot(percent ~ treatment, VasopressinVoles)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Respiratory hospitalisation, air pollution and covariate data...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for pollutionhealthdata"><tr><td>pollutionhealthdata</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Respiratory hospitalisation, air pollution and covariate data for the
+Greater Glasgow and Clyde health board between 2007 and 2011.</h2>
+
+<h3>Description</h3>
+
+<p>A data.frame object containing spatio-temporal data on respiratory 
+hospitalisations, air pollution concentrations and socio-economic deprivation
+covariates for the 271 Intermediate Geographies (IG) that make up the Greater 
+Glasgow and Clyde health board in Scotland. Yearly data are available between
+2007 and 2011 inclusive. These data are used in a worked example in the vignette 
+accompanying the CARBayesST package.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(pollutionhealthdata)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data.frame object containing 1355 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>IG</code></dt><dd><p>The unique identifier for each IG.</p>
+</dd>
+<dt><code>year</code></dt><dd><p>The year the data relate to.</p>
+</dd>
+<dt><code>observed</code></dt><dd><p>The observed numbers of hospitalisations due to 
+respiratory disease in each IG and year.</p>
+</dd>
+<dt><code>expected</code></dt><dd><p>The expected numbers of hospitalisations due to 
+respiratory disease in each IG and year computed using indirect standardisation 
+from Scotland-wide respiratory hospitalisation rates.</p>
+</dd>
+<dt><code>pm10</code></dt><dd><p>Average particulate matter (less than 10 microns) 
+concentrations in each IG and year.</p>
+</dd>
+<dt><code>jsa</code></dt><dd><p>The percentage of working age people who are in receipt of
+Job Seekers Allowance, a benefit paid to unemployed people looking for work,
+in each IG and year.</p>
+</dd>
+<dt><code>price</code></dt><dd><p>Average property price (in thousands) in each IG and year.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>These data were provided by the Scottish Government via http://statistics.gov.scot.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+    data(pollutionhealthdata)
+</pre>
+
+
+</body></html>

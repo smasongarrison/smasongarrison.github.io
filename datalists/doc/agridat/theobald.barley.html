@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Barley yields at multiple locs, years, fertilizer levels</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for theobald.barley"><tr><td>theobald.barley</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Barley yields at multiple locs, years, fertilizer levels
+</h2>
+
+<h3>Description</h3>
+
+<p>Barley yields at multiple locs, years, fertilizer levels
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(theobald.barley)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 105 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>yield</code></dt><dd><p>yield, tonnes/ha</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>genotype factor</p>
+</dd>
+<dt><code>loc</code></dt><dd><p>loc factor, 5 levels</p>
+</dd>
+<dt><code>nitro</code></dt><dd><p>nitrogen kg/ha</p>
+</dd>
+<dt><code>year</code></dt><dd><p>year, 2 levels</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Theobald and Talbot used BUGS to fit a fully Bayesian model
+for yield response curves.
+</p>
+<p>Locations of the experiment were in north-east Scotland.
+</p>
+<p>Assumed nitrogen cost 400 pounds per tonne.
+Grain prices used were 100, 110, and 107.50 pounds per tonne for
+Georgie, Midas and Sundance.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Chris M. Theobald and Mike Talbot, (2002).
+The Bayesian choice of crop variety and fertilizer dose.
+<em>Appl Statistics</em>, 51, 23-36.
+</p>
+<p>Data provided by Chris Theobald and Mike Talbot.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(theobald.barley)
+dat &lt;- theobald.barley
+dat &lt;- transform(dat,  env=paste(loc,year,sep="-"))
+dat &lt;- transform(dat, income=100*yield - 400*nitro/1000)
+
+require(lattice)
+xyplot(income~nitro|env, dat, groups=gen, type='b',
+       auto.key=TRUE, main="theobald.barley")
+
+</pre>
+
+
+</body></html>

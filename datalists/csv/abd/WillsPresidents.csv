@@ -1,0 +1,17 @@
+"","candidate","winner","wills","loser.wills","difference","year"
+"1","Kennedy","y",163,122,41,1960
+"2","Nixon","n",122,NA,NA,1960
+"3","Carter","y",68,32,36,1976
+"4","Ford","n",32,NA,NA,1976
+"5","Reagan","y",19,18,1,1980
+"6","Carter","n",18,NA,NA,1980
+"7","Bush","y",111,85,26,1988
+"8","Dukakis","n",85,NA,NA,1988
+"9","Clinton","y",79,75,4,1992
+"10","Bush","n",75,NA,NA,1992
+"11","Clinton","y",56,33,23,1996
+"12","Dole","n",33,NA,NA,1996
+"13","Bush","y",68,48,20,2000
+"14","Gore","n",48,NA,NA,2000
+"15","Bush","y",176,149,27,2004
+"16","Kerry","n",149,NA,NA,2004

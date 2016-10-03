@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Height of Tobacco plants exposed to radiation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for federer.tobacco"><tr><td>federer.tobacco</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Height of Tobacco plants exposed to radiation
+</h2>
+
+<h3>Description</h3>
+
+<p>Height of Tobacco plants exposed to radiation
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 56 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>Row</p>
+</dd>
+<dt><code>block</code></dt><dd><p>Block, numeric</p>
+</dd>
+<dt><code>dose</code></dt><dd><p>Radiation dose, roentgens</p>
+</dd>
+<dt><code>height</code></dt><dd><p>Height of 20 plants, cm</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>An experiment conducted in 1951 and described in Federer (1954).  The
+treatment involved exposing tobacco seeds to seven different doses of
+radiation.  The seedlings were transplanted to the field in an RCB
+experiment with 7 treatments in 8 blocks.  The physical layout of the
+experiment was in 8 rows and 7 columns.  Shortly after the plants were
+transplanted to the field it became apparent that an environmental
+gradient existed. The response variable was the total height
+(centimeters) of 20 plants.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Walter T Federer and C S Schlottfeldt, 1954.
+The use of covariance to control gradients in experiments.
+<em>Biometrics</em>, 10, 282&ndash;290.
+</p>
+
+
+<h3>References</h3>
+
+<p>R. D. Cook and S. Weisberg (1999).
+<em>Applied Statistics Including Computing and Graphics</em>.
+</p>
+<p>Walter T Federer and Russell D Wolfinger, 2003.
+PROC GLM and PROC MIXED Codes for Trend Analyses for
+Row-Column Designed Experiments,
+<em>Handbook of Formulas and Software for Plant Geneticists and
+Breeders</em>, Haworth Press.
+</p>
+<p>Paul N Hinz, (1987).
+Nearest-Neighbor Analysis in Practice,
+<em>Iowa State Journal of Research</em>, 62, 199&ndash;217.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(federer.tobacco)
+dat &lt;- federer.tobacco
+
+# RCB analysis.  Treatment factor not signficant.
+dat &lt;- transform(dat, dosef=factor(dose), rowf=factor(row),
+                 blockf=factor(block))
+m1 &lt;- lm(height ~ blockf + dosef, data=dat)
+anova(m1)
+
+# RCB residuals show strong spatial trends
+require(lattice)
+levelplot(resid(m1) ~ row * block, data=dat,
+col.regions=RedGrayBlue(21), main="federer.tobacco")
+
+# Row-column analysis.  Treatment now significant
+m2 &lt;- lm(height ~ rowf + blockf + dosef, data=dat)
+anova(m2)
+</pre>
+
+
+</body></html>

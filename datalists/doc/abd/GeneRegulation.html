@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Gene Regulation in Saccharomyces</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for GeneRegulation"><tr><td>GeneRegulation</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Gene Regulation in Saccharomyces</h2>
+
+<h3>Description</h3>
+
+<p>Number of genes regulated by 109 regulatory genes of <em>Saccharomyces
+cerevisiae</em>.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 26 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>genes.regulated</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>count</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Guelzim, N., S. Bottani, P. Bourgine and F. Képès. 2002. Topological
+and causal structure of the yeast transcriptional regulatory network.
+<em>Nature Genetics</em> 31: 60-63.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(GeneRegulation)
+xyplot(count ~ genes.regulated, GeneRegulation, type='h', lwd=3)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Row-column design</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for burgueno.rowcol"><tr><td>burgueno.rowcol</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Row-column design
+</h2>
+
+<h3>Description</h3>
+
+<p>Row-column design
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data("burgueno.rowcol")</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 128 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>rep</code></dt><dd><p>rep factor, 2 levels</p>
+</dd>
+<dt><code>row</code></dt><dd><p>row ordinate</p>
+</dd>
+<dt><code>col</code></dt><dd><p>column ordinate</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>genotype factor, 64 levels</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield, tons/ha</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>A field experiment with two contiguous replicates in 8 rows, 16 columns.
+</p>
+
+
+<h3>Source</h3>
+
+<p>J Burgueno, A Cadena, J Crossa, M Banziger, A Gilmour, B Cullis. 2000.
+<em>User's guide for spatial analysis of field variety trials using
+ASREML</em>.  CIMMYT.
+</p>
+<p>Electronic version of the data obtained from CropStat software.
+</p>
+<p>Used with permission of Juan Burgueno.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+library(agridat)
+data(burgueno.rowcol)
+dat &lt;- burgueno.rowcol
+
+# Two contiguous reps in 8 rows, 16 columns
+desplot(yield ~ col*row, data=dat, out1=rep, main="burgueno.rowcol",
+        text=gen, shorten="none", cex=.75)
+
+if(require(lme4) &amp;&amp; require(lucid)){
+
+  # Random rep, row and col within rep
+  m1 &lt;- lmer(yield ~ gen + (1|rep) + (1|rep:row) + (1|rep:col), data=dat)
+  vc(m1) # Match components of Burgueno p. 40
+
+}
+
+## Not run: 
+  require(asreml)
+  # AR1 x AR1 with linear row/col effects, random spline row/col
+  dat &lt;- transform(dat, xf=factor(col), yf=factor(row))
+  dat &lt;- dat[order(dat$xf,dat$yf),]
+  m2 &lt;- asreml(yield ~ gen + lin(yf) + lin(xf), data=dat,
+               random = ~ spl(yf) + spl(xf),
+               rcov = ~ ar1(xf):ar1(yf))
+  m2 &lt;- update(m2) # More iterations
+
+  # Scaling of spl components has changed in asreml from old versions
+  require(lucid))
+  vc(m2) # Match Burgueno p. 42
+  ##      effect component std.error z.ratio constr
+  ##     spl(yf)  0.09077    0.08252   1.1      pos
+  ##     spl(xf)  0.08108    0.0821    0.99     pos
+  ##  R!variance  0.1482     0.03119   4.8      pos
+  ##    R!xf.cor  0.1152     0.2269    0.51   uncon
+  ##    R!yf.cor  0.009436   0.2414    0.039  uncon
+  ##   plot(variogram(m2), main="burgueno.rowcol")
+
+
+## End(Not run)
+
+</pre>
+
+
+</body></html>

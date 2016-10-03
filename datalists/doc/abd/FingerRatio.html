@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 2D:4D Finger Ratio</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for FingerRatio"><tr><td>FingerRatio</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>2D:4D Finger Ratio</h2>
+
+<h3>Description</h3>
+
+<p>The ratio of the lengths of the index finger to the ring finger in 46 males
+and the number of CAG repeats for each.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 46 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>CAGrepeats</dt><dd><p>a numeric vector of the number of CAG
+repeats</p>
+</dd> <dt>finger.ratio</dt><dd><p>a numeric vector of the ratio of digit
+2 to digit 4</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p><em>inferred from</em> Manning, J.T., P.E. Bundred, D.J. Newton, and
+B.F. Flanagan. 2003. The second to fourth digit ratio and variation in the
+androgen receptor gene. <em>Evolution and Human Behavior</em> 24: 399-405.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/Digit_ratio">http://en.wikipedia.org/wiki/Digit_ratio</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(FingerRatio)
+xyplot(finger.ratio ~ CAGrepeats, FingerRatio,
+  xlab = "Number of CAG Repeats",
+  ylab = "2D:4D Ratio"
+)
+</pre>
+
+
+</body></html>

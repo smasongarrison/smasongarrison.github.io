@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Property price data for the Greater Glasgow and Clyde health...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for pricedata"><tr><td>pricedata</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Property price data for the Greater Glasgow and Clyde health board</h2>
+
+<h3>Description</h3>
+
+<p>A data.frame object containing purely spatial data on median property prices 
+in 2008 and possible covariates for 270 of the 271 Intermediate Geographies 
+(IG) that make up the Greater Glasgow and Clyde health board in Scotland. 
+Data for one IG have been removed due to it having an extreme outlying 
+observation. These data are used in a worked example in the vignette 
+accompanying the CARBayes package.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(pricedata)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data.frame object containing 270 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>IG</code></dt><dd><p>The unique identifier for each IG.</p>
+</dd>
+<dt><code>price</code></dt><dd><p>Median property price in each IG.</p>
+</dd>
+<dt><code>crime</code></dt><dd><p>The crime rate (number of crimes per 10,000 people) in 
+each IG.</p>
+</dd>
+<dt><code>rooms</code></dt><dd><p>The median number of rooms in a property in each IG.</p>
+</dd>
+<dt><code>sales</code></dt><dd><p>The percentage of properties that sold in each IG in a 
+year.</p>
+</dd>
+<dt><code>driveshop</code></dt><dd><p>The average time taken to drive to a shopping 
+centre in minutes.</p>
+</dd>
+<dt><code>type</code></dt><dd><p>The predominant property type in each IG with levels: 
+<code>detached</code>, <code>flat</code>, <code>semi</code>, <code>terrace</code>.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>These data were provided by the Scottish Government via http://statistics.gov.scot.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+    data(pricedata)
+</pre>
+
+
+</body></html>

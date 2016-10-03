@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Sorghum yields at 3 locations across 5 years</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for adugna.sorghum"><tr><td>adugna.sorghum</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Sorghum yields at 3 locations across 5 years
+</h2>
+
+<h3>Description</h3>
+
+<p>Sorghum yields at 3 locations across 5 years
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 289 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>gen</code></dt><dd><p>Genotype factor, 28 levels</p>
+</dd>
+<dt><code>trial</code></dt><dd><p>Trial factor, 2 levels</p>
+</dd>
+<dt><code>env</code></dt><dd><p>Environment factor, 13 levels</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Yield kg/ha</p>
+</dd>
+<dt><code>year</code></dt><dd><p>Year, 2001-2005</p>
+</dd>
+<dt><code>loc</code></dt><dd><p>Loc factor, 3 levels</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Sorghum yields at 3 locations across 5 years.
+The trials were carried out at three locations in dry, hot lowlands of
+Ethiopia:
+Melkassa (39 deg 21 min E, 8 deg 24 min N),
+Mieso (39 deg 22 min E, 8 deg 41 min N) and
+Kobo (39 deg 37 min E, 12 deg 09 min N).
+</p>
+<p>Trial 1 was 14 hybrids and one open-pollinated variety.
+</p>
+<p>Trial 2 was 12 experimental lines.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Asfaw Adugna (2008), Assessment of yield stability in sorghum using
+univariate and multivariate statistical approaches, <em>Hereditas</em>,
+145, 28&ndash;37.
+</p>
+<p>Used with permission of Asfaw Adugna.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(adugna.sorghum)
+
+# Genotype means match Adugna
+dat &lt;- adugna.sorghum
+
+require(lattice)
+levelplot(yield ~ env*gen, data=dat, main="adugna.sorghum gxe heatmap",
+          col.regions=RedGrayBlue)
+
+tapply(dat$yield, dat$gen, mean)
+
+# CV for each genotype.  G1..G15 match, except for G2.
+# The table in Adugna scrambles the means for G16..G28
+require(reshape2)
+mat &lt;- acast(dat, gen~env,  value.var='yield')
+round(sqrt(apply(mat, 1, var, na.rm=TRUE)) / apply(mat, 1, mean, na.rm=TRUE) * 100,2)
+
+# Shukla stability.  G1..G15 match Adugna.  Can't match G16..G28.
+dat1 &lt;- droplevels(subset(dat, trial=="T1"))
+mat1 &lt;- acast(dat1, gen~env,  value.var='yield')
+w &lt;- mat1; k=15; n=8  # k=p gen, n=q env
+w &lt;- sweep(w, 1, rowMeans(mat1, na.rm=TRUE))
+w &lt;- sweep(w, 2, colMeans(mat1, na.rm=TRUE))
+w &lt;- w + mean(mat1, na.rm=TRUE)
+w &lt;- rowSums(w^2, na.rm=TRUE)
+sig2 &lt;- k*w/((k-2)*(n-1)) - sum(w)/((k-1)*(k-2)*(n-1))
+round(sig2/10000,1) # Genotypes in T1 are divided by 10000
+
+</pre>
+
+
+</body></html>

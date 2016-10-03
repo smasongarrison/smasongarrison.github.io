@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Seal Body Lengths and Age</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ShrinkingSeals"><tr><td>ShrinkingSeals</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Seal Body Lengths and Age</h2>
+
+<h3>Description</h3>
+
+<p>Body length (cm) and age (days) for 9,665 female Northern fur seals
+(<em>Callorhinus ursinus</em>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 9,665 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>age</dt><dd><p>age (days)</p>
+</dd> <dt>length</dt><dd><p>body length
+(cm) </p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Trites, A.W. and M.A. Bigg. 1996. Physical growth of northern fur
+seals: seasonal fluctuations and migratory influences. <em>Journal of
+Zoology (London)</em> 238: 459-482.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(ShrinkingSeals)
+
+plot(ShrinkingSeals, pch = 16, cex = 0.5)
+xyplot(length ~ age, ShrinkingSeals, pch=16, alpha=0.65, cex=0.6)
+</pre>
+
+
+</body></html>

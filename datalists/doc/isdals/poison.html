@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Effects of insecticides on mortality</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for poison"><tr><td>poison</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Effects of insecticides on mortality</h2>
+
+<h3>Description</h3>
+
+<p>The data concerns three insecticides (rotenone, deguelin, and a mixture of
+those). A total of 818 insects were exposed to different doses of one of the
+three insecticides. After exposure, it was recorded if the insect died or
+not.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(poison)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 818 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>status</code></dt><dd><p>status of insect: dead=1, alive=0 (numeric vector)</p>
+</dd>
+<dt><code>poison</code></dt><dd><p>type of insecticide. A factor with levels <code>D</code> (deguelin) <code>M</code> (mixture)) <code>R</code> (rotenone)</p>
+</dd>
+<dt><code>logdose</code></dt><dd><p>natural logarithm of dose of insecticide</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>D.J. Finney (1952). Probit analysis. Cambridge University Press, England.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(poison)
+
+</pre>
+
+
+</body></html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Beetle Wings and Horns</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Beetles"><tr><td>Beetles</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Beetle Wings and Horns</h2>
+
+<h3>Description</h3>
+
+<p>Relative size of the horns and wings in 19 female <em>Onthophagus
+sagittarius</em> beetles.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 19 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>horn.size</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>wing.mass</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Emlen, D.J. 2001. Costs and the diversification of exaggerated
+animal structures. <em>Science</em> 291: 1534-1536.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.scienceonline.org/cgi/content/abstract/291/5508/1534">http://www.scienceonline.org/cgi/content/abstract/291/5508/1534</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Beetles)
+xyplot(wing.mass ~ horn.size, Beetles)
+</pre>
+
+
+</body></html>

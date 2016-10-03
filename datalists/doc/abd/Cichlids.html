@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Cichlid Mating Preference</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Cichlids"><tr><td>Cichlids</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Cichlid Mating Preference</h2>
+
+<h3>Description</h3>
+
+<p>Preference index in F1 and F2 crosses of two species of cichlids from Lake
+Victoria, <em>Pundamilia pundamilia</em> and <em>P. nyererei</em>.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 53 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>genotype</dt><dd><p>a factor with levels <code>F1</code> and
+<code>F2</code></p>
+</dd> <dt>preference</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Haeslery, M.P. and O. Seehausen. 2005. Inheritance of female mating
+preference in a sympatric sibling species pair of Lake Victoria cichlids:
+implications for speciation. <em>Proceedings of the Royal Society of
+London, Series B, Biological Sciences</em> 272: 237-245.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://rspb.royalsocietypublishing.org/content/272/1560/237.full.pdf">http://rspb.royalsocietypublishing.org/content/272/1560/237.full.pdf</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Cichlids)
+
+summary(preference ~ genotype, Cichlids, fun = favstats)
+
+if (require(plyr)) {
+ddply(Cichlids, .(genotype),
+  function(df)c(mean = mean(df$preference),
+                standard.deviation = sd(df$preference),
+                n = length(df$preference)))
+}
+</pre>
+
+
+</body></html>

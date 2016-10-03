@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Multiple Mating in Pseudoscorpions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Pseudoscorpions"><tr><td>Pseudoscorpions</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Multiple Mating in Pseudoscorpions</h2>
+
+<h3>Description</h3>
+
+<p>Successful numbers of broods (<code>Number.of.successful.broods</code>) in two
+groups of female pseudoscrpions (<em>Cordylochernes scorpioides</em>), one
+mated to the same male twice and one to two different males.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 36 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>treatment</dt><dd><p>a factor with levels <code>DM</code>
+<code>SM</code></p>
+</dd> <dt>successful.broods</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Newcomer, S.D., J.A. Zeh, and D.W. Zeh. 1999. Genetic benefits
+enhance the reproductive success of polyandrous females. <em>Proceedings
+of the National Academy of Sciences (USA)</em> 96: 10236-10241.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.pnas.org/content/96/18/10236.long">http://www.pnas.org/content/96/18/10236.long</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Pseudoscorpions)
+bwplot(successful.broods ~ treatment, Pseudoscorpions)
+aggregate(successful.broods ~ treatment, Pseudoscorpions, favstats)
+</pre>
+
+
+</body></html>

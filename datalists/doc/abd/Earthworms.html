@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Earthworm Diversity and Soil Nitrogen Levels</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Earthworms"><tr><td>Earthworms</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Earthworm Diversity and Soil Nitrogen Levels</h2>
+
+<h3>Description</h3>
+
+<p>Number of earthworm species and total nitrogen content in the soil in 39
+hardwood forest plots.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 39 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>worm.species</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>nitrogen</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Gundale, M.J., W.M. Jolly, and T.H. Deluca. 2005. Susceptibility of
+a northern hardwood forest to exotic earthworm invasion. <em>Conservation
+Biology</em> 19: 1075-1083.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www3.interscience.wiley.com/journal/118701215/abstract">http://www3.interscience.wiley.com/journal/118701215/abstract</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Earthworms)
+xyplot(nitrogen ~ worm.species, Earthworms)
+</pre>
+
+
+</body></html>

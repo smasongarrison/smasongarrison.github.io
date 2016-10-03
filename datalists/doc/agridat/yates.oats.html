@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Yield of oats in a split-block experiment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for yates.oats"><tr><td>yates.oats</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Yield of oats in a split-block experiment
+</h2>
+
+<h3>Description</h3>
+
+<p>The yield of oats from a split-plot field trial using three varieties
+and four levels of manurial treatment. The experiment was laid out in
+6 blocks of 3 main plots, each split into 4 sub-plots. The varieties
+were applied to the main plots and the manurial (nitrogen) treatments
+to the sub-plots.
+</p>
+
+
+<h3>Format</h3>
+
+
+<dl>
+<dt><code>block</code></dt><dd><p>block factor with 6 levels</p>
+</dd>
+<dt><code>nitro</code></dt><dd><p>nitrogen treatment in hundredweight per acre</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>genotype factor, 3 levels</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield in 1/4 lbs per sub-plot, each 1/80 acre.</p>
+</dd>
+<dt><code>x</code></dt><dd><p>x ordinate</p>
+</dd>
+<dt><code>y</code></dt><dd><p>y ordinate</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Yates, Frank (1935) Complex experiments,
+<em>Journal of the Royal Statistical Society Suppl</em>. 2, 181&ndash;247.
+</p>
+
+
+<h3>References</h3>
+
+<p>Venables, W. N. and Ripley, B. D. (2002)
+<em>Modern Applied Statistics with S</em>. Fourth edition. Springer.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(yates.oats)
+dat &lt;- yates.oats
+
+desplot(yield ~ x*y, dat, out1=block, text=gen, col=nitro, cex=1,
+        main="yates.oats")
+
+# Roughly linear gradient across the field.  The right-half of each
+# block has lower yield.  The blocking is inadequate!
+require(lattice)
+xyplot(yield ~ x|factor(nitro), dat, type = c('p', 'smooth'),
+       xlab='x', span=1, as.table = TRUE, main="yates.oats")
+
+# Typical split-plot analysis
+if(require(lme4)){
+m3 &lt;- lmer(yield ~ nitro * gen + (1|block/gen), data=dat)
+# Residuals still show structure
+xyplot(resid(m3) ~ dat$x, xlab='x', type=c('p','smooth'),
+       main="yates.oats")
+
+# Add a linear trend for x
+m4 &lt;- lmer(yield ~ x + nitro * gen + (1|block/gen), data=dat)
+# xyplot(resid(m4) ~ dat$x, type=c('p','smooth'), xlab='x')
+
+## Compare fits
+## AIC(m3,m4)
+##    df      AIC
+## m3  9 581.2372
+## m4 10 557.9424
+}
+
+## Not run: 
+
+  # Demonstrate the use of the lsmeans package and asreml::predict
+
+  # --- nlme ---
+  require(nlme)
+  require(lsmeans)
+  dat2 &lt;- yates.oats[-c(1,2,3,5,8,13,21,34,55),]
+  m5l &lt;- lme(yield ~ factor(nitro) + gen, random = ~1 | block/gen,
+             data = dat2)
+
+  # --- asreml ---
+  require(asreml)
+  m5a &lt;- asreml(yield ~ factor(nitro) + gen,
+                random = ~ block + block:gen, data=dat2)
+
+  require(lucid)
+  vc(m5l) # warning.  FIXME
+  vc(m5a)
+
+  lsmeans(m5l, "gen")
+  predict(m5a, classify="gen")$predictions$pvals
+
+
+## End(Not run)
+
+</pre>
+
+
+</body></html>

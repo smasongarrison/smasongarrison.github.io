@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pacific Salmon Color</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for SalmonColor"><tr><td>SalmonColor</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Pacific Salmon Color</h2>
+
+<h3>Description</h3>
+
+<p>Skin color sockeye and kokanee morphs of the Pacific salmon
+(<em>Oncorhynchus nerka</em>) raised in a low carotenoid environment.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 35 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>species</dt><dd><p>a factor with levels <code>kokanee</code> and
+<code>sockeye</code></p>
+</dd> <dt>skin.color</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Craig, J.K. and C. Foote. 2001. Countergradient variation and
+secondary sexual color: phenotypic convergence promotes genetic divergence
+in carotenoid use between sympatric anadromous and nonanadromous morphs of
+sockeye salmon (<em>Oncorhynchus nerka</em>). <em>Evolution</em> 55: 380-391.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+SalmonColor
+histogram(~ skin.color | species, SalmonColor)
+bwplot(skin.color ~ species, SalmonColor)
+</pre>
+
+
+</body></html>

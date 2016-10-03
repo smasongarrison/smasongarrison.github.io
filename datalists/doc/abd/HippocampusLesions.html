@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Memory and the Hippocampus</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for HippocampusLesions"><tr><td>HippocampusLesions</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Memory and the Hippocampus</h2>
+
+<h3>Description</h3>
+
+<p>Spatial memory score (<code>memory</code>) and percent lesion of the hippocampus
+(<code>lesion</code>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 57 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>lesion</dt><dd><p>a numeric vector</p>
+</dd> <dt>memory</dt><dd><p>a
+numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Broadbent, N.J., L.R. Squire, and R.E. Clark. 2004. Spatial memory,
+recognition memory, and the hippocampus. <em>Proceedings of the National
+Academy of Sciences (USA)</em> 101: 14515-14520.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+HippocampusLesions
+
+xyplot(memory ~ lesion, data = HippocampusLesions,
+  pch = 16, col = "red")
+
+plot(memory ~ lesion, data = HippocampusLesions,
+  pch = 16, col = "red")
+</pre>
+
+
+</body></html>

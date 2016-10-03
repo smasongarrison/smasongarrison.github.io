@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data set of talkers of Dutch from the Netherlands.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for talkers"><tr><td>talkers</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Data set of talkers of Dutch from the Netherlands.
+</h2>
+
+<h3>Description</h3>
+
+<p>This data set gives metadata (id, sex, age, region of origin) 
+and speech characteristics (average syllable duration, average phrase length) 
+for a stratified sample of 80 talkers of Dutch from the Netherlands. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(talkers)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 80 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>identifier code (from data source, see Source)</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>sex (0=female, 1=male)</p>
+</dd>
+<dt><code>age</code></dt><dd><p>age (in years)</p>
+</dd>
+<dt><code>region</code></dt><dd><p>region of origin (a factor with levels <code>M</code>=Mid, <code>N</code>=North, <code>S</code>=South, or <code>W</code>=West)</p>
+</dd>
+<dt><code>syldur</code></dt><dd><p>average duration of syllables, or seconds per syllable (in seconds, excluding pause time, 1/(articulation rate) )</p>
+</dd>
+<dt><code>nsyl</code></dt><dd><p>average number of syllables per phrase, or average phrase length in syllables</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Talkers grew up in their region of origin, and have lived and worked there as teachers of Dutch Language and Literature in secondary education.
+Talkers with ages between 41 and 45 were not included in this study. 
+The sample is stratified by <var>sex</var>, <var>region</var>, and (<var>age</var>&gt;41) (see Examples). 
+</p>
+<p>Speech data were collected from (and averaged over) a recorded interview lasting about 15 minutes. The talker and the interviewer only spoke Standard Dutch during the interview.
+</p>
+<p>One talker (<code>id</code> 117) spoke remarkably slower than all others, yielding a very high <var>syldur</var>. 
+</p>
+<p>The West region is commonly regarded as the linguistic center of the Netherlands. Each of the four <var>region</var>s has a distinct variety of Dutch. The variety of the West region is closest to the Standard Dutch spoken in the Netherlands.
+</p>
+<p>Speech recordings and metadata were collected in 1999. 
+</p>
+
+
+<h3>Source</h3>
+
+<p><a href="http://tla.mpi.nl/resources/data-archive/">http://tla.mpi.nl/resources/data-archive/</a>, Corpus of Spoken Dutch
+</p>
+
+
+<h3>References</h3>
+
+<p>Oostdijk, N. (2000). The Spoken Dutch Corpus: Overview and first evaluation. In M. Gravilidou, G. Carayannis, S. Markantonatou, S. Piperidis &amp; G. Stainhaouer (Eds.), <cite>Proceedings of the Second International Conference on Language Resources and Evaluation</cite> (Vol. 2, pp. 887-894).
+</p>
+<p>Adank, P., van Hout, R., &amp; van de Velde, H. (2007). An acoustic description of the vowels of northern and southern Standard Dutch II: Regional varieties. <cite>Journal of the Acoustical Society of America</cite>, 121(2), 1130-1141.
+</p>
+<p>Quené, H. (2008). Multilevel modeling of between-speaker and within-speaker variation in spontaneous speech tempo. <cite>Journal of the Acoustical Society of America</cite>, 123(2), 1104-1113.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(talkers)
+str(talkers)
+pairs( talkers[,2:6] )
+with( talkers, table( sex, region, I(age&gt;41) ) )
+</pre>
+
+
+</body></html>

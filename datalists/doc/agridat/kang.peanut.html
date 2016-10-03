@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Peanut yields for 10 genotypes in 15 environments</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for kang.peanut"><tr><td>kang.peanut</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Peanut yields for 10 genotypes in 15 environments
+</h2>
+
+<h3>Description</h3>
+
+<p>Peanut yields for 10 genotypes in 15 environments
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(kang.peanut)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 590 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>gen</code></dt><dd><p>genotype factor, 10 levels</p>
+</dd>
+<dt><code>rep</code></dt><dd><p>replicate factor, 4 levels</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield</p>
+</dd>
+<dt><code>env</code></dt><dd><p>environment factor, 15 levels</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Florman, Tegua, mf484, mf485, mf487, mf489 have a long crop cycle.
+The others have a short crop cycle.
+</p>
+<p>This data is also likely used in Casanoves et al 2005,
+&quot;Evaluation of Multienvironment Trials of Peanut Cultivars&quot;, but this
+appears to be a slightly smaller subset (only 10 genotypes, and
+perhaps only the years 96,97,98,99).  Based on the d.f. in their
+table 5, it appears that environment E13 was grown in 1998.
+(5 loc * (4-1) = 15, but the table has 14, and 98-99 had only 3 reps
+instead of 4 reps.)
+</p>
+
+
+<h3>Source</h3>
+
+<p>Data from National Institute of Agricultural Technology, Argentina.
+</p>
+
+
+<h3>References</h3>
+
+<p>A. Saxton (2004). Genetic Analysis of Complex Traits Using SAS.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(kang.peanut)
+dat &lt;- kang.peanut
+
+# Table 5.1 of Kang et al. (Chapter 5 of Saxton)
+require(reshape2)
+round(acast(dat, env~gen, value.var='yield', fun=mean),2)
+
+# GGE biplot of Kang, p. 82.
+m1 &lt;- gge(yield~gen*env, data=dat, scale=FALSE)
+biplot(m1, flip=c(1,1), title="kang.peanut - GGE biplot")
+
+
+</pre>
+
+
+</body></html>

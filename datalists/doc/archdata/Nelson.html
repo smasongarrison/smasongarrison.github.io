@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Prehistoric Ceramics at Pueblo San Cristobal, New Mexico, USA</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Nelson"><tr><td>Nelson</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Prehistoric Ceramics at Pueblo San Cristobal, New Mexico, USA
+</h2>
+
+<h3>Description</h3>
+
+<p>Ceramic distribution in a midden deposit at Pueblo San Cristobal reported by Nels Nelson in 1916.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Nelson)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 10 observations on the following 8 variables.
+</p>
+
+<dl>
+<dt><code>Depth</code></dt><dd><p>Depth in feet from 1 to 10 for 1 foot arbitrary excavation levels</p>
+</dd>
+<dt><code>Corrugated</code></dt><dd><p>Number of corrugated ware ceramics</p>
+</dd>
+<dt><code>Biscuit</code></dt><dd><p>Number of Biscuit ware ceramics</p>
+</dd>
+<dt><code>Type_I</code></dt><dd><p>Number of two and three color painted ware ceramics</p>
+</dd>
+<dt><code>Type_II_Red</code></dt><dd><p>Number of two color glazed red ware ceramics</p>
+</dd>
+<dt><code>Type_II_Yellow</code></dt><dd><p>Number of two color glazed yellow ware ceramics</p>
+</dd>
+<dt><code>Type_II_Gray</code></dt><dd><p>Number of two color glazed gray ware ceramics</p>
+</dd>
+<dt><code>Type_III</code></dt><dd><p>Number of three color glazed ware ceramics</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Data from a classic illustration of the potential for creating a relative chronology using frequency seriation of ceramic artifact types from a midden deposit at San Cristobal in the American Southwest. The site was occupied approximately from CE 1350 to 1680. Ceramic artifact fragment counts are presented for each 1-foot arbitrary level excavated within the midden deposit. When converted to percentages (usually excluding the corrugated ware), the data illustrate a classical &quot;battleship curve&quot; like those described in Ford (1962).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Nelson, N. C. 1916. Chronology of the Tano Ruins, New Mexico. <em>American Anthropologist</em> 18(2): 159&ndash;180.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ford, J. A. (1962) A Quantitative Method for Deriving Cultural Chronology. <em>Pan American Union, Technical Manual No</em> 1.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Nelson)
+# Remove Depth and Corrugated and compute percentages
+Nelson.pct &lt;- prop.table(as.matrix(Nelson[,3:7]), 1)*100
+# Percentages for each type by level
+round(Nelson.pct, 2)
+# Battleship plot from plotrix package
+library(plotrix)
+battleship.plot(Nelson.pct)
+</pre>
+
+
+</body></html>

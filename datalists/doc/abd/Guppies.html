@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ornamentation and Attractiveness in Guppies</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Guppies"><tr><td>Guppies</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Ornamentation and Attractiveness in Guppies</h2>
+
+<h3>Description</h3>
+
+<p>The father's ornamentation (composite score of color and brightness) and
+son's attractiveness (relative rates of visits by females) in male guppies
+(<em>Poecilia reticulata</em>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 36 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>father.ornament</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>son.attract</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p><em>inferred from</em> Brooks, R. 2000. Negative genetic correlation
+between male sexual attractiveness and survival. <em>Nature</em> 406: 67-70.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.nature.com/nature/journal/v406/n6791/abs/406067a0.html">http://www.nature.com/nature/journal/v406/n6791/abs/406067a0.html</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Guppies)
+xyplot(son.attract ~ father.ornament,
+  Guppies,
+  xlab = "Father's ornamentation",
+  ylab = "Son's attractiveness"
+  )
+</pre>
+
+
+</body></html>

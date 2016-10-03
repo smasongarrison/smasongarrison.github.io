@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Testosterone Levels in Blackbirds</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Blackbirds"><tr><td>Blackbirds</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Testosterone Levels in Blackbirds</h2>
+
+<h3>Description</h3>
+
+<p>Experimental manipulation of testosterone levels in male Red-winged
+Blackbirds (<em>Agelaius phoeniceus</em>) and resulting changes in antibody
+levels
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 13 observations on the following 6 variables.
+</p>
+ <dl>
+<dt>before</dt><dd><p>a numeric vector</p>
+</dd> <dt>after</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>log.before</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>log.after</dt><dd><p>a numeric vector</p>
+</dd> <dt>diff.in.logs</dt><dd><p>a
+numeric vector</p>
+</dd> <dt>diff</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Hasselquist, D., J.A. Marsh, P.W. Sherman, and J.C. Wingfield. 1999.
+Is avian immunocompetence suppressed by testosterone? <em>Behavioral
+Ecology and Sociobiology</em> 45: 167-175.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+Blackbirds
+xyplot(log.after ~ log.before, data = Blackbirds,
+  ylab = "log Antibody production after implant",
+  xlab = "log Antibody production before implant"
+)
+</pre>
+
+
+</body></html>

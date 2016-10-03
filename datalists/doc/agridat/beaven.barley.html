@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Yields of 8 barley varities in 1913 as used by Student.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for beaven.barley"><tr><td>beaven.barley</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Yields of 8 barley varities in 1913 as used by Student.
+</h2>
+
+<h3>Description</h3>
+
+<p>Yields of 8 barley varities in 1913.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(beaven.barley)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 160 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>row</p>
+</dd>
+<dt><code>col</code></dt><dd><p>column</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>genotype factor</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield (grams)</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Eight races of barley were grown on a regular pattern of plots.
+</p>
+<p>These data were prepared from Richey (1926) because the copy was
+cleaner.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Student. (1923).
+On testing varieties of cereals. <em>Biometrika</em>, 271-293.
+</p>
+
+
+<h3>References</h3>
+
+<p>Frederick D. Richey (1926).
+The moving average as a basis for measuring correlated variation in agronomic experiments.
+<em>Jour. Agr. Research</em>, 32, 1161-1175.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(beaven.barley)
+dat &lt;- beaven.barley
+
+# Match the means shown in Richey table IV
+tapply(dat$yield, dat$gen, mean)
+##       a       b       c       d       e       f       g       h
+## 298.080 300.710 318.685 295.260 306.410 276.475 304.605 271.820
+
+# Compare to Student 1923, diagram I,II
+desplot(yield ~ col*row, data=dat, aspect="iso",
+        main="beaven.barley", text=gen)
+
+</pre>
+
+
+</body></html>

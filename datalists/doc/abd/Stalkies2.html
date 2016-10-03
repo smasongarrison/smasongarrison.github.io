@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Stalk-eyed Fly Eyespan</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Stalkies2"><tr><td>Stalkies2</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Stalk-eyed Fly Eyespan</h2>
+
+<h3>Description</h3>
+
+<p>Eyespan width (mm; <code>Eye.span</code>) in 45 stalk-eyed flies
+(<em>Cyrtodiopsis dalmanni</em>) fed a corn or cotton diet (<code>Food</code>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 45 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>food</dt><dd><p>a factor with levels <code>Corn</code>
+<code>Cotton</code></p>
+</dd> <dt>eye.span</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>David, P., T. Bjorksten, K. Fowler, and A. Pomiankowski. 2000.
+Condition-dependent signalling of genetic variation in stalk-eyed flies.
+<em>Nature</em> 406: 186-188.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Stalkies2)
+xyplot(eye.span ~ food, Stalkies2)
+aggregate(eye.span ~ food, Stalkies2, FUN = favstats)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Intertidal Algae</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for IntertidalAlgae"><tr><td>IntertidalAlgae</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Intertidal Algae</h2>
+
+<h3>Description</h3>
+
+<p>Area coverage of red algae (<em>Mazzaella parksii</em>) in two herbivore
+treatments (<code>herbivores</code>) at two tide levels (<code>height</code>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 64 observations on the following 3 variables.
+</p>
+ <dl>
+<dt>height</dt><dd><p>a factor with levels <code>low</code> and
+<code>mid</code></p>
+</dd> <dt>herbivores</dt><dd><p>a factor with levels <code>minus</code> and
+<code>plus</code></p>
+</dd> <dt>sqrt.area</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Harley, C.D.G. 2003. Individualistic vertical responses of
+interacting species determine range limits across a horizontal gradient.
+<em>Ecology</em> 84: 1477-1488.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(IntertidalAlgae)
+
+# Using * includes the main effects and the interaction
+aov.fit &lt;- aov(sqrt.area ~ herbivores * height, data = IntertidalAlgae)
+summary(aov.fit)
+lm.fit &lt;- lm(sqrt.area ~ herbivores * height, data = IntertidalAlgae)
+anova(lm.fit)
+</pre>
+
+
+</body></html>

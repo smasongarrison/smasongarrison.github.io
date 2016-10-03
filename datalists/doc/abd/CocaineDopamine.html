@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Effects of Cocaine on Dopamine Receptors</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for CocaineDopamine"><tr><td>CocaineDopamine</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Effects of Cocaine on Dopamine Receptors</h2>
+
+<h3>Description</h3>
+
+<p>Percent of dopamine receptors blocked (<code>percent.bocked</code>) and the
+perceived level of high as determined by PET scans (<code>high</code>) in 34
+humans.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 34 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>percent.blocked</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>high</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Volkow, N.D., G.-J. Wang, R.W. Foltin, J.S. Fowler, N.N. Abumrad, S.
+Vitkun, J. Logan, S.J. Gatley, N. Pappas, R. Hitzemann, and C.E. Shea. 1997.
+Relationship between subjective effects of cocaine and dopamine transporter
+occupancy. <em>Nature</em> 386: 827-830.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.nature.com/nature/journal/v386/n6627/abs/386827a0.html">http://www.nature.com/nature/journal/v386/n6627/abs/386827a0.html</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(CocaineDopamine)
+xyplot(high ~ percent.blocked, CocaineDopamine)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Proteolipid Protein 1 Gene Expression</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for BrainExpression"><tr><td>BrainExpression</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Proteolipid Protein 1 Gene Expression</h2>
+
+<h3>Description</h3>
+
+<p>Expression levels of the proteolipid protein 1 gene (PLP1;
+<code>PLP1.expression</code>) in 45 individuals in one of three <code>group</code>s.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 45 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>group</dt><dd><p>a factor with levels: <code>bipolar</code>,
+<code>control</code>, and <code>schizo</code></p>
+</dd> <dt>PLP1.expression</dt><dd><p>a numeric
+vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p><em>inferred from</em> Tkachev, D., M.L. Mimmack, M.M. Ryan, M.
+Wayland, T. Freeman, P.B. Jones, M. Starkey, M.J. Webster, R.H. Yolken, S.
+Bahn. 2003. Oligodendrocyte dysfunction in schizophrenia and bipolar
+disorder. <em>Lancet</em> 362(9386): 798-805.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+bwplot(PLP1.expression ~ group, BrainExpression)
+</pre>
+
+
+</body></html>

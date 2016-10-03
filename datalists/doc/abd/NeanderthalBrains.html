@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Cranial Capacity in Neanderthals and Modern Humans</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for NeanderthalBrains"><tr><td>NeanderthalBrains</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Cranial Capacity in Neanderthals and Modern Humans</h2>
+
+<h3>Description</h3>
+
+<p>Brain size (<code>lnbrain</code>) and body mass (<code>lnmass</code>) in Neanderthals
+and early modern humans (<code>species</code>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 39 observations on the following 3 variables.
+</p>
+ <dl>
+<dt>ln.mass</dt><dd><p>log of body mass (kg)</p>
+</dd>
+<dt>ln.brain</dt><dd><p>log of brain size</p>
+</dd> <dt>species</dt><dd><p>a factor
+with levels <code>neanderthal</code> <code>recent</code></p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Ruff, C.B., E. Trinkaus, and T.W. Holliday. 1997. Body mass and
+encephalization in Pleistocene <em>Homo</em>. <em>Nature</em> 387: 173-176.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xyplot(ln.brain ~ ln.mass, data=NeanderthalBrains, groups=species)
+</pre>
+
+
+</body></html>

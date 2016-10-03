@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rice fractional factorial experiment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gomez.fractionalfactorial"><tr><td>gomez.fractionalfactorial</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Rice fractional factorial experiment
+</h2>
+
+<h3>Description</h3>
+
+<p>A 1/2 fractional factorial experiment with 6 treatments.  Two reps
+with 2 blocks in each rep.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 64 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>yield</code></dt><dd><p>Grain yield in tons/ha</p>
+</dd>
+<dt><code>rep</code></dt><dd><p>Replicate factor, 2 levels</p>
+</dd>
+<dt><code>block</code></dt><dd><p>Block factor within rep, 2 levels</p>
+</dd>
+<dt><code>trt</code></dt><dd><p>Treatment factor, levels (1) to abcdef</p>
+</dd>
+<dt><code>x</code></dt><dd><p>Column position in the field</p>
+</dd>
+<dt><code>y</code></dt><dd><p>Row position in the field</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Note: In Gomez, page 171 has (for example) treatment (1) in Rep 1,
+Block 2 and Rep 2, Block 1.  Page 172 has treatment (1) in Block 1 of
+both reps.  This data uses the layout shown on page 171.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Gomez, K.A. and Gomez, A.A.. 1984,
+<em>Statistical Procedures for Agricultural Research</em>.
+Wiley-Interscience. Page 171-172.
+</p>
+<p>Used with permission of Kwanchai Gomez.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(gomez.fractionalfactorial)
+dat &lt;- gomez.fractionalfactorial
+
+# trt abcdef has the highest yield
+# Gomez, Figure 4.8
+desplot(yield~x*y, dat, main="gomez.fractionalfactorial - treatment &amp; yield",
+        text=trt, shorten="none", show.key=FALSE, cex=1)
+
+
+# Split treatment into individual factors
+dat &lt;- transform(dat,
+                 a = -1 + 2 * grepl('a',trt),
+                  b = -1 + 2 * grepl('b',trt),
+                 c = -1 + 2 * grepl('c',trt),
+                 d = -1 + 2 * grepl('d',trt),
+                 e = -1 + 2 * grepl('e',trt),
+                 f = -1 + 2 * grepl('f',trt))
+
+# Gomez table 4.24, trt SS totalled together.
+# Why didn't Gomez nest block within rep?
+m0 &lt;- lm(yield ~ rep * block + trt, dat)
+anova(m0)
+
+# Gomez table 4.24, trt SS split apart
+m1 &lt;- lm(yield ~ rep * block + (a+b+c+d+e+f)^3, dat)
+anova(m1)
+
+if(require(FrF2)){
+  aliases(m1)
+  MEPlot(m1, select=3:8,
+         main="gomez.fractionalfactorial - main effects plot")
+  #IAPlot(m1, select=3:8)
+}
+
+</pre>
+
+
+</body></html>

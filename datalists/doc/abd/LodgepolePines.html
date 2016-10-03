@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lodgepole Pine Cone Masses</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for LodgepolePines"><tr><td>LodgepolePines</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Lodgepole Pine Cone Masses</h2>
+
+<h3>Description</h3>
+
+<p>Masses of cones of lodgepole pines (<code>conemass</code>) from 16 different
+habitat types (<code>habitat</code>) in western North America.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 16 observations on the following 4 variables.
+</p>
+ <dl>
+<dt>habitat</dt><dd><p>a factor with levels: <code>island
+absent</code>, <code>island present</code>, and <code>mainland present</code></p>
+</dd>
+<dt>conemass</dt><dd><p>mass of cone</p>
+</dd> <dt>location</dt><dd><p><code>island</code>
+or <code>mainland</code></p>
+</dd> <dt>squirrels</dt><dd><p><code>absent</code> or
+<code>present</code></p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Edelaar, P. and C.W. Benkman. 2006. Replicated population divergence
+caused by localised coevolution? A test of three hypotheses in the Red
+Crossbill-lodgepole pine system. <em>Journal of Evolutionary Biology</em> 19:
+1651-1659.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/Lodgepole_pine">http://en.wikipedia.org/wiki/Lodgepole_pine</a>
+</p>
+<p><a href="http://en.wikipedia.org/wiki/Red_crossbill">http://en.wikipedia.org/wiki/Red_crossbill</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+LodgepolePines
+str(LodgepolePines)
+xyplot(conemass ~ habitat, LodgepolePines)
+</pre>
+
+
+</body></html>

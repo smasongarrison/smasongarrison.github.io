@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Stage's Grand fir (Abies grandis (Dougl) Lindl.) tree...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for stage"><tr><td>stage</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Stage's Grand fir (Abies grandis (Dougl) Lindl.) tree measurement data 
+</h2>
+
+<h3>Description</h3>
+
+<p>The data are internal stem measures from 66 trees.  The trees were selected as
+having been dominant throughout their lives with no visible evidence
+of damage or forks. The trees came from stands throughout the inland
+range of the species.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(stage)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 542 observations on the following 11 variables.
+</p>
+
+<dl>
+<dt><code>Tree.ID</code></dt><dd><p>A factor uniquely identifying the tree.</p>
+</dd>
+<dt><code>Forest</code></dt><dd><p>An integer distinguishing the forest.</p>
+</dd>
+<dt><code>HabType</code></dt><dd><p>An integer distinguishing the habitat type.</p>
+</dd>
+<dt><code>Decade</code></dt><dd><p>The decade of the trees life represented by the
+observation.</p>
+</dd>
+<dt><code>Dbhib</code></dt><dd><p>Diameter (in.) at 1.37 m (4'6&rdquo;) inside bark.</p>
+</dd>
+<dt><code>Height</code></dt><dd><p>Height of tree (ft)</p>
+</dd>
+<dt><code>Age</code></dt><dd><p>Age of tree at felling</p>
+</dd>
+<dt><code>Forest.ID</code></dt><dd><p>The national forest in which the tree was felled.</p>
+</dd>
+<dt><code>Hab.ID</code></dt><dd><p>Daubenmmire's (1952) classification of the local growing conditions: <code>Ts/Pac</code> <code>Ts/Op</code> <code>Th/Pach</code> <code>AG/Pach</code> <code>PA/Pach</code></p>
+</dd>
+<dt><code>dbhib.cm</code></dt><dd><p>Diameter (cm.) at 1.37 m (4'6&rdquo;) inside bark.</p>
+</dd>
+<dt><code>height.m</code></dt><dd><p>Height of tree (m)</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Quoting Stage (1963), &quot;After felling, the total height was measured,
+and the age at breast height was determined by counting the rings on a
+crossection. Then, decadal height growth was measured, starting from
+the termination of the 1956 height growth. The count of whorls was
+checked by a ring count at every decadal point. ...  Diameters at
+breast height (measuread along an average radius with a scale having
+10 graduations per half inch) corresponding to each decadal height
+point were also recorded.&quot;
+</p>
+<p>The national forests are: Kaniksu, Coeur d'Alene, St. Joe, Clearwater,
+Nez Perce, Clark Fork, Umatilla, Wallowa, and Payette.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Stage, A. 1963. A mathematical approach to polymorphic site index curves
+for grand fir.  Forest Science 9(2) 167-180.
+</p>
+
+
+<h3>References</h3>
+
+<p>Robinson, A.P., and J.D. Hamann. 2010.  Forest Analytics with R: an
+Introduction. Springer. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(stage)
+str(stage) 
+</pre>
+
+
+</body></html>

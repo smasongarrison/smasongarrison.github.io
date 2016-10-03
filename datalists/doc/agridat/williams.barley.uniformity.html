@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Yield from a barley uniformity trial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for williams.barley.uniformity"><tr><td>williams.barley.uniformity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Yield from a barley uniformity trial
+</h2>
+
+<h3>Description</h3>
+
+<p>Yield from a barley uniformity trial
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 720 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>Row position</p>
+</dd>
+<dt><code>col</code></dt><dd><p>Column position</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>Yield kg/ha divided by 10</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Grown at Roseworthy Agricultural College.  Plots were 5 m long (4 m
+sown, 3.3 m harvested) by 0.75 m wide.
+</p>
+<p>A three-plot seeder was used, planting in a serpentine fashion.
+Williams noted that it appears that the middle plot of each pass
+has a lower yield, possibly due to soil compaction from the tractor.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Williams, ER and Luckett, DJ. 1988. The use of uniformity data in the
+design and analysis of cotton and barley variety trials.
+<em>Australian Journal of Agricultural Research</em>, 39, 339-350.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(williams.barley.uniformity)
+dat &lt;- williams.barley.uniformity
+
+require("lattice")
+asp = (15*5)/(48*.75) # true aspect
+desplot(yield ~ col*row, dat, aspect=asp,
+        main="williams.barley.uniformity")
+
+# Smoothed contour/persp plot like Williams Fig 1b, 2b
+dat$fit &lt;- fitted(loess(yield~col*row, dat, span=.1))
+contourplot(fit~col*row, data=dat, main="williams.barley.uniformity")
+wireframe(fit~col*row, data=dat, zlim=c(100, 350),
+          main="williams.barley.uniformity")
+
+# Williams table 1
+anova(aov(yield ~ factor(row) + factor(col), dat))
+
+</pre>
+
+
+</body></html>

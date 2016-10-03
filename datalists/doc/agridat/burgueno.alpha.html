@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Incomplete block alpha design</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for burgueno.alpha"><tr><td>burgueno.alpha</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Incomplete block alpha design
+</h2>
+
+<h3>Description</h3>
+
+<p>Incomplete block alpha design
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data("burgueno.alpha")</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 48 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>rep</code></dt><dd><p>rep factor, 3 levels</p>
+</dd>
+<dt><code>block</code></dt><dd><p>block factor, 12 levels</p>
+</dd>
+<dt><code>row</code></dt><dd><p>row ordinate</p>
+</dd>
+<dt><code>col</code></dt><dd><p>column ordinate</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>genotype factor, 16 levels</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield, numeric</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>A field experiment with 3 reps, 4 blocks per rep, laid out as an alpha
+design.
+</p>
+
+
+<h3>Source</h3>
+
+<p>J Burgueno, A Cadena, J Crossa, M Banziger, A Gilmour, B Cullis. 2000.
+<em>User's guide for spatial analysis of field variety trials using
+ASREML</em>.  CIMMYT.
+</p>
+<p>Electronic version of the data obtained from CropStat software.
+</p>
+<p>Used with permission of Juan Burgueno.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(burgueno.alpha)
+dat &lt;- burgueno.alpha
+
+desplot(yield~col*row, dat, main='burgueno.alpha', out1=rep, out2=block,
+        text=gen, cex=1,shorten="none")
+
+if(require(lme4) &amp;&amp; require(lucid)){
+  # Inc block model
+  m1 &lt;- lmer(yield ~ gen + (1|rep/block), data=dat)
+  vc(m1) # Matches Burgueno p. 26
+  ##        grp        var1 var2   vcov sdcor
+  ##  block:rep (Intercept) &lt;NA&gt;  86900 294.8
+  ##        rep (Intercept) &lt;NA&gt; 200900 448.2
+  ##   Residual        &lt;NA&gt; &lt;NA&gt; 133200 365
+}
+
+## Not run: 
+  require(asreml)
+  # Inc block model
+  m2 &lt;- asreml(yield ~ gen, data=dat, random = ~ rep/block)
+  m2$loglik # Matches Burgueno p. 26
+  m2$coef$fixed # Matches solution on p. 27
+
+  # AR1 x AR1 model plus linear row effect, random spline row
+  dat &lt;- transform(dat, xf=factor(col), yf=factor(row))
+  dat &lt;- dat[order(dat$xf,dat$yf),]
+  m3 &lt;- asreml(yield ~ gen + lin(yf), data=dat, random = ~ spl(yf),
+               rcov= ~ar1(xf):ar1(yf))
+  m3$loglik # Matches row 8 of Table 1
+  plot(variogram(m3), main="burgueno.alpha") # Figure 1
+
+## End(Not run)
+
+</pre>
+
+
+</body></html>

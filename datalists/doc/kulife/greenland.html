@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Average yearly summer air temperature for Tasiilaq, Greenland</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for greenland"><tr><td>greenland</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Average yearly summer air temperature for Tasiilaq, Greenland
+</h2>
+
+<h3>Description</h3>
+
+<p>Average yearly summer (June, July, August) air temperature for Tasiilaq, Greenland
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(greenland)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 51 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>year</code></dt><dd><p>year</p>
+</dd>
+<dt><code>airtemp</code></dt><dd><p>average air temperature (degrees Celcius)</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Data provided by Sebastian Mernild.<br />
+Originally obtained from http://www.dmi.dk/dmi/index/gronland/vejrarkiv-gl.htm. <br />
+Added by Claus Ekstrom &lt;ekstrom@life.ku.dk&gt;  
+</p>
+
+
+<h3>References</h3>
+
+<p>Aktuelt Naturvidenskab september 2010. <br />
+http://aktuelnaturvidenskab.dk/fileadmin/an/nr-4/an4_2010gletscher.pdf    
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(greenland)
+model &lt;- lm(airtemp ~ year, data=greenland)
+plot(greenland$year, greenland$airtemp, xlab="Year", ylab="Air temperature")
+abline(model, col="red")
+</pre>
+
+
+</body></html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Top performances in the Decathlon from 1985 to 2006.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Decathlon"><tr><td>Decathlon</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Top performances in the Decathlon from 1985 to 2006.
+</h2>
+
+<h3>Description</h3>
+
+<p>The point scoring system for the Decathlon last changed in 1985.  Best annual performances of 6800 points and over for a twenty-one year period after the new rules were introduced were downloaded from the excellent Estonian website Decathlon2000.  Handtimed performances were not included.  Names with accents have been simplified.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Decathlon)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 7968 observations on the following 24 variables.
+</p>
+
+<dl>
+<dt><code>Totalpoints</code></dt><dd><p>the total points achieved over all 10 events</p>
+</dd>
+<dt><code>DecathleteName</code></dt><dd><p>Decathlete's name</p>
+</dd>
+<dt><code>Nationality</code></dt><dd><p>Decathlete's nationality</p>
+</dd>
+<dt><code>m100</code></dt><dd><p>Time for the 100 metres (secs)</p>
+</dd>
+<dt><code>Longjump</code></dt><dd><p>Distance jumped (metres)</p>
+</dd>
+<dt><code>Shotput</code></dt><dd><p>Distance putting the shot (metres)</p>
+</dd>
+<dt><code>Highjump</code></dt><dd><p>Height jumped (metres)</p>
+</dd>
+<dt><code>m400</code></dt><dd><p>Time for the 400 metres (secs)</p>
+</dd>
+<dt><code>m110hurdles</code></dt><dd><p>Time for the 110 metres hurdles (secs)</p>
+</dd>
+<dt><code>Discus</code></dt><dd><p>Distance throwing the discus (metres)</p>
+</dd>
+<dt><code>Polevault</code></dt><dd><p>Height achieved (metres)</p>
+</dd>
+<dt><code>Javelin</code></dt><dd><p>Distance throwing the javelin (metres)</p>
+</dd>
+<dt><code>m1500</code></dt><dd><p>Time for the 1500 metres (secs)</p>
+</dd>
+<dt><code>yearEvent</code></dt><dd><p>Year of performance</p>
+</dd>
+<dt><code>P100m</code></dt><dd><p>Points for performance in 100 metres</p>
+</dd>
+<dt><code>Plj</code></dt><dd><p>Points for performance in long jump</p>
+</dd>
+<dt><code>Psp</code></dt><dd><p>Points for performance in putting the shot</p>
+</dd>
+<dt><code>Phj</code></dt><dd><p>Points for performance in high jump</p>
+</dd>
+<dt><code>P400m</code></dt><dd><p>Points for performance in 400 metres</p>
+</dd>
+<dt><code>P110h</code></dt><dd><p>Points for performance in 110 metres hurdles</p>
+</dd>
+<dt><code>Ppv</code></dt><dd><p>Points for performance in pole vault</p>
+</dd>
+<dt><code>Pdt</code></dt><dd><p>Points for performance in discus</p>
+</dd>
+<dt><code>Pjt</code></dt><dd><p>Points for performance in javelin</p>
+</dd>
+<dt><code>P1500</code></dt><dd><p>Points for performance in 1500 metres</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><a href="http://www.decathlon2000.com">http://www.decathlon2000.com</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Decathlon, package="GDAdata")
+summary(Decathlon[, grep("P.*", names(Decathlon))])
+library(ggplot2)
+ggplot(Decathlon, aes(Plj)) + geom_histogram()
+ggplot(Decathlon, aes(P100m, Plj)) + geom_point()
+</pre>
+
+
+</body></html>

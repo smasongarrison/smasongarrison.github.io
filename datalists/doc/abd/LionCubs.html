@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Time to Reproduction in Female Lions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for LionCubs"><tr><td>LionCubs</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Time to Reproduction in Female Lions</h2>
+
+<h3>Description</h3>
+
+<p>Time to reproduction (<code>Days</code>) based on whether death of previous cubs
+was due to infanticide (<code>New</code>) or accidental (<code>Same</code>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 14 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>cause.of.death</dt><dd><p>a factor with <code>accident</code> and
+<code>infanticide</code></p>
+</dd> <dt>days.to.next.cub</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Packer, C. and A.E. Pusey. 1983. Adaptations of female lions to
+infanticide by incoming males. <em>The American Naturalist</em> 121: 716-728.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xyplot(days.to.next.cub ~ cause.of.death, LionCubs)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,51 @@
+"","code","name","neighbors","n.1","n.2","n.3","n.4","n.5","n.6","n.7","n.8"
+"1","AL","Alabama",4,"FL","GA","MS","TN",NA,NA,NA,NA
+"2","AK","Alaska",0,NA,NA,NA,NA,NA,NA,NA,NA
+"3","AZ","Arizona",4,"CA","NM","NV","UT",NA,NA,NA,NA
+"4","AR","Arkansas",6,"LA","MS","TX","OK","MO","TN",NA,NA
+"5","CA","California",3,"OR","AZ","NV",NA,NA,NA,NA,NA
+"6","CO","Colorado",6,"NM","UT","WY","KS","OK","NB",NA,NA
+"7","CT","Connecticut",3,"NY","MA","RI",NA,NA,NA,NA,NA
+"8","DE","Delaware",3,"NJ","PA","MD",NA,NA,NA,NA,NA
+"9","FL","Florida",2,"GA","AL",NA,NA,NA,NA,NA,NA
+"10","GA","Georgia",5,"FL","AL","TX","NC","SC",NA,NA,NA
+"11","HI","Hawaii",0,NA,NA,NA,NA,NA,NA,NA,NA
+"12","ID","Idaho",6,"UT","NV","OR","WA","MT","WY",NA,NA
+"13","IL","Illinois",5,"IA","WI","IN","KY","MO",NA,NA,NA
+"14","IN","Indiana",4,"IL","MI","OH","KY",NA,NA,NA,NA
+"15","IA","Iowa",6,"NB","MO","IL","WI","MN","SD",NA,NA
+"16","KS","Kansas",4,"MO","OK","CO","NB",NA,NA,NA,NA
+"17","KY","Kentucky",7,"TN","MO","IL","IN","OH","WV","VA",NA
+"18","LA","Louisiana",3,"AR","MS","TX",NA,NA,NA,NA,NA
+"19","ME","Maine",1,"NH",NA,NA,NA,NA,NA,NA,NA
+"20","MD","Maryland",4,"VA","WV","PA","DE",NA,NA,NA,NA
+"21","MA","Massachusetts",5,"RI","CT","NY","VT","NH",NA,NA,NA
+"22","MI","Michigan",3,"WI","IN","OH",NA,NA,NA,NA,NA
+"23","MN","Minnesota",4,"ND","SD","IA","WI",NA,NA,NA,NA
+"24","MS","Mississippi",4,"LA","AR","TN","AL",NA,NA,NA,NA
+"25","MO","Missouri",8,"IL","TN","AR","OK","KS","NB","IA","KY"
+"26","MT","Montana",4,"ND","SD","ID","WY",NA,NA,NA,NA
+"27","NE","Nebraska",6,"CO","WY","SD","IA","MO","KS",NA,NA
+"28","NV","Nevada",5,"CA","OR","ID","UT","AZ",NA,NA,NA
+"29","NH","New Hampshire",3,"VT","ME","MA",NA,NA,NA,NA,NA
+"30","NJ","New Jersey",3,"DE","PA","NY",NA,NA,NA,NA,NA
+"31","NM","New Mexico",4,"TX","OK","CO","AZ",NA,NA,NA,NA
+"32","NY","New York",5,"PA","VT","MA","CT","NJ",NA,NA,NA
+"33","NC","North Carolina",4,"SC","GA","TN","VA",NA,NA,NA,NA
+"34","ND","North Dakota",3,"MT","SD","MN",NA,NA,NA,NA,NA
+"35","OH","Ohio",5,"IN","MI","PA","WV","KY",NA,NA,NA
+"36","OK","Oklahoma",6,"TX","NM","CO","KS","MO","AR",NA,NA
+"37","OR","Oregon",4,"WA","ID","NV","CA",NA,NA,NA,NA
+"38","PA","Pennsylvania",6,"NJ","DE","MD","OH","NY","WV",NA,NA
+"39","RI","Rhode Island",2,"CT","MA",NA,NA,NA,NA,NA,NA
+"40","SC","South Carolina",2,"GA","NC",NA,NA,NA,NA,NA,NA
+"41","SD","South Dakota",6,"NB","WY","MT","ND","MN","IA",NA,NA
+"42","TN","Tennessee",8,"MS","AR","KY","VA","NC","GA","AL","MO"
+"43","TX","Texas",4,"NM","OK","AR","LA",NA,NA,NA,NA
+"44","UT","Utah",5,"AZ","NV","ID","WY","CO",NA,NA,NA
+"45","VT","Vermont",3,"NY","MA","NH",NA,NA,NA,NA,NA
+"46","VA","Virginia",5,"KY","WV","MD","TN","NC",NA,NA,NA
+"47","WA","Washington",2,"OR","ID",NA,NA,NA,NA,NA,NA
+"48","WV","West Virginia",5,"VA","KY","OH","PA","MD",NA,NA,NA
+"49","WI","Wisconsin",4,"IA","MN","MI","IL",NA,NA,NA,NA
+"50","WY","Wyoming",6,"CO","UT","ID","MT","SD","NB",NA,NA

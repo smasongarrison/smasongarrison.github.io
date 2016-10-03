@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 302 measurements of fish species at Kirkkojarvi lake</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fishkirkkojarvi2015"><tr><td>fishkirkkojarvi2015</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>302 measurements of fish species at Kirkkojarvi lake</h2>
+
+<h3>Description</h3>
+
+<p>302 lenght measurements of 11 fish species at Kirkkojarvi lake
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+fishkirkkojarvi2015
+</pre>
+
+
+<h3>Format</h3>
+
+<p>dataframe with 302 rows and 6 columns:
+</p>
+
+<dl>
+<dt>fishname</dt><dd><p>Fish name in Finnish</p>
+</dd>
+<dt>fishID</dt><dd><p>Fish unique identifier for this dataset</p>
+</dd>
+<dt>sl</dt><dd><p>Standard Length in mm</p>
+</dd>
+<dt>fl</dt><dd><p>Fork Length in mm</p>
+</dd>
+<dt>tl</dt><dd><p>Total Length in mm</p>
+</dd>
+<dt>wt</dt><dd><p>Weight in g</p>
+</dd>
+</dl>
+
+
+<h3>Author(s)</h3>
+
+<p>Jose Gama
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+# get an histogram of the fish species in the dataset
+data(fishkirkkojarvi2015)
+hist(fishkirkkojarvi2015[["fishID"]], xaxt="n", 
+main='Histogram of fish species from the Kirkkojarvi lake',xlab='Fish species')
+axis(1,at=1:10,labels=fishnames[1:10,'English'])
+
+## End(Not run)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Body Mass and Beak Length in Three Species of Finches in...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for KenyaFinches"><tr><td>KenyaFinches</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Body Mass and Beak Length in Three Species of Finches in Kenya</h2>
+
+<h3>Description</h3>
+
+<p>Data on body mass and beak length in three species of finches:
+Crimson-rumped waxbill (<code>CRU.WAXB</code>), Cutthroat finch (<code>CUTTHROA</code>),
+and White-browed sparrow weaver (<code>WB.SPARW</code>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 45 observations on the following 3 variables.
+</p>
+ <dl>
+<dt>species</dt><dd><p>a factor with levels: <code>CRU.WAXB</code>,
+<code>CUTTHROA</code>, and <code>WB.SPARW</code></p>
+</dd> <dt>mass</dt><dd><p>mass (g)</p>
+</dd>
+<dt>beak.length</dt><dd><p>beak length (mm)</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Schluter, D. 1988. The evolution of finch communities on islands and
+continents: Kenya vs. Galapagos. <em>Ecological Monographs</em> 58: 229-249.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+table(KenyaFinches$species)
+xyplot(beak.length ~ species, KenyaFinches)
+bwplot(beak.length ~ species, KenyaFinches)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Relation between wheat yield and weather in Argentina</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for hessling.argentina"><tr><td>hessling.argentina</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Relation between wheat yield and weather in Argentina
+</h2>
+
+<h3>Description</h3>
+
+<p>Relation between wheat yield and weather in Argentina
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 30 observations on the following 15 variables.
+</p>
+
+<dl>
+<dt><code>yield</code></dt><dd><p>Average yield, kg/ha</p>
+</dd>
+<dt><code>year</code></dt><dd><p>Year</p>
+</dd>
+<dt><code>p05</code></dt><dd><p>Precipitation (mm) in May</p>
+</dd>
+<dt><code>p06</code></dt><dd><p>Precip in June</p>
+</dd>
+<dt><code>p07</code></dt><dd><p>Precip in July</p>
+</dd>
+<dt><code>p08</code></dt><dd><p>Precip in August</p>
+</dd>
+<dt><code>p09</code></dt><dd><p>Precip in Septempber</p>
+</dd>
+<dt><code>p10</code></dt><dd><p>Precip in October</p>
+</dd>
+<dt><code>p11</code></dt><dd><p>Precip in November</p>
+</dd>
+<dt><code>p12</code></dt><dd><p>Precip in December</p>
+</dd>
+<dt><code>t06</code></dt><dd><p>June temperature deviation from normal, deg Celsius</p>
+</dd>
+<dt><code>t07</code></dt><dd><p>July temp deviation</p>
+</dd>
+<dt><code>t08</code></dt><dd><p>August temp deviation</p>
+</dd>
+<dt><code>t09</code></dt><dd><p>September temp deviation</p>
+</dd>
+<dt><code>t10</code></dt><dd><p>October temp deviation</p>
+</dd>
+<dt><code>t11</code></dt><dd><p>November temp deviation</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>In Argentina wheat is typically sown May to August.  Harvest begins in
+November or December.
+</p>
+
+
+<h3>Source</h3>
+
+<p>N. A. Hessling, 1922.
+Relations between the weather and the yield of wheat in the
+Argentine republic, <em>Monthly Weather Review</em>, 50, 302-308.
+<a href="http://dx.doi.org/10.1175/1520-0493(1922)50%3C302:RBTWAT%3E2.0.CO;2">http://dx.doi.org/10.1175/1520-0493(1922)50&lt;302:RBTWAT&gt;2.0.CO;2</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(hessling.argentina)
+dat &lt;- hessling.argentina
+
+# Fig 1 of Hessling.  Use avg Aug-Nov temp to predict yield
+dat &lt;- transform(dat, avetmp=(t08+t09+t10+t11)/4) # Avg temp
+m0 &lt;- lm(yield ~ avetmp, dat)
+plot(yield~year, dat, ylim=c(100,1500), type='l',
+main="hessling.argentina: observed (black) and predicted yield (blue)")
+lines(fitted(m0)~year, dat, col="blue")
+
+# A modern, PLS approach
+if(require(pls)){
+  yld &lt;- dat[,"yield",drop=FALSE]
+  yld &lt;- as.matrix(sweep(yld, 2, colMeans(yld)))
+  cov &lt;- dat[,c("p06","p07","p08","p09","p10","p11", "t08","t09","t10","t11")]
+  cov &lt;- as.matrix(scale(cov))
+  m2 &lt;- plsr(yld~cov)
+
+  # biplot(m2, which="x", var.axes=TRUE, main="hessling.argentina")
+}
+
+if(require(corrgram)){
+  corrgram(dat, main="hessling.argentina - correlations of yield and covariates")
+}
+
+</pre>
+
+
+</body></html>

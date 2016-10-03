@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pufferfish Mimicry</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Pufferfish"><tr><td>Pufferfish</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Pufferfish Mimicry</h2>
+
+<h3>Description</h3>
+
+<p>Number of <code>predators</code> approaching models painted to resemble pufferfish
+(<em>Canthigaster valentini</em>) across a range of similarities
+(<code>resemblance</code>)
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 20 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>resemblance</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>predators</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Caley, M.J. and D. Schluter. 2003. Predators favour mimicry in a
+tropical reef fish. <em>Proceedings of the Royal Society of London Series
+B, Biological Sciences</em> 270: 667-672.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://rspb.royalsocietypublishing.org/content/270/1516/667.full.pdf">http://rspb.royalsocietypublishing.org/content/270/1516/667.full.pdf</a>
+</p>
+<p><a href="http://en.wikipedia.org/wiki/Canthigaster_valentini">http://en.wikipedia.org/wiki/Canthigaster_valentini</a>
+</p>
+<p><a href="http://www.fishbase.org/Summary/SpeciesSummary.php?id=6544">http://www.fishbase.org/Summary/SpeciesSummary.php?id=6544</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Pufferfish)
+xyplot(predators ~ jitter(resemblance, amount = 0.1), Pufferfish)
+Pufferfish
+</pre>
+
+
+</body></html>

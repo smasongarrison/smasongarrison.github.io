@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Malaria in Populations of Great Tit</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for GreatTitMalaria"><tr><td>GreatTitMalaria</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Malaria in Populations of Great Tit</h2>
+
+<h3>Description</h3>
+
+<p>Two-by-two contingency table of malaria (<em>Plasmodium</em>) infection status
+in control and egg-removal populations of Great Tit (<em>Parus major</em>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 65 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>treatment</dt><dd><p>a factor with levels <code>Control</code> and
+<code>Egg removal</code></p>
+</dd> <dt>response</dt><dd><p>a ordered factor with levels
+<code>No Malaria</code> and <code>Malaria</code></p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Oppliger, A., P. Christe, and H. Richner. 1996. Clutch size and
+malaria resistance. <em>Nature</em> 381: 565.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.nature.com/nature/journal/v381/n6583/abs/381565a0.html">http://www.nature.com/nature/journal/v381/n6583/abs/381565a0.html</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(GreatTitMalaria)
+
+table(GreatTitMalaria)
+
+if(require(vcd)) {
+  mosaic(~treatment + response, GreatTitMalaria)
+}
+</pre>
+
+
+</body></html>

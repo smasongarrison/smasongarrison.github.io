@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Exploited Larval Fish</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for LarvalFish"><tr><td>LarvalFish</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Exploited Larval Fish</h2>
+
+<h3>Description</h3>
+
+<p>Age (<code>age</code>) and coefficient of variation (<code>cv</code>) in larval fish
+from exploited and unexploited species (<code>exploited</code>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 28 observations on the following 3 variables.
+</p>
+ <dl>
+<dt>age</dt><dd><p>a numeric vector</p>
+</dd> <dt>cv</dt><dd><p>a numeric
+vector</p>
+</dd> <dt>exploited</dt><dd><p>a factor with levels <code>no</code> and
+<code>yes</code></p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Hsieh, C.H., C.S. Reiss, J.R. Hunter, J.R. Beddington, R.M. May, and
+G. Sugihara. 2006. Fishing elevates variability in the abundance of
+exploited species. <em>Nature</em> 443: 859-862.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(LarvalFish)
+xyplot(cv ~ age | exploited, LarvalFish)
+xyplot(cv ~ age, groups=exploited, LarvalFish)
+</pre>
+
+
+</body></html>

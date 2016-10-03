@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: World Cup Goals</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for WorldCup"><tr><td>WorldCup</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>World Cup Goals</h2>
+
+<h3>Description</h3>
+
+<p>Number of goals per team during the 2002 World Cup.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 7 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>score</dt><dd><p>a numeric vector</p>
+</dd> <dt>count</dt><dd><p>a
+numeric vector</p>
+</dd> </dl>
+
+
+<h3>Examples</h3>
+
+<pre>
+xyplot(count ~ score, WorldCup, type='h', lwd=4)
+barchart(count ~ score, WorldCup, origin=0, horizontal=FALSE)
+</pre>
+
+
+</body></html>

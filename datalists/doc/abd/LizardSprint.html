@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Sprint Speeds in Canyon Lizards</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for LizardSprint"><tr><td>LizardSprint</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Sprint Speeds in Canyon Lizards</h2>
+
+<h3>Description</h3>
+
+<p>Sprint speeds (<code>speed</code>) in 34 canyon lizards
+(<em>Sceloporous merriami</em>) measured in
+successive years in Big Bend National Park. Note
+that <code>lizard</code> is not coded as a factor.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 68 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>lizard</dt><dd><p>a numeric vector</p>
+</dd> <dt>speed</dt><dd><p>a
+numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p><em>inferred from</em> Huey, R.B. and A.E. Dunham. 1987. The
+repeatability of locomotor performance in natural populations of the lizard
+<em>Sceloporus merriami</em>. <em>Evolution</em> 42: 1116-1120.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/Sceloporus_merriami">http://en.wikipedia.org/wiki/Sceloporus_merriami</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+histogram(~ speed, LizardSprint)
+Lizard2 &lt;- aggregate(speed ~ lizard, LizardSprint, mean)
+histogram(~ speed, Lizard2)
+</pre>
+
+
+</body></html>

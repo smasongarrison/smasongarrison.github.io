@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Telomere Shortening</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Telomeres"><tr><td>Telomeres</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Telomere Shortening</h2>
+
+<h3>Description</h3>
+
+<p>Telomere length (ratio) and years since their child's diagnosis with chronic
+illness.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 39 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>years</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>telomere.length</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Epel, E.S., E.H. Blackburn, J. Lin, F.S. Dhabhar, N.E. Adler, J.D.
+Morrow, and R.M. Cawthon. 2004. Accelerated telomere shortening in response
+to life stress. <em>Proceedings of the National Academy of Sciences (USA)</em>
+101: 17312-17315.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.pnas.org/content/101/49/17312">http://www.pnas.org/content/101/49/17312</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xyplot(years ~ telomere.length, Telomeres,
+  xlab = "Time since diagnosis (years)",
+  ylab = "Telomere length (ratio)"
+)
+</pre>
+
+
+</body></html>

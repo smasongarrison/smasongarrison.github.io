@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hartigan (1975) Nails and Screws</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for nails.screws"><tr><td>nails.screws</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Hartigan (1975) Nails and Screws </h2>
+
+<h3>Description</h3>
+
+<p>The table contains the attributes for a sample of nails and screws.
+This is Table 12.7 in Chapter 12 of Hartigan (1975) on page 228.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(nails.screws)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 24 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>name</code></dt><dd><p>a character vector for the name of the object</p>
+</dd>
+<dt><code>threaded</code></dt><dd><p>a factor for the presence of threads with levels <code>N</code> <code>Y</code></p>
+</dd>
+<dt><code>head</code></dt><dd><p>a factor for the type of head with levels <code>F</code> <code>O</code> <code>R</code> <code>U</code> <code>Y</code></p>
+</dd>
+<dt><code>indentation</code></dt><dd><p>a factor for the head indentation with levels <code>L</code> <code>N</code> <code>T</code></p>
+</dd>
+<dt><code>bottom</code></dt><dd><p>a factor for the type of bottom with levels <code>F</code> <code>S</code></p>
+</dd>
+<dt><code>length</code></dt><dd><p>a numeric vector for the length in half inches</p>
+</dd>
+<dt><code>brass</code></dt><dd><p>a factor that determines if the object is made of brass with levels <code>N</code> <code>Y</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>All the attributes, with the exception of length, are factors.
+The factor values for the threaded variable are as follows.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+    Y </td><td style="text-align: left;"> yes</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    N </td><td style="text-align: left;"> no
+  </td>
+</tr>
+
+</table>
+
+<p>The factor values for the head variable are as follows.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+    F </td><td style="text-align: left;"> flat</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    U </td><td style="text-align: left;"> cut</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    O </td><td style="text-align: left;"> cone</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    R </td><td style="text-align: left;"> round</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    Y </td><td style="text-align: left;"> cylinder
+  </td>
+</tr>
+
+</table>
+
+<p>The factor values for the head indentation variable are as follows.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+    N </td><td style="text-align: left;"> none</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    T </td><td style="text-align: left;"> star</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    L </td><td style="text-align: left;"> slit
+  </td>
+</tr>
+
+</table>
+
+<p>The value values for the brass variable are as follows
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+    Y </td><td style="text-align: left;"> yes</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    N </td><td style="text-align: left;"> no
+  </td>
+</tr>
+
+</table>
+  
+
+
+<h3>Source</h3>
+
+<p>Hartigan, J. A. (1975). <em>Clustering Algorithms</em>, John Wiley, New York.
+</p>
+<p>SPAETH2 Cluster Analysis Datasets <a href="http://people.sc.fsu.edu/~jburkardt/datasets/spaeth2/spaeth2.html">http://people.sc.fsu.edu/~jburkardt/datasets/spaeth2/spaeth2.html</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Hartigan, J. A. (1975). <em>Clustering Algorithms</em>, John Wiley, New York.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(nails.screws)
+</pre>
+
+
+</body></html>

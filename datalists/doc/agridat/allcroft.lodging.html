@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lodging data from a multi-environment trial cereal crop</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for allcroft.lodging"><tr><td>allcroft.lodging</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Lodging data from a multi-environment trial cereal crop
+</h2>
+
+<h3>Description</h3>
+
+<p>Percent lodging is given for 32 genotypes at 7 environments.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 224 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>env</code></dt><dd><p>environment factor, 1-7</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>genotype factor, 1-32</p>
+</dd>
+<dt><code>y</code></dt><dd><p>percent lodged</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>This data is for the first year of a three-year study.
+</p>
+
+
+<h3>Source</h3>
+
+<p>D. J. Allcroft and C. A. Glasbey, 2003.
+Analysis of crop lodging using a latent variable model.
+<em>Journal of Agricultural Science</em>, 140, 383&ndash;393.
+</p>
+<p>Used with permission of Chris Glasbey.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(allcroft.lodging)
+dat &lt;- allcroft.lodging
+
+# Transformation
+dat$sy &lt;- sqrt(dat$y)
+# Variety 4 has no lodging anywhere, so add a small amount
+dat[dat$env=='E5' &amp; dat$gen=='G04',]$sy &lt;- .01
+
+require(lattice)
+dotplot(env~y|gen, dat, as.table=TRUE,
+        xlab="Percent lodged (by genotype)", ylab="Variety",
+        main="allcroft.lodging")
+
+# Tobit model
+if(require(AER)){
+  m3 &lt;- tobit(sy ~ 1 + gen + env, left=0, right=100, data=dat)
+
+  # Table 2 trial/variety means
+  preds &lt;- expand.grid(gen=levels(dat$gen), env=levels(dat$env))
+  preds$pred &lt;- predict(m3, newdata=preds)
+  round(tapply(preds$pred, preds$gen, mean),2)
+  round(tapply(preds$pred, preds$env, mean),2)
+
+}
+
+</pre>
+
+
+</body></html>

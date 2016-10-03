@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Desert Bird Census Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for DesertBirds"><tr><td>DesertBirds</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Desert Bird Census Data</h2>
+
+<h3>Description</h3>
+
+<p>Census data for desert birds.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 43 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>species</dt><dd><p>a character vector</p>
+</dd> <dt>count</dt><dd><p>a
+numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Sauer, J.R., J.E. Hines, and J. Fallon. 2003. The North American
+breeding bird survey, results and analysis 1966-2002. Version 2003.1. USGS
+Patuxent Wildlife Research Center, Laurel, MD.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.mbr-pwrc.usgs.gov/bbs/">http://www.mbr-pwrc.usgs.gov/bbs/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(DesertBirds)
+histogram(~ count, DesertBirds,
+  xlab = "Abundance"
+  )
+</pre>
+
+
+</body></html>

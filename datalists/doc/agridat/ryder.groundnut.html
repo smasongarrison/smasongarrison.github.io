@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Wet and dry groundnut yields</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ryder.groundnut"><tr><td>ryder.groundnut</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Wet and dry groundnut yields
+</h2>
+
+<h3>Description</h3>
+
+<p>Wet and dry groundnut yields with a possible data error.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 24 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>block</code></dt><dd><p>Block factor</p>
+</dd>
+<dt><code>row</code></dt><dd><p>Row</p>
+</dd>
+<dt><code>col</code></dt><dd><p>Column</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>Genotype factor</p>
+</dd>
+<dt><code>wet</code></dt><dd><p>Wet yield, kg/plot</p>
+</dd>
+<dt><code>dry</code></dt><dd><p>Dry yield, kg/plot</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Ryder (1981) uses this data to discuss the importance of looking at
+the field plan for an experiment.  Based on analysis of the residuals,
+he suggests that varieties A and B in block 3 may have had their data
+swapped.
+</p>
+
+
+<h3>Source</h3>
+
+<p>K. Ryder (1981). Field plans: why the biometrician finds them useful,
+<em>Experimental Agriculture</em>, 17, 243&ndash;256.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(ryder.groundnut)
+dat &lt;- ryder.groundnut
+
+# RCB model
+m1 &lt;- lm(dry~block+gen,dat)
+dat$res1 &lt;- resid(m1)
+
+# Table 3 of Ryder.  Scale up from kg/plot to kg/ha
+round(dat$res1 * 596.6,0)
+
+# Visually.  Note largest positive/negative residuals are adjacent
+desplot(res1 ~ col + row, dat, text=gen, main="ryder.groundnut")
+
+# Swap the dry yields for the plots and re-analyze
+dat[dat$block=="B3" &amp; dat$gen=="A", "dry"] &lt;- 2.8
+dat[dat$block=="B3" &amp; dat$gen=="B", "dry"] &lt;- 1.4
+m2 &lt;- lm(dry~block+gen, dat)
+dat$res2 &lt;- resid(m2)
+desplot(res2 ~ col+row, dat, text=gen, main="ryder.groundnut")
+
+</pre>
+
+
+</body></html>

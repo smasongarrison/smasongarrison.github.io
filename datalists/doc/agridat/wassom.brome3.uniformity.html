@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Uniformity trials of bromegrass.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for wassom.brome1.uniformity"><tr><td>wassom.brome1.uniformity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Uniformity trials of bromegrass.
+</h2>
+
+<h3>Description</h3>
+
+<p>Uniformity trials of bromegrass.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(wassom.brome1.uniformity)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1296 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>row</code></dt><dd><p>row</p>
+</dd>
+<dt><code>col</code></dt><dd><p>column</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield, pounds</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Experiments were conducted at Ames, Iowa.  The response variable is
+forage yield in pounds of green weight.   Each plot was 3.5 x 4 feet.
+</p>
+<p>There are three datasets, hereafter referred to as 'brome1', 'brome2',
+'brome3'.
+</p>
+<p>Brome1 was broadcast seeded, harvested in 1950.
+</p>
+<p>Brome2 was row planted, harvested in 1950.
+</p>
+<p>Brome3 was broadcast seeded, harvested in 1951.  This field contained
+a mixture of alfalfa and brome in about equal proportions.
+</p>
+<p>Wassom and Kalton used two different methods to estimate optimum plot
+size.  1. Relative efficiency of different plot sizes. 2. Regression
+of the log variance of yield vs log plot size.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Wassom and R.R. Kalton. (1953).
+Estimations of Optimum Plot Size Using Data from Bromegrass Uniformity
+Trials. Agricultural Experiment Station, Iowa State College, Bulletin 396.
+<a href="http://lib.dr.iastate.edu/ag_researchbulletins/32/">http://lib.dr.iastate.edu/ag_researchbulletins/32/</a>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(wassom.brome1.uniformity)
+dat &lt;- wassom.brome1.uniformity
+desplot(yield~col*row, dat, main="wassom.brome1.uniformity", flip=TRUE)
+
+dat &lt;- wassom.brome2.uniformity
+desplot(yield~col*row, dat, main="wassom.brome2.uniformity", flip=TRUE)
+
+dat &lt;- wassom.brome3.uniformity
+desplot(yield~col*row, dat, main="wassom.brome3.uniformity", flip=TRUE)
+
+</pre>
+
+
+</body></html>

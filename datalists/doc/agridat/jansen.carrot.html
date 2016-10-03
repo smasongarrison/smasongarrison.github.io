@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Infestation of carrots by fly larvae</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for jansen.carrot"><tr><td>jansen.carrot</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Infestation of carrots by fly larvae
+</h2>
+
+<h3>Description</h3>
+
+<p>Infestation of 16 carrot genotypes by fly larvae, comparing 2
+treatments in 16 blocks.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data("jansen.carrot")</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 96 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>trt</code></dt><dd><p>treatment</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>genotype</p>
+</dd>
+<dt><code>block</code></dt><dd><p>block</p>
+</dd>
+<dt><code>n</code></dt><dd><p>number of carrots sampled per plot</p>
+</dd>
+<dt><code>y</code></dt><dd><p>number of carrots infested per plot</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>This experiment was designed to compare different genotypes of carrots
+with respect to their resistance to infestation by larvae of the
+carrotfly.
+</p>
+<p>There were 16 genotypes, 2 levels of pest-control treatments, conducted
+in 3 randomized complete blocks.  About 50 carrots were sampled from
+each plot and evaluated.  The data show the number of carrots and the
+number infested by fly larvae.
+</p>
+
+
+<h3>Source</h3>
+
+<p>J. Jansen &amp; J.A. Hoekstra (1993).
+The analysis of proportions in agricultural experiments by a
+generalized linear mixed model. 
+<em>Statistica Neerlandica</em>, 47(3), 161-174.
+</p>
+<p>Used with permission of J. Jansen. Electronic version supplied by Miroslav Zoric.
+</p>
+
+
+<h3>References</h3>
+
+<p>None.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(jansen.carrot)
+
+dat &lt;- jansen.carrot
+require(lattice)
+dotplot(gen ~ y/n, data=dat, group=trt, auto.key=TRUE,
+        main="jansen.carrot",
+        xlab="Proportion of carrots infected per block", ylab="Genotype")
+
+if(FALSE &amp; require(lme4)){
+  # 'FALSE' used here because CRAN wants &lt; 5 seconds per example
+  # Tentative model.  Needs improvement.
+  m1 &lt;- glmer(cbind(y,n-y) ~ gen*trt + (1|block),
+              data=dat, family=binomial)
+  summary(m1)
+}
+
+# Todo: Why are these results different from Jansen?
+# Maybe he used ungrouped bernoulli data?  Too slow with 4700 obs
+
+</pre>
+
+
+</body></html>

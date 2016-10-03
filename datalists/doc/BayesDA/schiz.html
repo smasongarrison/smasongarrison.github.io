@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data on Response Times for Scizophrenics and...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for schiz"><tr><td>schiz</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Data on Response Times for Scizophrenics and non-Schizophrenics   </h2>
+
+<h3>Description</h3>
+
+<p>Response times (in milliseconds) for 11 non-schizophrenic and 6 schizophrenic
+individuals.  
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(schiz)</pre>
+
+
+<h3>Format</h3>
+
+<p>The format is:
+num [1:30, 1:17] 312 272 350 286 268 328 298 356 292 308 ...
+- attr(*, &quot;dimnames&quot;)=List of 2
+..$ : NULL
+..$ : chr [1:17] &quot;nonsch1&quot; &quot;nonsch2&quot; &quot;nonsch3&quot; &quot;nonsch4&quot; ...
+</p>
+<p>A numerical matrix with individuals as columns. 
+</p>
+
+
+<h3>Details</h3>
+
+<p>Psychological theory from the last half century and before suggests a model in 
+which schizophrenics suffer from an attentional deficit on some trials, as well as a 
+general motor reflex retardation.  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(schiz)
+str(schiz)
+# Making figure 18.1 in the book:
+opar &lt;- par(no.readonly=TRUE)
+par( mar=c(2.0, 1,1,1))
+par(mfrow=c(5,4))
+for (i in 1:11) hist( log(schiz[,i]), main="", xlab="", ylab="", xlim=c(5.4, 7.5))
+par( mfg=c(4, 1))
+for (i in 1:6) hist( log(schiz[,11+i]), main="", xlab="", ylab="", xlim=c(5.4, 7.5))
+par(opar)
+</pre>
+
+
+</body></html>

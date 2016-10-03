@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Left-handedness and Rates of Violence</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Lefthanded"><tr><td>Lefthanded</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Left-handedness and Rates of Violence</h2>
+
+<h3>Description</h3>
+
+<p>Prevalence of left-handedness (<code>percent.left</code>) and homicide rates
+(<code>murder</code>) for 8 societies.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 8 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>percent.left</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>murder.rate</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Faurie, C. and M. Raymond. 2005. Handedness, homicide and negative
+frequency-dependent selection. <em>Proceedings of the Royal Society of
+London B</em> 272: 25-28.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://rspb.royalsocietypublishing.org/content/272/1558/25.abstract">http://rspb.royalsocietypublishing.org/content/272/1558/25.abstract</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Lefthanded)
+xyplot(murder.rate ~ percent.left, Lefthanded)
+</pre>
+
+
+</body></html>

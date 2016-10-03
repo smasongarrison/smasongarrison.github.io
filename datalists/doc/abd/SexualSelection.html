@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Sexual Conflict</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for SexualSelection"><tr><td>SexualSelection</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Sexual Conflict</h2>
+
+<h3>Description</h3>
+
+<p>Number of species in each of two taxa in closely related taxon pairings and
+the difference between the two groups. One taxon has multiple matings
+(<code>polyandrous.species</code>) and one has only single matings
+(<code>monandrous.species</code>).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 25 observations on the following 4 variables.
+</p>
+ <dl>
+<dt>polyandrous.species</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>monandrous.species</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>difference</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>taxon.pair</dt><dd><p>identifier</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Arnqvist, G., M. Edvardsson, U. Friberg, and T. Nilsson. 2000.
+Sexual conflict promotes speciation in insects. <em>Proceedings of the
+National Academy of Sciences (USA)</em> 97: 10460-10464.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC27046/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC27046/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+SexualSelection
+
+histogram(~ difference, SexualSelection, n = 20)
+
+hist(SexualSelection$difference, breaks = 20)
+
+# Calculate the number of tests and the number of negative tests
+(n &lt;- length(SexualSelection$difference))
+(n.neg &lt;- sum(SexualSelection$difference &lt; 0))
+
+2 * pbinom(q = n.neg, size = n, prob = 0.5)
+
+# With a binomial test
+binom.test(n.neg, n, p = 0.5)
+</pre>
+
+
+</body></html>

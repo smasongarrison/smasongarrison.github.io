@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Motorcycle Insurance</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for dataOhlsson"><tr><td>dataOhlsson</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Motorcycle Insurance</h2>
+
+<h3>Description</h3>
+
+<p>The data for this case study comes from the former Swedish insurance company Wasa, and concerns partial casco insurance, for motorcycles this time. It contains aggregated data on all insurance policies and claims during 1994-1998; the reason for using this rather old data set is confidentiality; more recent data for ongoing business can not be disclosed.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(dataOhlsson)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 64548 observations on the following 9 variables.
+</p>
+
+<dl>
+<dt><code>agarald</code></dt><dd><p>The owners age, between 0 and 99, a numeric vector</p>
+</dd>
+<dt><code>kon</code></dt><dd><p>The owners age, between 0 and 99, a factor with levels <code>K</code> <code>M</code></p>
+</dd>
+<dt><code>zon</code></dt><dd><p>Geographic zone numbered from 1 to 7, in a standard classification of all
+Swedish parishes, a numeric vector</p>
+</dd>
+<dt><code>mcklass</code></dt><dd><p>MC class, a classification by the so called EV ratio, defined as (Engine
+power in kW x 100) / (Vehicle weight in kg + 75), rounded to the nearest
+lower integer. The 75 kg represent the average driver weight. The EV ratios are
+divided into seven classes, a numeric vector</p>
+</dd>
+<dt><code>fordald</code></dt><dd><p>Vehicle age, between 0 and 99, a numeric vector</p>
+</dd>
+<dt><code>bonuskl</code></dt><dd><p>Bonus class, taking values from 1 to 7. A new driver starts with bonus
+class 1; for each claim-free year the bonus class is increased by 1. After the first
+claim the bonus is decreased by 2; the driver can not return to class 7 with less
+than 6 consecutive claim free years, a numeric vector</p>
+</dd>
+<dt><code>duration</code></dt><dd><p>the number of policy years, a numeric vector</p>
+</dd>
+<dt><code>antskad</code></dt><dd><p>the number of claims, a numeric vector</p>
+</dd>
+<dt><code>skadkost</code></dt><dd><p>the claim cost, a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The dataset &quot;mccase.txt&quot;
+</p>
+
+
+<h3>Source</h3>
+
+<p>http://people.su.se/~esbj/GLMbook/case.html</p>
+
+
+<h3>References</h3>
+
+<p>Ohlsson E., Johansson B. (2010), Non-life insurance pricing with generalized linear models, Springer</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(dataOhlsson)
+## maybe str(dataOhlsson) ; plot(dataOhlsson) ...
+</pre>
+
+
+</body></html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Football Point Spreads and Game Outcomes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for football"><tr><td>football</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>  Football Point Spreads and Game Outcomes  </h2>
+
+<h3>Description</h3>
+
+<p>Data on football point spreads and game outcomes (north american football) for ten seasons, 
+1981, 1983-1986, 1988-1992, each season are 224 games and they are strung together. Only three
+first seasons are used in chapter one of book. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(football)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 2240 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>home</code></dt><dd><p>home indicator</p>
+</dd>
+<dt><code>favorite</code></dt><dd><p>favorite score</p>
+</dd>
+<dt><code>underdog</code></dt><dd><p>underdog score</p>
+</dd>
+<dt><code>spread</code></dt><dd><p>point spread</p>
+</dd>
+<dt><code>favorite.name</code></dt><dd><p>a factor with levels <code>ATL</code> <code>BUF</code> <code>CHI</code> 
+<code>CIN</code> 
+<code>CLE</code> <code>DAL</code> <code>DEN</code> <code>DET</code> <code>GB</code> 
+<code>HOU</code> <code>IND</code> <code>KC</code> <code>LAA</code> <code>LAN</code> 
+<code>MIA</code> <code>MIN</code> <code>NE</code> <code>NO</code> <code>NYG</code> 
+<code>NYJ</code> <code>PHA</code> <code>PHX</code> <code>PIT</code> <code>SD</code> 
+<code>SEA</code> 
+<code>SF</code> <code>TB</code> <code>WAS</code></p>
+</dd>
+<dt><code>underdog.name</code></dt><dd><p>a factor with levels <code>ATL</code> <code>BUF</code> <code>CHI</code> 
+<code>CIN</code> <code>CLE</code> 
+<code>DAL</code> <code>DEN</code> <code>DET</code> <code>GB</code> <code>HOU</code> <code>IND</code> 
+<code>KC</code> <code>LAA</code> 
+<code>LAN</code> <code>MIA</code> <code>MIN</code> <code>NE</code> <code>NO</code> <code>NYG</code> 
+<code>NYJ</code> <code>PHA</code> 
+<code>PHX</code> <code>PIT</code> <code>SD</code> <code>SEA</code> <code>SF</code> 
+<code>TB</code> <code>WAS</code></p>
+</dd>
+<dt><code>week</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Football experts provide the point spread as a measure of the
+difference in 
+ability between the two teams.  
+For example, team A might be a 3.5 favourite to team B.
+The implication of this is that the proposition
+that team A, the favourite, defeats team B, the underdog,
+by 4 or more points, are considered a fair bet. 
+In other words, the probability that A wins by more than 3.5 points is 0.5.  
+If the point spread are an integer, then the implication is that team
+A 
+is as likely to win by more 
+points than the point spread as it is to win by fewer points
+than the point spread (or to loose). 
+If the 
+win is by exactly the point spread then neither side is paid off.  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(football)
+summary(football)
+names(football)
+# In chapter 1 only three first seasons are used:
+cap1 &lt;- football[1:672, ]
+
+</pre>
+
+
+</body></html>

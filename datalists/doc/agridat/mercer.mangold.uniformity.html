@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mercer and Hall's uniformity trial of mangolds in 1910</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mercer.mangold.uniformity"><tr><td>mercer.mangold.uniformity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Mercer and Hall's uniformity trial of mangolds in 1910
+</h2>
+
+<h3>Description</h3>
+
+<p>Mercer and Hall's uniformity trial of mangolds in 1910
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(mercer.mangold.uniformity)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 200 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>roots</code></dt><dd><p>root yields, pounds</p>
+</dd>
+<dt><code>leaves</code></dt><dd><p>leaf yields, pounds</p>
+</dd>
+<dt><code>col</code></dt><dd><p>column, 1-10</p>
+</dd>
+<dt><code>row</code></dt><dd><p>row, 1-20</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Grown in 1910.
+Each plot was 3 &quot;drills&quot;, each 2.4 feet wide.
+Plots were 1/200 acres, 7.2 feet by 30.25 feet long
+</p>
+
+
+<h3>Source</h3>
+
+<p>Mercer, WB and Hall, AD, 1911. The experimental error of field trials
+<em>The Journal of Agricultural Science</em>, 4, 107-132. Table 1.
+</p>
+
+
+<h3>References</h3>
+
+<p>McCullagh, P. and Clifford, D., (2006).
+Evidence for conformal invariance of crop yields,
+<em>Proceedings of the Royal Society A: Mathematical, Physical and
+Engineering Science</em>, 462, 2119&ndash;2143.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(mercer.mangold.uniformity)
+dat &lt;- mercer.mangold.uniformity
+
+# Show field in true aspect ratio
+asp = (7.25 * 20) / (30.25 * 10)
+
+desplot(roots~col*row, data=dat,
+        main="mercer.mangold.uniformity roots", aspect=asp)
+desplot(leaves~col*row, data=dat,
+        main="mercer.mangold.uniformity leaves", aspect=asp)
+
+# xyplot(roots~leaves, data=dat)
+
+</pre>
+
+
+</body></html>

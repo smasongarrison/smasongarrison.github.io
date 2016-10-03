@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: BURN1000 data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for burn1000"><tr><td>burn1000</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>BURN1000 data</h2>
+
+<h3>Description</h3>
+
+<p>burn1000 dataset.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+burn1000
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data.frame with 1000 rows and 9 variables:
+</p>
+
+<dl>
+<dt>id</dt><dd><p>Identification code (1 - 1000)</p>
+</dd>
+<dt>facility</dt><dd><p>Burn facility (1 - 40)</p>
+</dd>
+<dt>death</dt><dd><p>Hospital discharge status (1: Alive, 2: Dead)</p>
+</dd>
+<dt>age</dt><dd><p>Age at admission (Years)</p>
+</dd>
+<dt>gender</dt><dd><p>Gender (1: Female, 2: Male)</p>
+</dd>
+<dt>race</dt><dd><p>Race (1: Non-White, 2: White)</p>
+</dd>
+<dt>tbsa</dt><dd><p>Total burn surface area (0 - 100%)</p>
+</dd>
+<dt>inh_inj</dt><dd><p>Burn involved inhalation injury (1: No, 2: Yes)</p>
+</dd>
+<dt>flame</dt><dd><p>Flame involved in burn injury (1: No, 2: Yes)</p>
+</dd>
+</dl>
+
+
+<h3>Source</h3>
+
+<p>Hosmer, D.W., Lemeshow, S. and Sturdivant, R.X. (2013) Applied
+Logistic Regression, 3rd ed., New York: Wiley
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+head(burn1000, n = 10)
+summary(burn1000)
+
+## Table 3.15 p. 80
+summary(mod3.15 &lt;- glm(death ~ tbsa + inh_inj + age + gender + flame + race,
+                       family = binomial, data = burn1000 ))
+</pre>
+
+
+</body></html>

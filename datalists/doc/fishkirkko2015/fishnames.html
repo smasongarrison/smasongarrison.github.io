@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Names of fish species from Kirkkojarvi lake in four languages</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fishnames"><tr><td>fishnames</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Names of fish species from Kirkkojarvi lake in four languages</h2>
+
+<h3>Description</h3>
+
+<p>Names of fish species from Kirkkojarvi lake in Finnish, 
+Swedish, English and Latin (binomial name)
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+fishnames
+</pre>
+
+
+<h3>Format</h3>
+
+<p>dataframe with 11 rows and 5 columns:
+</p>
+
+<dl>
+<dt>fishID</dt><dd><p>fish unique identifier for this dataset</p>
+</dd>
+<dt>Finnish</dt><dd><p>Fish name in Finnish</p>
+</dd>
+<dt>English</dt><dd><p>Fish name in English</p>
+</dd>
+<dt>binomial.name</dt><dd><p>Fish binomial name in Latin</p>
+</dd>
+<dt>Swedish</dt><dd><p>Fish name in Swedish</p>
+</dd>
+</dl>
+
+
+<h3>Author(s)</h3>
+
+<p>Jose Gama
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# What is "Kuha" in English and its binomial name?
+data(fishnames)
+fishnames[which(fishnames[["Finnish"]]=='Kuha'),c('English','binomial.name')]
+</pre>
+
+
+</body></html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Deaths from Horse Kicks</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Cavalry"><tr><td>Cavalry</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Deaths from Horse Kicks</h2>
+
+<h3>Description</h3>
+
+<p>Numbers of deaths resulting from horse kicks per regiment-years for the
+Prussian army.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 5 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>deaths</dt><dd><p>a numeric vector</p>
+</dd> <dt>count</dt><dd><p>a
+numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Bortkiewicz, L. 1898. Das Gesetz der Kleinen Zahlen (Teubner,
+Leipzig), <em>as cited in</em> Larson, R.J. and M.L. Marx. 1981. <em>An
+Introduction to Mathematical Statistics and its Applications</em>.
+Prentice-Hall: Englewood Cliffs, NJ.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+Cavalry
+xyplot(count ~ deaths, Cavalry, type='h', lwd=4)
+barchart(count ~ deaths, Cavalry, horizontal = FALSE,
+         box.ratio = 1000, origin=0)
+</pre>
+
+
+</body></html>

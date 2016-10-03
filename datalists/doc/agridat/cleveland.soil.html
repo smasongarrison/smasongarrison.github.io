@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Soil resistivity in a field</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cleveland.soil"><tr><td>cleveland.soil</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Soil resistivity in a field
+</h2>
+
+<h3>Description</h3>
+
+<p>Soil resistivity in a field
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 8641 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>northing</code></dt><dd><p>y ordinate</p>
+</dd>
+<dt><code>easting</code></dt><dd><p>x ordinate</p>
+</dd>
+<dt><code>resistivity</code></dt><dd><p>Soil resistivity, ohms</p>
+</dd>
+<dt><code>is.ns</code></dt><dd><p>Indicator of north/south track</p>
+</dd>
+<dt><code>track</code></dt><dd><p>Track number</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Resistivity is related to soil salinity.
+</p>
+
+
+<h3>Source</h3>
+
+<p>William Cleveland, (1993), <em>Visualizing Data</em>.
+Electronic version from StatLib,
+<a href="http://lib.stat.cmu.edu/datasets/">http://lib.stat.cmu.edu/datasets/</a>.
+</p>
+<p>Cleaned version from Luke Tierney
+<a href="http://homepage.stat.uiowa.edu/~luke/classes/248/examples/soil">http://homepage.stat.uiowa.edu/~luke/classes/248/examples/soil</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(cleveland.soil)
+dat &lt;- cleveland.soil
+
+# Similar to Cleveland fig 4.64
+## require(latticeExtra)
+## levelplot(resistivity ~ easting + northing, data = dat,
+##           col.regions=RedGrayBlue,
+##           panel=panel.levelplot.points,
+##           aspect=2.4, xlab= "Easting (km)", ylab= "Northing (km)",
+##           main="cleveland")
+
+# 2D loess plot. Cleveland fig 4.68
+sg1 &lt;- expand.grid(easting = seq(.15, 1.410, by = .015),
+                        northing = seq(.150, 3.645, by = .015))
+fit1 &lt;- with(dat,
+                predict(loess(resistivity~easting*northing, span = 0.25,
+                        degree = 2), sg1))
+require(lattice)
+levelplot(fit1 ~ sg1$easting * sg1$northing,
+          col.regions=RedGrayBlue,
+          cuts = 9,
+          aspect=2.4, xlab = "Easting (km)", ylab = "Northing (km)",
+          main="cleveland.soil - 2D smooth of Resistivity")
+
+## Not run: 
+# 3D loess plot with data overlaid
+require(rgl)
+bg3d(color = "white")
+clear3d()
+points3d(dat$easting, dat$northing, dat$resistivity / 100,
+         col = rep("gray50", nrow(dat)))
+surface3d(seq(.15, 1.410, by = .015),seq(.150, 3.645, by = .015),
+          fit1/100, alpha=0.9, col=rep("wheat", length(fit1)),
+          front="fill", back="fill")
+
+## End(Not run)
+</pre>
+
+
+</body></html>

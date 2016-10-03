@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hemoglobin Levels in High Altitude Populations</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Hemoglobin"><tr><td>Hemoglobin</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Hemoglobin Levels in High Altitude Populations</h2>
+
+<h3>Description</h3>
+
+<p>Relative rates of hemoglobin concentration in four populations of humans
+living at different altitudes.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 40 observations on the following 3 variables.
+</p>
+ <dl>
+<dt>hemoglobin</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>group</dt><dd><p>a factor with levels: <code>Andes</code>, <code>Ethiopia</code>,
+<code>Tibet</code>, and <code>USA</code></p>
+</dd> <dt>relative.frequency</dt><dd><p>a numeric
+vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p><em>inferred from</em> Beall, C.M., M.J. Decker, G.M. Bittenham, I.
+Kushner, A. Gebremedhin, K.P. Strohl. 2002. An Ethiopian pattern of human
+adaptation to high-altitude hypoxia. <em>Proceeding of the National
+Academy of Sciences (USA)</em> 99(26): 17215-17218.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC139295/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC139295/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Hemoglobin)
+
+xyplot(relative.frequency ~ hemoglobin | group, Hemoglobin,
+  type ='h', lwd=4, layout=c(1,4))
+</pre>
+
+
+</body></html>

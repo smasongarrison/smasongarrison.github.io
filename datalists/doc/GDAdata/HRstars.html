@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Star data useful for drawing a Hertzsprung-Russell diagram.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for HRstars"><tr><td>HRstars</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Star data useful for drawing a Hertzsprung-Russell diagram.
+</h2>
+
+<h3>Description</h3>
+
+<p>Hertzsprung-Russell diagrams plot star luminosity (brightness) against temperature (colour).  The first one was drawn just over 100 years ago.  The dataset is the Yale Trigonometric Parallax Dataset and this version can be found on the webpage of the Astronomy Department of Case Western Reserve University.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(HRstars)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 6220 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>ID</code></dt><dd><p>star ID number</p>
+</dd>
+<dt><code>V</code></dt><dd><p>apparent V magnitude</p>
+</dd>
+<dt><code>BV</code></dt><dd><p>observed B-V color</p>
+</dd>
+<dt><code>Para</code></dt><dd><p>observed parallax (in arcsec)</p>
+</dd>
+<dt><code>Uncert</code></dt><dd><p>uncertainty in parallax (in milliarcsec)</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><a href="http://burro.astr.cwru.edu/Academics/Astr221/HW/HW5/HW5.html">http://burro.astr.cwru.edu/Academics/Astr221/HW/HW5/HW5.html</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(HRstars, package="GDAdata")
+with(HRstars, hist(BV))
+with(HRstars, hist(V))
+</pre>
+
+
+</body></html>

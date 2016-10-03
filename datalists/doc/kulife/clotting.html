@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Blood clotting for 158 rats</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for clotting"><tr><td>clotting</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Blood clotting for 158 rats</h2>
+
+<h3>Description</h3>
+
+<p>Blood clotting activity (PCA) is measured for 158 Norway rats
+from two locations just before (baseline) and four days after injection of
+an anticoagulant (bromadiolone). Normally this would cause reduced
+blood clotting after 4 days compared to the baseline, but these rats are
+known to possess anticoagulent resistence to varying extent. The purpose
+is to relate anticoagulent resistence to gender and location and perhaps 
+weight. Dose of injection is, however, admistered according to weight and gender.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(clotting)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 158 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>rat</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>locality</code></dt><dd><p>a factor with levels <code>Loc1</code> <code>Loc2</code></p>
+</dd>
+<dt><code>sex</code></dt><dd><p>a factor with levels <code>F</code> <code>M</code></p>
+</dd>
+<dt><code>weight</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>PCA0</code></dt><dd><p>a numeric vector with percent blood clotting activity at baseline</p>
+</dd>
+<dt><code>PCA4</code></dt><dd><p>a numeric vector with percent blood clotting activity on day 4</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Ann-Charlotte Heiberg, project at
+The Royal Veterinary and Agricultural University, 1999. <br />
+Added by Ib M. Skovgaard &lt;ims@life.ku.dk&gt;  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+ data(clotting)
+ dim(clotting)
+ head(clotting)
+ day0= transform(clotting, day=0, pca=PCA0)
+ day4= transform(clotting, day=4, pca=PCA4)
+ day.both= rbind(day0,day4)
+ m1= lm(pca ~ rat + day*locality + day*sex, data=day.both)
+ anova(m1)
+ summary(m1)
+ m2= lm(pca ~ rat + day, data=day.both)
+ anova(m2)
+## Log transformation suggested.
+## Random effect of rat.
+## maybe str(clotting) ; plot(clotting) ...
+</pre>
+
+
+</body></html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dioecy vs. Monomorphism in Plants</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Dioecy"><tr><td>Dioecy</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dioecy vs. Monomorphism in Plants</h2>
+
+<h3>Description</h3>
+
+<p>Number of <code>dioecious</code> and <code>monomorphic</code> taxa among pairs of
+closely related plants.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 28 observations on the following 3 variables.
+</p>
+ <dl>
+<dt>dioecious</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>monomorphic</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>taxon.pair</dt><dd><p>identifier for pair</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Heilbuth, J.C. 2000. Lower species richness in dioecious clades.
+<em>The American Naturalist</em> 156: 221-241.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xyplot(dioecious ~ monomorphic, Dioecy, alpha = 0.65, pch = 16)
+</pre>
+
+
+</body></html>

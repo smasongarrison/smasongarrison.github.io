@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hartigan (1975) Portable Typewriters</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for portable.typewriters"><tr><td>portable.typewriters</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Hartigan (1975) Portable Typewriters </h2>
+
+<h3>Description</h3>
+
+<p>The table contains the features in a collection of portable typewriters.
+This is Table 10.5 in Chapter 10 of Hartigan (1975) on page 186.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(portable.typewriters)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 20 observations on the following 21 variables.
+</p>
+
+<dl>
+<dt><code>model</code></dt><dd><p>a character vector for the typewriter model</p>
+</dd>
+<dt><code>HT</code></dt><dd><p>a numeric vector for the height in inches</p>
+</dd>
+<dt><code>WH</code></dt><dd><p>a numeric vector for the width in inches</p>
+</dd>
+<dt><code>DH</code></dt><dd><p>a numeric vector for the depth in inches</p>
+</dd>
+<dt><code>WT</code></dt><dd><p>a numeric vector for the weight in pounds</p>
+</dd>
+<dt><code>PL</code></dt><dd><p>a numeric vector for the platen length</p>
+</dd>
+<dt><code>KS</code></dt><dd><p>a numeric vector for the number of keys</p>
+</dd>
+<dt><code>PE</code></dt><dd><p>a factor for the pica or elite type with levels <code>1</code></p>
+</dd>
+<dt><code>TA</code></dt><dd><p>a factor for the availability of tabulator with levels <code>0</code> <code>1</code></p>
+</dd>
+<dt><code>TP</code></dt><dd><p>a factor for the availability of touch pressure control with levels <code>0</code> <code>1</code></p>
+</dd>
+<dt><code>PR</code></dt><dd><p>a factor for the availability of platen release with levels <code>0</code> <code>1</code></p>
+</dd>
+<dt><code>HH</code></dt><dd><p>a factor for the availability of horizontal half spacing with levels <code>0</code> <code>1</code></p>
+</dd>
+<dt><code>VH</code></dt><dd><p>a factor for the availability of vertical half spacing with levels <code>0</code> <code>1</code></p>
+</dd>
+<dt><code>PI</code></dt><dd><p>a factor for the availability of page end indicator with levels <code>0</code> <code>1</code></p>
+</dd>
+<dt><code>PG</code></dt><dd><p>a factor for the availability of paper guide with levels <code>0</code> <code>1</code></p>
+</dd>
+<dt><code>PB</code></dt><dd><p>a factor for the availability of paper bail with levels <code>0</code> <code>1</code></p>
+</dd>
+<dt><code>PS</code></dt><dd><p>a factor for the availability of paper support with levels <code>0</code> <code>1</code></p>
+</dd>
+<dt><code>EP</code></dt><dd><p>a factor for the availability of erasure plate with levels <code>0</code> <code>1</code></p>
+</dd>
+<dt><code>TC</code></dt><dd><p>a factor for the availability of two carriage re;eases with levels <code>0</code> <code>1</code></p>
+</dd>
+<dt><code>MR</code></dt><dd><p>a factor for the availability of margin release with levels <code>0</code> <code>1</code></p>
+</dd>
+<dt><code>CL</code></dt><dd><p>a factor for the availability of carriage lock with levels <code>0</code> <code>1</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Hartigan suggests that the triads algorithm be used with this data set.
+The factor variables are binary variables.  If the value is 1, then
+the associated feature is available.  If the value is 0, then
+the associated feature is not available.
+</p>
+
+
+<h3>Source</h3>
+
+<p><em>Consumers' Reports Buying Guide</em> (1967), Consumers' Union, Mount Vernon, NY.
+</p>
+<p>SPAETH2 Cluster Analysis Datasets <a href="http://people.sc.fsu.edu/~jburkardt/datasets/spaeth2/spaeth2.html">http://people.sc.fsu.edu/~jburkardt/datasets/spaeth2/spaeth2.html</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Hartigan, J. A. (1975). <em>Clustering Algorithms</em>, John Wiley, New York.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(portable.typewriters)
+</pre>
+
+
+</body></html>

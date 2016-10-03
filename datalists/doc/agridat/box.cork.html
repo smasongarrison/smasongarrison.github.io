@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Weight of cork samples on four sides of trees</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for box.cork"><tr><td>box.cork</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Weight of cork samples on four sides of trees</h2>
+
+<h3>Description</h3>
+
+<p>The cork datagives the weights of cork borings of the trunk for 28 trees
+on the north (N), east (E), south (S) and west (W) directions.
+</p>
+
+
+<h3>Format</h3>
+
+<p>Data frame with 28 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>tree</code></dt><dd><p>tree number</p>
+</dd>
+<dt><code>N</code></dt><dd><p>weight of cork deposit (centigrams), north direction</p>
+</dd>
+<dt><code>E</code></dt><dd><p>east direction</p>
+</dd>
+<dt><code>S</code></dt><dd><p>south direction</p>
+</dd>
+<dt><code>W</code></dt><dd><p>west direction</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>C.R. Rao (1948) <em>Tests of significance in multivariate analysis</em>. Biometrika, 35, 58-79.
+</p>
+
+
+<h3>References</h3>
+
+<p>K.V. Mardia, J.T. Kent and J.M. Bibby (1979) <em>Multivariate Analysis</em>,
+Academic Press.
+</p>
+<p>Russell D Wolfinger, (1996).
+Heterogeneous Variance: Covariance Structures for Repeated Measures.
+<em>Journal of Agricultural, Biological, and Environmental
+Statistics</em>, 1, 205-230.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(box.cork)
+dat &lt;- box.cork
+
+require(lattice)
+splom(dat[,2:5], pscales=3,
+  prepanel.limits = function(x) c(25,100),
+  main="box.cork", xlab="Cork yield on side of tree",
+  panel=function(x,y,...){
+    panel.splom(x,y,...)
+    panel.abline(0,1,col="gray80")
+})
+
+## Not run: 
+## Each tree is one line
+require(plotrix)
+radial.plot(dat[, 2:5], start=pi/2, rp.type='p', clockwise=TRUE,
+            radial.lim=c(0,100), main="box.cork",
+            lwd=2, labels=c('North','East','South','West'),
+            line.col=rep(c("royalblue","red","#009900","dark orange",
+              "#999999","#a6761d","deep pink"), length=nrow(dat)))
+
+require(reshape2)
+dat$tree &lt;- factor(dat$tree)
+d2 &lt;- melt(dat)
+names(d2) &lt;- c('tree','dir','y')
+
+require(asreml)
+d2 &lt;- d2[order(d2$tree, d2$dir), ]
+
+# Unstructured covariance matrix
+m1 &lt;- asreml(y~dir, data=d2, rcov=~tree:us(dir, init=rep(200,10)))
+## Note: 'rcor' is a personal function to extract the correlation
+## round(rcor(m1)$dir, 2)
+##         N      E      S      W
+##  N 290.41 223.75 288.44 226.27
+##  E 223.75 219.93 229.06 171.37
+##  S 288.44 229.06 350.00 259.54
+##  W 226.27 171.37 259.54 226.00
+
+# Factor Analytic with different specific variances
+# Note: Wolfinger used a common diagonal variance
+m2 &lt;- update(m1, rcov=~tree:facv(dir,1))
+## round(rcor(m2)$dir, 2)
+##        N      E      S      W
+## N 290.42 209.46 291.82 228.44
+## E 209.46 219.95 232.85 182.28
+## S 291.82 232.85 350.00 253.95
+## W 228.44 182.28 253.95 225.99
+
+## End(Not run)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Inbreeding in Wolves</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Wolves"><tr><td>Wolves</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Inbreeding in Wolves</h2>
+
+<h3>Description</h3>
+
+<p>Inbreeding coefficient and the number of pups produced in 24 mated pairs of
+wolves (<em>Canis lupus</em>) from 1983-2002.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 24 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>inbreeding.coefficient</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>pups</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Liberg, O.H., H. Andrén, H.-C. Pedersen, H. Sand, D. Sejberg, P.
+Wabakken, M. Åkesson, and S. Bensch. 2005. Severe inbreeding depression in a
+wild wolf (<em>Canis lupus</em>) population. <em>Biology Letters</em> 1: 17-20.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+Wolves
+xyplot(inbreeding.coefficient ~ jitter(pups, amount=0.15), Wolves)
+</pre>
+
+
+</body></html>

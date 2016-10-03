@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Frequency of Convictions for a Cohort of English Boys</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Convictions"><tr><td>Convictions</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Frequency of Convictions for a Cohort of English Boys</h2>
+
+<h3>Description</h3>
+
+<p>Data on frequency of convictions for a cohort of 395 boys.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 15 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>convictions</dt><dd><p>number of convictions</p>
+</dd>
+<dt>boys</dt><dd><p>number of boys with given number of convictions</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Farrington, D.P. 1994. <em>Cambridge Study in Delinquent
+Development</em> [Great Britain], 1961-1981. 2nd ICPSR ed. Inter-university
+Consortium for Political and Social Research, Ann Arbor, MI.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.icpsr.umich.edu/icpsrweb/NACJD/archive.jsp">http://www.icpsr.umich.edu/icpsrweb/NACJD/archive.jsp</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(Convictions)
+barchart(boys ~ as.factor(convictions), Convictions, horizontal = FALSE, origin=0)
+xyplot( boys ~ convictions, Convictions, type = "h", lwd = 20)
+</pre>
+
+
+</body></html>

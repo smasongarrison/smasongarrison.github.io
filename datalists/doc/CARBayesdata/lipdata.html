@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lip cancer data for Scotland</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for lipdata"><tr><td>lipdata</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Lip cancer data for Scotland
+</h2>
+
+<h3>Description</h3>
+
+<p>These purely spatial data summarise overall lip cancer cases and possible covariate risk factors for the 
+period 1975 to 1986, for 56 districts in Scotland. These data  are used in a 
+worked example in the vignette accompanying the CARBayes package.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(lipdata)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data.frame object containing 56 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>observed</code></dt><dd><p>The number of recorded lip cancer cases in each 
+district.</p>
+</dd>
+<dt><code>expected</code></dt><dd><p>The expected number of lip cancer cases in each 
+district computed using indirect standardisation using Scotland-wide disease 
+rates.</p>
+</dd>
+<dt><code>pcaff</code></dt><dd><p>The percetage of the workforce in each district 
+employed in agriculture, fishing and forestry.</p>
+</dd>
+<dt><code>latitude</code></dt><dd><p>The latitude of the centroid of each district.</p>
+</dd>
+<dt><code>longitude</code></dt><dd><p>The longitude of the centroid of each district.</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(lipdata)
+</pre>
+
+
+</body></html>

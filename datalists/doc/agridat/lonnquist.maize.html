@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Half diallel of maize</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for lonnquist.maize"><tr><td>lonnquist.maize</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Half diallel of maize
+</h2>
+
+<h3>Description</h3>
+
+<p>Half diallel of maize
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(lonnquist.maize)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 78 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>p1</code></dt><dd><p>parent 1 factor</p>
+</dd>
+<dt><code>p2</code></dt><dd><p>parent 2 factor</p>
+</dd>
+<dt><code>yield</code></dt><dd><p>yield</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Twelve hybrids were selfed/crossed in a half-diallel design planted in
+3 reps at 2 locations in 2 years.  The data here are means adjusted
+for block effects.
+</p>
+
+
+<h3>Source</h3>
+
+<p>J. H. Lonnquist, C. O. Gardner. (1961)
+Heterosis in Intervarietal Crosses in Maize and Its Implication in
+Breeding Procedures.
+<em>Crop Science</em>, 1, 179-183.  Table 1.
+</p>
+
+
+<h3>References</h3>
+
+<p>Mohring, Melchinger, Piepho. (2011).
+REML-Based Diallel Analysis.
+<em>Crop Science</em>, 51, 470-478.
+</p>
+<p>C. O. Gardner and S. A. Eberhart. 1966.
+Analysis and Interpretation of the Variety Cross Diallel and Related
+Populations. <em>Biometrics</em>, 22, 439-452.
+http://www.jstor.org/stable/2528181
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(lonnquist.maize)
+dat &lt;- lonnquist.maize
+dat &lt;- transform(dat,
+                 p1=factor(p1,
+                   levels=c("C","L","M","H","G","P","B","RM","N","K","R2","K2")),
+                 p2=factor(p2,
+                   levels=c("C","L","M","H","G","P","B","RM","N","K","R2","K2")))
+require(lattice)
+levelplot(yield ~ p1*p2, dat, col.regions=RedGrayBlue,
+          main="lonnquist.maize - yield of diallel cross")
+
+# Calculate the F1 means in Lonnquist, table 1
+require(reshape2)
+mat &lt;- acast(dat, p1~p2)
+mat[upper.tri(mat)] &lt;- t(mat)[upper.tri(mat)] # make symmetric
+diag(mat) &lt;- NA
+round(rowMeans(mat, na.rm=TRUE),1)
+##    C     L     M     H     G     P     B    RM     N     K    R2    K2
+## 94.8  89.2  95.0  96.4  95.3  95.2  97.3  93.7  95.0  94.0  98.9 102.4
+
+
+## Not run: 
+# Mohring 2011 used 6 varieties to calculate GCA &amp; SCA
+# Matches Table 3, column 2
+d2 &lt;- subset(dat, p1 
+             p2 
+d2 &lt;- droplevels(d2)
+require(asreml)
+m2 &lt;- asreml(yield~ 1, data=d2, random = ~ p1 + and(p2))
+require(lucid)
+vc(m2)
+##     effect component std.error z.ratio      con
+##  p1!p1.var     3.865     3.774     1   Positive
+## R!variance    15.93      5.817     2.7 Positive
+
+
+# Calculate GCA effects
+m3 &lt;- asreml(yield~ p1 + and(p2), data=d2)
+coef(m3)$fixed-1.462
+# Matches Gardner 1966, Table 5, Griffing method
+
+
+## End(Not run)
+
+</pre>
+
+
+</body></html>

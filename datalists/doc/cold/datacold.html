@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for datacold"><tr><td>datacold</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Data</h2>
+
+<h3>Description</h3>
+
+<p>This example is an artificial data</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(datacold)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 650 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>Subject</code></dt><dd><p>identifies de number of the individual profile.This vector contains observations of 50 individual profiles.</p>
+</dd>
+<dt><code>Treatment</code></dt><dd><p>a factor with levels <code>0</code> <code>1</code>.</p>
+</dd>
+<dt><code>Time</code></dt><dd><p>a numeric vector that identifies the number of the time points observed.</p>
+</dd>
+<dt><code>z</code></dt><dd><p>a numeric vector representing the response variable.</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(datacold)
+
+mod0&lt;- cold(z~Time*Treatment, data=datacold, time="Time", 
+id="Subject", aggregate=Treatment, dependence="ind")
+summary (mod0)
+
+modI&lt;- cold(z~Time*Treatment, data=datacold, time="Time", 
+id="Subject", aggregate=Treatment, dependence="AR1")
+summary (modI)
+
+anova(mod0,modI)
+
+plot(modI,which=1,xlab="Time (weeks)",ylab="Count",main="Model AR1")
+</pre>
+
+
+</body></html>

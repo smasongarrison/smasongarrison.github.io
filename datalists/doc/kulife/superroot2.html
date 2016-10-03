@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Gene expression data from two-color dye-swap experiment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for superroot2"><tr><td>superroot2</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Gene expression data from two-color dye-swap experiment</h2>
+
+<h3>Description</h3>
+
+<p>Gene expression levels from two-color dye-swap experiment on 6
+microarrays. Arrays 1 and 2 represent the first biological sample (ie,
+the first dye swap), 3 and 4 the second, and arrays 5 and 6 the third.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(superroot2)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 258000 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>color</code></dt><dd><p>a factor with levels <code>green</code> <code>red</code>
+representing the dye used for the gene expression</p>
+</dd>
+<dt><code>array</code></dt><dd><p>a factor with levels <code>1</code> <code>2</code> <code>3</code>
+<code>4</code> <code>5</code> <code>6</code> corresponding to the 6 arrays</p>
+</dd>
+<dt><code>gene</code></dt><dd><p>a factor with 21500 levels representing the genes
+on the arrays</p>
+</dd>
+<dt><code>plant</code></dt><dd><p>a factor with levels <code>rnt</code> <code>wt</code> for
+the two types of plants: runts and wild type</p>
+</dd>
+<dt><code>signal</code></dt><dd><p>a numeric vector with the gene expression level
+(normalized but not log transformed)</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Data provided by Soren Bak &lt;bak@life.ku.dk&gt;. <br />
+Added by Claus Ekstrom &lt;ekstrom@life.ku.dk&gt; 
+</p>
+
+
+<h3>References</h3>
+
+<p>Morant, M. et al. (2010). Metabolomic, Transcriptional, Hormonal and
+Signaling Cross-Talk in Superroot2. <em>Molecular Plant</em>. 3, p.192&ndash;211.  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(superroot2)
+# Select one gene
+g1 &lt;- superroot2[superroot2$gene=="AT2G24000.1",]
+model &lt;- lm(log(signal) ~ plant + color + array, data=g1)
+summary(model)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rice strip-plot experiment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gomez.stripplot"><tr><td>gomez.stripplot</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Rice strip-plot experiment
+</h2>
+
+<h3>Description</h3>
+
+<p>A strip-plot experiment with three reps, variety as the horizontal
+strip and nitrogen fertilizer as the vertical strip.
+</p>
+
+
+<h3>Format</h3>
+
+
+<dl>
+<dt><code>yield</code></dt><dd><p>Grain yield in kg/ha</p>
+</dd>
+<dt><code>rep</code></dt><dd><p>Rep</p>
+</dd>
+<dt><code>nitro</code></dt><dd><p>Nitrogen fertilizer in kg/ha</p>
+</dd>
+<dt><code>gen</code></dt><dd><p>Rice variety</p>
+</dd>
+<dt><code>x</code></dt><dd><p>Ordinate in the field</p>
+</dd>
+<dt><code>y</code></dt><dd><p>Ordinate in the field</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Note, this is a subset of the the 'gomez.stripsplitplot' data.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Gomez, K.A. and Gomez, A.A.. 1984,
+<em>Statistical Procedures for Agricultural Research</em>.
+Wiley-Interscience. Page 110.
+</p>
+<p>Used with permission of Kwanchai Gomez.
+</p>
+
+
+<h3>References</h3>
+
+<p>Jan Gertheiss (2014).
+ANOVA for Factors With Ordered Levels.
+<em>J Agric Biological Environmental Stat</em>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(gomez.stripplot)
+dat &lt;- gomez.stripplot
+
+# Gomez figure 3.7
+desplot(gen~x*y, data=dat, out1=rep, num=nitro, cex=1,
+        main="gomez.stripplot")
+
+# Gertheiss figure 1
+# dotplot(factor(nitro) ~ yield|gen, data=dat)
+
+# Gomez table 3.12
+tapply(dat$yield, dat$rep, sum)
+tapply(dat$yield, dat$gen, sum)
+tapply(dat$yield, dat$nitro, sum)
+
+# Gomez table 3.15.  Anova table for strip-plot
+dat &lt;- transform(dat, nf=factor(nitro))
+m1 &lt;- aov(yield ~ gen * nf + Error(rep + rep:gen + rep:nf), data=dat)
+summary(m1)
+
+</pre>
+
+
+</body></html>

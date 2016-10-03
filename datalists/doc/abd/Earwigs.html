@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Earwig Density and Forceps</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Earwigs"><tr><td>Earwigs</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Earwig Density and Forceps</h2>
+
+<h3>Description</h3>
+
+<p>Earwig (<em>Forficula auricularia</em>) density and the proportion of trapped
+earwigs with abdominal forceps (used for fighting and courtship).
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 7 observations on the following 2 variables.
+</p>
+ <dl>
+<dt>density</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>proportion.forceps</dt><dd><p>a numeric vector</p>
+</dd> </dl>
+
+
+<h3>Source</h3>
+
+<p>Tomkins, J.L.  and G.S. Brown. 2004. Population density drives the
+local evolution of a threshold dimorphism. <em>Nature</em> 431: 1099-1103.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/Forficula_auricularia">http://en.wikipedia.org/wiki/Forficula_auricularia</a>
+</p>
+<p><a href="http://www.arkive.org/common-european-earwig/forficula-auricularia/">http://www.arkive.org/common-european-earwig/forficula-auricularia/</a>
+</p>
+<p><a href="http://eol.org/pages/473785">http://eol.org/pages/473785</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xyplot(proportion.forceps ~ density, data=Earwigs, type='h', lwd=6)
+</pre>
+
+
+</body></html>
