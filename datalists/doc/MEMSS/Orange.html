@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Growth of orange trees</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Orange"><tr><td>Orange</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Growth of orange trees</h2>
+
+<h3>Description</h3>
+
+<p>The <code>Orange</code> data frame has 35 rows and 3 columns of records of
+the growth of orange trees.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>Orange</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>Tree</dt><dd>
+<p>a factor indicating the tree on which the measurement is
+made.
+</p>
+</dd>
+<dt>age</dt><dd>
+<p>a numeric vector giving the age of the tree (days since 1968/12/31)
+</p>
+</dd>
+<dt>circumference</dt><dd>
+<p>a numeric vector of trunk circumferences (mm).  This is probably
+&ldquo;circumference at breast height&rdquo;, a standard measurement in
+forestry.
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Draper, N. R. and Smith, H. (1998), <em>Applied Regression Analysis
+(3rd ed)</em>, Wiley (exercise 24.N).
+</p>
+<p>Pinheiro, J. C. and Bates, D. M. (2000) <em>Mixed-effects Models
+in S and S-PLUS</em>, Springer.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(lattice)
+xyplot(circumference ~ age, Orange, groups = Tree, type = c("g", "b"),
+       auto.key = list(space = "right", lines = TRUE), aspect = "xy",
+       xlab = "Age (days since 1968/12/31)", ylab = "Circumference (mm)")
+## Not run: 
+m1 &lt;- nlmer(circumference ~ SSlogis(age, Asym, xmid, scal) ~ Asym|Tree,
+            Orange, verbose = TRUE,
+            start = c(Asym = 190, xmid = 730, scal = 350))
+.Call("mer_optimize", m1, 1L, 1L, PACKAGE = "lme4")
+print(m1)
+ranef(m1)
+
+## End(Not run)
+</pre>
+
+
+</body></html>

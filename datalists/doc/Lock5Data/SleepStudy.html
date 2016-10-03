@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Sleep Study</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for SleepStudy"><tr><td>SleepStudy</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Sleep Study</h2>
+
+<h3>Description</h3>
+
+<p>Data from a study of sleep patterns for college students. 
+</p>
+
+
+<h3>Format</h3>
+
+<p>A dataset with 253 observations on the following 27 variables.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    <code>Gender</code> </td><td style="text-align: left;"> 1=male, 0=female</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>ClassYear</code> </td><td style="text-align: left;"> Year in school, 1=first year, ..., 4=senior</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>LarkOwl</code> </td><td style="text-align: left;"> Early riser or night owl?  <code>Lark</code>, <code>Neither</code>, or <code>Owl</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>NumEarlyClass</code> </td><td style="text-align: left;"> Number of classes per week before 9 am</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>EarlyClass</code> </td><td style="text-align: left;"> Indicator for any early classes</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>GPA</code> </td><td style="text-align: left;"> Grade point average (0-4 scale)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>ClassesMissed</code> </td><td style="text-align: left;"> Number of classes missed in a semester</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>CognitionZscore</code> </td><td style="text-align: left;"> Z-score on a test of cognitive skills</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>PoorSleepQuality</code> </td><td style="text-align: left;"> Measure of sleep quality (higher values are poorer sleep)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>DepressionScore</code> </td><td style="text-align: left;"> Measure of degree of depression</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>AnxietyScore</code> </td><td style="text-align: left;"> Measure of amount of anxiety</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>StressScore</code> </td><td style="text-align: left;"> Measure of amount of stress</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>DepressionStatus</code> </td><td style="text-align: left;"> Coded depression score: <code>normal</code>, <code>moderate</code>, or <code>severe</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>AnxietyStatus</code> </td><td style="text-align: left;"> Coded anxiety score: <code>normal</code>, <code>moderate</code>, or <code>severe</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Stress</code> </td><td style="text-align: left;"> Coded stress score: <code>normal</code> or  <code>high</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>DASScore</code> </td><td style="text-align: left;"> Combined score for depression, anxiety and stress</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Happiness</code> </td><td style="text-align: left;"> Measure of degree of happiness</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>AlcoholUse</code> </td><td style="text-align: left;"> Self-reported: <code>Abstain</code>,  <code>Light</code>, <code>Moderate</code>, or <code>Heavy</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Drinks</code> </td><td style="text-align: left;"> Number of alcoholic drinks per week</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>WeekdayBed</code> </td><td style="text-align: left;"> Average weekday bedtime (24.0=midnight)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>WeekdayRise</code> </td><td style="text-align: left;"> Average weekday rise time (8.0=8 am)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>WeekdaySleep</code> </td><td style="text-align: left;"> Average hours of sleep on weekdays</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>WeekendBed</code> </td><td style="text-align: left;"> Average weekend bedtime (24.0=midnight)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>WeekendRise</code> </td><td style="text-align: left;"> Average weekend rise time (8.0=8 am)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>WeekendSleep</code> </td><td style="text-align: left;"> Average weekend bedtime (24.0=midnight)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>AverageSleep</code> </td><td style="text-align: left;"> Average hours of sleep for all days</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>AllNighter</code> </td><td style="text-align: left;"> Had an all-nighter this semester?  1=yes, 0=no</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
+
+</table>
+
+
+
+<h3>Details</h3>
+
+<p>The data were obtained from a sample of students who did skills tests to measure cognitive function, 
+completed a survey that asked many questions about attitudes and habits, 
+and kept a sleep diary to record time and quality of sleep over a two week period.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Onyper, S., Thacher, P., Gilbert, J., Gradess, S., &quot;Class Start Times, Sleep, and Academic Performance in College: 
+A Path Analysis,&quot; April 2012; 29(3): 318-335.  Thanks to the authors for supplying the data.
+</p>
+
+
+</body></html>

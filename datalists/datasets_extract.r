@@ -5,7 +5,7 @@ if (!require("R2HTML")) install.packages('R2HTML')
 
 
 
-packages=c("titanic","NutrientData","abd","adegenet","agridat","aplore3","aprean3","archdata","astrodatR","BaM","BayesDA","binford","CARBayesdata","cat","cluster.datasets","clusternomics","cold","cshapes","faraway","favnums","FAwR","fishkirkko2015","GANPAdata","gapminder","GDAdata","g.data","hqmisc","ig.vancouver.2014.topcolour","insuranceData","isdals","kulife")
+packages=c("LeLogicielR","Lock5Data","moonBook","mosaicData","MEMSS")
 
 unload_Namespaces<- function(try=1,loadedOnly=TRUE,otherPkgs=TRUE){
   ns<-NULL
