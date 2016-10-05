@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Regional Classification Table</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for countryRegions"><tr><td>countryRegions</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Regional Classification Table</h2>
+
+<h3>Description</h3>
+
+<p>A number of regional classifications exist, e.g. SRES, Stern, etc. This
+table can be used to find which grouping a country belongs to, given its
+country code. A variety of different codes or groupings can be used.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with the following variables.  </p>
+
+<dl>
+<dt>ISO3</dt><dd><p>ISO 3 letter country code</p>
+</dd> <dt>ADMIN</dt><dd><p>country
+name</p>
+</dd> <dt>REGION</dt><dd><p>7 region continent classification</p>
+</dd>
+<dt>continent</dt><dd><p>6 continents classification</p>
+</dd>
+<dt>GEO3major</dt><dd><p>Global Environment Outlook GEO3 major region names</p>
+</dd>
+<dt>GEO3</dt><dd><p>Global Environment Outlook GEO3 major region names</p>
+</dd>
+<dt>IMAGE24</dt><dd><p>Image24 region names</p>
+</dd> <dt>GLOCAF</dt><dd><p>GLOCAF
+region names</p>
+</dd> <dt>Stern</dt><dd><p>Stern report region names</p>
+</dd>
+<dt>SRESmajor</dt><dd><p>SRES major region names</p>
+</dd> <dt>SRES</dt><dd><p>SRES
+region names</p>
+</dd> <dt>GBD</dt><dd><p>Global Burden of Disease GBD region names</p>
+</dd>
+<dt>AVOIDnumeric</dt><dd><p>numeric codes for AVOID regions</p>
+</dd>
+<dt>AVOIDname</dt><dd><p>AVOID regions</p>
+</dd> <dt>LDC</dt><dd><p>UN Least
+Developed Countries</p>
+</dd> <dt>SID</dt><dd><p>UN Small Island Developing states</p>
+</dd>
+<dt>LLDC</dt><dd><p>UN Landlocked Developing Countries</p>
+</dd> </dl>
+
+
+<h3>Details</h3>
+
+<p>Joined onto vector country maps. Used by <code>country2Region</code> and
+<code>mapByRegion</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(countryRegions,envir=environment(),package="rworldmap")
+str(countryRegions)
+
+#joining example data onto the regional classifications
+data(countryExData,envir=environment(),package="rworldmap")
+dF &lt;- merge(countryExData,countryRegions,by.x='ISO3V10',by.y='ISO3')
+#plotting ENVHEALTH for Least Developed Countries (LDC) against others
+#plot( dF$ENVHEALTH ~ dF$LDC)
+#points( y=dF$ENVHEALTH, x=dF$LDC)
+
+
+</pre>
+
+
+</body></html>

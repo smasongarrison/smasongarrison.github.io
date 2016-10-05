@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Genotype-environment data set with missing values</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for geno"><tr><td>geno</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Genotype-environment data set with missing values
+</h2>
+
+<h3>Description</h3>
+
+<p>A data-frame with 16 rows corresponding to genotypes (triticale lines) and 10 columns corresponding to different environments where the genotypes were sown. 
+Each cell of the data-frame corresponds to the grain yield (kilograms per hectare) for one genotype in an environment.  
+The first six genotypes correspond to the so-called &ldquo;complete&rdquo; type, while the next eight were of the &ldquo;substituted&rdquo; type and two 
+check genotypes were included. Such data sets are often incomplete. 
+Indeed, it frequently happens that all the varieties are not assessed on all the environments.  
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data-frame with 16 rows and 10 columns</p>
+
+
+<h3>Source</h3>
+
+<p>Royo C, Rodriguez A, Romagosa I (1993). Differential adaptation of complete and substitute
+triticale. Plant Breeding, 111, 113- 119.</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(geno)
+ncomp &lt;- estim_ncpPCA(geno)
+res.imp &lt;- imputePCA(geno, ncp= ncomp$ncp)
+res.pca &lt;- PCA(res.imp$completeObs)
+
+## End(Not run)
+</pre>
+
+
+</body></html>

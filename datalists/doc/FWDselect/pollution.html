@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Emission of SO2. Pollution incident data.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for pollution"><tr><td>pollution</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Emission of SO2. Pollution incident data.</h2>
+
+<h3>Description</h3>
+
+<p>Registered values of SO2 in different temporal instant. Each column of the
+dataset corresponds with the value obtained by the series of bi-hourly means
+for SO2 in the instant <i>t</i> (5-min temporal instant).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+pollution
+</pre>
+
+
+<h3>Format</h3>
+
+<p><code>pollution</code> is a data frame with 19 variables (columns).
+</p>
+
+<dl>
+<dt>Y</dt><dd><p>response variable, registered values of SO2 at a
+specific temporal instant, in  microg/m3N. This is the value that we want to
+predict.</p>
+</dd>
+<dt>In0</dt><dd><p>registered values of SO2 at a specific temporal
+instant, in this case instant zero, in  microg/m3N.</p>
+</dd>
+<dt>In1</dt><dd><p>registered
+values of SO2 at a specific temporal instant, in this case 5-min instant
+temporal before, in  microg/m3N.</p>
+</dd>
+<dt>In2</dt><dd><p>registered values of SO2 at a
+specific temporal instant, in this case 10-min instant temporal before, in
+microg/m3N.</p>
+</dd>
+</dl>
+<p>...
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(pollution)
+head(pollution)
+
+</pre>
+
+
+</body></html>

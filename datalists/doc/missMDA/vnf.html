@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Questionnaire done by 1232 individuals who answered 14...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for vnf"><tr><td>vnf</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Questionnaire done by 1232 individuals who answered 14 questions
+</h2>
+
+<h3>Description</h3>
+
+<p>A user satisfaction survey of pleasure craft operators on the &ldquo;Canal des Deux Mers&rdquo;, located in South of France, was carried out by the public corporation &ldquo;Voies Navigables de France&rdquo; responsible for managing and developing the largest network of navigable waterways in Europe. Some values are missing.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(vnf)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1232 observations on 14 categorical variables.
+</p>
+
+
+<h3>References</h3>
+
+<p>Josse, J., Chavent, M., Liquet, B. and Husson, F. (2010). Handling missing values with Regularized Iterative Multiple Correspondence Analysis, Journal of Classification, 29 (1), pp. 91-116.</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(vnf)
+tab.disj.impute &lt;- imputeMCA(vnf, ncp=4)$tab.disj
+require(FactoMineR)
+res.mca &lt;- MCA(vnf,tab.disj=tab.disj.impute)
+
+## End(Not run)
+</pre>
+
+
+</body></html>

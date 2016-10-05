@@ -4,9 +4,16 @@ if (!require("plyr")) install.packages('plyr')
 if (!require("R2HTML")) install.packages('R2HTML')
 
 
+### Download cranlog, which gives list of datasets
+#download.file("http://cran-logs.rstudio.com/2016/2016-10-01.csv.gz","2016-10-01.csv.gz")
+#cranlog <- read.csv("2016-10-01.csv.gz", stringsAsFactors=FALSE)
+#packages<-unique(cranlog$package[cranlog$r_version=="3.3.1"])
+#write.csv(packages,"allpackages_2016-10-01.csv")
 
-packages=c("LeLogicielR","Lock5Data","moonBook","mosaicData","MEMSS")
+packages<-read.csv("allpackages_2016-10-01.csv", stringsAsFactors=FALSE)[num:(num+j),2]
 
+
+#########################################
 unload_Namespaces<- function(try=1,loadedOnly=TRUE,otherPkgs=TRUE){
   ns<-NULL
   if(loadedOnly){

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Diabetes data.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for diabetes"><tr><td>diabetes</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Diabetes data.</h2>
+
+<h3>Description</h3>
+
+<p>The diabetes data is a data frame with 11 variables and 442 measurements.
+These are the data used in the Efron et al. (2004) paper. The data has been
+standardized to have unit L2 norm in each column and zero mean.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+diabetes
+</pre>
+
+
+<h3>Format</h3>
+
+<p><code>diabetes</code> is a data frame with 11 variables (columns).
+The first column of the data frame contains the response variable
+(<code>diabetes$y</code>) which is a quantitative measure of disease progression
+one year after baseline. The rest of the columns contain the measurements of
+the ten explanatory variables (age, sex, body mass index, average blood
+pressure and six blood serum registers) obtained from each of the 442
+diabetes patients.</p>
+
+
+<h3>Source</h3>
+
+<p>The orginal data are available in the lars package,
+see http://cran.r-project.org/web/packages/lars/.
+</p>
+
+
+<h3>References</h3>
+
+<p>Efron, B., Hastie, T., Johnstone, I. and Tibshirani, R. (2004).
+Least angle regression (with discussion). Annals of Statistics, 32:407&ndash;499.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(FWDselect)
+data(diabetes)
+head(diabetes)
+
+</pre>
+
+
+</body></html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Sensory description of 12 orange juices by 8 attributes.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for orange"><tr><td>orange</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Sensory description of 12 orange juices by 8 attributes.
+</h2>
+
+<h3>Description</h3>
+
+<p>Sensory description of 12 orange juices by 8 attributes. Some values are missing.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(orange)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 12 rows and 8 columns. Rows represent the different orange juices,
+columns represent the attributes.
+</p>
+
+
+<h3>Details</h3>
+
+<p>A sensory data frame.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Francois Husson, Agrocampus Rennes
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(orange)
+nb &lt;- estim_ncpPCA(orange,ncp.min=0,ncp.max=5,method.cv="Kfold",nbsim=20,pNA=0.05)
+res.comp &lt;- imputePCA(orange,ncp=nb$ncp)
+require(FactoMineR)
+res.pca &lt;- PCA(res.comp$completeObs)
+resMI &lt;- MIPCA(orange,ncp=nb$ncp)
+plot(resMI)
+
+## End(Not run)
+</pre>
+
+
+</body></html>

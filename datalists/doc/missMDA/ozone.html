@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Daily measurements of meteorological variables and ozone...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ozone"><tr><td>ozone</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Daily measurements of meteorological variables and ozone concentration
+</h2>
+
+<h3>Description</h3>
+
+<p>This dataset contains 112 daily measurements of meteorological variables (wind speed, temperature, rainfall, etc.) and ozone concentration recorded in Rennes (France) during the summer 2001. There are 11 continuous variables and 2 categorical variables with 2 or 4 levels. Some values are missing.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ozone)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 112 observations on 13 variables.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Cornillon, P.-A., Guyader, A., Husson, F., Jégou, N., Josse, J., Kloareg, M., Matzner-Lober, E., Rouvière, L., (2012). R for Statistics. Chapman &amp; Hall/CRC Computer Science &amp; Data Analysis, Rennes.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(ozone)
+res.comp &lt;- imputeFAMD(ozone, ncp=3)
+require(FactoMineR)
+res.afdm &lt;- FAMD(ozone,tab.comp=res.comp$tab.disj)
+
+## End(Not run)
+</pre>
+
+
+</body></html>

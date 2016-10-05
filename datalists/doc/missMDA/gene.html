@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Gene expression</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gene"><tr><td>gene</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Gene expression
+</h2>
+
+<h3>Description</h3>
+
+<p>A data frame with 53 brain tumors of 4 different types defined by the standard World Health 
+Organization (WHO) classification (O, oligodendrogliomas; A, astrocytomas; OA, mixed oligo-astrocytomas 
+and GBM, glioblastomas)  are described by information at the transcriptome level with expression data 
+(356 continuous variables for microarrays) and at the genome level (76 continuous variables for CGH data) as illustrated.
+10 rows are missing for the expression data.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data-frame with 53 rows and 432 continuous variables</p>
+
+
+<h3>Source</h3>
+
+<p>de Tayrac M, Lê S, Aubry M, Mosser J, Husson F. (2009). Simultaneous analysis of distinct Omics data sets with integration of biological knowledge: Multiple Factor Analysis approach. BMC Genomics, 10.</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(gene)
+res.impute &lt;- imputeMFA(gene[,-1], group = c(76,356), 
+    type = rep("s",2), ncp = 2) 
+res.mfa &lt;- MFA(cbind.data.frame(gene[,1], res.impute$completeObs), 
+      group = c(1,76,356), type=c("n",rep("s",2)), 
+	  name.group = c("WHO","CGH","expr"), num.group.sup = 1)
+plot(res.mfa, habillage = 1, lab.ind = FALSE)
+plot(res.mfa, habillage = "group", invisible = "ind", partial = "all")
+plot(res.mfa, habillage = "group", lab.ind = FALSE, partial = "all")
+plot(res.mfa, choix = "var", habillage = "group", lab.var = FALSE)
+plot(res.mfa, choix = "group", habillage = "group")
+
+## End(Not run)
+</pre>
+
+
+</body></html>

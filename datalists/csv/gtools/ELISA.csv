@@ -1,0 +1,505 @@
+"","PlateDay","Read","Description","Concentration","Signal"
+"1","Plate 1 (Day 1)","1","Standard",500,2.751
+"2","Plate 1 (Day 1)","1","Standard",500,2.588
+"3","Plate 1 (Day 1)","1","Standard",200,1.38
+"4","Plate 1 (Day 1)","1","Standard",200,1.351
+"5","Plate 1 (Day 1)","1","Standard",80,0.713
+"6","Plate 1 (Day 1)","1","Standard",80,0.746
+"7","Plate 1 (Day 1)","1","Standard",32,0.462
+"8","Plate 1 (Day 1)","1","Standard",32,0.466
+"9","Plate 1 (Day 1)","1","Standard",12.8,0.375
+"10","Plate 1 (Day 1)","1","Standard",12.8,0.356
+"11","Plate 1 (Day 1)","1","Standard",5.12,0.335
+"12","Plate 1 (Day 1)","1","Standard",5.12,0.335
+"13","Plate 1 (Day 1)","1","Standard",2.048,0.318
+"14","Plate 1 (Day 1)","1","Standard",2.048,0.287
+"15","Plate 1 (Day 1)","1","BLANK",0,0.284
+"16","Plate 1 (Day 1)","1","BLANK",0,0.295
+"17","Plate 1 (Day 1)","1","Quality Control Samples",312.5,1.904
+"18","Plate 1 (Day 1)","1","Quality Control Samples",312.5,1.968
+"19","Plate 1 (Day 1)","1","Quality Control Samples",156.25,1.008
+"20","Plate 1 (Day 1)","1","Quality Control Samples",156.25,1.068
+"21","Plate 1 (Day 1)","1","Quality Control Samples",78.125,0.656
+"22","Plate 1 (Day 1)","1","Quality Control Samples",78.125,0.673
+"23","Plate 1 (Day 1)","1","Quality Control Samples",39.1,0.479
+"24","Plate 1 (Day 1)","1","Quality Control Samples",39.1,0.503
+"25","Plate 1 (Day 1)","1","Quality Control Samples",19.5,0.397
+"26","Plate 1 (Day 1)","1","Quality Control Samples",19.5,0.391
+"27","Plate 1 (Day 1)","1","Quality Control Samples",13,0.358
+"28","Plate 1 (Day 1)","1","Quality Control Samples",13,0.343
+"29","Plate 1 (Day 1)","1","Quality Control Samples",9.75,0.338
+"30","Plate 1 (Day 1)","1","Quality Control Samples",9.75,0.318
+"31","Plate 1 (Day 1)","1","Patient 1",NA,0.67
+"32","Plate 1 (Day 1)","1","Patient 1",NA,0.601
+"33","Plate 1 (Day 1)","1","Patient 2",NA,0.717
+"34","Plate 1 (Day 1)","1","Patient 2",NA,0.657
+"35","Plate 1 (Day 1)","1","Patient 3",NA,0.745
+"36","Plate 1 (Day 1)","1","Patient 3",NA,0.705
+"37","Plate 1 (Day 1)","1","Patient 4",NA,1.064
+"38","Plate 1 (Day 1)","1","Patient 4",NA,1.018
+"39","Plate 1 (Day 1)","1","Patient 5",NA,0.621
+"40","Plate 1 (Day 1)","1","Patient 5",NA,0.658
+"41","Plate 1 (Day 1)","1","Patient 6",NA,0.491
+"42","Plate 1 (Day 1)","1","Patient 6",NA,0.488
+"43","Plate 1 (Day 1)","2","Standard",500,2.756
+"44","Plate 1 (Day 1)","2","Standard",500,2.577
+"45","Plate 1 (Day 1)","2","Standard",200,1.391
+"46","Plate 1 (Day 1)","2","Standard",200,1.35
+"47","Plate 1 (Day 1)","2","Standard",80,0.715
+"48","Plate 1 (Day 1)","2","Standard",80,0.749
+"49","Plate 1 (Day 1)","2","Standard",32,0.461
+"50","Plate 1 (Day 1)","2","Standard",32,0.468
+"51","Plate 1 (Day 1)","2","Standard",12.8,0.375
+"52","Plate 1 (Day 1)","2","Standard",12.8,0.359
+"53","Plate 1 (Day 1)","2","Standard",5.12,0.337
+"54","Plate 1 (Day 1)","2","Standard",5.12,0.336
+"55","Plate 1 (Day 1)","2","Standard",2.048,0.319
+"56","Plate 1 (Day 1)","2","Standard",2.048,0.289
+"57","Plate 1 (Day 1)","2","BLANK",0,0.285
+"58","Plate 1 (Day 1)","2","BLANK",0,0.295
+"59","Plate 1 (Day 1)","2","Quality Control Samples",312.5,1.913
+"60","Plate 1 (Day 1)","2","Quality Control Samples",312.5,1.962
+"61","Plate 1 (Day 1)","2","Quality Control Samples",156.25,1.01
+"62","Plate 1 (Day 1)","2","Quality Control Samples",156.25,1.067
+"63","Plate 1 (Day 1)","2","Quality Control Samples",78.125,0.658
+"64","Plate 1 (Day 1)","2","Quality Control Samples",78.125,0.678
+"65","Plate 1 (Day 1)","2","Quality Control Samples",39.1,0.48
+"66","Plate 1 (Day 1)","2","Quality Control Samples",39.1,0.504
+"67","Plate 1 (Day 1)","2","Quality Control Samples",19.5,0.399
+"68","Plate 1 (Day 1)","2","Quality Control Samples",19.5,0.391
+"69","Plate 1 (Day 1)","2","Quality Control Samples",13,0.359
+"70","Plate 1 (Day 1)","2","Quality Control Samples",13,0.351
+"71","Plate 1 (Day 1)","2","Quality Control Samples",9.75,0.341
+"72","Plate 1 (Day 1)","2","Quality Control Samples",9.75,0.32
+"73","Plate 1 (Day 1)","2","Patient 1",NA,0.675
+"74","Plate 1 (Day 1)","2","Patient 1",NA,0.606
+"75","Plate 1 (Day 1)","2","Patient 2",NA,0.711
+"76","Plate 1 (Day 1)","2","Patient 2",NA,0.661
+"77","Plate 1 (Day 1)","2","Patient 3",NA,0.745
+"78","Plate 1 (Day 1)","2","Patient 3",NA,0.707
+"79","Plate 1 (Day 1)","2","Patient 4",NA,1.061
+"80","Plate 1 (Day 1)","2","Patient 4",NA,1.01
+"81","Plate 1 (Day 1)","2","Patient 5",NA,0.623
+"82","Plate 1 (Day 1)","2","Patient 5",NA,0.658
+"83","Plate 1 (Day 1)","2","Patient 6",NA,0.491
+"84","Plate 1 (Day 1)","2","Patient 6",NA,0.486
+"85","Plate 1 (Day 1)","3","Standard",500,2.757
+"86","Plate 1 (Day 1)","3","Standard",500,2.576
+"87","Plate 1 (Day 1)","3","Standard",200,1.397
+"88","Plate 1 (Day 1)","3","Standard",200,1.35
+"89","Plate 1 (Day 1)","3","Standard",80,0.715
+"90","Plate 1 (Day 1)","3","Standard",80,0.75
+"91","Plate 1 (Day 1)","3","Standard",32,0.463
+"92","Plate 1 (Day 1)","3","Standard",32,0.47
+"93","Plate 1 (Day 1)","3","Standard",12.8,0.376
+"94","Plate 1 (Day 1)","3","Standard",12.8,0.361
+"95","Plate 1 (Day 1)","3","Standard",5.12,0.338
+"96","Plate 1 (Day 1)","3","Standard",5.12,0.336
+"97","Plate 1 (Day 1)","3","Standard",2.048,0.319
+"98","Plate 1 (Day 1)","3","Standard",2.048,0.288
+"99","Plate 1 (Day 1)","3","BLANK",0,0.287
+"100","Plate 1 (Day 1)","3","BLANK",0,0.295
+"101","Plate 1 (Day 1)","3","Quality Control Samples",312.5,1.916
+"102","Plate 1 (Day 1)","3","Quality Control Samples",312.5,1.955
+"103","Plate 1 (Day 1)","3","Quality Control Samples",156.25,1.012
+"104","Plate 1 (Day 1)","3","Quality Control Samples",156.25,1.069
+"105","Plate 1 (Day 1)","3","Quality Control Samples",78.125,0.659
+"106","Plate 1 (Day 1)","3","Quality Control Samples",78.125,0.677
+"107","Plate 1 (Day 1)","3","Quality Control Samples",39.1,0.481
+"108","Plate 1 (Day 1)","3","Quality Control Samples",39.1,0.505
+"109","Plate 1 (Day 1)","3","Quality Control Samples",19.5,0.401
+"110","Plate 1 (Day 1)","3","Quality Control Samples",19.5,0.393
+"111","Plate 1 (Day 1)","3","Quality Control Samples",13,0.359
+"112","Plate 1 (Day 1)","3","Quality Control Samples",13,0.349
+"113","Plate 1 (Day 1)","3","Quality Control Samples",9.75,0.345
+"114","Plate 1 (Day 1)","3","Quality Control Samples",9.75,0.321
+"115","Plate 1 (Day 1)","3","Patient 1",NA,0.676
+"116","Plate 1 (Day 1)","3","Patient 1",NA,0.606
+"117","Plate 1 (Day 1)","3","Patient 2",NA,0.712
+"118","Plate 1 (Day 1)","3","Patient 2",NA,0.663
+"119","Plate 1 (Day 1)","3","Patient 3",NA,0.744
+"120","Plate 1 (Day 1)","3","Patient 3",NA,0.709
+"121","Plate 1 (Day 1)","3","Patient 4",NA,1.066
+"122","Plate 1 (Day 1)","3","Patient 4",NA,1.011
+"123","Plate 1 (Day 1)","3","Patient 5",NA,0.625
+"124","Plate 1 (Day 1)","3","Patient 5",NA,0.658
+"125","Plate 1 (Day 1)","3","Patient 6",NA,0.491
+"126","Plate 1 (Day 1)","3","Patient 6",NA,0.486
+"127","Plate 2 (Day 1)","1","Standard",500,2.741
+"128","Plate 2 (Day 1)","1","Standard",500,2.691
+"129","Plate 2 (Day 1)","1","Standard",200,1.419
+"130","Plate 2 (Day 1)","1","Standard",200,1.375
+"131","Plate 2 (Day 1)","1","Standard",80,0.803
+"132","Plate 2 (Day 1)","1","Standard",80,0.752
+"133","Plate 2 (Day 1)","1","Standard",32,0.505
+"134","Plate 2 (Day 1)","1","Standard",32,0.552
+"135","Plate 2 (Day 1)","1","Standard",12.8,0.386
+"136","Plate 2 (Day 1)","1","Standard",12.8,0.405
+"137","Plate 2 (Day 1)","1","Standard",5.12,0.331
+"138","Plate 2 (Day 1)","1","Standard",5.12,0.342
+"139","Plate 2 (Day 1)","1","Standard",2.048,0.322
+"140","Plate 2 (Day 1)","1","Standard",2.048,0.315
+"141","Plate 2 (Day 1)","1","BLANK",0,0.35
+"142","Plate 2 (Day 1)","1","BLANK",0,0.328
+"143","Plate 2 (Day 1)","1","Quality Control Samples",312.5,1.93
+"144","Plate 2 (Day 1)","1","Quality Control Samples",312.5,1.902
+"145","Plate 2 (Day 1)","1","Quality Control Samples",156.25,1.119
+"146","Plate 2 (Day 1)","1","Quality Control Samples",156.25,1.124
+"147","Plate 2 (Day 1)","1","Quality Control Samples",78.125,0.763
+"148","Plate 2 (Day 1)","1","Quality Control Samples",78.125,0.806
+"149","Plate 2 (Day 1)","1","Quality Control Samples",39.1,0.558
+"150","Plate 2 (Day 1)","1","Quality Control Samples",39.1,0.531
+"151","Plate 2 (Day 1)","1","Quality Control Samples",19.5,0.437
+"152","Plate 2 (Day 1)","1","Quality Control Samples",19.5,0.457
+"153","Plate 2 (Day 1)","1","Quality Control Samples",13,0.4
+"154","Plate 2 (Day 1)","1","Quality Control Samples",13,0.399
+"155","Plate 2 (Day 1)","1","Quality Control Samples",9.75,0.373
+"156","Plate 2 (Day 1)","1","Quality Control Samples",9.75,0.383
+"157","Plate 2 (Day 1)","1","Patient 2",NA,0.678
+"158","Plate 2 (Day 1)","1","Patient 2",NA,0.536
+"159","Plate 2 (Day 1)","1","Patient 3",NA,0.738
+"160","Plate 2 (Day 1)","1","Patient 3",NA,0.748
+"161","Plate 2 (Day 1)","1","Patient 4",NA,1.206
+"162","Plate 2 (Day 1)","1","Patient 4",NA,1.183
+"163","Plate 2 (Day 1)","1","Patient 5",NA,0.705
+"164","Plate 2 (Day 1)","1","Patient 5",NA,0.765
+"165","Plate 2 (Day 1)","1","Patient 6",NA,0.561
+"166","Plate 2 (Day 1)","1","Patient 6",NA,0.551
+"167","Plate 2 (Day 1)","1","Patient 1",NA,0.565
+"168","Plate 2 (Day 1)","1","Patient 1",NA,0.536
+"169","Plate 2 (Day 1)","2","Standard",500,2.699
+"170","Plate 2 (Day 1)","2","Standard",500,2.668
+"171","Plate 2 (Day 1)","2","Standard",200,1.417
+"172","Plate 2 (Day 1)","2","Standard",200,1.373
+"173","Plate 2 (Day 1)","2","Standard",80,0.804
+"174","Plate 2 (Day 1)","2","Standard",80,0.758
+"175","Plate 2 (Day 1)","2","Standard",32,0.504
+"176","Plate 2 (Day 1)","2","Standard",32,0.55
+"177","Plate 2 (Day 1)","2","Standard",12.8,0.388
+"178","Plate 2 (Day 1)","2","Standard",12.8,0.406
+"179","Plate 2 (Day 1)","2","Standard",5.12,0.333
+"180","Plate 2 (Day 1)","2","Standard",5.12,0.343
+"181","Plate 2 (Day 1)","2","Standard",2.048,0.322
+"182","Plate 2 (Day 1)","2","Standard",2.048,0.316
+"183","Plate 2 (Day 1)","2","BLANK",0,0.35
+"184","Plate 2 (Day 1)","2","BLANK",0,0.327
+"185","Plate 2 (Day 1)","2","Quality Control Samples",312.5,1.918
+"186","Plate 2 (Day 1)","2","Quality Control Samples",312.5,1.892
+"187","Plate 2 (Day 1)","2","Quality Control Samples",156.25,1.135
+"188","Plate 2 (Day 1)","2","Quality Control Samples",156.25,1.128
+"189","Plate 2 (Day 1)","2","Quality Control Samples",78.125,0.765
+"190","Plate 2 (Day 1)","2","Quality Control Samples",78.125,0.808
+"191","Plate 2 (Day 1)","2","Quality Control Samples",39.1,0.558
+"192","Plate 2 (Day 1)","2","Quality Control Samples",39.1,0.531
+"193","Plate 2 (Day 1)","2","Quality Control Samples",19.5,0.435
+"194","Plate 2 (Day 1)","2","Quality Control Samples",19.5,0.457
+"195","Plate 2 (Day 1)","2","Quality Control Samples",13,0.402
+"196","Plate 2 (Day 1)","2","Quality Control Samples",13,0.398
+"197","Plate 2 (Day 1)","2","Quality Control Samples",9.75,0.377
+"198","Plate 2 (Day 1)","2","Quality Control Samples",9.75,0.382
+"199","Plate 2 (Day 1)","2","Patient 2",NA,0.677
+"200","Plate 2 (Day 1)","2","Patient 2",NA,0.536
+"201","Plate 2 (Day 1)","2","Patient 3",NA,0.742
+"202","Plate 2 (Day 1)","2","Patient 3",NA,0.753
+"203","Plate 2 (Day 1)","2","Patient 4",NA,1.209
+"204","Plate 2 (Day 1)","2","Patient 4",NA,1.186
+"205","Plate 2 (Day 1)","2","Patient 5",NA,0.705
+"206","Plate 2 (Day 1)","2","Patient 5",NA,0.762
+"207","Plate 2 (Day 1)","2","Patient 6",NA,0.561
+"208","Plate 2 (Day 1)","2","Patient 6",NA,0.546
+"209","Plate 2 (Day 1)","2","Patient 1",NA,0.568
+"210","Plate 2 (Day 1)","2","Patient 1",NA,0.542
+"211","Plate 2 (Day 1)","3","Standard",500,2.671
+"212","Plate 2 (Day 1)","3","Standard",500,2.647
+"213","Plate 2 (Day 1)","3","Standard",200,1.412
+"214","Plate 2 (Day 1)","3","Standard",200,1.37
+"215","Plate 2 (Day 1)","3","Standard",80,0.805
+"216","Plate 2 (Day 1)","3","Standard",80,0.762
+"217","Plate 2 (Day 1)","3","Standard",32,0.506
+"218","Plate 2 (Day 1)","3","Standard",32,0.548
+"219","Plate 2 (Day 1)","3","Standard",12.8,0.39
+"220","Plate 2 (Day 1)","3","Standard",12.8,0.41
+"221","Plate 2 (Day 1)","3","Standard",5.12,0.334
+"222","Plate 2 (Day 1)","3","Standard",5.12,0.344
+"223","Plate 2 (Day 1)","3","Standard",2.048,0.323
+"224","Plate 2 (Day 1)","3","Standard",2.048,0.318
+"225","Plate 2 (Day 1)","3","BLANK",0,0.351
+"226","Plate 2 (Day 1)","3","BLANK",0,0.327
+"227","Plate 2 (Day 1)","3","Quality Control Samples",312.5,1.912
+"228","Plate 2 (Day 1)","3","Quality Control Samples",312.5,1.894
+"229","Plate 2 (Day 1)","3","Quality Control Samples",156.25,1.136
+"230","Plate 2 (Day 1)","3","Quality Control Samples",156.25,1.125
+"231","Plate 2 (Day 1)","3","Quality Control Samples",78.125,0.765
+"232","Plate 2 (Day 1)","3","Quality Control Samples",78.125,0.808
+"233","Plate 2 (Day 1)","3","Quality Control Samples",39.1,0.559
+"234","Plate 2 (Day 1)","3","Quality Control Samples",39.1,0.531
+"235","Plate 2 (Day 1)","3","Quality Control Samples",19.5,0.435
+"236","Plate 2 (Day 1)","3","Quality Control Samples",19.5,0.459
+"237","Plate 2 (Day 1)","3","Quality Control Samples",13,0.403
+"238","Plate 2 (Day 1)","3","Quality Control Samples",13,0.399
+"239","Plate 2 (Day 1)","3","Quality Control Samples",9.75,0.8
+"240","Plate 2 (Day 1)","3","Quality Control Samples",9.75,0.382
+"241","Plate 2 (Day 1)","3","Patient 2",NA,0.677
+"242","Plate 2 (Day 1)","3","Patient 2",NA,0.534
+"243","Plate 2 (Day 1)","3","Patient 3",NA,0.743
+"244","Plate 2 (Day 1)","3","Patient 3",NA,0.751
+"245","Plate 2 (Day 1)","3","Patient 4",NA,1.204
+"246","Plate 2 (Day 1)","3","Patient 4",NA,1.183
+"247","Plate 2 (Day 1)","3","Patient 5",NA,0.703
+"248","Plate 2 (Day 1)","3","Patient 5",NA,0.762
+"249","Plate 2 (Day 1)","3","Patient 6",NA,0.561
+"250","Plate 2 (Day 1)","3","Patient 6",NA,0.545
+"251","Plate 2 (Day 1)","3","Patient 1",NA,0.567
+"252","Plate 2 (Day 1)","3","Patient 1",NA,0.543
+"253","Plate 3 (Day 2)","1","Standard",500,3.067
+"254","Plate 3 (Day 2)","1","Standard",500,3.252
+"255","Plate 3 (Day 2)","1","Standard",200,1.413
+"256","Plate 3 (Day 2)","1","Standard",200,1.621
+"257","Plate 3 (Day 2)","1","Standard",80,0.855
+"258","Plate 3 (Day 2)","1","Standard",80,0.868
+"259","Plate 3 (Day 2)","1","Standard",32,0.585
+"260","Plate 3 (Day 2)","1","Standard",32,0.6
+"261","Plate 3 (Day 2)","1","Standard",12.8,0.441
+"262","Plate 3 (Day 2)","1","Standard",12.8,0.474
+"263","Plate 3 (Day 2)","1","Standard",5.12,0.342
+"264","Plate 3 (Day 2)","1","Standard",5.12,0.345
+"265","Plate 3 (Day 2)","1","Standard",2.048,0.362
+"266","Plate 3 (Day 2)","1","Standard",2.048,0.395
+"267","Plate 3 (Day 2)","1","BLANK",0,0.356
+"268","Plate 3 (Day 2)","1","BLANK",0,0.37
+"269","Plate 3 (Day 2)","1","Quality Control Samples",312.5,2.351
+"270","Plate 3 (Day 2)","1","Quality Control Samples",312.5,2.119
+"271","Plate 3 (Day 2)","1","Quality Control Samples",156.25,1.297
+"272","Plate 3 (Day 2)","1","Quality Control Samples",156.25,1.289
+"273","Plate 3 (Day 2)","1","Quality Control Samples",78.125,0.81
+"274","Plate 3 (Day 2)","1","Quality Control Samples",78.125,0.855
+"275","Plate 3 (Day 2)","1","Quality Control Samples",39.1,0.636
+"276","Plate 3 (Day 2)","1","Quality Control Samples",39.1,0.601
+"277","Plate 3 (Day 2)","1","Quality Control Samples",19.5,0.484
+"278","Plate 3 (Day 2)","1","Quality Control Samples",19.5,0.506
+"279","Plate 3 (Day 2)","1","Quality Control Samples",13,0.434
+"280","Plate 3 (Day 2)","1","Quality Control Samples",13,0.458
+"281","Plate 3 (Day 2)","1","Quality Control Samples",9.75,0.43
+"282","Plate 3 (Day 2)","1","Quality Control Samples",9.75,0.399
+"283","Plate 3 (Day 2)","1","Patient 3",NA,0.851
+"284","Plate 3 (Day 2)","1","Patient 3",NA,0.887
+"285","Plate 3 (Day 2)","1","Patient 4",NA,1.438
+"286","Plate 3 (Day 2)","1","Patient 4",NA,1.313
+"287","Plate 3 (Day 2)","1","Patient 5",NA,0.772
+"288","Plate 3 (Day 2)","1","Patient 5",NA,0.799
+"289","Plate 3 (Day 2)","1","Patient 6",NA,0.651
+"290","Plate 3 (Day 2)","1","Patient 6",NA,0.688
+"291","Plate 3 (Day 2)","1","Patient 1",NA,0.673
+"292","Plate 3 (Day 2)","1","Patient 1",NA,0.634
+"293","Plate 3 (Day 2)","1","Patient 2",NA,0.798
+"294","Plate 3 (Day 2)","1","Patient 2",NA,0.8
+"295","Plate 3 (Day 2)","2","Standard",500,3.034
+"296","Plate 3 (Day 2)","2","Standard",500,3.235
+"297","Plate 3 (Day 2)","2","Standard",200,1.415
+"298","Plate 3 (Day 2)","2","Standard",200,1.622
+"299","Plate 3 (Day 2)","2","Standard",80,0.855
+"300","Plate 3 (Day 2)","2","Standard",80,0.871
+"301","Plate 3 (Day 2)","2","Standard",32,0.588
+"302","Plate 3 (Day 2)","2","Standard",32,0.601
+"303","Plate 3 (Day 2)","2","Standard",12.8,0.442
+"304","Plate 3 (Day 2)","2","Standard",12.8,0.474
+"305","Plate 3 (Day 2)","2","Standard",5.12,0.344
+"306","Plate 3 (Day 2)","2","Standard",5.12,0.346
+"307","Plate 3 (Day 2)","2","Standard",2.048,0.362
+"308","Plate 3 (Day 2)","2","Standard",2.048,0.391
+"309","Plate 3 (Day 2)","2","BLANK",0,0.357
+"310","Plate 3 (Day 2)","2","BLANK",0,0.372
+"311","Plate 3 (Day 2)","2","Quality Control Samples",312.5,2.345
+"312","Plate 3 (Day 2)","2","Quality Control Samples",312.5,2.117
+"313","Plate 3 (Day 2)","2","Quality Control Samples",156.25,1.301
+"314","Plate 3 (Day 2)","2","Quality Control Samples",156.25,1.289
+"315","Plate 3 (Day 2)","2","Quality Control Samples",78.125,0.811
+"316","Plate 3 (Day 2)","2","Quality Control Samples",78.125,0.856
+"317","Plate 3 (Day 2)","2","Quality Control Samples",39.1,0.635
+"318","Plate 3 (Day 2)","2","Quality Control Samples",39.1,0.601
+"319","Plate 3 (Day 2)","2","Quality Control Samples",19.5,0.484
+"320","Plate 3 (Day 2)","2","Quality Control Samples",19.5,0.506
+"321","Plate 3 (Day 2)","2","Quality Control Samples",13,0.434
+"322","Plate 3 (Day 2)","2","Quality Control Samples",13,0.459
+"323","Plate 3 (Day 2)","2","Quality Control Samples",9.75,0.433
+"324","Plate 3 (Day 2)","2","Quality Control Samples",9.75,0.4
+"325","Plate 3 (Day 2)","2","Patient 3",NA,0.851
+"326","Plate 3 (Day 2)","2","Patient 3",NA,0.888
+"327","Plate 3 (Day 2)","2","Patient 4",NA,1.428
+"328","Plate 3 (Day 2)","2","Patient 4",NA,1.316
+"329","Plate 3 (Day 2)","2","Patient 5",NA,0.774
+"330","Plate 3 (Day 2)","2","Patient 5",NA,0.8
+"331","Plate 3 (Day 2)","2","Patient 6",NA,0.651
+"332","Plate 3 (Day 2)","2","Patient 6",NA,0.687
+"333","Plate 3 (Day 2)","2","Patient 1",NA,0.672
+"334","Plate 3 (Day 2)","2","Patient 1",NA,0.636
+"335","Plate 3 (Day 2)","2","Patient 2",NA,0.798
+"336","Plate 3 (Day 2)","2","Patient 2",NA,0.798
+"337","Plate 3 (Day 2)","3","Standard",500,2.996
+"338","Plate 3 (Day 2)","3","Standard",500,3.201
+"339","Plate 3 (Day 2)","3","Standard",200,1.416
+"340","Plate 3 (Day 2)","3","Standard",200,1.624
+"341","Plate 3 (Day 2)","3","Standard",80,0.855
+"342","Plate 3 (Day 2)","3","Standard",80,0.872
+"343","Plate 3 (Day 2)","3","Standard",32,0.588
+"344","Plate 3 (Day 2)","3","Standard",32,0.602
+"345","Plate 3 (Day 2)","3","Standard",12.8,0.443
+"346","Plate 3 (Day 2)","3","Standard",12.8,0.475
+"347","Plate 3 (Day 2)","3","Standard",5.12,0.345
+"348","Plate 3 (Day 2)","3","Standard",5.12,0.346
+"349","Plate 3 (Day 2)","3","Standard",2.048,0.363
+"350","Plate 3 (Day 2)","3","Standard",2.048,0.392
+"351","Plate 3 (Day 2)","3","BLANK",0,0.358
+"352","Plate 3 (Day 2)","3","BLANK",0,0.373
+"353","Plate 3 (Day 2)","3","Quality Control Samples",312.5,2.34
+"354","Plate 3 (Day 2)","3","Quality Control Samples",312.5,2.111
+"355","Plate 3 (Day 2)","3","Quality Control Samples",156.25,1.301
+"356","Plate 3 (Day 2)","3","Quality Control Samples",156.25,1.289
+"357","Plate 3 (Day 2)","3","Quality Control Samples",78.125,0.812
+"358","Plate 3 (Day 2)","3","Quality Control Samples",78.125,0.857
+"359","Plate 3 (Day 2)","3","Quality Control Samples",39.1,0.636
+"360","Plate 3 (Day 2)","3","Quality Control Samples",39.1,0.601
+"361","Plate 3 (Day 2)","3","Quality Control Samples",19.5,0.484
+"362","Plate 3 (Day 2)","3","Quality Control Samples",19.5,0.507
+"363","Plate 3 (Day 2)","3","Quality Control Samples",13,0.435
+"364","Plate 3 (Day 2)","3","Quality Control Samples",13,0.459
+"365","Plate 3 (Day 2)","3","Quality Control Samples",9.75,0.432
+"366","Plate 3 (Day 2)","3","Quality Control Samples",9.75,0.4
+"367","Plate 3 (Day 2)","3","Patient 3",NA,0.851
+"368","Plate 3 (Day 2)","3","Patient 3",NA,0.888
+"369","Plate 3 (Day 2)","3","Patient 4",NA,1.434
+"370","Plate 3 (Day 2)","3","Patient 4",NA,1.316
+"371","Plate 3 (Day 2)","3","Patient 5",NA,0.776
+"372","Plate 3 (Day 2)","3","Patient 5",NA,0.8
+"373","Plate 3 (Day 2)","3","Patient 6",NA,0.651
+"374","Plate 3 (Day 2)","3","Patient 6",NA,0.687
+"375","Plate 3 (Day 2)","3","Patient 1",NA,0.673
+"376","Plate 3 (Day 2)","3","Patient 1",NA,0.637
+"377","Plate 3 (Day 2)","3","Patient 2",NA,0.798
+"378","Plate 3 (Day 2)","3","Patient 2",NA,0.798
+"379","Plate 4 (Day 2)","1","Standard",500,2.664
+"380","Plate 4 (Day 2)","1","Standard",500,2.832
+"381","Plate 4 (Day 2)","1","Standard",200,1.389
+"382","Plate 4 (Day 2)","1","Standard",200,1.589
+"383","Plate 4 (Day 2)","1","Standard",80,0.825
+"384","Plate 4 (Day 2)","1","Standard",80,0.794
+"385","Plate 4 (Day 2)","1","Standard",32,0.499
+"386","Plate 4 (Day 2)","1","Standard",32,0.498
+"387","Plate 4 (Day 2)","1","Standard",12.8,0.396
+"388","Plate 4 (Day 2)","1","Standard",12.8,0.41
+"389","Plate 4 (Day 2)","1","Standard",5.12,0.368
+"390","Plate 4 (Day 2)","1","Standard",5.12,0.371
+"391","Plate 4 (Day 2)","1","Standard",2.048,0.287
+"392","Plate 4 (Day 2)","1","Standard",2.048,0.327
+"393","Plate 4 (Day 2)","1","BLANK",0,0.335
+"394","Plate 4 (Day 2)","1","BLANK",0,0.334
+"395","Plate 4 (Day 2)","1","Quality Control Samples",312.5,2.17
+"396","Plate 4 (Day 2)","1","Quality Control Samples",312.5,2.055
+"397","Plate 4 (Day 2)","1","Quality Control Samples",156.25,1.176
+"398","Plate 4 (Day 2)","1","Quality Control Samples",156.25,1.195
+"399","Plate 4 (Day 2)","1","Quality Control Samples",78.125,0.776
+"400","Plate 4 (Day 2)","1","Quality Control Samples",78.125,0.737
+"401","Plate 4 (Day 2)","1","Quality Control Samples",39.1,0.516
+"402","Plate 4 (Day 2)","1","Quality Control Samples",39.1,0.546
+"403","Plate 4 (Day 2)","1","Quality Control Samples",19.5,0.422
+"404","Plate 4 (Day 2)","1","Quality Control Samples",19.5,0.447
+"405","Plate 4 (Day 2)","1","Quality Control Samples",13,0.407
+"406","Plate 4 (Day 2)","1","Quality Control Samples",13,0.403
+"407","Plate 4 (Day 2)","1","Quality Control Samples",9.75,0.403
+"408","Plate 4 (Day 2)","1","Quality Control Samples",9.75,0.424
+"409","Plate 4 (Day 2)","1","Patient 4",NA,1.224
+"410","Plate 4 (Day 2)","1","Patient 4",NA,1.292
+"411","Plate 4 (Day 2)","1","Patient 5",NA,0.709
+"412","Plate 4 (Day 2)","1","Patient 5",NA,0.765
+"413","Plate 4 (Day 2)","1","Patient 6",NA,0.574
+"414","Plate 4 (Day 2)","1","Patient 6",NA,0.555
+"415","Plate 4 (Day 2)","1","Patient 1",NA,0.545
+"416","Plate 4 (Day 2)","1","Patient 1",NA,0.574
+"417","Plate 4 (Day 2)","1","Patient 2",NA,0.675
+"418","Plate 4 (Day 2)","1","Patient 2",NA,0.695
+"419","Plate 4 (Day 2)","1","Patient 3",NA,0.823
+"420","Plate 4 (Day 2)","1","Patient 3",NA,0.813
+"421","Plate 4 (Day 2)","2","Standard",500,2.664
+"422","Plate 4 (Day 2)","2","Standard",500,2.829
+"423","Plate 4 (Day 2)","2","Standard",200,1.392
+"424","Plate 4 (Day 2)","2","Standard",200,1.579
+"425","Plate 4 (Day 2)","2","Standard",80,0.824
+"426","Plate 4 (Day 2)","2","Standard",80,0.796
+"427","Plate 4 (Day 2)","2","Standard",32,0.499
+"428","Plate 4 (Day 2)","2","Standard",32,0.498
+"429","Plate 4 (Day 2)","2","Standard",12.8,0.397
+"430","Plate 4 (Day 2)","2","Standard",12.8,0.41
+"431","Plate 4 (Day 2)","2","Standard",5.12,0.371
+"432","Plate 4 (Day 2)","2","Standard",5.12,0.372
+"433","Plate 4 (Day 2)","2","Standard",2.048,0.287
+"434","Plate 4 (Day 2)","2","Standard",2.048,0.328
+"435","Plate 4 (Day 2)","2","BLANK",0,0.337
+"436","Plate 4 (Day 2)","2","BLANK",0,0.334
+"437","Plate 4 (Day 2)","2","Quality Control Samples",312.5,2.166
+"438","Plate 4 (Day 2)","2","Quality Control Samples",312.5,2.051
+"439","Plate 4 (Day 2)","2","Quality Control Samples",156.25,1.174
+"440","Plate 4 (Day 2)","2","Quality Control Samples",156.25,1.192
+"441","Plate 4 (Day 2)","2","Quality Control Samples",78.125,0.776
+"442","Plate 4 (Day 2)","2","Quality Control Samples",78.125,0.738
+"443","Plate 4 (Day 2)","2","Quality Control Samples",39.1,0.516
+"444","Plate 4 (Day 2)","2","Quality Control Samples",39.1,0.546
+"445","Plate 4 (Day 2)","2","Quality Control Samples",19.5,0.422
+"446","Plate 4 (Day 2)","2","Quality Control Samples",19.5,0.448
+"447","Plate 4 (Day 2)","2","Quality Control Samples",13,0.409
+"448","Plate 4 (Day 2)","2","Quality Control Samples",13,0.403
+"449","Plate 4 (Day 2)","2","Quality Control Samples",9.75,0.404
+"450","Plate 4 (Day 2)","2","Quality Control Samples",9.75,0.431
+"451","Plate 4 (Day 2)","2","Patient 4",NA,1.223
+"452","Plate 4 (Day 2)","2","Patient 4",NA,1.293
+"453","Plate 4 (Day 2)","2","Patient 5",NA,0.709
+"454","Plate 4 (Day 2)","2","Patient 5",NA,0.767
+"455","Plate 4 (Day 2)","2","Patient 6",NA,0.574
+"456","Plate 4 (Day 2)","2","Patient 6",NA,0.555
+"457","Plate 4 (Day 2)","2","Patient 1",NA,0.545
+"458","Plate 4 (Day 2)","2","Patient 1",NA,0.574
+"459","Plate 4 (Day 2)","2","Patient 2",NA,0.676
+"460","Plate 4 (Day 2)","2","Patient 2",NA,0.695
+"461","Plate 4 (Day 2)","2","Patient 3",NA,0.824
+"462","Plate 4 (Day 2)","2","Patient 3",NA,0.814
+"463","Plate 4 (Day 2)","3","Standard",500,2.666
+"464","Plate 4 (Day 2)","3","Standard",500,2.817
+"465","Plate 4 (Day 2)","3","Standard",200,1.388
+"466","Plate 4 (Day 2)","3","Standard",200,1.568
+"467","Plate 4 (Day 2)","3","Standard",80,0.823
+"468","Plate 4 (Day 2)","3","Standard",80,0.796
+"469","Plate 4 (Day 2)","3","Standard",32,0.499
+"470","Plate 4 (Day 2)","3","Standard",32,0.498
+"471","Plate 4 (Day 2)","3","Standard",12.8,0.398
+"472","Plate 4 (Day 2)","3","Standard",12.8,0.411
+"473","Plate 4 (Day 2)","3","Standard",5.12,0.371
+"474","Plate 4 (Day 2)","3","Standard",5.12,0.372
+"475","Plate 4 (Day 2)","3","Standard",2.048,0.293
+"476","Plate 4 (Day 2)","3","Standard",2.048,0.329
+"477","Plate 4 (Day 2)","3","BLANK",0,0.338
+"478","Plate 4 (Day 2)","3","BLANK",0,0.334
+"479","Plate 4 (Day 2)","3","Quality Control Samples",312.5,2.154
+"480","Plate 4 (Day 2)","3","Quality Control Samples",312.5,2.047
+"481","Plate 4 (Day 2)","3","Quality Control Samples",156.25,1.171
+"482","Plate 4 (Day 2)","3","Quality Control Samples",156.25,1.19
+"483","Plate 4 (Day 2)","3","Quality Control Samples",78.125,0.776
+"484","Plate 4 (Day 2)","3","Quality Control Samples",78.125,0.738
+"485","Plate 4 (Day 2)","3","Quality Control Samples",39.1,0.516
+"486","Plate 4 (Day 2)","3","Quality Control Samples",39.1,0.546
+"487","Plate 4 (Day 2)","3","Quality Control Samples",19.5,0.423
+"488","Plate 4 (Day 2)","3","Quality Control Samples",19.5,0.45
+"489","Plate 4 (Day 2)","3","Quality Control Samples",13,0.409
+"490","Plate 4 (Day 2)","3","Quality Control Samples",13,0.404
+"491","Plate 4 (Day 2)","3","Quality Control Samples",9.75,0.404
+"492","Plate 4 (Day 2)","3","Quality Control Samples",9.75,0.42
+"493","Plate 4 (Day 2)","3","Patient 4",NA,1.221
+"494","Plate 4 (Day 2)","3","Patient 4",NA,1.293
+"495","Plate 4 (Day 2)","3","Patient 5",NA,0.709
+"496","Plate 4 (Day 2)","3","Patient 5",NA,0.769
+"497","Plate 4 (Day 2)","3","Patient 6",NA,0.574
+"498","Plate 4 (Day 2)","3","Patient 6",NA,0.556
+"499","Plate 4 (Day 2)","3","Patient 1",NA,0.544
+"500","Plate 4 (Day 2)","3","Patient 1",NA,0.574
+"501","Plate 4 (Day 2)","3","Patient 2",NA,0.676
+"502","Plate 4 (Day 2)","3","Patient 2",NA,0.696
+"503","Plate 4 (Day 2)","3","Patient 3",NA,0.825
+"504","Plate 4 (Day 2)","3","Patient 3",NA,0.815
