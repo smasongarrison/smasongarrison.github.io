@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: ANSI/AAMI EC13 Test Waveforms, 3a and 3b</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for aami"><tr><td>aami</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> ANSI/AAMI EC13 Test Waveforms, 3a and 3b </h2>
+
+<h3>Description</h3>
+
+<p>ANSI/AAMI EC13 Test Waveforms 3a and 3b, as obtained from the PhysioBank
+database.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(aami3a);
+data(aami3b);</pre>
+
+
+<h3>Format</h3>
+
+ 
+<p>&gt; str(aami3a)
+Time-Series [1:43081] from 0 to 59.8: 0.185 0.185 0.169 0.185 0.185
+0.185 0.185 0.185 0.185 0.2 ... <br /> <br />
+&gt; str(aami3b)
+Time-Series [1:43142] from 0 to 59.9: 0.192 0.192 0.192 0.192 0.192 0.2 0.2 0.192 0.2 0.2 ...
+</p>
+
+
+<h3>Details</h3>
+
+<p>The following text is reproduced (abridged) from PhysioBank, page
+<a href="http://www.physionet.org/physiobank/database/aami-ec13/">http://www.physionet.org/physiobank/database/aami-ec13/</a>.  Other
+recordings belong  to the  dataset and can be obtained from the same
+page.
+</p>
+<p>The files in this set can be used for testing a variety of devices that
+monitor the electrocardiogram.  The recordings include both synthetic
+and real waveforms. For details on these test waveforms and how to use
+them, please refer to section 5.1.2.1, paragraphs (e) and (g) in the
+reference below.  Each recording contains one ECG signal sampled at 720
+Hz with 12-bit resolution.
+</p>
+
+
+<h3>Note</h3>
+
+<p>Timestamps in the datasets have been re-created at the indicated
+frequency of 720 Hz, whereas the original timestamps in ms (at least in text format)
+only had three decimal digits' precision, and were therefore
+affected by substantial jittering. 
+</p>
+
+
+<h3>Source</h3>
+
+<p> Cardiac monitors, heart rate meters, and alarms [American
+National Standard (ANSI/AAMI EC13:2002)]. Arlington, VA: Association
+for the Advancement of Medical Instrumentation, 2002 </p>
+
+
+<h3>References</h3>
+
+<p>Goldberger AL, Amaral LAN, Glass L, Hausdorff JM, Ivanov PCh, Mark RG,
+Mietus JE, Moody GB, Peng CK, Stanley HE. <em>PhysioBank, PhysioToolkit,
+and PhysioNet: Components of a New Research Resource for Complex
+Physiologic Signals.</em> Circulation 101(23):e215-e220 [Circulation
+Electronic Pages;
+<a href="http://circ.ahajournals.org/cgi/content/full/101/23/e215">http://circ.ahajournals.org/cgi/content/full/101/23/e215</a>]; 2000
+(June 13).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(aami3a);
+data(aami3b);
+
+## Plot both as a multivariate TS object
+##  only extract the first 10 seconds
+
+plot( main="ECG (mV)",
+ window(
+  cbind(aami3a,aami3b)   ,end=10)
+)
+
+
+
+</pre>
+
+
+</body></html>

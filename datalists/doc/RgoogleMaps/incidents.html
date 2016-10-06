@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: San Francisco crime data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for incidents"><tr><td>incidents</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>San Francisco crime data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>incidents</code> data frame has 5000 rows and 16 columns.
+These are 5000 random rows from the 2012 crime data recorded in San Francisco.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(incidents)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>IncidntNum</dt><dd><p>incident number assigned by the police</p>
+</dd>
+<dt>Category</dt><dd><p>Category of crime</p>
+</dd>
+<dt>Descript</dt><dd><p>longer description</p>
+</dd>
+<dt>DayOfWeek</dt><dd><p>day of week</p>
+</dd>
+<dt>Date</dt><dd><p>date</p>
+</dd>
+<dt>Time</dt><dd><p>time of day formatted as hh:mm </p>
+</dd>
+<dt>PdDistrict</dt><dd><p>police district</p>
+</dd>
+<dt>Resolution</dt><dd><p>was the crime resolved?</p>
+</dd>
+<dt>Location</dt><dd><p>location as address</p>
+</dd>
+<dt>lon</dt><dd><p>longitude</p>
+</dd>
+<dt>lat</dt><dd><p>latitude</p>
+</dd>
+<dt>violent</dt><dd><p>violent flag</p>
+</dd>
+<dt>HrOfDay</dt><dd><p>hour of day as 2-digit integer</p>
+</dd>
+<dt>TimeOfDay</dt><dd><p>hour of day as decimal number</p>
+</dd>
+<dt>HourOfWeek</dt><dd><p>hour of week as decimal number between 0-168</p>
+</dd>
+<dt>censusBlock</dt><dd><p>ID of census block</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>crime data recorded in San Francisco
+</p>
+
+
+<h3>Source</h3>
+
+<p>URL https://data.sfgov.org/
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(incidents)
+table(incidents$Category)
+
+</pre>
+
+
+</body></html>

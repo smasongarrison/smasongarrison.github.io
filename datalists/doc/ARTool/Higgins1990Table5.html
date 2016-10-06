@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Split-plot Experiment Examining Effect of Moisture and...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Higgins1990Table5"><tr><td>Higgins1990Table5</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Split-plot Experiment Examining Effect of Moisture and Fertilizer on Dry
+Matter in Peat Pots</h2>
+
+<h3>Description</h3>
+
+<p>This dataset comes from a split-plot experiment examining <code>Tray</code>s of 4
+peat pots each. <code>Moisture</code> was varied between <code>Tray</code>s (i.e. it was
+the whole-plot treatment) and <code>Fertilizer</code> was varied within
+<code>Tray</code>s (i.e. it was the sub-plot treatment). The outcome measure was
+<code>DryMatter</code>.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 48 observations on the following 4 variables.
+</p>
+ 
+<dl>
+<dt>Tray</dt><dd><p>a factor with levels <code>"t1"</code> .. <code>"t12"</code></p>
+</dd>
+<dt>Moisture</dt><dd><p>a factor with levels <code>"m1"</code> .. <code>"m4"</code></p>
+</dd>
+<dt>Fertilizer</dt><dd><p>a factor with levels <code>"f1"</code> .. <code>"f4"</code></p>
+</dd> 
+<dt>DryMatter</dt><dd><p>a numeric vector</p>
+</dd> 
+</dl>
+
+
+<h3>Details</h3>
+
+<p>This dataset, originally from Milliken &amp; Johnson (1984), is reproduced here
+from Higgins <em>et al.</em> (1990).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Milliken, G.A., Johnson, D.E. (1984). <em>Analysis of Messy Data
+Vol I: Designed Experiments</em>. Van Nostrand Reinhold Company, New York.
+</p>
+
+
+<h3>References</h3>
+
+<p>Higgins, J. J., Blair, R. C. and Tashtoush, S. (1990). The
+aligned rank transform procedure.  <em>Proceedings of the Conference on
+Applied Statistics in Agriculture</em>. Manhattan, Kansas: Kansas State
+University, pp. 185-195.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>See <code>art</code> for a more complete example. See also
+<code>anova.art</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(Higgins1990Table5)
+		
+## run aligned-rank transform and ANOVA on the data
+m &lt;- art(DryMatter ~ Moisture*Fertilizer + (1|Tray), data=Higgins1990Table5)
+anova(m)
+
+</pre>
+
+
+</body></html>

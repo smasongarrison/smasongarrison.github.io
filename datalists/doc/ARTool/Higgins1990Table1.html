@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Synthetic 3x3 Factorial Randomized Experiment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Higgins1990Table1"><tr><td>Higgins1990Table1</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Synthetic 3x3 Factorial Randomized Experiment</h2>
+
+<h3>Description</h3>
+
+<p>Synthetic data from a balanced 3x3 factorial experiment with main effects,
+no interaction, and independent and identically distributed (i.i.d.) Normal
+errors.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 36 observations on the following 4 variables.
+</p>
+ 
+<dl>
+<dt>Subject</dt><dd><p>a factor with levels <code>"s1"</code> .. <code>"s36"</code></p>
+</dd>
+<dt>Row</dt><dd><p>a factor with levels <code>"r1"</code> .. <code>"r3"</code></p>
+</dd>
+<dt>Column</dt><dd><p>a factor with levels <code>"c1"</code> .. <code>"c3"</code></p>
+</dd>
+<dt>Response</dt><dd><p>a numeric vector</p>
+</dd> 
+</dl>
+
+
+<h3>Source</h3>
+
+<p>Higgins, J. J., Blair, R. C. and Tashtoush, S. (1990). The aligned
+rank transform procedure.  <em>Proceedings of the Conference on Applied
+Statistics in Agriculture</em>. Manhattan, Kansas: Kansas State University, pp.
+185-195.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>art</code>, <code>anova.art</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(Higgins1990Table1)
+
+## run aligned-rank transform and ANOVA on the data
+## Note: because there is only one observation per Subject 
+## in this dataset, we do not need to include Subject as 
+## a grouping term in this formula. Indeed, if we did, 
+## lmer would complain when we attempt the ANOVA.
+m &lt;- art(Response ~ Row*Column, data=Higgins1990Table1)
+anova(m)
+
+</pre>
+
+
+</body></html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Worm Infestations in Apple Crops</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for apple"><tr><td>apple</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Worm Infestations in Apple Crops</h2>
+
+<h3>Description</h3>
+
+<p>The <code>apple</code> data frame provides the number of apples (in 100s) on
+18 different apple trees.  For 12 trees, the percentage of apples with
+worms (x 100) is also given.
+</p>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>size</dt><dd><p>hundreds of apples on the tree.</p>
+</dd>
+<dt>worms</dt><dd><p>percentage (x100) of apples harboring worms.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>These data constitute Table 6.1 in Little and Rubin (1987), adapted from Table 6.9.1 of
+Snedecor and Cochran (1967).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Little, R. J. A., and Rubin, D. B. (1987) <em>Statistical Analysis
+with Missing Data</em>.  New York: Wiley.
+</p>
+<p>Snedecor, G. W., and Cochran, W. G.  (1967)  <em>Statistical
+Methods</em>, 6th ed.  Ames: Iowa State University Press.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(mvnmle)
+data(apple)
+
+mlest(apple)
+</pre>
+
+
+</body></html>

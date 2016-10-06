@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 2011 Major League Baseball offensive data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for MLBOffense2011"><tr><td>MLBOffense2011</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+2011 Major League Baseball offensive data
+</h2>
+
+<h3>Description</h3>
+
+<p>Offensive data from Major League Baseball players in 2011 who were not traded during the season
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(MLBOffense2011)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 814 observations (only 688 had at least 1 At Bat [AB]) on the following 30 variables:
+</p>
+
+<dl>
+<dt><code>FName</code></dt><dd><p>Player's first name</p>
+</dd>
+<dt><code>LName</code></dt><dd><p>Player's last name</p>
+</dd>
+<dt><code>HR</code></dt><dd><p>Home runs</p>
+</dd>
+<dt><code>Year</code></dt><dd><p>Year of season</p>
+</dd>
+<dt><code>Age</code></dt><dd><p>Player's age during year</p>
+</dd>
+<dt><code>Tm</code></dt><dd><p>Player's team</p>
+</dd>
+<dt><code>Lg</code></dt><dd><p>League in which player plays (NL = National League; AL = American League)</p>
+</dd>
+<dt><code>G</code></dt><dd><p>Games (Regulation length games in which a player plays)</p>
+</dd>
+<dt><code>PA</code></dt><dd><p>Plate appearances (PA = AB+BB+IBB+HBP+SH+SF)</p>
+</dd>
+<dt><code>AB</code></dt><dd><p>Number of official at bats (AB = PA-BB-IBB-HBP-SH-SF)</p>
+</dd>
+<dt><code>R</code></dt><dd><p>Runs scored</p>
+</dd>
+<dt><code>H</code></dt><dd><p>Hits (H = B1+B2+B3+HR)</p>
+</dd>
+<dt><code>B1</code></dt><dd><p>Singles</p>
+</dd>
+<dt><code>B2</code></dt><dd><p>Doubles</p>
+</dd>
+<dt><code>B3</code></dt><dd><p>Triples</p>
+</dd>
+<dt><code>RBI</code></dt><dd><p>Runs batted in</p>
+</dd>
+<dt><code>BB</code></dt><dd><p>Walks</p>
+</dd>
+<dt><code>IBB</code></dt><dd><p>Intentional walks</p>
+</dd>
+<dt><code>SO</code></dt><dd><p>Strike outs</p>
+</dd>
+<dt><code>HBP</code></dt><dd><p>Hit by pitch</p>
+</dd>
+<dt><code>SH</code></dt><dd><p>Sacrifice bunts</p>
+</dd>
+<dt><code>SF</code></dt><dd><p>Sacrifice flys</p>
+</dd>
+<dt><code>GDP</code></dt><dd><p>Number of times player grounded into a double play</p>
+</dd>
+<dt><code>SB</code></dt><dd><p>Stolen bases</p>
+</dd>
+<dt><code>CS</code></dt><dd><p>Number of times player was caught stealing a base</p>
+</dd>
+<dt><code>BA</code></dt><dd><p>Batting average (BA = H/AB)</p>
+</dd>
+<dt><code>OBP</code></dt><dd><p>On-base percentage (OBP = (H+BB+HBP)/(AB+BB+HBP+SF))</p>
+</dd>
+<dt><code>SLG</code></dt><dd><p>Slugging percentage (SLG = (B1)+(2*B2)+3*B3)+(4*HR)/AB)</p>
+</dd>
+<dt><code>OPS</code></dt><dd><p>On-base percentage plus slugging percentage (OPS = OBP+SLG)</p>
+</dd>
+<dt><code>TB</code></dt><dd><p>Total bases (TB = (B1)+(2*B2)+(3*B3)+(4*HR))</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Data from Retrosheet
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Thanks to Aaron Baggett for compling the data
+</p>
+
+
+<h3>Source</h3>
+
+<p>The information used here was obtained free of charge from and is copyrighted by Retrosheet.  Interested parties may contact Retrosheet at <a href="www.retrosheet.org">www.retrosheet.org</a>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(MLBOffense2011)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lymph-node-negative primary breast tumors</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for breast"><tr><td>breast</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Lymph-node-negative primary breast tumors
+</h2>
+
+<h3>Description</h3>
+
+<p>Tumor molecular measurements and outcome from breast cancer patients.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(breast)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 286 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>ER</code></dt><dd><p>Estrogen receptor status (factor with levels <code>neg</code>, <code>pos</code>)</p>
+</dd>
+<dt><code>ESR1</code></dt><dd><p>Expression of the ESR1 gene (numeric)</p>
+</dd>
+<dt><code>ERBB2</code></dt><dd><p>Expression of the ERBB2 gene (numeric)</p>
+</dd>
+<dt><code>time_survival</code></dt><dd><p>Time in months (numeric)</p>
+</dd>
+<dt><code>event_survival</code></dt><dd><p>Coded event: 0 = censored, 1 = metastasis (numeric)</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>ER, ESR1, and ERBB2 were measured on a tumor specimen taken at surgery (time = 0).
+</p>
+<p>ESR1 and ERBB2 expression values were determined by microarray probe sets 205225_at and 216836_s_at using RMA-normalized data.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Wang Y, Klijn JG, Zhang Y, Sieuwerts AM, Look MP, Yang F, Talantov D, Timmermans M, Meijer-van Gelder ME, Yu J, Jatkoe T, Berns EM, Atkins D, Foekens JA.
+Gene-expression profiles to predict distant metastasis of lymph-node-negative primary breast cancer.
+Lancet. 2005 Feb 19-25;365(9460):671-9.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  data(breast)
+
+  with(breast, 
+    plot(ESR1, ERBB2, col = as.numeric(ER))
+  )
+</pre>
+
+
+</body></html>

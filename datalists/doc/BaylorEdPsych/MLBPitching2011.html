@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 2011 Major League Baseball pitching data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for MLBPitching2011"><tr><td>MLBPitching2011</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+2011 Major League Baseball pitching data
+</h2>
+
+<h3>Description</h3>
+
+<p>Offensive data from some Major League Baseball  pitchers in 2011 who were not traded during the season
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(MLBPitching2011)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 642 observations (531 with a Win-Loss Percent [WLP])on the following 44 variables.
+</p>
+
+<dl>
+<dt><code>Fname</code></dt><dd><p>Player's first name</p>
+</dd>
+<dt><code>Lname</code></dt><dd><p>Player's last name</p>
+</dd>
+<dt><code>SO</code></dt><dd><p>Strike outs</p>
+</dd>
+<dt><code>Year</code></dt><dd><p>Year of season</p>
+</dd>
+<dt><code>Age</code></dt><dd><p>Player's age</p>
+</dd>
+<dt><code>Tm</code></dt><dd><p>Player's team</p>
+</dd>
+<dt><code>Lg</code></dt><dd><p>League in which player plays (NL = National League; AL = American League)</p>
+</dd>
+<dt><code>G</code></dt><dd><p>Games (Regulation length games in which a player plays)</p>
+</dd>
+<dt><code>GS</code></dt><dd><p>Games started</p>
+</dd>
+<dt><code>CG</code></dt><dd><p>Complete games</p>
+</dd>
+<dt><code>SHO</code></dt><dd><p>Shutouts (Games in which a team allows no runs)</p>
+</dd>
+<dt><code>GF</code></dt><dd><p>Games finished (Games in which a relief pitcher is the last to appear)</p>
+</dd>
+<dt><code>W</code></dt><dd><p>Wins</p>
+</dd>
+<dt><code>L</code></dt><dd><p>Losses</p>
+</dd>
+<dt><code>WLP</code></dt><dd><p>Win-Loss Percentage (WLP = W/(W+L))</p>
+</dd>
+<dt><code>SV</code></dt><dd><p>Saves</p>
+</dd>
+<dt><code>IP</code></dt><dd><p>Innings pitched</p>
+</dd>
+<dt><code>H</code></dt><dd><p>Hits allowed</p>
+</dd>
+<dt><code>R</code></dt><dd><p>Runs allowed</p>
+</dd>
+<dt><code>ER</code></dt><dd><p>Earned runs allowed</p>
+</dd>
+<dt><code>BB</code></dt><dd><p>Walks allowed</p>
+</dd>
+<dt><code>ERA</code></dt><dd><p>Earned run average (ERA = 9*ER/IP)</p>
+</dd>
+<dt><code>ERAP</code></dt><dd><p>Adjusted earned run average (ERAP = 100*(lgERA/ERA))</p>
+</dd>
+<dt><code>HR</code></dt><dd><p>Homeruns allowed</p>
+</dd>
+<dt><code>BF</code></dt><dd><p>Batters faced</p>
+</dd>
+<dt><code>AB</code></dt><dd><p>At bats</p>
+</dd>
+<dt><code>B1</code></dt><dd><p>Singles Allowed</p>
+</dd>
+<dt><code>B2</code></dt><dd><p>Doubles allowed</p>
+</dd>
+<dt><code>B3</code></dt><dd><p>Triples allowed</p>
+</dd>
+<dt><code>IBB</code></dt><dd><p>Intenional walks issued</p>
+</dd>
+<dt><code>HBP</code></dt><dd><p>Hit by pitch</p>
+</dd>
+<dt><code>SH</code></dt><dd><p>Sacrifice bunts allowed</p>
+</dd>
+<dt><code>SF</code></dt><dd><p>Sacrifice flys allowed</p>
+</dd>
+<dt><code>GDP</code></dt><dd><p>Ground ball double-plays induced</p>
+</dd>
+<dt><code>SB</code></dt><dd><p>Stolen bases alllowed</p>
+</dd>
+<dt><code>CS</code></dt><dd><p>Caught stealing</p>
+</dd>
+<dt><code>PO</code></dt><dd><p>Pickoffs</p>
+</dd>
+<dt><code>BK</code></dt><dd><p>Balks</p>
+</dd>
+<dt><code>WP</code></dt><dd><p>Wild pitches</p>
+</dd>
+<dt><code>BA</code></dt><dd><p>Opponent's batting average (BA = H/AB)</p>
+</dd>
+<dt><code>OBP</code></dt><dd><p>Opponent's on-base percentage (OBP = (H+BB+HBP)/(AB+BB+HBP+SF))</p>
+</dd>
+<dt><code>SLG</code></dt><dd><p>Opponent's slugging percentage (SLG = (B1)+(2*B2)+3*B3)+(4*HR)/AB)</p>
+</dd>
+<dt><code>OPS</code></dt><dd><p>Opponent's on-base plus slugging percentage (OPS = OBP+SLG)</p>
+</dd>
+<dt><code>Pit</code></dt><dd><p>Pitches thrown (Pit = str+balls thrown)</p>
+</dd>
+<dt><code>Str</code></dt><dd><p>Strikes thrown</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Data from Retrosheet
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Thanks to Aaron Baggett for compling the data
+</p>
+
+
+<h3>Source</h3>
+
+<p>The information used here was obtained free of charge from and is copyrighted by Retrosheet.  Interested parties may contact Retrosheet at <a href="www.retrosheet.org">www.retrosheet.org</a>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(MLBPitching2011)
+</pre>
+
+
+</body></html>
