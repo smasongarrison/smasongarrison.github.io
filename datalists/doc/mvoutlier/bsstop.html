@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Top Layer of the BSS Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bsstop"><tr><td>bsstop</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Top Layer of the BSS Data</h2>
+
+<h3>Description</h3>
+
+<p>The BSS data were collected in agrigultural soils from Northern
+Europe. from an area of about 1,800,000 km2. 
+769 samples on an iregular grid were taken in two different
+layers, the top layer (0-20cm) and the bottom layer.
+This dataset contains the top layer of the BSS data. 
+It has 46 variables, including x and y coordinates.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(bsstop)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 768 observations on the following 46 variables.
+</p>
+
+<dl>
+<dt>ID</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>CNo</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>XCOO</dt><dd><p>x coordinates: a numeric vector</p>
+</dd>
+<dt>YCOO</dt><dd><p>y coordinates: a numeric vector</p>
+</dd>
+<dt>SiO2_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>TiO2_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Al2O3_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Fe2O3_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>MnO_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>MgO_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>CaO_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Na2O_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>K2O_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>P2O5_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>SO3_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Cl_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>F_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>LOI_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>As_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Ba_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Bi_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Ce_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Co_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Cr_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Cs_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Cu_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Ga_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Hf_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>La_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Mo_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Nb_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Ni_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Pb_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Rb_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Sb_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Sc_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Sn_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Sr_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Ta_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Th_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>U_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>V_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>W_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Y_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Zn_T</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>Zr_T</dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>BSS Project in Northern Europe
+</p>
+
+
+<h3>References</h3>
+
+<p>Reimann C, Siewers U, Tarvainen T, Bityukova L, Eriksson J, Gilucis A, 
+Gregorauskiene V, Lukashev VK, Matinian NN, Pasieczna A. 
+Agricultural Soils in Northern Europe: A Geochemical Atlas. 
+Geologisches Jahrbuch, Sonderhefte, Reihe D, Heft SD 5, 
+Schweizerbart'sche Verlagsbuchhandlung, Stuttgart, 2003.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(bsstop)
+# classical versus robust correlation
+corr.plot(log(bsstop[, "Al2O3_T"]), log(bsstop[, "Na2O_T"]))
+</pre>
+
+
+</body></html>

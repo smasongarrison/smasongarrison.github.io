@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A scrambled 3D orthogonal array of strength 2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for OA131_scrambled"><tr><td>OA131_scrambled</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> A scrambled 3D orthogonal array of strength 2</h2>
+
+<h3>Description</h3>
+
+<p>This design is obtained by adding a uniform noise to each coordinate of the orthogonal array OA131.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(OA131_scrambled)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 49 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>x1</code></dt><dd><p>first coordinate</p>
+</dd>
+<dt><code>x2</code></dt><dd><p>second coordinate</p>
+</dd>
+<dt><code>x3</code></dt><dd><p>third coordinate</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p> Roustant O., Franco J., Carraro L., Jourdan A. (2010), A radial scanning statistic for selecting space-filling designs in computer experiments, MODA-9 proceedings, www.emse.fr/~roustant</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(OA131)
+data(OA131_scrambled)
+
+pairs(OA131, xlim=c(0,1), ylim=c(0,1))
+pairs(OA131_scrambled, xlim=c(0,1), ylim=c(0,1))
+</pre>
+
+
+</body></html>

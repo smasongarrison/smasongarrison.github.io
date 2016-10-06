@@ -5,7 +5,7 @@ source("generateIndexPage.R")
 
 ## Generate Navigation Bar
 source("generateNavigationBar.R")
-c=6
+c=9
 j=25
 c=c+1
 num=c*j+15+j

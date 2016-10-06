@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Titanic data with passenger names and other details removed.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ptitanic"><tr><td>ptitanic</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Titanic data with passenger names and other details removed.</h2>
+
+<h3>Description</h3>
+
+<p>Titanic data with passenger names and other details removed.</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1046 observations on 6 variables.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+      <code>pclass</code>   </td><td style="text-align: left;"> passenger class, unordered factor: 1st 2nd 3rd</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+      <code>survived</code> </td><td style="text-align: left;"> factor: died or survived</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+      <code>sex</code>      </td><td style="text-align: left;"> unordered factor: male female</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+      <code>age</code>      </td><td style="text-align: left;"> age in years, min 0.167 max 80.0</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+      <code>sibsp</code>    </td><td style="text-align: left;"> number of siblings or spouses aboard, integer: 0...8</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+      <code>parch</code>    </td><td style="text-align: left;"> number of parents or children aboard, integer: 0...6</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  </td>
+</tr>
+
+</table>
+
+
+
+<h3>Source</h3>
+
+<p>The dataset was compiled by Frank Harrell and Robert Dawson:<br />
+<a href="http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html">http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html</a>.
+</p>
+<p>See also:<br />
+<a href="http://biostat.mc.vanderbilt.edu/twiki/pub/Main/DataSets/titanic3info.txt">http://biostat.mc.vanderbilt.edu/twiki/pub/Main/DataSets/titanic3info.txt</a>.
+</p>
+<p>For this version of the Titanic data, passenger details were deleted,
+<code>survived</code> was cast as a <code>factor</code>,
+and the name changed to <code>ptitanic</code> to minimize confusion with
+other versions.
+</p>
+<p>In this data the crew are conspicuous by their absence.
+</p>
+<p>Contents of <code>ptitanic</code>:
+</p>
+<pre>
+         pclass survived    sex    age sibsp parch
+    1       1st survived female 29.000     0     0
+    2       1st survived   male  0.917     1     2
+    3       1st     died female  2.000     1     2
+    4       1st     died   male 30.000     1     2
+    5       1st     died female 25.000     1     2
+    ...
+    1309    3rd     died   male 29.000     0     0
+    </pre>
+<p>How <code>ptitanic</code> was built:
+</p>
+<pre>
+    load("titanic3.sav") # from Dr. Harrell's web site
+    # discard name, ticket, fare, cabin, embarked, body, home.dest
+    ptitanic &lt;- titanic3[,c(1,2,4,5,6,7)]
+    # change survived from integer to factor
+    ptitanic$survived &lt;- factor(ptitanic$survived, labels=c("died", "survived"))
+    save(ptitanic, file="ptitanic.rda")</pre>
+<p>This version of the data differs from
+<code>etitanic</code> in the <code>earth</code> package
+in that here <code>survived</code> is a factor (not an integer)
+and <code>age</code> has some <code>NA</code>s.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(ptitanic)
+summary(ptitanic)
+# main indicator of missing data is 3rd class esp. with many children
+obs.with.nas &lt;- rowSums(is.na(ptitanic)) &gt; 0
+prp(rpart(obs.with.nas~., data=ptitanic, method="class"),
+    main="observations with missing data", extra=7)
+</pre>
+
+
+</body></html>

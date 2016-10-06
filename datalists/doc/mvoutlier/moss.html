@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Moss Layer of the Kola Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for moss"><tr><td>moss</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Moss Layer of the Kola Data</h2>
+
+<h3>Description</h3>
+
+<p>The Kola Data were collected in the Kola Project (1993-1998, 
+Geological Surveys of Finland (GTK) and Norway (NGU) and Central
+Kola Expedition (CKE), Russia). More than 600 samples in five
+different layers were analysed, this dataset contains the moss layer.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(moss)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 598 observations on the following 34 variables.
+</p>
+
+<dl>
+<dt><code>ID</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>XCOO</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>YCOO</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Ag</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Al</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>As</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>B</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Ba</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Bi</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Ca</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Cd</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Co</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Cr</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Cu</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Fe</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Hg</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>K</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Mg</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Mn</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Mo</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Na</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Ni</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>P</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Pb</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Rb</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>S</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Sb</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Si</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Sr</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Th</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Tl</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>U</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>V</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Zn</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Kola Project (1993-1998)
+</p>
+
+
+<h3>References</h3>
+
+<p>Reimann C, Äyräs M, Chekushin V, Bogatyrev I, Boyd R, Caritat P de, Dutter R,
+Finne TE, Halleraker JH, Jæger Ø, Kashulina G, Lehto O, Niskavaara H, Pavlov V,
+Räisänen ML, Strand T, Volden T. Environmental Geochemical Atlas of the Central
+Barents Region. NGU-GTK-CKE Special Publication, Geological Survey of Norway,
+Trondheim, Norway, 1998.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(moss)
+# classical versus robust correlation:
+corr.plot(log(moss[,"Al"]), log(moss[,"Na"]))
+</pre>
+
+
+</body></html>
