@@ -5,10 +5,10 @@ source("generateIndexPage.R")
 
 ## Generate Navigation Bar
 source("generateNavigationBar.R")
-c=9
-j=25
+c=0
+j=50
 c=c+1
-num=c*j+15+j
+num=c*j
 ## Extract Datasets from R
 source("datalists/datasets_extract.r")
 
