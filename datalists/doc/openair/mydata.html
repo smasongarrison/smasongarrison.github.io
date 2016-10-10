@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Example data for openair</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mydata"><tr><td>mydata</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Example data for openair</h2>
+
+<h3>Description</h3>
+
+<p>The mydata dataset is provided as an example dataset as part of the openair
+package. The dataset contains hourly measurements of air pollutant
+concentrations, wind speed and wind direction collected at the Marylebone
+(London) air quality monitoring supersite between 1st January 1998 and 23rd
+June 2005.
+</p>
+
+
+<h3>Format</h3>
+
+<p>Data frame with 65533 observations (rows) on the following 10
+variables: </p>
+ <dl>
+<dt>list(&quot;date&quot;)</dt><dd><p>Observation date/time stamp in
+year-month-day hour:minute:second format (POSIXct). </p>
+</dd>
+<dt>list(&quot;ws&quot;)</dt><dd><p>Wind speed, in m/s, as numeric vector.</p>
+</dd>
+<dt>list(&quot;wd&quot;)</dt><dd><p>Wind direction, in degrees from North, as a numeric
+vector.</p>
+</dd> <dt>list(&quot;nox&quot;)</dt><dd><p>Oxides of nitrogen concentration, in ppb, as
+a numeric vector.</p>
+</dd> <dt>list(&quot;no2&quot;)</dt><dd><p>Nitrogen dioxide concentration, in
+ppb, as a numeric vector.</p>
+</dd> <dt>list(&quot;o3&quot;)</dt><dd><p>Ozone concentration, in ppb,
+as a numeric vector.</p>
+</dd> <dt>list(&quot;pm10&quot;)</dt><dd><p>Particulate PM10 fraction
+measurement, in ug/m3 (raw TEOM), as a numeric vector.</p>
+</dd>
+<dt>list(&quot;so2&quot;)</dt><dd><p>Sulfur dioxide concentration, in ppb, as a numeric
+vector.</p>
+</dd> <dt>list(&quot;co&quot;)</dt><dd><p>Carbon monoxide concentration, in ppm, as a
+numeric vector.</p>
+</dd> <dt>list(&quot;pm25&quot;)</dt><dd><p>Particulate PM2.5 fraction
+measurement, in ug/m3, as a numeric vector.</p>
+</dd> </dl>
+
+
+<h3>Details</h3>
+
+<p><code>mydata</code> is supplied with the <code>openair</code> package as an example
+dataset for use with documented examples.
+</p>
+
+
+<h3>Note</h3>
+
+<p><code>openair</code> functions generally require data frames with a field
+&quot;date&quot; that can be in either <code>POSIXct</code> or <code>Date</code> format but
+should be GMT time zone. This can be hourly data or higher resolution
+data.
+</p>
+
+
+<h3>Source</h3>
+
+<p><code>mydata</code> was compiled from data archived in the London Air
+Quality Archive.  See <a href="http://www.londonair.org.uk">http://www.londonair.org.uk</a> for site details.
+</p>
+<p>The same data is also provide in <code>'.csv'</code> format via the openair
+project web site <a href="http://www.openair-project.org">http://www.openair-project.org</a>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+
+#basic structure
+head(mydata)
+
+
+</pre>
+
+
+</body></html>
