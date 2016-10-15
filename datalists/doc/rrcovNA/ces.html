@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Consumer Expenditure Survey Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ces"><tr><td>ces</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Consumer Expenditure Survey Data </h2>
+
+<h3>Description</h3>
+
+<p>This data set has been derived from the Quarterly Interview Survey of the
+Consumer Expenditure Survey (CES) undertaken by the U.S. Department of Labor,
+Bureau of Labor Statistics and is available at
+<a href="http://econ.lse.ac.uk/courses/ec220/G/iedata/ces/">http://econ.lse.ac.uk/courses/ec220/G/iedata/ces/</a> where also more details about
+this survey can be found. The original data set comprises 869 households in 34
+variables of which one is unique ID, five characterize the size of the
+household, further 6 variables contain other characteristics of the household
+like age, education ethnicity, etc. and 22 variables represent the household
+expenditures. We will consider a reduced set of only 8 expendature variables.
+This reduced data set was analyzed by Hubert at al. (2009)in the context of
+PCA and the first step
+of the analysis showed that all variables are highly skewed.
+They applied the robust PCA method of Serneels and Verdonck based
+on the EM algorithm, since some of the data are incomplete.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ces)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 869 observations on the following 8 variables:
+</p>
+
+<dl>
+<dt><code>EXP</code></dt><dd><p>Total household expenditure</p>
+</dd>
+<dt><code>FDHO</code></dt><dd><p>Food and nonalcoholic beverages consumed at home</p>
+</dd>
+<dt><code>FDAW</code></dt><dd><p>Food and nonalcoholic beverages consumed away from home</p>
+</dd>
+<dt><code>SHEL</code></dt><dd><p>Housing expenditure</p>
+</dd>
+<dt><code>TELE</code></dt><dd><p>Telephone services</p>
+</dd>
+<dt><code>CLOT</code></dt><dd><p>Clothing</p>
+</dd>
+<dt><code>HEAL</code></dt><dd><p>Health care</p>
+</dd>
+<dt><code>ENT</code></dt><dd><p>Entertainment</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><a href="http://econ.lse.ac.uk/courses/ec220/G/iedata/ces/">http://econ.lse.ac.uk/courses/ec220/G/iedata/ces/</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Hubert, M, Rousseeuw, P.J. and Verdonck, T., (2009). Robust PCA for skewed data and its outlier map,
+<em>Computational Statistics &amp; Data Analysis</em>, <b>53</b>, 6, pp. 2264-2274
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(ces)
+summary(ces)
+plot(ces)
+</pre>
+
+
+</body></html>

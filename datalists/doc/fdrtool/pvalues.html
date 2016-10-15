@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Example p-Values</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for pvalues"><tr><td>pvalues</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Example p-Values</h2>
+
+<h3>Description</h3>
+
+<p>This data set contains 4,289 p-values.  These data are used to
+illustrate the functionality of the functions <code>fdrtool</code>
+and <code>pval.estimate.eta0</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(pvalues)
+</pre>
+
+
+<h3>Format</h3>
+
+<p><code>pvalues</code> is a vector with 4,289 p-values. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# load fdrtool library
+library("fdrtool")
+
+# load data set
+data(pvalues)
+
+# estimate density and distribution function, 
+# and compute corresponding (local) false discovery rates
+fdrtool(pvalues, statistic="pvalue")
+</pre>
+
+
+</body></html>

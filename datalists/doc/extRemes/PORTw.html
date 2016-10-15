@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Annual Maximum and Minimum Temperature</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for PORTw"><tr><td>PORTw</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Annual Maximum and Minimum Temperature</h2>
+
+<h3>Description</h3>
+
+<p>Annual maximum and minimum Winter temperature (degrees centigrade) with a covariate for the
+North Atlantic Oscillation index from 1927 through 1995.  Data is for Winter for Port Jervis,
+New York (PORTw) and Spring for Sept-Iles, Quebec (SEPTsp).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(PORTw)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 68 observations on the following 16 variables.
+</p>
+
+<dl>
+<dt>Year</dt><dd><p>a numeric vector giving the year.</p>
+</dd>
+<dt>MTMAX</dt><dd><p>a numeric vector giving the mean winter maximum temperatures (degrees centigrade).</p>
+</dd>
+<dt>MTMIN</dt><dd><p>a numeric vector giving the mean winter minimum temperatures (degrees centigrade).</p>
+</dd>
+<dt>STDTMAX</dt><dd><p>a numeric vector giving the standard deviations of maximum winter temperatures (degrees centigrade).</p>
+</dd>
+<dt>STDMIN</dt><dd><p>a numeric vector giving the standard deviations of minimum winter temperatures (degrees centigrade).</p>
+</dd>
+<dt>TMX1</dt><dd><p>a numeric vector giving the maximum winter temperature (degrees centigrade).</p>
+</dd>
+<dt>TMN0</dt><dd><p>a numeric vector giving the minimum winter temperature (degrees centigrade).</p>
+</dd>
+<dt>MDTR</dt><dd><p>a numeric vector giving the mean winter diurnal temperature range (degrees centigrade).</p>
+</dd>
+<dt>AOindex</dt><dd><p>a numeric vector giving the Atlantic Oscillation index (see Thompson and Wallace (1998)).</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>See Wettstein and Mearns (2002) for a much more detailed explanation of the above variables.
+</p>
+
+
+<h3>Source</h3>
+
+<p>See Wettstein and Mearns (2002).
+</p>
+
+
+<h3>References</h3>
+
+<p>Thompson, D. W. J. and Wallace, J. M. (1998) The Arctic Oscillation signature in the wintertime geopotential height and temperature fields. <em>Geophys. Res. Lett.</em>, <b>25</b>, 1297&ndash;1300.
+</p>
+<p>Wettstein, J. J. and Mearns, L. O. (2002) The influence of the North Atlantic-Arctic Oscillation on mean, variance and extremes of temperature in the northeastern United States and Canada. <em>Journal of Climate</em>, <b>15</b>, 3586&ndash;3600.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(PORTw)
+str(PORTw)
+par( mfrow=c(2,1))
+plot(PORTw[,"TMX1"], type="l", lwd=2, xlab="", xaxt="n", ylab="Maximum Temperature (C)")
+plot(PORTw[,"TMN0"], type="l", lwd=2, xlab="", xaxt="n", ylab="Minimum Temperature (C)")
+</pre>
+
+
+</body></html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hurricane Frequency Dataset.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Rsum"><tr><td>Rsum</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Hurricane Frequency Dataset.</h2>
+
+<h3>Description</h3>
+
+<p>This dataset gives the number of hurricanes per year (from 1925 to 1995) as well as the ENSO state and total monetary damage.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Rsum)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 71 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt>Year</dt><dd><p>a numeric vector giving the year.</p>
+</dd>
+<dt>EN</dt><dd><p>a numeric vector giving the ENSO state (-1 for La Ninha, 1 for El Ninho and 0 otherwise).</p>
+</dd>
+<dt>Ct</dt><dd><p>a numeric vector giving the number of hurricanes for the corresponding year.</p>
+</dd>
+<dt>TDam</dt><dd><p>a numeric vector giving the total monetary damage (millions of U.S. dollars).</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>More information on these data can be found in Pielke and Landsea (1998) or Katz (2002).
+</p>
+
+
+<h3>References</h3>
+
+<p>Katz, R. W. (2002) Stochastic modeling of hurricane damage. <em>Journal of Applied Meteorology</em>, <b>41</b>, 754&ndash;762.
+</p>
+<p>Pielke, R. A. and Landsea, C. W. (1998) Normalized hurricane damages in the United States: 1925-95. <em>Weather and Forecasting</em>, <b>13</b>, (3), 621&ndash;631.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(Rsum)
+str(Rsum)
+plot(Rsum)
+
+# Reproduce Fig. 1 of Katz (2002).
+plot(	Rsum[,"Year"], Rsum[,"TDam"]/1000, type="h", xlab="Year",
+	ylab="Total damage (billion U.S. dollars)",
+	ylim=c(0,80), lwd=2)
+
+# Reproduce Fig. 2 of Katz (2002).
+plot(Rsum[,"Year"],Rsum[,"Ct"],type="h", xlab="Year",
+    ylab="Number of Hurricanes", ylim=c(0,5), lwd=2)
+
+</pre>
+
+
+</body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Potomac River Peak Stream Flow Data.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Potomac"><tr><td>Potomac</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Potomac River Peak Stream Flow Data.</h2>
+
+<h3>Description</h3>
+
+<p>Potomac River peak stream flow (cfs) data for water years (Oct-Sep) 1895 through 2000
+at Point Rocks, Maryland.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Potomac)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 106 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt>Year</dt><dd><p>a numeric vector giving the water year (Oct-Sep).</p>
+</dd>
+<dt>Flow</dt><dd><p>a numeric vector the peak stream flow (cfs; 1 cfs = 0.028317 cubic meters per second).</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Potomac River peak stream flow (cfs) data for water years (Oct-Sep) 1895 through 2000 at Point Rocks, Maryland.
+</p>
+<p>These data (up to 1986) have been analyzed by Smith (1987) and this entire dataset by Katz et al. (2002) Sec. 2.3.2.
+</p>
+
+
+<h3>Source</h3>
+
+<p>U.S. Geological Survey (<a href="http://water.usgs.gov/nwis/peak">http://water.usgs.gov/nwis/peak</a>).
+</p>
+
+
+<h3>References</h3>
+
+<p>Katz, R. W., Parlange, M. B. and Naveau, P. (2002) Statistics of extremes in hydrology. <em>Advances in Water Resources</em>, <b>25</b>, 1287&ndash;1304. 
+</p>
+<p>Smith, J. A. (1987) Regional flood frequency analysis using extreme order statistics of the annual peak record. <em>Water Resour Res</em>, <b>23</b>, 1657&ndash;1666.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Potomac)
+str(Potomac)
+# Fig. 3 of Katz et al. (2002) Sec. 2.3.2.
+plot(Potomac[,"Year"], Potomac[,"Flow"]/1000, yaxt="n", ylim=c(0,500), type="l", lwd=1.5,
+    xlab="Water Year (Oct-Sept)", ylab="Annual peak flow (thousand cfs)")
+axis(2,at=seq(0,500,100),labels=as.character(seq(0,500,100)))
+</pre>
+
+
+</body></html>

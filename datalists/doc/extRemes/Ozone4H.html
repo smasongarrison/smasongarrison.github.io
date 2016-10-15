@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ground-Level Ozone Order Statistics.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Ozone4H"><tr><td>Ozone4H</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Ground-Level Ozone Order Statistics.</h2>
+
+<h3>Description</h3>
+
+<p>Ground-level ozone order statistics from 1997 at 513 monitoring stations in the eastern United States.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Ozone4H)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 513 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt>station</dt><dd><p>a numeric vector identifying the station (or line) number.</p>
+</dd>
+<dt>r1</dt><dd><p>a numeric vector giving the maximum ozone reading (ppb) for 1997.</p>
+</dd>
+<dt>r2</dt><dd><p>a numeric vector giving the second-highest ozone reading (ppb) for 1997.</p>
+</dd>
+<dt>r3</dt><dd><p>a numeric vector giving the third-highest ozone reading (ppb) for 1997.</p>
+</dd>
+<dt>r4</dt><dd><p>a numeric vector giving the fourth-highest ozone reading (ppb) for 1997.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Ground level ozone readings in parts per billion (ppb) are recorded hourly at ozone monitoring stations throughout the country during the &quot;ozone season&quot; (roughly April to October).  These data are taken from a dataset giving daily maximum 8-hour average ozone for 5 ozone seasons (including 1997).  The new U.S.  Environmental Protection Agency (EPA) National Ambient Air Quality Standard (NAAQS) for ground-level ozone is based on a three-year average of fourth-highest daily 8-hour maximum ozone readings. 
+</p>
+<p>For more analysis on the original data regarding the U.S. EPA NAAQS for ground-level ozone, see Fuentes (2003), Gilleland and Nychka (2005) and Gilleland et al. (2006).  For an example of using these data with <span class="pkg">extRemes</span>, see the online tutorial (<a href="http://www.isse.ucar.edu/extremevalues/evtk.html">http://www.isse.ucar.edu/extremevalues/evtk.html</a>).  These data are in the form required by the <code>rlarg.fit</code> function of Stuart Coles available in the R package <span class="pkg">ismev</span>; see Coles (2001) for more on the r-th largest order statistic model and the function <code>rlarg.fit</code>.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Data was originally provided by the U.S. EPA, and can be obtained (daily maximum 8-hour average ozone for all five seasons from 1995 to 1999) from the Geophysical Statistics Project (GSP) at the National Center for Atmospheric Research (NCAR) at <a href="http://www.image.ucar.edu/Data/">http://www.image.ucar.edu/Data/</a> along with the orignal longitude/latitude coordinates for the stations.
+</p>
+
+
+<h3>References</h3>
+
+<p>Coles, S. (2001) <em>An Introduction to Statistical Modeling of Extreme Values</em>. London, U.K.: Springer-Verlag, 208pp.
+</p>
+<p>Fuentes, M.  (2003) Statistical assessment of geographic areas of compliance with air quality.  <em>Journal of Geophysical Research</em>, <b>108</b>, (D24).
+</p>
+<p>Gilleland, E. and Nychka, D. (2005) Statistical Models for Monitoring and Regulating Ground-level Ozone. <em>Environmetrics</em>, <b>16</b>, 535&ndash;546.
+</p>
+<p>Gilleland, E., Nychka, D., and Schneider, U. (2006) Spatial models for the distribution of extremes.  In <em>Applications of Computational Statistics in the Environmental Sciences: Hierarchical Bayes and MCMC Methods</em>, Edited by J.S. Clark &amp; A.  Gelfand. Oxford University Press.  170&ndash;183, ISBN 0-19-8569671.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Ozone4H)
+str(Ozone4H)
+plot(Ozone4H)
+</pre>
+
+
+</body></html>

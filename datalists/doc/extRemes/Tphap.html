@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Daily Maximum and Minimum Temperature in Phoenix, Arizona.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Tphap"><tr><td>Tphap</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Daily Maximum and Minimum Temperature in Phoenix, Arizona.</h2>
+
+<h3>Description</h3>
+
+<p>Daily maximum and minimum temperature (degrees Fahrenheit) for July through August 1948 through 1990 at
+Sky Harbor airport in Phoenix, Arizona.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Tphap)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 43 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt>Year</dt><dd><p>a numeric vector giving the number of years since 1900.</p>
+</dd>
+<dt>Month</dt><dd><p>a numeric vector giving the month.</p>
+</dd>
+<dt>Day</dt><dd><p>a numeric vector giving the day of the month.</p>
+</dd>
+<dt>MaxT</dt><dd><p>a numeric vector giving the daily maximum temperatures in degrees Fahrenheit.</p>
+</dd>
+<dt>MinT</dt><dd><p>a numeric vector giving the daily minimum temperatures in degrees Fahrenheit.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Data are daily maximum and minimum temperature for the summer months of July through August from 1948 through 1990.
+</p>
+
+
+<h3>Source</h3>
+
+<p>U.S. National Weather Service Forecast office at the Phoenix Sky Harbor Airport.
+</p>
+
+
+<h3>References</h3>
+
+<p>Balling, R. C., Jr., Skindlov, J. A. and Phillips, D. H. (1990) The impact of increasing summer mean temperatures on extreme maximum and minimum temperatures in Phoenix, Arizona. <em>Journal of Climate</em>, <b>3</b>, 1491&ndash;1494.
+</p>
+<p>Tarleton, L. F. and Katz, R. W. (1995) Statistical explanation for trends in extreme summer temperatures at Phoenix, A.Z. <em>Journal of Climate</em>, <b>8</b>, (6), 1704&ndash;1708.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Tphap)
+str(Tphap)
+
+par( mfrow=c(2,1))
+hist( Tphap[,"MaxT"], main="", xlab="Max Temp", xlim=c(60,120), freq=FALSE, breaks="FD", col="red")
+hist( Tphap[,"MinT"], main="", xlab="Min Temp", xlim=c(60,120), freq=FALSE, breaks="FD", col="blue")
+</pre>
+
+
+</body></html>

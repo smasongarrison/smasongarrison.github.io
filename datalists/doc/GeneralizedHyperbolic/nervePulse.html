@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Intervals Between Pulses Along a Nerve Fibre</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for nervePulse"><tr><td>nervePulse</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Intervals Between Pulses Along a Nerve Fibre</h2>
+
+<h3>Description</h3>
+
+<p>Times between successive electric pulses on the surface of isolated
+muscle fibres.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(nervePulse)</pre>
+
+
+<h3>Format</h3>
+
+<p>The <code>nervePulse</code> data is a vector with 799 observations.
+</p>
+
+
+<h3>Details</h3>
+
+<p>The end-plates of resting muscle fibres are the seat of spontaneous
+electric discharges. The occurence of these spontaneous discharges at
+apparently normal synapses is studied in depth in Fatt and Katz
+(1951).
+The frequency and amplitute of these discharges was recorded. The
+times between each discharge were taken in milliseconds and this has
+been converted into the number of 1/50 sec intervals between
+successive pulses.
+There are 799 observations.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Fatt, P., Katz, B. (1952)
+Spontaneous subthreshold activity at motor nerve endings.
+<em>J. of Physiology</em>,
+<b>117</b>, 109&ndash;128.
+</p>
+<p>Jörgensen, B. (1982)
+Statistical Properties of the Generalized Inverse Gaussian Distribution.
+<em>Lecture Notes in Statistics, Vol. 9, Springer-Verlag, New York</em>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(nervePulse)
+str(nervePulse)
+
+### Fit the generalized inverse Gaussian distribution
+gigFit(nervePulse)
+
+</pre>
+
+
+</body></html>

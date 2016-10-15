@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: E-mails from DBWorld mailing list</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for DBWorld"><tr><td>DBWorld</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+E-mails from DBWorld mailing list
+</h2>
+
+<h3>Description</h3>
+
+<p>The dataset contains n= 64 bodies of e-mails in binary bag-of-words
+representation which Filannino manually collected
+from DBWorld mailing list.
+
+DBWorld mailing list announces conferences, jobs, books, software and
+grants.
+
+Filannino applied supervised learning algorithm to classify e-mails
+between &ldquo;announces of conferences&rdquo; and &ldquo;everything else&rdquo;.
+
+Out of 64 e-mails, 29 are about conference announcements and 35 are not.
+</p>
+<p>Every e-mail is represented as a vector containing p binary values,
+where p is the size of the vocabulary extracted from the entire
+corpus with some constraints:
+the common words such as &ldquo;the&rdquo;, &ldquo;is&rdquo; or &ldquo;which&rdquo;, so-called stop words, 
+and words that have less than 3 characters or more than 30 chracters
+are removed from the dataset. 
+
+The entry of the vector is 1 if the corresponding word belongs to the
+e-mail and 0 otherwise.
+
+
+The number of unique words in the dataset is p=4702.
+
+The dataset is originally from the UCI Machine Learning
+Repository DBWorldData.
+</p>
+<p><code>rawDBWorld</code> is a list of 64 objects containing the original E-mails.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(DBWorld)
+data(rawDBWorld)
+</pre>
+
+
+<h3>Details</h3>
+
+<p>See Bache K, Lichman M (2013). for details of the data descriptions. 
+The original dataset is freely available from USIMachine Learning Repository website 
+<a href="http://archive.ics.uci.edu/ml/datasets/DBWorld+e-mails">http://archive.ics.uci.edu/ml/datasets/DBWorld+e-mails</a>
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Yumi Kondo &lt;y.kondo@stat.ubc.ca&gt;
+</p>
+
+
+<h3>References</h3>
+
+<p>Bache K, Lichman M (2013). UCI Machine Learning Repository.&quot; <a href="http://archive.ics.uci.edu/ml/datasets">http://archive.ics.uci.edu/ml/datasets</a>
+</p>
+<p>Filannino, M., (2011). 'DBWorld e-mail classification using a very small corpus', Project of Machine Learning course, University of Manchester. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(DBWorld)
+data(rawDBWorld)
+
+## End(Not run)
+</pre>
+
+
+</body></html>

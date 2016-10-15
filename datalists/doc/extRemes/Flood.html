@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: United States Total Economic Damage Resulting from Floods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Flood"><tr><td>Flood</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> United States Total Economic Damage Resulting from Floods</h2>
+
+<h3>Description</h3>
+
+<p>United States total economic damage (in billions of U.S. dollars) caused by floods by hydrologic year from
+1932-1997.  See Pielke and Downton (2000) for more information.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Flood)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 66 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt>OBS</dt><dd><p>a numeric vector giving the line number.</p>
+</dd>
+<dt>HYEAR</dt><dd><p>a numeric vector giving the hydrologic year.</p>
+</dd>
+<dt>USDMG</dt><dd><p>a numeric vector giving total economic damage (in billions of U.S. dollars) caused by floods.</p>
+</dd>
+<dt>DMGPC</dt><dd><p>a numeric vector giving damage per capita.</p>
+</dd>
+<dt>LOSSPW</dt><dd><p>a numeric vector giving damage per unit wealth.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>From Pielke and Downton (2000):
+</p>
+<p>The National Weather Service (NWS) maintains a national flood damage record from 1903 to the present, and state level
+data from 1983 to the present.  The reported losses are for &quot;significant flood events&quot; and include only direct economic
+damage that results from flooding caused by ranfall and/or snowmelt.  The annual losses are based on &quot;hydrologic years&quot;
+from October through September.  Flood damage per capita is computed by dividing the inflation-adjusted losses for each
+hydrological year by the estimated population on 1 July of that year (www.census.gov).  Flood damage per million dollars
+of national wealth uses the net stock of fixed reproducible tangible wealth in millions of current dollars (see Pielke
+and Downton (2000) for more details; see also Katz et al. (2002) for analysis).
+</p>
+
+
+<h3>Source</h3>
+
+<p>NWS web site: <a href="http://www.nws.noaa.gov/oh/hic">http://www.nws.noaa.gov/oh/hic</a>
+</p>
+
+
+<h3>References</h3>
+
+ 
+<p>Katz, R. W., Parlange, M. B. and Naveau, P. (2002) Statistics of extremes in hydrology, <em>Advances in Water Resources</em>, <b>25</b>, 1287&ndash;1304.
+</p>
+<p>Pielke, R. A. Jr. and Downton, M. W. (2000) Precipitation and damaging floods: trends in the United States, 1932-97, <em>Journal of Climate</em>, <b>13</b>, (20), 3625&ndash;3637.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Flood)
+plot( Flood[,2], Flood[,3], type="l", lwd=2, xlab="hydrologic year",
+    ylab="Total economic damage (billions of U.S. dollars)")
+</pre>
+
+
+</body></html>

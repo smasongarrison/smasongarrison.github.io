@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Intervals Between Vehicles on a Road</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for traffic"><tr><td>traffic</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Intervals Between Vehicles on a Road</h2>
+
+<h3>Description</h3>
+
+<p>Intervals between the times that 129 successive vehicles pass a point
+on a road, measured in seconds.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(traffic)</pre>
+
+
+<h3>Format</h3>
+
+<p>The <code>traffic</code> data is a vector of 128 observations.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Bartlett, M.S. (1963)
+Statistical estimation of density functions
+<em>Sankhya: The Indian Journal of Statistics</em>,
+<b>Series A, Vol. 25, No. 3</b>, 245&ndash;254.
+</p>
+<p>Jörgensen, B. (1982)
+Statistical Properties of the Generalized Inverse Gaussian Distribution.
+<em>Lecture Notes in Statistics, Vol. 9, Springer-Verlag, New York</em>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(traffic)
+str(traffic)
+
+### Fit the generalized inverse Gaussian distribution
+gigFit(traffic)
+</pre>
+
+
+</body></html>

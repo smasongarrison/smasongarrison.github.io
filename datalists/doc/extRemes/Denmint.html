@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Denver Minimum Temperature</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Denmint"><tr><td>Denmint</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Denver Minimum Temperature</h2>
+
+<h3>Description</h3>
+
+<p>Daily minimum temperature (degrees centigrade) for Denver, Colorado from 1949 through 1999.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Denmint)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 18564 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt>Time</dt><dd><p>a numeric vector indicating the line number (time from first entry to the last).</p>
+</dd>
+<dt>Year</dt><dd><p>a numeric vector giving the year.</p>
+</dd>
+<dt>Mon</dt><dd><p>a numeric vector giving the month of each year.</p>
+</dd>
+<dt>Day</dt><dd><p>a numeric vector giving the day of the month.</p>
+</dd>
+<dt>Min</dt><dd><p>a numeric vector giving the minimum temperature in degrees Fahrenheit.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Originally, the data came from the Colorado Climate Center at Colorado State University.  The Colorado state climatologist office no longer provides these data without charge. They can be obtained from the NOAA/NCDC web site, but there are slight differences (i.e., some missing values for temperature).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Denmint)
+plot( Denmint[,3], Denmint[,5], xlab="", xaxt="n", ylab="Minimum Temperature (deg. F)")
+axis(1,at=1:12,labels=c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"))
+</pre>
+
+
+</body></html>

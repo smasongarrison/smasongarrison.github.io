@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Australian Institute of Sport data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ais"><tr><td>ais</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Australian Institute of Sport data</h2>
+
+<h3>Description</h3>
+
+<p>Data on 102 male and 100 female athletes collected at the Australian
+Institute of Sport, courtesy of Richard Telford and Ross Cunningham.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ais)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 202 observations on 13 variables.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    [, 1] </td><td style="text-align: left;"> sex  </td><td style="text-align: left;"> sex </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [, 2] </td><td style="text-align: left;"> sport</td><td style="text-align: left;"> sport </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [, 3] </td><td style="text-align: left;"> rcc  </td><td style="text-align: left;"> red cell count </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [, 4] </td><td style="text-align: left;"> wcc  </td><td style="text-align: left;"> white cell count </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [, 5] </td><td style="text-align: left;"> Hc   </td><td style="text-align: left;"> Hematocrit </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [, 6] </td><td style="text-align: left;"> Hg   </td><td style="text-align: left;"> Hemoglobin </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [, 7] </td><td style="text-align: left;"> Fe   </td><td style="text-align: left;"> plasma ferritin concentration </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [, 8] </td><td style="text-align: left;"> bmi  </td><td style="text-align: left;"> body mass index, weight/(height)<i>²</i> </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [, 9] </td><td style="text-align: left;"> ssf  </td><td style="text-align: left;"> sum of skin folds </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,10] </td><td style="text-align: left;"> Bfat </td><td style="text-align: left;"> body fat percentage </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,11] </td><td style="text-align: left;"> lbm  </td><td style="text-align: left;"> lean body mass </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,12] </td><td style="text-align: left;"> Ht   </td><td style="text-align: left;"> height (cm) </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,13] </td><td style="text-align: left;"> Wt   </td><td style="text-align: left;"> weight (Kg) </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
+
+</table>
+
+
+
+<h3>Source</h3>
+
+<p>Cook and Weisberg (1994) via the package <span class="pkg">sn</span>. This help file is a
+modification of the help file from the package <span class="pkg">sn</span>.
+</p>
+
+
+<h3>References</h3>
+
+<p>Cook and Weisberg (1994),
+<em>An Introduction to Regression Graphics</em>.
+John Wiley &amp; Sons, New York.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(ais)
+Fe &lt;- ais$Fe
+### Not enough data to find starting values
+### Use default parameter values as starting values
+FeFit &lt;- skewhypFit(Fe, startValues = "US", paramStart = c(0,1,1,1))
+### Ferritin must always be non-negative
+### Probability of negative values is small for fitted distribution
+pskewhyp(0, param = FeFit$param)
+</pre>
+
+
+</body></html>

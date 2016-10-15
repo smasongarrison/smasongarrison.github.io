@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Multiple Features Data Set of Robert P.W. Duin.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for DutchUtility"><tr><td>DutchUtility</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Multiple Features Data Set of Robert P.W. Duin.
+</h2>
+
+<h3>Description</h3>
+
+<p>This dataset consists of features of handwritten numerals (&lsquo;0&rsquo;&ndash;&lsquo;9&rsquo;) (<em>K</em>=10) extracted from a collection of Dutch utility maps.
+
+Two hundred patterns per class (for a total of 2,000 (=<em>N</em>) patterns)
+have been digitized in binary images.
+
+Raw observations are 32x45 bitmmaps, which are divided into
+nooverlapping blocks of 2x3 and the number of pixels are counted in
+each block. 
+
+This generate <em>p</em>=240 (16x15) variable, recodring the
+normalized counts of pixels in each block and each element is an
+integer in the range 0 to 6.
+
+<code>rownames</code> of <code>DutchUtility</code> contains the true digits and <code>colnames</code> of it contains the position of the block matrix, from which the normalized counts of pixels are taken. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(DutchUtility)
+showDigit(index,cex.main=1)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>index</code></td>
+<td>
+
+<p>A scalar containing integers between 1 and 2000.
+The function <code>ShowDigit</code> regenerates the sampled versions of the original images may be obtained (15x16 pixels).
+(the source image (32x45) dataset is lost)
+</p>
+</td></tr>
+<tr valign="top"><td><code>cex.main</code></td>
+<td>
+
+<p>Specify the size of the title text with a numeric value of length 1.
+</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The original dataset is freely available from USIMachine Learning Repository (Frank and Asuncion (2010)) website http://archive
+.ics.uci.edu/ml/datasets.html.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Yumi Kondo &lt;y.kondo@stat.ubc.ca&gt;
+</p>
+
+
+<h3>References</h3>
+
+<p>Frank A, Asuncion A (2010). UCI Machine Learning Repository.&quot; <a href="http://archive.ics.uci.edu/ml">http://archive.ics.uci.edu/ml</a>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+
+data(DutchUtility)
+
+truedigit &lt;- rownames(DutchUtility)
+(re &lt;- RSKC(DutchUtility,ncl=10,alpha=0.1,L1=5.7,nstart=1000))
+Sensitivity(re$labels,truedigit)
+table(re$labels,truedigit)
+
+## Check the bitmap of the trimmed observations 
+showDigit(re$oW[1])
+## Check the features which receive zero weights
+names(which(re$weights==0))
+
+## End(Not run)
+</pre>
+
+
+</body></html>

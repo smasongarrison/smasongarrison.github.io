@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Synthetic regression and classification datasets for...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sa_fri1"><tr><td>sa_fri1</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Synthetic regression and classification datasets for measuring input importance of supervised learning models
+</h2>
+
+<h3>Description</h3>
+
+<p>5 Synthetic regression (sa_fri1, sa_ssin, sa_psin, sa_int2, sa_tree) and 4 classification (sa_ssin_2, sa_ssin_n2p, sa_int2_3c, sa_int2_8p) datasets for measuring input importance of supervised learning models
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(sa_fri1)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1000 observations on the following variables.
+</p>
+
+<dl>
+<dt><code>x</code>n</dt><dd><p>input (numeric or factor, depends on the dataset)</p>
+</dd>
+<dt><code>y</code></dt><dd><p>output target (numeric or factor, depends on the dataset)</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Check reference or source for full details
+</p>
+
+
+<h3>Source</h3>
+
+<p>See references</p>
+
+
+<h3>References</h3>
+
+
+<ul>
+<li><p> To cite the Importance function, sensitivity analysis methods or synthetic datasets, please use:<br />
+P. Cortez and M.J. Embrechts.<br />
+Using Sensitivity Analysis and Visualization Techniques to Open Black Box Data Mining Models.<br />
+In Information Sciences, Elsevier, 225:1-17, March 2013.<br />
+<a href="http://dx.doi.org/10.1016/j.ins.2012.10.039">http://dx.doi.org/10.1016/j.ins.2012.10.039</a><br />
+</p>
+</li></ul>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(sa_ssin)
+print(summary(sa_ssin))
+## Not run: plot(sa_ssin$x1,sa_ssin$y)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Measure of US Presidents</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for stature"><tr><td>stature</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>The Measure of US Presidents</h2>
+
+<h3>Description</h3>
+
+<p>The US presidents and their main opponents' heights (cm). This dataset contains the following columns:
+</p>
+
+<ul>
+<li><p> election The election year.
+</p>
+</li>
+<li><p> winner The winner candidate.
+</p>
+</li>
+<li><p> winner.height The winner candidate's height in centimeters (cm).
+</p>
+</li>
+<li><p> winner.vote The popular vote support for the winner.
+</p>
+</li>
+<li><p> winner.party The winner's party.
+</p>
+</li>
+<li><p> opponent The main opponent candidate.
+</p>
+</li>
+<li><p> opponent.height The opponent candidate's height in centimeters (cm).
+</p>
+</li>
+<li><p> opponent.vote Popular vote support for the main opponent candidate.
+</p>
+</li>
+<li><p> opponent.party The opponent's party.
+</p>
+</li>
+<li><p> turnout The electorate turnout in percentages.
+</p>
+</li>
+<li><p> winner.bmi The winner Body Mass Index (BMI) estimate <code>(BMI = weight in kg/(height in meter)**2)</code>
+</p>
+</li></ul>
+
+<p>@references
+Murray, G. R. (2014) Evolutionary preferences for physical formidability in leaders. <em>Politics and the Life Science</em>, 33(1), 33-53.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(stature)
+# t.test(stature$winner.height, stature$opponent.height, var.equal=TRUE)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> object with 11 variables and 57 observations.</p>
+
+
+<h3>Source</h3>
+
+<p>US Presidents: <a href="http://www.lingerandlook.com/Names/Presidents.php">http://www.lingerandlook.com/Names/Presidents.php</a>
+Inside Gov. <a href="http://www.us-presidents.insidegov.com">http://www.us-presidents.insidegov.com</a>.
+</p>
+
+
+</body></html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hurricane Damage Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for damage"><tr><td>damage</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Hurricane Damage Data</h2>
+
+<h3>Description</h3>
+
+<p>Estimated economic damage (billions USD) caused by hurricanes.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(damage)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 144 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt>obs</dt><dd><p>a numeric vector that simply gives the line numbers.</p>
+</dd>
+<dt>Year</dt><dd><p>a numeric vector giving the years in which the specific hurricane occurred.</p>
+</dd>
+<dt>Dam</dt><dd><p>a numeric vector giving the total estimated economic damage in billions of U.S. dollars.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>More information on these data can be found in Pielke and Landsea (1998) or Katz (2002).  Also see the tutorial at <a href="http://www.isse.ucar.edu/extremevalues/evtk.html">http://www.isse.ucar.edu/extremevalues/evtk.html</a> for examples using <span class="pkg">extRemes</span>.
+</p>
+
+
+<h3>References</h3>
+
+<p>Katz, R. W. (2002) Stochastic modeling of hurricane damage. <em>Journal of Applied Meteorology</em>, <b>41</b>, 754&ndash;762.
+</p>
+<p>Pielke, R. A. Jr. and Landsea, C. W. (1998) Normalized hurricane damages in the United States: 1925-95. <em>Weather and Forecasting</em>, <b>13</b>, (3), 621&ndash;631.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(damage)
+plot( damage[,1], damage[,3], xlab="", ylab="Economic Damage", type="l", lwd=2)
+
+# Fig. 3 of Katz (2002).
+plot( damage[,"Year"], log( damage[,"Dam"]), xlab="Year", ylab="ln(Damage)", ylim=c(-10,5))
+
+# Fig. 4 of Katz (2002).
+qqnorm( log( damage[,"Dam"]), ylim=c(-10,5))
+</pre>
+
+
+</body></html>

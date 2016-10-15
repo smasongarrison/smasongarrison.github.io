@@ -1,0 +1,58 @@
+"","election","winner","winner.height","winner.vote","winner.party","opponent","opponent.height","opponent.vote","opponent.party","turnout","winner.bmi"
+"1",1789,"George Washington",188,NA,"","",NA,NA,"",NA,25.5
+"2",1792,"George Washington",188,NA,"","",NA,NA,"",NA,25.5
+"3",1796,"John Adams",170,53.4,"Federalist","Thomas Jefferson",189,46.6,"Democratic-Republican",NA,NA
+"4",1800,"Thomas Jefferson",189,61.4,"Democratic-Republican","John Adams",170,38.6,"Federalist",NA,22
+"5",1804,"Thomas Jefferson",189,72.8,"Democratic-Republican","Charles C. Pinckney",NA,27.2,"Federalist",NA,22
+"6",1808,"James Madison",163,64.7,"Democratic-Republican","Charles C. Pinckney",NA,32.4,"Federalist",NA,17
+"7",1812,"James Madison",163,50.4,"Democratic-Republican","De Witt Clinton",191,47.6,"Federalist/Democratic-Republican",NA,17
+"8",1816,"James Monroe",183,68.2,"Democratic-Republican","Rufus King",NA,30.9,"Federalist",NA,25.6
+"9",1820,"James Monroe",183,80.61,"Democratic-Republican","No candidate",NA,16.12,"Federalist",NA,25.6
+"10",1824,"John Q. Adams",171,30.92,"Democratic-Republican","Andrew Jackson",185,41.4,"Democratic-Republican",26.9,27.2
+"11",1828,"Andrew Jackson",185,55.93,"Democratic","John Q. Adams",171,43.6,"National Republican",57.6,19
+"12",1832,"Andrew Jackson",185,54.74,"Democratic","Henry Clay",185,37.4,"National Republican",55.4,19
+"13",1836,"Martin Van Buren",168,50.79,"Democratic","William H. Harrison",173,36.63,"Whig",57.8,NA
+"14",1840,"William H. Harrison",173,52.87,"Whig","Martin Van Buren",168,46.8,"Democratic",80.2,21.2
+"15",1844,"James K. Polk",173,49.54,"Democratic","Henry Clay",185,48.1,"Whig",78.9,26.4
+"16",1848,"Zachary Taylor",173,47.28,"Whig","Lewis Cass",174,42.5,"Democratic",72.7,30.2
+"17",1852,"Franklin Pierce",178,50.83,"Democratic","Winfield Scott",196,43.9,"Whig",69.6,20.6
+"18",1856,"James Buchanan",183,45.29,"Democratic","John C. Fremont",175,33.1,"Republican",78.9,26.9
+"19",1860,"Abraham Lincoln",192,39.65,"Republican","Stephen A. Douglas",163,29.5,"Democratic",81.2,21.7
+"20",1864,"Abraham Lincoln",192,55.03,"Republican","George B. McClellan",173,45,"Democratic",73.8,21.7
+"21",1868,"Ulysses S. Grant",173,52.66,"Republican","Horatio Seymour",NA,47.3,"Democratic",78.1,23.3
+"22",1872,"Ulysses S. Grant",173,55.58,"Republican","Horace Greeley",178,43.8,"Liberal Republican",71.3,23.3
+"23",1876,"Rutherford B. Hayes",174,47.92,"Republican","Samuel Tilden",178,50.9,"Democratic",81.8,26
+"24",1880,"James A. Garfield",183,48.31,"Republican","Winfield Hancock",187,48.25,"Democratic",79.4,24.9
+"25",1884,"Grover Cleveland",180,48.85,"Democratic","James G. Blaine",180,48.3,"Republican",77.5,34.6
+"26",1888,"Benjamin Harrison",168,47.8,"Republican","Grover Cleveland",180,48.6,"Democratic",79.3,NA
+"27",1892,"Grover Cleveland",180,46.02,"Democratic","Benjamin Harrison",168,43,"Republican",74.7,34.6
+"28",1896,"William McKinley",170,51.02,"Republican","William J. Bryan",180,46.7,"Democratic",79.3,31.1
+"29",1900,"William McKinley",170,51.64,"Republican","William J. Bryan",180,45.5,"Democratic",73.2,31.1
+"30",1904,"Theodore Roosevelt",178,56.42,"Republican","Alton B. Parker",175,37.6,"Democratic",65.2,30.2
+"31",1908,"William H. Taft",182,51.57,"Republican","William J. Bryan",180,43,"Democratic",65.4,42.3
+"32",1912,"Woodrow Wilson",180,41.84,"Democratic","Theodore Roosevelt",178,27.4,"Progressive",58.8,23.5
+"33",1916,"Woodrow Wilson",180,49.24,"Democratic","Charles E. Hughes",178,46.1,"Republican",61.6,23.5
+"34",1920,"Warren G. Harding",183,60.32,"Republican","James M. Cox",168,34.2,"Democratic",49.2,23.5
+"35",1924,"Calvin Coolidge",178,54.04,"Republican","John W. Davis",180,28.8,"Democratic",48.9,21.2
+"36",1928,"Herbert Hoover",182,58.21,"Republican","Al Smith",180,40.8,"Democratic",56.9,27.7
+"37",1932,"Franklin D. Roosevelt",188,57.41,"Democratic","Herbert Hoover",182,39.7,"Republican",56.9,23.6
+"38",1936,"Franklin D. Roosevelt",188,60.8,"Democratic","Alfred Landon",180,36.5,"Republican",61,23.6
+"39",1940,"Franklin D. Roosevelt",188,54.74,"Democratic","Wendell Willkie",188,44.8,"Republican",62.5,23.6
+"40",1944,"Franklin D. Roosevelt",188,53.39,"Democratic","Thomas Dewey",173,45.9,"Republican",55.9,23.6
+"41",1948,"Harry S. Truman",175,49.55,"Democratic","Thomas Dewey",173,45.1,"Republican",53,26.3
+"42",1952,"Dwight D. Eisenhower",179,55.18,"Republican","Adlai Stevenson II",178,44.3,"Democratic",63.3,25.3
+"43",1956,"Dwight D. Eisenhower",179,57.37,"Republican","Adlai Stevenson II",178,42,"Democratic",60.6,25.3
+"44",1960,"John F. Kennedy",183,49.72,"Democratic","Richard Nixon",182,49.6,"Republican",62.77,22.6
+"45",1964,"Lyndon B. Johnson",192,61.05,"Democratic","Barry Goldwater",180,38.5,"Republican",61.92,26
+"46",1968,"Richard Nixon",182,43.42,"Republican","Hubert Humphrey",180,42.7,"Democratic",60.84,23.9
+"47",1972,"Richard Nixon",182,60.67,"Republican","George McGovern",185,37.5,"Democratic",55.21,23.9
+"48",1976,"Jimmy Carter",177,50.08,"Democratic","Gerald Ford",183,48,"Republican",53.55,22.4
+"49",1980,"Ronald Reagan",185,50.75,"Republican","Jimmy Carter",177,50.8,"Democratic",52.56,24.2
+"50",1984,"Ronald Reagan",185,58.77,"Republican","Walter Mondale",180,40.6,"Democratic",53.11,24.2
+"51",1988,"George H. W. Bush",188,53.37,"Republican","Michael Dukakis",173,45.7,"Democratic",50.15,24.8
+"52",1992,"Bill Clinton",188,43.01,"Democratic","George H. W. Bush",188,37.5,"Republican",55.23,28.3
+"53",1996,"Bill Clinton",188,49.23,"Democratic","Bob Dole",187,40.7,"Republican",49.08,28.3
+"54",2000,"George W. Bush",182,47.87,"Republican","Al Gore",185,48.4,"Democratic",51.3,25.9
+"55",2004,"George W. Bush",182,50.73,"Republican","John Kerry",193,48.3,"Democratic",55.27,25.9
+"56",2008,"Barack Obama",185,52.93,"Democratic","John McCain",175,45.7,"Republican",57.48,23.8
+"57",2012,"Barack Obama",185,51.06,"Democratic","Mitt Romney",187,47.2,"Republican",57.5,23.8
