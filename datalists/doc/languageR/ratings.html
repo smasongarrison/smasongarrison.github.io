@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ratings for 81 English nouns</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ratings"><tr><td>ratings</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Ratings for 81 English nouns</h2>
+
+<h3>Description</h3>
+
+<p>Subjective frequency ratings, ratings of estimated weight, and ratings of estimated
+size, averaged over subjects, for 81 concrete English nouns.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ratings)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 81 observations on the following 14 variables.
+</p>
+
+<dl>
+<dt><code>Word</code></dt><dd><p>a factor with words as levels.</p>
+</dd> 
+<dt><code>Frequency</code></dt><dd><p>a numeric vector of logarithmically transformed frequencies</p>
+</dd>
+<dt><code>FamilySize</code></dt><dd><p>a numeric vector of logarithmically transformed 
+morphological family sizes.</p>
+</dd>
+<dt><code>SynsetCount</code></dt><dd><p>a numeric vector with logarithmically transformed counts
+of the number of synonym sets in WordNet in which the word is listed.</p>
+</dd>
+<dt><code>Length</code></dt><dd><p>a numeric vector for the length of the word in letters.</p>
+</dd>
+<dt><code>Class</code></dt><dd><p>a factor with levels <code>animal</code> and <code>plant</code>.</p>
+</dd>
+<dt><code>FreqSingular</code></dt><dd><p>a numeric vector for the frequency of the word in the
+singular.</p>
+</dd>
+<dt><code>FreqPlural</code></dt><dd><p>a numeric vector with the frequency of the word in the
+plural.</p>
+</dd>
+<dt><code>DerivEntropy</code></dt><dd><p>a numeric vector with the derivational entropies of the
+words.</p>
+</dd>
+<dt><code>Complex</code></dt><dd><p>a factor coding morphological complexity with levels 
+<code>complex</code> and <code>simplex</code>.</p>
+</dd>
+<dt><code>rInfl</code></dt><dd><p>a numeric vector coding the log of ratio of singular to plural
+frequencies.</p>
+</dd>
+<dt><code>meanWeightRating</code></dt><dd><p>a numeric vector for the estimated weight of the
+word's referent, averaged over subjects.</p>
+</dd>
+<dt><code>meanSizeRating</code></dt><dd><p>a numeric vector for the estimated size of the word's
+referent, averaged over subjects.</p>
+</dd>
+<dt><code>meanFamiliarity</code></dt><dd><p>a numeric vector with subjective frequency estimates,
+averaged over subjects.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Data collected together with Jen Hay at the University of Canterbury, Christchurch,
+New Zealand, 2004.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(ratings)
+
+ratings.lm = lm(meanSizeRating ~ meanFamiliarity * Class + 
+I(meanFamiliarity^2), data = ratings)
+
+ratings$fitted = fitted(ratings.lm)
+
+plot(ratings$meanFamiliarity, ratings$meanSizeRating,       
+xlab = "mean familiarity", ylab = "mean size rating", type = "n")
+text(ratings$meanFamiliarity, ratings$meanSizeRating, 
+substr(as.character(ratings$Class), 1, 1), col = 'darkgrey')
+
+plants = ratings[ratings$Class == "plant", ]    
+animals = ratings[ratings$Class == "animal", ]  
+plants = plants[order(plants$meanFamiliarity),]
+animals = animals[order(animals$meanFamiliarity),]
+
+lines(plants$meanFamiliarity, plants$fitted)
+lines(animals$meanFamiliarity, animals$fitted)
+
+## End(Not run)</pre>
+
+
+</body></html>

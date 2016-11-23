@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Attributes of some US and Japanese automobiles</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for auto"><tr><td>auto</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Attributes of some US and Japanese automobiles</h2>
+
+<h3>Description</h3>
+
+<p>Price, mileage, age and country of origin for 45 automobiles.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>auto</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+<dl>
+<dt>Model</dt><dd><p>Name of model</p>
+</dd>
+<dt>Country</dt><dd><p>Country of manufacture</p>
+</dd>
+<dt>Mileage</dt><dd><p>Mileage per gallon</p>
+</dd>
+<dt>Price</dt><dd><p>Price of car at time of measurement</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Makridakis, Wheelwright and Hyndman (1998) <em>Forecasting:
+methods and applications</em>, Wiley: New York. Chapter 2.</p>
+
+
+<h3>References</h3>
+
+<p><em>Consumer Reports</em>, April 1990, pp.235-255.</p>
+
+
+<h3>Examples</h3>
+
+<pre>plot(Price ~ Mileage, data=auto,pch=19,col=2)
+points(auto$Mileage[auto$Country=="USA"],auto$Price[auto$Country=="USA"],pch=19,col=4)
+legend(30,25000,legend=c("USA","Japan"),pch=19,col=c(4,2))
+</pre>
+
+
+</body></html>

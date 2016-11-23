@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Danish auditory lexical decision</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for danish"><tr><td>danish</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Danish auditory lexical decision</h2>
+
+<h3>Description</h3>
+
+<p>Auditory lexical decision latencies for Danish complex words.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(danish)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 3326 observations on the following 16 variables.
+</p>
+
+<dl>
+<dt><code>Subject</code></dt><dd><p>a random-effect factor coding participants in the
+experiment.</p>
+</dd>
+<dt><code>Word</code></dt><dd><p>a random-effect factor coding the words for which 
+auditory lexical decision responses were elicited.</p>
+</dd>
+<dt><code>Affix</code></dt><dd><p>a random-effect factor coding the affixes 
+in the words.</p>
+</dd>
+<dt><code>LogRT</code></dt><dd><p>the dependent variable, log response latency.</p>
+</dd> 
+<dt><code>PC1</code></dt><dd><p>first principal component orthogonalizing the four 
+response latencies preceding the current trial in the experiment.</p>
+</dd>
+<dt><code>PC2</code></dt><dd><p>second principal component orthogonalizing the four 
+response latencies preceding the current trial in the experiment.</p>
+</dd>
+<dt><code>PrevError</code></dt><dd><p>factor with levels <code>CORRECT</code> and <code>ERROR</code> 
+coding whether the preceding trial elicited a correct lexical decision.</p>
+</dd> 
+<dt><code>Rank</code></dt><dd><p>the trial number in the experiment.</p>
+</dd> 
+<dt><code>Sex</code></dt><dd><p>factor coding the sex of the participant, 
+with levels <code>F</code> (female) and <code>M</code> (male).</p>
+</dd> 
+<dt><code>LogWordFreq</code></dt><dd><p>log-transformed word frequency.</p>
+</dd> 
+<dt><code>LogAffixFreq</code></dt><dd><p>log-transformed affix frequency.</p>
+</dd> 
+<dt><code>ResidFamSize</code></dt><dd><p>residualized morphological family size (taking out <code>LogWordFreq</code> and <code>LogAffixFreq</code>).</p>
+</dd> 
+<dt><code>ResidSemRating</code></dt><dd><p>residualized semantic rating (taking out
+morphological family size).</p>
+</dd> 
+<dt><code>LogCUP</code></dt><dd><p>log-transformed complex uniqueness point (CUP).</p>
+</dd> 
+<dt><code>LogUP</code></dt><dd><p>log-transformed uniqueness point (UP).</p>
+</dd>
+<dt><code>LogCUPtoEnd</code></dt><dd><p>log of the distance (in msec) from the CUP to
+the end of the word.</p>
+</dd> 
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>L. Balling and R. H. Baayen (2008). Morphological effects in auditory word 
+recognition: Evidence from Danish. Submitted to Language and Cognitive Processes.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(danish)
+require(lme4)
+require(lmerTest)
+require(optimx)
+
+# ---- mixed-effects regression with three random intercepts
+
+danish.lmer = lmer(LogRT ~ PC1 + PC2 + PrevError + Rank +
+  ResidSemRating + ResidFamSize + LogWordFreq*LogAffixFreq*Sex +  
+  poly(LogCUP, 2, raw=TRUE) + LogUP + LogCUPtoEnd + 
+  (1|Subject) + (1|Word) + (1|Affix), data = danish,
+  control=lmerControl(optimizer="optimx",optCtrl=list(method="nlminb")))
+ 
+danish.lmerA = lmer(LogRT ~ PC1 + PC2 + PrevError + Rank +
+  ResidSemRating + ResidFamSize + LogWordFreq*LogAffixFreq*Sex +  
+  poly(LogCUP, 2, raw=TRUE) + LogUP + LogCUPtoEnd + 
+  (1|Subject) + (1|Word) + (1|Affix), data = danish,
+  control=lmerControl(optimizer="optimx",optCtrl=list(method="nlminb")),
+  subset=abs(scale(resid(danish.lmer)))&lt;2.5)
+
+summary(danish.lmerA)
+
+## End(Not run)
+</pre>
+
+
+</body></html>

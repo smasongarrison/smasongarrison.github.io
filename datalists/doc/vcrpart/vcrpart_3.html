@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Synthetic data sets</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for vcrpart-demo"><tr><td>vcrpart-demo</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Synthetic data sets</h2>
+
+<h3>Description</h3>
+
+<p>Synthetic data for illustrations.</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(vcrpart_1)
+data(vcrpart_2)
+data(vcrpart_3)
+data(unemp)
+</pre>
+
+
+<h3>Format</h3>
+
+
+<dl>
+<dt><code>y</code></dt><dd><p>ordered factor. The response variable</p>
+</dd>
+<dt><code>id, PID</code></dt><dd><p>factor. The subject identification vector.</p>
+</dd>
+<dt><code>wave</code></dt><dd><p>numeric. The wave identification vector.</p>
+</dd>
+<dt><code>treat</code></dt><dd><p>a dummy variable. The treatment effect.</p>
+</dd>
+<dt><code>x1, x2</code></dt><dd><p>numeric predictor variables.</p>
+</dd>
+<dt><code>z1, z2, z3, z2</code></dt><dd><p>moderator (partitioning) variables.</p>
+</dd>
+<dt><code>GHQL</code></dt><dd><p>self rated general happiness.</p>
+</dd>
+<dt><code>YEAR</code></dt><dd><p>survey year.</p>
+</dd>
+<dt><code>UNEMP</code></dt><dd><p>unemployed or not.</p>
+</dd>
+<dt><code>AGE</code></dt><dd><p>age.</p>
+</dd>
+<dt><code>FISIT</code></dt><dd><p>self-reported financial situation.</p>
+</dd>
+<dt><code>GENDER</code></dt><dd><p>gender.</p>
+</dd>
+<dt><code>UEREGION</code></dt><dd><p>regional unemployment.</p>
+</dd>
+</dl>
+
+
+
+<h3>See Also</h3>
+
+<p><code>olmm</code>, <code>otsplot</code>,
+<code>tvcm</code></p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## --------------------------------------------------------- #
+## generating 'vcrpart_1'
+## --------------------------------------------------------- #
+
+## create skeletton
+set.seed(1)
+vcrpart_1 &lt;- data.frame(id = factor(rep(1:50, each = 4)),
+                        wave = rep(1:4, 50),
+                        treat = sample(0:1, 200, TRUE))
+
+## add partitioning variables
+vcrpart_1$z1 &lt;- rnorm(50)[vcrpart_1$id]
+vcrpart_1$z2 &lt;- rnorm(200)
+vcrpart_1$z3 &lt;- factor(sample(1:2, 50, TRUE)[vcrpart_1$id])
+vcrpart_1$z4 &lt;- factor(sample(1:2, 200, TRUE))
+
+## simulate response
+eta &lt;- 2 * vcrpart_1$treat * (vcrpart_1$z4 == "1")
+eta &lt;- eta + rnorm(50)[vcrpart_1$id] + rlogis(200)
+vcrpart_1$y &lt;- cut(-eta, c(-Inf, -1, 1, Inf), 1:3,
+                   ordered_result = TRUE)
+
+
+## --------------------------------------------------------- #
+## generating 'vcrpart_2'
+## --------------------------------------------------------- #
+
+set.seed(1)
+vcrpart_2 &lt;- data.frame(x1 = rnorm(100),
+                        x2 = rnorm(100),
+                        z1 = factor(sample(1:3, 100, TRUE)),
+                        z2 = factor(sample(1:3, 100, TRUE)))
+vcrpart_2$y &lt;- vcrpart_2$x1 * (vcrpart_2$z1 == "2") +
+  2 * vcrpart_2$x1 * (vcrpart_2$z1 == "3")
+vcrpart_2$y &lt;- vcrpart_2$y + rnorm(100)
+
+## --------------------------------------------------------- #
+## generating 'vcrpart_3'
+## --------------------------------------------------------- #
+
+set.seed(1)
+vcrpart_3 &lt;- data.frame(x1 = rnorm(100),
+                        z1 = runif(100, -pi/2, pi/2))
+vcrpart_3$y &lt;- vcrpart_3$x1 * sin(vcrpart_3$z1) + rnorm(100)
+
+## --------------------------------------------------------- #
+## generating 'unemp'
+## --------------------------------------------------------- #
+
+## create skeletton
+set.seed(1)
+unemp &lt;- data.frame(PID = factor(rep(1:50, each = 4)),
+                    UNEMP = rep(c(0, 0, 1, 1), 50),
+               	    YEAR = rep(2001:2004, 50))
+
+## add partitioning variables
+unemp$AGE &lt;- runif(50, 25, 60)[unemp$PID] + unemp$YEAR - 2000
+unemp$FISIT &lt;- ordered(sample(1:5, 200, replace = TRUE))
+unemp$GENDER &lt;- factor(sample(c("female", "male"), 50, replace = TRUE)[unemp$PID])
+unemp$UEREGION &lt;- runif(50, 0.02, 0.1)[unemp$PID]
+
+## simulate response
+eta &lt;- 2 * unemp$UNEMP * (unemp$FISIT == "1" | unemp$FISIT == "2")
+eta &lt;- eta + rnorm(50)[unemp$PID] + rlogis(200)
+unemp$GHQL &lt;- cut(-eta, c(-Inf, -1, 0, 1, Inf), 1:4,
+                  ordered_result = TRUE)
+
+</pre>
+
+
+</body></html>

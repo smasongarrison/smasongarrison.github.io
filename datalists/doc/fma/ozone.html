@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ozone depletion and melanoma rates</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ozone"><tr><td>ozone</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Ozone depletion and melanoma rates</h2>
+
+<h3>Description</h3>
+
+<p>Ozone depletion and melanoma rates in various locations.</p>
+
+
+<h3>Usage</h3>
+
+<pre>ozone</pre>
+
+
+<h3>Format</h3>
+
+<p>Data frame containing the following columns:
+</p>
+<dl>
+<dt>ozonedep</dt><dd><p>Ozone depletion rates as percentages</p>
+</dd>
+<dt>melanoma</dt><dd><p>Melanoma rates as percentages</p>
+</dd>
+</dl>
+
+
+<h3>Source</h3>
+
+<p>Makridakis, Wheelwright and Hyndman (1998) <em>Forecasting: methods and applications</em>, John Wiley &amp; Sons: New York.
+Exercise 5.3.</p>
+
+
+<h3>Examples</h3>
+
+<pre>plot(ozonedep~melanoma,data=ozone,pch=19,col=2)
+</pre>
+
+
+</body></html>

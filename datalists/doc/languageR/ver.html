@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Dutch prefix ver-: semantic transparency and frequency</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ver"><tr><td>ver</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>The Dutch prefix ver-: semantic transparency and frequency</h2>
+
+<h3>Description</h3>
+
+<p>Semantic transparency (dichotomous) and frequency for 985 words
+with the Dutch prefix <em>ver-</em>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ver)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 985 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>Frequency</code></dt><dd><p>a numeric vector for the words' frequency.</p>
+</dd>
+<dt><code>SemanticClass</code></dt><dd><p>a factor with levels <code>opaque</code> and
+<code>transparent</code> coding semantic transparency.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Baayen, R. H. and Lieber, R. (1997) Word Frequency Distributions and Lexical
+Semantics, <em>Computers and the Humanities</em>, 30, 281-291.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(ver)
+ver$Frequency = log(ver$Frequency)
+
+plot(density(ver$Frequency))
+
+# plot separate densities for opaque and transparent words
+
+ver.transp = ver[ver$SemanticClass == "transparent",]$Frequency
+ver.opaque = ver[ver$SemanticClass == "opaque", ]$Frequency
+
+ver.transp.d = density(ver.transp)
+ver.opaque.d = density(ver.opaque)
+xlimit = range(ver.transp.d$x, ver.opaque.d$x)
+ylimit = range(ver.transp.d$y, ver.opaque.d$y)
+plot(ver.transp.d, lty = 1, col = "black", 
+  xlab = "frequency", ylab = "density", 
+  xlim = xlimit, ylim = ylimit, main = "")
+lines(ver.opaque.d, col = "darkgrey")
+legend(6,0.25, lty=rep(1,2), col=c("black", "darkgrey"), 
+legend=c("transparent", "opaque"))
+
+# test whether the difference is significant
+
+ks.test(jitter(ver.transp), jitter(ver.opaque))
+
+## End(Not run)</pre>
+
+
+</body></html>

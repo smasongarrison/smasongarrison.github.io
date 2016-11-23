@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ergative case marking in Warlpiri</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for warlpiri"><tr><td>warlpiri</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Ergative case marking in Warlpiri</h2>
+
+<h3>Description</h3>
+
+<p>This data set documents the use of ergative case marking in the narratives
+of native speakers of Lajamanu Warlpiri (8 children, 13 adults) 
+describing events in picture books.  
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(warlpiri)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 347 observations on the following 9 variables.
+</p>
+
+<dl>
+<dt><code>Speaker</code></dt><dd><p>a factor with speakers as levels.</p>
+</dd> 
+<dt><code>Sentence</code></dt><dd><p>a factor with sentence as levels.</p>
+</dd> 
+<dt><code>AgeGroup</code></dt><dd><p>a factor with levels <code>adult</code> and <code>child</code>.</p>
+</dd>
+<dt><code>CaseMarking</code></dt><dd><p>a factor with levels <code>ergative</code> and
+<code>other</code>.</p>
+</dd>
+<dt><code>WordOrder</code></dt><dd><p>a factor with levels <code>subInitial</code> (subject
+initial) and <code>subNotInitial</code> (subject not initial).</p>
+</dd>
+<dt><code>AnimacyOfSubject</code></dt><dd><p>a factor with levels <code>animate</code> 
+and <code>inanimate</code>.</p>
+</dd>
+<dt><code>OvertnessOfObject</code></dt><dd><p>a factor with levels <code>notOvert</code> 
+and <code>overt</code>.</p>
+</dd>
+<dt><code>AnimacyOfObject</code></dt><dd><p>a factor with levels <code>animate</code> 
+and <code>inanimate</code>.</p>
+</dd>
+<dt><code>Text</code></dt><dd><p>a factor with levels <code>texta</code>, 
+<code>textb</code> and <code>textc</code>.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>O'Shannessy, C. (2006) <em>Language contact and child bilingual acquisition:
+Learning a mixed language and Warlpiri in northern Australia</em>, PhD Thesis,
+University of Sydney, Australia.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(warlpiri)
+require(lme4)
+require(lmerTest)
+require(optimx)
+warlpiri.lmer = glmer(CaseMarking ~ WordOrder * AgeGroup + 
+  AnimacyOfSubject + (1|Text) + (1|Speaker), 
+  control=glmerControl(optimizer="optimx",optCtrl=list(method="nlminb")),
+  family = "binomial", data = warlpiri)
+summary(warlpiri.lmer)
+
+## End(Not run)</pre>
+
+
+</body></html>

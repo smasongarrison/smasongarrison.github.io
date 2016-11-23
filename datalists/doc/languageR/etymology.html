@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Etymological age and regularity in Dutch</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for etymology"><tr><td>etymology</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Etymological age and regularity in Dutch</h2>
+
+<h3>Description</h3>
+
+<p>Estimated etymological age for regular and irregular monomorphemic Dutch
+verbs, together with other distributional predictors of regularity.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(etymology)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 285 observations on the following 14 variables.
+</p>
+
+<dl>
+<dt><code>Verb</code></dt><dd><p>a factor with the verbs as levels.</p>
+</dd>
+<dt><code>WrittenFrequency</code></dt><dd><p>a numeric vector of logarithmically transformed
+frequencies in written Dutch (as available in the CELEX lexical database).</p>
+</dd>
+<dt><code>NcountStem</code></dt><dd><p>a numeric vector for the number of orthographic neighbors.</p>
+</dd>
+<dt><code>MeanBigramFrequency</code></dt><dd><p>a numeric vector for mean log bigram frequency.</p>
+</dd>
+<dt><code>InflectionalEntropy</code></dt><dd><p>a numeric vector for Shannon's entropy calculated for the word's inflectional variants.</p>
+</dd>
+<dt><code>Auxiliary</code></dt><dd><p>a factor with levels <code>hebben</code>, <code>zijn</code> and <code>zijnheb</code> for the verb's auxiliary in the perfect tenses.</p>
+</dd>
+<dt><code>Regularity</code></dt><dd><p>a factor with levels <code>irregular</code> and <code>regular</code>.</p>
+</dd>
+<dt><code>LengthInLetters</code></dt><dd><p>a numeric vector of the word's orthographic length.</p>
+</dd>
+<dt><code>Denominative</code></dt><dd><p>a factor with levels <code>Den</code> and <code>N</code> specifying
+whether a verb is derived from a noun according to the CELEX lexical database.</p>
+</dd>
+<dt><code>FamilySize</code></dt><dd><p>a numeric vector for the number of types in the word's 
+morphological family.</p>
+</dd>
+<dt><code>EtymAge</code></dt><dd><p>an ordered factor with levels <code>Dutch</code>, <code>DutchGerman</code>, <code>WestGermanic</code>, <code>Germanic</code> and <code>IndoEuropean</code>.</p>
+</dd>
+<dt><code>Valency</code></dt><dd><p>a numeric vector for the verb's valency, estimated by its 
+number of argument structures.</p>
+</dd>
+<dt><code>NVratio</code></dt><dd><p>a numeric vector for the log-transformed ratio of the nominal
+and verbal frequencies of use.</p>
+</dd>
+<dt><code>WrittenSpokenRatio</code></dt><dd><p>a numeric vector for the log-transformed ratio of the frequencies in written and spoken Dutch.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Baayen, R. H. and Moscoso del Prado Martin, F. (2005) Semantic density and 
+past-tense formation in three Germanic languages, Language, 81, 666-698.
+</p>
+<p>Tabak, W., Schreuder, R. and Baayen, R. H. (2005) Lexical statistics and
+lexical processing: semantic density, information complexity, sex, and
+irregularity in Dutch, in Kepser, S. and Reis, M., <em>Linguistic Evidence -
+Empirical, Theoretical, and Computational Perspectives</em>, Berlin: Mouton de
+Gruyter, pp. 529-555.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(etymology)
+
+# ---- EtymAge should be an ordered factor, set contrasts accordingly
+
+etymology$EtymAge = ordered(etymology$EtymAge, levels = c("Dutch",
+"DutchGerman", "WestGermanic", "Germanic", "IndoEuropean")) 
+options(contrasts=c("contr.treatment","contr.treatment"))
+
+library(rms)
+etymology.dd = datadist(etymology)
+options(datadist = 'etymology.dd')
+
+# ---- EtymAge as additional predictor for regularity
+
+etymology.lrm = lrm(Regularity ~ WrittenFrequency + 
+rcs(FamilySize, 3) + NcountStem + InflectionalEntropy + 
+Auxiliary + Valency + NVratio + WrittenSpokenRatio + EtymAge, 
+data = etymology, x = TRUE, y = TRUE)
+anova(etymology.lrm)
+
+# ---- EtymAge as dependent variable
+
+etymology.lrm = lrm(EtymAge ~ WrittenFrequency + NcountStem +
+MeanBigramFrequency + InflectionalEntropy + Auxiliary +
+Regularity + LengthInLetters + Denominative + FamilySize + Valency + 
+NVratio + WrittenSpokenRatio, data = etymology, x = TRUE, y = TRUE)
+
+# ---- model simplification 
+
+etymology.lrm = lrm(EtymAge ~ NcountStem + Regularity + Denominative, 
+data = etymology, x = TRUE, y = TRUE)
+validate(etymology.lrm, bw=TRUE, B=200)
+
+# ---- plot partial effects and check assumptions ordinal regression
+
+plot(Predict(etymology.lrm))
+plot(etymology.lrm)
+resid(etymology.lrm, 'score.binary', pl = TRUE)
+plot.xmean.ordinaly(EtymAge ~ NcountStem, data = etymology)
+
+## End(Not run)
+</pre>
+
+
+</body></html>

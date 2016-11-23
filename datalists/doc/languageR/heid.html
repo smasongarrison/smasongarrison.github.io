@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lexical decision latencies for words ending in -heid</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for heid"><tr><td>heid</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Lexical decision latencies for words ending in -heid</h2>
+
+<h3>Description</h3>
+
+<p>A simplified version of the <code>primingHeid</code> dataset.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(heid)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 832 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>Subject</code></dt><dd><p>a factor with subjects as levels.</p>
+</dd> 
+<dt><code>Word</code></dt><dd><p>a factor with words as levels.</p>
+</dd> 
+<dt><code>RT</code></dt><dd><p>a numeric vector with logarithmically transformed
+reaction times in visual lexical decision.</p>
+</dd>
+<dt><code>BaseFrequency</code></dt><dd><p>a numeric vector with the logarithmically
+transformed frequency of the base adjective of the word with the
+suffix <em>-heid</em>.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>De Vaan, L., Schreuder, R. and Baayen, R. H. (2007) Regular morphologically
+complex neologisms leave detectable traces in the mental lexicon, <em>The
+Mental Lexicon</em>, 2, in press.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(heid)
+heid = aggregate(heid$RT, list(heid$Word, heid$BaseFrequency), mean)
+colnames(heid) = c("Word", "BaseFrequency", "MeanRT")
+
+## End(Not run)</pre>
+
+
+</body></html>

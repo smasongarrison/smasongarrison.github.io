@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Phylogenetic relations between Papuan and Oceanic languages</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for phylogeny"><tr><td>phylogeny</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Phylogenetic relations between Papuan and Oceanic languages</h2>
+
+<h3>Description</h3>
+
+<p>Phylogenetic relations between Papuan and Oceanic languages: 127 
+grammatical traits (absent/present) for 31 languages.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(phylogeny)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 31 observations on the following 127 variables.
+</p>
+
+<dl>
+<dt><code>Language</code></dt><dd><p>a factor for 31 languages: <code>Anem</code>, <code>Ata</code>,
+<code>Bali</code>, <code>Banoni</code>, <code>Bilua</code>, <code>Buin</code>, <code>Gapapaiwa</code>,
+<code>Kairiru</code>, <code>Kaulong</code>, <code>Kilivila</code>, <code>Kokota</code>, 
+<code>Kol</code>, <code>Kuot</code>, <code>Lavukaleve</code>, <code>Mali</code>, <code>Motuna</code>, 
+<code>Nalik</code>, <code>Nasioi</code>, <code>Rotokas</code>, <code>Roviana</code>, 
+<code>Savosavo</code>, <code>Siar</code>, <code>Sisiqa</code>, <code>Sudest</code>, 
+<code>Sulka</code>, <code>Taiof</code>, <code>Takia</code>, <code>Touo</code>, <code>Tungag</code>,
+<code>Yabem</code> and <code>Yeli_Dnye</code>.</p>
+</dd>
+<dt><code>Family</code></dt><dd><p>a factor with levels <code>Oceanic</code> and <code>Papuan</code>.</p>
+</dd>
+<dt><code>Frics</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PrenasalizedStops</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PhonDistBetweenLAndR</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PhonVelarFricOrGlide</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PhonVoicingContrAmongStops</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PhonConsLength</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PhonVowelLength</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ContrPhonTypesForVowels</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PhonStress</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>WordFinalConss</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ConsClusters</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>DefOrSpecArt</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>IndefOrNonSpecArt</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ArticleNounOrder</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>NounInitNps</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>InclExclDist</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PronNum</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PronRelationship</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PronConflation</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>MoreThan2DegreesDistDem</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>NonSpkrAnchoredDem</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerticalityDem</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ClassifiedDem</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>NumDeterminedDecl</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>GenderDeterminedDecl</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SuppletiveNouns</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SingMarkedNoun</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>DualMarkedNoun</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PlMarkedNoun</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>OtherNumMarkedNoun</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>LimitedDistNumMarking</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>NounClassesGenders</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ConcordBeyondNp</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>NumeralClassifiers</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PossClassifiers</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PossClasses</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>Inalienability</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>MultiplePossConstr</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PrefixMarkedPoss</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SuffixMarkedPoss</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>MarkedPossr</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>MarkedPossessee</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PossrPossdOrder</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>DecimalNumerals</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>QuinaryNumerals</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>CollectiveNouns</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>AdjVerbLexOverlap</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>AdjAttributionPred</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>CoreCaseMarking</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ObliqueCaseMarking</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>Prepositions</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>Postpositions</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>TamPerson</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbPrefixesProclitics</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbSuffixesEnclitics</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PunctualContinuous</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>RealisIrrealis</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SSuffix</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SPrefix</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ASuffix</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>APrefix</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>OSuffix</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>OPrefix</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbVarTam</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbVarVClass</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbVarClauseType</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbVarPerson</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>NumStemAlt</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PersonStemAlt</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SepVerbNumPerson</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>Portmanteau3Plus</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>DistributedCategory</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>NonCore</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>RecipientObj</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>X3PlacePreds</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbNeg</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbDirection</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbSuppletion</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ConjugationClasses</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>TransIntransAlt</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>TransitivizingMorph</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>IntranstivizingMorph</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ReflexiveMorph</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ReciprocalMorph</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbClassifiers</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>Copula</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>NonVbPreds</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SerialVerbConstr</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>Auxiliaries</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbCompounds</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbAdjunctConstr</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VbIncorporation</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ExistentialVerb</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>IrregularGive</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ClosedClassOfVb</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SvIntransClauses</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VsIntransClauses</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VInitTransClauses</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VMedialTransClauses</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VFinalTransClauses</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>FixedConstituentOrder</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ClauseFinalNeg</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ClauseInitNeg</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ImpVs.DeclNeg</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VbAndNonVbPredIdentity</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SOMorphInBasicConstr</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SAMorphInBasicConstr</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SOMorphInComplexConstr</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SAMorphInComplexConstr</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SynConflationOfSO</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ControlledUncontrolled</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ClauseChaining</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SimultaneousSequential</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>SayInDesidConstr</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>RelativeClauses</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>PurpSubClauses</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>TemporalSubClauses</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>ComplementClauses</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>CausBySerialVerbConstr</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>CausByBoundAffClit</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>CausByConstrInvolvingSay</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>MorphTopicOrFocus</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>TailHeadLinkage</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>VerbRedup</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+<dt><code>NounRedup</code></dt><dd><p>a numeric vector, 1: presence, 0: absence</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Dunn, M., Terrill, A., Reesink, G., Foley, R. A. and Levinson, S. C. (2005)
+Structural phylogenetics and the reconstruction of ancient language history,
+<em>Science</em>, 309, 2072-2075.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(phylogeny)
+library(ape)
+
+# joint analysis of both language families
+
+phylogeny.dist = dist(phylogeny[ ,3:ncol(phylogeny)], method = "binary")
+phylogeny.dist.tr = nj(phylogeny.dist)
+families =
+  as.character(phylogeny$Family[as.numeric(phylogeny.dist.tr$tip.label)])
+languages =
+  as.character(phylogeny$Language[as.numeric(phylogeny.dist.tr$tip.label)])
+phylogeny.dist.tr$tip.label = languages
+plot(phylogeny.dist.tr, type="u", font = as.numeric(as.factor(families)))
+
+# analysis of subset of Papuan languages
+
+papuan = phylogeny[phylogeny$Family == "Papuan",]
+papuan$Language = as.factor(as.character(papuan$Language))
+papuan.meta = papuan[ ,1:2]
+papuan.mat = papuan[, 3:ncol(papuan)]
+papuan.meta$Geography = c(
+  "Bougainville", "Bismarck Archipelago", "Bougainville", 
+  "Bismarck Archipelago", "Bismarck Archipelago", "Central Solomons",
+  "Bougainville", "Louisiade Archipelago", "Bougainville", 
+  "Bismarck Archipelago", "Bismarck Archipelago", 
+  "Bismarck Archipelago", "Central Solomons", "Central Solomons", 
+  "Central Solomons")
+papuan.dist = dist(papuan.mat, method = "binary")
+papuan.dist.tr = nj(papuan.dist)
+fonts = 
+  as.character(papuan.meta$Geography[as.numeric(
+    papuan.dist.tr$tip.label)])
+papuan.dist.tr$tip.label = 
+  as.character(papuan.meta$Language[as.numeric(
+    papuan.dist.tr$tip.label)])
+plot(papuan.dist.tr, type = "u", font = as.numeric(as.factor(fonts)))
+
+## End(Not run)</pre>
+
+
+</body></html>

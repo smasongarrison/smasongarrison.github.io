@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dative Alternation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for dative"><tr><td>dative</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dative Alternation</h2>
+
+<h3>Description</h3>
+
+<p>Data describing the realization of the dative as NP or PP in the Switchboard
+corpus and the Treebank Wall Street Journal collection.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(dative)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 3263 observations on the following 15 variables.
+</p>
+
+<dl>
+<dt><code>Speaker</code></dt><dd><p>a factor coding speaker; available only for the 
+subset of spoken English.</p>
+</dd>
+<dt><code>Modality</code></dt><dd><p>a factor with levels <code>spoken</code>, <code>written</code>.</p>
+</dd>
+<dt><code>Verb</code></dt><dd><p>a factor with the verbs as levels.</p>
+</dd> 
+<dt><code>SemanticClass</code></dt><dd><p>a factor with levels 
+<code>a</code> (abstract: 'give it some thought'), 
+<code>c</code> (communication: 'tell, give me your name'), 
+<code>f</code> (future transfer of possession: 'owe, promise'), 
+<code>p</code> (prevention of possession: 'cost, deny'), and
+<code>t</code> (transfer of possession: 'give an armband, send').</p>
+</dd>
+<dt><code>LengthOfRecipient</code></dt><dd><p>a numeric vector coding the 
+number of words comprising the recipient.</p>
+</dd>
+<dt><code>AnimacyOfRec</code></dt><dd><p>a factor with levels <code>animate</code> and
+<code>inanimate</code> for the animacy of the recipient.</p>
+</dd>
+<dt><code>DefinOfRec</code></dt><dd><p>a factor with levels <code>definite</code> and
+<code>indefinite</code> coding the definiteness of the recipient.</p>
+</dd>
+<dt><code>PronomOfRec</code></dt><dd><p>a factor with levels <code>nonpronominal</code> and
+<code>pronominal</code> coding the pronominality of the recipient.</p>
+</dd>
+<dt><code>LengthOfTheme</code></dt><dd><p>a numeric vector coding the number of words
+comprising the theme.</p>
+</dd>
+<dt><code>AnimacyOfTheme</code></dt><dd><p>a factor with levels <code>animate</code> and
+<code>inanimate</code> coding the animacy of the theme.</p>
+</dd>
+<dt><code>DefinOfTheme</code></dt><dd><p>a factor with levels <code>definite</code> and
+<code>indefinite</code> coding the definiteness of the theme.</p>
+</dd>
+<dt><code>PronomOfTheme</code></dt><dd><p>a factor with levels <code>nonpronominal</code> and
+<code>pronominal</code> coding the pronominality of the theme.</p>
+</dd>
+<dt><code>RealizationOfRecipient</code></dt><dd><p>a factor with levels <code>NP</code> and
+<code>PP</code> coding the realization of the dative.</p>
+</dd>
+<dt><code>AccessOfRec</code></dt><dd><p>a factor with levels <code>accessible</code>, 
+<code>given</code>, and <code>new</code> coding the accessibility of the recipient.</p>
+</dd>
+<dt><code>AccessOfTheme</code></dt><dd><p>a factor with levels <code>accessible</code>, 
+<code>given</code>, and <code>new</code> coding the accessibility of the theme.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Bresnan, J., Cueni, A., Nikitina, T. and Baayen, R. H. (2007) Predicting the
+dative alternation, in Bouma, G. and Kraemer, I. and Zwarts, J.  (eds.),
+<em>Cognitive Foundations of Interpretation</em>, Royal Netherlands Academy
+of Sciences, 33 pages, in press.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(dative)
+
+# analysis with CART tree
+
+library(rpart)
+
+# ---- initial tree
+
+dative.rp = rpart(RealizationOfRecipient ~ ., 
+ data = dative[ ,-c(1, 3)]) # exclude the columns with subjects, verbs
+plot(dative.rp, compress = TRUE, branch = 1, margin = 0.1)
+text(dative.rp, use.n = TRUE, pretty = 0)
+
+# ---- pruning the initial tree
+
+plotcp(dative.rp)
+dative.rp1 = prune(dative.rp, cp = 0.041)
+plot(dative.rp1, compress = TRUE, branch = 1, margin = 0.1)
+text(dative.rp1, use.n = TRUE, pretty = 0)
+
+
+# analysis with logistic regression
+
+# ---- logistic regression with the rms package
+
+library(rms)
+dative.dd = datadist(dative)
+options(datadist = 'dative.dd')
+dative.lrm = lrm(RealizationOfRecipient ~ 
+  AccessOfTheme + AccessOfRec + LengthOfRecipient + AnimacyOfRec +
+  AnimacyOfTheme + PronomOfTheme + DefinOfTheme + LengthOfTheme+
+  SemanticClass + Modality, data = dative)
+anova(dative.lrm)
+plot(Predict(dative.lrm))
+
+# ---- mixed-effects logistic regression with the lme4 package
+
+require(lme4) 
+require(lmerTest)
+require(optimx)
+
+dative.lmer = glmer(RealizationOfRecipient ~ AccessOfTheme +
+  AccessOfRec + LengthOfRecipient + AnimacyOfRec + 
+  AnimacyOfTheme + PronomOfTheme + DefinOfTheme + LengthOfTheme + 
+  SemanticClass + Modality + (1|Verb), 
+  control=glmerControl(optimizer="optimx",optCtrl=list(method="nlminb")),
+  data = dative, family = "binomial") 
+
+summary(dative.lmer)
+
+# multiple comparisons for Accessibility of Theme
+require(multcomp)
+par(mar=c(5,8,3,1))
+AcOfTheme.glht &lt;- glht(dative.lmer, linfct = mcp(AccessOfTheme = "Tukey"))
+plot(AcOfTheme.glht)
+abline(v=0)
+summary(AcOfTheme.glht)
+
+
+
+## End(Not run) </pre>
+
+
+</body></html>

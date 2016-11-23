@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Motor vehicle production</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for jcars"><tr><td>jcars</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Motor vehicle production</h2>
+
+<h3>Description</h3>
+
+<p>Japanese motor vehicle production in thousand (1947&ndash;1989).</p>
+
+
+<h3>Usage</h3>
+
+<pre>jcars</pre>
+
+
+<h3>Format</h3>
+
+<p>Time series data</p>
+
+
+<h3>Source</h3>
+
+<p>Makridakis, Wheelwright and Hyndman (1998) <em>Forecasting: methods and applications</em>, John Wiley &amp; Sons: New York.
+Exercise 2.8. Chapter 8.</p>
+
+
+<h3>References</h3>
+
+<p><em>World motor vehicle data</em>, Motor Vehicle
+Manufacturers of US Inc, Detroit, 1991.</p>
+
+
+<h3>Examples</h3>
+
+<pre>plot(jcars)
+log.jcars &lt;- BoxCox(jcars,0)
+jcars.f &lt;- holt(log.jcars)
+plot(jcars.f)
+</pre>
+
+
+</body></html>

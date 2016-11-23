@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Simulated data set with split plot design</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for splitplot"><tr><td>splitplot</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Simulated data set with split plot design</h2>
+
+<h3>Description</h3>
+
+<p>Simulated lexical decision latencies with priming as treatment and reaction
+time in lexical decision as dependent variable.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(splitplot)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 800 observations on the following 11 variables.
+</p>
+
+<dl>
+<dt><code>items</code></dt><dd><p>A factor with levels <code>w1</code>, <code>w2</code>,
+...,  <code>w40</code>, coding 40 word items.</p>
+</dd>
+<dt><code>ritems</code></dt><dd><p>The by-word random adjustments to the intercept.</p>
+</dd>
+<dt><code>list</code></dt><dd><p>A factor with levels <code>listA</code> and <code>listB</code>. 
+The priming effect is counterbalanced for subjects across these 
+two lists, compare <code>table(splitplot$list, splitplot$subjects)</code>.</p>
+</dd>
+<dt><code>rlist</code></dt><dd><p>The by-list random adjustments to the intercept.</p>
+</dd>
+<dt><code>priming</code></dt><dd><p>A treatment factor with levels <code>primed</code> and
+<code>unprimed</code>.</p>
+</dd>
+<dt><code>fpriming</code></dt><dd><p>The priming effect, -30 for the primed and 0 for
+the unprimed condition.</p>
+</dd>
+<dt><code>subjects</code></dt><dd><p>A factor with levels <code>s1</code>, <code>s2</code>, 
+... <code>s20</code> coding 20 subjects.</p>
+</dd>
+<dt><code>rsubject</code></dt><dd><p>The by-subject random adjustments to the intercept.</p>
+</dd>
+<dt><code>error</code></dt><dd><p>The by-observation noise.</p>
+</dd>
+<dt><code>int</code></dt><dd><p>The intercept.</p>
+</dd>
+<dt><code>RT</code></dt><dd><p>The reaction time.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>R. H. Baayen, D. J. Davidson and D. M. Bates.  Mixed-effects modeling
+with crossed random effects for subjects and items.  Manuscript under revision for <em>Journal of Memory and Language</em>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(splitplot)
+table(splitplot$list, splitplot$subjects)
+dat=splitplot
+require(lme4)
+require(optimx)
+require(lmerTest)
+dat.lmer1 = lmer(RT ~ list*priming+(1+priming|subjects)+(1+list|items),data=dat,
+  control=lmerControl(optimizer="optimx",optCtrl=list(method="nlminb")))
+dat.lmer2 = lmer(RT ~ list*priming+(1+priming|subjects)+(1|items),data=dat,
+  control=lmerControl(optimizer="optimx",optCtrl=list(method="nlminb")))
+dat.lmer3 = lmer(RT ~ list*priming+(1|subjects)+(1|items),data=dat,
+  control=lmerControl(optimizer="optimx",optCtrl=list(method="nlminb")))
+dat.lmer4 = lmer(RT ~ list*priming+(1|subjects),data=dat,
+  control=lmerControl(optimizer="optimx",optCtrl=list(method="nlminb")))
+anova(dat.lmer1, dat.lmer2, dat.lmer3, dat.lmer4)
+summary(dat.lmer3)
+
+## End(Not run)</pre>
+
+
+</body></html>

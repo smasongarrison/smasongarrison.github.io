@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Frequency spectrum for -ness in the context-governed BNC</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for nessdemog"><tr><td>nessdemog</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Frequency spectrum for -ness in the context-governed BNC</h2>
+
+<h3>Description</h3>
+
+<p>Frequency (m) and frequency of frequency (Vm) for string types
+with the suffix <em>-ness</em> in the demographic subcorpus of the 
+British National Corpus sampling spoken British English.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(nessdemog)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 15 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>m</code></dt><dd><p>a numeric vector with word frequencies.</p>
+</dd>
+<dt><code>Vm</code></dt><dd><p>a numeric vector with the frequencies of word frequencies.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>The British National Corpus, see <a href="http://www.natcorp.ox.ac.uk/">http://www.natcorp.ox.ac.uk/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(nessdemog)
+library(zipfR)
+nessdemog.spc = spc(m=nessdemog$m, Vm = nessdemog$Vm)
+plot(nessdemog.spc)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: fMRI Filtered Signal and Priming Scores for Brain-Damaged...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for imaging"><tr><td>imaging</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>fMRI Filtered Signal and Priming Scores for Brain-Damaged Patients</h2>
+
+<h3>Description</h3>
+
+<p>Filtered fMRI signal at the most significant voxel and average priming
+scores for brain-damaged patients, in a study addressing the extent 
+to which phonological and semantic processes recruit the same brain areas.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(imaging)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 35 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>Condition</code></dt><dd><p>a factor with levels 
+<code>irregulars</code> (the morphological condition involving priming using
+inflected forms of irregular English verbs, e.g., 'began'-'begin')
+and <code>semantics</code> (priming with semantically related words such 
+as 'card' and 'paper').</p>
+</dd>
+<dt><code>BehavioralScore</code></dt><dd><p>a numeric vector for the average priming
+scores.</p>
+</dd>
+<dt><code>FilteredSignal</code></dt><dd><p>a numeric vector for the intensity of the
+filtered fMRI signal at the most significant voxel.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Location of data points reconstructed from the pixel map of Figure 2b
+of Tyler et al. 2005.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Tyler, L.K.,  Marslen-Wilson, W.D. and Stamatakis, E.A. (2005)
+Differentiating lexical form, meaning, and structure
+in the neural language system, <em>PNAS</em>, 102, 8375-8380.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(imaging)
+
+imaging.lm = lm(FilteredSignal~BehavioralScore*Condition, data=imaging)
+summary(imaging.lm)
+
+plot(imaging$BehavioralScore, imaging$FilteredSignal, type = "n", 
+  xlim = c(-30, 40), ylim = c(0, 80))
+semantics = imaging[imaging$Condition == "semantics",]
+irregulars = imaging[imaging$Condition == "irregulars",]
+points(semantics$BehavioralScore, semantics$FilteredSignal, col = "black")
+points(irregulars$BehavioralScore, irregulars$FilteredSignal, col = "darkgrey")
+abline(lm(FilteredSignal ~ BehavioralScore, data = semantics), col = 'black')
+abline(lm(FilteredSignal ~ BehavioralScore, data = irregulars), 
+  col = 'darkgrey')
+
+# model criticism
+
+plot(imaging.lm)
+outliers = c(1, 19) # given Cook's distance, or perhaps only
+outliers = 1        # the outlier in the semantics subset
+imaging.lm = lm(FilteredSignal ~ BehavioralScore * Condition, 
+  data = imaging[-outliers, ])
+summary(imaging.lm)
+
+
+
+## End(Not run)</pre>
+
+
+</body></html>

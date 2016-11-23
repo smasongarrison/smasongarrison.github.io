@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mortality</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mortal"><tr><td>mortal</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Mortality</h2>
+
+<h3>Description</h3>
+
+<p>Bird mortality for 156 poultry farms, Aug 1995 - Jul 1996.</p>
+
+
+<h3>Usage</h3>
+
+<pre>mortal</pre>
+
+
+<h3>Format</h3>
+
+<p>Data frame containing the following columns:
+</p>
+<dl>
+<dt>typeA</dt><dd><p>Percentage of Type A birds for each farm.</p>
+</dd>
+<dt>mortality</dt><dd><p>Percentage mortality of all birds for each farm.</p>
+</dd>
+</dl>
+
+
+<h3>Source</h3>
+
+<p>Makridakis, Wheelwright and Hyndman (1998) <em>Forecasting: methods and applications</em>, John Wiley &amp; Sons: New York.
+Exercise 5.9</p>
+
+
+<h3>Examples</h3>
+
+<pre>plot(mortality~typeA,data=mortal)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Frequencies of tag trigrams in Old French texts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for oldFrench"><tr><td>oldFrench</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Frequencies of tag trigrams in Old French texts</h2>
+
+<h3>Description</h3>
+
+<p>Frequencies of 35 morphosyntactic tag trigrams in 343 Old French texts.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(oldFrench)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with the frequencies of 35 tag trigrams (columns) for 343 Old French texts (rows)
+in the Nouveau Corpus d'Amsterdam.  See oldFrenchMeta for details on the texts (and manuscript
+versions).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Data from Nouveau Corpus d'Amsterdam, <a href="http://www.uni-stuttgart.de/lingrom/stein/corpus/">http://www.uni-stuttgart.de/lingrom/stein/corpus/</a>.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ernestus, M., van Mulken, M. and Baayen, R. H. (2007)
+De syntax van Oud-Franse ridders en heiligen in ruimte en tijd
+To appear in <em>Onze Taal</em>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(oldFrench)
+data(oldFrenchMeta)
+
+oldFrench.ca = corres.fnc(oldFrench)
+
+plot(oldFrench.ca, rlabels = oldFrenchMeta$Genre, 
+rcol = as.numeric(oldFrenchMeta$Genre), rcex = 0.5, 
+extreme = 0.1, ccol = "blue")
+</pre>
+
+
+</body></html>

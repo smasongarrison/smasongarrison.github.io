@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Variation in written Dutch in the use of the suffix -lijk</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for writtenVariationLijk"><tr><td>writtenVariationLijk</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Variation in written Dutch in the use of the suffix -lijk</h2>
+
+<h3>Description</h3>
+
+<p>This dataset documents variation in the use of the 80 most frequent
+words ending in the suffix <em>-lijk</em> in written Dutch.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(writtenVariationLijk)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 560 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>Corpus</code></dt><dd><p>a factor with as levels the sampled newspapers: 
+<code>belang</code> (Het Belang van Limburg), 
+<code>gazet</code> (De Gazet van Antwerpen),
+<code>laatnieu</code> (Het Laatste Nieuws),
+<code>limburg</code> (De Limburger),
+<code>nrc</code> (NRC Handelsblad),
+<code>stand</code> (De Standaard), and
+<code>tele</code> (De Telegraaf).</p>
+</dd>
+<dt><code>Word</code></dt><dd><p>a factor with the 80 most frequent words ending in
+<em>-lijk</em>.</p>
+</dd>
+<dt><code>Count</code></dt><dd><p>a numeric vector with token counts in the CONDIV
+corpus.</p>
+</dd>
+<dt><code>Country</code></dt><dd><p>a factor with levels <code>Flanders</code> and 
+<code>Netherlands</code>.</p>
+</dd>
+<dt><code>Register</code></dt><dd><p>a factor with levels <code>National</code>, 
+<code>Quality</code> and <code>Regional</code> coding the type of newspaper.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Keune, K., Ernestus, M., Van Hout, R. and Baayen, R.H. (2005) Social,
+geographical, and register variation in Dutch: From written 'mogelijk' to
+spoken 'mok', <em>Corpus Linguistics and Linguistic Theory</em>, 1, 183-223.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(writtenVariationLijk)
+
+require(lme4)
+require(lmerTest)
+require(lme4)
+
+writtenVariationLijk.lmer = glmer(Count ~ Country * Register + (1|Word), 
+  control=glmerControl(optimizer="optimx",optCtrl=list(method="nlminb")),
+  data = writtenVariationLijk, family = "poisson")
+
+writtenVariationLijk.lmerA = glmer(Count ~ Country * Register + (Country|Word), 
+  control=glmerControl(optimizer="optimx",optCtrl=list(method="nlminb")),
+  data = writtenVariationLijk, family = "poisson")
+
+anova(writtenVariationLijk.lmer, writtenVariationLijk.lmerA)
+
+summary(writtenVariationLijk.lmerA)
+
+## End(Not run)</pre>
+
+
+</body></html>

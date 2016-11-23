@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Auxiliaries for regular and irregular verbs in Dutch</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for auxiliaries"><tr><td>auxiliaries</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Auxiliaries for regular and irregular verbs in Dutch</h2>
+
+<h3>Description</h3>
+
+<p>For 285 regular and irregular Dutch verbs, the auxiliary for the present 
+and past perfect is listed together with the count
+of verbal synsets in WordNet.  Regular and irregular verbs are matched
+in the mean for lemma frequency.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(auxiliaries)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 285 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>Verb</code></dt><dd><p>a factor with 285 monomorphemic Dutch verbs.</p>
+</dd>
+<dt><code>Aux</code></dt><dd><p>a factor with as levels the auxiliaries <code>hebben</code>, 
+<code>zijn</code> and <code>zijnheb</code> (for verbs allowing both auxiliaries).</p>
+</dd>
+<dt><code>VerbalSynsets</code></dt><dd><p>a numeric vector witth the number of 
+verbal synonym sets in WordNet in which the verb is listed.</p>
+</dd>
+<dt><code>Regularity</code></dt><dd><p>a factor with levels <code>irregular</code> and
+<code>regular</code>.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Baayen, R. H. and Moscoso del Prado Martin, F. (2005)
+Semantic density and past-tense formation in three Germanic 
+languages, <em>Language</em>, 81, 666-698.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(auxiliaries)
+kruskal.test(auxiliaries$VerbalSynsets, auxiliaries$Aux)
+</pre>
+
+
+</body></html>

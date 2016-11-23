@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Primed lexical decision latencies for neologisms ending in...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for primingHeidPrevRT"><tr><td>primingHeidPrevRT</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Primed lexical decision latencies for neologisms ending in -heid</h2>
+
+<h3>Description</h3>
+
+<p>Primed lexical decision latencies for Dutch neologisms ending in the
+suffix <em>-heid</em>, with information on RTs to preceding trials added
+to the data already in primingHeid.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(primingHeidPrevRT)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 832 observations on the following 17 variables.
+</p>
+
+<dl>
+<dt><code>Subject</code></dt><dd><p>a factor with subjects as levels.</p>
+</dd>
+<dt><code>Word</code></dt><dd><p>a factor with words as levels.</p>
+</dd>
+<dt><code>Trial</code></dt><dd><p>a numeric vector for the rank of the trial in its
+experimental list.</p>
+</dd>
+<dt><code>RT</code></dt><dd><p>a numeric vector with log-transformed lexical decision
+latencies.</p>
+</dd>
+<dt><code>Condition</code></dt><dd><p>a factor coding the priming treatmen,
+with levels <code>baseheid</code> (prime is the base word) and
+<code>heid</code> (the prime is the neologism)</p>
+</dd>
+<dt><code>Rating</code></dt><dd><p>a numeric vector for subjective frequency estimates.</p>
+</dd>
+<dt><code>Frequency</code></dt><dd><p>a numeric vector for 
+log-transformed frequencies of the whole word.</p>
+</dd>
+<dt><code>BaseFrequency</code></dt><dd><p>a numeric vector for the log-transformed 
+frequencies of the base word.</p>
+</dd>
+<dt><code>LengthInLetters</code></dt><dd><p>a numeric vector coding orthographic length
+in letters.</p>
+</dd>
+<dt><code>FamilySize</code></dt><dd><p>a numeric vector for the log-transformed
+count of the word's morphological family.</p>
+</dd>
+<dt><code>NumberOfSynsets</code></dt><dd><p>a numeric vector for the number of synonym
+sets in WordNet in which the base is listed.</p>
+</dd>
+<dt><code>ResponseToPrime</code></dt><dd><p>a factor with levels <code>correct</code> and
+<code>incorrect</code> for the response to the prime.</p>
+</dd>
+<dt><code>RTtoPrime</code></dt><dd><p>a numeric vector for the log-transformed 
+reaction time to the prime.</p>
+</dd>
+<dt><code>RTmin1</code></dt><dd><p>a numeric vector for  
+reaction time in ms to the item preceding the target.</p>
+</dd>
+<dt><code>RTmin2</code></dt><dd><p>a numeric vector for  
+reaction time in ms to the item preceding the target by two trials.</p>
+</dd>
+<dt><code>RTmin3</code></dt><dd><p>a numeric vector for  
+reaction time in ms to the item preceding the target by three trials.</p>
+</dd>
+<dt><code>RTmin4</code></dt><dd><p>a numeric vector for  
+reaction time in ms to the item preceding the target by four trials.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>De Vaan, L., Schreuder, R. and Baayen, R. H. (2007) Regular morphologically
+complex neologisms leave detectable traces in the mental lexicon, <em>The
+Mental Lexicon</em>, 2, in press.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(primingHeidPrevRT)
+
+require(lme4)
+require(optimx)
+require(lmerTest)
+
+primingHeid.lmer = lmer(RT ~ RTtoPrime * ResponseToPrime + Condition + 
+  log(RTmin1) + (1|Subject) + (1|Word), data = primingHeidPrevRT,
+  control=lmerControl(optimizer="optimx",optCtrl=list(method="nlminb")))
+summary(primingHeid.lmer)
+
+## End(Not run)</pre>
+
+
+</body></html>

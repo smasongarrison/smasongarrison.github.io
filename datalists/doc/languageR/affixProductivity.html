@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Affix productivity</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for affixProductivity"><tr><td>affixProductivity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Affix productivity</h2>
+
+<h3>Description</h3>
+
+<p>Affix productivity, gauged by the P* productivity measure, 
+for 27 English affixes in 44 texts.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(affixProductivity)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 44 observations on the following 30 variables.
+</p>
+
+<dl>
+<dt><code>semi</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>anti</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>ee</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>ism</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>ian</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>ful</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>y</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>ness</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>able</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>ly</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>unV</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>unA</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>ize</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>less</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>erA</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>erC</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>ity</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>super</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>est</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>ment</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>ify</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>re</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>ation</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>in.</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>ex</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>en</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>be</code></dt><dd><p>a numeric vector of P*-values</p>
+</dd>
+<dt><code>AuthorCodes</code></dt><dd><p>a factor with levels 
+</p>
+
+<dl>
+<dt><code>BLu</code></dt><dd><p>(King James Version: Luke-Acts)</p>
+</dd>
+<dt><code>BMo</code></dt><dd><p>(Book of Mormon) </p>
+</dd>
+<dt><code>CAs</code></dt><dd><p>(Aesop's fables, translation by Townsend)</p>
+</dd>
+<dt><code>CBo</code></dt><dd><p>(Baum, The Marvelous Land of Oz)</p>
+</dd>
+<dt><code>CBp</code></dt><dd><p>(Barrie, Peter Pan and Wendy)</p>
+</dd>
+<dt><code>CBw</code></dt><dd><p>(Baum, The Wonderful Wizard of Oz)</p>
+</dd>
+<dt><code>CCa</code></dt><dd><p>(Carroll, Alice's Adventures in Wonderland)</p>
+</dd>
+<dt><code>CCt</code></dt><dd><p>(Carroll, Through the Looking Glass and what Alice Found There)</p>
+</dd>
+<dt><code>CGr</code></dt><dd><p>(Grimm Fairy Tales, translations)</p>
+</dd>
+<dt><code>CKj</code></dt><dd><p>(Kipling, The Jungle Book)</p>
+</dd>
+<dt><code>LAp</code></dt><dd><p>(Austen, Pride and Prejudice)</p>
+</dd>
+<dt><code>LBp</code></dt><dd><p>(Burroughs, A Princess of Mars)  </p>
+</dd>
+<dt><code>LBw</code></dt><dd><p>(Bronte, Wuthering Heights) </p>
+</dd>
+<dt><code>LCl</code></dt><dd><p>(Conrad, Lord Jim)</p>
+</dd>
+<dt><code>LCn</code></dt><dd><p>(Conrad, Nigger of the Narcissus) </p>
+</dd>
+<dt><code>LDb</code></dt><dd><p>(Doyle, The Casebook of Sherlock Holmes)</p>
+</dd>
+<dt><code>LDc</code></dt><dd><p>(Dickens, The Chimes: a Goblin Story) </p>
+</dd>
+<dt><code>LDC</code></dt><dd><p>(Dickens, A Christmas Carol)     </p>
+</dd>
+<dt><code>LDh</code></dt><dd><p>(Doyle, The Hound of the Baskervilles)</p>
+</dd>
+<dt><code>LDv</code></dt><dd><p>(Doyle, The Valley of Fear)  </p>
+</dd>
+<dt><code>LJc</code></dt><dd><p>(James, Confidence)</p>
+</dd>
+<dt><code>LJe</code></dt><dd><p>(James, The Europeans)</p>
+</dd>
+<dt><code>LLc</code></dt><dd><p>(London, The Call of the Wild)</p>
+</dd>
+<dt><code>LLs</code></dt><dd><p>(London, The Sea Wolf)</p>
+</dd>
+<dt><code>LMa</code></dt><dd><p>(Montgomery, Anne of Avonlea)</p>
+</dd>
+<dt><code>LMm</code></dt><dd><p>(Melville, Moby Dick)</p>
+</dd>
+<dt><code>LMn</code></dt><dd><p>(Morris, News from Nowhere)</p>
+</dd>
+<dt><code>LMp</code></dt><dd><p>(Milton, Paradise Lost)</p>
+</dd>
+<dt><code>LOs</code></dt><dd><p>(Orczy, The Scarlet Pimpernel)</p>
+</dd>
+<dt><code>LSd</code></dt><dd><p>(Stoker, Dracula)</p>
+</dd>
+<dt><code>LSs</code></dt><dd><p>(Chu, More than a Chance Meeting (Startrek))</p>
+</dd>
+<dt><code>LTa</code></dt><dd><p>(Trollope, Ayala's Angel)</p>
+</dd>
+<dt><code>LTe</code></dt><dd><p>(Trollope, The Eustace Diamonds)</p>
+</dd>
+<dt><code>LTf</code></dt><dd><p>(Trollope, Can you Forgive her?)</p>
+</dd>
+<dt><code>LTy</code></dt><dd><p>(Twain, A Connecticut Yankee in King Arthur's Court)</p>
+</dd>
+<dt><code>LWi</code></dt><dd><p>(Wells, The Invisible Man)</p>
+</dd>
+<dt><code>LWt</code></dt><dd><p>(Wells, The Time Machine)</p>
+</dd>
+<dt><code>LWw</code></dt><dd><p>(Wells, The War of the Worlds)</p>
+</dd>
+<dt><code>OAf</code></dt><dd><p>(The Federalist Papers)</p>
+</dd>
+<dt><code>OCh</code></dt><dd><p>(Texts sampled from Congress Hearings) </p>
+</dd>
+<dt><code>OCl</code></dt><dd><p>(Texts sampled from Clinton's Election Speeches)</p>
+</dd>
+<dt><code>ODo</code></dt><dd><p>(Darwin, On the Origin of the Species)</p>
+</dd>
+<dt><code>OGa</code></dt><dd><p>(Selected Texts from the Government Accounting Office)</p>
+</dd>
+<dt><code>OJe</code></dt><dd><p>(James, Essays in Radical Empiricism)</p>
+</dd>
+</dl>
+
+</dd>
+<dt><code>Registers</code></dt><dd><p>a factor with levels <code>B</code> (Biblical texts) 
+<code>C</code> (Children's books) <code>L</code> (Literary texts) <code>O</code> (other)</p>
+</dd>
+<dt><code>Birth</code></dt><dd><p>a numeric vector for the author's year of birth 
+(where available)</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Most texts were obtained from the Gutenberg Project 
+(<a href="http://www.gutenberg.org/wiki/Main_Page">http://www.gutenberg.org/wiki/Main_Page</a>) and the Oxford Text
+Archive (http://ota.ahds.ac.uk/).
+</p>
+
+
+<h3>References</h3>
+
+<p>Baayen, R. H. (1994) Derivational Productivity and Text Typology,
+<em>Journal of Quantitative Linguistics</em>, 1, 16-34.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(affixProductivity)
+affixes.pr = prcomp(affixProductivity[,1:(ncol(affixProductivity)-3)], 
+center = TRUE, scale. = TRUE)
+library(lattice)
+trellis.device()
+super.sym = trellis.par.get("superpose.symbol")
+splom(data.frame(affixes.pr$x[,1:3]), 
+groups = affixProductivity$Registers, 
+panel = panel.superpose,
+key = list(title  = "texts in productivity space",
+text   = list(c("Religious", "Children", "Literary", "Other")),
+points = list(pch = super.sym$pch[1:4], col = super.sym$col[1:4])))
+
+## End(Not run)
+</pre>
+
+
+</body></html>

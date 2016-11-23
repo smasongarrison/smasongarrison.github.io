@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The determiner 'het' in the Dutch novel Max Havelaar</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for havelaar"><tr><td>havelaar</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>The determiner 'het' in the Dutch novel Max Havelaar</h2>
+
+<h3>Description</h3>
+
+<p>The frequency of the determiner 'het' in the Dutch novel
+'Max Havelaar' by Multatuli (Eduard Douwes Dekker), in 99
+consecutive text fragments of 1000 tokens each.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(havelaar)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 99 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>Chunk</code></dt><dd><p>a numeric vector with the indices of the text 
+fragments.</p>
+</dd>
+<dt><code>Frequency</code></dt><dd><p>a numeric vector with the frequencies of the 
+determiner 'het' in the text fragments.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>The text of Max Havelaar was obtained from the Project Gutenberg at
+at <a href="http://www.gutenberg.org/wiki/Main_Page">http://www.gutenberg.org/wiki/Main_Page</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(havelaar)
+
+n = 1000                          # token size of text fragments
+p = mean(havelaar$Frequency / n)  # relative frequencies
+
+plot(qbinom(ppoints(99), n, p), sort(havelaar$Frequency),
+   xlab = paste("quantiles of (", n, ",", round(p, 4), 
+   ")-binomial", sep=""), ylab = "frequencies")
+
+
+lambda = mean(havelaar$Frequency)
+ks.test(havelaar$Frequency, "ppois", lambda)
+ks.test(jitter(havelaar$Frequency), "ppois", lambda)
+
+
+
+## End(Not run)</pre>
+
+
+</body></html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Self-paced reading latencies for Dutch neologisms</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for selfPacedReadingHeid"><tr><td>selfPacedReadingHeid</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Self-paced reading latencies for Dutch neologisms</h2>
+
+<h3>Description</h3>
+
+<p>Self-paced reading latencies for Dutch neologisms ending in the
+suffix <em>-heid</em>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(selfPacedReadingHeid)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1280 observations on the following 18 variables.
+</p>
+
+<dl>
+<dt><code>Subject</code></dt><dd><p>a factor with subjects as levels.</p>
+</dd>
+<dt><code>Word</code></dt><dd><p>a factor with words as levels.</p>
+</dd>
+<dt><code>RT</code></dt><dd><p>a numeric vector with logarithmically transformed
+reading latencies.</p>
+</dd>
+<dt><code>RootFrequency</code></dt><dd><p>a numeric vector for the logarithmically
+transformed frequency of the lowest-level base of the neologism
+(e.g., <em>lob</em> in <em>[[[lob]+ig]+heid]</em>.</p>
+</dd>
+<dt><code>Condition</code></dt><dd><p>a factor for the priming conditions 
+with levels <code>baseheid</code> (neologism is preceded 40 trials back
+by its base word) and <code>heidheid</code> (the neologism is preceded
+40 trials back by itself).</p>
+</dd>
+<dt><code>Rating</code></dt><dd><p>a numeric vector for the word's subjective frequency
+estimate.</p>
+</dd>
+<dt><code>Frequency</code></dt><dd><p>a numeric vector for the neologism's frequency
+(all zero).</p>
+</dd>
+<dt><code>BaseFrequency</code></dt><dd><p>a numeric vector for the base adjective
+underlying the neologism (e.g., <em>lobbig</em> in 
+<em>[[[lob]+ig]+heid]</em>).</p>
+</dd>
+<dt><code>LengthInLetters</code></dt><dd><p>a numeric vector coding word length in
+letters.</p>
+</dd>
+<dt><code>FamilySize</code></dt><dd><p>a numeric vector for the logaritmically
+transformed count of a word's morphological family members.</p>
+</dd>
+<dt><code>NumberOfSynsets</code></dt><dd><p>a numeric vector for the count of synonym
+sets in WordNet in which the word is listed.</p>
+</dd>
+<dt><code>RT4WordsBack</code></dt><dd><p>a numeric vector for the log-transformed 
+reading latencies four trials back.</p>
+</dd>
+<dt><code>RT3WordsBack</code></dt><dd><p>a numeric vector for the log-transformed 
+reading latencies three trials back.</p>
+</dd>
+<dt><code>RT2WordsBack</code></dt><dd><p>a numeric vector for the log-transformed 
+reading latencies two trials back.</p>
+</dd>
+<dt><code>RT1WordBack</code></dt><dd><p>a numeric vector for the log-transformed 
+reading latencies one trial back.</p>
+</dd>
+<dt><code>RT1WordLater</code></dt><dd><p>a numeric vector for the log-transformed 
+reading latencies one trial later.</p>
+</dd>
+<dt><code>RT2WordsLater</code></dt><dd><p>a numeric vector for the log-transformed 
+reading latencies two trials later.</p>
+</dd>
+<dt><code>RTtoPrime</code></dt><dd><p>a numeric vector for the log-transformed reading
+latency for the prime.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>De Vaan, L., Schreuder, R. and Baayen, R. H. (2007) Regular morphologically
+complex neologisms leave detectable traces in the mental lexicon, <em>The
+Mental Lexicon</em>, 2, in press.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(selfPacedReadingHeid)
+
+# data validation
+plot(sort(selfPacedReadingHeid$RT))   
+selfPacedReadingHeid = selfPacedReadingHeid[selfPacedReadingHeid$RT &gt; 5 &amp; 
+  selfPacedReadingHeid$RT &lt; 7.2,]
+
+# fitting a mixed-effects model
+
+require(lme4)
+require(lmerTest)
+require(optimx)
+x = selfPacedReadingHeid[,12:15]
+x.pr = prcomp(x, center = TRUE, scale = TRUE)
+selfPacedReadingHeid$PC1 = x.pr$x[,1]
+
+selfPacedReadingHeid.lmer = lmer(RT ~ RTtoPrime + LengthInLetters + 
+  PC1 * Condition + (1|Subject) + (1|Word), 
+  control=lmerControl(optimizer="optimx",optCtrl=list(method="nlminb")),
+  data = selfPacedReadingHeid)  
+summary(selfPacedReadingHeid.lmer)
+
+# model criticism
+
+selfPacedReadingHeid.lmerA = lmer(RT ~ RTtoPrime + LengthInLetters + 
+  PC1 * Condition + (1|Subject) + (1|Word), 
+  control=lmerControl(optimizer="optimx",optCtrl=list(method="nlminb")),
+  data = selfPacedReadingHeid[abs(scale(resid(selfPacedReadingHeid.lmer))) &lt; 2.5, ])
+
+qqnorm(resid(selfPacedReadingHeid.lmerA))
+summary(selfPacedReadingHeid.lmerA)
+
+## End(Not run)</pre>
+
+
+</body></html>

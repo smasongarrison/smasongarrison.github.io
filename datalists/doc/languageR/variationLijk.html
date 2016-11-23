@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Variation in spoken Dutch in the use of the suffix -lijk</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for variationLijk"><tr><td>variationLijk</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Variation in spoken Dutch in the use of the suffix -lijk</h2>
+
+<h3>Description</h3>
+
+<p>This dataset documents variation in the use of the suffix <em>-lijk</em>, as
+realized in 32 words, in spoken Dutch across region (Flanders versus The
+Netherlands), sex (females versus males) and education (high versus mid).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(variationLijk)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 32 observations on the following 8 variables.
+</p>
+
+<dl>
+<dt><code>nlfemaleHigh</code></dt><dd><p>a numeric vector with counts for Dutch 
+females with a mid education level.</p>
+</dd>
+<dt><code>nlfemaleMid</code></dt><dd><p>a numeric vector counts for Dutch 
+females with a high education level.</p>
+</dd>
+<dt><code>nlmaleHigh</code></dt><dd><p>a numeric vector counts for Dutch 
+males with a high education level.</p>
+</dd>
+<dt><code>nlmaleMid</code></dt><dd><p>a numeric vector counts for Dutch 
+males with a mid education level.</p>
+</dd>
+<dt><code>vlfemaleHigh</code></dt><dd><p>a numeric vector counts for Flemish 
+females with a high education level.</p>
+</dd>
+<dt><code>vlfemaleMid</code></dt><dd><p>a numeric vector counts for Flemish 
+females with a mid education level.</p>
+</dd>
+<dt><code>vlmaleHigh</code></dt><dd><p>a numeric vector counts for Flemish 
+males with a high education level.</p>
+</dd>
+<dt><code>vlmaleMid</code></dt><dd><p>a numeric vector counts for Flemish 
+males with a mid education level.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Keune, K., Ernestus, M., Van Hout, R. and Baayen, R.H. (2005) Social,
+geographical, and register variation in Dutch: From written 'mogelijk' to
+spoken 'mok', <em>Corpus Linguistics and Linguistic Theory</em>, 1, 183-223.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(variationLijk)
+variationLijk.ca = corres.fnc(variationLijk)
+plot(variationLijk.ca, rcex=0.7, ccol="black",
+  rcol = rep("blue", nrow(variationLijk))) 
+
+## End(Not run)</pre>
+
+
+</body></html>

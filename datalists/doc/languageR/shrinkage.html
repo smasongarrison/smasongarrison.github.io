@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data set illustrating shrinkage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for shrinkage"><tr><td>shrinkage</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Data set illustrating shrinkage</h2>
+
+<h3>Description</h3>
+
+<p>Simulated data set for illustrating shrinkage.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(shrinkage)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 200 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>intercept</code></dt><dd><p>a numeric vector for the intercept.</p>
+</dd>
+<dt><code>frequency</code></dt><dd><p>a numeric vector for word frequency.</p>
+</dd>
+<dt><code>subject</code></dt><dd><p>a factor for subjects with levels <code>S1</code>,
+<code>S2</code>, ... , <code>S10</code>.</p>
+</dd>
+<dt><code>error</code></dt><dd><p>a numeric vector for residuals.</p>
+</dd>
+<dt><code>ranef</code></dt><dd><p>a numeric vector for random effect.</p>
+</dd>
+<dt><code>RT</code></dt><dd><p>a numeric vector for simulated RTs.</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(shrinkage)
+
+require(lme4)
+require(lmerTest)
+require(optimx)
+
+shrinkage.lmer = lmer(RT ~ frequency + (1|subject), 
+  data = shrinkage,
+  control=lmerControl(optimizer="optimx",optCtrl=list(method="nlminb"))
+shrinkage.lmList = lmList(RT ~ frequency | subject, data = shrinkage)
+
+# and visualize the difference between random regression 
+# and mixed-effects regression
+
+mixed = coef(shrinkage.lmer)[[1]]
+random = coef(shrinkage.lmList)
+subj = unique(shrinkage[,c("subject", "ranef")])
+subj = subj[order(subj$subject),]
+subj$random = random[,1]
+subj$mixed = mixed[,1]
+subj = subj[order(subj$random),]
+subj$rank = 1:nrow(subj)
+
+par(mfrow=c(1,2))
+plot(subj$rank, subj$random, xlab="rank", ylab="RT", ylim=c(200,550), type="n")
+text(subj$rank, subj$random, as.character(subj$subject), cex=0.8, col="red")
+mtext("random regression", 3, 1)
+points(subj$rank, 400+subj$ranef, col="blue")
+abline(h=400)
+plot(subj$rank, subj$mixed, xlab="rank", ylab="RT", ylim=c(200,550), type="n")
+text(subj$rank, subj$mixed, as.character(subj$subject), cex=0.8, col = "red")
+mtext("mixed-effects regression", 3, 1)
+points(subj$rank, 400+subj$ranef, col="blue")
+abline(h=400)
+par(mfrow=c(1,1))
+
+## End(Not run)</pre>
+
+
+</body></html>

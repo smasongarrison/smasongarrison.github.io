@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Simulated Latin Square data set with subjects and items</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for latinsquare"><tr><td>latinsquare</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Simulated Latin Square data set with subjects and items</h2>
+
+<h3>Description</h3>
+
+<p>Simulated lexical decision latencies with SOA as treatment, using
+a Latin Square design with subjects and items, as available in
+Raaijmakers et al. (1999).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(latinsquare)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 144 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>Group</code></dt><dd><p>a factor with levels <code>G1</code>, <code>G2</code> and 
+<code>G3</code>, for groups of subjects</p>
+</dd>
+<dt><code>Subject</code></dt><dd><p>a factor with subjects labelled
+<code>S1</code>, ... <code>S12</code>.</p>
+</dd>
+<dt><code>Word</code></dt><dd><p>a factor with words labelled <code>W1</code> ... <code>W12</code>.</p>
+</dd>
+<dt><code>RT</code></dt><dd><p>a numeric vector for reaction times.</p>
+</dd>
+<dt><code>SOA</code></dt><dd><p>a factor with levels <code>long</code>, <code>medium</code>, 
+and <code>short</code>.</p>
+</dd>
+<dt><code>List</code></dt><dd><p>a factor with levels <code>L1</code>, <code>L2</code>, and <code>L3</code>
+for lists of words.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Raaijmakers, J.G.W., Schrijnemakers, J.M.C. &amp; Gremmen, F. (1999)
+How to deal with &quot;The language as fixed effect fallacy&quot;: 
+common misconceptions and alternative solutions, 
+<em>Journal of Memory and Language</em>, 41, 416-426.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(latinsquare)
+library(lme4)
+latinsquare.with = 
+   simulateLatinsquare.fnc(latinsquare, nruns = 1000, with = TRUE) 
+latinsquare.without = 
+   simulateLatinsquare.fnc(latinsquare, nruns = 1000, with = FALSE)
+latinsquare.with$alpha05
+latinsquare.without$alpha05
+
+## End(Not run)</pre>
+
+
+</body></html>

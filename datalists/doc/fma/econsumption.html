@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Electricity consumption and temperature</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for econsumption"><tr><td>econsumption</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Electricity consumption and temperature</h2>
+
+<h3>Description</h3>
+
+<p>Electricity consumption and maximum temperature for 12 randomly chosen days.</p>
+
+
+<h3>Usage</h3>
+
+<pre>temperature</pre>
+
+
+<h3>Format</h3>
+
+<p>Data frame containing the following columns:
+</p>
+<dl>
+<dt>Mwh</dt><dd><p>Daily electricity consumption (megawatt-hours)</p>
+</dd>
+<dt>temp</dt><dd><p>Daily maximum temperature (degrees Celsius)</p>
+</dd>
+</dl>
+
+
+<h3>Source</h3>
+
+<p>Makridakis, Wheelwright and Hyndman (1998) <em>Forecasting: methods and applications</em>, John Wiley &amp; Sons: New York.
+Exercise 5.5</p>
+
+
+<h3>Examples</h3>
+
+<pre>plot(Mwh ~ temp, data=econsumption,pch=19,col=4)
+</pre>
+
+
+</body></html>

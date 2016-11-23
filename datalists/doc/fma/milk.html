@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Monthly milk production per cow</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for milk"><tr><td>milk</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Monthly milk production per cow</h2>
+
+<h3>Description</h3>
+
+<p>Average monthly milk production per cow over 14 years.</p>
+
+
+<h3>Usage</h3>
+
+<pre>milk</pre>
+
+
+<h3>Format</h3>
+
+<p>Time series data</p>
+
+
+<h3>Source</h3>
+
+<p>Makridakis, Wheelwright and Hyndman (1998) <em>Forecasting: methods and applications</em>, John Wiley &amp; Sons: New York.
+Chapter 2.</p>
+
+
+<h3>References</h3>
+
+<p>Cryer (1986) <em>Time series analysis</em>, Duxbury
+Press: Belmont.</p>
+
+
+<h3>Examples</h3>
+
+<pre>par(mfrow=c(2,1))
+plot(milk,xlab="Year",ylab="pounds",
+    main="Monthly milk production per cow")
+milk.adj &lt;- milk/monthdays(milk)*365.25/12
+plot(milk.adj,xlab="Year",ylab="pounds",
+    main="Adjusted monthly milk production per cow")
+</pre>
+
+
+</body></html>

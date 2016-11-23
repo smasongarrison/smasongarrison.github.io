@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lexical measures for 2233 English monomorphemic words</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for lexicalMeasures"><tr><td>lexicalMeasures</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Lexical measures for 2233 English monomorphemic words</h2>
+
+<h3>Description</h3>
+
+<p>Lexical distributional measures for 2233 English monomorphemic words.  This dataset provides
+a subset of the data available in the dataset <code>english</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(lexicalMeasures)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 2233 observations on the following 24 variables.
+</p>
+
+<dl>
+<dt><code>Word</code></dt><dd><p>a factor with 2284 words.</p>
+</dd>
+<dt><code>CelS</code></dt><dd><p>numeric vector with log-transformed lemma frequency in the CELEX lexical
+database.</p>
+</dd> 
+<dt><code>Fdif</code></dt><dd><p>numeric vector with the logged ratio 
+of written frequency (CELEX) to spoken frequency (British National Corpus).</p>
+</dd> 
+<dt><code>Vf</code></dt><dd><p>numeric vector with log morphological family size.</p>
+</dd> 
+<dt><code>Dent</code></dt><dd><p>numeric vector with derivational entropy.</p>
+</dd> 
+<dt><code>Ient</code></dt><dd><p>numeric vector with inflectional entropy.</p>
+</dd> 
+<dt><code>NsyS</code></dt><dd><p>numeric vector with the log-transformed count of 
+synonym sets in WordNet in which the word is listed.</p>
+</dd> 
+<dt><code>NsyC</code></dt><dd><p>numeric vector with the log-transformed count of
+synonym sets in WordNet in which the word is listed as part of a compound.</p>
+</dd> 
+<dt><code>Len</code></dt><dd><p>numeric vector with length of the word in letters.</p>
+</dd> 
+<dt><code>Ncou</code></dt><dd><p>numeric vector with orthographic neighborhood density.</p>
+</dd> 
+<dt><code>Bigr</code></dt><dd><p>numeric vector with mean log bigram frequency.</p>
+</dd> 
+<dt><code>InBi</code></dt><dd><p>numeric vector with log frequency of initial diphone.</p>
+</dd> 
+<dt><code>spelV</code></dt><dd><p>numeric vector with type count of orthographic neighbors.</p>
+</dd> 
+<dt><code>spelN</code></dt><dd><p>numeric vector with token count of orthographic neighbors.</p>
+</dd> 
+<dt><code>phonV</code></dt><dd><p>numeric vector with type count of phonological neighbors.</p>
+</dd> 
+<dt><code>phonN</code></dt><dd><p>numeric vector with token count of phonological neighbors.</p>
+</dd> 
+<dt><code>friendsV</code></dt><dd><p>numeric vector with type counts of consistent words.</p>
+</dd> 
+<dt><code>friendsN</code></dt><dd><p>numeric vector with token counts of consistent words.</p>
+</dd> 
+<dt><code>ffV</code></dt><dd><p>numeric vector with type count of forward inconsistent words.</p>
+</dd>   
+<dt><code>ffN</code></dt><dd><p>numeric vector with token count of forward inconsistent words.</p>
+</dd> 
+<dt><code>fbV</code></dt><dd><p>numeric vector with type count of backward inconsistent words.</p>
+</dd> 
+<dt><code>fbN</code></dt><dd><p>numeric vector with token count of backward inconsistent words</p>
+</dd> 
+<dt><code>ffNonzero</code></dt><dd><p>a numeric vector with the count of forward inconsistent words 
+with nonzero frequency.</p>
+</dd>
+<dt><code>NVratio</code></dt><dd><p>a numeric vector with the logarithmically transformed ratio
+of the noun and verb frequencies.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Baayen, R.H., Feldman, L. and Schreuder, R. (2006)
+Morphological influences on the recognition of monosyllabic 
+monomorphemic words, <em>Journal of Memory and Language</em>,
+53, 496-512.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(lexicalMeasures)
+data(lexicalMeasuresDist)
+
+library(rms)
+library(cluster)
+plot(varclus(as.matrix(lexicalMeasures[,-1])))
+
+lexicalMeasures.cor = cor(lexicalMeasures[,-1], method = "spearman")^2
+lexicalMeasures.dist = dist(lexicalMeasures.cor)
+pltree(diana(lexicalMeasures.dist))
+
+data(lexicalMeasuresClasses)
+x = data.frame(measure = rownames(lexicalMeasures.cor), 
+cluster = cutree(diana(lexicalMeasures.dist), 5),
+class = lexicalMeasuresClasses$Class)
+x = x[order(x$cluster), ]
+x
+
+## End(Not run)</pre>
+
+
+</body></html>

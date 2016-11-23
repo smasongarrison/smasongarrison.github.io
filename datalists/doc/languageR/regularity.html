@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Regular and irregular Dutch verbs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for regularity"><tr><td>regularity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Regular and irregular Dutch verbs</h2>
+
+<h3>Description</h3>
+
+<p>Regular and irregular Dutch verbs and selected lexical and distributional
+properties.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(regularity)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 700 observations on the following 13 variables.
+</p>
+
+<dl>
+<dt><code>Verb</code></dt><dd><p>a factor with the verbs as levels.</p>
+</dd>
+<dt><code>WrittenFrequency</code></dt><dd><p>a numeric vector of logarithmically transformed
+frequencies in written Dutch (as available in the CELEX lexical database).</p>
+</dd>
+<dt><code>NcountStem</code></dt><dd><p>a numeric vector for the number of orthographic neighbors.</p>
+</dd>
+<dt><code>VerbalSynsets</code></dt><dd><p>a numeric vector for the number of verbal synsets in WordNet.</p>
+</dd>
+<dt><code>MeanBigramFrequency</code></dt><dd><p>a numeric vector for mean log bigram frequency.</p>
+</dd>
+<dt><code>InflectionalEntropy</code></dt><dd><p>a numeric vector for Shannon's entropy calculated for the word's inflectional variants.</p>
+</dd>
+<dt><code>Auxiliary</code></dt><dd><p>a factor with levels <code>hebben</code>, <code>zijn</code> and <code>zijnheb</code> for the verb's auxiliary in the perfect tenses.</p>
+</dd>
+<dt><code>Regularity</code></dt><dd><p>a factor with levels <code>irregular</code> and <code>regular</code>.</p>
+</dd>
+<dt><code>LengthInLetters</code></dt><dd><p>a numeric vector of the word's orthographic length.</p>
+</dd>
+<dt><code>FamilySize</code></dt><dd><p>a numeric vector for the number of types in the word's 
+morphological family.</p>
+</dd>
+<dt><code>Valency</code></dt><dd><p>a numeric vector for the verb's valency, estimated by its 
+number of argument structures.</p>
+</dd>
+<dt><code>NVratio</code></dt><dd><p>a numeric vector for the log-transformed ratio of the nominal
+and verbal frequencies of use.</p>
+</dd>
+<dt><code>WrittenSpokenRatio</code></dt><dd><p>a numeric vector for the log-transformed ratio of the frequencies in written and spoken Dutch.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Baayen, R. H. and Moscoso del Prado Martin, F. (2005) Semantic density and
+past-tense formation in three Germanic languages, Language, 81, 666-698.
+</p>
+<p>Tabak, W., Schreuder, R. and Baayen, R. H. (2005) Lexical statistics and
+lexical processing: semantic density, information complexity, sex, and
+irregularity in Dutch, in Kepser, S. and Reis, M., <em>Linguistic Evidence -
+Empirical, Theoretical, and Computational Perspectives</em>, Berlin: Mouton de
+Gruyter, pp. 529-555.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(regularity)
+
+# ---- predicting regularity with a logistic regression model
+
+library(rms)
+regularity.dd = datadist(regularity)
+options(datadist = 'regularity.dd')
+
+regularity.lrm = lrm(Regularity ~ WrittenFrequency + 
+rcs(FamilySize, 3) + NcountStem + InflectionalEntropy + 
+Auxiliary + Valency + NVratio + WrittenSpokenRatio, 
+data = regularity, x = TRUE, y = TRUE)
+
+anova(regularity.lrm)
+
+# ---- model validation
+
+validate(regularity.lrm, bw = TRUE, B = 200)
+pentrace(regularity.lrm, seq(0, 0.8, by = 0.05))
+regularity.lrm.pen = update(regularity.lrm, penalty = 0.6)
+regularity.lrm.pen
+
+# ---- a plot of the partial effects
+
+plot(Predict(regularity.lrm.pen))
+
+# predicting regularity with a support vector machine
+
+library(e1071)
+regularity$AuxNum = as.numeric(regularity$Auxiliary)
+regularity.svm = svm(regularity[, -c(1,8,10)], regularity$Regularity, cross=10)
+summary(regularity.svm)
+
+## End(Not run)</pre>
+
+
+</body></html>

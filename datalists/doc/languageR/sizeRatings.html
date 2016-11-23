@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Size ratings for 81 English concrete nouns</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sizeRatings"><tr><td>sizeRatings</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Size ratings for 81 English concrete nouns</h2>
+
+<h3>Description</h3>
+
+<p>Subjective estimates of the size of the referents of 81 English 
+concrete nouns, collected from 38 subjects.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(sizeRatings)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 3078 observations on the following 7 variables.
+</p>
+
+<dl>
+<dt><code>Rating</code></dt><dd><p>a numeric vector with subjective estimates of the
+size of the word's referent.</p>
+</dd>
+<dt><code>Subject</code></dt><dd><p>a factor with subjects as levels.</p>
+</dd>
+<dt><code>Word</code></dt><dd><p>a factor with words as levels.</p>
+</dd> 
+<dt><code>Class</code></dt><dd><p>a factor with levels <code>animal</code> and <code>plant</code>.</p>
+</dd>
+<dt><code>Naive</code></dt><dd><p>a factor with levels <code>naive</code> and <code>notNaive</code>,
+coding whether the subject new about the purpose of the experiment.</p>
+</dd>
+<dt><code>Language</code></dt><dd><p>a factor with levels <code>English</code> and <code>notEnglish</code> coding whether the subject was a native speaker of English.</p>
+</dd>
+<dt><code>MeanFamiliarity</code></dt><dd><p>a numeric vector for the by-item mean
+familiarity ratings.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Data collected with Jen Hay, University of Canterbury, Christchurch,
+New Zealand, 2004.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(sizeRatings)
+require(lme4)
+require(lmerTest)
+require(optimx)
+sizeRatings.lmer = lmer(Rating ~ Class * Naive + 
+  MeanFamiliarity * Language + (1|Subject) + (1|Word), 
+  control=lmerControl(optimizer="optimx",optCtrl=list(method="nlminb")),
+  data = sizeRatings)
+summary(sizeRatings.lmer)
+
+## End(Not run)</pre>
+
+
+</body></html>

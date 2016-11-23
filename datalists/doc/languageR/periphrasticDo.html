@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The development of periphrastic do in English</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for periphrasticDo"><tr><td>periphrasticDo</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>The development of periphrastic do in English</h2>
+
+<h3>Description</h3>
+
+<p>The development of periphrastic <em>do</em> in English: Ellegard's counts
+for the use of <em>do</em> across four sentence types in 11 consecutive
+time periods between 1390 and 1710.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(periphrasticDo)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 44 observations on the following 5 variables.
+</p>
+
+<dl>
+<dt><code>begin</code></dt><dd><p>a numeric vector with beginnings of the time periods
+used by Ellegard.</p>
+</dd>
+<dt><code>end</code></dt><dd><p>a numeric vector with ends of these time periods.</p>
+</dd>
+<dt><code>type</code></dt><dd><p>a factor for sentence type, with levels 
+<code>affdecl</code> (affirmative declarative),
+<code>affquest</code> (affirmative question), 
+<code>negdecl</code> (negative declarative) and 
+<code>negquest</code> (negative question).</p>
+</dd>
+<dt><code>do</code></dt><dd><p>a numeric vector with the count of sentences with
+<em>do</em>.</p>
+</dd>
+<dt><code>other</code></dt><dd><p>a numeric vector with the count of sentences without
+<em>do</em>.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Ellegard, A. (1953) <em> The auxiliary do: The establishment and regulation
+of its use in English</em>, Stockholm: Almquist &amp; Wiksell.
+</p>
+
+
+<h3>References</h3>
+
+<p>Vulanovic, R. and Baayen, R. H. (2006) Fitting the development of periphrastic
+do in all sentence types, in Grzybek, P. and Koehler, R. (eds.), Festschrift
+fuer Gabriel Altmann, Berlin: Walter de Gruyter, p. 679-688.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+data(periphrasticDo)
+
+# add midpoints of time periods
+
+periphrasticDo$year = periphrasticDo$begin +
+  (periphrasticDo$end-periphrasticDo$begin)/2
+
+# and ad an indicator variable distinguishing the first three time periods
+# from the others
+
+periphrasticDo$Indicator = rep(c(rep(0, 3), rep(1, 8)), 4)
+
+# fit a logistic regression model
+
+periphrasticDo.glm = glm(cbind(do, other) ~
+(year + I(year^2) + I(year^3)) * type + Indicator * type + 
+Indicator * year, data = periphrasticDo, family = "binomial")
+
+anova(periphrasticDo.glm, test = "F")
+
+# visualization of data and model predictions
+
+periphrasticDo$predict = predict(periphrasticDo.glm, type = "response")
+par(mfrow=c(2, 2))
+for (i in 1:nlevels(periphrasticDo$type)) {
+  subset = periphrasticDo[periphrasticDo$type == 
+    levels(periphrasticDo$type)[i], ]
+  plot(subset$year,
+    subset$do/(subset$do + subset$other), 
+    type = "p", ylab = "proportion", xlab = "year", 
+    ylim = c(0, 1), xlim = c(1400, 1700))
+  mtext(levels(periphrasticDo$type)[i], line = 2)
+  lines(subset$year, subset$predict, lty = 1)
+}
+par(mfrow=c(1, 1))
+
+
+## End(Not run)</pre>
+
+
+</body></html>

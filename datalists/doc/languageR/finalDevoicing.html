@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Final Devoicing in Dutch</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for finalDevoicing"><tr><td>finalDevoicing</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Final Devoicing in Dutch</h2>
+
+<h3>Description</h3>
+
+<p>Phonological specifications for onset, nucleus and offset for 1697 Dutch
+monomorphemic words with a final obstruent.  These final obstruents may exhibit
+a voicing alternation that is traditionally described as syllable-final
+devoicing: underlying /d/ in /hond/ becomes a /t/ when syllable-final ([hOnt])
+and remains a /d/ otherwise ([hOn-den]). 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(finalDevoicing)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1697 observations on the following 9 variables.
+</p>
+
+<dl>
+<dt><code>Word</code></dt><dd><p>a factor with the words as levels.</p>
+</dd> 
+<dt><code>Onset1Type</code></dt><dd><p>a factor for the first consonant in the onset, with levels <code>None</code>, 
+<code>Obstruent</code> and <code>Sonorant</code>.</p>
+</dd>
+<dt><code>Onset2Type</code></dt><dd><p>a factor for the second consonant in the onset, with levels <code>None</code>, 
+<code>Obstruent</code> and <code>Sonorant</code>.</p>
+</dd>
+<dt><code>VowelType</code></dt><dd><p>a factor describing the vowel with levels <code>iuy</code>, <code>long</code> and 
+<code>short</code>.</p>
+</dd>
+<dt><code>ConsonantType</code></dt><dd><p>a factor for the first consonant in the offset, with levels <code>None</code>,
+<code>Obstruent</code> and <code>Sonorant</code>.</p>
+</dd>
+<dt><code>Obstruent</code></dt><dd><p>a factor describing place and manner of articulation of the final obstruent, 
+with levels <code>F</code> (/f,v/), <code>P</code> (/p,b/), <code>S</code> (/s,z/), <code>T</code> (/t,d/) and
+<code>X</code> (/x,g/).</p>
+</dd>
+<dt><code>Nsyll</code></dt><dd><p>a numeric vector for the number of syllables in the word.</p>
+</dd>
+<dt><code>Stress</code></dt><dd><p>a factor with levels <code>A</code> (antepenult), <code>F</code> (final) and
+<code>P</code> (penult).</p>
+</dd>
+<dt><code>Voice</code></dt><dd><p>a factor with levels <code>voiced</code> and <code>voiceless</code>.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Ernestus, M. and Baayen, R. H. (2003) Predicting the unpredictable:
+Interpreting neutralized segments in Dutch, <em>Language</em>, 79, 5-38.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(finalDevoicing)
+library(rpart)
+
+# ---- CART tree 
+
+finalDevoicing.rp = rpart(Voice ~ ., data = finalDevoicing[ , -1])
+plotcp(finalDevoicing.rp)
+finalDevoicing.pruned = prune(finalDevoicing.rp, cp = 0.021)
+plot(finalDevoicing.pruned, margin = 0.1, compress = TRUE)
+text(finalDevoicing.pruned, use.n = TRUE, pretty = 0, cex=0.8)
+
+# ---- logistic regression 
+
+library(rms)
+
+finalDevoicing.dd = datadist(finalDevoicing)
+options(datadist='finalDevoicing.dd')
+
+finalDevoicing.lrm = lrm(Voice ~ VowelType + ConsonantType + Obstruent + 
+Nsyll + Stress + Onset1Type + Onset2Type, data = finalDevoicing)
+anova(finalDevoicing.lrm)
+
+# ---- model simplification
+
+fastbw(finalDevoicing.lrm)
+
+finalDevoicing.lrm = lrm(Voice ~ VowelType + ConsonantType + 
+Obstruent + Nsyll, data = finalDevoicing, x = TRUE, y = TRUE)
+
+plot(Predict(finalDevoicing.lrm))
+
+# ---- model validation
+
+validate(finalDevoicing.lrm, B = 200)
+
+## End(Not run)
+</pre>
+
+
+</body></html>

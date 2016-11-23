@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Durational measurements on the Dutch prefix ge-</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for durationsGe"><tr><td>durationsGe</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Durational measurements on the Dutch prefix ge-</h2>
+
+<h3>Description</h3>
+
+<p>Durational measurements on the Dutch prefix <em>ge-</em> in the 
+Spoken Dutch Corpus.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(durationsGe)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 428 observations on the following 8 variables.
+</p>
+
+<dl>
+<dt><code>Word</code></dt><dd><p>a factor with the words as levels.</p>
+</dd> 
+<dt><code>Frequency</code></dt><dd><p>a numeric vector with the word's 
+absolute frequency in the Spoken Dutch Corpus.</p>
+</dd>
+<dt><code>Speaker</code></dt><dd><p>a factor with the speakers as levels.</p>
+</dd>
+<dt><code>Sex</code></dt><dd><p>a factor with levels <code>female</code> and <code>male</code>, 
+this information is missing for one speaker.</p>
+</dd>
+<dt><code>YearOfBirth</code></dt><dd><p>a numeric vector with years of birth.</p>
+</dd>
+<dt><code>DurationOfPrefix</code></dt><dd><p>a numeric vector with the duration of the
+prefix -ont in seconds.</p>
+</dd>
+<dt><code>SpeechRate</code></dt><dd><p>a numeric vector coding speech rate in number
+of syllables per second.</p>
+</dd>
+<dt><code>NumberSegmentsOnset</code></dt><dd><p>a numeric vector for the number of 
+segments in the onset of the stem.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Pluymaekers, M., Ernestus, M. and Baayen, R. H. (2005) Frequency and acoustic
+length: the case of derivational affixes in Dutch, <em>Journal of the
+Acoustical Society of America</em>, 118, 2561-2569.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+	## Not run: 
+    data(durationsGe)
+    durationsGe$Frequency = log(durationsGe$Frequency + 1)
+    durationsGe$YearOfBirth = durationsGe$YearOfBirth - 1900
+
+    durationsGe.lm = lm(DurationOfPrefix ~ Frequency+SpeechRate, data = durationsGe)
+    summary(durationsGe.lm)
+
+    # ---- model criticism
+    
+    plot(durationsGe.lm)
+    outliers = c(271, 392, 256, 413, 118, 256)
+    durationsGe.lm = lm(DurationOfPrefix ~ Frequency + SpeechRate, 
+      data = durationsGe[-outliers, ])
+    summary(durationsGe.lm)
+  
+## End(Not run)
+
+</pre>
+
+
+</body></html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Classification of lexical measures</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for lexicalMeasuresClasses"><tr><td>lexicalMeasuresClasses</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Classification of lexical measures</h2>
+
+<h3>Description</h3>
+
+<p>A data frame labelling the lexical measures in the 
+dataset <code>lexicalMeasures</code> as measures of form or meaning.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(lexicalMeasuresClasses)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 23 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>Variable</code></dt><dd><p>a factor with as levels the measures:
+</p>
+
+<dl>
+<dt><code>Bigr</code></dt><dd><p>Mean Bigram Frequency.</p>
+</dd>
+<dt><code>CelS</code></dt><dd><p>CELEX Frequency.</p>
+</dd> 
+<dt><code>Dent</code></dt><dd><p>Derivational Entropy.</p>
+</dd> 
+<dt><code>fbN</code></dt><dd><p>Token Count of Backward Inconsistent Words.</p>
+</dd> 
+<dt><code>fbV</code></dt><dd><p>Type Count of Backward Inconsistent Words.</p>
+</dd> 
+<dt><code>Fdif</code></dt><dd><p>Ratio of Frequencies in Written and Spoken English.</p>
+</dd>
+<dt><code>ffN</code></dt><dd><p>Token Count of Forward Inconsistent Words.</p>
+</dd> 
+<dt><code>ffNonzero</code></dt><dd><p>Type Count of Forward Inconsistent Words 
+with Nonzero Frequency.</p>
+</dd>
+<dt><code>ffV</code></dt><dd><p>Type Count of Forward Inconsistent Words</p>
+</dd>
+<dt><code>friendsN</code></dt><dd><p>Token Count of Consistent Words.</p>
+</dd>
+<dt><code>friendsV</code></dt><dd><p>Type Count of Consistent Words.</p>
+</dd>
+<dt><code>Ient</code></dt><dd><p>Inflectional Entropy</p>
+</dd>
+<dt><code>InBi</code></dt><dd><p>Initial Bigram Frequency</p>
+</dd>
+<dt><code>Len</code></dt><dd><p>Length in Letters</p>
+</dd>
+<dt><code>Ncou</code></dt><dd><p>Orthographic Neighborhood Density</p>
+</dd>
+<dt><code>NsyC</code></dt><dd><p>Number of Complex Synsets</p>
+</dd>
+<dt><code>NsyS</code></dt><dd><p>Number of Simplex Synsets</p>
+</dd>
+<dt><code>NVratio</code></dt><dd><p>Ratio of Noun and Verb Frequencies</p>
+</dd>
+<dt><code>phonN</code></dt><dd><p>Token Count of Phonological Neighbors.</p>
+</dd>
+<dt><code>phonV</code></dt><dd><p>Type Count of Phonological Neighbors.</p>
+</dd>
+<dt><code>spelN</code></dt><dd><p>Token Count of Orthographic Neighbors.</p>
+</dd>
+<dt><code>spelV</code></dt><dd><p>Type Count of Orthographic Neighbors.</p>
+</dd>
+<dt><code>Vf</code></dt><dd><p>Morphological Family Size.</p>
+</dd>
+</dl>
+
+</dd>
+<dt><code>Class</code></dt><dd><p>a factor with levels <code>Form</code> and <code>Meaning</code>.</p>
+</dd>
+<dt><code>Explanation</code></dt><dd><p>a factor with glosses for the variables.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Baayen, R.H., Feldman, L. and Schreuder, R. (2006)
+Morphological influences on the recognition of monosyllabic 
+monomorphemic words, <em>Journal of Memory and Language</em>,
+53, 496-512.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>## Not run: 
+library(cluster)
+data(lexicalMeasures)
+data(lexicalMeasuresClasses)
+
+lexicalMeasures.cor = cor(lexicalMeasures[,-1], method = "spearman")^2
+x = data.frame(measure = rownames(lexicalMeasures.cor), 
+cluster = cutree(diana(dist(lexicalMeasures.cor)), 5),
+class = lexicalMeasuresClasses$Class)
+x = x[order(x$cluster), ]
+x
+
+## End(Not run)</pre>
+
+
+</body></html>

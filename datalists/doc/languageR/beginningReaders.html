@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Visual lexical decision with beginning readers</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for beginningReaders"><tr><td>beginningReaders</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Visual lexical decision with beginning readers</h2>
+
+<h3>Description</h3>
+
+<p>Visual lexical decision latencies for beginning readers (8 year-old
+Dutch children).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(beginningReaders)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 7923 observations on the following 13 variables.
+</p>
+
+<dl>
+<dt><code>Word</code></dt><dd><p>a factor for the words.</p>
+</dd>
+<dt><code>Subject</code></dt><dd><p>a factor for the subjects.</p>
+</dd>
+<dt><code>LogRT</code></dt><dd><p>a numeric vector with the log-transformed reaction time
+(in ms).</p>
+</dd>
+<dt><code>Trial</code></dt><dd><p>a numeric vector coding the rank of the trial in the 
+experimental list.</p>
+</dd>
+<dt><code>OrthLength</code></dt><dd><p>a numeric vector coding the word's length in letters.</p>
+</dd>
+<dt><code>LogFrequency</code></dt><dd><p>a numeric vector with log-transformed frequency in
+Vermeer's frequency dictionary of Dutch children's texts.</p>
+</dd>
+<dt><code>LogFamilySize</code></dt><dd><p>a numeric vector with the log-transformed morphological
+family size count (with family members judged to be unknown to young children
+removed).</p>
+</dd>
+<dt><code>ReadingScore</code></dt><dd><p>a numeric vector with a score for reading proficiency.</p>
+</dd>
+<dt><code>ProportionOfErrors</code></dt><dd><p>a numeric vector for the proportion of error responses for the word.</p>
+</dd>
+<dt><code>PC1</code></dt><dd><p>a numeric vector for the first principal component of a PCA
+orthogonalization of the preceding 4 reaction times</p>
+</dd>
+<dt><code>PC2</code></dt><dd><p>a numeric vector for the second principal component of a PCA
+orthogonalization of the preceding 4 reaction times</p>
+</dd>
+<dt><code>PC3</code></dt><dd><p>a numeric vector for the third principal component of a PCA
+orthogonalization of the preceding 4 reaction times</p>
+</dd>
+<dt><code>PC4</code></dt><dd><p>a numeric vector for the fourth principal component of a PCA
+orthogonalization of the preceding 4 reaction times</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Perdijk, K., Schreuder, R., Verhoeven, L. and Baayen, R. H. (2006)
+<em>Tracing individual differences in reading skills of young children with 
+linear mixed-effects models</em>.  Manuscript, Radboud University Nijmegen.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+data(beginningReaders)
+require(lme4)
+require(optimx)
+require(lmerTest)
+
+beginningReaders.lmer = lmer(LogRT ~  PC1 + PC2 + PC3  + ReadingScore +
+  OrthLength + I(OrthLength^2) + LogFrequency + LogFamilySize +
+  (1|Word) + (1|Subject) + (0+LogFrequency|Subject) + 
+  (0+OrthLength|Subject) + (0+PC1|Subject), 
+  data = beginningReaders,
+  control=lmerControl(optimizer="optimx",optCtrl=list(method="nlminb")))
+summary(beginningReaders.lmer)
+
+## End(Not run)
+</pre>
+
+
+</body></html>
