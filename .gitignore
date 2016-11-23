@@ -38,7 +38,7 @@ vignettes/*.pdf
 *.dropbox
 *.accdb
 ignore/*
-
+datalists/hidden/*
 datalists/collections_data.csv
 datalists/collections_data.csv
 datalists/R_Packages_export.csv
@@ -46,3 +46,4 @@ datalists/R_Packages_data.csv
 datalists/resources_export.csv
 data_extract_program.r
 datalists/R_Packages_data.csv
+*.ahk
