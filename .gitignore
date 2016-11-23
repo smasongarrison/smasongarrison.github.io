@@ -35,12 +35,8 @@ vignettes/*.pdf
 # Other
 .DS_Store
 *.laccdb
-datalists/Data.accdb
+datalists/*
 *.dropbox
 *.accdb
 ignore/*
 
-
-*.accdb
-*.accdb
-datalists/R_Packages_export.csv
