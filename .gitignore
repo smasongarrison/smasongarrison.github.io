@@ -47,3 +47,5 @@ datalists/resources_export.csv
 data_extract_program.r
 datalists/R_Packages_data.csv
 *.ahk
+cran.csv
+cran.csv.gz
