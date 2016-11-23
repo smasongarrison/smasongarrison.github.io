@@ -49,3 +49,6 @@ datalists/R_Packages_data.csv
 *.ahk
 cran.csv
 cran.csv.gz
+datalists/Data.accdb
+datalists/datasets_extract.r
+datalists/datasets_import.csv
