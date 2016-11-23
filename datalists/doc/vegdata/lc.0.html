@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Templates for pseudo-species according to Turboveg layer...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for lc"><tr><td>lc</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Templates for pseudo-species according to Turboveg layer informations.</h2>
+
+<h3>Description</h3>
+
+<p>Differentiate species according to layer (tree, shrub, juvenile etc.) or other species-plot informations from Turboveg. 
+The data.frames lc.0 and lc.1 are templates for layer aggregation/differentiation.</p>
+
+
+<h3>Details</h3>
+
+<p>Column <code>layer</code> point to the Turboveg layer specification (see Turboveg Help) and column <code>comb</code> defines the aggregation.
+</p>
+<p><code>lc.0</code> = Use every layer differentiation from 0 to 9 in Turboveg database as pseudo-species.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+layer </td><td style="text-align: right;"> comb </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 0 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 1 </td><td style="text-align: right;"> 1 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 2 </td><td style="text-align: right;"> 2 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 3 </td><td style="text-align: right;"> 3 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 4 </td><td style="text-align: right;"> 4 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 5 </td><td style="text-align: right;"> 5 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 6 </td><td style="text-align: right;"> 6 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 7 </td><td style="text-align: right;"> 7 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 8 </td><td style="text-align: right;"> 8 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 9 </td><td style="text-align: right;"> 9 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+</td>
+</tr>
+
+</table>
+
+<p><code>lc.1</code> = Default layer combination in <code>tv.veg</code>. Differenciates tree and shrub layers, all other layers are combined.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+layer </td><td style="text-align: right;">  comb </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 0 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 1 </td><td style="text-align: right;"> Tree </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 2 </td><td style="text-align: right;"> Tree </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 3 </td><td style="text-align: right;"> Tree </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 4 </td><td style="text-align: right;"> Shrub </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 5 </td><td style="text-align: right;"> Shrub </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 6 </td><td style="text-align: right;"> Shrub </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 7 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 8 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 9 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+</td>
+</tr>
+
+</table>
+
+<p><code>lc.all</code> = Do not use any layer differentiation.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+layer </td><td style="text-align: right;"> comb </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 0 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 1 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 2 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 3 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 4 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 5 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 6 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 7 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 8 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+ 9 </td><td style="text-align: right;"> 0 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+</td>
+</tr>
+
+</table>
+
+
+
+<h3>Author(s)</h3>
+
+<p>Florian Jansen
+<a href="mailto:jansen@uni-greifswald.de">jansen@uni-greifswald.de</a>
+</p>
+
+
+<h3>See Also</h3>
+
+<p>tv.veg
+</p>
+
+
+</body></html>
