@@ -52,3 +52,8 @@ cran.csv.gz
 datalists/Data.accdb
 datalists/datasets_extract.r
 datalists/datasets_import.csv
+datalists/collections_export.csv
+datalists/data_collections.csv
+datalists/collections_export.csv.bak
+*.bak
+datalists/datasets_r.csv
