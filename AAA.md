@@ -1,36 +1,7 @@
 # Academic Advice Aggregator
-The following collection of articles is an aggregation of academic advice. This list was inspired by [Dr. Becca's](http://drbecca.scientopia.org/) post on aggregating [Tenure-Track search related-advice](http://drbecca.scientopia.org/tt-job-search-advice-aggregator/)
+The following collection of articles is an aggregation of academic advice and well as other useful resources. This list was inspired by [Dr. Becca's](http://drbecca.scientopia.org/) post on aggregating [Tenure-Track search related-advice](http://drbecca.scientopia.org/tt-job-search-advice-aggregator/)
 
-### General Advice
+### Academic Advice Aggregator
 
-[Mitch Prinstein's Professional Development Page](http://mitch.web.unc.edu/professional-development/)
-
-[The Professor is in](http://theprofessorisin.com/)
-
-### Graduate School
-
-#### Applications
-[Appleby, D. C., \& Appleby, K. M. (2006). Kisses of death in the graduate school application process. Teaching of Psychology, 33(1), 19-24.](http://crav.uark.edu/files/2015/01/Kisses_of_Death_in_Graduate_School_Applications.pdf)
-
-[APA's Graduate school guides](http://www.apa.org/education/grad/applying.aspx)
-
-[Prinstein, M. (2014). Mitchâ€™s Uncensored Advice for Applying to Graduate School in Clinical Psychology](http://mitch.web.unc.edu/files/2013/10/MitchGradSchoolAdvice.pdf)
-
-#### Lists of Programs
-##### Quantitative Psychology
-[Wikipedia. List of Quantitative Psychology Programs](http://en.wikipedia.org/wiki/List_of_schools_for_quantitative_psychology)
-
-[SMEP. Programs in Quantitative Psychology and Quantitative Methods](https://www.smep.org/resources/about-quantitative-psychology)
-
-##### Personality Psychology
-[Revelle, W. (2013). Graduate Departments of Psychology with Personality Programs](http://www.personality-project.org/org.html#gradpsych)
-
-### Professional Development
-#### Statistics
-##### R
-[Revelle, W. (2016). Using R for psychological research](http://www.personality-project.org/r/r.guide.html)
-
-###  Not Otherwise Specified (NOS)
-[Google Scholar](https://scholar.google.com/?hl=en)
-
-### Academic Job Market
+<!--html_preserve--><div id="htmlwidget-83051298347b2489f716" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-83051298347b2489f716">{"x":{"filter":"none","data":[["<a href='http://www.apa.org/education/grad/applying.aspx'>APA&#39;s Graduate school guides\u003c/a>","<a href='http://crav.uark.edu/files/2015/01/Kisses_of_Death_in_Graduate_School_Applications.pdf'>Appleby, D. C., & Appleby, K. M. (2006). Kisses of death in the graduate school application process. Teaching of Psychology, 33(1), 19-24.\u003c/a>","<a href='https://popmodels.cancercontrol.cancer.gov/gsr/packages/'>Genetic Simulation Resources\u003c/a>","<a href='https://scholar.google.com/'>Google Scholar\u003c/a>","<a href='http://mitch.web.unc.edu/professional-development/'>Mitch Prinstein&#39;s Professional Development Page\u003c/a>","<a href='http://mitch.web.unc.edu/files/2013/10/MitchGradSchoolAdvice.pdf'>Prinstein, M. (2014). Mitch's Uncensored Advice for Applying to Graduate School in Clinical Psychology\u003c/a>","<a href='http://www.personality-project.org/org.html#gradpsych'>Revelle, W. (2013). Graduate Departments of Psychology with Personality Programs\u003c/a>","<a href='http://www.personality-project.org/r/r.guide.html'>Revelle, W. (2016). Using R for psychological research\u003c/a>","<a href='https://www.smep.org/resources/about-quantitative-psychology'>SMEP. Programs in Quantitative Psychology and Quantitative Methods\u003c/a>","<a href='http://theprofessorisin.com/'>The Professor is in\u003c/a>","<a href='http://en.wikipedia.org/wiki/List_of_schools_for_quantitative_psychology'>Wikipedia. List of Quantitative Psychology Programs\u003c/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><span>Name\u003c/span>\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row"}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->

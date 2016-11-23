@@ -4,38 +4,16 @@ output:
   html_document: 
     keep_md: yes
 ---
-The following collection of articles is an aggregation of academic advice. This list was inspired by [Dr. Becca's](http://drbecca.scientopia.org/) post on aggregating [Tenure-Track search related-advice](http://drbecca.scientopia.org/tt-job-search-advice-aggregator/)
+The following collection of articles is an aggregation of academic advice and well as other useful resources. This list was inspired by [Dr. Becca's](http://drbecca.scientopia.org/) post on aggregating [Tenure-Track search related-advice](http://drbecca.scientopia.org/tt-job-search-advice-aggregator/)
 
-### General Advice
+### Academic Advice Aggregator
 
-[Mitch Prinstein's Professional Development Page](http://mitch.web.unc.edu/professional-development/)
-
-[The Professor is in](http://theprofessorisin.com/)
-
-### Graduate School
-
-#### Applications
-[Appleby, D. C., \& Appleby, K. M. (2006). Kisses of death in the graduate school application process. Teaching of Psychology, 33(1), 19-24.](http://crav.uark.edu/files/2015/01/Kisses_of_Death_in_Graduate_School_Applications.pdf)
-
-[APA's Graduate school guides](http://www.apa.org/education/grad/applying.aspx)
-
-[Prinstein, M. (2014). Mitch’s Uncensored Advice for Applying to Graduate School in Clinical Psychology](http://mitch.web.unc.edu/files/2013/10/MitchGradSchoolAdvice.pdf)
-
-#### Lists of Programs
-##### Quantitative Psychology
-[Wikipedia. List of Quantitative Psychology Programs](http://en.wikipedia.org/wiki/List_of_schools_for_quantitative_psychology)
-
-[SMEP. Programs in Quantitative Psychology and Quantitative Methods](https://www.smep.org/resources/about-quantitative-psychology)
-
-##### Personality Psychology
-[Revelle, W. (2013). Graduate Departments of Psychology with Personality Programs](http://www.personality-project.org/org.html#gradpsych)
-
-### Professional Development
-#### Statistics
-##### R
-[Revelle, W. (2016). Using R for psychological research](http://www.personality-project.org/r/r.guide.html)
-
-###  Not Otherwise Specified (NOS)
-[Google Scholar](https://scholar.google.com/?hl=en)
-
-### Academic Job Market
+```{r message=FALSE,echo=FALSE,warning=FALSE}
+if (!require("DT")) install.packages('DT')
+if (!require("plyr")) install.packages('plyr')
+d<-read.csv("datalists/resources_export.csv", header=FALSE, stringsAsFactors=FALSE)
+#x<-arrange(d,V1)
+m = matrix(as.matrix(d), ncol=1)
+colnames(m) = c('<span>Name</span>')
+datatable(m, escape = FALSE)
+```
