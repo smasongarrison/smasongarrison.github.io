@@ -39,3 +39,5 @@ vignettes/*.pdf
 *.accdb
 ignore/*
 
+datalists/collections_data.csv
+datalists/collections_data.csv
