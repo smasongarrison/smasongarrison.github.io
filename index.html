@@ -19,15 +19,14 @@
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="libs/highlightjs-1.1/highlight.js"></script>
 <link href='libs/fluidbox/css/fluidbox.css' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 <link href='include/css/style.css' rel='stylesheet' type='text/css'>
 
 <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet"
-      href="libs/highlight/default.css"
-      type="text/css" />
-<script src="libs/highlight/highlight.js"></script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -98,10 +97,10 @@ button.code-folding-btn:focus {
 </style>
 
 
+
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="libs/navigation-1.1/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -129,8 +128,10 @@ $(document).ready(function () {
           <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">          <li><a href="AAA.html">Academic Advice Aggregator</a></li>
           <li><a href="Class.html">Introduction to Applied Statistics: Course Page</a></li>
+          <li><a href="Class_archive_2016.html">ARCHIVE: 2016 Introduction to Applied Statistics: Course Page</a></li>
           <li><a href="Data.html">Collection of Datasets</a></li>
           <li><a href="index.html">Welcome</a></li>
+          <li><a href="Kinship.html">Datasets with Kinpairs</a></li>
           </ul>
         </li>
       </ul>
@@ -163,9 +164,13 @@ Adapted from https://github.com/yutannihilation/rmarkdown-website-template
 <script>
 
 // add bootstrap table styles to pandoc tables
-$(document).ready(function () {
+function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
+
 
 </script>
 

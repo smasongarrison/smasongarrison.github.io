@@ -1,21 +1,25 @@
 # Compile
+## Generate Navigation Bar
+library(rmarkdown)
+library(knitr)
+source("generateNavigationBar.R")
 
 ## Generate Index Page
 source("generateIndexPage.R")
 
-## Generate Navigation Bar
-source("generateNavigationBar.R")
 j=50
 #c=c+1
 #num=c*j+31
 #i=0; num=0+i
 
+#num<-as.matrix(read.csv("datalists/num.txt"))[1,1]
 
+#num=num+j+c(1:length(packages))[packages==package]
 
-
-num=num+j+c(1:length(packages))[packages==package]
 ## Extract Datasets from R
-source("datalists/datasets_extract.r")
+source("datasets_extract.r")
+
+source("data_extract_program.r")
 index_out$unique<-paste0(index_out$Package,index_out$Item)
 write.csv(index_out, file='datalists/datasets_import.csv', row.names=FALSE)
 ## Render Markdown Files
