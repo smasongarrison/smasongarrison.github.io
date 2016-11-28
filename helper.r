@@ -9,7 +9,7 @@ source("generateNavigationBar.R")
 ## Generate Index Page
 source("generateIndexPage.R")
 
-j=50
+j=10
 #c=c+1
 #num=c*j+31
 #i=0; num=0+i
