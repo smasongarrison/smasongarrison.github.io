@@ -1,0 +1,34 @@
+"","study","year","outlook","expt.events","expt.n","ctrl.events","ctrl.n"
+"1","Rauws",1990,"published",7,24,5,26
+"2","Graham",1991,"published",4,53,10,52
+"3","Bayrerdorffer",1992,"published",2,29,4,29
+"4","Hosking",1992,"published",8,78,21,77
+"5","Bianchi Porro",1993,"published",7,91,12,92
+"6","HentscheI",1993,"published",1,52,3,52
+"7","Mantzaris",1993,"published",5,17,8,16
+"8","Wang",1993,"published",3,23,6,36
+"9","Lin",1994,"published",0,21,2,21
+"10","Spinzi",1994,"published",2,24,3,29
+"11","Bayrerdorffer",1995,"published",4,136,12,128
+"12","Katoh",1995,"published",0,27,1,25
+"13","Logan",1995,"published",2,70,6,78
+"14","Pinero",1995,"published",8,30,7,30
+"15","Sobhani",1995,"published",7,59,15,60
+"16","Avsar",1996,"published",2,23,10,22
+"17","Figueroa",1996,"published",4,57,4,43
+"18","Harford",1996,"published",36,127,25,69
+"19","Kato",1996,"published",0,28,1,23
+"20","O'Morain",1996,"published",9,102,15,106
+"21","Parente",1996,"published",7,63,1,33
+"22","Porro",1996,"published",2,17,9,15
+"23","Shirotani",1996,"published",4,25,6,25
+"24","Bardhan",1997,"published",4,141,6,74
+"25","Carpintero",1997,"published",3,78,3,44
+"26","Pounder",1997,"published",5,61,8,30
+"27","Graham",1998,"negative",NA,77,NA,76
+"28","Schwartz",1998,"positive",NA,292,NA,60
+"29","Kepecki",1999,"negative",NA,39,NA,34
+"30","van Zanten",1999,"very positive",NA,98,NA,48
+"31","Wong",1999,"negative",NA,57,NA,57
+"32","Asaka",2001,"positive",NA,205,NA,51
+"33","Mones",2001,"positive",NA,42,NA,43

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Fictional Data Set, with Binary Outcomes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for BHHR2009p92"><tr><td>BHHR2009p92</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Fictional Data Set, with Binary Outcomes</h2>
+
+<h3>Description</h3>
+
+<p>A fictional meta-analytic data set with 6 published studies and 2 unpublished studies. The binary outcome event is not desired.</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(BHHR2009p92)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 8 observations on the following 8 variables.</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+	<b>number</b>   </td><td style="text-align: left;"> <code>integer</code>   </td><td style="text-align: left;"> Study numeric id (optional) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+	<b>study</b>    </td><td style="text-align: left;"> <code>character</code> </td><td style="text-align: left;"> Name of study or principal investigator </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+	<b>year</b>     </td><td style="text-align: left;"> <code>integer</code>   </td><td style="text-align: left;"> Year (optional) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+	<b>outlook</b>  </td><td style="text-align: left;"> <code>factor</code>    </td><td style="text-align: left;"> Denotes whether a study is unpublished, and if so, what outlook it has.  </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+	<b>ctrl.n</b>  </td><td style="text-align: left;"> <code>integer</code> </td><td style="text-align: left;"> The sample size of the control arm. </td>
+</tr>
+<tr>
+ <td style="text-align: left;">  
+	<b>expt.n</b>  </td><td style="text-align: left;"> <code>integer</code> </td><td style="text-align: left;"> The sample size of the experimental arm. </td>
+</tr>
+<tr>
+ <td style="text-align: left;">  
+	<b>ctrl.events</b>  </td><td style="text-align: left;"> <code>integer</code> </td><td style="text-align: left;"> The number of (undesired) events within the control arm. </td>
+</tr>
+<tr>
+ <td style="text-align: left;">  
+	<b>expt.events</b>  </td><td style="text-align: left;"> <code>integer</code> </td><td style="text-align: left;"> The number of (undesired) events within the experimental arm. 
+	</td>
+</tr>
+
+</table>
+  
+
+
+<h3>Details</h3>
+
+<p>The outlook of a study can be one of the following: <code>published</code>, <code>very positive</code>, <code>positive</code>, 	<code>negative</code>, <code>very negative</code>, <code>current effect</code>, <code>no effect</code>, <code>very positive CL</code>, <code>positive CL</code>, <code>negative CL</code>, or <code>very negative CL</code>.
+</p>
+<p>Since the outcome event is undesired, when using the function <code>forestsens()</code>, specify the option <code>higher.is.better=FALSE</code>. Since this is the default setting for <code>forestsens()</code>, this does not need to be specified explicitly. 
+</p>
+
+
+<h3>Source</h3>
+
+<p>Borenstein, Hedges, Higgins, and Rothstein. Introduction to Meta-analysis. Wiley, 2009, page 92.  
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(SAMURAI)
+data(BHHR2009p92)
+
+forestsens(table=BHHR2009p92, binary=TRUE, higher.is.better=FALSE)
+
+# To assign all unpublished studies to each of ten outlooks, one at a time, 
+# and then return a table of summary effects, their 95% confidence interval, 
+# and tau-squared.
+summtab &lt;- forestsens(table=BHHR2009p92, binary=TRUE, higher.is.better=FALSE, all.outlooks=TRUE)
+summtab
+</pre>
+
+
+</body></html>

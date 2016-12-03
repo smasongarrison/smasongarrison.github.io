@@ -1,0 +1,121 @@
+"","region","sex","year","observations","values"
+"1","Sweden","men","1999","Average age of  the population",38.9
+"2","Sweden","men","2000","Average age of  the population",39
+"3","Sweden","men","2001","Average age of  the population",39.2
+"4","Sweden","men","2002","Average age of  the population",39.3
+"5","Sweden","men","2003","Average age of  the population",39.4
+"6","Sweden","men","2004","Average age of  the population",39.6
+"7","Sweden","men","2005","Average age of  the population",39.7
+"8","Sweden","men","2006","Average age of  the population",39.8
+"9","Sweden","men","2007","Average age of  the population",39.8
+"10","Sweden","men","2008","Average age of  the population",39.9
+"11","Sweden","men","2009","Average age of  the population",39.9
+"12","Sweden","men","2010","Average age of  the population",40
+"13","Sweden","men","2011","Average age of  the population",40.1
+"14","Sweden","men","2012","Average age of  the population",40.2
+"15","Sweden","men","2013","Average age of  the population",40.2
+"16","Sweden","women","1999","Average age of  the population",41.5
+"17","Sweden","women","2000","Average age of  the population",41.6
+"18","Sweden","women","2001","Average age of  the population",41.7
+"19","Sweden","women","2002","Average age of  the population",41.8
+"20","Sweden","women","2003","Average age of  the population",41.9
+"21","Sweden","women","2004","Average age of  the population",42
+"22","Sweden","women","2005","Average age of  the population",42
+"23","Sweden","women","2006","Average age of  the population",42.1
+"24","Sweden","women","2007","Average age of  the population",42.1
+"25","Sweden","women","2008","Average age of  the population",42.1
+"26","Sweden","women","2009","Average age of  the population",42.1
+"27","Sweden","women","2010","Average age of  the population",42.1
+"28","Sweden","women","2011","Average age of  the population",42.2
+"29","Sweden","women","2012","Average age of  the population",42.2
+"30","Sweden","women","2013","Average age of  the population",42.2
+"31","Stockholm county","men","1999","Average age of  the population",37.3
+"32","Stockholm county","men","2000","Average age of  the population",37.4
+"33","Stockholm county","men","2001","Average age of  the population",37.5
+"34","Stockholm county","men","2002","Average age of  the population",37.6
+"35","Stockholm county","men","2003","Average age of  the population",37.7
+"36","Stockholm county","men","2004","Average age of  the population",37.8
+"37","Stockholm county","men","2005","Average age of  the population",37.9
+"38","Stockholm county","men","2006","Average age of  the population",37.9
+"39","Stockholm county","men","2007","Average age of  the population",37.8
+"40","Stockholm county","men","2008","Average age of  the population",37.8
+"41","Stockholm county","men","2009","Average age of  the population",37.8
+"42","Stockholm county","men","2010","Average age of  the population",37.8
+"43","Stockholm county","men","2011","Average age of  the population",37.9
+"44","Stockholm county","men","2012","Average age of  the population",37.9
+"45","Stockholm county","men","2013","Average age of  the population",38
+"46","Stockholm county","women","1999","Average age of  the population",40.1
+"47","Stockholm county","women","2000","Average age of  the population",40.1
+"48","Stockholm county","women","2001","Average age of  the population",40.1
+"49","Stockholm county","women","2002","Average age of  the population",40.2
+"50","Stockholm county","women","2003","Average age of  the population",40.2
+"51","Stockholm county","women","2004","Average age of  the population",40.3
+"52","Stockholm county","women","2005","Average age of  the population",40.3
+"53","Stockholm county","women","2006","Average age of  the population",40.2
+"54","Stockholm county","women","2007","Average age of  the population",40.1
+"55","Stockholm county","women","2008","Average age of  the population",40.1
+"56","Stockholm county","women","2009","Average age of  the population",40
+"57","Stockholm county","women","2010","Average age of  the population",40
+"58","Stockholm county","women","2011","Average age of  the population",39.9
+"59","Stockholm county","women","2012","Average age of  the population",39.9
+"60","Stockholm county","women","2013","Average age of  the population",39.9
+"61","Uppsala county","men","1999","Average age of  the population",37.2
+"62","Uppsala county","men","2000","Average age of  the population",37.5
+"63","Uppsala county","men","2001","Average age of  the population",37.6
+"64","Uppsala county","men","2002","Average age of  the population",37.8
+"65","Uppsala county","men","2003","Average age of  the population",38
+"66","Uppsala county","men","2004","Average age of  the population",38.1
+"67","Uppsala county","men","2005","Average age of  the population",38.3
+"68","Uppsala county","men","2006","Average age of  the population",38.5
+"69","Uppsala county","men","2007","Average age of  the population",38.6
+"70","Uppsala county","men","2008","Average age of  the population",38.7
+"71","Uppsala county","men","2009","Average age of  the population",38.8
+"72","Uppsala county","men","2010","Average age of  the population",38.9
+"73","Uppsala county","men","2011","Average age of  the population",39
+"74","Uppsala county","men","2012","Average age of  the population",39.1
+"75","Uppsala county","men","2013","Average age of  the population",39.2
+"76","Uppsala county","women","1999","Average age of  the population",39.3
+"77","Uppsala county","women","2000","Average age of  the population",39.4
+"78","Uppsala county","women","2001","Average age of  the population",39.6
+"79","Uppsala county","women","2002","Average age of  the population",39.7
+"80","Uppsala county","women","2003","Average age of  the population",39.8
+"81","Uppsala county","women","2004","Average age of  the population",40
+"82","Uppsala county","women","2005","Average age of  the population",40.1
+"83","Uppsala county","women","2006","Average age of  the population",40.4
+"84","Uppsala county","women","2007","Average age of  the population",40.5
+"85","Uppsala county","women","2008","Average age of  the population",40.5
+"86","Uppsala county","women","2009","Average age of  the population",40.6
+"87","Uppsala county","women","2010","Average age of  the population",40.6
+"88","Uppsala county","women","2011","Average age of  the population",40.7
+"89","Uppsala county","women","2012","Average age of  the population",40.8
+"90","Uppsala county","women","2013","Average age of  the population",40.9
+"91","Norrbotten county","men","1999","Average age of  the population",39.7
+"92","Norrbotten county","men","2000","Average age of  the population",40
+"93","Norrbotten county","men","2001","Average age of  the population",40.2
+"94","Norrbotten county","men","2002","Average age of  the population",40.5
+"95","Norrbotten county","men","2003","Average age of  the population",40.7
+"96","Norrbotten county","men","2004","Average age of  the population",40.9
+"97","Norrbotten county","men","2005","Average age of  the population",41.1
+"98","Norrbotten county","men","2006","Average age of  the population",41.3
+"99","Norrbotten county","men","2007","Average age of  the population",41.5
+"100","Norrbotten county","men","2008","Average age of  the population",41.7
+"101","Norrbotten county","men","2009","Average age of  the population",41.9
+"102","Norrbotten county","men","2010","Average age of  the population",42.1
+"103","Norrbotten county","men","2011","Average age of  the population",42.3
+"104","Norrbotten county","men","2012","Average age of  the population",42.4
+"105","Norrbotten county","men","2013","Average age of  the population",42.4
+"106","Norrbotten county","women","1999","Average age of  the population",41.9
+"107","Norrbotten county","women","2000","Average age of  the population",42.2
+"108","Norrbotten county","women","2001","Average age of  the population",42.5
+"109","Norrbotten county","women","2002","Average age of  the population",42.8
+"110","Norrbotten county","women","2003","Average age of  the population",43
+"111","Norrbotten county","women","2004","Average age of  the population",43.1
+"112","Norrbotten county","women","2005","Average age of  the population",43.4
+"113","Norrbotten county","women","2006","Average age of  the population",43.5
+"114","Norrbotten county","women","2007","Average age of  the population",43.8
+"115","Norrbotten county","women","2008","Average age of  the population",44
+"116","Norrbotten county","women","2009","Average age of  the population",44.2
+"117","Norrbotten county","women","2010","Average age of  the population",44.4
+"118","Norrbotten county","women","2011","Average age of  the population",44.5
+"119","Norrbotten county","women","2012","Average age of  the population",44.6
+"120","Norrbotten county","women","2013","Average age of  the population",44.7

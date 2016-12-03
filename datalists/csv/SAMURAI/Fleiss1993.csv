@@ -1,0 +1,10 @@
+"","number","study","year","outlook","ctrl.n","ctrl.events","expt.n","expt.events"
+"1",1,"MRC-1",1974,"published",624,67,615,49
+"2",2,"CDP",1976,"published",771,64,758,44
+"3",3,"MRC-2",1979,"published",850,126,832,102
+"4",4,"GASP",1979,"published",309,38,317,32
+"5",5,"PARIS",1980,"published",406,52,810,85
+"6",6,"AMIS",1980,"published",2257,219,2267,246
+"7",7,"ISIS-2",1988,"published",8600,1720,8587,1570
+"8",8,"unpub1",NA,"current effect",200,NA,200,NA
+"9",9,"unpub2",NA,"no effect",500,NA,500,NA
