@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mobility between income quartiles</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for blanden"><tr><td>blanden</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Mobility between income quartiles
+</h2>
+
+<h3>Description</h3>
+
+<p>This table show mobility between income quartiles for father and sons for the 1970 cohort born
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(blanden)</pre>
+
+
+<h3>Format</h3>
+
+<p>The format is:
+table [1:4, 1:4] 0.38 0.25 0.21 0.16 0.29 0.28 0.26 0.17 0.22 0.26 ...
+- attr(*, &quot;dimnames&quot;)=List of 2
+..$ : chr [1:4] &quot;Bottom&quot; &quot;2nd&quot; &quot;3rd&quot; &quot;Top&quot;
+..$ : chr [1:4] &quot;Bottom&quot; &quot;2nd&quot; &quot;3rd&quot; &quot;Top&quot;
+</p>
+
+
+<h3>Details</h3>
+
+<p>The rows represent father's income quartile when the son is aged 16, whilst the columns represent sons' income quartiles when he is aged 30 (in 2000).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Personal elaborations from references
+</p>
+
+
+<h3>References</h3>
+
+<p>Jo Blanden, Paul Gregg and Stephen Machin, Intergenerational Mobility in Europe and North America, Center for Economic Performances (2005)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(blanden)
+mobilityMc&lt;-as(blanden, "markovchain")
+</pre>
+
+
+</body></html>
