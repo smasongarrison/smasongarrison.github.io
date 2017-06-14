@@ -1,13 +1,13 @@
 ---
-title: "Introduction to Applied Statistics: Course Page"
+title: "Lying with Statistics"
 output: html_document
 ---
 
 *** 
 ### Overview
-Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescents students. It was taught during Summer Session I (June 12-17, 2016).
+Lying with Statistics" is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescent students. It will be taught during Summer Session II (June 19-30, 2017).
 
-> Media stories about ``the latest scientific findings'' can range from the plausible to the silly. This class will help you learn to separate truth from fiction by introducing you to the basic statistical methods and tools used in psychological research. You will learn to use R, a free and powerful statistical software package, to conduct and interpret basic scientific statistical tests. You will begin to recognize the difference between proper and improper use of data, especially the distinction between correlation and causation (e.g., why margarine consumption does not actually lead to more divorces in the state of Maine). For the final project, you will formulate and answer your own scientific research question using these new tools and real psychology data.
+> Is it possible to mislead when using statistics? This class will help you identify potential misrepresentation along with the inner-workings of statistical “truths”. You will learn to run statistical analyses the right way (using powerful, open source software called “R”) to recognize when data are being misused. Through regular practice, discussion, and your own culminating project, you will become adept at recognizing when graphs are being manipulated, biases are being confirmed, and causes are implied when, really, only correlations exist. Not only will you gain valuable professional skills with broad applications, but you will also be less susceptible to other people’s numerical trickery.
 
 *** 
 
@@ -23,8 +23,8 @@ Introduction to Applied Statistics is a Vanderbilt Summer Academy (VSA) course d
 *** 
 
 ### Teaching Assistant
-##### Name: Catalina Ordorica
-##### Email: catalina.ordorica@vanderbilt.edu
+##### Name: 
+##### Email: 
 <!---##### Office Hours: NA-->
 *** 
 
