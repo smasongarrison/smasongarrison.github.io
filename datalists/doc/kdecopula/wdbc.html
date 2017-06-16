@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Wisconsin Diagnostic Breast Cancer (WDBC)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for wdbc"><tr><td>wdbc</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Wisconsin Diagnostic Breast Cancer (WDBC)</h2>
+
+<h3>Description</h3>
+
+<p>The data contain measurements on cells in suspicious lumps in a woman's
+breast. Features are computed from a digitized image of a fine needle
+aspirate (FNA) of a breast mass. They describe characteristics of the cell
+nuclei present in the image. All samples are classified as either
+<em>benign</em> or <em>malignant</em>.
+</p>
+
+
+<h3>Format</h3>
+
+<p><code>wdbc</code> is a <code>data.frame</code> with 31 columns. The first column
+indicates whether the sample is classified as benign (<code>B</code>) or malignant
+(<code>M</code>). The remaining columns contain measurements for 30 features.</p>
+
+
+<h3>Details</h3>
+
+<p>Ten real-valued features are computed for each cell nucleus: <br />
+</p>
+<p>a) radius (mean of distances from center to points on the perimeter) <br /> b)
+texture (standard deviation of gray-scale values) <br /> c) perimeter <br /> d)
+area <br /> e) smoothness (local variation in radius lengths) <br /> f)
+compactness (perimeter^2 / area - 1.0) <br /> g) concavity (severity of concave
+portions of the contour) <br /> h) concave points (number of concave portions
+of the contour) <br /> i) symmetry <br /> j) fractal dimension (&quot;coastline
+approximation&quot; - 1) <br />
+</p>
+<p>The references listed below contain detailed descriptions of how these
+features are computed.
+</p>
+<p>The mean, standard error, and &quot;worst&quot; or largest (mean of the three largest
+values) of these features were computed for each image, resulting in 30
+features.
+</p>
+
+
+<h3>Note</h3>
+
+<p>This breast cancer database was obtained from the University of
+Wisconsin Hospitals, Madison from Dr. William H. Wolberg.
+</p>
+
+
+<h3>Source</h3>
+
+<p><a href="http://mlr.cs.umass.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)">http://mlr.cs.umass.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)</a>
+<br /> <br />
+Bache, K. &amp; Lichman, M. (2013).
+UCI Machine Learning Repository.
+Irvine, CA: University of California, School of Information and Computer
+Science.
+</p>
+
+
+<h3>References</h3>
+
+<p>O. L. Mangasarian and W. H. Wolberg: &quot;Cancer diagnosis via
+linear programming&quot;,<br /> SIAM News, Volume 23, Number 5, September 1990, pp 1
+&amp; 18.
+</p>
+<p>William H. Wolberg and O.L. Mangasarian: &quot;Multisurface method of pattern
+separation for medical diagnosis applied to breast cytology&quot;, <br />
+Proceedings of the National Academy of Sciences, U.S.A., Volume 87, December
+1990, pp 9193-9196.
+</p>
+<p>K. P. Bennett &amp; O. L. Mangasarian: &quot;Robust linear programming discrimination
+of two linearly inseparable sets&quot;,<br /> Optimization Methods and Software 1,
+1992, 23-34 (Gordon &amp; Breach Science Publishers).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(wdbc)
+str(wdbc)
+
+</pre>
+
+
+</body></html>

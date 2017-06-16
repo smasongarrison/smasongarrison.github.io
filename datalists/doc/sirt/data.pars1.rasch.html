@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Item Parameters for Three Studies Obtained by 1PL and 2PL...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for data.pars1.rasch"><tr><td>data.pars1.rasch</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Item Parameters for Three Studies Obtained by 1PL and 2PL Estimation
+</h2>
+
+<h3>Description</h3>
+
+<p>The datasets contain item parameters to be prepared for linking
+using the function <code>linking.haberman</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(data.pars1.rasch)
+data(data.pars1.2pl)
+</pre>
+
+
+<h3>Format</h3>
+
+
+<ul>
+<li><p> The format of <code>data.pars1.rasch</code> is:
+</p>
+<p><code>'data.frame':   22 obs. of  4 variables:</code> <br />
+<code> $ study: chr  "study1" "study1" "study1" "study1" ...</code> <br />
+<code> $ item : Factor w/ 12 levels "M133","M176",..: 1 2 3 4 5 1 6 7 3 8 ...</code> <br />
+<code> $ a    : num  1 1 1 1 1 1 1 1 1 1 ...</code> <br />
+<code> $ b    : num  -1.5862 0.40762 1.78031 2.00382 0.00862 ...</code>
+</p>
+<p>Item slopes <code>a</code> are fixed to 1 in 1PL estimation. Item difficulties
+are denoted by <code>b</code>. <br />
+</p>
+</li>
+<li><p> The format of <code>data.pars1.2pl</code> is:
+</p>
+<p><code>'data.frame':   22 obs. of  4 variables:</code> <br />
+<code> $ study: chr  "study1" "study1" "study1" "study1" ...</code> <br />
+<code> $ item : Factor w/ 12 levels "M133","M176",..: 1 2 3 4 5 1 6 7 3 8 ...</code> <br />
+<code> $ a    : num  1.238 0.957 1.83 1.927 2.298 ...</code> <br />
+<code> $ b    : num  -1.16607 0.35844 1.06571 1.17159 0.00792 ...</code> <br />
+</p>
+</li></ul>
+
+
+
+</body></html>

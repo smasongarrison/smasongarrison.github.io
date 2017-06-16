@@ -1,42 +1,26 @@
 [
   {
-    "title": "Academic Advice Aggregator",
-    "output": {
-      "html_document": {
-        "keep_md": true
-      }
-    },
-    "url": "AAA.html",
-    "date": "2016-11-23 09:39:15"
-  },
-  {
-    "title": "Introduction to Applied Statistics: Course Page",
+    "title": "Lying with Statistics",
     "output": "html_document",
     "url": "Class.html",
-    "date": "2016-08-29 13:35:18"
+    "date": "2017-06-16 12:04:47"
   },
   {
     "title": "ARCHIVE: 2016 Introduction to Applied Statistics: Course Page",
     "output": "html_document",
     "url": "Class_archive_2016.html",
-    "date": "2016-09-24 10:59:01"
+    "date": "2016-09-24 11:59:01"
   },
   {
     "title": "Collection of Datasets",
     "output": "html_document",
     "url": "Data.html",
-    "date": "2016-11-11 13:21:42"
+    "date": "2017-06-16 12:05:31"
   },
   {
     "title": "Welcome",
     "output": "html_document",
     "url": "index.html",
-    "date": "2016-11-23 10:09:03"
-  },
-  {
-    "title": "Datasets with Kinpairs",
-    "output": "html_document",
-    "url": "Kinship.html",
-    "date": "2016-09-16 08:45:51"
+    "date": "2017-06-16 12:06:20"
   }
 ]

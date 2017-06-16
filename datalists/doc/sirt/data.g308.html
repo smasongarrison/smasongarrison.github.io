@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: C-Test Datasets</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for data.g308"><tr><td>data.g308</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+C-Test Datasets
+</h2>
+
+<h3>Description</h3>
+
+<p>Some datasets of C-tests are provided. The dataset <code>data.g308</code>
+was used in Schroeders, Robitzsch and Schipolowski (2014).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(data.g308)
+</pre>
+
+
+<h3>Format</h3>
+
+
+<ul>
+<li><p> The dataset <code>data.g308</code> is a C-test containing 20 items and is
+used in Schroeders, Robitzsch and Schipolowski (2014) and is of the
+following format <br />
+</p>
+<p><code>'data.frame':   747 obs. of  21 variables:</code> <br />
+<code> $ id    : int  1 2 3 4 5 6 7 8 9 10 ...</code> <br />
+<code> $ G30801: int  1 1 1 1 1 0 0 1 1 1 ...</code> <br />
+<code> $ G30802: int  1 1 1 1 1 1 1 1 1 1 ...</code> <br />
+<code> $ G30803: int  1 1 1 1 1 1 1 1 1 1 ...</code> <br />
+<code> $ G30804: int  1 1 1 1 1 0 1 1 1 1 ...</code> <br />
+<code>[...]</code> <br />
+<code> $ G30817: int  0 0 0 0 1 0 1 0 1 0 ...</code> <br />
+<code> $ G30818: int  0 0 1 0 0 0 0 1 1 0 ...</code> <br />
+<code> $ G30819: int  1 1 1 1 0 0 1 1 1 0 ...</code> <br />
+<code> $ G30820: int  1 1 1 1 0 0 0 1 1 0 ...</code> <br />
+</p>
+</li></ul>
+
+
+
+<h3>References</h3>
+
+<p>Schroeders, U., Robitzsch, A., &amp; Schipolowski, S. (2014).
+A comparison of different psychometric approaches to modeling testlet
+structures: An example with C-tests.
+<em>Journal of Educational Mesaurement</em>, <b>51(4)</b>, 400-418.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+#############################################################################
+# EXAMPLE 1: Dataset G308 from Schroeders et al. (2014)
+#############################################################################	
+	
+data(data.g308)
+dat &lt;- data.g308
+
+library(TAM)
+library(sirt)
+library(combinat)
+
+# define testlets
+testlet &lt;- c(1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 5, 6, 6, 6)
+
+#****************************************
+#*** Model 1: Rasch model
+mod1 &lt;- TAM::tam.mml(resp = dat[,-1], pid = dat[,1],
+       control = list(maxiter = 300 , snodes = 1500))
+summary(mod1)
+    
+#****************************************
+#*** Model 2: Rasch testlet model
+
+# testlets are dimensions, assign items to Q-matrix
+TT &lt;- length(unique(testlet))
+Q &lt;- matrix(0, nrow = ncol(dat)-1 , ncol = TT + 1)
+Q[,1] &lt;- 1 # First dimension constitutes g-factor
+for (tt in 1:TT){Q[testlet == tt, tt+1] &lt;- 1}
+
+# In a testlet model, all dimensions are uncorrelated among
+# each other, that is, all pairwise correlations are set to 0,
+# which can be accomplished with the "variance.fixed" command
+variance.fixed &lt;- cbind(t( combinat::combn(TT+1,2)), 0)
+mod2 &lt;- TAM::tam.mml(resp = dat[,-1], pid = dat[,1], Q = Q,
+            variance.fixed = variance.fixed,
+            control = list(snodes = 1500 , maxiter = 300))
+summary(mod2)
+
+#****************************************
+#*** Model 3: Partial credit model
+
+scores &lt;- list()
+testlet.names &lt;- NULL
+dat.pcm &lt;- NULL
+for (tt in 1:max(testlet) ){
+   scores[[tt]] &lt;- rowSums (dat[,-1][, testlet == tt, drop = FALSE])
+   dat.pcm &lt;- c(dat.pcm, list(c(scores[[tt]])))
+   testlet.names &lt;- append(testlet.names, paste0("testlet",tt) )
+   }
+dat.pcm &lt;- as.data.frame(dat.pcm)
+colnames(dat.pcm) &lt;- testlet.names
+mod3 &lt;- TAM::tam.mml(resp = dat.pcm, control = list(snodes=1500, maxiter=300) )
+summary(mod3)
+
+#****************************************
+#*** Model 4: Copula model
+
+mod4 &lt;- sirt::rasch.copula2 (dat = dat[,-1], itemcluster = testlet)
+summary(mod4)
+
+## End(Not run)
+</pre>
+
+
+</body></html>

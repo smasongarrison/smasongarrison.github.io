@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Datasets from Borg and Staufenbiel (2007)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for data.bs"><tr><td>data.bs</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Datasets from Borg and Staufenbiel (2007) 
+</h2>
+
+<h3>Description</h3>
+
+<p>Datasets of the book of Borg and Staufenbiel (2007)
+<em>Lehrbuch Theorien and Methoden der Skalierung</em>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(data.bs07a)
+</pre>
+
+
+<h3>Format</h3>
+
+	
+<ul>
+<li><p> The dataset <code>data.bs07a</code> contains the data 
+<em>Gefechtsangst</em> (p. 130) and contains 8 of the original 9 items.
+The items are symptoms of anxiety in engagement. <br />
+<code>GF1</code>: starkes Herzklopfen, <code>GF2</code>: flaues Gefuehl in der
+Magengegend, <code>GF3</code>: Schwaechegefuehl, <code>GF4</code>: Uebelkeitsgefuehl,
+<code>GF5</code>: Erbrechen, <code>GF6</code>: Schuettelfrost,
+<code>GF7</code>: in die Hose urinieren/einkoten, <code>GF9</code>: Gefuehl der 
+Gelaehmtheit 
+</p>
+<p>The format is 
+</p>
+<p><code>'data.frame':   100 obs. of  9 variables:</code> <br />
+<code> $ idpatt: int  44 29 1 3 28 50 50 36 37 25 ...</code> <br />
+<code> $ GF1   : int  1 1 1 1 1 0 0 1 1 1 ...</code> <br />
+<code> $ GF2   : int  0 1 1 1 1 0 0 1 1 1 ...</code> <br />
+<code> $ GF3   : int  0 0 1 1 0 0 0 0 0 1 ...</code> <br />
+<code> $ GF4   : int  0 0 1 1 0 0 0 1 0 1 ...</code> <br />
+<code> $ GF5   : int  0 0 1 1 0 0 0 0 0 0 ...</code> <br />
+<code> $ GF6   : int  1 1 1 1 1 0 0 0 0 0 ...</code> <br />
+<code> $ GF7   : num  0 0 1 1 0 0 0 0 0 0 ...</code> <br />
+<code> $ GF9   : int  0 0 1 1 1 0 0 0 0 0 ...</code> <br />
+</p>
+</li>
+<li> <p><em>MORE DATASETS</em>
+</p>
+</li></ul>
+
+
+
+<h3>References</h3>
+
+<p>Borg, I., &amp; Staufenbiel, T. (2007).
+<em>Lehrbuch Theorie und Methoden der Skalierung</em>.
+Bern: Hogrefe.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+#############################################################################
+# EXAMPLE 07a: Dataset Gefechtsangst
+#############################################################################
+
+data(data.bs07a)
+dat &lt;- data.bs07a
+items &lt;- grep( "GF" , colnames(dat)  , value=TRUE )
+
+#************************
+# Model 1: Rasch model
+mod1 &lt;- TAM::tam.mml(dat[,items] )
+summary(mod1)
+IRT.WrightMap(mod1)
+
+#************************
+# Model 2: 2PL model
+mod2 &lt;- TAM::tam.mml.2pl(dat[,items] )
+summary(mod2)
+
+#************************
+# Model 3: Latent class analysis (LCA) with two classes
+tammodel &lt;- "
+ANALYSIS:
+  TYPE=LCA;
+  NCLASSES(2)
+  NSTARTS(5,10)
+LAVAAN MODEL:
+  F =~ GF1__GF9
+  "  
+mod3 &lt;- TAM::tamaan( tammodel , dat )
+summary(mod3)
+
+#************************
+# Model 4: LCA with three classes
+tammodel &lt;- "
+ANALYSIS:
+  TYPE=LCA;
+  NCLASSES(3)
+  NSTARTS(5,10)
+LAVAAN MODEL:
+  F =~ GF1__GF9
+  "  
+mod4 &lt;- TAM::tamaan( tammodel , dat )
+summary(mod4)
+
+#************************
+# Model 5: Located latent class model (LOCLCA) with two classes
+tammodel &lt;- "
+ANALYSIS:
+  TYPE=LOCLCA;
+  NCLASSES(2)
+  NSTARTS(5,10)
+LAVAAN MODEL:
+  F =~ GF1__GF9 
+  "  
+mod5 &lt;- TAM::tamaan( tammodel , dat )
+summary(mod5)
+
+#************************
+# Model 6: Located latent class model with three classes
+tammodel &lt;- "
+ANALYSIS:
+  TYPE=LOCLCA;
+  NCLASSES(3)
+  NSTARTS(5,10)
+LAVAAN MODEL:
+  F =~ GF1__GF9 
+  "  
+mod6 &lt;- TAM::tamaan( tammodel , dat )
+summary(mod6)
+
+#************************
+# Model 7: Probabilistic Guttman model
+mod7 &lt;- sirt::prob.guttman( dat[,items] )
+summary(mod7)
+
+#-- model comparison
+IRT.compareModels( mod1, mod2 , mod3 , mod4 , mod5 , mod6 , mod7 )
+
+## End(Not run)	
+</pre>
+
+
+</body></html>

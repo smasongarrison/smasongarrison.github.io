@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dataset Big 5 from 'qgraph' Package</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for data.big5"><tr><td>data.big5</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Dataset Big 5 from <span class="pkg">qgraph</span> Package
+</h2>
+
+<h3>Description</h3>
+
+<p>This is a Big 5 dataset from the <span class="pkg">qgraph</span> package (Dolen, Oorts,
+Stoel, Wicherts, 2009). It contains 500 subjects on 240 items.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(data.big5)
+data(data.big5.qgraph)
+</pre>
+
+
+<h3>Format</h3>
+
+
+<ul>
+<li><p> The format of <code>data.big5</code> is: <br /> 
+<code> num [1:500, 1:240] 1 0 0 0 0 1 1 2 0 1 ...</code> <br />
+<code> - attr(*, "dimnames")=List of 2</code> <br />
+<code>  ..$ : NULL</code> <br />
+<code>  ..$ : chr [1:240] "N1" "E2" "O3" "A4" ...</code> <br />
+</p>
+</li>
+<li><p> The format of <code>data.big5.qgraph</code> is: <br />  
+</p>
+<p><code> num [1:500, 1:240] 2 3 4 4 5 2 2 1 4 2 ...</code> <br />
+<code> - attr(*, "dimnames")=List of 2</code> <br />
+<code>  ..$ : NULL</code> <br />
+<code>  ..$ : chr [1:240] "N1" "E2" "O3" "A4" ...</code> <br />
+</p>
+</li></ul>
+
+
+
+<h3>Details</h3>
+
+<p>In these datasets, there exist 48 items for each dimension. The Big 5
+dimensions are Neuroticism (<code>N</code>), Extraversion (<code>E</code>), 
+Openness (<code>O</code>), Agreeableness (<code>A</code>) and 
+Conscientiousness (<code>C</code>). Note that the <code>data.big5</code> differs from
+<code>data.big5.qgraph</code> in a way that original items were recoded into
+three categories 0,1 and 2.
+</p>
+
+
+<h3>Source</h3>
+
+<p>See <code>big5</code> in <span class="pkg">qgraph</span> package.
+</p>
+
+
+<h3>References</h3>
+
+<p>Dolan, C. V., Oort, F. J., Stoel, R. D., &amp; Wicherts, J. M. (2009). 
+Testing measurement invariance in the target rotates multigroup exploratory 
+factor model. <em>Structural Equation Modeling</em>, <b>16</b>, 295-314.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+# list of needed packages for the following examples
+packages &lt;- scan(what="character")
+     sirt   TAM   eRm   CDM   mirt  ltm   mokken  psychotools  psychomix
+     psych
+   
+# load packages. make an installation if necessary     
+miceadds::library_install(packages)
+
+#############################################################################
+# EXAMPLE 1: Unidimensional models openness scale
+#############################################################################
+
+data(data.big5)	
+# extract first 10 openness items
+items &lt;- which( substring( colnames(data.big5) , 1 , 1 ) == "O"  )[1:10]
+dat &lt;- data.big5[ , items ]
+I &lt;- ncol(dat)
+summary(dat)
+  ##   &gt; colnames(dat)
+  ##    [1] "O3"  "O8"  "O13" "O18" "O23" "O28" "O33" "O38" "O43" "O48"
+# descriptive statistics
+psych::describe(dat)
+        
+#****************
+# Model 1: Partial credit model
+#****************
+
+#-- M1a: rm.facets (in sirt)
+m1a &lt;- sirt::rm.facets( dat )
+summary(m1a)
+
+#-- M1b: tam.mml (in TAM)
+m1b &lt;- TAM::tam.mml( resp=dat )
+summary(m1b)
+
+#-- M1c: gdm (in CDM)
+theta.k &lt;- seq(-6,6,len=21)
+m1c &lt;- CDM::gdm( dat , irtmodel="1PL" ,theta.k=theta.k , skillspace="normal")
+summary(m1c)
+# compare results with loglinear skillspace
+m1c2 &lt;- CDM::gdm( dat , irtmodel="1PL" ,theta.k=theta.k , skillspace="loglinear")
+summary(m1c2)
+
+#-- M1d: PCM (in eRm)
+m1d &lt;- eRm::PCM( dat )
+summary(m1d)
+
+#-- M1e: gpcm (in ltm)
+m1e &lt;- ltm::gpcm( dat , constraint = "1PL" , control=list(verbose=TRUE))
+summary(m1e)
+
+#-- M1f: mirt (in mirt)
+m1f &lt;- mirt::mirt( dat , model=1 , itemtype="1PL" , verbose=TRUE)
+summary(m1f)
+coef(m1f)
+
+#-- M1g: PCModel.fit (in psychotools)
+mod1g &lt;- psychotools::PCModel.fit(dat)
+summary(mod1g)
+plot(mod1g)
+
+#****************
+# Model 2: Generalized partial credit model
+#****************
+
+#-- M2a: rm.facets (in sirt)
+m2a &lt;- sirt::rm.facets( dat , est.a.item=TRUE)
+summary(m2a)
+# Note that in rm.facets the mean of item discriminations is fixed to 1
+
+#-- M2b: tam.mml.2pl (in TAM)
+m2b &lt;- TAM::tam.mml.2pl( resp=dat , irtmodel="GPCM")
+summary(m2b)
+
+#-- M2c: gdm (in CDM)
+m2c &lt;- CDM::gdm( dat , irtmodel="2PL" ,theta.k=seq(-6,6,len=21) ,
+                   skillspace="normal" , standardized.latent=TRUE)
+summary(m2c)
+
+#-- M2d: gpcm (in ltm)
+m2d &lt;- ltm::gpcm( dat , control=list(verbose=TRUE))
+summary(m2d)
+
+#-- M2e: mirt (in mirt)
+m2e &lt;- mirt::mirt( dat , model=1 ,  itemtype="GPCM" , verbose=TRUE)
+summary(m2e)
+coef(m2e)
+
+#****************
+# Model 3: Nonparametric item response model
+#****************
+
+#-- M3a: ISOP and ADISOP model - isop.poly (in sirt)
+m3a &lt;- sirt::isop.poly( dat )
+summary(m3a)
+plot(m3a)
+
+#-- M3b: Mokken scale analysis (in mokken) 
+# Scalability coefficients
+mokken::coefH(dat)
+# Assumption of monotonicity
+monotonicity.list &lt;- mokken::check.monotonicity(dat)
+summary(monotonicity.list)
+plot(monotonicity.list)
+# Assumption of non-intersecting ISRFs using method restscore
+restscore.list &lt;- mokken::check.restscore(dat)
+summary(restscore.list)
+plot(restscore.list) 
+
+#****************
+# Model 4: Graded response model
+#****************
+
+#-- M4a: mirt (in mirt)
+m4a &lt;- mirt::mirt( dat , model=1 ,  itemtype="graded" , verbose=TRUE)
+print(m4a)
+mirt.wrapper.coef(m4a)
+
+#----  M4b: WLSMV estimation with cfa (in lavaan)
+lavmodel &lt;- "F =~ O3__O48
+             F ~~ 1*F  
+                "
+# transform lavaan syntax with lavaanify.IRT
+lavmodel &lt;- TAM::lavaanify.IRT( lavmodel , items=colnames(dat) )$lavaan.syntax
+mod4b &lt;- lavaan::cfa( data= as.data.frame(dat) , model=lavmodel, std.lv = TRUE, 
+                 ordered=colnames(dat) ,  parameterization="theta")
+summary(mod4b , standardized=TRUE , fit.measures=TRUE , rsquare=TRUE)
+coef(mod4b)
+
+#****************
+# Model 5: Normally distributed residuals
+#****************
+
+#----  M5a: cfa (in lavaan)
+lavmodel &lt;- "F =~ O3__O48
+             F ~~ 1*F  
+             F ~ 0*1
+             O3__O48 ~ 1
+                "                               
+lavmodel &lt;- TAM::lavaanify.IRT( lavmodel , items=colnames(dat) )$lavaan.syntax
+mod5a &lt;- lavaan::cfa( data= as.data.frame(dat) , model=lavmodel, std.lv = TRUE ,
+                 estimator="MLR" )
+summary(mod5a , standardized=TRUE , fit.measures=TRUE , rsquare=TRUE)
+
+#----  M5b: mirt (in mirt)
+
+# create user defined function
+name &lt;- 'normal'
+par &lt;- c("d" = 1 , "a1" = 0.8 , "vy" = 1)
+est &lt;- c(TRUE, TRUE,FALSE)
+P.normal &lt;- function(par,Theta,ncat){
+     d &lt;- par[1]
+     a1 &lt;- par[2]
+     vy &lt;- par[3]     
+     psi &lt;- vy - a1^2     
+     # expected values given Theta
+     mui &lt;- a1*Theta[,1] + d
+     TP &lt;- nrow(Theta)
+     probs &lt;- matrix( NA , nrow=TP, ncol= ncat )
+     eps &lt;- .01
+     for (cc in 1:ncat){
+        probs[,cc] &lt;- stats::dnorm( cc , mean = mui   , sd = sqrt( abs( psi + eps) ) )
+                    }
+     psum &lt;- matrix( rep(rowSums( probs ),each=ncat)  , nrow=TP , ncol=ncat , byrow=TRUE)    
+     probs &lt;- probs / psum
+     return(probs)                    
+}
+
+# create item response function
+normal &lt;- mirt::createItem(name, par=par, est=est, P=P.normal)
+customItems &lt;- list("normal"=normal) 
+itemtype &lt;- rep( "normal",I)
+# define parameters to be estimated
+mod5b.pars &lt;- mirt::mirt(dat, 1, itemtype=itemtype , 
+                   customItems=customItems , pars = "values")                
+ind &lt;- which( mod5b.pars$name == "vy")
+vy &lt;- apply( dat , 2 , var , na.rm=TRUE ) 
+mod5b.pars[ ind , "value" ] &lt;- vy
+ind &lt;- which( mod5b.pars$name == "a1")
+mod5b.pars[ ind , "value" ] &lt;- .5* sqrt(vy)
+ind &lt;- which( mod5b.pars$name == "d")
+mod5b.pars[ ind , "value" ] &lt;- colMeans( dat , na.rm=TRUE )
+                                                       
+# estimate model
+mod5b &lt;- mirt::mirt(dat, 1, itemtype=itemtype , customItems=customItems ,  
+                 pars = mod5b.pars , verbose=TRUE    )
+sirt::mirt.wrapper.coef(mod5b)$coef
+
+# some item plots
+    par(ask=TRUE)
+plot(mod5b, type = 'trace', layout = c(1,1))
+    par(ask=FALSE)
+# Alternatively:
+sirt::mirt.wrapper.itemplot(mod5b) 
+
+## End(Not run)
+</pre>
+
+
+</body></html>
