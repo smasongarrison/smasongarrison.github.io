@@ -5,7 +5,7 @@ output: html_document
 
 *** 
 ### Overview
-Lying with Statistics" is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescent students. It will be taught during Summer Session II (June 19-30, 2017).
+Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescent students. It will be taught during Summer Session II (June 19-30, 2017).
 
 > Is it possible to mislead when using statistics? This class will help you identify potential misrepresentation along with the inner-workings of statistical “truths”. You will learn to run statistical analyses the right way (using powerful, open source software called “R”) to recognize when data are being misused. Through regular practice, discussion, and your own culminating project, you will become adept at recognizing when graphs are being manipulated, biases are being confirmed, and causes are implied when, really, only correlations exist. Not only will you gain valuable professional skills with broad applications, but you will also be less susceptible to other people’s numerical trickery.
 
@@ -23,8 +23,8 @@ Lying with Statistics" is a Vanderbilt Summer Academy (VSA) course designed for 
 *** 
 
 ### Teaching Assistant
-##### Name: 
-##### Email: 
+##### Name: Hannah Homoelle	
+##### Email: hannah.k.homoelle@vanderbilt.edu
 <!---##### Office Hours: NA-->
 *** 
 
@@ -38,21 +38,23 @@ Lying with Statistics" is a Vanderbilt Summer Academy (VSA) course designed for 
 
 [How to install R and R Studio on Mac / OSX](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
 
+### Tutorials
+[Using R and psych for personality and psychological research](http://personality-project.org/r/psych/)
+
 ### Course Materials
-[R Materials](https://www.dropbox.com/s/1wu3o9ftsmljqwb/Rmaterials.R?dl=1)
+[R Materials](XXXX)
 
-[PowerPoint Slides](https://www.dropbox.com/s/fgtlnl6jhmegqed/Introduction%20to%20Applied%20Statistics.pptx?dl=1)
+[PowerPoint Slides](XXXXX)
 
-[Poster Template](https://www.dropbox.com/s/67wk8ftbdjxpnlz/Template.pptx?dl=1)
+[Poster Template](XXXXX)
 
-[Poster Template Source](https://www.dropbox.com/s/d39vzjjx9x44ry3/spsp2014a.pptx?dl=1), which I presented at an academic conference in 2014.
+[Poster Template Source](XXXXX), which I presented at an academic conference in 2014.
 
-
-*** 
-
-## Schedule
 
 *** 
+
+## Very Tentative Schedule
+
 
 <!---How To Read This Schedule: 
 
@@ -61,29 +63,52 @@ All readings will be completed before class on the date on which they are assign
 
 *** 
 
-### Day 1 (June 13)
+### Day 1 (June 19)
 ##### Topics: Research Design, Sampling, and Measurement
 ##### Project: Select Dataset
+##### Study Hall: TBA
+
+### Day 2 (June 20)
+##### Topics: TBA
+##### Project: TBA
+##### Study Hall: 
+
+### Day 3 (June 21)
+##### Topics: TBA
+##### Project: TBA
 ##### Study Hall: Read selections from ``How to Lie with Statistics''
 
-### Day 2 (June 14)
-##### Topics: Summary Statistics
-##### Project: Describe Relevant Variables
-##### Study Hall: Read selections from ``How to Lie with Statistics''
+### Day 4 (June 22)
+##### Topics: TBA
+##### Project: TBA
 
-### Day 3 (June 15)
-##### Topics: Distributions and Hypothesis Testing
-##### Project: Formulate Hypothesis
-##### Study Hall: Chance Magazine on Extrapolation
+### Day 5 (June 23)
+##### Topics: TBA
+##### Project: TBA
 
-### Day 4 (June 16)
-##### Topics: Correlation and Causation
-##### Project: Test and Interpret
+### Day 6 (June 24)
+##### Topics: TBA
+##### Project: TBA
 
+### Day 7 (June 26)
+##### Topics: TBA
+##### Project: TBA
 
-### Day 5 (June 17)
-##### Topics: Presentation
-##### Project: Present Project to Class and Share During Open House.
+### Day 8 (June 27)
+##### Topics: TBA
+##### Project: TBA
+
+### Day 9 (June 28)
+##### Topics: TBA
+##### Project: TBA
+
+### Day 10 (June 29)
+##### Topics: TBA
+##### Project: TBA
+
+### Day 11 (June 30)
+##### Topics: TBA
+##### Project: TBA
 *** 
 
 ## Data

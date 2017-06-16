@@ -1,4 +1,4 @@
-R Markdown Website Template
+Source: R Markdown Website Template
 =================================
 
 A lightweight version of this: https://github.com/rstudio/rmarkdown/tree/gh-pages
