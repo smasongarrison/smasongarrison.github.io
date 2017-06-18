@@ -34,22 +34,19 @@ Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for g
 
 [RStudio](https://www.rstudio.com/products/rstudio/download/)
 
+#### Tutorials
 [How to install R and R Studio on PC / Windows](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
 
 [How to install R and R Studio on Mac / OSX](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
 
-### Tutorials
 [Using R and psych for personality and psychological research](http://personality-project.org/r/psych/)
 
-### Course Materials
-[R Materials](XXXX)
+### Poster Template
+[Poster Template](https://www.dropbox.com/s/8spm24w728si1gs/Template.pptx?dl=0)
 
-[PowerPoint Slides](XXXXX)
+[Poster Example 1](https://www.dropbox.com/s/ndohtiimpp6a3fs/spsp2014a.pptx?dl=0), which I presented at an academic conference in 2014.
 
-[Poster Template](XXXXX)
-
-[Poster Template Source](XXXXX), which I presented at an academic conference in 2014.
-
+[Poster Example 2](https://www.dropbox.com/s/hwyjkgv5qi1qzkf/arp2017.pptx?dl=0), which I presented at a different academic conference in 2017.
 
 *** 
 
@@ -59,47 +56,52 @@ Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for g
 <!---How To Read This Schedule: 
 
 All readings will be completed before class on the date on which they are assigned. Anything in bold is work to be completed before class and brought with you on the day listed. Paper due dates, also in bold, indicate that the completed manuscript of your paper must be in the correct dropbox on Blackboard before class starts on the day indicated.
+
 -->
 
 *** 
 
 ### Day 1 (June 19)
-##### Topics: Research Design, Sampling, and Measurement
-##### Project: Select Dataset
+##### Topics: Scientific Method, Research Questions, and Cognitive Biases
 ##### Study Hall: TBA
+##### Relevant Materials:
+###### [PowerPoint 1](https://www.dropbox.com/s/0zaqabfe9cqxk00/Lying%20with%20Statistics_01.pptx?dl=0)
+###### [R Materials]()
+###### [Cognitive Bias Codex](https://en.wikipedia.org/wiki/File:The_Cognitive_Bias_Codex_-_180%2B_biases,_designed_by_John_Manoogian_III_(jm3).png)
+###### [Vaccination Simulation](http://www.software3d.com/Home/Vax/Immunity.php)
+
+
 
 ### Day 2 (June 20)
-##### Topics: TBA
-##### Project: TBA
-##### Study Hall: 
+##### Topics: Research Design and Sampling
+##### Study Hall: TBA
 
 ### Day 3 (June 21)
-##### Topics: TBA
-##### Project: TBA
+##### Topics: Measurement and Summary Statistics
 ##### Study Hall: Read selections from ``How to Lie with Statistics''
 
 ### Day 4 (June 22)
-##### Topics: TBA
+##### Topics: Hypothesis Testing
 ##### Project: TBA
 
 ### Day 5 (June 23)
-##### Topics: TBA
+##### Topics: Correlation 
 ##### Project: TBA
 
 ### Day 6 (June 24)
-##### Topics: TBA
+##### Topics: Causation
 ##### Project: TBA
 
 ### Day 7 (June 26)
-##### Topics: TBA
+##### Topics: Presentation
 ##### Project: TBA
 
 ### Day 8 (June 27)
-##### Topics: TBA
+##### Topics: Interpretation
 ##### Project: TBA
 
 ### Day 9 (June 28)
-##### Topics: TBA
+##### Topics: Consumption
 ##### Project: TBA
 
 ### Day 10 (June 29)
