@@ -62,11 +62,12 @@ All readings will be completed before class on the date on which they are assign
 *** 
 
 ### Day 1 (June 19)
-##### Topics: Scientific Method, Research Questions, and Cognitive Biases
-##### Study Hall: TBA
+##### Topics: Scientific Method, Research Questions, Cognitive Biases, and Research Design.
+##### Study Hall: Readings on Extrapolation
 ##### Relevant Materials:
 ###### [PowerPoint 1](https://www.dropbox.com/s/0zaqabfe9cqxk00/Lying%20with%20Statistics_01.pptx?dl=0)
 ###### [PowerPoint 2](https://www.dropbox.com/s/s5sqtc4szlvjykz/Lying%20with%20Statistics_02.pptx?dl=0)
+###### [PowerPoint 3](https://www.dropbox.com/s/rzyog7idb5895op/Lying%20with%20Statistics_03.pptx?dl=0)
 ###### [R Materials]()
 ###### [Cognitive Bias Codex](https://en.wikipedia.org/wiki/File:The_Cognitive_Bias_Codex_-_180%2B_biases,_designed_by_John_Manoogian_III_(jm3).png)
 ###### [Vaccination Simulation](http://www.software3d.com/Home/Vax/Immunity.php)
@@ -74,20 +75,20 @@ All readings will be completed before class on the date on which they are assign
 
 
 ### Day 2 (June 20)
-##### Topics: Research Design and Sampling
-##### Study Hall: TBA
+##### Topics:  Research Design, Sampling, Measurement, and Summary Statistics
+##### Study Hall: Read selections from ``How to Lie with Statistics''
 
 ### Day 3 (June 21)
-##### Topics: Measurement and Summary Statistics
+##### Topics: Summary Statistics
 ##### Study Hall: Read selections from ``How to Lie with Statistics''
 
 ### Day 4 (June 22)
 ##### Topics: Hypothesis Testing
-##### Project: TBA
+##### Study Hall: Read selections from ``How to Lie with Statistics''
 
 ### Day 5 (June 23)
 ##### Topics: Correlation 
-##### Project: TBA
+##### Study Hall: Read selections from ``How to Lie with Statistics''
 
 ### Day 6 (June 24)
 ##### Topics: Causation
