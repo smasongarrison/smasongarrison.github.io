@@ -66,6 +66,7 @@ All readings will be completed before class on the date on which they are assign
 ##### Study Hall: TBA
 ##### Relevant Materials:
 ###### [PowerPoint 1](https://www.dropbox.com/s/0zaqabfe9cqxk00/Lying%20with%20Statistics_01.pptx?dl=0)
+###### [PowerPoint 2](https://www.dropbox.com/s/s5sqtc4szlvjykz/Lying%20with%20Statistics_02.pptx?dl=0)
 ###### [R Materials]()
 ###### [Cognitive Bias Codex](https://en.wikipedia.org/wiki/File:The_Cognitive_Bias_Codex_-_180%2B_biases,_designed_by_John_Manoogian_III_(jm3).png)
 ###### [Vaccination Simulation](http://www.software3d.com/Home/Vax/Immunity.php)
