@@ -67,19 +67,24 @@ All readings will be completed before class on the date on which they are assign
 ##### Relevant Materials:
 ###### [PowerPoint 1](https://www.dropbox.com/s/0zaqabfe9cqxk00/Lying%20with%20Statistics_01.pptx?dl=0)
 ###### [PowerPoint 2](https://www.dropbox.com/s/s5sqtc4szlvjykz/Lying%20with%20Statistics_02.pptx?dl=0)
-###### [PowerPoint 3](https://www.dropbox.com/s/rzyog7idb5895op/Lying%20with%20Statistics_03.pptx?dl=0)
-###### [R Materials]()
 ###### [Cognitive Bias Codex](https://en.wikipedia.org/wiki/File:The_Cognitive_Bias_Codex_-_180%2B_biases,_designed_by_John_Manoogian_III_(jm3).png)
 ###### [Vaccination Simulation](http://www.software3d.com/Home/Vax/Immunity.php)
 
 
 
 ### Day 2 (June 20)
-##### Topics:  Research Design, Sampling, Measurement, and Summary Statistics
+##### Topics:  Experiments, Design, Sampling, and Measurement
 ##### Study Hall: Read selections from ``How to Lie with Statistics''
+##### Relevant Materials:
+###### [PowerPoint 2](https://www.dropbox.com/s/s5sqtc4szlvjykz/Lying%20with%20Statistics_02.pptx?dl=0)
+###### [PowerPoint 3](https://www.dropbox.com/s/rzyog7idb5895op/Lying%20with%20Statistics_03.pptx?dl=0)
+###### [PowerPoint 4](https://www.dropbox.com/s/7fxov5zz7an1teh/Lying%20with%20Statistics_04.pptx?dl=0)
+###### [SAPA Project](https://sapa-project.org/)
+###### [Moral Machine](http://moralmachine.mit.edu/)
+
 
 ### Day 3 (June 21)
-##### Topics: Summary Statistics
+##### Topics: Probability and Summary Statistics
 ##### Study Hall: Read selections from ``How to Lie with Statistics''
 
 ### Day 4 (June 22)
