@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Nickel smelters in South Wales, expanded</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for nickel.expand"><tr><td>nickel.expand</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Nickel smelters in South Wales, expanded</h2>
+
+<h3>Description</h3>
+
+<p>The data concern a cohort of nickel smelting workers in South Wales,
+with information on exposure, follow-up period, and cause of death, as
+in the <code>nickel</code> data.
+This version has follow-up times split according to age groups and is
+merged with the mortality rates in <code>ewrates</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>nickel.expand</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 3724 observations on the following 12 variables:
+</p>
+
+<dl>
+<dt><code>agr</code></dt><dd><p>age class: 10: 10&ndash;14, 15: 15&ndash;19, ....</p>
+</dd>
+<dt><code>ygr</code></dt><dd><p>calendar period, 1931: 1931&ndash;35, 1936:
+1936&ndash;40, ... .</p>
+</dd>
+<dt><code>id</code></dt><dd><p>subject identifier (numeric).</p>
+</dd>
+<dt><code>icd</code></dt><dd><p>ICD cause of death if dead, 0 otherwise (numeric).</p>
+</dd>
+<dt><code>exposure</code></dt><dd><p>exposure index for workplace (numeric). </p>
+</dd>
+<dt><code>dob</code></dt><dd><p>date of birth (numeric).</p>
+</dd> 
+<dt><code>age1st</code></dt><dd><p>age at first exposure (numeric).</p>
+</dd> 
+<dt><code>agein</code></dt><dd><p>age at start of follow-up (numeric).</p>
+</dd> 
+<dt><code>ageout</code></dt><dd><p>age at end of follow-up (numeric).</p>
+</dd> 
+<dt><code>lung</code></dt><dd><p>lung cancer mortality rate per 1 million person-years.</p>
+</dd>
+<dt><code>nasal</code></dt><dd><p>nasal cancer mortality rate per 1 million person-years.</p>
+</dd>
+<dt><code>other</code></dt><dd><p>all cause mortality rate per 1 million person-years.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Computed from <code>nickel</code> and  <code>ewrates</code> data sets.
+</p>
+
+
+</body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Graft versus host disease</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for graft.vs.host"><tr><td>graft.vs.host</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Graft versus host disease</h2>
+
+<h3>Description</h3>
+
+<p>The <code>gvhd</code> data frame has 37 rows and 7 columns.
+It contains data from patients receiving a nondepleted allogenic bone
+marrow transplant with the purpose of finding variables associated with
+the development of acute graft-versus-host disease.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>graft.vs.host</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>pnr</code></dt><dd>
+<p>a numeric vector patient number.
+</p>
+</dd>
+<dt><code>rcpage</code></dt><dd>
+<p>a numeric vector, age of recipient (years).
+</p>
+</dd>
+<dt><code>donage</code></dt><dd>
+<p>a numeric vector, age of donor (years).
+</p>
+</dd>
+<dt><code>type</code></dt><dd>
+<p>a numeric vector, type of leukaemia coded 1: AML, 2: ALL, 3: CML
+for acute myeloid, acute lymphatic, and chronic myeloid leukaemia. 
+</p>
+</dd>
+<dt><code>preg</code></dt><dd>
+<p>a numeric vector code indicating whether donor has been pregnant. 0: no, 1: yes.
+</p>
+</dd>
+<dt><code>index</code></dt><dd>
+<p>a numeric vector  giving an index of mixed epidermal cell-lymphocyte
+reactions. 
+</p>
+</dd>
+<dt><code>gvhd</code></dt><dd>
+<p>a numeric vector code, graft-versus-host disease, 0: no, 1: yes.
+</p>
+</dd>
+<dt><code>time</code></dt><dd><p>a numeric vector, follow-up time</p>
+</dd>
+<dt><code>dead</code></dt><dd><p>a numeric vector code, 0: no (censored), 1: yes</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>D.G. Altman (1991), <em>Practical Statistics for Medical Research</em>,
+Exercise 12.3, Chapman &amp; Hall.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(jitter(gvhd,0.2)~index,data=graft.vs.host)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Trypsin by age groups</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fake.trypsin"><tr><td>fake.trypsin</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Trypsin by age groups </h2>
+
+<h3>Description</h3>
+
+<p>The <code>trypsin</code> data frame has 271 rows and 3 columns.
+Serum levels of immunoreactive trypsin in healthy volunteers (faked!).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>fake.trypsin</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>trypsin</code></dt><dd>
+<p>a numeric vector, serum-trypsin in ng/ml.
+</p>
+</dd>
+<dt><code>grp</code></dt><dd>
+<p>a numeric vector, age coding. See below.
+</p>
+</dd>
+<dt><code>grpf</code></dt><dd>
+<p>a factor with levels 
+<code>1</code>: age 10&ndash;19, 
+<code>2</code>: age 20&ndash;29,
+<code>3</code>: age 30&ndash;39,
+<code>4</code>: age 40&ndash;49,
+<code>5</code>: age 50&ndash;59, and
+<code>6</code>: age 60&ndash;69.
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Data have been simulated to match given group means and SD.
+</p>
+
+
+<h3>Source</h3>
+
+<p>D.G. Altman (1991), <em>Practical Statistics for Medical Research</em>, Table
+9.12, Chapman &amp; Hall.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(trypsin~grp, data=fake.trypsin)
+</pre>
+
+
+</body></html>

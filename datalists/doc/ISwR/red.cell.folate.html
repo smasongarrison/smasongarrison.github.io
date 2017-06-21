@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Red cell folate data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for red.cell.folate"><tr><td>red.cell.folate</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Red cell folate data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>folate</code> data frame has 22 rows and 2 columns.
+It contains data on red cell folate levels in patients receiving three
+different methods of ventilation during  anesthesia.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>red.cell.folate</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>folate</code></dt><dd>
+<p>a numeric vector, folate concentration (<i>microgram per
+    liter</i>).
+</p>
+</dd>
+<dt><code>ventilation</code></dt><dd>
+<p>a factor with levels
+<code>N2O+O2,24h</code>: 50% nitrous oxide and 50% oxygen, continuously for
+24 hours; 
+<code>N2O+O2,op</code>:  50% nitrous oxide and 50% oxygen, only during operation;
+<code>O2,24h</code>: no nitrous oxide but 35%&ndash;50% oxygen for 24 hours.
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>D.G. Altman (1991), <em>Practical Statistics for Medical Research</em>, Table
+9.10, Chapman &amp; Hall.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(folate~ventilation,data=red.cell.folate)
+</pre>
+
+
+</body></html>

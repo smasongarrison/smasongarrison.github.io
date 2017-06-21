@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Obesity and blood pressure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bp.obese"><tr><td>bp.obese</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Obesity and blood pressure</h2>
+
+<h3>Description</h3>
+
+<p>The <code>bp.obese</code> data frame has 102 rows and 3 columns.
+It contains data from a random sample of Mexican-American adults in a
+small California town.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>bp.obese</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>sex</code></dt><dd>
+<p>a numeric vector code, 0: male, 1: female.
+</p>
+</dd>
+<dt><code>obese</code></dt><dd>
+<p>a numeric vector, ratio of actual weight to ideal weight from New York
+Metropolitan Life Tables.
+</p>
+</dd>
+<dt><code>bp</code></dt><dd>
+<p>a numeric vector,systolic blood pressure (mm Hg).
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>B.W. Brown and M. Hollander (1977), <em>Statistics: A Biomedical
+Introduction,</em> 
+Wiley. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(bp~obese,pch = ifelse(sex==1, "F", "M"), data = bp.obese)
+</pre>
+
+
+</body></html>

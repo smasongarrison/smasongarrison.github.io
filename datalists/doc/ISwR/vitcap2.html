@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Vital capacity, full data set</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for vitcap2"><tr><td>vitcap2</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Vital capacity, full data set</h2>
+
+<h3>Description</h3>
+
+<p>The <code>vitcap2</code> data frame has 84 rows and 3 columns.
+Age and vital capacity for workers in the cadmium industry.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>vitcap2</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>group</code></dt><dd>
+<p>a numeric vector; group codes are 1: exposed &gt; 10 years,
+2: exposed &lt; 10 years, 3: not exposed.
+</p>
+</dd>
+<dt><code>age</code></dt><dd>
+<p>a numeric vector, age in years.
+</p>
+</dd>
+<dt><code>vital.capacity</code></dt><dd>
+<p>a numeric vector, vital capacity (a measure of lung volume) (l).
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>P. Armitage and G. Berry (1987), <em>Statistical Methods in Medical Research</em>, 2nd ed., Blackwell, p.286.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(vital.capacity~age, pch=group, data=vitcap2)
+</pre>
+
+
+</body></html>

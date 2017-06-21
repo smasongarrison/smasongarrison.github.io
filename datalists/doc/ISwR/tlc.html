@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Total lung capacity</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for tlc"><tr><td>tlc</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Total lung capacity</h2>
+
+<h3>Description</h3>
+
+<p>The <code>tlc</code> data frame has 32 rows and 4 columns. It contains data on
+pretransplant total lung capacity (TLC) for recipients of heart-lung
+transplants by whole-body plethysmography.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>tlc</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>age</code></dt><dd>
+<p>a numeric vector, age of recipient (years).
+</p>
+</dd>
+<dt><code>sex</code></dt><dd>
+<p>a numeric vector code, female: 1, male: 2.
+</p>
+</dd>
+<dt><code>height</code></dt><dd>
+<p>a numeric vector, height of recipient (cm).
+</p>
+</dd>
+<dt><code>tlc</code></dt><dd>
+<p>a numeric vector, total lung capacity (l).
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>D.G. Altman (1991), <em>Practical Statistics for Medical Research</em>,
+Exercise 12.5,  10.1, Chapman &amp; Hall.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(tlc~height,data=tlc)
+</pre>
+
+
+</body></html>

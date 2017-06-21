@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Survival after malignant melanoma</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for melanom"><tr><td>melanom</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Survival after malignant melanoma</h2>
+
+<h3>Description</h3>
+
+<p>The <code>melanom</code> data frame has 205 rows and 7 columns.
+It contains data relating to the survival of patients after an operation for
+malignant melanoma, collected at Odense University Hospital by K.T.
+Drzewiecki. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>melanom</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>no</code></dt><dd>
+<p>a numeric vector, patient code.
+</p>
+</dd>
+<dt><code>status</code></dt><dd>
+<p>a numeric vector code, survival status; 1: dead from melanoma, 2: alive,
+3: dead from other cause.
+</p>
+</dd>
+<dt><code>days</code></dt><dd>
+<p>a numeric vector, observation time.
+</p>
+</dd>
+<dt><code>ulc</code></dt><dd>
+<p>a numeric vector code, ulceration; 1: present, 2: absent.
+</p>
+</dd>
+<dt><code>thick</code></dt><dd>
+<p>a numeric vector, tumor thickness (1/100 mm).
+</p>
+</dd>
+<dt><code>sex</code></dt><dd>
+<p>a numeric vector code; 1: female, 2: male.
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>P.K. Andersen, Ø. Borgan, R.D. Gill, and N. Keiding (1991),
+<em>Statistical Models Based on 
+Counting Processes</em>, Appendix 1, Springer-Verlag. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(survival)
+plot(survfit(Surv(days,status==1)~1,data=melanom))
+</pre>
+
+
+</body></html>

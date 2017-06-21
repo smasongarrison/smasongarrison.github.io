@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Growth of Tetrahymena cells</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for hellung"><tr><td>hellung</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Growth of Tetrahymena cells</h2>
+
+<h3>Description</h3>
+
+<p>The <code>hellung</code> data frame has 51 rows and 3 columns.
+diameter and concentration of <em>Tetrahymena</em> cells with and without
+glucose added to growth medium.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>hellung</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>glucose</code></dt><dd>
+<p>a numeric vector code, 1: yes, 2: no. 
+</p>
+</dd>
+<dt><code>conc</code></dt><dd>
+<p>a numeric vector, cell concentration (counts/ml).
+</p>
+</dd>
+<dt><code>diameter</code></dt><dd>
+<p>a numeric vector, cell diameter (<i>micrometre</i>).
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>D. Kronborg and L.T. Skovgaard (1990), <em>Regressionsanalyse</em>,
+Table 1.1, FADLs Forlag (in Danish).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(diameter~conc,pch=glucose,log="xy",data=hellung)
+</pre>
+
+
+</body></html>

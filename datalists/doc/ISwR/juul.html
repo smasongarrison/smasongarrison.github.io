@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Juul's IGF data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for juul"><tr><td>juul</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Juul's IGF data</h2>
+
+<h3>Description</h3>
+
+<p>The <code>juul</code> data frame has 1339 rows and 6 columns.
+It contains a reference sample of the distribution of insulin-like
+growth factor (IGF-I), one observation per subject in various ages, with the
+bulk of the data collected in connection with school physical
+examinations. 
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>juul</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>age</code></dt><dd>
+<p>a numeric vector (years).
+</p>
+</dd>
+<dt><code>menarche</code></dt><dd>
+<p>a numeric vector. Has menarche occurred (code 1: no, 2: yes)?
+</p>
+</dd>
+<dt><code>sex</code></dt><dd>
+<p>a numeric vector (1: boy, 2: girl).
+</p>
+</dd>
+<dt><code>igf1</code></dt><dd>
+<p>a numeric vector, insulin-like growth factor
+(<i>microgram per liter</i>).
+</p>
+</dd>
+<dt><code>tanner</code></dt><dd>
+<p>a numeric vector, codes 1&ndash;5: Stages of puberty ad modum Tanner.
+</p>
+</dd>
+<dt><code>testvol</code></dt><dd>
+<p>a numeric vector, testicular volume (ml).
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Original data.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(igf1~age, data=juul)
+</pre>
+
+
+</body></html>

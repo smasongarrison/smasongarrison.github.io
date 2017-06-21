@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Energy expenditure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for energy"><tr><td>energy</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Energy expenditure</h2>
+
+<h3>Description</h3>
+
+<p>The <code>energy</code> data frame has 22 rows and 2 columns.
+It contains data on the energy expenditure in groups of lean and obese women.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>energy</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>expend</code></dt><dd>
+<p>a numeric vector, 24 hour energy expenditure (MJ).
+</p>
+</dd>
+<dt><code>stature</code></dt><dd>
+<p>a factor with levels
+<code>lean</code> and 
+<code>obese</code>.
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>D.G. Altman (1991), <em>Practical Statistics for Medical Research</em>, Table
+9.4, Chapman &amp; Hall.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(expend~stature,data=energy)
+</pre>
+
+
+</body></html>

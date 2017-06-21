@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Birth weight and ultrasonography</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for secher"><tr><td>secher</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Birth weight and ultrasonography</h2>
+
+<h3>Description</h3>
+
+<p>The <code>secher</code> data frame has 107 rows and 4 columns. It contains
+ultrasonographic measurements of fetuses immediately before birth and
+their subsequent 
+birth weight.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>secher</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>bwt</code></dt><dd>
+<p>a numeric vector, birth weight (g).
+</p>
+</dd>
+<dt><code>bpd</code></dt><dd>
+<p>a numeric vector, biparietal diameter (mm).
+</p>
+</dd>
+<dt><code>ad</code></dt><dd>
+<p>a numeric vector, abdominal diameter (mm).
+</p>
+</dd>
+<dt><code>no</code></dt><dd>
+<p>a numeric vector, observation number.
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>D. Kronborg and L.T. Skovgaard (1990), <em>Regressionsanalyse</em>,
+Table 3.1, FADLs Forlag (in Danish).
+</p>
+<p>Secher et al. (1987), European Journal of Obstetrics, Gynecology, and
+Reproductive Biology, 24: 1&ndash;11.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(bwt~ad, data=secher, log="xy")
+</pre>
+
+
+</body></html>

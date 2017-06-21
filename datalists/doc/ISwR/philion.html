@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dose response data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for philion"><tr><td>philion</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dose response data</h2>
+
+<h3>Description</h3>
+
+<p>Four small experiments with the purpose of estimating the EC50 of a
+biological dose-response relation.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>philion</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 30 observations on the following 3 variables:
+</p>
+
+<dl>
+<dt><code>experiment</code></dt><dd><p>a numeric vector; codes 1 through 4 denote
+the experiment number.</p>
+</dd>
+<dt><code>dose</code></dt><dd><p>a numeric vector, the dose.</p>
+</dd>
+<dt><code>response</code></dt><dd><p>a numeric vector, the response (counts).</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>These data were discussed on the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> mailing lists, initially
+suggesting a log-linear Poisson regression, but actually a relation
+like
+<i>y=ymax/(1+(x/beta)^alpha)</i> is
+more suitable. 
+</p>
+
+
+<h3>Source</h3>
+
+<p>Original data from Vincent Philion, IRDA, Qu\'ebec.
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://tolstoy.newcastle.edu.au/R/help/03b/1121.html">http://tolstoy.newcastle.edu.au/R/help/03b/1121.html</a>
+</p>
+
+
+</body></html>

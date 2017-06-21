@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ashina's crossover trial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ashina"><tr><td>ashina</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Ashina's crossover trial</h2>
+
+<h3>Description</h3>
+
+ 
+<p>The <code>ashina</code> data frame has 16 rows and 3 columns. It contains
+data from a crossover trial for the effect of an NO synthase inhibitor
+on headaches. Visual analog scale recordings of pain levels were made
+at baseline and at five time points after infusion of the drug or
+placebo. A score was calculated as the sum of the differences from
+baseline. Data were recorded during two sessions for each patient. Six
+patients were given treatment on the first occasion and the placebo on
+the second. Ten patients had placebo first and then treatment. The
+order of treatment and the placebo was randomized.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>ashina</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>vas.active</code></dt><dd> 
+<p>a numeric vector, summary score when given active substance.
+</p>
+</dd>
+<dt><code>vas.plac</code></dt><dd>
+<p>a numeric vector, summary score when given placebo treatment.
+</p>
+</dd>
+<dt><code>grp</code></dt><dd>
+<p>a numeric vector code, 1: placebo first, 2: active first.
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Original data.
+</p>
+
+
+<h3>References</h3>
+
+<p>M.Ashina et al. (1999), Effect of inhibition of nitric oxide
+synthase on chronic tension-type headache: a randomised crossover
+trial. <em>Lancet</em> 353, 287&ndash;289
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(vas.active~vas.plac,pch=grp,data=ashina)
+abline(0,1)
+</pre>
+
+
+</body></html>

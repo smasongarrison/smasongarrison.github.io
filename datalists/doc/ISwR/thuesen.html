@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ventricular shortening velocity</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for thuesen"><tr><td>thuesen</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Ventricular shortening velocity</h2>
+
+<h3>Description</h3>
+
+<p>The <code>thuesen</code> data frame has 24 rows and 2 columns.
+It contains ventricular shortening velocity and blood glucose for type 1
+diabetic patients.  
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>thuesen</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>blood.glucose</code></dt><dd>
+<p>a numeric vector, fasting blood glucose (mmol/l).
+</p>
+</dd>
+<dt><code>short.velocity</code></dt><dd> 
+<p>a numeric vector, mean circumferential shortening velocity (%/s).
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>D.G. Altman (1991), <em>Practical Statistics for Medical Research</em>, Table
+11.6, Chapman &amp; Hall.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot(short.velocity~blood.glucose, data=thuesen)
+</pre>
+
+
+</body></html>

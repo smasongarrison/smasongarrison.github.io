@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Tuberculin dilution assay</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for tb.dilute"><tr><td>tb.dilute</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Tuberculin dilution assay</h2>
+
+<h3>Description</h3>
+
+<p>The <code>tb.dilute</code> data frame has 18 rows and 3 columns. It contains
+data from a drug test involving dilutions of tuberculin.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>tb.dilute</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>reaction</code></dt><dd><p>a numeric vector, reaction sizes (average of diameters) for tuberculin skin pricks.</p>
+</dd>
+<dt><code>animal</code></dt><dd><p>a factor with levels <code>1</code>&ndash;<code>6</code>.</p>
+</dd>
+<dt><code>logdose</code></dt><dd><p>a factor with levels <code>0.5</code>, <code>0</code>, and <code>-0.5</code>.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The actual dilutions were 1:100, <i>1:100&radic;{10}</i>, 1:1000. 
+Setting the middle one to 1 and using base-10 logarithms gives 
+the <code>logdose</code> values.</p>
+
+
+<h3>Source</h3>
+
+<p>Anon. (1977), <em>Exercises in Applied Statistics</em>, part of Exercise 4.15,
+Dept.\ of 
+Theoretical Statistics,  
+Aarhus University.
+</p>
+
+
+</body></html>
