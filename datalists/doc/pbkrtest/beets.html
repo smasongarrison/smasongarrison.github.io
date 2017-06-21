@@ -1,33 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Yield and sugar percentage in sugar beets from a split plot...</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: beets data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for beets"><tr><td>beets</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for data-beets"><tr><td>data-beets</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Yield and sugar percentage in sugar beets from a split plot experiment.
-</h2>
+<h2>beets data</h2>
 
 <h3>Description</h3>
 
-<p>Data is obtained from a split plot experiment. There are 3 blocks and
-in each of these the harvest time defines the &quot;whole plot&quot; and the
-sowing time defines the &quot;split plot&quot;. Each plot was <i>25 m^2</i> and
-the yield is recorded in kg. See 'details' for the experimental layout.  
+<p>Yield and sugar percentage in sugar beets from a split plot
+experiment.  Data is obtained from a split plot experiment. There are 3
+blocks and in each of these the harvest time defines the &quot;whole plot&quot; and
+the sowing time defines the &quot;split plot&quot;. Each plot was <i>25 m^2</i> and
+the yield is recorded in kg. See 'details' for the experimental layout.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(beets)</pre>
+<pre>
+beets
+</pre>
 
 
 <h3>Format</h3>
 
-<p>The format is:
-chr &quot;beets&quot;
-</p>
+<p>The format is: chr &quot;beets&quot;</p>
 
 
 <h3>Details</h3>
@@ -53,15 +52,24 @@ Plot allocation:
 </pre>
 
 
+<h3>References</h3>
+
+<p>Ulrich Halekoh, Søren Højsgaard (2014)., A Kenward-Roger
+Approximation and Parametric Bootstrap Methods for Tests in Linear Mixed
+Models - The R Package pbkrtest., Journal of Statistical Software,
+58(10), 1-30., <a href="http://www.jstatsoft.org/v59/i09/">http://www.jstatsoft.org/v59/i09/</a>
+</p>
+
+
 <h3>Examples</h3>
 
 <pre>
 data(beets)
-## maybe str(beets) ; plot(beets) ...
 
 beets$bh &lt;- with(beets, interaction(block, harvest))
-summary(aov(yield~block+sow+harvest+Error(bh), beets))
-summary(aov(sugpct~block+sow+harvest+Error(bh), beets))
+summary(aov(yield ~ block + sow + harvest + Error(bh), beets))
+summary(aov(sugpct ~ block + sow + harvest + Error(bh), beets))
+
 </pre>
 
 

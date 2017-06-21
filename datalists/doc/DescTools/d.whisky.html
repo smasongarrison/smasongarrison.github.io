@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Classification of Scotch Single Malts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for d.whisky"><tr><td>d.whisky</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Classification of Scotch Single Malts
+
+</h2>
+
+<h3>Description</h3>
+
+<p>86 malt whiskies are scored between 0-4 for 12 different taste categories including sweetness, smoky, nutty etc. Additionally, coordinates of distilleries allow us to obtain pairwise distance information. Using a combination of these variables it is possible to look for correlations between particular attributes of taste and physical location, for example does a shared local resource have a significant effect on nearby whiskies.<br />
+By using correlation analysis it may be possible to provide whisky recommendations based upon an individual's particular preferences.
+By computing the Pearson correlation coefficient and specifying a threshold value between 0 and 1, we can establish an adjacency matrix where each node is a malt whisky and an edge represents a level of similarity above the threshold.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data("d.whisky")</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 86 observations on the following 16 variables.
+</p>
+
+<dl>
+<dt><code>distillery</code></dt><dd><p>a factor with levels <code>Aberfeldy</code>, <code>Aberlour</code>, <code>AnCnoc</code>, <code>Ardbeg</code>, ... </p>
+</dd>
+<dt><code>body</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>sweetness</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>smoky</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>medicinal</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>tobacco</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>honey</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>spicy</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>winey</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>nutty</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>malty</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>fruity</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>floral</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>postcode</code></dt><dd><p>a factor with levels <code> AB30 1YE</code>, <code> AB35 5TB</code>, ... </p>
+</dd>
+<dt><code>latitude</code></dt><dd><p>a numeric vector, coordinate pairs of distilleries.</p>
+</dd>
+<dt><code>longitude</code></dt><dd><p>a numeric vector, coordinate pairs of distilleries.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><a href="http://www.mathstat.strath.ac.uk/outreach/nessie/nessie_whisky.html">http://www.mathstat.strath.ac.uk/outreach/nessie/nessie_whisky.html</a>
+
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.mathstat.strath.ac.uk/outreach/nessie/index.html">http://www.mathstat.strath.ac.uk/outreach/nessie/index.html</a>
+
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+head(d.whisky)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,79 @@
+"","rank","suit","desc"
+"1","1","wands",NA
+"2","2","wands",NA
+"3","3","wands",NA
+"4","4","wands",NA
+"5","5","wands",NA
+"6","6","wands",NA
+"7","7","wands",NA
+"8","8","wands",NA
+"9","9","wands",NA
+"10","10","wands",NA
+"11","page","wands",NA
+"12","knight","wands",NA
+"13","queen","wands",NA
+"14","king","wands",NA
+"15","1","coins",NA
+"16","2","coins",NA
+"17","3","coins",NA
+"18","4","coins",NA
+"19","5","coins",NA
+"20","6","coins",NA
+"21","7","coins",NA
+"22","8","coins",NA
+"23","9","coins",NA
+"24","10","coins",NA
+"25","page","coins",NA
+"26","knight","coins",NA
+"27","queen","coins",NA
+"28","king","coins",NA
+"29","1","cups",NA
+"30","2","cups",NA
+"31","3","cups",NA
+"32","4","cups",NA
+"33","5","cups",NA
+"34","6","cups",NA
+"35","7","cups",NA
+"36","8","cups",NA
+"37","9","cups",NA
+"38","10","cups",NA
+"39","page","cups",NA
+"40","knight","cups",NA
+"41","queen","cups",NA
+"42","king","cups",NA
+"43","1","swords",NA
+"44","2","swords",NA
+"45","3","swords",NA
+"46","4","swords",NA
+"47","5","swords",NA
+"48","6","swords",NA
+"49","7","swords",NA
+"50","8","swords",NA
+"51","9","swords",NA
+"52","10","swords",NA
+"53","page","swords",NA
+"54","knight","swords",NA
+"55","queen","swords",NA
+"56","king","swords",NA
+"57","0","trumps","The Fool"
+"58","1","trumps","The Magician"
+"59","2","trumps","The High Priestess"
+"60","3","trumps","The Empress"
+"61","4","trumps","The Emperor"
+"62","5","trumps","The Hierophant"
+"63","6","trumps","The Lovers"
+"64","7","trumps","The Chariot"
+"65","8","trumps","Strength"
+"66","9","trumps","The Hermit"
+"67","10","trumps","Wheel of Fortune"
+"68","11","trumps","Justice"
+"69","12","trumps","The Hanged Man"
+"70","13","trumps","Death"
+"71","14","trumps","Temperance"
+"72","15","trumps","The Devil"
+"73","16","trumps","The Tower"
+"74","17","trumps","The Star"
+"75","18","trumps","The Moon"
+"76","19","trumps","The Sun"
+"77","20","trumps","Judgment"
+"78","21","trumps","The World"

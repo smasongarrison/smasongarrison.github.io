@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Tree Growth Data for Ponderosa Pine</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ppine"><tr><td>ppine</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Tree Growth Data for Ponderosa Pine</h2>
+
+<h3>Description</h3>
+
+<p>A subset of tree growth observations from a Ponderosa pine growth database.
+</p>
+<p>The <code>ppine</code> data frame has 166 rows and 8 columns.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(ppine)</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>elev</dt><dd>
+<p>Altitude of the plot, in feet above mean sea level.
+</p>
+</dd>
+<dt>smi</dt><dd>
+<p>Summer moisture index is the ratio of growing season heating
+degree days to growing season precipitation.
+</p>
+</dd>
+<dt>dbh</dt><dd>
+<p>Diameter of the tree at breast height (4.5 feet).
+</p>
+</dd>
+<dt>tht</dt><dd>
+<p>Total stem height for the tree.
+</p>
+</dd>
+<dt>cr</dt><dd>
+<p>Crown ratio code. The scale is from 1 to 9 where a crown class of
+one represents a crown ratio between 0 and 15 percent. A crown
+ratio code of 2 represents a crown ratio value between 16 and
+25%,...,8=76-85%, 9 &gt;=85%.
+</p>
+</dd>
+<dt>ba</dt><dd>
+<p>Plot basal area at the beginning of the growth period.
+</p>
+</dd>
+<dt>dg</dt><dd>
+<p>Five-year diameter increment.
+</p>
+</dd>
+<dt>hg</dt><dd>
+<p>Five-year height increment.
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The exogenous variables are <code>elev</code>, <code>smi</code>, <code>dbh</code>,
+<code>tht</code>, <code>cr</code>, and <code>ba</code>; the endogenous variables
+<code>dg</code> and <code>hg</code>. There are no lagged  variables in the dataset
+and the observations are for a single remeasurement.
+</p>
+<p>The data was provided by the USDA Forest Service Intermountain
+Research Station.
+</p>
+
+
+
+
+
+<h3>Source</h3>
+
+<p>William R. Wykoff <a href="mailto:wwykoff@fs.fed.us">wwykoff@fs.fed.us</a> <em>Rocky Mountain Research Station, 1221 South Main Street, Moscow, ID 83843</em>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(ppine)
+</pre>
+
+
+</body></html>

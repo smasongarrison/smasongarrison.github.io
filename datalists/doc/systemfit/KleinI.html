@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Klein Model I</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for KleinI"><tr><td>KleinI</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Klein Model I</h2>
+
+<h3>Description</h3>
+
+<p>Data for Klein's (1950) Model I of the US economy.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data("KleinI")</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame containing annual observations from 1920 to 1941
+</p>
+
+<dl>
+<dt>year</dt><dd><p>Year.</p>
+</dd>
+<dt>consump</dt><dd><p>Consumption.</p>
+</dd>
+<dt>corpProf</dt><dd><p>Corporate profits.</p>
+</dd>
+<dt>corpProfLag</dt><dd><p>Corporate profits of the previous year.</p>
+</dd>
+<dt>privWage</dt><dd><p>Private wage bill.</p>
+</dd>
+<dt>invest</dt><dd><p>Investment.</p>
+</dd>
+<dt>capitalLag</dt><dd><p>Capital stock of the previous year.</p>
+</dd>
+<dt>gnp</dt><dd><p>Gross national product.</p>
+</dd>
+<dt>gnpLag</dt><dd><p>Gross national product of the previous year.</p>
+</dd>
+<dt>govWage</dt><dd><p>Government wage bill.</p>
+</dd>
+<dt>govExp</dt><dd><p>Government spending.</p>
+</dd>
+<dt>taxes</dt><dd><p>Taxes.</p>
+</dd>
+<dt>wages</dt><dd><p>Sum of private and government wage bill.</p>
+</dd>
+<dt>trend</dt><dd><p>time trend measured as years from 1931.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Greene (2003), Appendix F, Data Sets Used in Applications, Table F15.1.
+</p>
+<p><a href="http://pages.stern.nyu.edu/~wgreene/Text/econometricanalysis.htm">http://pages.stern.nyu.edu/~wgreene/Text/econometricanalysis.htm</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Greene, W.H. (2003). <em>Econometric Analysis</em>, 5th edition. Prentice Hall,
+Upper Saddle River (NJ).
+</p>
+<p>Klein, L. (1950). <em>Economic Fluctuations in the United States, 1921&ndash;1941</em>.
+John Wiley, New York.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Repeating the estimations of Klein's (1950) Model I
+## in Greene (2003, pp. 381 and 412)
+data( "KleinI" )
+eqConsump  &lt;- consump ~ corpProf + corpProfLag + wages
+eqInvest   &lt;- invest ~ corpProf + corpProfLag + capitalLag
+eqPrivWage &lt;- privWage ~ gnp + gnpLag + trend
+inst &lt;- ~ govExp + taxes + govWage + trend + capitalLag + corpProfLag + gnpLag
+system &lt;- list( Consumption = eqConsump, Investment = eqInvest,
+   PrivateWages = eqPrivWage )
+# OLS
+kleinOls &lt;- systemfit( system, data = KleinI )
+summary( kleinOls )
+# 2SLS
+klein2sls &lt;- systemfit( system, "2SLS", inst = inst, data = KleinI,
+   methodResidCov = "noDfCor" )
+summary( klein2sls )
+# 3SLS
+klein3sls &lt;- systemfit( system, "3SLS", inst = inst, data = KleinI,
+   methodResidCov = "noDfCor" )
+summary( klein3sls )
+# I3SLS
+kleinI3sls &lt;- systemfit( system, "3SLS", inst = inst, data = KleinI,
+   methodResidCov = "noDfCor", maxit = 500 )
+summary( kleinI3sls )
+</pre>
+
+
+</body></html>

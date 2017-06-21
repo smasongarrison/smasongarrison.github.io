@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Zuni data from the law case: Zuni Public School v. United...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for zuni"><tr><td>zuni</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>The Zuni data from the law case: Zuni Public School v. United States
+Department of Education</h2>
+
+<h3>Description</h3>
+
+<p>Number of students and available revenue per pupil
+in each school district in New Mexico
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>zuni</pre>
+
+
+<h3>Format</h3>
+
+<p>A multivariate time series with 89 observations on 4 variables: District, Revenue and Mem
+(number of students). The object is of class &quot;mts&quot;.
+</p>
+
+
+<h3>Details</h3>
+
+<p>The Zuni data come from a law case &quot;The Zuni Public School District
+No. 89, Gallup-McKinley County Public School District No. 1,
+Petitioners v. United States Department of Education&quot; concerning
+whether the revenue per pupil data satisfied a standard for &quot;equal&quot;
+expenditures per-pupil in a state. This classification determines
+whether most of the federal money given to the state under the law
+goes to the state or to the local school districts.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Gastwirth, J. L. (2006). <em>A Sixty Million Dollar Statistical
+Issue Arising in the Interpretation and Calculation of a Measure of
+Relative Disparity Mandated by Law: Zuni Public School District 89
+v. U.S. Department of Education.</em> (working paper, Department of Statistics,
+George Washington University).
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(zuni)
+hist(zuni[,"Revenue"], br=40, col="blue", main="The Zuni Revenue")
+</pre>
+
+
+</body></html>

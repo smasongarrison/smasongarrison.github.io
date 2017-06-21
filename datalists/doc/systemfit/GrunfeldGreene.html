@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Grunfeld Data as published by Greene (2003)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for GrunfeldGreene"><tr><td>GrunfeldGreene</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Grunfeld Data as published by Greene (2003)</h2>
+
+<h3>Description</h3>
+
+<p>Panel data on 5 US firms for the years 1935-1954.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+   data("GrunfeldGreene")
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame containing 20 annual observations on 3 variables for 5 firms.
+</p>
+
+<dl>
+<dt>invest</dt><dd><p>gross investment.</p>
+</dd>
+<dt>value</dt><dd><p>market value of the firm (at the end of the previous year).</p>
+</dd>
+<dt>capital</dt><dd><p>capital stock of the firm (at the end of the previous year).</p>
+</dd>
+<dt>firm</dt><dd><p>name of the firm (&quot;General Motors&quot;, &quot;Chrysler&quot;,
+&quot;General Electric&quot;, &quot;Westinghouse&quot; or &quot;US Steel&quot;).</p>
+</dd>
+<dt>year</dt><dd><p>year.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>There exist several different versions of this data set,
+and this version is considered incorrect
+(see <a href="http://www.stanford.edu/~clint/bench/grunfeld.htm">http://www.stanford.edu/~clint/bench/grunfeld.htm</a> for details).
+However, we provide this incorrect version to replicate the results
+published in Theil (1971) and Greene (2003).
+A correct version of this data set with 5 additional firms
+is available in the <code>Ecdat</code> package
+(data set <code>Grunfeld</code>).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Greene (2003), Appendix F, Data Sets Used in Applications, Table F13.1.
+<a href="http://pages.stern.nyu.edu/~wgreene/Text/econometricanalysis.htm">http://pages.stern.nyu.edu/~wgreene/Text/econometricanalysis.htm</a>
+(a subset of this data set is available in Theil (1971), p. 296).
+</p>
+
+
+<h3>References</h3>
+
+<p>Greene, W.H. (2003). <em>Econometric Analysis</em>, 5th edition. Prentice Hall,
+Upper Saddle River (NJ).
+</p>
+<p>Grunfeld, Y. (1958). <em>The Determinants of Corporate Investment</em>,
+Unpublished Ph.D. Dissertation, University of Chicago.
+</p>
+<p>Theil, Henri (1971). <em>Principles of Econometrics</em>,
+John Wiley &amp; Sons, New York.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Repeating the OLS and SUR estimations in Greene (2003, pp. 351)
+data( "GrunfeldGreene" )
+library( "plm" )
+GGPanel &lt;- pdata.frame( GrunfeldGreene, c( "firm", "year" ) )
+formulaGrunfeld &lt;- invest ~ value + capital
+# OLS
+greeneOls &lt;- systemfit( formulaGrunfeld, "OLS",
+   data = GGPanel )
+summary( greeneOls )
+sapply( greeneOls$eq, function(x){return(summary(x)$ssr/20)} ) # sigma^2
+# OLS Pooled
+greeneOlsPooled &lt;- systemfit( formulaGrunfeld, "OLS",
+   data = GGPanel, pooled = TRUE )
+summary( greeneOlsPooled )
+sum( sapply( greeneOlsPooled$eq, function(x){return(summary(x)$ssr)}) )/97 # sigma^2
+# SUR
+greeneSur &lt;- systemfit( formulaGrunfeld, "SUR",
+   data = GGPanel, methodResidCov = "noDfCor" )
+summary( greeneSur )
+# SUR Pooled
+greeneSurPooled &lt;- systemfit( formulaGrunfeld, "SUR",
+   data = GGPanel, pooled = TRUE, methodResidCov = "noDfCor",
+   residCovWeighted = TRUE )
+summary( greeneSurPooled )
+
+## Repeating the OLS and SUR estimations in Theil (1971, pp. 295, 300)
+GrunfeldTheil &lt;- subset( GrunfeldGreene,
+   firm %in% c( "General Electric", "Westinghouse" ) )
+GTPanel &lt;- pdata.frame( GrunfeldTheil, c( "firm", "year" ) )
+formulaGrunfeld &lt;- invest ~ value + capital
+# OLS
+theilOls &lt;- systemfit( formulaGrunfeld, "OLS",
+   data = GTPanel )
+summary( theilOls )
+# SUR
+theilSur &lt;- systemfit( formulaGrunfeld, "SUR",
+   data = GTPanel, methodResidCov = "noDfCor" )
+summary( theilSur )
+</pre>
+
+
+</body></html>

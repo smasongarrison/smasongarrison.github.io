@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data pizza</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for d.pizza"><tr><td>d.pizza</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Data pizza
+
+</h2>
+
+<h3>Description</h3>
+
+<p>An artificial dataset inspired by a similar dataset pizza.sav in <em>Arbeitsbuch zur deskriptiven und induktiven Statistik</em> by Toutenburg et.al.<br />
+The dataset contains data of a pizza delivery service in London, delivering pizzas to three areas. Every record defines one order/delivery and the according properties. A pizza is supposed to taste good, if it's temperature is high enough, say 45 Celsius. So it might be interesting for the pizza delivery service to minimize the delivery time.<br />
+The dataset is designed to be possibly evil. It contains the most used datatypes as numerics, factors, ordered factors, integers, logicals and a date. NAs are scattered everywhere, besides in the index.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(d.pizza)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 1209 observations on the following 17 variables.
+</p>
+
+<dl>
+<dt><code>index</code></dt><dd><p>a numeric vector, indexing the records (no missings here).</p>
+</dd>
+<dt><code>date</code></dt><dd><p>Date, the delivery date</p>
+</dd>
+<dt><code>week</code></dt><dd><p>integer, the weeknumber</p>
+</dd>
+<dt><code>weekday</code></dt><dd><p>integer, the weekday</p>
+</dd>
+<dt><code>area</code></dt><dd><p>factor, the three London districts: <code>Brent</code>, <code>Camden</code>, <code>Westminster</code> </p>
+</dd>
+<dt><code>count</code></dt><dd><p>integer, the number of pizzas delivered</p>
+</dd>
+<dt><code>rabate</code></dt><dd><p>logical, <code>TRUE</code> if a rabate has been given </p>
+</dd>
+<dt><code>price</code></dt><dd><p>numeric, the total price of delivered pizza(s) </p>
+</dd>
+<dt><code>operator</code></dt><dd><p>a factor with levels <code>Allanah</code> <code>Maria</code> <code>Rhonda</code></p>
+</dd>
+<dt><code>driver</code></dt><dd><p>a factor with levels <code>Carpenter</code> <code>Carter</code> <code>Taylor</code> <code>Butcher</code> <code>Hunter</code> <code>Miller</code> <code>Farmer</code></p>
+</dd>
+<dt><code>delivery_min</code></dt><dd><p>numeric, the delivery time in minutes (decimal)</p>
+</dd>
+<dt><code>temperature</code></dt><dd><p>numeric, the temperature of the pizza in degrees Celsius when delivered to the customer </p>
+</dd>
+<dt><code>wine_ordered</code></dt><dd><p>integer, 1 if wine was ordered, 0 if not</p>
+</dd>
+<dt><code>wine_delivered</code></dt><dd><p>integer, 1 if wine was delivered, 0 if not</p>
+</dd>
+<dt><code>wrongpizza</code></dt><dd><p>logical, <code>TRUE</code> if a wrong pizza was delivered </p>
+</dd>
+<dt><code>quality</code></dt><dd><p>ordered factor with levels <code>low</code> &lt; <code>medium</code> &lt; <code>high</code>, defining the quality of the pizza when delivered</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The dataset contains NAs randomly scattered.
+
+</p>
+
+
+<h3>References</h3>
+
+<p>Toutenburg H, Schomaker M, Wissmann M, Heumann C (2009): <em>Arbeitsbuch zur deskriptiven und induktiven Statistik</em> Springer, Berlin Heidelberg 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(d.pizza)
+head(d.pizza)
+
+Desc(d.pizza)
+</pre>
+
+
+</body></html>

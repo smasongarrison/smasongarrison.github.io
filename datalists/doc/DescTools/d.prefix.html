@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Unit Conversion</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for UnitConv"><tr><td>UnitConv</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Unit Conversion
+
+</h2>
+
+<h3>Description</h3>
+
+<p>Convert a number from one measurement system to another. The function can translate a table of distances in miles to a table of distances in kilometers.
+
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+UnitConv(x, from_unit, to_unit)
+
+data(d.units)
+data(d.prefix)
+
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>the numeric to be converted.
+
+</p>
+</td></tr>
+<tr valign="top"><td><code>from_unit</code></td>
+<td>
+<p>a character defining the original unit. 
+
+</p>
+</td></tr>
+<tr valign="top"><td><code>to_unit</code></td>
+<td>
+<p>a character defining the target unit.
+
+</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The following units can be chosen. Conversions will work with units within the group. <code>NA</code> wil be returned if a conversion can't be found. <br />
+The multipliers can be found in the dataset <code>d.units</code>.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+<tr>
+ <td style="text-align: left;"></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<b>Weight and mass</b></td><td style="text-align: left;"> </td><td style="text-align: left;"></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Gram  </td><td style="text-align: left;"> g </td><td style="text-align: left;"> metric</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Slug  </td><td style="text-align: left;"> sg </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Pound mass (avoirdupois)  </td><td style="text-align: left;"> lbm </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+U (atomic mass unit)  </td><td style="text-align: left;"> u </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Ounce mass (avoirdupois)  </td><td style="text-align: left;"> ozm </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+<tr>
+ <td style="text-align: left;"><b>Distance</b></td><td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Meter  </td><td style="text-align: left;">  m </td><td style="text-align: left;"> metric </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Statute mile  </td><td style="text-align: left;"> mi </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Nautical mile  </td><td style="text-align: left;"> Nmi </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Inch  </td><td style="text-align: left;"> in </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Foot  </td><td style="text-align: left;"> ft </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Yard  </td><td style="text-align: left;"> yd </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Angstrom  </td><td style="text-align: left;"> ang </td><td style="text-align: left;"> metric </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Pica  </td><td style="text-align: left;"> pica </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  </td><td style="text-align: left;">  </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+<tr>
+ <td style="text-align: left;"><b>Time</b></td><td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Year  </td><td style="text-align: left;"> yr </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Day  </td><td style="text-align: left;"> day </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Hour  </td><td style="text-align: left;"> hr </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Minute  </td><td style="text-align: left;"> mn </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Second  </td><td style="text-align: left;"> sec </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+<tr>
+ <td style="text-align: left;"><b>Pressure</b></td><td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Pascal  </td><td style="text-align: left;"> Pa (or p) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Atmosphere  </td><td style="text-align: left;"> atm (or at) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+mm of Mercury  </td><td style="text-align: left;"> mmHg </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  </td><td style="text-align: left;">  </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+<tr>
+ <td style="text-align: left;"><b>Force</b></td><td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Newton  </td><td style="text-align: left;"> N </td><td style="text-align: left;"> metric </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Dyne  </td><td style="text-align: left;"> dyn (or dy) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Pound force  </td><td style="text-align: left;"> lbf </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+<tr>
+ <td style="text-align: left;"><b>Energy</b></td><td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Joule  </td><td style="text-align: left;"> J </td><td style="text-align: left;"> metric </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Erg  </td><td style="text-align: left;"> e </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Thermodynamic calorie  </td><td style="text-align: left;"> c </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+IT calorie  </td><td style="text-align: left;"> cal </td><td style="text-align: left;"> metric </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Electron volt  </td><td style="text-align: left;"> eV (or ev) </td><td style="text-align: left;"> metric </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Horsepower-hour  </td><td style="text-align: left;"> HPh (or hh) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Watt-hour  </td><td style="text-align: left;"> Wh (or wh) </td><td style="text-align: left;"> metric </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Foot-pound  </td><td style="text-align: left;"> flb </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+BTU  </td><td style="text-align: left;"> BTU (or btu) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  </td><td style="text-align: left;">  </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+<tr>
+ <td style="text-align: left;"><b>Power</b></td><td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Horsepower  </td><td style="text-align: left;"> HP (or h) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Watt  </td><td style="text-align: left;"> W (or w) </td><td style="text-align: left;"> metric </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+<tr>
+ <td style="text-align: left;"><b>Magnetism</b></td><td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Tesla  </td><td style="text-align: left;"> T </td><td style="text-align: left;"> metric </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Gauss  </td><td style="text-align: left;"> ga </td><td style="text-align: left;"> metric </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  </td><td style="text-align: left;">  </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+<tr>
+ <td style="text-align: left;"><b>Temperature</b></td><td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Degree Celsius  </td><td style="text-align: left;"> C (or cel) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Degree Fahrenheit  </td><td style="text-align: left;"> F (or fah) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Kelvin  </td><td style="text-align: left;"> K (or kel) </td><td style="text-align: left;"> metric </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+<tr>
+ <td style="text-align: left;"><b>Liquid measure</b></td><td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Teaspoon  </td><td style="text-align: left;"> tsp </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Tablespoon  </td><td style="text-align: left;"> tbs </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Fluid ounce  </td><td style="text-align: left;"> oz </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Cup  </td><td style="text-align: left;"> cup </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+U.S. pint  </td><td style="text-align: left;"> pt (or us_pt) </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+U.K. pint  </td><td style="text-align: left;"> uk_pt </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Quart  </td><td style="text-align: left;"> qt </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Gallon  </td><td style="text-align: left;"> gal </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Liter  </td><td style="text-align: left;"> l (or lt) </td><td style="text-align: left;"> metric </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+
+</table>
+
+<p>All the details can be found in the <code>d.units</code> data.frame.
+</p>
+
+
+
+<h3>Author(s)</h3>
+
+<p>Andri Signorell &lt;andri@signorell.net&gt;
+
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+UnitConv(c(1.2, 5.4, 6.7), "in", "m")
+</pre>
+
+
+</body></html>

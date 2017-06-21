@@ -1,0 +1,250 @@
+"","name","a2","a3","code","region","pop2012","gcpi2012"
+"1","Afghanistan","AF","AFG",4,"South Asia",29824536,690
+"2","Aland Islands","AX","ALA",248,NA,NA,NA
+"3","Albania","AL","ALB",8,"Europe & Central Asia",2801681,4520
+"4","Algeria","DZ","DZA",12,"Middle East & North Africa",38481705,4970
+"5","American Samoa","AS","ASM",16,"East Asia & Pacific",55128,NA
+"6","Andorra","AD","AND",20,NA,NA,NA
+"7","Angola","AO","AGO",24,"Sub-Saharan Africa",20820525,4510
+"8","Anguilla","AI","AIA",660,NA,NA,NA
+"9","Antarctica","AQ","ATA",10,NA,NA,NA
+"10","Antigua and Barbuda","AG","ATG",28,"Latin America & Caribbean",89069,12720
+"11","Argentina","AR","ARG",32,"Latin America & Caribbean",41086927,NA
+"12","Armenia","AM","ARM",51,"Europe & Central Asia",2969081,3770
+"13","Aruba","AW","ABW",533,"Latin America & Caribbean",102384,NA
+"14","Australia","AU","AUS",36,"East Asia & Pacific",22723900,59790
+"15","Austria","AT","AUT",40,"Europe & Central Asia",8429991,47960
+"16","Azerbaijan","AZ","AZE",31,"Europe & Central Asia",9295784,6290
+"17","Bahamas","BS","BHS",44,"Latin America & Caribbean",371960,20600
+"18","Bahrain","BH","BHR",48,"Middle East & North Africa",1317827,19560
+"19","Bangladesh","BD","BGD",50,"South Asia",154695368,830
+"20","Barbados","BB","BRB",52,"Latin America & Caribbean",283221,15080
+"21","Belarus","BY","BLR",112,"Europe & Central Asia",9464000,6400
+"22","Belgium","BE","BEL",56,"Europe & Central Asia",11128246,44810
+"23","Belize","BZ","BLZ",84,"Latin America & Caribbean",324060,4620
+"24","Benin","BJ","BEN",204,"Sub-Saharan Africa",10050702,750
+"25","Bermuda","BM","BMU",60,"North America",64798,104610
+"26","Bhutan","BT","BTN",64,"South Asia",741822,2420
+"27","Bolivia, Plurinational State of","BO","BOL",68,"Latin America & Caribbean",10496285,2220
+"28","Bonaire, Sint Eustatius and Saba","BQ","BES",535,NA,NA,NA
+"29","Bosnia and Herzegovina","BA","BIH",70,"Europe & Central Asia",3833916,4600
+"30","Botswana","BW","BWA",72,"Sub-Saharan Africa",2003910,7650
+"31","Bouvet Island","BV","BVT",74,NA,NA,NA
+"32","Brazil","BR","BRA",76,"Latin America & Caribbean",198656019,11640
+"33","British Indian Ocean Territory","IO","IOT",86,NA,NA,NA
+"34","Brunei Darussalam","BN","BRN",96,"East Asia & Pacific",412238,NA
+"35","Bulgaria","BG","BGR",100,"Europe & Central Asia",7305888,6850
+"36","Burkina Faso","BF","BFA",854,"Sub-Saharan Africa",16460141,670
+"37","Burundi","BI","BDI",108,"Sub-Saharan Africa",9849569,240
+"38","Cambodia","KH","KHM",116,"East Asia & Pacific",14864646,880
+"39","Cameroon","CM","CMR",120,"Sub-Saharan Africa",21699631,1190
+"40","Canada","CA","CAN",124,"North America",34754312,50650
+"41","Cabo Verde","CV","CPV",132,"Sub-Saharan Africa",494401,3610
+"42","Cayman Islands","KY","CYM",136,"Latin America & Caribbean",57570,NA
+"43","Central African Republic","CF","CAF",140,"Sub-Saharan Africa",4525209,490
+"44","Chad","TD","TCD",148,"Sub-Saharan Africa",12448175,970
+"45","Chile","CL","CHL",152,"Latin America & Caribbean",17464814,14290
+"46","China","CN","CHN",156,"East Asia & Pacific",1350695000,5720
+"47","Christmas Island","CX","CXR",162,NA,NA,NA
+"48","Cocos (Keeling) Islands","CC","CCK",166,NA,NA,NA
+"49","Colombia","CO","COL",170,"Latin America & Caribbean",47704427,7010
+"50","Comoros","KM","COM",174,"Sub-Saharan Africa",717503,840
+"51","Congo","CG","COG",178,"Sub-Saharan Africa",4337051,2550
+"52","Congo, the Democratic Republic of the","CD","COD",180,NA,NA,NA
+"53","Cook Islands","CK","COK",184,NA,NA,NA
+"54","Costa Rica","CR","CRI",188,"Latin America & Caribbean",4805295,8850
+"55","Cote d'Ivoire","CI","CIV",384,"Sub-Saharan Africa",19839750,1220
+"56","Croatia","HR","HRV",191,"Europe & Central Asia",4267558,13260
+"57","Cuba","CU","CUB",192,"Latin America & Caribbean",11270957,NA
+"58","Curacao","CW","CUW",531,"Latin America & Caribbean",152056,NA
+"59","Cyprus","CY","CYP",196,"Europe & Central Asia",1128994,26390
+"60","Czech Republic","CZ","CZE",203,"Europe & Central Asia",10510785,18130
+"61","Denmark","DK","DNK",208,"Europe & Central Asia",5591572,59860
+"62","Djibouti","DJ","DJI",262,"Middle East & North Africa",859652,NA
+"63","Dominica","DM","DMA",212,"Latin America & Caribbean",71684,6590
+"64","Dominican Republic","DO","DOM",214,"Latin America & Caribbean",10276621,5430
+"65","Ecuador","EC","ECU",218,"Latin America & Caribbean",15492264,5170
+"66","Egypt","EG","EGY",818,"Middle East & North Africa",80721874,2980
+"67","El Salvador","SV","SLV",222,"Latin America & Caribbean",6297394,3600
+"68","Equatorial Guinea","GQ","GNQ",226,"Sub-Saharan Africa",736296,14040
+"69","Eritrea","ER","ERI",232,"Sub-Saharan Africa",6130922,450
+"70","Estonia","EE","EST",233,"Europe & Central Asia",1325016,16360
+"71","Ethiopia","ET","ETH",231,"Sub-Saharan Africa",91728849,410
+"72","Falkland Islands (Malvinas)","FK","FLK",238,NA,NA,NA
+"73","Faroe Islands","FO","FRO",234,"Europe & Central Asia",49506,NA
+"74","Fiji","FJ","FJI",242,"East Asia & Pacific",874742,4010
+"75","Finland","FI","FIN",246,"Europe & Central Asia",5413971,46820
+"76","France","FR","FRA",250,"Europe & Central Asia",65676758,41860
+"77","French Guiana","GF","GUF",254,NA,NA,NA
+"78","French Polynesia","PF","PYF",258,"East Asia & Pacific",273814,NA
+"79","French Southern Territories","TF","ATF",260,NA,NA,NA
+"80","Gabon","GA","GAB",266,"Sub-Saharan Africa",1632572,10020
+"81","Gambia","GM","GMB",270,"Sub-Saharan Africa",1791225,520
+"82","Georgia","GE","GEO",268,"Europe & Central Asia",4490700,3290
+"83","Germany","DE","DEU",276,"Europe & Central Asia",80425823,45170
+"84","Ghana","GH","GHA",288,"Sub-Saharan Africa",25366462,1580
+"85","Gibraltar","GI","GIB",292,NA,NA,NA
+"86","Greece","GR","GRC",300,"Europe & Central Asia",11092771,23670
+"87","Greenland","GL","GRL",304,"Europe & Central Asia",56810,NA
+"88","Grenada","GD","GRD",308,"Latin America & Caribbean",105483,7140
+"89","Guadeloupe","GP","GLP",312,NA,NA,NA
+"90","Guam","GU","GUM",316,"East Asia & Pacific",162810,NA
+"91","Guatemala","GT","GTM",320,"Latin America & Caribbean",15082831,3130
+"92","Guernsey","GG","GGY",831,NA,NA,NA
+"93","Guinea","GN","GIN",324,"Sub-Saharan Africa",11451273,440
+"94","Guinea-Bissau","GW","GNB",624,"Sub-Saharan Africa",1663558,530
+"95","Guyana","GY","GUY",328,"Latin America & Caribbean",795369,3410
+"96","Haiti","HT","HTI",332,"Latin America & Caribbean",10173775,760
+"97","Heard Island and McDonald Islands","HM","HMD",334,NA,NA,NA
+"98","Holy See (Vatican City State)","VA","VAT",336,NA,NA,NA
+"99","Honduras","HN","HND",340,"Latin America & Caribbean",7935846,2140
+"100","Hong Kong","HK","HKG",344,"East Asia & Pacific",7154600,36280
+"101","Hungary","HU","HUN",348,"Europe & Central Asia",9920362,12410
+"102","Iceland","IS","ISL",352,"Europe & Central Asia",320716,38370
+"103","India","IN","IND",356,"South Asia",1236686732,1550
+"104","Indonesia","ID","IDN",360,"East Asia & Pacific",246864191,3420
+"105","Iran, Islamic Republic of","IR","IRN",364,"Middle East & North Africa",76424443,6570
+"106","Iraq","IQ","IRQ",368,"Middle East & North Africa",32578209,6130
+"107","Ireland","IE","IRL",372,"Europe & Central Asia",4586897,39110
+"108","Isle of Man","IM","IMN",833,NA,NA,NA
+"109","Israel","IL","ISR",376,"Middle East & North Africa",7910500,32030
+"110","Italy","IT","ITA",380,"Europe & Central Asia",59539717,34810
+"111","Jamaica","JM","JAM",388,"Latin America & Caribbean",2707805,5190
+"112","Japan","JP","JPN",392,"East Asia & Pacific",127561489,47690
+"113","Jersey","JE","JEY",832,NA,NA,NA
+"114","Jordan","JO","JOR",400,"Middle East & North Africa",6318000,4660
+"115","Kazakhstan","KZ","KAZ",398,"Europe & Central Asia",16791425,9780
+"116","Kenya","KE","KEN",404,"Sub-Saharan Africa",43178141,870
+"117","Kiribati","KI","KIR",296,"East Asia & Pacific",100786,2520
+"118","Korea, Democratic People's Republic of","KP","PRK",408,"East Asia & Pacific",24763188,NA
+"119","Korea, Republic of","KR","KOR",410,"East Asia & Pacific",50004441,24640
+"120","Kuwait","KW","KWT",414,"Middle East & North Africa",3250496,NA
+"121","Kyrgyzstan","KG","KGZ",417,"Europe & Central Asia",5607200,1040
+"122","Lao People's Democratic Republic","LA","LAO",418,"East Asia & Pacific",6645827,1270
+"123","Latvia","LV","LVA",428,"Europe & Central Asia",2034319,14060
+"124","Lebanon","LB","LBN",422,"Middle East & North Africa",4424888,9520
+"125","Lesotho","LS","LSO",426,"Sub-Saharan Africa",2051545,1480
+"126","Liberia","LR","LBR",430,"Sub-Saharan Africa",4190435,370
+"127","Libya","LY","LBY",434,"Middle East & North Africa",6154623,NA
+"128","Liechtenstein","LI","LIE",438,"Europe & Central Asia",36656,NA
+"129","Lithuania","LT","LTU",440,"Europe & Central Asia",2987773,13820
+"130","Luxembourg","LU","LUX",442,"Europe & Central Asia",530946,71810
+"131","Macao","MO","MAC",446,"East Asia & Pacific",556783,64050
+"132","Macedonia, the former Yugoslav Republic of","MK","MKD",807,"Europe & Central Asia",2105575,4710
+"133","Madagascar","MG","MDG",450,"Sub-Saharan Africa",22293914,420
+"134","Malawi","MW","MWI",454,"Sub-Saharan Africa",15906483,320
+"135","Malaysia","MY","MYS",458,"East Asia & Pacific",29239927,9820
+"136","Maldives","MV","MDV",462,"South Asia",338442,5430
+"137","Mali","ML","MLI",466,"Sub-Saharan Africa",14853572,660
+"138","Malta","MT","MLT",470,"Middle East & North Africa",419455,19730
+"139","Marshall Islands","MH","MHL",584,"East Asia & Pacific",52555,4130
+"140","Martinique","MQ","MTQ",474,NA,NA,NA
+"141","Mauritania","MR","MRT",478,"Sub-Saharan Africa",3796141,1040
+"142","Mauritius","MU","MUS",480,"Sub-Saharan Africa",1291167,8770
+"143","Mayotte","YT","MYT",175,NA,NA,NA
+"144","Mexico","MX","MEX",484,"Latin America & Caribbean",120847477,9720
+"145","Micronesia, Federated States of","FM","FSM",583,"East Asia & Pacific",103395,3230
+"146","Moldova, Republic of","MD","MDA",498,"Europe & Central Asia",3559519,2150
+"147","Monaco","MC","MCO",492,"Europe & Central Asia",37579,NA
+"148","Mongolia","MN","MNG",496,"East Asia & Pacific",2796484,3080
+"149","Montenegro","ME","MNE",499,"Europe & Central Asia",621081,6950
+"150","Montserrat","MS","MSR",500,NA,NA,NA
+"151","Morocco","MA","MAR",504,"Middle East & North Africa",32521143,2910
+"152","Mozambique","MZ","MOZ",508,"Sub-Saharan Africa",25203395,510
+"153","Myanmar","MM","MMR",104,"East Asia & Pacific",52797319,NA
+"154","Namibia","NA","NAM",516,"Sub-Saharan Africa",2259393,5700
+"155","Nauru","NR","NRU",520,NA,NA,NA
+"156","Nepal","NP","NPL",524,"South Asia",27474377,700
+"157","Netherlands","NL","NLD",528,"Europe & Central Asia",16754962,48110
+"158","New Caledonia","NC","NCL",540,"East Asia & Pacific",258000,NA
+"159","New Zealand","NZ","NZL",554,"East Asia & Pacific",4433000,35520
+"160","Nicaragua","NI","NIC",558,"Latin America & Caribbean",5991733,1690
+"161","Niger","NE","NER",562,"Sub-Saharan Africa",17157042,390
+"162","Nigeria","NG","NGA",566,"Sub-Saharan Africa",168833776,2490
+"163","Niue","NU","NIU",570,NA,NA,NA
+"164","Norfolk Island","NF","NFK",574,NA,NA,NA
+"165","Northern Mariana Islands","MP","MNP",580,"East Asia & Pacific",53305,NA
+"166","Norway","NO","NOR",578,"Europe & Central Asia",5018573,98880
+"167","Oman","OM","OMN",512,"Middle East & North Africa",3314001,25250
+"168","Pakistan","PK","PAK",586,"South Asia",179160111,1250
+"169","Palau","PW","PLW",585,"East Asia & Pacific",20754,10550
+"170","Palestine, State of","PS","PSE",275,NA,NA,NA
+"171","Panama","PA","PAN",591,"Latin America & Caribbean",3802281,9030
+"172","Papua New Guinea","PG","PNG",598,"East Asia & Pacific",7167010,1790
+"173","Paraguay","PY","PRY",600,"Latin America & Caribbean",6687361,3320
+"174","Peru","PE","PER",604,"Latin America & Caribbean",29987800,5890
+"175","Philippines","PH","PHL",608,"East Asia & Pacific",96706764,2950
+"176","Pitcairn","PN","PCN",612,NA,NA,NA
+"177","Poland","PL","POL",616,"Europe & Central Asia",38535873,12660
+"178","Portugal","PT","PRT",620,"Europe & Central Asia",10514844,20620
+"179","Puerto Rico","PR","PRI",630,"Latin America & Caribbean",3651545,18080
+"180","Qatar","QA","QAT",634,"Middle East & North Africa",2050514,78060
+"181","Reunion","RE","REU",638,NA,NA,NA
+"182","Romania","RO","ROU",642,NA,NA,NA
+"183","Russian Federation","RU","RUS",643,"Europe & Central Asia",143178000,12740
+"184","Rwanda","RW","RWA",646,"Sub-Saharan Africa",11457801,600
+"185","Saint Barthelemy","BL","BLM",652,NA,NA,NA
+"186","Saint Helena, Ascension and Tristan da Cunha","SH","SHN",654,NA,NA,NA
+"187","Saint Kitts and Nevis","KN","KNA",659,"Latin America & Caribbean",53584,13090
+"188","Saint Lucia","LC","LCA",662,"Latin America & Caribbean",180870,7000
+"189","Saint Martin (French part)","MF","MAF",663,"Latin America & Caribbean",30959,NA
+"190","Saint Pierre and Miquelon","PM","SPM",666,NA,NA,NA
+"191","Saint Vincent and the Grenadines","VC","VCT",670,"Latin America & Caribbean",109373,6360
+"192","Samoa","WS","WSM",882,"East Asia & Pacific",188889,3260
+"193","San Marino","SM","SMR",674,"Europe & Central Asia",31247,NA
+"194","Sao Tome and Principe","ST","STP",678,"Sub-Saharan Africa",188098,1310
+"195","Saudi Arabia","SA","SAU",682,"Middle East & North Africa",28287855,24660
+"196","Senegal","SN","SEN",686,"Sub-Saharan Africa",13726021,1030
+"197","Serbia","RS","SRB",688,"Europe & Central Asia",7199077,5350
+"198","Seychelles","SC","SYC",690,"Sub-Saharan Africa",88303,11590
+"199","Sierra Leone","SL","SLE",694,"Sub-Saharan Africa",5978727,530
+"200","Singapore","SG","SGP",702,"East Asia & Pacific",5312400,51090
+"201","Sint Maarten (Dutch part)","SX","SXM",534,"Latin America & Caribbean",39088,NA
+"202","Slovakia","SK","SVK",703,"Europe & Central Asia",5407579,17200
+"203","Slovenia","SI","SVN",705,"Europe & Central Asia",2057159,22830
+"204","Solomon Islands","SB","SLB",90,"East Asia & Pacific",549598,1480
+"205","Somalia","SO","SOM",706,"Sub-Saharan Africa",10195134,NA
+"206","South Africa","ZA","ZAF",710,"Sub-Saharan Africa",52274945,7460
+"207","South Georgia and the South Sandwich Islands","GS","SGS",239,NA,NA,NA
+"208","South Sudan","SS","SSD",728,"Sub-Saharan Africa",10837527,840
+"209","Spain","ES","ESP",724,"Europe & Central Asia",46761264,29340
+"210","Sri Lanka","LK","LKA",144,"South Asia",20328000,2910
+"211","Sudan","SD","SDN",729,"Sub-Saharan Africa",37195349,1460
+"212","Suriname","SR","SUR",740,"Latin America & Caribbean",534541,8680
+"213","Svalbard and Jan Mayen","SJ","SJM",744,NA,NA,NA
+"214","Swaziland","SZ","SWZ",748,"Sub-Saharan Africa",1230985,3100
+"215","Sweden","SE","SWE",752,"Europe & Central Asia",9519374,56120
+"216","Switzerland","CH","CHE",756,"Europe & Central Asia",7996861,80950
+"217","Syrian Arab Republic","SY","SYR",760,"Middle East & North Africa",22399254,NA
+"218","Taiwan, Province of China","TW","TWN",158,NA,NA,NA
+"219","Tajikistan","TJ","TJK",762,"Europe & Central Asia",8008990,880
+"220","Tanzania, United Republic of","TZ","TZA",834,"Sub-Saharan Africa",47783107,570
+"221","Thailand","TH","THA",764,"East Asia & Pacific",66785001,5250
+"222","Timor-Leste","TL","TLS",626,NA,NA,NA
+"223","Togo","TG","TGO",768,"Sub-Saharan Africa",6642928,490
+"224","Tokelau","TK","TKL",772,NA,NA,NA
+"225","Tonga","TO","TON",776,"East Asia & Pacific",104941,4220
+"226","Trinidad and Tobago","TT","TTO",780,"Latin America & Caribbean",1337439,14780
+"227","Tunisia","TN","TUN",788,"Middle East & North Africa",10777500,4240
+"228","Turkey","TR","TUR",792,"Europe & Central Asia",73997128,10810
+"229","Turkmenistan","TM","TKM",795,"Europe & Central Asia",5172931,5410
+"230","Turks and Caicos Islands","TC","TCA",796,"Latin America & Caribbean",32427,NA
+"231","Tuvalu","TV","TUV",798,"East Asia & Pacific",9860,5650
+"232","Uganda","UG","UGA",800,"Sub-Saharan Africa",36345860,480
+"233","Ukraine","UA","UKR",804,"Europe & Central Asia",45593300,3640
+"234","United Arab Emirates","AE","ARE",784,"Middle East & North Africa",9205651,38620
+"235","United Kingdom","GB","GBR",826,"Europe & Central Asia",63695687,38300
+"236","United States","US","USA",840,"North America",313873685,52350
+"237","United States Minor Outlying Islands","UM","UMI",581,NA,NA,NA
+"238","Uruguay","UY","URY",858,"Latin America & Caribbean",3395253,13670
+"239","Uzbekistan","UZ","UZB",860,"Europe & Central Asia",29774500,1700
+"240","Vanuatu","VU","VUT",548,"East Asia & Pacific",247262,2990
+"241","Venezuela, Bolivarian Republic of","VE","VEN",862,"Latin America & Caribbean",29954782,12460
+"242","Viet Nam","VN","VNM",704,"East Asia & Pacific",88772900,1550
+"243","Virgin Islands, British","VG","VGB",92,NA,NA,NA
+"244","Virgin Islands, U.S.","VI","VIR",850,"Latin America & Caribbean",105275,NA
+"245","Wallis and Futuna","WF","WLF",876,NA,NA,NA
+"246","Western Sahara","EH","ESH",732,NA,NA,NA
+"247","Yemen","YE","YEM",887,"Middle East & North Africa",23852409,1220
+"248","Zambia","ZM","ZMB",894,"Sub-Saharan Africa",14075099,1410
+"249","Zimbabwe","ZW","ZWE",716,"Sub-Saharan Africa",13724317,800

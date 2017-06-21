@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Datasets for Probabilistic Simulation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Datasets for Simulation"><tr><td>Datasets for Simulation</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Datasets for Probabilistic Simulation
+</h2>
+
+<h3>Description</h3>
+
+<p>For performing elementary probability calculations in introductory statistic courses, there might datasets of playing cards casually be wanted.
+The dataset <code>roulette</code> contains the standard sample space for one spin on a roulette wheel.
+<code>cards</code> contains the standard set of 52 playing cards in four colours. <code>tarot</code> does the same with a classic tarot deck.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+cards
+tarot
+roulette
+</pre>
+
+
+<h3>Value</h3>
+
+<p><code>cards</code> is a <code>data.frame</code> with two columns named <code>rank</code> and <code>suit</code>
+</p>
+<p><code>tarot</code> is a <code>data.frame</code> with three columns named <code>rank</code>, <code>suit</code> and <code>desc</code>
+</p>
+<p><code>roulette</code> is a <code>data.frame</code> with two columns named <code>num</code> and <code>col</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+head(cards)
+head(tarot)
+head(roulette)
+
+# drawing 5 cards
+sample(do.call(paste, cards), 5)
+
+# spin the wheel
+sample(do.call(paste, roulette), 1)
+
+# simulate the evening in Las Vegas
+sample(do.call(paste, roulette), 32, replace=TRUE)
+</pre>
+
+
+</body></html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: ISO 3166-1 Country Codes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for d.countries"><tr><td>d.countries</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>ISO 3166-1 Country Codes
+
+</h2>
+
+<h3>Description</h3>
+
+<p>Country codes published by the International Organization for Standardization (ISO) define codes for the names of countries, dependent territories, and special areas of geographical interest. 
+
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data("d.countries")</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 249 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>name</code></dt><dd><p>a character vector, the name of the country.</p>
+</dd>
+<dt><code>a2</code></dt><dd><p>a character vector, two-letter country codes (aka alpha-2) which are the most widely used of the three, and used most prominently for the Internet's country code top-level domains (with a few exceptions).</p>
+</dd>
+<dt><code>a3</code></dt><dd><p>a character vector, three-letter country codes (aka alpha-3) which allow a better visual association between the codes and the country names than the alpha-2 codes.</p>
+</dd>
+<dt><code>code</code></dt><dd><p>a numeric vector, three-digit country codes which are identical to those developed and maintained by the United Nations Statistics Division, with the advantage of script (writing system) independence, and hence useful for people or systems using non-Latin scripts.</p>
+</dd>
+<dt><code>region</code></dt><dd><p>the region of the country</p>
+</dd>
+<dt><code>pop2012</code></dt><dd><p>the population in 2012</p>
+</dd>
+<dt><code>gcpi2012</code></dt><dd><p>the gross national income (per capita) in dollars per country in 2012.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/ISO_3166-1">http://en.wikipedia.org/wiki/ISO_3166-1</a><br />
+<a href="http://data.worldbank.org/data-catalog/health-nutrition-and-population-statistics">http://data.worldbank.org/data-catalog/health-nutrition-and-population-statistics</a>
+
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+head(d.countries)
+</pre>
+
+
+</body></html>

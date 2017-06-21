@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Nelson &amp; Plosser extended data set</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for npext"><tr><td>npext</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Nelson \&amp; Plosser extended data set</h2>
+
+<h3>Description</h3>
+
+<p>This data set contains the fourteen U.S. economic time series used by
+Schotman \&amp; Dijk. All series are transformed by taking logarithms
+except for the bond yield. The sample period ends in 1988.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(npext)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame containing fourteen series.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    <code>year</code> </td><td style="text-align: left;"> Time index from 1860 until 1988. </td>
+</tr>
+<tr>
+ <td style="text-align: right;"> 
+    <code>realgnp</code> </td><td style="text-align: left;"> Real GNP, [Billions of 1958 Dollars], </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [1909 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>nomgnp</code> </td><td style="text-align: left;"> Nominal GNP, </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [Millions of Current Dollars], [1909 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>gnpperca</code> </td><td style="text-align: left;"> Real Per Capita GNP, </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [1958 Dollars], [1909 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>indprod</code> </td><td style="text-align: left;"> Industrial Production Index, </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [1967 = 100], [1860 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>employmt</code> </td><td style="text-align: left;"> Total Employment, </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [Thousands], [1890 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>unemploy</code> </td><td style="text-align: left;"> Total Unemployment Rate, </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [Percent], [1890 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>gnpdefl</code> </td><td style="text-align: left;"> GNP Deflator, </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [1958 = 100], [1889 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>cpi</code> </td><td style="text-align: left;"> Consumer Price Index, </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [1967 = 100], [1860 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>wages</code> </td><td style="text-align: left;"> Nominal Wages </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> (Average annual earnings per full-time employee in manufacturing), </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [current Dollars], [1900 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>realwag</code> </td><td style="text-align: left;"> Real Wages, </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [Nominal wages/CPI], [1900 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>M</code> </td><td style="text-align: left;"> Money Stock (M2), </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [Billions of Dollars, annual averages], [1889 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>velocity</code> </td><td style="text-align: left;"> Velocity of Money, </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [1869 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>interest</code> </td><td style="text-align: left;"> Bond Yield (Basic Yields of 30-year
+       corporate bonds), </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [Percent per annum], [1900 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>sp500</code> </td><td style="text-align: left;"> Stock Prices, </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> [Index; 1941 -- 43 = 100], [1871 -- 1988] </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td>
+</tr>
+
+</table>
+
+
+
+<h3>Author(s)</h3>
+
+<p>Bernhard Pfaff</p>
+
+
+<h3>Source</h3>
+
+<p>Schotman, P.C. and van Dijk, H.K. (1991), On Bayesian Routes to Unit
+Roots, <em>Journal of Applied Econometrics</em>, <b>6</b>, 387&ndash;401.
+</p>
+<p>Koop, G. and Steel, M.F.J. (1994), A Decision-Theoretic Analysis of
+the Unit-Root Hypothesis using Mixtures of Elliptical Models,
+<em>Journal of Business and Economic Statistics</em>, <b>12</b>, 95&ndash;107. 
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="http://www.amstat.org/publications/jbes/">http://www.amstat.org/publications/jbes/</a></p>
+
+
+</body></html>
