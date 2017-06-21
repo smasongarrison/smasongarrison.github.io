@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Test Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for test1"><tr><td>test1</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Test Data</h2>
+
+<h3>Description</h3>
+
+<p>Test data of no biological interest.  Does have all families
+implemented at the time the test data was created.  No predictor variables.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(test1)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 100 observations on the following 8 variables.
+</p>
+
+<dl>
+<dt><code>m1</code></dt><dd><p>a numeric vector, part of a multinomial dependence group
+(with <code>m2</code> and <code>m3</code>).  Predecessor of this group is the
+constant 1.</p>
+</dd>
+<dt><code>m2</code></dt><dd><p>a numeric vector.</p>
+</dd>
+<dt><code>m3</code></dt><dd><p>a numeric vector.</p>
+</dd>
+<dt><code>n1</code></dt><dd><p>a numeric vector, part of a normal location-scale
+dependence group (with <code>n2</code>).  Predecessor of this group
+is <code>m1</code>.</p>
+</dd>
+<dt><code>n2</code></dt><dd><p>a numeric vector (actually <code>n1^2</code>).</p>
+</dd>
+<dt><code>b1</code></dt><dd><p>a numeric vector, Bernoulli.  Predecessor is <code>m2</code>.</p>
+</dd>
+<dt><code>p1</code></dt><dd><p>a numeric vector, Poisson.  Predecessor is <code>m3</code>.</p>
+</dd>
+<dt><code>z1</code></dt><dd><p>a numeric vector, zero-truncated Poisson.  Predecessor
+is <code>b1</code>.</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>created by R script <code>test1.R</code> in directory <code>makedata</code> of the
+installation directory for this package.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(test1)
+fred &lt;- asterdata(test1,
+    vars = c("m1", "m2", "m3", "n1", "n2", "b1", "p1", "z1"),
+    pred = c(0, 0, 0, 1, 1, 2, 3, 6), group = c(0, 1, 2, 0, 4, 0, 0, 0),
+    code = c(1, 1, 1, 2, 2, 3, 4, 5),
+    families = list(fam.multinomial(3), "normal.location.scale",
+    "bernoulli", "poisson", "zero.truncated.poisson"))
+</pre>
+
+
+</body></html>
