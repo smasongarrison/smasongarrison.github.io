@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: NHANES III data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for nhanes3"><tr><td>nhanes3</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>NHANES III data</h2>
+
+<h3>Description</h3>
+
+<p>NHANES III data
+</p>
+
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> with
+<i>17030</i> observations (rows)
+and <i>16</i> variables (columns).</p>
+
+
+<h3>Details</h3>
+
+<p>A subset of data from the National Health and Nutrition
+Examination Study (NHANES) III. Subjects age &gt;=20 are included.
+<br />
+A sample of 39,695 subjects was selected, representing more
+than 250 million people living in the USA. Data was collected
+1988-1994.
+<br /> <br />
+49 pseudo strata were created with 2 pseudo-PSU's in each
+stratum (primary sampling units).
+<br /> <br />
+This is a subset of the original dataset.
+<br /> <br />
+Columns are:
+</p>
+
+<dl>
+<dt>SEQN</dt><dd><p>Respondent sequence number.</p>
+</dd>
+<dt>SDPPSU6</dt><dd><p>Pseudo-PSU (primary sampling unit).</p>
+</dd>
+<dt>SDPSTRA6</dt><dd><p>Pseudo stratum.</p>
+</dd>
+<dt>WTPFHX6</dt><dd><p>Statistical weight.
+Range <i>225.93</i> to <i>139744.9</i>.</p>
+</dd>
+<dt>HSAGEIR</dt><dd><p>Age (years).</p>
+</dd>
+<dt>HSSEX</dt><dd><p>Gender (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>female</p>
+</dd>
+<dt>1</dt><dd><p>male</p>
+</dd></dl>
+</dd>
+<dt>DMARACER</dt><dd><p>Race (<code>factor</code>):
+</p>
+
+<dl>
+<dt>1</dt><dd><p>white</p>
+</dd>
+<dt>2</dt><dd><p>black</p>
+</dd>
+<dt>3</dt><dd><p>other</p>
+</dd></dl>
+</dd>
+<dt>BMPWTLBS</dt><dd><p>Body weight (lbs).</p>
+</dd>
+<dt>BMPHTIN</dt><dd><p>Standing height (inches).</p>
+</dd>
+<dt>PEPMNK1R</dt><dd><p>Average Systolic BP.</p>
+</dd>
+<dt>PEPMNK5R</dt><dd><p>Average Diastolic BP.</p>
+</dd>
+<dt>HAR1</dt><dd><p>Has respondent smoked &gt;100 cigarettes
+in life (<code>factor</code>):
+</p>
+
+<dl>
+<dt>1</dt><dd><p>yes</p>
+</dd>
+<dt>2</dt><dd><p>no</p>
+</dd></dl>
+</dd>
+<dt>HAR3</dt><dd><p>Does respondent smoke cigarettes now?
+(<code>factor</code>):
+</p>
+
+<dl>
+<dt>1</dt><dd><p>yes</p>
+</dd>
+<dt>2</dt><dd><p>no</p>
+</dd></dl>
+</dd>
+<dt>SMOKE</dt><dd><p>Smoking (<code>factor</code>):
+</p>
+
+<dl>
+<dt>1</dt><dd><p>never (HAR1 = 2)</p>
+</dd>
+<dt>2</dt><dd><p>&gt;100 cigs (HAR1 = 1 &amp; HAR3 = 2)</p>
+</dd>
+<dt>3</dt><dd><p>current (HAR1 =1 &amp; HAR3 = 1)</p>
+</dd></dl>
+</dd>
+<dt>TCP</dt><dd><p>Serum cholesterol (mg/100ml).</p>
+</dd></dl>
+<p>a
+</p>
+<dl>
+<dt>HBP</dt><dd><p>High blood pressure? (<code>factor</code>):
+</p>
+
+<dl>
+<dt>1</dt><dd><p>yes (PEPMNK1R &gt; 140)</p>
+</dd>
+<dt>2</dt><dd><p>no (PEPMNK1R &lt;= 140)</p>
+</dd></dl>
+</dd>
+</dl>
+
+
+
+<h3>Note</h3>
+
+<p>Taken from:
+<br />
+ANALYTIC AND REPORTING GUIDELINES:
+The Third National Health and Nutrition Examination Survey,
+NHANES III (1988-94).
+<br /> <br />
+In the NHANES III, 89 survey locations were randomly divided
+into 2 sets or phases, the first consisting of
+44 and the other, 45
+locations. One set of primary sampling units (PSUs) was allocated
+to the first 3-year survey period (1988-91) and the other set to
+the second 3-year period (1991-94).
+<br />
+Therefore, unbiased national
+estimates of health and nutrition characteristics can be
+independently produced for each phase as well
+as for both phases
+combined. Computation of national estimates from both phases
+combined (i.e. total NHANES III) is the preferred option;
+individual phase estimates may be highly variable. In addition,
+individual phase estimates are not statistically independent.
+<br /> <br />
+It is also difficult to evaluate whether
+differences in individual
+phase estimates are real or due to methodological
+differences. That is, differences may be due to changes
+in sampling methods or data
+collection methodology over time.
+At this time, there is no valid
+statistical test for examining differences between phase 1 and
+phase 2.
+<br /> <br />
+NHANES III is based on a complex multistage probability sample
+design. Several aspects of the NHANES design must be taken into
+account in data analysis, including the sampling weights and the
+complex survey design. Appropriate sampling weights are needed to
+estimate prevalence, means, medians, and other statistics.
+Sampling weights are used to produce correct population estimates
+because each sample person does not have an equal probability of
+selection. The sampling weights incorporate the differential
+3 probabilities of selection and include
+adjustments for noncoverage
+and nonresponse.
+<br /> <br />
+With the large
+oversampling of young children, older persons, black persons, and
+Mexican Americans in NHANES III, it is essential that
+the sampling
+weights be used in all analyses. Otherwise, misinterpretation of
+results is highly likely.
+<br /> <br />
+Other aspects of the design that must be
+taken into account in data analyses are the strata
+and PSU pairings
+from the sample design. These pairings should be used to estimate
+variances and test for statistical significance.
+<br /> <br />
+For weighted analyses, analysts can use special computer
+software packages that
+use an appropriate method for estimating variances for complex
+samples such as SUDAAN (Shah 1995) and WesVarPC (Westat 1996).
+<br /> <br />
+Although initial exploratory analyses may be performed on
+unweighted data with standard
+statistical packages assuming simple
+random sampling, final analyses should be done on weighted data
+using appropriate sampling weights.
+</p>
+
+
+<h3>Source</h3>
+
+<p><a href="ftp://ftp.wiley.com/public/sci_tech_med/logistic">Wiley FTP</a>
+</p>
+
+
+<h3>References</h3>
+
+<p><b>H&amp;L 2nd ed.</b> Page 215. Table 6.3.
+</p>
+<p>National Center for Health Statistics (US) and others 1996.
+NHANES III reference manuals and reports.
+<em>National Center for Health Statistics</em>.
+<a href="http://www.cdc.gov/nchs/nhanes/nh3rrm.htm">CDC (free)</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## use simpler column names
+data("nhanes3", package="LogisticDx")
+n1 &lt;- c("ID", "pStrat", "pPSU", "sWt", "age", "sex",
+        "race", "bWt", "h", "sysBP", "diasBP", "sm100",
+        "smCurr", "smok", "chol", "htn")
+names(nhanes3) &lt;- n1
+</pre>
+
+
+</body></html>

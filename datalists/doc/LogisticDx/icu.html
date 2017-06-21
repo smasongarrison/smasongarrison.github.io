@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Intensive Care Unit study data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for icu"><tr><td>icu</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Intensive Care Unit study data</h2>
+
+<h3>Description</h3>
+
+<p>Intensive Care Unit study data
+</p>
+
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> with
+<i>200</i> observations (rows)
+and <i>14</i> variables (columns).</p>
+
+
+<h3>Details</h3>
+
+<p>A sample of 200 subjects who were part of a
+study on survival of patients admitted to an adult
+intensive care unit (ICU).
+<br />
+The observed variable values were modified to
+protect patient confidentiality.
+<br /> <br />
+Columns are:
+</p>
+
+<dl>
+<dt>ID</dt><dd><p>Identification code.</p>
+</dd>
+<dt>STA</dt><dd><p>Vital status (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>lived</p>
+</dd>
+<dt>1</dt><dd><p>died</p>
+</dd></dl>
+</dd>
+<dt>AGE</dt><dd><p>Age (years).</p>
+</dd>
+<dt>SEX</dt><dd><p>Gender (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>male</p>
+</dd>
+<dt>1</dt><dd><p>female</p>
+</dd></dl>
+</dd>
+<dt>RACE</dt><dd><p>Race (<code>factor</code>):
+</p>
+
+<dl>
+<dt>1</dt><dd><p>white</p>
+</dd>
+<dt>2</dt><dd><p>black</p>
+</dd>
+<dt>3</dt><dd><p>other</p>
+</dd></dl>
+</dd>
+<dt>SER</dt><dd><p>Service, when admitted to ICU (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>Medical</p>
+</dd>
+<dt>1</dt><dd><p>Surgical</p>
+</dd></dl>
+</dd>
+<dt>CAN</dt><dd><p>Cancer part of present problem? (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>no</p>
+</dd>
+<dt>1</dt><dd><p>yes</p>
+</dd></dl>
+</dd>
+<dt>CRN</dt><dd><p>Chronic renal failure? (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>no</p>
+</dd>
+<dt>1</dt><dd><p>yes</p>
+</dd></dl>
+</dd>
+<dt>INF</dt><dd><p>Infection probable
+when admitted to ICU? (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>no</p>
+</dd>
+<dt>1</dt><dd><p>yes</p>
+</dd></dl>
+</dd>
+<dt>CPR</dt><dd><p>Cardiopulmonary resuscitataion prior
+to ICU admission? (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>no</p>
+</dd>
+<dt>1</dt><dd><p>yes</p>
+</dd></dl>
+</dd>
+<dt>SYS</dt><dd><p>Systolic blood pressure (mmHG)
+when admitted to ICU.</p>
+</dd>
+<dt>HRA</dt><dd><p>Heart rate when admitted to ICU.</p>
+</dd>
+<dt>PRE</dt><dd><p>Previous admission to ICU
+within 6 months? (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>no</p>
+</dd>
+<dt>1</dt><dd><p>yes</p>
+</dd></dl>
+</dd>
+<dt>TYP</dt><dd><p>Type of admission (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>elective</p>
+</dd>
+<dt>1</dt><dd><p>emergency</p>
+</dd></dl>
+</dd>
+<dt>FRA</dt><dd><p>Fracture present (long bone, multiple,
+neck, single area or hip)? (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>no</p>
+</dd>
+<dt>1</dt><dd><p>yes</p>
+</dd></dl>
+</dd>
+<dt>PO2</dt><dd><p>pO2 from initial blood gases (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>&gt;60</p>
+</dd>
+<dt>1</dt><dd><p>&lt;=60</p>
+</dd></dl>
+</dd>
+<dt>PH</dt><dd><p>pH from initial blood gases (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>&gt;=7.25</p>
+</dd>
+<dt>1</dt><dd><p>&lt;7.25</p>
+</dd></dl>
+</dd>
+<dt>PCO</dt><dd><p>pCO2 from initial blood gases (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>&gt;=18</p>
+</dd>
+<dt>1</dt><dd><p>&lt;18</p>
+</dd></dl>
+</dd>
+<dt>CRE</dt><dd><p>Creatinine from
+initial blood gases (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>&lt;=2</p>
+</dd>
+<dt>1</dt><dd><p>&gt;2</p>
+</dd></dl>
+</dd>
+<dt>LOC</dt><dd><p>Level of consciousness
+when admitted to ICU (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>no_coma</p>
+</dd>
+<dt>1</dt><dd><p>deep_stupor</p>
+</dd>
+<dt>2</dt><dd><p>coma</p>
+</dd></dl>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><a href="ftp://ftp.wiley.com/public/sci_tech_med/logistic">
+Wiley FTP</a>
+</p>
+
+
+<h3>References</h3>
+
+<p><b>H&amp;L 2nd ed.</b> Page 22, Section 1.6.1.
+</p>
+<p>Lemeshow S,  Teres D, Avrunin JS, Pastides H 1988.
+Predicting the outcome of intensive care unit patients.
+<em>Journal of the American Statistical Association</em>.
+<b>83</b>(402):348&ndash;356.
+<a href="http://www.jstor.org.cuhsl.creighton.edu/stable/2288849">
+JSTOR (free)</a>
+</p>
+<p>Lemeshow S, Teres D, Klar J, Avrunin JS,
+Gehlbach SH , Rapoport John 1993.
+Mortality Probability Models (MPM II) based on
+an international cohort of intensive care unit patients.
+<em>Journal of the American Medical Association</em>.
+<b>270</b>(20):2478&ndash;2486.
+<a href="http://dx.doi.org/10.1001/jama.1993.03510200084037">
+JAMA (paywall)</a>
+</p>
+<p>Lemeshow S, Le Gall J 1994.
+Modeling the severity of illness of ICU patients:
+a systems update.
+<em>Journal of the American Medical Association</em>.
+<b>272</b>(13):1049&ndash;1055.
+<a href="http://dx.doi.org/10.1001/jama.1994.03520130087038">
+JAMA (paywall)</a>
+</p>
+
+
+</body></html>

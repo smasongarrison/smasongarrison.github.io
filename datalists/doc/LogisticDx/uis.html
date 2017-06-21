@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: UMARU IMPACT Study data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for uis"><tr><td>uis</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>UMARU IMPACT Study data</h2>
+
+<h3>Description</h3>
+
+<p>UMARU IMPACT Study data
+</p>
+
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> with
+<i>575</i> observations (rows)
+and <i>9</i> variables (columns).</p>
+
+
+<h3>Details</h3>
+
+<p>A subset of data from the University of Massachusets Aids
+Research Unit (UMARU) IMPACT study.
+<br />
+This came from two concurrent randomized trials of residential
+treatement for durg abuse, in order to compare planned
+durations of admission.
+<br />
+Site A randomized 444 participants to compare 3 and 6 month
+stays in a therapeutic community. They were
+trained to recognize triggers for relapse and taught skills to
+cope without using drugs.
+<br />
+Site B randomized 184 participants to receive either a 6 or 12
+month stay in a highly structured communal therapeutic
+community.
+<br /> <br />
+This is a subset of the original dataset.
+<br /> <br />
+Columns are:
+</p>
+
+<dl>
+<dt>ID</dt><dd><p>Identification code.</p>
+</dd>
+<dt>AGE</dt><dd><p>Age (years).</p>
+</dd>
+<dt>BECK</dt><dd><p>Beck Depression score on admission.</p>
+</dd>
+<dt>IVHX</dt><dd><p>IV drug use history (<code>factor</code>):
+</p>
+
+<dl>
+<dt>1</dt><dd><p>never</p>
+</dd>
+<dt>2</dt><dd><p>previous</p>
+</dd>
+<dt>3</dt><dd><p>current</p>
+</dd></dl>
+</dd>
+<dt>NDRUGTX</dt><dd><p>Number of prior drug treatments.
+Range <i>5</i> to <i>20</i>.</p>
+</dd>
+<dt>RACE</dt><dd><p>Race (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>white</p>
+</dd>
+<dt>1</dt><dd><p>other</p>
+</dd></dl>
+</dd>
+<dt>TREAT</dt><dd><p>Treatment randomization.
+'Short' is 3 months in site A, 6 months in site B.
+'Long' is 6 months in site A, 12 months in site B.
+(<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>short</p>
+</dd>
+<dt>1</dt><dd><p>long</p>
+</dd></dl>
+</dd>
+<dt>SITE</dt><dd><p>Assignment treatment site (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>A</p>
+</dd>
+<dt>1</dt><dd><p>B</p>
+</dd></dl>
+</dd>
+<dt>DFREE</dt><dd><p>Remained drug free for 12 months (<code>factor</code>):
+</p>
+
+<dl>
+<dt>0</dt><dd><p>no</p>
+</dd>
+<dt>1</dt><dd><p>yes</p>
+</dd></dl>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p><a href="ftp://ftp.wiley.com/public/sci_tech_med/logistic">
+Wiley FTP</a>
+</p>
+
+
+<h3>References</h3>
+
+<p><b>H&amp;L 2nd ed.</b> Page 26. Section 1.6.4.
+</p>
+<p>McCusker J, Vickers-Lahti M, Stoddard A, Hindin R, Bigelow C,
+Zorn M, Garfield F, Frost R, Love C, Lewis B 1995.
+Fischer DB, Goldenberg IS 1983.
+The effectiveness of alternative planned durations
+of residential drug abuse treatment.
+<em>American Journal of Public Health</em>
+<b>85</b>(10):1426&ndash;1429.
+<a href="http://dx.doi.org/10.2105/AJPH.85.10.1426">APHA (free)</a>
+</p>
+<p>McCusker J, Bigelow C, Frost R, Garfield F, Hindin R,
+Vickers-Lahti M, Lewis B 1997. #'
+The effects of planned duration of residential drug abuse
+treatment on recovery and HIV risk behavior.
+<em>American Journal of Public Health</em>
+<b>87</b>(10):1637&ndash;1644.
+<a href="http://dx.doi.org/10.2105/AJPH.87.10.1637">APHA (free)</a>
+</p>
+<p>McCusker J, Bigelow C, Vickers-Lahti M, Spotts D,
+Garfield F, Frost R 1997.
+Planned duration of residential drug abuse treatment:
+efficacy versus effectiveness.
+<em>Addiction</em> <b>92</b>(11):1467&ndash;1478.
+<a href="http://dx.doi.org/10.1111/j.1360-0443.1997.tb02868.x">
+Wiley (paywall)</a>
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>dx</code>
+<code>plot.glm</code>
+</p>
+
+
+</body></html>
