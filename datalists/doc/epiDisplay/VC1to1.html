@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Datasets on a matched case-control study of esophageal cancer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Matched case-control study"><tr><td>Matched case-control study</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Datasets on a matched case-control study of esophageal cancer</h2>
+
+<h3>Description</h3>
+
+<p>Two different datasets for the same matched case-control study. VC1to6 has 1 case : varying number of controls (from 1 to 6) whereas VC1to1 has the number of control reduced to 1 for each case.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(VC1to1)
+
+data(VC1to6)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with the following 5 variables.
+</p>
+
+<dl>
+<dt><code>matset</code></dt><dd><p>a numeric vector indicating matched set number from 1 to 26</p>
+</dd>
+<dt><code>case</code></dt><dd><p>a numeric vector: 1=case, 0=control</p>
+</dd>
+<dt><code>smoking</code></dt><dd><p>a numeric vector: 1=smoker, 0=non-smoker</p>
+</dd>
+<dt><code>rubber</code></dt><dd><p>a numeric vector: 1=exposed, 0=never exposed to rubber industry</p>
+</dd>
+<dt><code>alcohol</code></dt><dd><p>a numeric vector: 1=drinker, 0=non-drinker</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Chongsuvivatwong,  V. 1990
+A case-control study of esophageal cancer  in Southern Thailand. 
+<em>J Gastro Hep</em> <b>5</b>:391&ndash;394.</p>
+
+
+<h3>See Also</h3>
+
+<p>'infert' in the datasets package.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(VC1to6)
+.data &lt;- VC1to6
+des(.data)
+with(.data, matchTab(case, alcohol, matset))
+rm(.data)
+</pre>
+
+
+</body></html>

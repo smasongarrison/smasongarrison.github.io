@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dataset of a hypothetical family</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Familydata"><tr><td>Familydata</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Dataset of a hypothetical family</h2>
+
+<h3>Description</h3>
+
+<p> Anthropometric and financial data of a hypothetical family</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Familydata)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 11 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>code</code></dt><dd><p>a character vector</p>
+</dd>
+<dt><code>age</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>ht</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>wt</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>money</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>a factor with levels <code>F</code> <code>M</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Familydata)
+.data &lt;- Familydata
+des(.data)
+summ(.data)
+age2 &lt;- with(.data, age)^2
+with(.data, plot(age, money, log="y"))
+dots.of.age &lt;- seq(0,80,0.01)
+new.data.frame &lt;- data.frame(age=dots.of.age, age2=dots.of.age^2)
+lm1 &lt;- lm(log(money) ~ age + age2, data=.data)
+summary(lm1)$coefficients
+dots.of.money &lt;- predict.lm(lm1, new.data.frame)
+lines(dots.of.age, exp(dots.of.money), col="blue")
+</pre>
+
+
+</body></html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dataset from a study on hookworm prevalence and intensity in...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Hookworm 1993"><tr><td>Hookworm 1993</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dataset from a study on hookworm prevalence and intensity in 1993</h2>
+
+<h3>Description</h3>
+
+<p>A dataset from a cross-sectional survey in 1993 examining hookworm
+infection</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(HW93)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 637 observations on the following 6 variables.
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>a numeric vector for personal identification number</p>
+</dd>
+<dt><code>epg</code></dt><dd><p>a numeric vector for eggs per gram of faeces</p>
+</dd>
+<dt><code>age</code></dt><dd><p>a numeric vector for age in years</p>
+</dd>
+<dt><code>shoe</code></dt><dd><p>a factor for shoe wearing with levels <code>no</code> <code>yes</code></p>
+</dd>
+<dt><code>intense</code></dt><dd><p>a factor for intensity of infection in epg. with levels <code>0</code> <code>1-1,999</code> <code>2,000+</code></p>
+</dd>
+<dt><code>agegr</code></dt><dd><p>a factor for age group with levels <code>&lt;15 yrs</code> <code>15-59 yrs</code> <code>60+ yrs</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(HW93)
+des(HW93)
+.data &lt;- HW93
+.data$order.intense &lt;- ordered(.data$intense)
+ord.hw &lt;- polr(ordered(intense) ~ agegr + shoe, data=.data)
+summary(ord.hw)
+ordinal.or.display(ord.hw)
+</pre>
+
+
+</body></html>

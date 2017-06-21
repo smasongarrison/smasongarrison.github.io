@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dataset on effect of training personnel on neonatal mortality</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Hakimi's data"><tr><td>Hakimi's data</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Dataset on effect of training personnel on neonatal mortality</h2>
+
+<h3>Description</h3>
+
+<p>Subset of a dataset from an intervention trial of education on personnel and the effect on neonatal mortality. Non-fatal records were randomly selected from the original dataset, just for practice and interpretation of interaction term.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Hakimi)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame containing 456 observations and 4 variables.
+</p>
+
+<dl>
+<dt><code>dead</code></dt><dd><p>neonatal death: 1=yes, 0=no</p>
+</dd>
+<dt><code>treatment</code></dt><dd><p>intervention programme: 1=yes, 2=no</p>
+</dd>
+<dt><code>malpres</code></dt><dd><p>malpresentation of fetus: 1=yes, 0=no</p>
+</dd>
+<dt><code>birthwt</code></dt><dd><p>birth weight for foetus in gram</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Hakimi)
+.data &lt;- Hakimi
+attach(.data)
+cc(dead, treatment)
+mhor(dead, treatment, malpres)
+detach(.data)
+</pre>
+
+
+</body></html>

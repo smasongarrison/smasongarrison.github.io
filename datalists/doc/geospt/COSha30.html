@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Soil organic carbon database at a sampling depth of 0-30 cm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for COSha30"><tr><td>COSha30</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Soil organic carbon database at a sampling depth of 0-30 cm
+</h2>
+
+<h3>Description</h3>
+
+<p>Soil organic carbon database of samples taken in several soil and land cover types at La Libertad Research Center at a sampling depth of 0-30 cm
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(COSha30)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 118 observations on the following 10 variables:
+</p>
+
+<dl>
+<dt><code>ID</code></dt><dd><p>ID of each sampling site</p>
+</dd>
+<dt><code>x</code></dt><dd><p><em>x</em>-coordinate of each site. Spatial reference system: UTM 18N</p>
+</dd>
+<dt><code>y</code></dt><dd><p><em>y</em>-coordinate of each site. Spatial reference system: UTM 18N</p>
+</dd>
+<dt><code>DA30</code></dt><dd><p>measured soil bulk density (g cm<i>^{-3}</i>)</p>
+</dd>
+<dt><code>CO30</code></dt><dd><p>measured soil carbon concentration (%)</p>
+</dd>
+<dt><code>COB1r</code></dt><dd><p>land cover at each sampling site in 2007. See details below</p>
+</dd>
+<dt><code>S_UDS</code></dt><dd><p>soil type at each sampling site. See details below</p>
+</dd>
+<dt><code>COSha30</code></dt><dd><p>calculated total soil carbon stock (t ha<i>^{-1}</i>). See details below</p>
+</dd>
+<dt><code>Cor4DAidep</code></dt><dd><p>total soil carbon stock (t ha<i>^{-1}</i>) corrected by soil compaction factors</p>
+</dd>
+<dt><code>CorT</code></dt><dd><p>corrected total soil carbon stock with Box-Cox transformation applied</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>A total of 150 samples for a 0-30 cm depth was collected and analyzed for soil bulk density and organic carbon concentration in 2007 at La Libertad Research Center in Villavicencio, Colombia. The samples were taken in soils under different land cover types: rice crops (<code>Az</code>), citrus crops (<code>Ci</code>), forest plantations (<code>Cpf</code>), annual crops (<code>Ctv</code>), grasses (<code>P</code>), and oil palm crops (<code>Pl</code>).
+In the soil type names, the first two letters correspond to the short name of the soil series, the lower-case letters indicate the slope class, and the number denotes the type of soil drainage. 
+</p>
+<p>Total soil carbon stock <i>COSha</i> was calculated as follows (Guo &amp; Gifford, 2002):
+</p>
+<p style="text-align: center;"><i>
+COSha=DA*CO*d
+</i></p>
+
+<p>where <i>DA</i> is soil bulk density (g cm<i>^{-3}</i>), <i>CO</i> is soil organic carbon concentration (%) and <i>d</i> is sampling depth (cm).
+</p>
+<p>Given that the data did not fit a normal distribution, a Box-Cox transformation was applied (Box &amp; Cox, 1964). Some samples were discarded for the design of sampling networks. The complete database and description can be found in Santacruz (2010) and in Santacruz et al., (2014). 
+</p>
+
+
+<h3>Source</h3>
+
+<p>Santacruz, A. 2010. <em>Design of optimal spatial sampling networks for the monitoring of soil organic carbon at La Libertad Research Center through the application of genetic algorithms</em>. M.Sc. Thesis. National University of Colombia, Bogotá. 162 p. (In Spanish)
+</p>
+
+
+<h3>References</h3>
+
+<p>Santacruz, A., Rubiano, Y., Melo, C., 2014. <em>Evolutionary optimization of spatial sampling networks designed for the monitoring of soil carbon</em>. In: Hartemink, A., McSweeney, K. (Eds.). <em>Soil Carbon. Series: Progress in Soil Science</em>. (pp. 77-84). Springer. <a href="http://link.springer.com/chapter/10.1007/978-3-319-04084-4_8">[link]</a>
+</p>
+<p>Santacruz, A., 2011. <em>Evolutionary optimization of spatial sampling networks. An application of genetic algorithms and geostatistics for the monitoring of soil organic carbon</em>. Editorial Académica Española. 183 p. ISBN: 978-3-8454-9815-7 (In Spanish) <a href="http://www.amazon.com/Optimizaci%C3%B3n-evolutiva-redes-espaciales-muestreo/dp/3845498153/">[link]</a> 
+</p>
+<p>Guo, L., Gifford, R., 2002. <em>Soil carbon stocks and land use change: a meta analysis</em>. Global Change Biology 8, 345-360.
+</p>
+<p>Box, G., Cox, D., 1964. <em>An analysis of transformations</em>. Journal of the Royal Statistical Society. Series B (Methodological) 26 (2), 211-252.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>COSha30map</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(COSha30)
+str(COSha30)
+</pre>
+
+
+</body></html>

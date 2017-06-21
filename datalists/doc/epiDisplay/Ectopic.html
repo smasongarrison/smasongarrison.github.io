@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dataset of a case-control study looking at history of...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Ectopic pregnancy"><tr><td>Ectopic pregnancy</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Dataset of a case-control study looking at history of 
+abortion as a risk factor for ectopic pregnancy</h2>
+
+<h3>Description</h3>
+
+<p>This case-control study has one case series and two control groups.<br />
+The subjects were recruited based on three types of pregnancy outcome
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Ectopic)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 723 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>id</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>outc</code></dt><dd><p>a factor with levels <code>EP</code> <code>IA</code> <code>Deli</code></p>
+</dd>
+</dl>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+        	</td><td style="text-align: left;"> EP </td><td style="text-align: left;"> = ectopic pregnancy</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+         	</td><td style="text-align: left;"> IA </td><td style="text-align: left;"> = women coming for induced abortion</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+         	</td><td style="text-align: left;"> Deli </td><td style="text-align: left;"> = women admitted for full-term delivery</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+       </td>
+</tr>
+
+</table>
+
+<dl>
+<dt><code>hia</code></dt><dd><p>a factor with levels <code>never IA</code> <code>ever IA</code></p>
+</dd>
+<dt><code>gravi</code></dt><dd><p>a factor with levels <code>1-2</code> <code>3-4</code> <code>&gt;4</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>data(Ectopic)
+library(nnet)
+data(Ectopic)
+.data &lt;- Ectopic
+multi1 &lt;- multinom(outc ~ hia + gravi, data=.data)
+summary(multi1)
+mlogit.display(multi1)
+
+# Changing referent group of outcome
+.data$outcIA &lt;- relevel(.data$outc, ref="IA")
+multi2 &lt;- multinom(outcIA ~ hia + gravi, data=.data)
+summary(multi2)
+mlogit.display(multi2)
+</pre>
+
+
+</body></html>
