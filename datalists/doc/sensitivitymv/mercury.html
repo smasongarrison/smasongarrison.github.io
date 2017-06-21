@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: NHANES Mercury/Fish Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mercury"><tr><td>mercury</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+NHANES Mercury/Fish Data
+</h2>
+
+<h3>Description</h3>
+
+<p>Data from NHANES.  Matrix 397 x 3.  n=397 treated people who ate at least 15 servings of fish or shellfish during the previous month are matched to two controls who ate at most one serving of fish or shellfish.  The values in mercury record the level of  methylmercury in blood in mu-g/dl.  Column 1 is treated, columns 2 and 3 are controls.  Specifically, column 2 describes an individual who ate no fish or shellfish in the previous month, while column 3 describes an individual who ate exactly one serving of fish or shellfish.  Data are used to illustrate the senmv function in the sensitivitymv package.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(mercury)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 397 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>Treated</code></dt><dd><p>Mercury level for treated individual.</p>
+</dd>
+<dt><code>Zero</code></dt><dd><p>Mercury level for a control who ate no fish/shellfish</p>
+</dd>
+<dt><code>One</code></dt><dd><p>Mercury level for a control who ate one serving of 
+fish/shellfish</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Data is originally from NHANES 2009-2010.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(mercury)
+</pre>
+
+
+</body></html>

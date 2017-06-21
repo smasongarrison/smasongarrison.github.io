@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Duration and voicing measures of voiceless plosives in...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ptk"><tr><td>ptk</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Duration and voicing measures of voiceless plosives in Spanish</h2>
+
+<h3>Description</h3>
+
+<p>A dataset containing measures of total duration and voiceless period duration
+for instances of intervocalic Spanish /p/, /t/, and /k/.  The data are taken
+from 18 speakers in the task dialogues in the Spanish portion of the Glissando
+Corpus (the speakers are univsersity students in Valladolid, Spain).
+If you analyze the <code>ptk</code>
+dataset in a publication, please cite Eager (2017) from the references section below.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ptk
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 751 rows and 11 variables:
+</p>
+
+<dl>
+<dt>cdur</dt><dd><p>Total plosive duration, measured from preceding vowel intensity
+maximum to following vowel intensity maximum, in milliseconds.</p>
+</dd>
+<dt>vdur</dt><dd><p>Duration of the period of voicelessness in the
+vowel-consonant-vowel sequence in milliseconds.</p>
+</dd>
+<dt>place</dt><dd><p>Place of articulation (Bilabial, Dental, or Velar).</p>
+</dd>
+<dt>stress</dt><dd><p>Syllabic stress context (Tonic, Post-Tonic, or Unstressed).</p>
+</dd>
+<dt>prevowel</dt><dd><p>Preceding vowel phoneme identity (a, e, i, o, or u).</p>
+</dd>
+<dt>posvowel</dt><dd><p>Following vowel phoneme identity (a, e, i, o, or u).</p>
+</dd>
+<dt>wordpos</dt><dd><p>Position of the plosive in the word (Initial or Medial).</p>
+</dd>
+<dt>wordfreq</dt><dd><p>Number of times the word containing the plosive occurs in
+the CREA corpus.</p>
+</dd>
+<dt>speechrate</dt><dd><p>Local speech rate around the consonant in nuclei per
+second.</p>
+</dd>
+<dt>sex</dt><dd><p>The speaker's sex (Female or Male).</p>
+</dd>
+<dt>speaker</dt><dd><p>Speaker identifier (s01 through s18).</p>
+</dd>
+</dl>
+
+
+<h3>References</h3>
+
+<p>Eager, Christopher D. (2017). Contrast preservation and constraints on
+individual phonetic variation. Doctoral thesis. University of Illinois at
+Urbana-Champaign.
+</p>
+<p>Garrido, J. M., Escudero, D., Aguilar, L., Cardeñoso, V., Rodero, E.,
+de-la-Mota, C., … Bonafonte, A. (2013). Glissando: a corpus for
+multidisciplinary prosodic studies in Spanish and Catalan. Language Resources
+and Evaluation, 47(4), 945–971.
+</p>
+<p>Real Academia Española. Corpus de referencia del español actual (CREA). Banco
+de Datos. Retrieved from http://www.rae.es
+</p>
+<p>De Jong, N. H., &amp; Wempe, T. (2009). Praat script to detect syllable nuclei
+and measure speech rate automatically. Behavior Research Methods, 41(2),
+385–390.
+</p>
+
+
+</body></html>

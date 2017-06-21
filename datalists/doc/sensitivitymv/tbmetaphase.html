@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Genetic damage from drugs used to treat TB</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for tbmetaphase"><tr><td>tbmetaphase</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Genetic damage from drugs used to treat TB
+</h2>
+
+<h3>Description</h3>
+
+<p>This is a matched comparison of the effects of two drug sequences, namely HRZ and H2R2Z2, for the treatment of tuberculosis.  HRZ is a higher dose sequence than H2R2Z2.  The outcome is a measure of genetic damage, namely the frequency of aberrant metaphases two months after treatment.  Individuals were matched for the frequency of aberrant metaphases before treatment.  15 individuals treated with HRZ are matched to 1 or 2 controls treated with H2R2Z2.  Each row is one matched set.  If a set is a pair, the third element in a row is NA.  The data are originally from Rao, Gupta and Thomas (1991) and were used as an example in Rosenbaum (2007, Table 3).  Data are used to illustrate the senmv function in the sensitivitymv package.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(tbmetaphase)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 15 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>HRZ</code></dt><dd><p>Aberrant metaphases for individual treated with HRZ.</p>
+</dd>
+<dt><code>H2R2Z2.1</code></dt><dd><p>Aberrant metaphases for first matched individual treated with H2R2Z2.</p>
+</dd>
+<dt><code>H2R2Z2.2</code></dt><dd><p>Aberrant metaphases for second matched individual treated with H2R2Z2.  For matched pairs, this is NA.</p>
+</dd>
+</dl>
+
+
+
+<h3>References</h3>
+
+<p>Rao, V. V. N. G., Gupta, E. V. V and Thomas, I. M. Chromosomal aberrations in tuberculosis patients before and after treatment with short-term chemotherapy.  Mutation Research 1991, 259, 13-19.
+</p>
+<p>Rosenbaum, P. R. Sensitivity analysis for m-estimates, tests and confidence intervals in matched observational studies.  Biometrics, 2007, 63, 456-464.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(tbmetaphase)
+</pre>
+
+
+</body></html>

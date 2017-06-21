@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Smoking and lead in 150 matched 1-5 sets.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for lead150"><tr><td>lead150</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Smoking and lead in 150 matched 1-5 sets.
+</h2>
+
+<h3>Description</h3>
+
+<p>Comparison of 150 daily smokers and 5 matched control nonsmokers from NHANES in terms of blood lead levels in mu-g/L.  The matching controlled for gender, age, race education level, and household income.  The data were used in Rosenbaum (2013) to contrast design sensitivity with matched pairs and with multiple controls.  See also lead250.  Used as an example to illustrate the senmv function in the sensitivitymv package.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(lead150)</pre>
+
+
+<h3>Format</h3>
+
+<p>Column 1 is the lead level for the daily smoker.  Columns 2 through 6 are lead levels for the five matched control nonsmokers.
+</p>
+
+
+<h3>Details</h3>
+
+<p>See the appendix to Rosenbaum (2013).
+</p>
+
+
+<h3>Source</h3>
+
+<p>NHANES 2007-2008 files from CDC and Rosenbaum (2013).  Under a conventional Gaussian model, 250 pairs and 150 1-5 matched sets should have the same standard error; however, the design sensitivity is not the same.
+</p>
+
+
+<h3>References</h3>
+
+<p>Rosenbaum, P. R. (2013) Impact of multiple matched controls on design sensitivity in observational studies.  Biometrics, 2013, 69, 118-127.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(lead150)
+</pre>
+
+
+</body></html>
