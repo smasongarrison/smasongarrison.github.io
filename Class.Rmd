@@ -74,7 +74,7 @@ All readings will be completed before class on the date on which they are assign
 
 ### Day 2 (June 20)
 ##### Topics:  Experiments, Design, Sampling, and Measurement
-##### Study Hall: Read selections from ``How to Lie with Statistics''
+##### Study Hall: Scale Development
 ##### Relevant Materials:
 ###### [PowerPoint 2](https://www.dropbox.com/s/s5sqtc4szlvjykz/Lying%20with%20Statistics_02.pptx?dl=0)
 ###### [PowerPoint 3](https://www.dropbox.com/s/rzyog7idb5895op/Lying%20with%20Statistics_03.pptx?dl=0)
@@ -84,12 +84,24 @@ All readings will be completed before class on the date on which they are assign
 
 
 ### Day 3 (June 21)
-##### Topics: Probability and Summary Statistics
+##### Topics: Measurement, Summary Statistics, Distributions
 ##### Study Hall: Read selections from ``How to Lie with Statistics''
+##### Relevant Materials:
+###### [PowerPoint 4](https://www.dropbox.com/s/7fxov5zz7an1teh/Lying%20with%20Statistics_04.pptx?dl=0)
+###### [PowerPoint 5](https://www.dropbox.com/s/pk86gyzjov7mxjl/Lying%20with%20Statistics_05.pptx?dl=0)
+###### [PowerPoint 6](https://www.dropbox.com/s/ooi09e4kl0hu0h3/Lying%20with%20Statistics_06.pptx?dl=0)
+###### [R Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
+###### [R Graph Catalog](http://shinyapps.stat.ubc.ca/r-graph-catalog/)
+###### [intRo](http://www.intro-stats.com/)
+###### [Sampling and Standard Error Shiny](https://gallery.shinyapps.io/sampling_and_stderr/)
+###### [Robustness](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/TK/1&by=Tobias%20K%C3%A4chele&title=Robustness%20of%20Mean%20and%20Median&shorttitle=Robustness%20of%20Mean%20and%20Median)
 
 ### Day 4 (June 22)
-##### Topics: Hypothesis Testing
+##### Topics: Probability and Hypothesis Testing
 ##### Study Hall: Read selections from ``How to Lie with Statistics''
+##### Relevant Materials:
+###### [P-Hacking](http://shinyapps.org/apps/p-hacker/)
+###### [Significant and True effects](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/PPV&by=Michael%20Zehetleitner%20and%20Felix%20Sch%C3%B6nbrodt&title=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?&shorttitle=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?)
 
 ### Day 5 (June 23)
 ##### Topics: Correlation 
