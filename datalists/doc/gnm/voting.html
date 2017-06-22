@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data on Social Mobility and the Labour Vote</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for voting"><tr><td>voting</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Data on Social Mobility and the Labour Vote</h2>
+
+<h3>Description</h3>
+
+<p>Voting data from the 1987 British general election, cross-classified
+by the class of the head of household and the class of their father.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>voting</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 25 observations on the following 4 variables.
+</p>
+
+<dl>
+<dt><code>percentage</code></dt><dd><p>the percentage of the cell voting Labour.</p>
+</dd>
+<dt><code>total</code></dt><dd><p>the cell count.</p>
+</dd>
+<dt><code>origin</code></dt><dd><p>a factor describing the father's class with
+levels <code>1:5</code>.</p>
+</dd> 
+<dt><code>destination</code></dt><dd><p>a factor describing the head of
+household's class with levels <code>1:5</code>.</p>
+</dd> 
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>Clifford, P. and Heath, A. F. (1993) The Political Consequences of
+Social Mobility. <em>J. Roy. Stat. Soc. A</em>, <b>156(1)</b>, 51-61.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+### Examples from Clifford and Heath paper
+### (Results differ slightly - possible transcription error in
+### published data?)
+set.seed(1)
+
+## reconstruct counts voting Labour/non-Labour
+count &lt;- with(voting, percentage/100 * total)
+yvar &lt;- cbind(count, voting$total - count)
+
+## fit diagonal reference model with constant weights
+classMobility &lt;- gnm(yvar ~ -1 + Dref(origin, destination), 
+                     family = binomial, data = voting)
+DrefWeights(classMobility)
+
+## create factors indicating movement in and out of salariat (class 1)
+upward &lt;- with(voting, origin != 1 &amp; destination == 1)
+downward &lt;- with(voting, origin == 1 &amp; destination != 1)
+
+## fit separate weights for the "socially mobile" groups
+socialMobility &lt;- gnm(yvar ~ -1 + Dref(origin, destination,
+                                       delta = ~ 1 + downward + upward),
+                      family = binomial, data = voting)
+DrefWeights(socialMobility)
+
+## fit separate weights for downwardly mobile groups only
+downwardMobility &lt;- gnm(yvar ~ -1 + Dref(origin, destination,
+                                         delta = ~ 1 + downward),
+                        family = binomial, data = voting)
+DrefWeights(downwardMobility)
+</pre>
+
+
+</body></html>

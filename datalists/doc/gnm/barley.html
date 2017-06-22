@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Jenkyn's Data on Leaf-blotch on Barley</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for barley"><tr><td>barley</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Jenkyn's Data on Leaf-blotch on Barley </h2>
+
+<h3>Description</h3>
+
+<p>Incidence of <em>R. secalis</em> on the leaves of ten varieties of barley grown
+at nine sites.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>barley</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 90 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt>y</dt><dd><p>the proportion of leaf affected (values in [0,1])</p>
+</dd>
+<dt>site</dt><dd><p>a factor with 9 levels <code>A</code> to <code>I</code></p>
+</dd>
+<dt>variety</dt><dd><p>a factor with 10 levels <code>c(1:9, "X")</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Note</h3>
+
+<p>This dataset was used in Wedderburn's original paper (1974) on 
+quasi-likelihood.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Originally in an unpublished Aberystwyth PhD thesis by J F Jenkyn.
+</p>
+
+
+<h3>References</h3>
+
+<p>Gabriel, K R (1998).  Generalised bilinear regression.  <em>Biometrika</em> 
+<b>85</b>, 689&ndash;700.
+</p>
+<p>McCullagh, P and Nelder, J A (1989)  <em>Generalized Linear Models</em> (2nd ed).  
+Chapman and Hall.
+</p>
+<p>Wedderburn, R W M (1974).  Quasilikelihood functions, generalized linear models 
+and the Gauss-Newton method.  <em>Biometrika</em> <b>61</b>, 439&ndash;47.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+set.seed(1)
+
+###  Fit Wedderburn's logit model with variance proportional to [mu(1-mu)]^2
+logitModel &lt;- glm(y ~ site + variety, family = wedderburn, data = barley)
+fit &lt;- fitted(logitModel)
+print(sum((barley$y - fit)^2 / (fit * (1-fit))^2))
+##  Agrees with the chi-squared value reported in McCullagh and Nelder 
+##  (1989, p331), which differs slightly from Wedderburn's reported value.
+
+###  Fit the biplot model as in Gabriel (1998, p694)
+biplotModel &lt;- gnm(y ~ -1 + instances(Mult(site, variety), 2),
+                   family = wedderburn, data = barley)
+barleySVD &lt;- svd(matrix(biplotModel$predictors, 10, 9))
+A &lt;- sweep(barleySVD$v, 2, sqrt(barleySVD$d), "*")[, 1:2]
+B &lt;- sweep(barleySVD$u, 2, sqrt(barleySVD$d), "*")[, 1:2]
+##  These are essentially A and B as in Gabriel (1998, p694), from which
+##  the biplot is made by
+plot(rbind(A, B), pch = c(levels(barley$site), levels(barley$variety)))
+
+##  Fit the double-additive model as in Gabriel (1998, p697)
+variety.binary &lt;- factor(match(barley$variety, c(2,3,6), nomatch = 0) &gt; 0,
+                        labels = c("rest", "2,3,6"))
+doubleAdditive &lt;- gnm(y ~ variety + Mult(site, variety.binary),
+                      family = wedderburn, data = barley)
+##  It is unclear why Gabriel's chi-squared statistics differ slightly
+##  from the ones produced in these fits.  Possibly Gabriel adjusted the
+##  data somehow prior to fitting?
+</pre>
+
+
+</body></html>

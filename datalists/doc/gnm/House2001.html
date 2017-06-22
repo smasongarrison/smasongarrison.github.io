@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data on twenty roll calls in the US House of Representatives,...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for House2001"><tr><td>House2001</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Data on twenty roll calls in the US House of Representatives, 2001 </h2>
+
+<h3>Description</h3>
+
+<p>The voting record of every representative in the 2001 House, on 20
+roll calls selected by <em>Americans for Democratic Action</em>.  Each row is
+the record of one representative; the first column records the
+representative's registered party allegiance.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>House2001</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 439 observations on the following 21 variables.
+</p>
+
+<dl>
+<dt><code>party</code></dt><dd><p>a factor with levels <code>D</code> <code>I</code> <code>N</code> <code>R</code></p>
+</dd>
+<dt><code>HR333.BankruptcyOverhaul.Yes</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>SJRes6.ErgonomicsRuleDisapproval.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR3.IncomeTaxReduction.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR6.MarriageTaxReduction.Yes</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR8.EstateTaxRelief.Yes</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR503.FetalProtection.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR1.SchoolVouchers.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR1836.TaxCutReconciliationBill.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR2356.CampaignFinanceReform.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HJRes36.FlagDesecration.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR7.FaithBasedInitiative.Yes</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HJRes50.ChinaNormalizedTradeRelations.Yes</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR4.ANWRDrillingBan.Yes</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR2563.PatientsRightsHMOLiability.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR2563.PatientsBillOfRights.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR2944.DomesticPartnerBenefits.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR2586.USMilitaryPersonnelOverseasAbortions.Yes</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR2975.AntiTerrorismAuthority.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR3090.EconomicStimulus.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>HR3000.TradePromotionAuthorityFastTrack.No</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Coding of the votes is as described in ADA (2002).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Originally printed in ADA (2002).  Kindly supplied in electronic
+format by Jan deLeeuw, who used the data to illustrate methods
+developed in deLeeuw (2006).
+</p>
+
+
+<h3>References</h3>
+
+<p>Americans for Democratic Action, ADA (2002).  2001 voting record:
+Shattered promise of liberal progress.  <em>ADA Today</em> <b>57</b>(1),
+1&ndash;17.
+</p>
+<p>deLeeuw, J (2006).  Principal component analysis of binary data by
+iterated singular value decomposition.  <em>Computational Statistics
+and Data Analysis</em> <b>50</b>, 21&ndash;39.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+## This example takes some time to run!
+summary(House2001)
+## Put the votes in a matrix, and discard members with too many NAs etc:
+House2001m &lt;- as.matrix(House2001[-1])
+informative &lt;- apply(House2001m, 1, function(row){
+    valid &lt;- !is.na(row)
+    validSum &lt;- if (any(valid)) sum(row[valid]) else 0
+    nValid &lt;- sum(valid)
+    uninformative &lt;- (validSum == nValid) || (validSum == 0) || (nValid &lt; 10)
+    !uninformative})
+House2001m &lt;- House2001m[informative, ]
+## Make a vector of colours, blue for Republican and red for Democrat:
+parties &lt;- House2001$party[informative]
+partyColors &lt;- rep("black", length(parties))
+partyColors &lt;- ifelse(parties == "D", "red", partyColors)
+partyColors &lt;- ifelse(parties == "R", "blue", partyColors)
+## Expand the data for statistical modelling:
+House2001v &lt;- as.vector(House2001m)
+House2001f &lt;- data.frame(member = rownames(House2001m),
+                         party = parties,
+                         rollCall = factor(rep((1:20),
+                                           rep(nrow(House2001m), 20))),
+                         vote = House2001v)
+## Now fit an "empty" model, in which all members vote identically:
+baseModel &lt;- glm(vote ~ -1 + rollCall, family = binomial, data = House2001f)
+## From this, get starting values for a one-dimensional multiplicative term:
+Start &lt;- residSVD(baseModel, rollCall, member)
+##
+## Now fit the logistic model with one multiplicative term.
+## For the response variable, instead of vote=0,1 we use 0.03 and 0.97,
+## corresponding approximately to a bias-reducing adjustment of p/(2n),
+## where p is the number of parameters and n the number of observations.
+##
+voteAdj &lt;- 0.5 + 0.94*(House2001f$vote - 0.5)
+House2001model1 &lt;- gnm(voteAdj ~ Mult(rollCall, member),
+              eliminate = rollCall,
+              family = binomial, data = House2001f,
+              na.action = na.exclude, trace = TRUE, tolerance = 1e-03,
+              start = -Start)
+## Deviance is 2234.847, df = 5574
+##
+## Plot the members' positions as estimated in the model:
+##
+memberParameters &lt;- pickCoef(House2001model1, "member")
+plot(coef(House2001model1)[memberParameters], col = partyColors,
+     xlab = "Alphabetical index (Abercrombie 1 to Young 301)",
+     ylab = "Member's relative position, one-dimensional model")
+## Can do the same thing with two dimensions, but gnm takes around 40
+## slow iterations to converge (there are more than 600 parameters): 
+Start2 &lt;- residSVD(baseModel, rollCall, member, d = 2)
+House2001model2 &lt;- gnm(
+              voteAdj ~ instances(Mult(rollCall - 1, member - 1), 2),
+              eliminate = rollCall,
+              family = binomial, data = House2001f,
+              na.action = na.exclude, trace = TRUE, tolerance = 1e-03,
+              start = Start2, lsMethod = "qr")
+## Deviance is 1545.166, df = 5257
+##
+memberParameters1 &lt;- pickCoef(House2001model2, "1).member")
+memberParameters2 &lt;- pickCoef(House2001model2, "2).member")
+plot(coef(House2001model2)[memberParameters1],
+     coef(House2001model2)[memberParameters2],
+     col = partyColors,
+     xlab = "Dimension 1",
+     ylab = "Dimension 2",
+     main = "House2001 data: Member positions, 2-dimensional model")
+##
+## The second dimension is mainly due to rollCall 12, which does not
+## correlate well with the rest -- look at the coefficients of
+## House2001model1, or at the 12th row of
+cormat &lt;- cor(na.omit(House2001m))
+
+## End(Not run)
+</pre>
+
+
+</body></html>

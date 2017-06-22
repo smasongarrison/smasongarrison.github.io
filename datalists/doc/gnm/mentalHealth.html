@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data on Mental Health and Socioeconomic Status</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mentalHealth"><tr><td>mentalHealth</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Data on Mental Health and Socioeconomic Status</h2>
+
+<h3>Description</h3>
+
+<p>A 2-way contingency table from a sample of residents of Manhattan.
+Classifying variables are child's mental impairment (<code>MHS</code>) and
+parents' socioeconomic status (<code>SES</code>).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>mentalHealth</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 24 observations on the following 3 variables.
+</p>
+
+<dl>
+<dt><code>count</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>SES</code></dt><dd><p>an ordered factor with levels <code>A</code> &lt; <code>B</code> &lt; <code>C</code> &lt; <code>D</code> &lt; <code>E</code> &lt; <code>F</code></p>
+</dd>
+<dt><code>MHS</code></dt><dd><p>an ordered factor with levels <code>well</code> &lt; <code>mild</code> &lt; <code>moderate</code> &lt; <code>impaired</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>From Agresti (2002, p381); originally in Srole et al. (1978, p289).
+</p>
+
+
+<h3>References</h3>
+
+<p>Agresti, A. (2002).  <em>Categorical Data Analysis</em> (2nd edn).  New
+York: Wiley.
+</p>
+<p>Srole, L, Langner, T. S., Michael, S. T., Opler, M. K. and Rennie,
+T. A. C. (1978), <em>Mental Health in the Metropolis: The Midtown
+Manhattan Study</em>.  New York: NYU Press.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+set.seed(1)
+
+##  Goodman Row-Column association model fits well (deviance 3.57, df 8)
+mentalHealth$MHS &lt;- C(mentalHealth$MHS, treatment)
+mentalHealth$SES &lt;- C(mentalHealth$SES, treatment)
+RC1model &lt;- gnm(count ~ SES + MHS + Mult(SES, MHS),
+                family = poisson, data = mentalHealth)
+## Row scores and column scores are both unnormalized in this
+## parameterization of the model 
+
+## The scores can be normalized as in Agresti's eqn (9.15):
+rowProbs &lt;- with(mentalHealth, tapply(count, SES, sum) / sum(count))
+colProbs &lt;- with(mentalHealth, tapply(count, MHS, sum) / sum(count))
+mu &lt;- getContrasts(RC1model, pickCoef(RC1model, "[.]SES"),
+                   ref = rowProbs, scaleRef = rowProbs,
+                   scaleWeights = rowProbs)
+nu &lt;- getContrasts(RC1model, pickCoef(RC1model, "[.]MHS"),
+                   ref = colProbs, scaleRef = colProbs,
+                   scaleWeights = colProbs)
+all.equal(sum(mu$qv[,1] * rowProbs), 0)
+all.equal(sum(nu$qv[,1] * colProbs), 0)
+all.equal(sum(mu$qv[,1]^2 * rowProbs), 1)
+all.equal(sum(nu$qv[,1]^2 * colProbs), 1)
+</pre>
+
+
+</body></html>

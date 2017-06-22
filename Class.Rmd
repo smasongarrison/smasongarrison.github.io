@@ -30,28 +30,55 @@ Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for g
 
 ## Materials
 ### Software
-[R](http://cran.us.r-project.org/)
+###### [R](http://cran.us.r-project.org/)
 
-[RStudio](https://www.rstudio.com/products/rstudio/download/)
+###### [RStudio](https://www.rstudio.com/products/rstudio/download/)
 
 #### Tutorials
-[How to install R and R Studio on PC / Windows](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
-
-[How to install R and R Studio on Mac / OSX](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
-
-[Using R and psych for personality and psychological research](http://personality-project.org/r/psych/)
+###### [How to install R and R Studio on PC / Windows](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
+###### [How to install R and R Studio on Mac / OSX](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
+###### [Using R and psych for personality and psychological research](http://personality-project.org/r/psych/)
+###### [tutorialspoint for R programming](https://www.tutorialspoint.com/r/index.htm)
 
 ### Poster Template
-[Poster Template](https://www.dropbox.com/s/8spm24w728si1gs/Template.pptx?dl=0)
+###### [Poster Template](https://www.dropbox.com/s/8spm24w728si1gs/Template.pptx?dl=0)
 
-[Poster Example 1](https://www.dropbox.com/s/ndohtiimpp6a3fs/spsp2014a.pptx?dl=0), which I presented at an academic conference in 2014.
+###### [Poster Example 1](https://www.dropbox.com/s/ndohtiimpp6a3fs/spsp2014a.pptx?dl=0), which I presented at an academic conference in 2014.
 
-[Poster Example 2](https://www.dropbox.com/s/hwyjkgv5qi1qzkf/arp2017.pptx?dl=0), which I presented at a different academic conference in 2017.
+###### [Poster Example 2](https://www.dropbox.com/s/hwyjkgv5qi1qzkf/arp2017.pptx?dl=0), which I presented at a different academic conference in 2017.
+
+
+### Class PowerPoints 
+###### [PowerPoint 1](https://www.dropbox.com/s/0zaqabfe9cqxk00/Lying%20with%20Statistics_01.pptx?dl=0)
+###### [PowerPoint 2](https://www.dropbox.com/s/s5sqtc4szlvjykz/Lying%20with%20Statistics_02.pptx?dl=0)
+###### [PowerPoint 3](https://www.dropbox.com/s/rzyog7idb5895op/Lying%20with%20Statistics_03.pptx?dl=0)
+###### [PowerPoint 4](https://www.dropbox.com/s/7fxov5zz7an1teh/Lying%20with%20Statistics_04.pptx?dl=0)
+###### [PowerPoint 5](https://www.dropbox.com/s/pk86gyzjov7mxjl/Lying%20with%20Statistics_05.pptx?dl=0)
+###### [PowerPoint 6A](https://www.dropbox.com/s/fplv1ysr3ufnoyc/Lying%20with%20Statistics_06A.pptx?dl=0)
+###### [PowerPoint 6B](https://www.dropbox.com/s/fplv1ysr3ufnoyc/Lying%20with%20Statistics_06A.pptx?dl=0)
+###### [PowerPoint 7](https://www.dropbox.com/s/ogvl8h33flso7un/Lying%20with%20Statistics_07.pptx?dl=0)
+
+### Class Links
+###### [Cognitive Bias Codex](https://en.wikipedia.org/wiki/File:The_Cognitive_Bias_Codex_-_180%2B_biases,_designed_by_John_Manoogian_III_(jm3).png)
+###### [Vaccination Simulation](http://www.software3d.com/Home/Vax/Immunity.php)
+###### [SAPA Project](https://sapa-project.org/)
+###### [Moral Machine](http://moralmachine.mit.edu/)
+###### [R Graph Catalog](http://shinyapps.stat.ubc.ca/r-graph-catalog/)
+###### [intRo](http://www.intro-stats.com/)
+###### [Reference Card](https://cran.r-project.org/doc/contrib/Short-refcard.pdf)
+###### [Sampling and Standard Error Shiny](https://gallery.shinyapps.io/sampling_and_stderr/)
+###### [Robustness](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/TK/1&by=Tobias%20K%C3%A4chele&title=Robustness%20of%20Mean%20and%20Median&shorttitle=Robustness%20of%20Mean%20and%20Median)
+###### [P-Hacking](http://shinyapps.org/apps/p-hacker/)
+###### [Significant and True effects](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/PPV&by=Michael%20Zehetleitner%20and%20Felix%20Sch%C3%B6nbrodt&title=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?&shorttitle=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?)
+
+### Class R Code
+###### [R Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
+###### [R Sytax_basic](https://www.dropbox.com/s/4h3y9w117ol36pv/Rsyntax_basic.R?dl=0)
+
 
 *** 
 
 ## Very Tentative Schedule
-
 
 <!---How To Read This Schedule: 
 
@@ -84,22 +111,28 @@ All readings will be completed before class on the date on which they are assign
 
 
 ### Day 3 (June 21)
-##### Topics: Measurement, Summary Statistics, Distributions
+##### Topics: Measurement, Summary Statistics
 ##### Study Hall: Read selections from ``How to Lie with Statistics''
 ##### Relevant Materials:
 ###### [PowerPoint 4](https://www.dropbox.com/s/7fxov5zz7an1teh/Lying%20with%20Statistics_04.pptx?dl=0)
 ###### [PowerPoint 5](https://www.dropbox.com/s/pk86gyzjov7mxjl/Lying%20with%20Statistics_05.pptx?dl=0)
-###### [PowerPoint 6](https://www.dropbox.com/s/ooi09e4kl0hu0h3/Lying%20with%20Statistics_06.pptx?dl=0)
 ###### [R Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
 ###### [R Graph Catalog](http://shinyapps.stat.ubc.ca/r-graph-catalog/)
 ###### [intRo](http://www.intro-stats.com/)
-###### [Sampling and Standard Error Shiny](https://gallery.shinyapps.io/sampling_and_stderr/)
-###### [Robustness](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/TK/1&by=Tobias%20K%C3%A4chele&title=Robustness%20of%20Mean%20and%20Median&shorttitle=Robustness%20of%20Mean%20and%20Median)
+
 
 ### Day 4 (June 22)
-##### Topics: Probability and Hypothesis Testing
+##### Topics: R syntax,  Distributions, and Hypothesis Testing
 ##### Study Hall: Read selections from ``How to Lie with Statistics''
 ##### Relevant Materials:
+###### [PowerPoint 6A](https://www.dropbox.com/s/fplv1ysr3ufnoyc/Lying%20with%20Statistics_06A.pptx?dl=0)
+###### [R Sytax_basic](https://www.dropbox.com/s/4h3y9w117ol36pv/Rsyntax_basic.R?dl=0)
+###### [Reference Card](https://cran.r-project.org/doc/contrib/Short-refcard.pdf)
+###### [PowerPoint 6B](https://www.dropbox.com/s/fplv1ysr3ufnoyc/Lying%20with%20Statistics_06A.pptx?dl=0)
+###### [R Class Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
+###### [Sampling and Standard Error Shiny](https://gallery.shinyapps.io/sampling_and_stderr/)
+###### [Robustness](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/TK/1&by=Tobias%20K%C3%A4chele&title=Robustness%20of%20Mean%20and%20Median&shorttitle=Robustness%20of%20Mean%20and%20Median)
+###### [PowerPoint 7](https://www.dropbox.com/s/ogvl8h33flso7un/Lying%20with%20Statistics_07.pptx?dl=0)
 ###### [P-Hacking](http://shinyapps.org/apps/p-hacker/)
 ###### [Significant and True effects](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/PPV&by=Michael%20Zehetleitner%20and%20Felix%20Sch%C3%B6nbrodt&title=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?&shorttitle=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?)
 

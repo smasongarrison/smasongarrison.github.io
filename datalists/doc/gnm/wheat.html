@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Wheat Yields from Mexican Field Trials</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for wheat"><tr><td>wheat</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Wheat Yields from  Mexican Field Trials </h2>
+
+<h3>Description</h3>
+
+<p>Data from a 10-year experiment at the CIMMYT experimental station
+located in the Yaqui Valley near Ciudad Obregon, Sonora, Mexico &mdash; factorial
+design using 24 treatments in all.  In each of the 10 years the experiment was 
+arranged in a randomized complete block design with three replicates.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>wheat</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 240 observations on the following 33 variables.
+</p>
+
+<dl>
+<dt>yield</dt><dd><p>numeric, mean yield in kg/ha for 3 replicates</p>
+</dd>
+<dt>year</dt><dd><p>a factor with levels <code>1988:1997</code></p>
+</dd>
+<dt>tillage</dt><dd><p>a factor with levels <code>T</code> <code>t</code></p>
+</dd>
+<dt>summerCrop</dt><dd><p>a factor with levels <code>S</code> <code>s</code></p>
+</dd>
+<dt>manure</dt><dd><p>a factor with levels <code>M</code> <code>m</code></p>
+</dd>
+<dt>N</dt><dd><p>a factor with levels <code>0</code> <code>N</code> <code>n</code></p>
+</dd>
+<dt>MTD</dt><dd><p>numeric, mean max temp sheltered (deg C) in December</p>
+</dd>
+<dt>MTJ</dt><dd><p>same for January</p>
+</dd>
+<dt>MTF</dt><dd><p>same for February</p>
+</dd>
+<dt>MTM</dt><dd><p>same for March</p>
+</dd>
+<dt>MTA</dt><dd><p>same for April</p>
+</dd>
+<dt>mTD</dt><dd><p>numeric, mean min temp sheltered (deg C) in December</p>
+</dd>
+<dt>mTJ</dt><dd><p>same for January</p>
+</dd>
+<dt>mTF</dt><dd><p>same for February</p>
+</dd>
+<dt>mTM</dt><dd><p>same for March</p>
+</dd>
+<dt>mTA</dt><dd><p>same for April</p>
+</dd>
+<dt>mTUD</dt><dd><p>numeric, mean min temp unsheltered (deg C)in December</p>
+</dd>
+<dt>mTUJ</dt><dd><p>same for January</p>
+</dd>
+<dt>mTUF</dt><dd><p>same for February</p>
+</dd>
+<dt>mTUM</dt><dd><p>same for March</p>
+</dd>
+<dt>mTUA</dt><dd><p>same for April</p>
+</dd>
+<dt>PRD</dt><dd><p>numeric, total precipitation (mm) in December</p>
+</dd>
+<dt>PRJ</dt><dd><p>same for January</p>
+</dd>
+<dt>PRF</dt><dd><p>same for February</p>
+</dd>
+<dt>PRM</dt><dd><p>same for March</p>
+</dd>
+<dt>SHD</dt><dd><p>numeric, mean sun hours in December</p>
+</dd>
+<dt>SHJ</dt><dd><p>same for January</p>
+</dd>
+<dt>SHF</dt><dd><p>same for February</p>
+</dd>
+<dt>EVD</dt><dd><p>numeric, total evaporation (mm) in December</p>
+</dd>
+<dt>EVJ</dt><dd><p>same for January</p>
+</dd>
+<dt>EVF</dt><dd><p>same for February</p>
+</dd>
+<dt>EVM</dt><dd><p>same for March</p>
+</dd>
+<dt>EVA</dt><dd><p>same for April</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p> Tables A1 and A3 of
+Vargas, M, Crossa, J, van Eeuwijk, F, Sayre, K D and Reynolds, M P
+(2001).  Interpreting treatment by environment interaction in agronomy
+trials.  <em>Agronomy Journal</em> <b>93</b>, 949&ndash;960.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+set.seed(1)
+
+##  Scale yields to reproduce analyses reported in Vargas et al (2001)
+yield.scaled &lt;- wheat$yield * sqrt(3/1000)
+
+##  Reproduce (up to error caused by rounding) Table 1 of Vargas et al (2001)
+aov(yield.scaled ~ year*tillage*summerCrop*manure*N, data = wheat)
+treatment &lt;- interaction(wheat$tillage, wheat$summerCrop, wheat$manure,
+                         wheat$N, sep = "")
+mainEffects &lt;- lm(yield.scaled ~ year + treatment, data = wheat)
+svdStart &lt;- residSVD(mainEffects, year, treatment, 3)
+bilinear1 &lt;- update(asGnm(mainEffects), . ~ . + 
+                    Mult(year, treatment),
+                    start = c(coef(mainEffects), svdStart[,1]))
+bilinear2 &lt;- update(bilinear1, . ~ . + 
+                    Mult(year, treatment, inst = 2),
+                    start = c(coef(bilinear1), svdStart[,2]))
+bilinear3 &lt;- update(bilinear2, . ~ . + 
+                    Mult(year, treatment, inst = 3),
+                    start = c(coef(bilinear2), svdStart[,3]))
+anova(mainEffects, bilinear1, bilinear2, bilinear3)
+
+##  Examine the extent to which, say, mTF explains the first bilinear term
+bilinear1mTF &lt;- gnm(yield.scaled ~ year + treatment + Mult(1 + mTF, treatment),
+                    family = gaussian, data = wheat)
+anova(mainEffects, bilinear1mTF, bilinear1)
+
+##  How to get the standard SVD representation of an AMMI-n model
+##
+##  We'll work with the AMMI-2 model, which here is called "bilinear2"
+##
+##  First, extract the contributions of the 5 terms in the model:
+##
+wheat.terms &lt;- termPredictors(bilinear2)
+##
+##  That's a matrix, whose 4th and 5th columns are the interaction terms
+##
+##  Combine those two interaction terms, to get the total estimated
+##  interaction effect:
+##
+wheat.interaction &lt;- wheat.terms[, 4] + wheat.terms[, 5]
+##
+##  That's a vector, so we need to re-shape it as a 24 by 10 matrix
+##  ready for calculating the SVD:
+##
+wheat.interaction &lt;- matrix(wheat.interaction, 24, 10)
+##
+##  Now we can compute the SVD:
+##
+wheat.interaction.SVD &lt;- svd(wheat.interaction)
+##
+##  Only the first two singular values are nonzero, as expected
+##  (since this is an AMMI-2 model, the interaction has rank 2)
+##
+##  So the result object can be simplified by re-calculating the SVD with
+##  just two dimensions:
+##
+wheat.interaction.SVD &lt;- svd(wheat.interaction, nu = 2, nv = 2)
+</pre>
+
+
+</body></html>

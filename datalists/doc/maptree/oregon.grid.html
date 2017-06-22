@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hexagonal Grid Cell Polygons covering Oregon, USA</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for oregon.grid"><tr><td>oregon.grid</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Hexagonal Grid Cell Polygons covering Oregon, USA</h2>
+
+<h3>Description</h3>
+
+<p>Polygon borders for 389 hexagonal grid cells covering Oregon, USA,
+in <code>polygon</code> format.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data (oregon.grid)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 3112 rows and 2 columns (the components
+<code>"x"</code> and <code>"y"</code>).</p>
+
+
+<h3>Details</h3>
+
+<p>The polygon format used for these grid cell boundaries is a slight
+variation from the standard R/S format.  Each cell polygon is
+described by seven coordinate pairs, the last repeating the first.
+Prior to the first coordinate pair of each cell is a row containing
+NA in the <code>"y"</code> column and, in the <code>"x"</code> column, an
+identifier for the cell.  The identifiers are the same as the
+row names in <code>oregon.bird.dist</code> and
+<code>oregon.env.vars</code>.  See <code>map.groups</code> for
+how the linkage is made in mapping.
+</p>
+<p>These grid cells are extracted from a larger set covering the
+conterminous United States and adjacent parts of Canada and
+Mexico, as described in White et al. (1992).  Only cells with
+at least 50 percent of their area contained within the state of
+Oregon are included.
+</p>
+<p>The map projection for the coordinates, as well as the point
+coordinates in <code>oregon.env.vars</code>, is the Lambert
+Conformal Conic with standard parallels at 33 and 45
+degrees North latitude, with the longitude of the central
+meridian at 120 degrees, 30 minutes West longitude,
+and with the projection origin latitude at 41 degrees,
+45 minutes North latitude.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Denis White</p>
+
+
+<h3>References</h3>
+
+<p>White, D., Kimerling, A.J., Overton, W.S.  (1992)  Cartographic
+and geometric components of a global sampling design for
+environmental monitoring, <em>Cartography and Geographic
+Information Systems</em>, <b>19</b>(1), 5-22.
+</p>
+
+
+</body></html>

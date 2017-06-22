@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Occupation of Respondents and Their Closest Friend</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for friend"><tr><td>friend</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Occupation of Respondents and Their Closest Friend </h2>
+
+<h3>Description</h3>
+
+<p>Cross-classification of the occupation of respondent and that of their
+closest friend. Data taken from wave 10 (year 2000) of the British
+Household Panel Survey.  
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>friend</pre>
+
+
+<h3>Format</h3>
+
+<p>A table of counts, with classifying factors <code>r</code> (respondent's
+occupational category; levels <code>1:31</code>) and <code>c</code> (friend's
+occupational category; levels <code>1:31</code>).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Chan, T.W. and Goldthorpe, J.H. (2004) Is there a status order 
+in contemporary British society: Evidence from the occupational 
+structure of friendship, <em>European Sociological Review</em>,
+<b>20</b>, 383&ndash;401. 
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+set.seed(1)
+
+###  Fit an association model with homogeneous row-column effects
+rc1 &lt;- gnm(Freq ~ r + c + Diag(r,c) + MultHomog(r, c),
+           family = poisson, data = friend)
+rc1
+
+## Not run: 
+###  Extend to two-component interaction
+rc2 &lt;- update(rc1, . ~ . + MultHomog(r, c, inst = 2),
+              etastart = rc1$predictors)
+rc2
+
+## End(Not run)
+
+</pre>
+
+
+</body></html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data on Class, Religion and Vote in France</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cautres"><tr><td>cautres</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2> Data on Class, Religion and Vote in France</h2>
+
+<h3>Description</h3>
+
+<p>A 4-way contingency table of vote by class by religion
+in four French elections
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>cautres</pre>
+
+
+<h3>Format</h3>
+
+<p>A table of counts, with classifying factors <code>vote</code> (levels
+<code>1:2</code>), <code>class</code> (levels <code>1:6</code>) and <code>religion</code>
+(levels <code>1:4</code>) and <code>election</code> (levels <code>1:4</code>).
+</p>
+
+
+<h3>Source</h3>
+
+<p>Bruno Cautres
+</p>
+
+
+<h3>References</h3>
+
+<p>Cautres, B, Heath, A F and Firth, D (1998).  Class, religion and vote in
+Britain and France.  <em>La Lettre de la Maison Francaise</em> <b>8</b>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+set.seed(1)
+
+##  Fit a "double UNIDIFF" model with the religion-vote and class-vote
+##  interactions both modulated by nonnegative election-specific multipliers
+doubleUnidiff &lt;- gnm(Freq ~ election*vote + election*class*religion +
+                     Mult(Exp(election), religion:vote) +
+                     Mult(Exp(election), class:vote),
+                     family = poisson, data = cautres)
+##  Deviance should be 133.04
+
+##  Examine the multipliers of the class-vote log odds ratios
+ofInterest(doubleUnidiff) &lt;- pickCoef(doubleUnidiff, "class:vote[).]")
+coef(doubleUnidiff)
+## Coefficients of interest:
+## Mult(Exp(.), class:vote).election1 
+##                        -0.38357138 
+## Mult(Exp(.), class:vote).election2 
+##                         0.29816599 
+## Mult(Exp(.), class:vote).election3 
+##                         0.06580307 
+## Mult(Exp(.), class:vote).election4 
+##                        -0.02174104
+##  Re-parameterize by setting Mult2.Factor1.election1 to zero
+getContrasts(doubleUnidiff, ofInterest(doubleUnidiff))
+##                                     estimate        SE
+## Mult(Exp(.), class:vote).election1 0.0000000 0.0000000
+## Mult(Exp(.), class:vote).election2 0.6817374 0.2401644
+## Mult(Exp(.), class:vote).election3 0.4493745 0.2473521
+## Mult(Exp(.), class:vote).election4 0.3618301 0.2534754
+##                                       quasiSE    quasiVar
+## Mult(Exp(.), class:vote).election1 0.22854401 0.052232363
+## Mult(Exp(.), class:vote).election2 0.07395886 0.005469913
+## Mult(Exp(.), class:vote).election3 0.09475938 0.008979340
+## Mult(Exp(.), class:vote).election4 0.10934798 0.011956981
+
+##  Same thing but with election 4 as reference category:
+getContrasts(doubleUnidiff, rev(ofInterest(doubleUnidiff)))
+##                                       estimate        SE
+## Mult(Exp(.), class:vote).election4  0.00000000 0.0000000
+## Mult(Exp(.), class:vote).election3  0.08754436 0.1446833
+## Mult(Exp(.), class:vote).election2  0.31990727 0.1320022
+## Mult(Exp(.), class:vote).election1 -0.36183013 0.2534754
+##                                       quasiSE    quasiVar
+## Mult(Exp(.), class:vote).election4 0.10934798 0.011956981
+## Mult(Exp(.), class:vote).election3 0.09475938 0.008979340
+## Mult(Exp(.), class:vote).election2 0.07395886 0.005469913
+## Mult(Exp(.), class:vote).election1 0.22854401 0.052232363
+</pre>
+
+
+</body></html>

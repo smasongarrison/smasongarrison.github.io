@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data from the Salt River near Roosevelt, AZ, USA, for...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for saltriver"><tr><td>saltriver</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Data from the
+Salt River near Roosevelt, AZ, USA, for 1924-2006.
+</h2>
+
+<h3>Description</h3>
+
+<p>The annual peak instantaneous flow of the Salt River near Roosevelt, AZ, USA, 
+for 1924-2009. Data are in cfs (0.028317 m3/s); water year October-September. 
+The data were examined in several papers related with extreme values in
+hydrology. Among others, they were analyzed by Anderson and Meerschaert (1998)
+and Dettinger and Diaz (2000), where they were fitted to a GEV and a GPD 
+distribution. In Quintela del Rio (2011), a nonparametric analysis for this
+data set is made.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(saltriver)</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 85 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>year</code></dt><dd><p>Year</p>
+</dd>
+<dt><code>peakflow</code></dt><dd><p>The annual observed maximum peak flow</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>US Geological Survey http://water.usgs.gov/nwis/peak.
+</p>
+
+
+<h3>References</h3>
+
+<p>Anderson, P.L. and Meerschaert, M.M. (1998) Modeling river flows with heavy
+tails, <em>Water Resources Research</em> <b>34</b>, pp. 2271&ndash;2280.
+</p>
+<p>Dettinger, M.D. and Diaz, H.F. (2000) Global characteristics of stream flow
+seasonality and variability, <em>Journal of Hydrometeorology</em> <b>1</b>, pp. 
+289&ndash;310.
+</p>
+<p>Quintela-del-Rio, A. (2011)  On bandwidth selection for nonparametric estimation
+in flood frequency analysis. <em>Hydrological Processes</em>  <b>25</b>,
+pp. 671&ndash;678.
+</p>
+<p>Quintela-del-Rio, A. and Estevez-Perez, G. (2012) 
+Nonparametric Kernel Distribution Function Estimation with kerdiest: 
+An R Package for Bandwidth Choice and Applications, 
+<em>Journal of Statistical Software</em> <b>50(8)</b>, pp. 1-21.
+URL http://www.jstatsoft.org/v50/i08/.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(saltriver)
+peak&lt;-saltriver$peakflow
+year&lt;-saltriver$year
+plot(year,peak, type="l",ylab="Annual peak flow")
+</pre>
+
+
+</body></html>
