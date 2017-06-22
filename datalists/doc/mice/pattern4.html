@@ -54,7 +54,7 @@ mdpat &lt;- cbind(expand.grid(rec = 8:1, pat = 1:4, var = 1:3), r=as.numeric(as.
 types &lt;-  c("Univariate","Monotone","File matching","General")
 tp41 &lt;- levelplot(r~var+rec|as.factor(pat), data=mdpat,
          as.table=TRUE, aspect="iso",
-         shrink=c(0.9),
+         shrink=c(0.9), 
          col.regions = mdc(1:2),
          colorkey=FALSE,
          scales=list(draw=FALSE),
@@ -76,6 +76,8 @@ p$rm/(p$rm+p$rr)
 
 
 fluxplot(pattern2)
+
+
 </pre>
 
 

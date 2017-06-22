@@ -8,7 +8,7 @@ output: html_document
 I initially developed this collection as part of my Introduction to Applied Statistics Class.
 
 *** 
-### Datasets in R
+### Datasets in R (1)
 
 ```{r message=FALSE,echo=FALSE, warning=FALSE}
 if (!require("DT")) install.packages('DT')
@@ -16,7 +16,24 @@ if (!require("plyr")) install.packages('plyr')
 library(DT)
 
 d<-read.csv("datalists/R_Packages_data.csv", stringsAsFactors=FALSE, header=FALSE)
-x<-arrange(d,V1,V2)
+cut=round(nrow(d)/2,digits=0)
+d1=d[1:cut,]
+d2=d[(cut+1):nrow(d),]
+x<-arrange(d1,V1,V2)
+m = matrix(as.matrix(x[1:5]),ncol=5)
+
+colnames(m) = c('<span>Package</span>','Dataset','Title','csv','doc')
+datatable(m, escape = FALSE)
+```
+
+### Datasets in R (2)
+
+```{r message=FALSE,echo=FALSE, warning=FALSE}
+if (!require("DT")) install.packages('DT')
+if (!require("plyr")) install.packages('plyr')
+library(DT)
+
+x<-arrange(d2,V1,V2)
 m = matrix(as.matrix(x[1:5]),ncol=5)
 
 colnames(m) = c('<span>Package</span>','Dataset','Title','csv','doc')

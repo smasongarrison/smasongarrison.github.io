@@ -19,21 +19,21 @@
 
 <dl>
 <dt>age</dt><dd><p>Decimal age (0-21 years)</p>
-</dd>
+</dd> 
 <dt>hgt</dt><dd><p>Height (cm)</p>
 </dd>
 <dt>wgt</dt><dd><p>Weight (kg)</p>
-</dd>
+</dd> 
 <dt>bmi</dt><dd><p>Body mass index</p>
 </dd>
 <dt>hc</dt><dd><p>Head circumference (cm)</p>
-</dd>
+</dd> 
 <dt>gen</dt><dd><p>Genital Tanner stage (G1-G5)</p>
-</dd>
+</dd> 
 <dt>phb</dt><dd><p>Pubic hair (Tanner P1-P6)</p>
 </dd>
 <dt>tv</dt><dd><p>Testicular volume (ml)</p>
-</dd>
+</dd> 
 <dt>reg</dt><dd><p>Region (north, east, west, south, city)</p>
 </dd> </dl>
 
@@ -62,6 +62,8 @@ Disease in Childhood</em>, <b>82</b>, 107-112.
 <h3>Examples</h3>
 
 <pre>
+
+
 # create two imputed data sets
 imp &lt;- mice(boys, m=1, maxit=2)
 z &lt;- complete(imp, 1)
@@ -70,10 +72,10 @@ z &lt;- complete(imp, 1)
 plot(z$age, z$gen, col=mdc(1:2)[1+is.na(boys$gen)],
  xlab = "Age (years)", ylab = "Tanner Stage Genital")
 
-# figure to show that the default imputation method does not impute BMI
+# figure to show that the default imputation method does not impute BMI 
 # consistently
 plot(z$bmi,z$wgt/(z$hgt/100)^2, col=mdc(1:2)[1+is.na(boys$bmi)],
-xlab = "Imputed BMI", ylab="Calculated BMI")
+xlab = "Imputed BMI", ylab="Calculated BMI")   
 
 # also, BMI distributions are somewhat different
 require(MASS)
@@ -95,7 +97,7 @@ z2 &lt;- complete(imp2, 1)
 
 # show that new imputations are consistent
 plot(z2$bmi,z2$wgt/(z2$hgt/100)^2, col=mdc(1:2)[1+is.na(boys$bmi)],
-ylab="Calculated BMI")
+ylab="Calculated BMI")   
 
 # and compare distributions
 oldpar &lt;- par(mfrow=c(1,2))
@@ -104,6 +106,8 @@ xlab="BMI observed")
 truehist(z2$bmi[is.na(boys$bmi)],h=1,xlim=c(10,30),ymax=0.25,col=mdc(2),
 xlab="BMI imputed")
 par(oldpar)
+
+
 </pre>
 
 
