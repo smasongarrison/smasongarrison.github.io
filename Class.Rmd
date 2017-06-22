@@ -7,7 +7,7 @@ output: html_document
 ### Overview
 Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for gifted adolescent students. It will be taught during Summer Session II (June 19-30, 2017).
 
-> Is it possible to mislead when using statistics? This class will help you identify potential misrepresentation along with the inner-workings of statistical “truths”. You will learn to run statistical analyses the right way (using powerful, open source software called “R”) to recognize when data are being misused. Through regular practice, discussion, and your own culminating project, you will become adept at recognizing when graphs are being manipulated, biases are being confirmed, and causes are implied when, really, only correlations exist. Not only will you gain valuable professional skills with broad applications, but you will also be less susceptible to other people’s numerical trickery.
+> Is it possible to mislead when using statistics? This class will help you identify potential misrepresentation along with the inner-workings of statistical “truths”. You will learn to run statistical analyses the right way (using powerful, open source software called “R”) to recognize when data are being misused. Through regular practice, discussion, and your own culminating project, you will become adept at recognizing when graphs are being manipulated, biases are being confirmed, and causes are implied when, really, only correlations exist. Not only will you gain valuable professional skills with broad applications, but you will also be less susceptible to other people's numerical trickery.
 
 *** 
 
@@ -55,7 +55,7 @@ Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for g
 ###### [PowerPoint 4](https://www.dropbox.com/s/7fxov5zz7an1teh/Lying%20with%20Statistics_04.pptx?dl=0)
 ###### [PowerPoint 5](https://www.dropbox.com/s/pk86gyzjov7mxjl/Lying%20with%20Statistics_05.pptx?dl=0)
 ###### [PowerPoint 6A](https://www.dropbox.com/s/fplv1ysr3ufnoyc/Lying%20with%20Statistics_06A.pptx?dl=0)
-###### [PowerPoint 6B](https://www.dropbox.com/s/fplv1ysr3ufnoyc/Lying%20with%20Statistics_06A.pptx?dl=0)
+###### [PowerPoint 6B](https://www.dropbox.com/s/ooi09e4kl0hu0h3/Lying%20with%20Statistics_06B.pptx?dl=0)
 ###### [PowerPoint 7](https://www.dropbox.com/s/ogvl8h33flso7un/Lying%20with%20Statistics_07.pptx?dl=0)
 
 ### Class Links
@@ -128,7 +128,7 @@ All readings will be completed before class on the date on which they are assign
 ###### [PowerPoint 6A](https://www.dropbox.com/s/fplv1ysr3ufnoyc/Lying%20with%20Statistics_06A.pptx?dl=0)
 ###### [R Sytax_basic](https://www.dropbox.com/s/4h3y9w117ol36pv/Rsyntax_basic.R?dl=0)
 ###### [Reference Card](https://cran.r-project.org/doc/contrib/Short-refcard.pdf)
-###### [PowerPoint 6B](https://www.dropbox.com/s/fplv1ysr3ufnoyc/Lying%20with%20Statistics_06A.pptx?dl=0)
+###### [PowerPoint 6B](https://www.dropbox.com/s/ooi09e4kl0hu0h3/Lying%20with%20Statistics_06B.pptx?dl=0)
 ###### [R Class Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
 ###### [Sampling and Standard Error Shiny](https://gallery.shinyapps.io/sampling_and_stderr/)
 ###### [Robustness](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/TK/1&by=Tobias%20K%C3%A4chele&title=Robustness%20of%20Mean%20and%20Median&shorttitle=Robustness%20of%20Mean%20and%20Median)
