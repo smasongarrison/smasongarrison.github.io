@@ -143,12 +143,12 @@ All readings will be completed before class on the date on which they are assign
 ###### [Robustness](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/TK/1&by=Tobias%20K%C3%A4chele&title=Robustness%20of%20Mean%20and%20Median&shorttitle=Robustness%20of%20Mean%20and%20Median)
 
 ### Day 5 (June 23)
-##### Topics: Hypothesis Testing and Significance
+##### Topics: Hypothesis Testing and Significance and Correlation
 ##### Study Hall: Read selections from ``How to Lie with Statistics''
 ###### [PowerPoint 7](https://www.dropbox.com/s/ogvl8h33flso7un/Lying%20with%20Statistics_07.pptx?dl=0)
 ###### [P-Hacking](http://shinyapps.org/apps/p-hacker/)
 ###### [Significant and True effects](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/PPV&by=Michael%20Zehetleitner%20and%20Felix%20Sch%C3%B6nbrodt&title=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?&shorttitle=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?)
-
+###### [PowerPoint 8](https://www.dropbox.com/s/jrt7jhvp8m9myn1/Lying%20with%20Statistics_08A.pptx?dl=0)
 
 ### Day 6 (June 24)
 ##### Topics: Exploratory Data and Tukey
