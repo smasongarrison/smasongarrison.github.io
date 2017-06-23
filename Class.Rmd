@@ -24,7 +24,7 @@ Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for g
 
 ### Teaching Assistant
 ##### Name: Hannah Homoelle	/ TBA
-##### Email: hannah.k.homoelle@vanderbilt.edu
+##### Email: hannah.k.homoelle@vanderbilt.edu /TBA
 <!---##### Office Hours: NA-->
 *** 
 
@@ -34,11 +34,20 @@ Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for g
 
 ###### [RStudio](https://www.rstudio.com/products/rstudio/download/)
 
-#### Tutorials
+#### Tutorials related to R
+##### Installation
 ###### [How to install R and R Studio on PC / Windows](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
 ###### [How to install R and R Studio on Mac / OSX](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
+
+##### Usage
 ###### [Using R and psych for personality and psychological research](http://personality-project.org/r/psych/)
-###### [tutorialspoint for R programming](https://www.tutorialspoint.com/r/index.htm)
+###### [Basics of R programming](https://www.tutorialspoint.com/r/index.htm)
+###### [Quick R](http://www.statmethods.net/index.html)
+
+##### Graphing
+###### [Graphing in R with ggplot2](http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html)
+
+
 
 ### Poster Template
 ###### [Poster Template](https://www.dropbox.com/s/8spm24w728si1gs/Template.pptx?dl=0)
