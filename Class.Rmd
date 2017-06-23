@@ -23,7 +23,7 @@ Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for g
 *** 
 
 ### Teaching Assistant
-##### Name: Hannah Homoelle	
+##### Name: Hannah Homoelle	/ TBA
 ##### Email: hannah.k.homoelle@vanderbilt.edu
 <!---##### Office Hours: NA-->
 *** 
@@ -122,8 +122,8 @@ All readings will be completed before class on the date on which they are assign
 
 
 ### Day 4 (June 22)
-##### Topics: R syntax,  Distributions, and Hypothesis Testing
-##### Study Hall: Read selections from ``How to Lie with Statistics''
+##### Topics: R syntax and  Distributions
+##### Study Hall: Work on Project
 ##### Relevant Materials:
 ###### [PowerPoint 6A](https://www.dropbox.com/s/fplv1ysr3ufnoyc/Lying%20with%20Statistics_06A.pptx?dl=0)
 ###### [R Sytax_basic](https://www.dropbox.com/s/4h3y9w117ol36pv/Rsyntax_basic.R?dl=0)
@@ -132,21 +132,28 @@ All readings will be completed before class on the date on which they are assign
 ###### [R Class Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
 ###### [Sampling and Standard Error Shiny](https://gallery.shinyapps.io/sampling_and_stderr/)
 ###### [Robustness](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/TK/1&by=Tobias%20K%C3%A4chele&title=Robustness%20of%20Mean%20and%20Median&shorttitle=Robustness%20of%20Mean%20and%20Median)
+
+### Day 5 (June 23)
+##### Topics: Hypothesis Testing and Significance
+##### Study Hall: Read selections from ``How to Lie with Statistics''
 ###### [PowerPoint 7](https://www.dropbox.com/s/ogvl8h33flso7un/Lying%20with%20Statistics_07.pptx?dl=0)
 ###### [P-Hacking](http://shinyapps.org/apps/p-hacker/)
 ###### [Significant and True effects](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/PPV&by=Michael%20Zehetleitner%20and%20Felix%20Sch%C3%B6nbrodt&title=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?&shorttitle=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?)
 
-### Day 5 (June 23)
-##### Topics: Correlation 
-##### Study Hall: Read selections from ``How to Lie with Statistics''
 
 ### Day 6 (June 24)
-##### Topics: Causation
+##### Topics: Exploratory Data and Tukey
 ##### Project: TBA
 
+
 ### Day 7 (June 26)
-##### Topics: Presentation
-##### Project: TBA
+##### Topics: Correlation and Causation
+##### Study Hall: Read selections from ``How to Lie with Statistics''
+###### [PowerPoint 8]()
+###### [R Class Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
+###### [Guess the Correlation](http://guessthecorrelation.com/)
+###### [Shared Variance](http://rpsychologist.com/d3/correlation/)
+
 
 ### Day 8 (June 27)
 ##### Topics: Interpretation
