@@ -182,3 +182,5 @@ All readings will be completed before class on the date on which they are assign
 
 ## Data
 Can be found [here](smasongarrison.github.io/Data.html)
+
+[Egg Prices](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1367)
