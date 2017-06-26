@@ -66,6 +66,8 @@ Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for g
 ###### [PowerPoint 6A](https://www.dropbox.com/s/fplv1ysr3ufnoyc/Lying%20with%20Statistics_06A.pptx?dl=0)
 ###### [PowerPoint 6B](https://www.dropbox.com/s/ooi09e4kl0hu0h3/Lying%20with%20Statistics_06B.pptx?dl=0)
 ###### [PowerPoint 7](https://www.dropbox.com/s/ogvl8h33flso7un/Lying%20with%20Statistics_07.pptx?dl=0)
+###### [PowerPoint 8A](https://www.dropbox.com/s/jrt7jhvp8m9myn1/Lying%20with%20Statistics_08A.pptx?dl=0)
+###### [PowerPoint 8B](https://www.dropbox.com/s/g6wuocapdlvrhkm/Lying%20with%20Statistics_08B.pptx?dl=0)
 
 ### Class Links
 ###### [Cognitive Bias Codex](https://en.wikipedia.org/wiki/File:The_Cognitive_Bias_Codex_-_180%2B_biases,_designed_by_John_Manoogian_III_(jm3).png)
@@ -79,6 +81,8 @@ Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for g
 ###### [Robustness](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/TK/1&by=Tobias%20K%C3%A4chele&title=Robustness%20of%20Mean%20and%20Median&shorttitle=Robustness%20of%20Mean%20and%20Median)
 ###### [P-Hacking](http://shinyapps.org/apps/p-hacker/)
 ###### [Significant and True effects](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/PPV&by=Michael%20Zehetleitner%20and%20Felix%20Sch%C3%B6nbrodt&title=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?&shorttitle=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?)
+###### [Guess the Correlation](http://guessthecorrelation.com/)
+###### [Shared Variance](http://rpsychologist.com/d3/correlation/)
 
 ### Class R Code
 ###### [R Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
@@ -87,7 +91,7 @@ Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for g
 
 *** 
 
-## Very Tentative Schedule
+## Schedule
 
 <!---How To Read This Schedule: 
 
@@ -148,37 +152,32 @@ All readings will be completed before class on the date on which they are assign
 ###### [PowerPoint 7](https://www.dropbox.com/s/ogvl8h33flso7un/Lying%20with%20Statistics_07.pptx?dl=0)
 ###### [P-Hacking](http://shinyapps.org/apps/p-hacker/)
 ###### [Significant and True effects](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/PPV&by=Michael%20Zehetleitner%20and%20Felix%20Sch%C3%B6nbrodt&title=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?&shorttitle=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?)
-###### [PowerPoint 8](https://www.dropbox.com/s/jrt7jhvp8m9myn1/Lying%20with%20Statistics_08A.pptx?dl=0)
-
+###### [PowerPoint 8A](https://www.dropbox.com/s/jrt7jhvp8m9myn1/Lying%20with%20Statistics_08A.pptx?dl=0)
+###### [Guess the Correlation](http://guessthecorrelation.com/)
+###### [Shared Variance](http://rpsychologist.com/d3/correlation/)
 ### Day 6 (June 24)
 ##### Topics: Exploratory Data and Tukey
-##### Project: TBA
+
 
 
 ### Day 7 (June 26)
-##### Topics: Correlation and Causation
+##### Topics: Regression and Causation
 ##### Study Hall: Read selections from ``How to Lie with Statistics''
-###### [PowerPoint 8]()
+###### [PowerPoint 8B](https://www.dropbox.com/s/g6wuocapdlvrhkm/Lying%20with%20Statistics_08B.pptx?dl=0)
 ###### [R Class Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
-###### [Guess the Correlation](http://guessthecorrelation.com/)
-###### [Shared Variance](http://rpsychologist.com/d3/correlation/)
-
 
 ### Day 8 (June 27)
-##### Topics: Interpretation
-##### Project: TBA
+##### Topics: Graphing and Presentation
+##### Study Hall: Fake News
 
 ### Day 9 (June 28)
-##### Topics: Consumption
+##### Topics: Case Studies on Data Fraud
 ##### Project: TBA
 
 ### Day 10 (June 29)
-##### Topics: TBA
-##### Project: TBA
+##### Topics: Review, Concept Map, and Presentations
 
-### Day 11 (June 30)
-##### Topics: TBA
-##### Project: TBA
+
 *** 
 
 ## Data
