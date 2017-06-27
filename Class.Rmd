@@ -84,6 +84,7 @@ Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for g
 ###### [Significant and True effects](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/PPV&by=Michael%20Zehetleitner%20and%20Felix%20Sch%C3%B6nbrodt&title=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?&shorttitle=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?)
 ###### [Guess the Correlation](http://guessthecorrelation.com/)
 ###### [Shared Variance](http://rpsychologist.com/d3/correlation/)
+###### [Irregularities in LaCour (2014)](https://stanford.edu/~dbroock/broockman_kalla_aronow_lg_irregularities.pdf)
 
 ### Class R Code
 ###### [R Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
@@ -177,11 +178,11 @@ All readings will be completed before class on the date on which they are assign
 
 
 ### Day 9 (June 28)
-##### Topics: Review
-##### Project: TBA
+##### Topics: Projects
+
 
 ### Day 10 (June 29)
-##### Topics: Concept Map, and Presentations
+##### Topics: Review, Concept Map, and Presentations
 
 
 *** 
