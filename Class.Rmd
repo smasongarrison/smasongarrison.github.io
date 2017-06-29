@@ -91,7 +91,11 @@ Lying with Statistics is a Vanderbilt Summer Academy (VSA) course designed for g
 ###### [R Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
 ###### [R Sytax_basic](https://www.dropbox.com/s/4h3y9w117ol36pv/Rsyntax_basic.R?dl=0)
 
-
+### Further your knowledge
+###### [coursera](https://www.coursera.org/)
+###### [edx](https://www.edx.org)
+###### [codecademy](https://www.codecademy.com/)
+###### [Khan Academy](https://www.khanacademy.org/)
 *** 
 
 ## Schedule
