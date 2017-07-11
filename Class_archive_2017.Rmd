@@ -1,0 +1,199 @@
+---
+title: "Lying with Statistics"
+output: html_document
+---
+
+*** 
+### Overview
+Lying with Statistics was a Vanderbilt Summer Academy (VSA) course designed for gifted adolescent students. It was taught during Summer Session II (June 19-30, 2017).
+
+> Is it possible to mislead when using statistics? This class will help you identify potential misrepresentation along with the inner-workings of statistical “truths”. You will learn to run statistical analyses the right way (using powerful, open source software called “R”) to recognize when data are being misused. Through regular practice, discussion, and your own culminating project, you will become adept at recognizing when graphs are being manipulated, biases are being confirmed, and causes are implied when, really, only correlations exist. Not only will you gain valuable professional skills with broad applications, but you will also be less susceptible to other people's numerical trickery.
+
+*** 
+
+## Instructor Information
+
+*** 
+
+### Instructor
+##### Name: S. Mason Garrison
+##### Email: s.mason.garrison@gmail.com
+<!---##### Office Hours: NA-->
+
+*** 
+
+### Teaching Assistant
+##### Name: Hannah Homoelle	/ Kelsay Neely
+##### Email: hannah.k.homoelle@vanderbilt.edu / kelsay.e.neely@vanderbilt.edu
+<!---##### Office Hours: NA-->
+*** 
+
+## Materials
+### Software
+###### [R](http://cran.us.r-project.org/)
+
+###### [RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+#### Tutorials related to R
+##### Installation
+###### [How to install R and R Studio on PC / Windows](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
+###### [How to install R and R Studio on Mac / OSX](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
+
+##### Usage
+###### [Using R and psych for personality and psychological research](http://personality-project.org/r/psych/)
+###### [Basics of R programming](https://www.tutorialspoint.com/r/index.htm)
+###### [Quick R](http://www.statmethods.net/index.html)
+
+##### Graphing
+###### [Graphing in R with ggplot2](http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html)
+
+
+
+### Poster Template
+###### [Poster Template](https://www.dropbox.com/s/8spm24w728si1gs/Template.pptx?dl=0)
+
+###### [Poster Example 1](https://www.dropbox.com/s/ndohtiimpp6a3fs/spsp2014a.pptx?dl=0), which I presented at an academic conference in 2014.
+
+###### [Poster Example 2](https://www.dropbox.com/s/hwyjkgv5qi1qzkf/arp2017.pptx?dl=0), which I presented at a different academic conference in 2017.
+
+
+### Class PowerPoints 
+###### [PowerPoint 1](https://www.dropbox.com/s/0zaqabfe9cqxk00/Lying%20with%20Statistics_01.pptx?dl=0)
+###### [PowerPoint 2](https://www.dropbox.com/s/s5sqtc4szlvjykz/Lying%20with%20Statistics_02.pptx?dl=0)
+###### [PowerPoint 3](https://www.dropbox.com/s/rzyog7idb5895op/Lying%20with%20Statistics_03.pptx?dl=0)
+###### [PowerPoint 4](https://www.dropbox.com/s/7fxov5zz7an1teh/Lying%20with%20Statistics_04.pptx?dl=0)
+###### [PowerPoint 5](https://www.dropbox.com/s/pk86gyzjov7mxjl/Lying%20with%20Statistics_05.pptx?dl=0)
+###### [PowerPoint 6A](https://www.dropbox.com/s/fplv1ysr3ufnoyc/Lying%20with%20Statistics_06A.pptx?dl=0)
+###### [PowerPoint 6B](https://www.dropbox.com/s/ooi09e4kl0hu0h3/Lying%20with%20Statistics_06B.pptx?dl=0)
+###### [PowerPoint 7](https://www.dropbox.com/s/ogvl8h33flso7un/Lying%20with%20Statistics_07.pptx?dl=0)
+###### [PowerPoint 8A](https://www.dropbox.com/s/jrt7jhvp8m9myn1/Lying%20with%20Statistics_08A.pptx?dl=0)
+###### [PowerPoint 8B](https://www.dropbox.com/s/g6wuocapdlvrhkm/Lying%20with%20Statistics_08B.pptx?dl=0)
+###### [PowerPoint 9](https://www.dropbox.com/s/51vr1a4n45a6qjj/Lying%20with%20Statistics_09.pptx?dl=0)
+###### [PowerPoint 10](https://www.dropbox.com/s/xnmwvmegg14w5j1/Lying%20with%20Statistics_10.pptx?dl=0)
+
+### Class Links
+###### [Cognitive Bias Codex](https://en.wikipedia.org/wiki/File:The_Cognitive_Bias_Codex_-_180%2B_biases,_designed_by_John_Manoogian_III_(jm3).png)
+###### [Vaccination Simulation](http://www.software3d.com/Home/Vax/Immunity.php)
+###### [SAPA Project](https://sapa-project.org/)
+###### [Moral Machine](http://moralmachine.mit.edu/)
+###### [R Graph Catalog](http://shinyapps.stat.ubc.ca/r-graph-catalog/)
+###### [intRo](http://www.intro-stats.com/)
+###### [Reference Card](https://cran.r-project.org/doc/contrib/Short-refcard.pdf)
+###### [Sampling and Standard Error Shiny](https://gallery.shinyapps.io/sampling_and_stderr/)
+###### [Robustness](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/TK/1&by=Tobias%20K%C3%A4chele&title=Robustness%20of%20Mean%20and%20Median&shorttitle=Robustness%20of%20Mean%20and%20Median)
+###### [P-Hacking](http://shinyapps.org/apps/p-hacker/)
+###### [Significant and True effects](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/PPV&by=Michael%20Zehetleitner%20and%20Felix%20Sch%C3%B6nbrodt&title=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?&shorttitle=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?)
+###### [Guess the Correlation](http://guessthecorrelation.com/)
+###### [Shared Variance](http://rpsychologist.com/d3/correlation/)
+###### [Irregularities in LaCour (2014)](https://stanford.edu/~dbroock/broockman_kalla_aronow_lg_irregularities.pdf)
+
+### Class R Code
+###### [R Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
+###### [R Sytax_basic](https://www.dropbox.com/s/4h3y9w117ol36pv/Rsyntax_basic.R?dl=0)
+
+### Further your knowledge
+###### [coursera](https://www.coursera.org/)
+###### [edx](https://www.edx.org)
+###### [codecademy](https://www.codecademy.com/)
+###### [Khan Academy](https://www.khanacademy.org/)
+*** 
+
+## Schedule
+
+<!---How To Read This Schedule: 
+
+All readings will be completed before class on the date on which they are assigned. Anything in bold is work to be completed before class and brought with you on the day listed. Paper due dates, also in bold, indicate that the completed manuscript of your paper must be in the correct dropbox on Blackboard before class starts on the day indicated.
+
+-->
+
+*** 
+
+### Day 1 (June 19)
+##### Topics: Scientific Method, Research Questions, Cognitive Biases, and Research Design.
+##### Study Hall: Readings on Extrapolation
+##### Relevant Materials:
+###### [PowerPoint 1](https://www.dropbox.com/s/0zaqabfe9cqxk00/Lying%20with%20Statistics_01.pptx?dl=0)
+###### [PowerPoint 2](https://www.dropbox.com/s/s5sqtc4szlvjykz/Lying%20with%20Statistics_02.pptx?dl=0)
+###### [Cognitive Bias Codex](https://en.wikipedia.org/wiki/File:The_Cognitive_Bias_Codex_-_180%2B_biases,_designed_by_John_Manoogian_III_(jm3).png)
+###### [Vaccination Simulation](http://www.software3d.com/Home/Vax/Immunity.php)
+
+
+
+### Day 2 (June 20)
+##### Topics:  Experiments, Design, Sampling, and Measurement
+##### Study Hall: Scale Development
+##### Relevant Materials:
+###### [PowerPoint 2](https://www.dropbox.com/s/s5sqtc4szlvjykz/Lying%20with%20Statistics_02.pptx?dl=0)
+###### [PowerPoint 3](https://www.dropbox.com/s/rzyog7idb5895op/Lying%20with%20Statistics_03.pptx?dl=0)
+###### [PowerPoint 4](https://www.dropbox.com/s/7fxov5zz7an1teh/Lying%20with%20Statistics_04.pptx?dl=0)
+###### [SAPA Project](https://sapa-project.org/)
+###### [Moral Machine](http://moralmachine.mit.edu/)
+
+
+### Day 3 (June 21)
+##### Topics: Measurement, Summary Statistics
+##### Study Hall: Read selections from ``How to Lie with Statistics''
+##### Relevant Materials:
+###### [PowerPoint 4](https://www.dropbox.com/s/7fxov5zz7an1teh/Lying%20with%20Statistics_04.pptx?dl=0)
+###### [PowerPoint 5](https://www.dropbox.com/s/pk86gyzjov7mxjl/Lying%20with%20Statistics_05.pptx?dl=0)
+###### [R Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
+###### [R Graph Catalog](http://shinyapps.stat.ubc.ca/r-graph-catalog/)
+###### [intRo](http://www.intro-stats.com/)
+
+
+### Day 4 (June 22)
+##### Topics: R syntax and  Distributions
+##### Study Hall: Work on Project
+##### Relevant Materials:
+###### [PowerPoint 6A](https://www.dropbox.com/s/fplv1ysr3ufnoyc/Lying%20with%20Statistics_06A.pptx?dl=0)
+###### [R Sytax_basic](https://www.dropbox.com/s/4h3y9w117ol36pv/Rsyntax_basic.R?dl=0)
+###### [Reference Card](https://cran.r-project.org/doc/contrib/Short-refcard.pdf)
+###### [PowerPoint 6B](https://www.dropbox.com/s/ooi09e4kl0hu0h3/Lying%20with%20Statistics_06B.pptx?dl=0)
+###### [R Class Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
+###### [Sampling and Standard Error Shiny](https://gallery.shinyapps.io/sampling_and_stderr/)
+###### [Robustness](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/TK/1&by=Tobias%20K%C3%A4chele&title=Robustness%20of%20Mean%20and%20Median&shorttitle=Robustness%20of%20Mean%20and%20Median)
+
+### Day 5 (June 23)
+##### Topics: Hypothesis Testing and Significance and Correlation
+##### Study Hall: Read selections from ``How to Lie with Statistics''
+##### Relevant Materials:
+###### [PowerPoint 7](https://www.dropbox.com/s/ogvl8h33flso7un/Lying%20with%20Statistics_07.pptx?dl=0)
+###### [P-Hacking](http://shinyapps.org/apps/p-hacker/)
+###### [Significant and True effects](http://shinyapps.org/showapp.php?app=http://lmpp10e-mucesm.srv.mwn.de:3838/felix/PPV&by=Michael%20Zehetleitner%20and%20Felix%20Sch%C3%B6nbrodt&title=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?&shorttitle=When%20does%20a%20significant%20p-value%20indicate%20a%20true%20effect?)
+###### [PowerPoint 8A](https://www.dropbox.com/s/jrt7jhvp8m9myn1/Lying%20with%20Statistics_08A.pptx?dl=0)
+###### [Guess the Correlation](http://guessthecorrelation.com/)
+###### [Shared Variance](http://rpsychologist.com/d3/correlation/)
+### Day 6 (June 24)
+##### Topics: Exploratory Data and Tukey
+
+
+
+### Day 7 (June 26)
+##### Topics: Regression and Causation
+##### Study Hall: Read selections from ``How to Lie with Statistics''
+##### Relevant Materials:
+###### [PowerPoint 8B](https://www.dropbox.com/s/g6wuocapdlvrhkm/Lying%20with%20Statistics_08B.pptx?dl=0)
+###### [R Class Materials](https://www.dropbox.com/s/nit5l6sutm3qfn0/Rmaterials.R?dl=0)
+
+### Day 8 (June 27)
+##### Topics: Replication, Reproduction, and Scientific Misconduct
+##### Study Hall: Read selections from ``How to Lie with Statistics''
+##### Relevant Materials:
+###### [PowerPoint 9](https://www.dropbox.com/s/51vr1a4n45a6qjj/Lying%20with%20Statistics_09.pptx?dl=0)
+
+
+### Day 9 (June 28)
+##### Topics: Projects
+
+
+### Day 10 (June 29)
+##### Topics: Review, Concept Map, and Presentations
+##### Relevant Materials:
+###### [PowerPoint 10](https://www.dropbox.com/s/xnmwvmegg14w5j1/Lying%20with%20Statistics_10.pptx?dl=0)
+
+*** 
+
+## Data
+Can be found [here](smasongarrison.github.io/Data.html)
+
+[Egg Prices](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1367)

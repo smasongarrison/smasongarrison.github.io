@@ -27,6 +27,7 @@ write.csv(index_out, file='datalists/datasets_import.csv', row.names=FALSE)
 ## Render Markdown Files
 rmarkdown::render(input="Data.Rmd", output_file="Data.html")
 rmarkdown::render(input="Class.Rmd", output_file="Class.html")
+rmarkdown::render(input="Class_archive_2017.Rmd", output_file="Class_archive_2017.html")
 #rmarkdown::render(input="AAA.Rmd", output_file="AAA.html")
 
 .rs.restartR()
