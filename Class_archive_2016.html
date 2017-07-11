@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -19,7 +19,10 @@
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="libs/htmlwidgets-0.7/htmlwidgets.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="libs/highlightjs-1.1/highlight.js"></script>
+<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
 <script src="libs/datatables-binding-0.2/datatables.js"></script>
 <link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
@@ -29,10 +32,6 @@
 <link href='include/css/style.css' rel='stylesheet' type='text/css'>
 
 <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet"
-      href="libs/highlight/default.css"
-      type="text/css" />
-<script src="libs/highlight/highlight.js"></script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -103,10 +102,10 @@ button.code-folding-btn:focus {
 </style>
 
 
+
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="libs/navigation-1.1/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -128,12 +127,28 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="./index.html">Home</a></li>
-        <li><a href="https://github.com/smasongarrison">Github</a></li>
-        <li><a href="http://smasongarrison.github.io/Class.html">Teaching</a></li>
+        <li class="dropdown">
+     <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">R Programs</a></li>
+      <li><a href="https://github.com/smasongarrison">Github</a></li>
+      </ul>
+      </li>
+      <li class="dropdown">
+     <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Teaching<span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href=""./Class.html">Current Class</a></li>
+       <li class="divider"></li>
+       <li><a href="./Class_archive_2017.html">Lying with Statistics, VSA 2017</a></li>
+       <li><a href="./Class_archive_2016.html">Introduction to Applied Statistics, VSA 2016</a></li>
+      </ul>
+      </li>
+        <li><a href="./index.html">Downloads</a></li>
         <li class="dropdown">
           <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">          <li><a href="AAA.html">Academic Advice Aggregator</a></li>
-          <li><a href="Class.html">Introduction to Applied Statistics: Course Page</a></li>
+          <ul class="dropdown-menu" role="menu">          <li><a href="Class.html">Lying with Statistics</a></li>
+          <li><a href="Class_archive_2016.html">ARCHIVE: 2016 Introduction to Applied Statistics: Course Page</a></li>
           <li><a href="Data.html">Collection of Datasets</a></li>
           <li><a href="index.html">Welcome</a></li>
           </ul>
@@ -279,8 +294,8 @@ All readings will be completed before class on the date on which they are assign
 ## multiple of the number of columns [5]
 ```
 
-<div id="htmlwidget-35415c0d2fb800367998" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-35415c0d2fb800367998">{"x":{"filter":"none","data":[["<b>Bold\u003c/b>"],["<em>Emphasize\u003c/em>"],["<a href=\"http://rstudio.com\">RStudio\u003c/a>"],["<a href=\"#\" onclick=\"alert('Hello World');\">Hello\u003c/a>"],["<b>Bold\u003c/b>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><span>Package\u003c/span>\u003c/th>\n      <th>Item\u003c/th>\n      <th>Title\u003c/th>\n      <th>csv\u003c/th>\n      <th>Doc\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0ebdc9b908320652fd53" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0ebdc9b908320652fd53">{"x":{"filter":"none","data":[["<b>Bold<\/b>"],["<em>Emphasize<\/em>"],["<a href=\"http://rstudio.com\">RStudio<\/a>"],["<a href=\"#\" onclick=\"alert('Hello World');\">Hello<\/a>"],["<b>Bold<\/b>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><span>Package<\/span><\/th>\n      <th>Item<\/th>\n      <th>Title<\/th>\n      <th>csv<\/th>\n      <th>Doc<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 -->
 <p align= center >
 <table cellspacing=0 border=1>
@@ -13191,9 +13206,13 @@ Reaction times in a sleep deprivation study
 <script>
 
 // add bootstrap table styles to pandoc tables
-$(document).ready(function () {
+function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
+
 
 </script>
 
