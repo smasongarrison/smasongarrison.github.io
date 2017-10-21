@@ -14,6 +14,7 @@ I initially developed this collection as part of my Introduction to Applied Stat
 if (!require("DT")) install.packages('DT')
 if (!require("plyr")) install.packages('plyr')
 library(DT)
+read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTDx-v90LC56RKKX2gukFRMk6vl06gCe_LnwtAz98gJjdE8xqTPf7VXqUKvwnwzS1vH85GYEaiLXIuj/pub?gid=516016659&single=true&output=csv")
 
 d<-read.csv("datalists/R_Packages_data.csv", stringsAsFactors=FALSE, header=FALSE)
 cut=round(nrow(d)/2,digits=0)
