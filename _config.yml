@@ -10,8 +10,8 @@
 locale                   : "en-US"
 title                    : "S. Mason Garrison / Site Title"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
+name                     : &name "S. Mason Garrison"
+description              : &description "Assistant Professor of Quantitative Methods, Wake Forest University"
 url                      : https://smasongarrison.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "smasongarrison/smasongarrison.github.io"
@@ -22,13 +22,13 @@ repository               : "smasongarrison/smasongarrison.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "S. Mason Garrison"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
-  uri              : # URL
-  email            : "none@example.org" 
+  bio              : "Assistant Professor of Quantitative Methods, Department of Psychology, Wake Forest University"
+  location         : "Greene, Room 438, Wake Forest University"
+  employer         : "Wake Forest University"
+  uri              : "https://www.smasongarrison.com"
+  email            : "garrissm@wfu.edu"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
